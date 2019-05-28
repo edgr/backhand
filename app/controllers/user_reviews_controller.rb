@@ -1,5 +1,6 @@
 class UserReviewsController < ApplicationController
   def show
+    @review = Review.find(params[:challenge_id])
   end
 
   def create
