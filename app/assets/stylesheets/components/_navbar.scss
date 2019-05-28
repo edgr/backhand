@@ -1,17 +1,31 @@
-.navbar-lewagon {
+.navbar-bh {
   justify-content: space-between;
-  background: red;
+  background: $light-gray;
   top: 0;
   position: sticky;
   width: 100%;
   z-index: 99;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-bh .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-  padding-bottom: 15px;
+
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  .logo-back {
+    color: $blue;
+    font-weight: bold;
+    margin: 0;
+  }
+  .logo-hand {
+    color: white;
+    font-style: italic;
+    margin: 0;
+  }
 }
+
