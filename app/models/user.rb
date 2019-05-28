@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :sent_challenges, class_name: 'Challenge'
+  has_many :received_challenges, class_name: 'Challenge'
+
   validates :first_name, :last_name, :level, :address, presence: true
   validates :phone_number, presence: true,
                            numericality: true,

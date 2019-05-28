@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_090603) do
+ActiveRecord::Schema.define(version: 2019_05_28_094354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "challenges", force: :cascade do |t|
+    t.bigint "challenger_id"
+    t.bigint "challengee_id"
+    t.string "score"
+    t.string "winner"
+    t.string "loser"
+    t.string "location"
+    t.string "status"
+    t.string "proposed_time_slots"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challengee_id"], name: "index_challenges_on_challengee_id"
+    t.index ["challenger_id"], name: "index_challenges_on_challenger_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -46,4 +62,6 @@ ActiveRecord::Schema.define(version: 2019_05_28_090603) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "challenges", "users", column: "challengee_id"
+  add_foreign_key "challenges", "users", column: "challenger_id"
 end
