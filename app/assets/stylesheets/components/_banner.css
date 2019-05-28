@@ -1,0 +1,19 @@
+.banner{
+  height: 50vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), image-url("background-home.jpg");
+  background-size: cover;
+  width: 100vw;
+  position: relative;
+
+  h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+  }
+
+}
