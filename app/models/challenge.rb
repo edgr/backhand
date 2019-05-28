@@ -3,7 +3,7 @@ class Challenge < ApplicationRecord
   belongs_to :challengee, class_name: 'User'
 
   validate :difference_of_players
-  validates :status, presence: true
+  validates :status, presence: true, default: 'Pending'
   validates :challenger, :challengee, presence: true
 
   private
