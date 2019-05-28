@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_110613) do
+
+ActiveRecord::Schema.define(version: 2019_05_28_124225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +31,12 @@ ActiveRecord::Schema.define(version: 2019_05_28_110613) do
     t.index ["challengee_id"], name: "index_challenges_on_challengee_id"
     t.index ["challenger_id"], name: "index_challenges_on_challenger_id"
   end
+
+
+  create_table "clubs", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
 
   create_table "computed_skills_sets", force: :cascade do |t|
     t.bigint "user_id"
@@ -94,14 +101,17 @@ ActiveRecord::Schema.define(version: 2019_05_28_110613) do
     t.integer "longitude"
     t.date "birthday"
     t.integer "total_points"
+    t.bigint "club_id"
+    t.index ["club_id"], name: "index_users_on_club_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "challenges", "users", column: "challengee_id"
   add_foreign_key "challenges", "users", column: "challenger_id"
-  add_foreign_key "computed_skills_sets", "users"
   add_foreign_key "user_reviews", "challenges"
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
+  add_foreign_key "users", "clubs"
+  add_foreign_key "computed_skills_sets", "users"
 end
