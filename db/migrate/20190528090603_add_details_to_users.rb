@@ -12,12 +12,14 @@ class AddDetailsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :gender, :string
     add_column :users, :nationality, :string
     add_column :users, :picture, :string
-    add_column :users, :elo_ranking, :integer
+    add_column :users, :ranking, :integer
     add_column :users, :height, :integer
     add_column :users, :weight, :integer
     add_column :users, :latitude, :integer
     add_column :users, :longitude, :integer
     add_column :users, :birthday, :date
-    add_column :users, :total_points, :integer
+    add_column :users, :points, :float
+    add_column :users, :handedness, :string
+    add_column :users, :backhand_style, :string
   end
 end
