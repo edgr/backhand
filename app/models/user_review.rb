@@ -5,6 +5,8 @@ class UserReview < ApplicationRecord
 
   validate :difference_of_players
   validates :thumb, :content, presence: true
+  validates :serve, :return, :backhand, :forehand, :volley, :speed, :power, :endurance,
+            presence: true
 
   private
 

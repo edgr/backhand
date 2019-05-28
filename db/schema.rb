@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_05_28_124225) do
 
   # These are extensions that must be enabled in order to support this database
@@ -31,10 +32,25 @@ ActiveRecord::Schema.define(version: 2019_05_28_124225) do
     t.index ["challenger_id"], name: "index_challenges_on_challenger_id"
   end
 
+
   create_table "clubs", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
+  create_table "computed_skills_sets", force: :cascade do |t|
+    t.bigint "user_id"
+    t.float "serve", default: 5.0
+    t.float "return", default: 5.0
+    t.float "backhand", default: 5.0
+    t.float "forehand", default: 5.0
+    t.float "volley", default: 5.0
+    t.float "speed", default: 5.0
+    t.float "power", default: 5.0
+    t.float "endurance", default: 5.0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_computed_skills_sets_on_user_id"
   end
 
   create_table "user_reviews", force: :cascade do |t|
@@ -97,4 +113,5 @@ ActiveRecord::Schema.define(version: 2019_05_28_124225) do
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
   add_foreign_key "users", "clubs"
+  add_foreign_key "computed_skills_sets", "users"
 end
