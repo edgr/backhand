@@ -1,9 +1,10 @@
 .banner{
-  height: 50vh;
+  height: 40vh;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), image-url("background-home.jpg");
+  background-image: image-url("backhand-banner.jpg");
+  /*background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), image-url("backhand-banner.jpg");*/
   background-size: cover;
   width: 100vw;
   position: relative;
@@ -12,8 +13,8 @@
     color: white;
     font-weight: bold;
     font-size: 32px;
-    margin-bottom: 40px;
-    margin-left: 40px;
+    margin-bottom: 25px;
+    margin-left: 25px;
   }
 
 }
