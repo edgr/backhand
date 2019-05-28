@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_132154) do
     t.index ["challengee_id"], name: "index_challenges_on_challengee_id"
     t.index ["challenger_id"], name: "index_challenges_on_challenger_id"
   end
-  
+
   create_table "clubs", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -109,13 +109,15 @@ ActiveRecord::Schema.define(version: 2019_05_28_132154) do
     t.string "gender"
     t.string "nationality"
     t.string "picture"
-    t.integer "elo_ranking"
+    t.integer "ranking"
     t.integer "height"
     t.integer "weight"
     t.integer "latitude"
     t.integer "longitude"
     t.date "birthday"
-    t.integer "total_points"
+    t.float "points"
+    t.string "handedness"
+    t.string "backhand_style"
     t.bigint "club_id"
     t.index ["club_id"], name: "index_users_on_club_id"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -124,11 +126,11 @@ ActiveRecord::Schema.define(version: 2019_05_28_132154) do
 
   add_foreign_key "challenges", "users", column: "challengee_id"
   add_foreign_key "challenges", "users", column: "challenger_id"
+  add_foreign_key "computed_skills_sets", "users"
   add_foreign_key "user_reviews", "challenges"
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
   add_foreign_key "user_tags", "tags", column: "tags_id"
   add_foreign_key "user_tags", "users", column: "users_id"
   add_foreign_key "users", "clubs"
-  add_foreign_key "computed_skills_sets", "users"
 end
