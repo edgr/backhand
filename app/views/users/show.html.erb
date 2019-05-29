@@ -1,2 +1,8 @@
 <h1>This is the specific user profile</h1>
 <p>@nam & @monica, this is where we display our amazing user profile :)</p>
+
+<div class="stats">
+  <%= @user.all_challenges.count %>
+  <%= @user.challenges_won.count %>
+  <%= @user.challenges_lost.count %>
+</div>

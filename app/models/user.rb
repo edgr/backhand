@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :sent_reviews, class_name: 'UserReview'
   has_many :received_reviews, class_name: 'UserReview'
 
-  has_many :sent_challenges, class_name: 'Challenge'
-  has_many :received_challenges, class_name: 'Challenge'
+  has_many :sent_challenges, class_name: 'Challenge', foreign_key: :challenger_id
+  has_many :received_challenges, class_name: 'Challenge', foreign_key: :challengee_id
 
   has_many :tags, through: :user_tags
 
@@ -16,4 +16,16 @@ class User < ApplicationRecord
   validates :phone_number, presence: true,
                            numericality: true,
                            length: { minimum: 10, maximum: 15 }
+
+  def all_challenges
+    self.sent_challenges.played + self.received_challenges.played
+  end
+
+  def challenges_won
+    Challenge.where(winner: self.id.to_s)
+  end
+
+  def challenges_lost
+    Challenge.where(loser: self.id.to_s)
+  end
 end
