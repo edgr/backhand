@@ -16,4 +16,5 @@ class User < ApplicationRecord
   validates :phone_number, presence: true,
                            numericality: true,
                            length: { minimum: 10, maximum: 15 }
+  mount_uploader :picture, PictureUploader
 end

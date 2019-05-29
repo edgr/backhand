@@ -2,7 +2,7 @@
 <p>@nam & @monica, this is where we iterate over the @users and display our nice cards :)</p>
 <% @users.each do |user| %>
   <div class="card player-card">
-    <%= user.picture %>
+    <%= cl_image_tag user.picture, height: 300, width: 400, crop: :fill %>
     <h2><%= user.first_name %> <%= user.last_name %></h2>
     <% user %>
     <%= user.level %>

@@ -25,7 +25,7 @@ puts "creating users"
     style_of_play: ["baseliner", "attacker", "baseliner","server-volleyer","puncher"].sample,
     gender: Faker::Gender.binary_type,
     nationality: Faker::Nation.nationality,
-    picture: Faker::Avatar.image,
+    picture: ["https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg", "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/nadal_m7vz84.jpg"].sample,
     ranking: rand(1..1000),
     height: rand(150..200),
     weight: rand(50..100),
