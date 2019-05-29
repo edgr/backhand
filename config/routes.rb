@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   devise_for :users
-  resources :challenges, only: [:index, :show, :create] do
+  resources :challenges, only: [:index, :show] do
     resources :user_reviews, only: [:show, :create, :destroy]
   end
-
-  patch 'challenge/:id/accept', to: 'challenge#accept', as: :accept_challenge
-  patch 'challenge/:id/decline', to: 'challenge#decline', as: :decline_challenge
-  patch 'challenge/:id/cancel', to: 'challenge#cancel', as: :cancel_challenge
+  post 'challenges', to:'challenges#create', as: :create_challenge
+  patch 'challenges/:id/accept', to: 'challenges#accept', as: :accept_challenge
+  patch 'challenges/:id/decline', to: 'challenges#decline', as: :decline_challenge
+  patch 'challenges/:id/cancel', to: 'challenges#cancel', as: :cancel_challenge
 
   resources :users, only: [ :index, :show, :edit, :update ]
 
