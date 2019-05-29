@@ -8,10 +8,12 @@
 require 'faker'
 
 User.destroy_all
+ComputedSkillsSet.destroy_all
 
 puts "creating users"
+users = []
 10.times do
-  user = User.new(
+  users << User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
@@ -36,6 +38,5 @@ puts "creating users"
     handedness: ["righty","lefty"].sample,
     backhand_style: ["one handed backhand","two handed backhand"].sample
     )
-  user.save!
 end
 puts "Finished creating users"
