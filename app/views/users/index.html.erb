@@ -1,2 +1,11 @@
 <h1>Here are all users:</h1>
 <p>@nam & @monica, this is where we iterate over the @users and display our nice cards :)</p>
+<% @users.each do |user| %>
+  <div class="card player-card">
+    <%= user.picture %>
+    <h2><%= user.first_name %> <%= user.last_name %></h2>
+    <% user %>
+    <%= user.level %>
+    <%= user.style_of_play %>
+  </div>
+<% end %>
