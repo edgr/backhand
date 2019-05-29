@@ -1,16 +1,20 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-bh">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <p class="logo-back">BACK</p> <p class="logo-hand">HAND</p>
     <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+
+<!-- show burguer menu when login -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars text-white"></i>
+  </button>
+
+
         <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
@@ -26,9 +30,21 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+
+
+<!-- WAITING FOR ALL THE ROUTES TO FIX THE MENU -->
+        <div class=“collapse navbar-collapse” id=“navbarSupportedContent”>
+           <ul class=“navbar-nav mr-auto list-inline”>
+             <li class=“nav-item list-inline-item”>
+               <%#= link_to “Sign up”, new_user_registration_path, :class => “nav-link text-white” %>
+
+             </li> -->
+             <li class=“nav-item list-inline-item”>
+               <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
+             </li>
+           </ul>
+         </div>
+
       <% end %>
     </ul>
   </div>

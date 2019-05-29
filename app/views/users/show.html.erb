@@ -1,2 +1,5 @@
 <h1>This is the specific user profile</h1>
 <p>@nam & @monica, this is where we display our amazing user profile :)</p>
+
+<p style="position: relative; bottom: -76px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-primary" %></p>
+
