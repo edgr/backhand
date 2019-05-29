@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-# User.destroy_all
+User.destroy_all
 
 puts "creating users"
 10.times do
@@ -39,15 +39,15 @@ puts "creating users"
   user.save!
 end
 
-  # User.create!(
-  #   first_name: 'Max',
-  #   last_name: 'Mustermann',
-  #   email: 'a@a.a',
-  #   address: 'frankfurt',
-  #   phone_number: '12345678912',
-  #   level: 'pro',
-  #   password: 'password'
-  #   )
+  User.create!(
+    first_name: 'Max',
+    last_name: 'Mustermann',
+    email: 'a@a.a',
+    address: 'frankfurt',
+    phone_number: '12345678912',
+    level: 'pro',
+    password: 'password'
+    )
 
   UserReview.create!(
     sender_id:21,
