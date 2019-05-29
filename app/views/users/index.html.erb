@@ -1,13 +1,15 @@
 <% @users.each do |user| %>
   <div class="card player-card">
     <%= cl_image_tag user.picture, height: 300, width: 400, crop: :fill %>
+    <span>WR # <%= user.ranking %></span>
     <h2><%= user.first_name %> <%= user.last_name %></h2>
     <%= user.level %>
     <%= user.style_of_play %>
-    <%= user.computed_skills_set.serve %>
-    <%= user.computed_skills_set.return %>
-    <%= user.computed_skills_set.forehand %>
-    <%= user.computed_skills_set.backhand %>
-    <%= user.computed_skills_set.volley %>
+    <span>serve</span> <%= user.computed_skills_set.serve %>
+    <span>return</span> <%= user.computed_skills_set.return %>
+    <span>forehand</span> <%= user.computed_skills_set.forehand %>
+    <span>backhand</span> <%= user.computed_skills_set.backhand %>
+    <span>volley</span> <%= user.computed_skills_set.volley %>
+    <i class="far fa-thumbs-up"><%= %></i>
   </div>
 <% end %>
