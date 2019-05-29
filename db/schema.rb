@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_132154) do
+ActiveRecord::Schema.define(version: 2019_05_29_150237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_132154) do
     t.string "user_name"
     t.string "style_of_play"
     t.string "gender"
-    t.string "nationality"
+    t.string "country"
     t.string "picture"
     t.integer "ranking"
     t.integer "height"
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_132154) do
     t.string "handedness"
     t.string "backhand_style"
     t.bigint "club_id"
+    t.integer "review_score"
     t.index ["club_id"], name: "index_users_on_club_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
