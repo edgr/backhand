@@ -1,5 +1,48 @@
-<h1>This is the specific user profile</h1>
-<p>@nam & @monica, this is where we display our amazing user profile :)</p>
+<%= cl_image_tag @user.picture, height: 300, width: 400, crop: :fill %>
+<div class="ranking">
+  <span>WR # <%= @user.ranking %></span>
+</div>
+
+<div class="player-main-info">
+  <%= @user.first_name %>
+  <%= @user.last_name %>
+  <%= @user.level %>
+  <%= @user.style_of_play %>
+</div>
+
+<div class="player-infos">
+  <%= @user.birthday %>
+  <%= @user.place_of_birth %>
+  <%= @user.height %>
+  <%= @user.weight %>
+  <%= @user.handedness %> <%= @user.backhand_style %>
+  <%= @user.address %>
+  <%#= @user.club %>
+</div>
+<div class="player-bio">
+  <%= @user.bio %>
+</div>
+
+<div class="stats">
+  <%#= @user. %>
+</div>
+
+<div class="skills">
+  <div class="strokes">
+    <span>serve</span> <%= @user.computed_skills_set.serve %>
+    <span>return</span> <%= @user.computed_skills_set.return %>
+    <span>forehand</span> <%= @user.computed_skills_set.forehand %>
+    <span>backhand</span> <%= @user.computed_skills_set.backhand %>
+    <span>volley</span> <%= @user.computed_skills_set.volley %>
+  </div>
+  <div class="fitness">
+    <span>speed</span> <%= @user.computed_skills_set.speed %>
+    <span>power</span> <%= @user.computed_skills_set.power %>
+    <span>endurance</span> <%= @user.computed_skills_set.endurance %>
+  </div>
+</div>
+
 
 <p style="position: relative; bottom: -76px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-primary" %></p>
+
 

@@ -8,8 +8,10 @@
 require 'faker'
 
 User.destroy_all
+ComputedSkillsSet.destroy_all
 
 puts "creating users"
+url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg"
 10.times do
   user = User.new(
     first_name: Faker::Name.first_name,
@@ -25,7 +27,7 @@ puts "creating users"
     style_of_play: ["baseliner", "attacker", "baseliner","server-volleyer","puncher"].sample,
     gender: Faker::Gender.binary_type,
     nationality: Faker::Nation.nationality,
-    picture: Faker::Avatar.image,
+    picture: ["image/upload/v1559135396/tesurlfse9em5ngtdd7c.png"].sample,
     ranking: rand(1..1000),
     height: rand(150..200),
     weight: rand(50..100),
@@ -36,7 +38,8 @@ puts "creating users"
     handedness: ["righty","lefty"].sample,
     backhand_style: ["one handed backhand","two handed backhand"].sample
     )
-  user.save!
+    user.remote_picture_url = url
+    user.save
 end
 
   User.create!(
