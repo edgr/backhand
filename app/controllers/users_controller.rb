@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @reviews = UserReview.where(receiver_id: @user.id)
   end
 
   def edit

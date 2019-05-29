@@ -1,16 +1,15 @@
 .navbar-bh {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   background: $black;
   top: 0;
   position: sticky;
   width: 100%;
   z-index: 99;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-
-.navbar-bh .navbar-collapse {
-  flex-grow: 0;
-}
-
 
 
 .navbar-brand {
@@ -29,3 +28,31 @@
   }
 }
 
+
+.login-up {
+  display: flex;
+  .nav-link {
+    padding-right: 0;
+  }
+}
+
+
+.avatar-burger {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin-left: 20px;
+  #margin-left {
+  margin-left: -15px;
+  }
+  .avatar {
+  margin-top: 20px;
+  z-index: 99;
+
+  }
+}
+
+
+.fas {
+  font-size: 26px;
+}
