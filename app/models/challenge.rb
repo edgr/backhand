@@ -6,6 +6,8 @@ class Challenge < ApplicationRecord
   validates :status, presence: true
   validates :challenger, :challengee, presence: true
 
+  scope :played, -> { where(status: 'Played') }
+
   def other_user(current_user)
     [challenger, challengee].find { |user| user != current_user }
   end

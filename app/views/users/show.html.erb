@@ -1,3 +1,6 @@
+<h1>This is the specific user profile</h1>
+<p>@nam & @monica, this is where we display our amazing user profile :)</p>
+
 <%= cl_image_tag @user.picture, height: 300, width: 400, crop: :fill %>
 <div class="ranking">
   <span>WR # <%= @user.ranking %></span>
@@ -24,7 +27,9 @@
 </div>
 
 <div class="stats">
-  <%#= @user. %>
+  <%= @user.all_challenges.count %>
+  <%= @user.challenges_won.count %>
+  <%= @user.challenges_lost.count %>
 </div>
 
 <div class="skills">
@@ -52,7 +57,3 @@
     <p><%= link_to 'Delete Comment', user_user_review_path(current_user, review), :method => :delete, :data => {:confirm => "Do you really want to delete this comment?"} %></p>
   <% end %>
 <% end %>
-
-
-
-
