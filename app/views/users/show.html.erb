@@ -3,3 +3,16 @@
 
 <p style="position: relative; bottom: -76px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-primary" %></p>
 
+<hr>
+
+
+<h3>Comments:</h3>
+<% @reviews.each do |review| %>
+  <p><%= review.content %></p>
+  <% if current_user.id == review.sender_id %>
+    <p><%= link_to 'Delete Comment', user_user_review_path(current_user, review), :method => :delete, :data => {:confirm => "Do you really want to delete this comment?"} %></p>
+  <% end %>
+<% end %>
+
+
+

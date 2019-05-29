@@ -1,10 +1,7 @@
 class UserReviewsController < ApplicationController
-  def show
-    @review = Review.find(params[:challenge_id])
-  end
+  before_action :set_receiver, only: [:create]
 
   def create
-    set_receiver
     @review = Review.new
     @sender = current_user
     @challenge = Challenge.find(params[:challenge_id])
@@ -16,8 +13,8 @@ class UserReviewsController < ApplicationController
   end
 
   def destroy
-    @review.destroy
-    redirect_to user_path(@receiver)
+    UserReview.find(params[:id]).destroy
+    redirect_to user_path(params[:user_id])
   end
 
   private
