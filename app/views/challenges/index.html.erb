@@ -1,6 +1,5 @@
 <% @challenges.each do |challenge| %>
-<%= challenge.challenger_id %>
-<%= challenge.challengee_id %>
-<%= challenge.status %>
+<p>Player: <%= challenge.challenger_id %> vs Player: <%= challenge.challengee_id %></p>
+ <p>Status: <%= challenge.status %></p>
 <br>
 <% end %>

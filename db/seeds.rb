@@ -52,4 +52,20 @@ end
     password: 'password'
     )
 
+  UserReview.create!(
+    sender_id:21,
+    receiver_id:1,
+    challenge_id:1,
+    content: "was fun playing",
+    serve: 5,
+    return: 5,
+    backhand: 5,
+    forehand: 5,
+    volley: 5,
+    speed: 5,
+    power: 5,
+    endurance:5,
+    thumb: true
+    )
+
 puts "Finished creating users"
