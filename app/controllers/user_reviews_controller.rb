@@ -13,12 +13,11 @@ class UserReviewsController < ApplicationController
     else
       redirect_to challenge_user_review_path(@receiver)
     end
-
   end
 
   def destroy
     @review.destroy
-    redirect_to user_path(@sender)
+    redirect_to user_path(@receiver)
   end
 
   private
