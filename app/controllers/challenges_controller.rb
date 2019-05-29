@@ -11,29 +11,31 @@ class ChallengesController < ApplicationController
 
   def create
     @challenge = Challenge.new
+    @challenger = current_user
+    @challengee = User.find(params[:id])
     if @challenge.save
       redirect_to challenge_path(@challenge)
     else
-      render # showpage of users controller
+      redirect_to user_path(@challengee)
     end
   end
 
   def accept
     @challenge.status = "Accepted"
     @challenge.save
-    redirect_to
+    redirect_to # other challenge show page
   end
 
   def decline
     @challenge.status = "Declined"
     @challenge.save
-    redirect_to
+    redirect_to challenge_path
   end
 
   def cancel
-    @challenge.statur = "Canceled"
+    @challenge.status = "Canceled"
     @challenge.save
-    redirect_to
+    redirect_to challenge_path
   end
 
   private

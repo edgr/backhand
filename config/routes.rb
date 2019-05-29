@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   devise_for :users
-  resources :challenges, only: [:index, :show, :create]
+  resources :challenges, only: [:index, :show, :create] do
+    resources :user_reviews, only: [:show, :create, :destroy]
+  end
 
   patch 'challenge/:id/accept', to: 'challenge#accept', as: :accept_challenge
   patch 'challenge/:id/decline', to: 'challenge#decline', as: :decline_challenge

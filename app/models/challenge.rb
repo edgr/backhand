@@ -6,6 +6,10 @@ class Challenge < ApplicationRecord
   validates :status, presence: true, default: 'Pending'
   validates :challenger, :challengee, presence: true
 
+  def other_user(current_user)
+    [challenger, challengee].find { |user| user != current_user }
+  end
+
   private
 
   def difference_of_players
