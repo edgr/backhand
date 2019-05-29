@@ -4,7 +4,6 @@ class ChallengesController < ApplicationController
 
   def index
     @challenges = Challenge.all
-    # @dresses = policy_scope(Dress).where(user: current_user)
   end
 
   def show
@@ -19,8 +18,7 @@ class ChallengesController < ApplicationController
       @challenge.save
       redirect_to challenge_path(@challenge)
     else
-      # redirect_to user_path(@challengee)
-      redirect_to challenges_path(@challengee)
+      redirect_to user_path(@challenge.challengee)
     end
   end
 
