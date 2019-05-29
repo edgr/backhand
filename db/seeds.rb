@@ -11,9 +11,9 @@ User.destroy_all
 ComputedSkillsSet.destroy_all
 
 puts "creating users"
-users = []
+url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg"
 10.times do
-  users << User.create(
+  user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
@@ -27,7 +27,7 @@ users = []
     style_of_play: ["baseliner", "attacker", "baseliner","server-volleyer","puncher"].sample,
     gender: Faker::Gender.binary_type,
     nationality: Faker::Nation.nationality,
-    picture: ["https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg", "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/nadal_m7vz84.jpg"].sample,
+    picture: ["image/upload/v1559135396/tesurlfse9em5ngtdd7c.png"].sample,
     ranking: rand(1..1000),
     height: rand(150..200),
     weight: rand(50..100),
@@ -38,5 +38,7 @@ users = []
     handedness: ["righty","lefty"].sample,
     backhand_style: ["one handed backhand","two handed backhand"].sample
     )
+    user.remote_picture_url = url
+    user.save
 end
 puts "Finished creating users"
