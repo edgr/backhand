@@ -5,7 +5,7 @@ class UserReviewsController < ApplicationController
     @review = Review.new
     @sender = current_user
     @challenge = Challenge.find(params[:challenge_id])
-    if @review.safe
+    if @review.save
       redirect_to user_path(@receiver)
     else
       redirect_to challenge_user_review_path(@receiver)
