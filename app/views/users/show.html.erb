@@ -41,3 +41,8 @@
     <span>endurance</span> <%= @user.computed_skills_set.endurance %>
   </div>
 </div>
+
+
+<p style="position: relative; bottom: -76px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-primary" %></p>
+
+

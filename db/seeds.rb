@@ -41,4 +41,15 @@ url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hx
     user.remote_picture_url = url
     user.save
 end
+
+  User.create!(
+    first_name: 'Max',
+    last_name: 'Mustermann',
+    email: 'a@a.a',
+    address: 'frankfurt',
+    phone_number: '12345678912',
+    level: 'pro',
+    password: 'password'
+    )
+
 puts "Finished creating users"
