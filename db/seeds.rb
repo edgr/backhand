@@ -8,7 +8,6 @@
 require 'faker'
 
 User.destroy_all
-ComputedSkillsSet.destroy_all
 
 puts "creating users"
 url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg"
@@ -42,7 +41,7 @@ url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hx
     user.save
 end
 
-  User.create!(
+  max = User.create!(
     first_name: 'Max',
     last_name: 'Mustermann',
     email: 'a@a.a',
@@ -52,16 +51,26 @@ end
     password: 'password'
     )
 
-  Challenge.create!(
-    challenger_id: 1,
-    challengee_id: 2,
+  bob = User.create!(
+    first_name: 'Bob',
+    last_name: 'Sponge',
+    email: 'b@b.b',
+    address: 'frankfurt',
+    phone_number: '12345678912',
+    level: 'pro',
+    password: 'password'
+    )
+
+  challenge = Challenge.create!(
+    challenger_id: max.id,
+    challengee_id: bob.id,
     status: "pending"
     )
 
   UserReview.create!(
-    sender_id:2,
-    receiver_id:1,
-    challenge_id:1,
+    sender_id: max.id,
+    receiver_id: bob.id,
+    challenge_id: challenge.id,
     content: "was fun playing",
     serve: 5,
     return: 5,
