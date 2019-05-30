@@ -1,0 +1,22 @@
+<div class="main-container">
+  <div class="row">
+    <div class="form-login col-sm-12 col-md-4 offset-md-4">
+
+      <h2>Step 2: Account Details</h2>
+
+      <%= simple_form_for(current_user, url:sign_up_path(current_user), method: :get) do |f| %>
+        <div class="form-inputs form-label">
+          <%= f.input :first_name, label: "YOUR FIRST NAME" %>
+          <%= f.input :last_name, label: "YOUR LAST NAME" %>
+          <%= f.input :level, :collection => %w[Beginner Intermediate Advanced Semi-pro Pro], label:"PICK YOUR LEVEL" %>
+          <%= f.input :address, label:"ENTER YOUR ADDRESS" %>
+          <%= f.input :phone_number, label:"ENTER YOUR PHONE NUMBER" %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Next", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

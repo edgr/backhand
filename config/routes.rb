@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
+
+  resources :sign_ups
+  resources :finish_profiles
+
   resources :challenges, only: [:index, :show] do
     resources :user_reviews, only: [:show, :create]
   end
@@ -17,5 +21,3 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-
