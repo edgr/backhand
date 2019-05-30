@@ -52,8 +52,14 @@ end
     password: 'password'
     )
 
+  Challenge.create!(
+    challenger_id: 1,
+    challengee_id: 2,
+    status: "pending"
+    )
+
   UserReview.create!(
-    sender_id:21,
+    sender_id:2,
     receiver_id:1,
     challenge_id:1,
     content: "was fun playing",
