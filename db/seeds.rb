@@ -26,7 +26,7 @@ url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hx
     user_name: "@#{Faker::Lorem.word}",
     style_of_play: ["baseliner", "attacker", "baseliner","server-volleyer","puncher"].sample,
     gender: Faker::Gender.binary_type,
-    nationality: Faker::Nation.nationality,
+    country: Faker::Address.country,
     picture: ["image/upload/v1559135396/tesurlfse9em5ngtdd7c.png"].sample,
     ranking: rand(1..1000),
     height: rand(150..200),
