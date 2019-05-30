@@ -43,6 +43,7 @@
   <div class="row p-1">
 
     <% @users.each do |user| %>
+    <%= link_to 'TEST', user_path(user) %>
       <div class="col-6 p-1">
         <div class="player-card">
 
