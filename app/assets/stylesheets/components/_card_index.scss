@@ -21,6 +21,8 @@
 
 .ranking {
   position: absolute;
+  display: flex;
+  align-items: baseline;
   color: $black;
   font-weight: bold;
   font-size: 10px;
@@ -29,7 +31,15 @@
   right: 0px;
   bottom: 0px;
   border-top-left-radius: 5px;
-  padding: 5px;
+  padding-right: 6px;
+  padding-left: 6px;
+  .rank {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 18px;
+    margin-left: 3px;
+    color: white;
+    text-shadow: 0.5px 0.5px 2px black;
+  }
 }
 
 
