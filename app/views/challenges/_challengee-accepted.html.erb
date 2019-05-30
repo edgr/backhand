@@ -1,0 +1,10 @@
+<h1>Challengee accepted</h1>
+<h1><%= @challenge.challenger_id %> vs <%= @challenge.challengee_id %></h1>
+<h2>You have accepted Roger's challenge.</h2>
+<h3><%= @challenge.status %></h3>
+
+<p><%= link_to "Cancel Challenge", decline_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to decline the Challenge?"}%></p>
+<p><%= link_to "Contact Player", accept_challenge_path(@challenge), :method => :patch, class: "btn btn-primary" %></p>
+
+<hr>
+<p><%= link_to "Back to all your challenges", challenges_path, :method => :get %></p>
