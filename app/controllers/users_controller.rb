@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     if params[:search].present?
+      params[:search].delete("")
       @users = User.search_user_fields(params[:search])
     else
       @users = User.all
