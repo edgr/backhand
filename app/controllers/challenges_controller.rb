@@ -30,7 +30,7 @@ class ChallengesController < ApplicationController
   def accept
     @challenge.status = "Accepted"
     @challenge.save
-    redirect_to challenges_path(@challenge)
+    redirect_to challenge_path(@challenge)
   end
 
   def decline
