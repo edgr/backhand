@@ -1,3 +1,46 @@
+<div class="container">
+
+  <%= simple_form_for :search, url: users_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[]" id="search_query" value="<%= params[:search]&.join(" ")%>" />
+      <button name="button" type="button" id="button-inside" class="btn btn-flat align-middle" data-toggle="modal" data-target="#exampleModal">
+      Filter
+      </button>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Filter your results</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= f.input :location, input_html: {name: "search[]"} , as: :string%>
+          <div class="d-flex inline justify-content-between">
+            <%= f.input :first_name, input_html: {name: "search[]", class: "form-control inline"}  %>
+            <%= f.input :last_name, input_html: {name: "search[]", class: "form-control"} %>
+          </div>
+          <%= f.input :level, input_html: {name: "search[]"} , collection: ['Beginner','Intermediate','Advanced','Semi-Pro','Pro'] %>
+          <%= f.input :style_of_play, input_html: {name: "search[]"} , collection: ['Grinder','Baseliner','Server-Volleyer','Attacker','Puncher'] %>
+          <%#= f.input :country, input_html: {name: "search[]"}  %>
+          <div class="d-flex inline justify-content-between">
+            <%= f.input :handedness, as: :check_boxes, input_html: {name: "search[]"} , collection: ['Righty','Lefty'], wrapper: :vertical_collection_inline %>
+            <%= f.input :backhand_style, as: :check_boxes, input_html: {name: "search[]"} , collection: ['One handed','Two handed'], wrapper: :vertical_collection_inline %>
+          </div>
+          <%= f.input :gender, as: :check_boxes, input_html: {name: "search[]"} , collection: ['Male','Female'], wrapper: :vertical_collection_inline %>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit "Search", class: "btn btn-primary btn-lg w-100" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container-fluid">
   <div class="row p-1">
 
@@ -68,4 +111,3 @@
       </div>
     <% end %>
   </div>
-</div>

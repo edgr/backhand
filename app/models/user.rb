@@ -34,6 +34,10 @@ class User < ApplicationRecord
     Challenge.where(loser: self.id.to_s)
   end
 
+  include PgSearch
+  pg_search_scope :search_user_fields,
+    against: [ :address, :level, :first_name, :last_name, :style_of_play, :gender, :country, :ranking, :handedness, :backhand_style, :review_score, :club_id]
+
   private
 
   def set_skills
