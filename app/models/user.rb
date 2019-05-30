@@ -5,11 +5,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :sent_reviews, class_name: 'UserReview'
-  has_many :received_reviews, class_name: 'UserReview'
+  has_many :sent_reviews, class_name: 'UserReview', foreign_key: :sender_id, dependent: :destroy
+  has_many :received_reviews, class_name: 'UserReview', foreign_key: :receiver_id, dependent: :destroy
 
-  has_many :sent_challenges, class_name: 'Challenge', foreign_key: :challenger_id
-  has_many :received_challenges, class_name: 'Challenge', foreign_key: :challengee_id
+  has_many :sent_challenges, class_name: 'Challenge', foreign_key: :challenger_id, dependent: :destroy
+  has_many :received_challenges, class_name: 'Challenge', foreign_key: :challengee_id, dependent: :destroy
 
   has_many :tags, through: :user_tags
 

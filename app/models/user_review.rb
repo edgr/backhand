@@ -19,6 +19,6 @@ class UserReview < ApplicationRecord
   def set_receiver_score
     total_size = receiver.received_reviews.length
     thumbs_up = receiver.received_reviews.count { |review| review.thumb? }
-    user.review_score = total_size / thumbs_up
+    receiver.review_score = total_size / thumbs_up
   end
 end
