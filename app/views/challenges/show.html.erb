@@ -1,7 +1,13 @@
-<% if current_user == @challenge.challenger %>
-  <%= render partial: "sender" %>
+<% if @challenge.challenger == current_user %>
+    <% if @challenge.status == "Pending" %>
+    <%= render partial: "challenger-pending" %>
+  <% else %>
+    <%= render partial: "challenger-accepted" %>
+  <% end %>
 <% else %>
-  <%= render partial: "receiver" %>
+  <% if @challenge.status == "Pending"  %>
+    <%= render partial: "challengee-pending" %>
+  <% else %>
+    <%= render partial: "challengee-accepted" %>
+  <% end %>
 <% end %>
-
-

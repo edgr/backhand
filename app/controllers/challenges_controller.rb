@@ -7,6 +7,11 @@ class ChallengesController < ApplicationController
   end
 
   def show
+    if @challenge.status == "Accepted" || @challenge.status == "Pending"
+      @challenge
+    else
+      redirect_to challenges_path
+    end
   end
 
   def create
