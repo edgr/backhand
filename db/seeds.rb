@@ -12,7 +12,7 @@ ComputedSkillsSet.destroy_all
 
 puts "creating users"
 url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg"
-10.times do
+5.times do
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
