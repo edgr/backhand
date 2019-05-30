@@ -9,9 +9,8 @@
 
   <div class="container text-left">
     <br>
-    <%= simple_form_for :search, url: users_path, method: "get" do |f| %>
-      <%= f.input :location, as: :string, required: false, input_html: {class: "form-control"}%>
-      <%= f.input :partner_level, required: false, collection: ['Beginner','Intermediate','Advanced','Semi-Pro','Pro'], input_html: {class: "form-control"} %>
+      <%= simple_form_for :search, url: users_path, method: "get" do |f| %>
+        <%= f.input :input, as: :string, required: false, input_html: { class: "form-control", value: params[:search]&.join(" "), name: 'search[]'} %>
       <%= f.submit "Search", class: "btn btn-primary btn-lg w-100" %>
     <% end %>
   </div>

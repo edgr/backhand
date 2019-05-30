@@ -1,15 +1,48 @@
-<% @users.each do |user| %>
-  <div class="card player-card">
-    <%= cl_image_tag user.picture, height: 300, width: 400, crop: :fill %>
-    <span>WR # <%= user.ranking %></span>
-    <h2><%= user.first_name %> <%= user.last_name %></h2>
-    <%= user.level %>
-    <%= user.style_of_play %>
-    <span>serve</span> <%= user.computed_skills_set.serve %>
-    <span>return</span> <%= user.computed_skills_set.return %>
-    <span>forehand</span> <%= user.computed_skills_set.forehand %>
-    <span>backhand</span> <%= user.computed_skills_set.backhand %>
-    <span>volley</span> <%= user.computed_skills_set.volley %>
-    <i class="far fa-thumbs-up"><%= %></i>
-  </div>
+<%= simple_form_for :search, url: users_path, method: "get" do |f| %>
+<%= f.input :input, as: :string, required: false, input_html: { class: "form-control", value: params[:search].join(" "), name: 'search[]'} %>
+<%= f.input :location, input_html: {name: "search[]"} , as: :string%>
+<%= f.input :first_name, input_html: {name: "search[]"}  %>
+<%= f.input :last_name, input_html: {name: "search[]"} %>
+<%= f.input :level, input_html: {name: "search[]"} , collection: ['Beginner','Intermediate','Advanced','Semi-Pro','Pro'] %>
+<%= f.input :style_of_play, input_html: {name: "search[]"} , collection: ['Grinder','Baseliner','Server-Volleyer','Attacker','Puncher'] %>
+<%= f.input :gender, input_html: {name: "search[]"} , collection: ['Male','Female']%>
+<%#= f.input :country, input_html: {name: "search[]"}  %>
+<%= f.input :ranking, input_html: {name: "search[]"} , collection: ['Beginner','Intermediate','Advanced','Semi-Pro','Pro']  %>
+<%= f.input :handedness, input_html: {name: "search[]"} , collection: ['Righty','Lefty']   %>
+<%= f.input :backhand_style, input_html: {name: "search[]"} , collection: ['One handed','Two handed'] %>
+<%= f.input :ranking, input_html: {name: "search[]"}  %>
+<%= f.input :review_score, input_html: {name: "search[]"}  %>
+
+<%= f.submit "Search", class: "btn btn-primary btn-lg w-100" %>
 <% end %>
+
+<div class="results">
+  <% @users.each do |user| %>
+    <div class="card player-card">
+      <%= cl_image_tag user.picture, height: 300, width: 400, crop: :fill %>
+      <span>WR # <%= user.ranking %></span>
+      <h2><%= user.first_name %> <%= user.last_name %></h2>
+      <%= user.level %>
+      <%= user.style_of_play %>
+      <span>serve</span> <%= user.computed_skills_set.serve %>
+      <span>return</span> <%= user.computed_skills_set.return %>
+      <span>forehand</span> <%= user.computed_skills_set.forehand %>
+      <span>backhand</span> <%= user.computed_skills_set.backhand %>
+      <span>volley</span> <%= user.computed_skills_set.volley %>
+      <i class="far fa-thumbs-up"><%= %></i>
+    </div>
+  <% end %>
+</div>
+
+<!-- :address
+     :level
+     :first_name
+     :last_name
+     :style_of_play
+     :gender
+     :country
+     :ranking
+     :handedness
+     :backhand_style
+     :review_score
+     :club_id] -->
