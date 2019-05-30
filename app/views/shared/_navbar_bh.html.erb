@@ -12,10 +12,16 @@
       <div class="dropdown-menu dropdown-menu-right">
         <div class="avatar-burger">
           <%= image_tag "nadal.jpg", class: "avatar"%>
-          <button class="dropdown-item" id="margin-left" type="button">My profile</button>
+          <button class="dropdown-item" id="margin-left" type="button">
+            My profile
+          </button>
         </div>
-        <button class="dropdown-item" type="button">Search partners</button>
-        <button class="dropdown-item" type="button">Challenges</button>
+        <button class="dropdown-item" type="button">
+          Search partners
+        </button>
+        <button class="dropdown-item" type="button">
+          Challenges
+        </button>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 
       </div>

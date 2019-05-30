@@ -9,18 +9,28 @@
 
   <div class="container text-left">
     <br>
-  <%#= simple_form_for :search, url: dresses_path, method: "get" do |f| %>
-      <%#= f.input :where, as: :string, required: false, input_html: {class: "form-control"}%>
-      <%#= f.input :size, required: false, collection: ['XS','S','M','L','XL'], input_html: {class: "form-control"} %>
-      <%#= f.button :submit, "Search", class: "btn btn-primary btn-lg w-100" %>
-    <%# end %>
 
-    <p>LOCATION</p>
-    <br>
-    <p>PARTNER LEVEL</p>
-    <%= link_to "Search", new_user_session_path, class: "btn btn-primary btn-lg w-100" %>
-    <%#= link_to "Sign up", new_user_registration_path, class: "btn btn-danger" %>
+      <%= simple_form_for :search, url: users_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string" type="text" name="search[]" id="search_query" />
+          <button name="button" type="submit" id="button-inside" class="btn btn-flat align-middle">
+            Search
+          </button>
+      </div>
+      <% end %>
+
+
+
+
+
+
+
+
+      <%#= simple_form_for :search, url: users_path, method: "get" do |f| %>
+
+        <%#= f.input :input, as: :string, required: false, input_html: { class: "form-control", value: params[:search]&.join(" "), name: 'search[]'} %>
+
+      <%#= f.submit "Search", class: "btn btn-primary btn-lg w-100" %>
+    <%# end %>
   </div>
 </div>
-
-
