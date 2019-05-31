@@ -1,11 +1,12 @@
-<h1>Challengee pending</h1>
-<h1><%= @challenge.challenger_id %> vs <%= @challenge.challengee_id %></h1>
-<h2>Roger has challenged you.</h2>
-<h3><%= @challenge.status %></h3>
+<div class="challenge-pres">
+  <h1><%= @challengee.first_name %> vs <%= @challenger.first_name %></h1>
+</div>
+
+<div class="challenge-info">
+  <h3><%= @challenge.status %></h3>
+  <h2><%= @challenger.first_name %> has challenged you.</h2>
+</div>
 
 <p><%= link_to "Decline Challenge", decline_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to decline the Challenge?"}%></p>
 
 <p><%= link_to "Accept & Contact Player", accept_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Would you like to accept the challenge?"}, class: "btn btn-primary" %></p>
-
-<hr>
-<p><%= link_to "Back to all your challenges", challenges_path, :method => :get %></p>
