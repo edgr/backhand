@@ -1,8 +1,24 @@
 <% @challenges.each do |challenge| %>
-<p>Player: <%= challenge.challenger_id %> vs Player: <%= challenge.challengee_id %></p>
- <p>Status: <%= challenge.status %></p>
- <p> <%= link_to "show more", challenge_path(challenge), :method => :get  %></p>
-<br>
+<div class="challenge-card">
+  <!-- I, Max, am the challenger -->
+  <% if challenge.challenger_id == current_user.id %>
+    <span>Sent</span>
+    <%= image_tag "nadal.jpg", class: "avatar"%>
+    <% challengee = User.find(challenge.challengee_id) %>
+    <span><%= challengee.first_name %> <%= challengee.last_name %> </span>
+
+  <!-- I, Max, am the challengee -->
+  <% else %>
+    <span>Received</span>
+    <%= image_tag "nadal.jpg", class: "avatar"%>
+    <% challenger = User.find(challenge.challenger_id) %>
+    <span><%= challenger.first_name %> <%= challenger.last_name %> </span>
+  <% end %>
+
+  <span>Status: <%= challenge.status %></span>
+  <span> <%= link_to "test", challenge_path(challenge), :method => :get  %></span>
+  <br>
+</div>
 <% end %>
 
 
