@@ -4,20 +4,47 @@
 
       <h2>Step 3: Finish your profile</h2>
 
-      <%= simple_form_for(current_user, url:sign_up_path(current_user), method: :get) do |f| %>
+      <%= simple_form_for(current_user, url:finish_profile_path(current_user), method: :patch) do |f| %>
         <div class="form-inputs form-label">
-          <%= f.input :bio, label: "TELL US SOMETHING ABOUT YOURSELF" %>
-          <%= f.input :place_of_birth, :collection => %w[Beginner Intermediate Advanced Semi-pro Pro], label:"PLACE OF BIRTH" %>
-          <%= f.input :style_of_play, :collection => %w[baseliner attacker baseliner server-volleyer puncher], label:"WHAT IS YOUR STYLE OF PLAY" %>
-          <%= f.input :gender, label:"PUT IN YOUR GENDER" %>
-          <%= f.input :height, label:"PUT IN YOUR HEIGHT" %>
-          <%= f.input :weight, label:"PUT IN YOUR WEIGHT" %>
-          <%= f.input :country, label:"NATIONALITY" %>
-          <%= f.input :picture, label:"PICTURE" %>
-          <%= f.input :handedness, :collection => %w[righty lefty], label:"ARE YOU A RIGHTY OR LEFTY" %>
-          <%= f.date :birthday, label:"PUT IN YOUR BIRTHDAY" %>
-          <%= f.input :backhand_style, :collection => %w[one handed backhand two handed backhand], label:"" %>
-          <%= f.input :club, label:"PUT IN YOUR CLUB" %>
+          <label class="form-control-label select optional" for="user_style_of_play">PICTURE</label>
+          <%= f.file_field :image,
+                           label:"PICTURE" %>
+          <%= f.input :style_of_play,
+                      :collection => %w[baseliner attacker baseliner server-volleyer puncher],
+                      label:"WHAT IS YOUR STYLE OF PLAY" %>
+          <%= f.input :handedness,
+                      :collection => %w[righty lefty],
+                      label:"ARE YOU A RIGHTY OR LEFTY" %>
+          <%= f.input :backhand_style,
+                      :collection => %w[one handed backhand two handed backhand],
+                      label:"WHAT IS YOUR BACKHAND STYLE" %>
+          <%= f.input :club_id,
+                      label:"PUT IN YOUR CLUB" %>
+          <%= f.input :gender,
+                      :collection => %w[Male Female Divers],
+                      label:"PUT IN YOUR GENDER" %>
+          <div class="d-flex justify-content-between">
+            <%= f.input :height,
+                        label:"PUT IN YOUR HEIGHT" %>
+            <%= f.input :weight,
+                        label:"PUT IN YOUR WEIGHT" %>
+          </div>
+          <%= f.input :birthday,
+                      :as => :date,
+                      :start_year => Date.today.year - 26,
+                      :end_year => 1940,
+                      :order => [ :day, :month, :year],
+                      label:"PUT IN YOUR BIRTHDAY" %>
+          <%= f.input :place_of_birth,
+                      label:"PLACE OF BIRTH",
+                      :placeholder => "Your Hometown" %>
+          <%= f.country_select :country,
+                      collection: @continents,
+                      as: :grouped_select,
+                      group_method: :countries,
+                      label:"NATIONALITY" %>
+          <%= f.input :bio,
+                      label: "TELL US MORE ABOUT YOURSELF" %>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "Save", class: "btn btn-primary" %>
@@ -26,4 +53,7 @@
     </div>
   </div>
 </div>
+
+
+
 
