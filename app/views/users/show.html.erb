@@ -1,19 +1,29 @@
 
 <div class="container">
-  <%= link_to 'back to search', users_path %>
-  <div class="player-banner">
-    <%= cl_image_tag @user.picture, height: 300, width: 400, crop: :fill %>
-    <div class="ranking">
-      <span>WR # <%= @user.ranking %></span>
+  <%= link_to '< back to search', users_path, class:"back" %>
+
+
+  <div class="pic-b">
+    <%= cl_image_tag @user.picture, class:"img-b" %>
+    <div class="ranking-b">
+      <span>WR</span>
+      <div class="rank-b">#<%= @user.ranking %></div>
     </div>
   </div>
 
-  <div class="player-main-info">
-    <%= @user.first_name %>
-    <%= @user.last_name %>
-    <span class="flag-icon flag-icon-gr">FLAG HERE</span>
-    <%= @user.level %>
+  <div class="name-flag-b">
+   <h2><%= @user.first_name %><%= @user.last_name %></h2>
+   <%= cl_image_tag @user.picture, class:"flag-b" %>
+    <!-- <span class="flag-icon flag-icon-gr">FLAG HERE</span> -->
+  </div>
+
+  <div class="skills-b">
+    <div class="blue-box-b">
+      <%= @user.level %>
+    </div>
+    <div class="blue-box-b">
     <%= @user.style_of_play %>
+    </div>
   </div>
 
   <div class="player-infos">
