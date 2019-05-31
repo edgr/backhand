@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container show">
   <%= link_to '< back to search', users_path, class:"back" %>
 
 
@@ -16,7 +16,6 @@
    <%= cl_image_tag @user.picture, class:"flag-b" %>
     <!-- <span class="flag-icon flag-icon-gr">FLAG HERE</span> -->
   </div>
-
   <div class="skills-b">
     <div class="blue-box-b">
       <%= @user.level %>
@@ -25,6 +24,10 @@
     <%= @user.style_of_play %>
     </div>
   </div>
+
+
+
+
 
   <div class="player-infos">
     <%= @user.birthday %>
@@ -39,26 +42,120 @@
     <%= @user.bio %>
   </div>
 
-  <div class="stats">
-    <%= @user.all_challenges.count %>
-    <%= @user.challenges_won.count %>
-    <%= @user.challenges_lost.count %>
+
+<!-- Rankings & Stats -->
+<div class="rankings">
+  <h3>Rankings & Stats</h3>
+
+  <div class="wr">
+    <p>world mixed ranking</p>
+    <div class="rank-b">#<%= @user.ranking %></div>
   </div>
 
-  <div class="skills">
-    <div class="strokes">
-      <span>serve</span> <%= @user.computed_skills_set.serve %>
-      <span>return</span> <%= @user.computed_skills_set.return %>
-      <span>forehand</span> <%= @user.computed_skills_set.forehand %>
-      <span>backhand</span> <%= @user.computed_skills_set.backhand %>
-      <span>volley</span> <%= @user.computed_skills_set.volley %>
+
+
+
+
+
+
+
+    <div class="stats">
+      <%= @user.all_challenges.count %>
+      <%= @user.challenges_won.count %>
+      <%= @user.challenges_lost.count %>
     </div>
-    <div class="fitness">
-      <span>speed</span> <%= @user.computed_skills_set.speed %>
-      <span>power</span> <%= @user.computed_skills_set.power %>
-      <span>endurance</span> <%= @user.computed_skills_set.endurance %>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- end Rankings & Stats -->
+
+
+<div class="skills">
+  <h3>Skills</h3>
+  <div class="strokes">
+    <div class="vertical">
+      <p>STROKES</p>
+    </div>
+    <div class="block">
+
+            <div class="group-progress-strokes">
+              <div class="line-progress-b">
+                <p>serve</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.serve)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.serve)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="line-progress-b">
+                <p>return</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.return)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.return)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="line-progress-b">
+                <p>forehand</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.forehand)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.forehand)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="line-progress-b">
+                <p>backhand</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.backhand)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.backhand)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="line-progress-b">
+                <p>volley</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.volley)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.volley)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
     </div>
   </div>
+
+  <div class="fitness">
+    <div class="vertical">
+      <p>FITNESS</p>
+    </div>
+    <div class="group-progress-fitness">
+      <div class="line-progress-b">
+        <p>speed</p>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.speed)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.speed)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+      <div class="line-progress-b">
+        <p>power</p>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.power)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.power)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+      <div class="line-progress-b">
+        <p>endurance</p>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.endurance)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.endurance)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
 
 
   <p style="position: relative; bottom: -76px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-primary" %></p>
@@ -72,4 +169,5 @@
   <% end %>
 
 </div>
+
 
