@@ -36,10 +36,7 @@ class User < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_user_fields,
-    against: [ :address, :level, :first_name, :last_name, :style_of_play, :gender, :country, :ranking, :handedness, :backhand_style, :review_score, :club_id],
-    using: {
-      tsearch: { prefix: true }
-    }
+    against: [ :address, :level, :first_name, :last_name, :style_of_play, :gender, :country, :ranking, :handedness, :backhand_style, :review_score, :club_id]
 
   private
 
