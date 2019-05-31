@@ -20,7 +20,7 @@
           Search partners
         </button>
         <button class="dropdown-item" type="button">
-          Challenges
+         <%= link_to "My Challenges" , challenges_path %>
         </button>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 
