@@ -15,8 +15,7 @@
     <span><%= challenger.first_name %> <%= challenger.last_name %> </span>
   <% end %>
 
-  <span>Status: <%= challenge.status %></span>
-  <span> <%= link_to "test", challenge_path(challenge), :method => :get  %></span>
+  <span> <%= link_to "#{challenge.status}", challenge_path(challenge), :method => :get  %></span>
   <br>
 </div>
 <% end %>
