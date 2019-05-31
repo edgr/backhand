@@ -4,7 +4,7 @@
 
       <h2>Step 2: Account Details</h2>
 
-      <%= simple_form_for(current_user, url:sign_up_path(current_user), method: :get) do |f| %>
+      <%= simple_form_for(current_user, url:sign_up_path(current_user), method: :patch) do |f| %>
         <div class="form-inputs form-label">
           <%= f.input :first_name, label: "YOUR FIRST NAME" %>
           <%= f.input :last_name, label: "YOUR LAST NAME" %>
