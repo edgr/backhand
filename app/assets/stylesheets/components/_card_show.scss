@@ -1,12 +1,8 @@
-
 .back {
   font-size: 12px;
   color: $black;
   margin-bottom: 20px;
 }
-
-
-
 
 .show {
   height: 2000px;
@@ -47,7 +43,6 @@
     text-shadow: 0.5px 0.5px 2px black;
   }
 }
-
 
 .name-flag-b {
   display: flex;
@@ -113,7 +108,7 @@
 
 .skills {
   background-color: $light-gray;
-  margin: 0;
+  margin: 0px 10px;
   padding: 0;
 
   h3 {
