@@ -1,3 +1,4 @@
+// challenges dashboard page
 .challenge-card {
   display: flex;
   padding: 16px 24px;
@@ -7,4 +8,9 @@
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 4px;
   margin: 8px;
+}
+
+// challenge view page "vs"
+.main-challenge-card {
+  clip-path: polygon(24% 0, 100% 0%, 100% 100%, 0% 100%);
 }
