@@ -2,13 +2,12 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if params[:search].delete("").empty?
+    if params[:search].reject(&:blank?).empty?
       @users = User.all
     elsif params[:search].present?
       params[:search].delete("")
       @users = User.search_user_fields(params[:search])
     end
-    return @users
   end
 
   def show
