@@ -1,4 +1,5 @@
 .challenge-card {
+  position: relative;
   display: flex;
   padding: 16px 24px;
   justify-content: space-between;
@@ -7,4 +8,46 @@
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 4px;
   margin: 8px;
+  .link {
+    text-decoration: none;
+  }
+  .avatar {
+    margin-left: 8px;
+  }
+  .date {
+    font-size: 14px;
+  }
+  .fa-arrow-up {
+    transform: rotate(45deg);
+    position: absolute;
+    margin: -22px 0px 0px -18px;
+    font-size: 14px;
+  }
+  .fa-arrow-down {
+    transform: rotate(45deg);
+    position: absolute;
+    margin: 16px 0px 0px 16px;
+    font-size: 14px;
+  }
+}
+
+.status-arrow {
+  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .fa-angle-right {
+    font-size: 16px;
+    margin-top: 4px;
+  }
+}
+
+.name-and-date {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 16px;
+  .player-name {
+    color: $black;
+  }
 }
