@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # raise
     if params[:search].reject(&:blank?).empty?
       @users = User.all
     elsif params[:search].present?
