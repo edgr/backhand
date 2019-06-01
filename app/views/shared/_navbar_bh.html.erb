@@ -9,20 +9,20 @@
     <div class="btn-group">
       <i class="fas fa-bars text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       </i>
-      <div class="dropdown-menu dropdown-menu-right">
+      <div class="dropdown-menu dropdown-menu-right" id="menu">
         <div class="avatar-burger">
-          <%= image_tag "nadal.jpg", class: "avatar"%>
-          <button class="dropdown-item" id="margin-left" type="button">
-            My profile
+          <button class="dropdown-item" id="profile-button" type="button">
+              <%= image_tag "nadal.jpg", class: "avatar"%>
+              <%= link_to "My Profile", user_path(current_user), class: "links" %>
           </button>
         </div>
-        <button class="dropdown-item" type="button">
-          Search partners
+        <button class="dropdown-item menu-button" type="button">
+          <%= link_to "Search partners", users_path, class: "links" %>
         </button>
-        <button class="dropdown-item" type="button">
-         <%= link_to "My Challenges" , challenges_path %>
+        <button class="dropdown-item menu-button" type="button">
+         <%= link_to "My Challenges", challenges_path, class: "links" %>
         </button>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item menu-button logout links" %>
 
       </div>
     </div>
