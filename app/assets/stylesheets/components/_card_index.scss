@@ -91,9 +91,11 @@
 }
 
 .progress {
+  display: flex;
+  justify-content: space-between;
   height: 0.3em;
   background-color: $gray;
-  width: 100px;
+  max-width: 70%;
 }
 
 .thumb {
