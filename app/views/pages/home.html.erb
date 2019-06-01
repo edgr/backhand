@@ -1,6 +1,7 @@
 <div class="banner">
   <div class="banner-content">
-    <h1>Find tennis players<br>around you<br>right now!</h1>
+    <h1>Challenge tennis players anywhere!</h1>
+    <p>... and get your unique international ranking!</p>
   </div>
 </div>
 
@@ -12,11 +13,11 @@
 
       <%= simple_form_for :search, url: users_path, method: :get do |f| %>
         <div class="search-form-control form-group">
-          <input class="form-control string" type="text" name="search[]" id="search_query" />
-            <button name="button" type="submit" id="button-inside" class="btn btn-flat align-middle">
-              Search
-            </button>
+          <input class="form-control string" type="text" name="search[]" id="search_query" placeholder="Search for a place or a player!" />
         </div>
+          <button name="button" type="submit" class="btn btn-flat main-cta">
+            Search
+          </button>
       <% end %>
   </div>
 </div>
