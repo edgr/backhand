@@ -1,5 +1,9 @@
 <div class="container">
   <%= link_to "Back to all your challenges", challenges_path, :method => :get %>
+<div class="vs-container">
+  <img class="current-user-vs w-50 d-inline-block" src="https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg">
+  <img class="other-user-opponent-vs w-50 d-inline-block" src="https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg">
+</div>
   <%# raise %>
   <% if @challenge.challenger == current_user %>
       <% if @challenge.status == "Pending" %>
@@ -15,3 +19,4 @@
     <% end %>
   <% end %>
 </div>
+

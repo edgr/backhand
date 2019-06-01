@@ -10,7 +10,20 @@
   margin: 8px;
 }
 
-// challenge view page "vs"
-.main-challenge-card {
+.vs-container {
+  display: flex;
+  justify-content: center;
+}
+
+// challenge view page "vs" for opponent
+.other-user-opponent-vs {
   clip-path: polygon(24% 0, 100% 0%, 100% 100%, 0% 100%);
+  // width: 40%;
+
+}
+
+.current-user-vs {
+  clip-path: polygon(0 0, 99% 0, 78% 100%, 0% 100%);
+  // width: 40%;
+  // text-align: center;
 }
