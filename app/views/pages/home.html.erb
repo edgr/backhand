@@ -6,17 +6,45 @@
 
 
 <div class="main-container">
-
   <div class="container text-left">
-    <br>
 
-      <%= simple_form_for :search, url: users_path, method: :get do |f| %>
-        <div class="search-form-control form-group">
-          <input class="form-control string" type="text" name="search[]" id="search_query" />
-            <button name="button" type="submit" id="button-inside" class="btn btn-flat align-middle">
-              Search
-            </button>
+    <%= simple_form_for :search, url: users_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string" type="text" name="search[]" id="search_query" />
+          <button name="button" type="submit" id="button-inside" class="btn btn-flat align-middle">
+            Search
+          </button>
+      </div>
+    <% end %>
+
+    <div class="row how-it-works">
+        <h2>How it works</h2>
+        <div class="explain-card">
+          <div class="card-number">
+            <p>01</p>
+          </div>
+          <div class="card-content">
+            <p>search and browse player around you</p>
+          </div>
         </div>
-      <% end %>
+        <i class="fas fa-angle-down"></i>
+        <div class="explain-card">
+          <div class="card-number">
+            <p>02</p>
+          </div>
+          <div class="card-content">
+            <p>view player's profiles and challenge them</p>
+          </div>
+        </div>
+        <i class="fas fa-angle-down"></i>
+        <div class="explain-card">
+          <div class="card-number">
+            <p>03</p>
+          </div>
+          <div class="card-content">
+            <p>organize your game and play!</p>
+          </div>
+        </div>
+    </div>
   </div>
 </div>
