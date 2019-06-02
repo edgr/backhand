@@ -18,19 +18,21 @@
           </button>
         </div>
         <div class="modal-body">
-          <%= f.input :location, input_html: {name: "search[]"} , as: :string%>
+          <%= f.input :location, required: false, input_html: {name: "search[]"} , as: :string%>
           <div class="d-flex inline justify-content-between">
-            <%= f.input :first_name, input_html: {name: "search[]", class: "form-control inline"}  %>
-            <%= f.input :last_name, input_html: {name: "search[]", class: "form-control"} %>
+            <%= f.input :first_name, required: false, input_html: {name: "search[]", class: "form-control inline"}  %>
+            <%= f.input :last_name, required: false, input_html: {name: "search[]", class: "form-control"} %>
           </div>
-          <%= f.input :level, input_html: {name: "search[]"} , collection: ['Beginner','Intermediate','Advanced','Semi-Pro','Pro'] %>
-          <%= f.input :style_of_play, input_html: {name: "search[]"} , collection: ['Grinder','Baseliner','Server-Volleyer','Attacker','Puncher'] %>
+          <div class="d-flex inline justify-content-between">
+            <%= f.input :level, required: false, input_html: {name: "search[]"} , collection: ['Beginner','Intermediate','Advanced','Semi-Pro','Pro'] %>
+            <%= f.input :style_of_play, required: false, input_html: {name: "search[]"} , collection: ['Grinder','Baseliner','Server-Volleyer','Attacker','Puncher'] %>
+          </div>
           <%#= f.input :country, input_html: {name: "search[]"}  %>
           <div class="d-flex inline justify-content-between">
-            <%= f.input :handedness, as: :check_boxes, input_html: {name: "search[]"} , collection: ['Righty','Lefty'], wrapper: :vertical_collection_inline %>
-            <%= f.input :backhand_style, as: :check_boxes, input_html: {name: "search[]"} , collection: ['One handed','Two handed'], wrapper: :vertical_collection_inline %>
+            <%= f.input :handedness, as: :check_boxes, required: false, input_html: {name: "search[]"} , collection: ['Righty','Lefty'], wrapper: :vertical_collection_inline %>
+            <%= f.input :backhand_style, as: :check_boxes, required: false, input_html: {name: "search[]"} , collection: ['One handed','Two handed'], wrapper: :vertical_collection_inline %>
           </div>
-          <%= f.input :gender, as: :check_boxes, input_html: {name: "search[]"} , collection: ['Male','Female'], wrapper: :vertical_collection_inline %>
+          <%= f.input :gender, as: :check_boxes, required: false, input_html: {name: "search[]"} , collection: ['Male','Female'], wrapper: :vertical_collection_inline %>
         </div>
         <div class="modal-footer">
           <%= f.submit "Search", class: "btn btn-primary btn-lg w-100" %>
