@@ -25,21 +25,31 @@
     </div>
   </div>
 
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <a href="#" data-target="player_info" class="tab-underlined active">Info</a>
+      </li>
+      <li>
+        <a href="#" data-target="player_bio" class="tab-underlined">Bio</a>
+      </li>
+    </ul>
 
+  <div class="player-infos" id="player_info">
 
+    <div class="player-infos" style="height: 250px; margin-left: 10px; margin-right:10px">
+      <p><%= @user.birthday %></p>
+      <p><%= @user.place_of_birth %></p>
+      <p><%= @user.height %></p>
+      <p><%= @user.weight %></p>
+      <p><%= @user.handedness %> - <%= @user.backhand_style %></p>
+      <p><%= @user.address %></p>
+      <%#= @user.club %>
+    </div>
 
-
-  <div class="player-infos">
-    <%= @user.birthday %>
-    <%= @user.place_of_birth %>
-    <%= @user.height %>
-    <%= @user.weight %>
-    <%= @user.handedness %> <%= @user.backhand_style %>
-    <%= @user.address %>
-    <%#= @user.club %>
   </div>
-  <div class="player-bio">
-    <%= @user.bio %>
+
+  <div class="player-bio hidden" style="height: 250px; margin-left: 10px; margin-right:10px" id="player_bio">
+    <p><%= @user.bio %></p>
   </div>
 
 
@@ -52,6 +62,11 @@
     <div class="rank-b">#<%= @user.ranking %></div>
   </div>
 
+  <div class="stats">
+    <%= @user.all_challenges.count %>
+    <%= @user.challenges_won.count %>
+    <%= @user.challenges_lost.count %>
+  </div>
 
   <div class="stats">
 
@@ -85,18 +100,9 @@
     </div>
 
   </div>
-
-
 </div>
 
-
-
-
-
-
-
 <!-- end Rankings & Stats -->
-
 
 <div class="skills">
   <h3>Skills</h3>
@@ -168,16 +174,6 @@
   </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
 
   <p style="position: relative; bottom: -76px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-primary" %></p>
 
