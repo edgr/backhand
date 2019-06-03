@@ -4,13 +4,13 @@
     <%#= raise %>
     <% if params[:search].nil? %>
     <% else %>
-    <span>Found <%= @users.length  %> players in <%= params[:search].join(" ") %></span>
+    <span><%= @users.length  %> players in <%= params[:search][:location] %></span>
     <% end %>
   </div>
 
   <%= simple_form_for :search, url: users_path, method: :get do |f| %>
   <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[]" id="search_query" />
+    <input class="form-control string required" type="text" name="search[query][]" id="search_query" value="<%= params[:search].try(:[], :query)&.join(" ") %>" />
       <button name="button" type="button" id="button-inside" class="btn btn-flat align-middle" data-toggle="modal" data-target="#exampleModal">
       Filter
       </button>
@@ -26,19 +26,18 @@
           </button>
         </div>
         <div class="modal-body">
-          <%= f.input :location, required: false, input_html: {name: "search[]"} , as: :string%>
+          <%= f.input :location, required: false, input_html: {name: "search[location]", value: params[:search][:location]} , as: :string %>
           <div class="d-flex inline justify-content-between">
-            <%= f.input :first_name, required: false, input_html: {name: "search[]", class: "form-control inline"}  %>
-            <%= f.input :last_name, required: false, input_html: {name: "search[]", class: "form-control"} %>
+            <%= f.input :first_name, required: false, input_html: {name: "search[query][]", class: "form-control inline"}  %>
+            <%= f.input :last_name, required: false, input_html: {name: "search[query][]", class: "form-control"} %>
           </div>
+          <%= f.input :level, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: ['Beginner','Intermediate','Advanced','Semi-Pro','Pro'], wrapper: :vertical_collection_inline %>
+          <%= f.input :style_of_play, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: ['Grinder','Baseliner','Server-Volleyer','Attacker','Puncher'], wrapper: :vertical_collection_inline %>
+          <%#= f.input :country, input_html: {name: "search[query][]"}  %>
+          <%= f.input :handedness, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: ['Righty','Lefty'], wrapper: :vertical_collection_inline %>
 
-          <%= f.input :level, as: :check_boxes, required: false, input_html: {name: "search[]"} , collection: ['Beginner','Intermediate','Advanced','Semi-Pro','Pro'], wrapper: :vertical_collection_inline %>
-          <%= f.input :style_of_play, as: :check_boxes, required: false, input_html: {name: "search[]"} , collection: ['Grinder','Baseliner','Server-Volleyer','Attacker','Puncher'], wrapper: :vertical_collection_inline %>
-          <%#= f.input :country, input_html: {name: "search[]"}  %>
-          <%= f.input :handedness, as: :check_boxes, required: false, input_html: {name: "search[]"} , collection: ['Righty','Lefty'], wrapper: :vertical_collection_inline %>
-
-          <%= f.input :backhand_style, as: :check_boxes, required: false, input_html: {name: "search[]"} , collection: ['One handed','Two handed'], wrapper: :vertical_collection_inline  %>
-          <%= f.input :gender, as: :check_boxes, required: false, input_html: {name: "search[]"} , collection: ['Male','Female'], wrapper: :vertical_collection_inline %>
+          <%= f.input :backhand_style, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: ['One handed','Two handed'], wrapper: :vertical_collection_inline  %>
+          <%= f.input :gender, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: ['Male','Female'], wrapper: :vertical_collection_inline %>
         </div>
         <div class="modal-footer">
           <%= f.submit "Search", class: "btn btn-primary btn-lg w-100" %>
