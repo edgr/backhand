@@ -9,55 +9,66 @@
 
 <% @challenges.each do |challenge| %>
   <div class="" id="outstanding">
+    <%= link_to challenge_path(challenge) do %>
     <div class="challenge-card">
-      <!-- I, Max, am the challenger -->
-        <% if challenge.challenger_id == current_user.id %>
-          <i class="fas fa-arrow-up"></i>
-          <% challengee = User.find(challenge.challengee_id) %>
-          <%= cl_image_tag challengee.picture, class: "avatar"%>
-          <div class="name-and-date">
-            <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %> </span>
-            <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
-          </div>
-
-        <!-- I, Max, am the challengee -->
-        <% else %>
-          <i class="fas fa-arrow-down"></i>
-          <% challenger = User.find(challenge.challenger_id) %>
-          <%= cl_image_tag challenger.picture, class: "avatar"%>
-          <div class="name-and-date">
-            <span class="player-name"><%= challenger.first_name %> <%= challenger.last_name %> </span>
-            <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
-          </div>
-        <% end %>
-
-      <!--  -->
-      <% if challenge.status == "Accepted" %>
-        <%= link_to "#{challenge.status}", challenge_path(challenge), :method => :get, class: "link-accepted" %> <i class="fas fa-angle-right"></i>
-      <% elsif challenge.status == "Pending" %>
-        <%= link_to challenge_path(challenge), :method => :get, class: "link" do %>
-        <div class="status-arrow">
-          <%= challenge.status %>
-          <i class="fas fa-angle-right"></i>
+      <% if challenge.challenger_id == current_user.id %>
+        <i class="fas fa-arrow-up"></i>
+        <% challengee = User.find(challenge.challengee_id) %>
+        <%= cl_image_tag challengee.picture, class: "avatar" %>
+        <div class="name-and-date">
+          <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %></span>
+          <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
         </div>
-        <% end %>
       <% else %>
-        <p>Declined</p>
+        <i class="fas fa-arrow-down"></i>
+        <% challenger = User.find(challenge.challenger_id) %>
+        <%= cl_image_tag challenger.picture, class: "avatar" %>
+        <div class="name-and-date">
+          <span class="player-name"><%= challenger.first_name %> <%= challenger.last_name %> </span>
+          <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
+        </div>
+      <% end %>
+
+      <% if challenge.status == "Accepted" %>
+        <span><%= challenge.status %></span>
+        <i class="fas fa-angle-right"></i>
+      <% elsif challenge.status == "Pending" %>
+        <span><%= challenge.status %></span>
+        <i class="fas fa-angle-right"></i>
+      <% else %>
+        <span><%= challenge.status %></span>
       <% end %>
     </div>
+    <% end %>
   </div>
 
   <div class="hidden" id="played">
     <% if challenge.status == "Played" %>
       <div class="challenge-card">
-        <h1>your played games</h1>
+        <% if challenge.challenger_id == current_user.id %>
+          <% challengee = User.find(challenge.challengee_id) %>
+          <%= cl_image_tag challengee.picture, class: "avatar"%>
+          <div class="name-and-date">
+            <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %> </span>
+            <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
+            <span> <%= challenge.score %></span>
+          </div>
+        <% else %>
+          <% challenger = User.find(challenge.challenger_id) %>
+          <%= cl_image_tag challenger.picture, class: "avatar"%>
+          <div class="name-and-date">
+            <span class="player-name"><%= challenger.first_name %> <%= challenger.last_name %></span>
+            <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
+            <span><%= challenge.score %></span>
+            <i class="fas fa-angle-right"></i>
+          </div>
+        <% end %>
       </div>
     <% else %>
       <h2>You have not recorded any matches.</h2>
     <% end %>
   </div>
 <% end %>
-
 
 
 
