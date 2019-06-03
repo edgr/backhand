@@ -23,6 +23,7 @@
             <%= f.input :first_name, required: false, input_html: {name: "search[]", class: "form-control inline"}  %>
             <%= f.input :last_name, required: false, input_html: {name: "search[]", class: "form-control"} %>
           </div>
+
           <%= f.input :level, as: :check_boxes, required: false, input_html: {name: "search[]"} , collection: ['Beginner','Intermediate','Advanced','Semi-Pro','Pro'], wrapper: :vertical_collection_inline %>
           <%= f.input :style_of_play, as: :check_boxes, required: false, input_html: {name: "search[]"} , collection: ['Grinder','Baseliner','Server-Volleyer','Attacker','Puncher'], wrapper: :vertical_collection_inline %>
           <%#= f.input :country, input_html: {name: "search[]"}  %>
