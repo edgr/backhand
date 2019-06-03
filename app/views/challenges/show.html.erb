@@ -2,13 +2,13 @@
   <%= link_to "Back to all your challenges", challenges_path, :method => :get %>
 
   <div class="section group">
+    <h1 id="vs">VS</h1>
     <div class="col span_1_of_2 current-user-vs user-name">
     <div class="overflow-wrap current-user-name">
       <h1><%= current_user.first_name  %></h1>
     </div>
-    <div class="vs"><h1>VS</h1></div>
     </div>
-    <div class="col span_1_of_2 other-user-opponent-vs challenger-name">
+    <div class="col span_1_of_2 other-user-opponent-vs opponent-name">
     <h1><%= @challengee.first_name %></h1>
     </div>
   </div>
