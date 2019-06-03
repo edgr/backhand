@@ -18,7 +18,7 @@
 
 // challenge view page "vs" for opponent
 .other-user-opponent-vs {
-  clip-path: polygon(6% 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%);
   margin-right: -5px;
   background-image: url("https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg");
   height: 30vh;
@@ -32,7 +32,7 @@
 
 .current-user-vs {
   top-left-radius: 4px;
-  clip-path: polygon(0 0, 100% 0, 94% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
   background-image: url("https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg");
   height: 30vh;
   background-size:     cover;
@@ -47,13 +47,30 @@
   position: absolute;
   position : absolute;
       margin-top: 50px;
-      right : -10px;
+      right : 30px;
       color: $blue;
       font-weight: bold;
       z-index: 20;
-      overflow-wrap: break-word;
+      word-break: break-all;
 
 }
+
+
+.current-user-name {
+  position: absolute;
+  bottom: 0;
+  left: 20;
+  color: white;
+}
+
+// .challenger-name {
+//   position: absolute;
+//   // bottom: 0;
+//   // right: -20;
+//   // color: white;
+// }
+
+
 // This whole sections is to display the cards next to each other and avoid becoming two rows when
 // risized to the smallest screen
 
