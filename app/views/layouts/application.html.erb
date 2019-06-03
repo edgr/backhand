@@ -3,6 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript">
+        /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+        (function(d, m){
+          var kommunicateSettings = {"appId":"2f250829294889c9441d35bb3ee2857c1","conversationTitle":"BackHand Bot","automaticChatOpenOnNavigation":true};
+          var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+          s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+          var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+          window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
     <link rel="icon" href="https://res.cloudinary.com/namhaichau/image/upload/v1559467568/backhand_favicon_r9h26v.png" type="image/png" />
     <title>BackHand | Find tennis players around you right now!</title>
     <%= csrf_meta_tags %>
