@@ -31144,3 +31144,40 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 3186ms (Views: 3064.8ms | ActiveRecord: 73.8ms)
 
 
+Started GET "/users/92" for ::1 at 2019-06-03 10:22:27 +0200
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Leo/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"92"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 92], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mChallenge Load (0.7ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challenger_id" = $1 AND "challenges"."status" = $2[0m  [["challenger_id", 92], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[36mChallenge Load (0.4ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challengee_id" = $1 AND "challenges"."status" = $2[0m  [["challengee_id", 92], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."winner" = $1[0m  [["winner", "92"]]
+  ↳ app/views/users/show.html.erb:67
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."loser" = $1[0m  [["loser", "92"]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mCACHE Challenge Load (0.2ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challenger_id" = $1 AND "challenges"."status" = $2[0m  [["challenger_id", 92], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[36mCACHE Challenge Load (0.0ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challengee_id" = $1 AND "challenges"."status" = $2[0m  [["challengee_id", 92], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."winner" = $1[0m  [["winner", "92"]]
+  ↳ app/views/users/show.html.erb:98
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."loser" = $1[0m  [["loser", "92"]]
+  ↳ app/views/users/show.html.erb:99
+  [1m[36mComputedSkillsSet Load (0.9ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 92], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:119
+  [1m[36mUserReview Load (3.4ms)[0m  [1m[34mSELECT "user_reviews".* FROM "user_reviews" WHERE "user_reviews"."receiver_id" = $1[0m  [["receiver_id", 92]]
+  ↳ app/views/users/show.html.erb:181
+  Rendered users/show.html.erb within layouts/application (289.6ms)
+  Rendered shared/_navbar_bh.html.erb (14.4ms)
+  Rendered shared/_flashes.html.erb (2.0ms)
+  Rendered shared/_footer.html.erb (2.6ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/Leo/code/edgr/backhand/public/packs
+Completed 200 OK in 23310ms (Views: 22973.4ms | ActiveRecord: 81.7ms)
+
+
