@@ -52,6 +52,7 @@
             <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %> </span>
             <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
             <span> <%= challenge.score %></span>
+            <i class="fas fa-angle-right"></i>
           </div>
         <% else %>
           <% challenger = User.find(challenge.challenger_id) %>
