@@ -50,7 +50,7 @@
             <div class="player-card">
 
               <div class="pic">
-                <%= cl_image_tag user.picture, class:"img" %>
+                <%= cl_image_tag user.try(:picture), class:"img" %>
                 <div class="ranking">
                   <span>WR</span>
                   <div class="rank"> #<%= user.ranking %></div>
