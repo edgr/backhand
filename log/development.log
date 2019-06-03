@@ -3541,3 +3541,329 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 6045ms (Views: 6013.9ms | ActiveRecord: 26.5ms)
 
 
+Started GET "/" for ::1 at 2019-06-03 15:44:43 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (75.6ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (88.6ms)
+Completed 500 Internal Server Error in 497ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `picture' for nil:NilClass):
+    12:       <div class="dropdown-menu dropdown-menu-right" id="menu">
+    13:         <div class="avatar-burger">
+    14:           <button class="dropdown-item" id="profile-button" type="button">
+    15:               <%= cl_image_tag @user.picture, class: "avatar"%>
+    16:               <%= link_to "My Profile", user_path(current_user), class: "links" %>
+    17:           </button>
+    18:         </div>
+  
+app/views/shared/_navbar_bh.html.erb:15:in `_app_views_shared__navbar_bh_html_erb___1761973682340677364_70249792071580'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__1038746027201507093_70249795346360'
+Started PUT "/__web_console/repl_sessions/08b945f5ac69145948ab8c194122a612" for ::1 at 2019-06-03 15:45:06 +0200
+Started PUT "/__web_console/repl_sessions/08b945f5ac69145948ab8c194122a612" for ::1 at 2019-06-03 15:45:10 +0200
+Started GET "/users" for ::1 at 2019-06-03 15:45:45 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:44
+  [1m[36mComputedSkillsSet Load (0.9ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 88], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 91], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 94], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (5.1ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 97], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 86], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (22.9ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 87], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.7ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 89], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 92], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 95], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 83], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 84], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 90], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (4.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 93], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (1.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 96], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 85], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 53], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (1.6ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 54], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (3.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 55], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (6.9ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 56], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 57], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (1.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 58], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (5.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 59], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (3.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 60], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (2.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 61], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 62], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (1.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 63], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 64], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.7ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 65], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 66], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 67], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (5.9ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 68], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.7ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 69], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (21.0ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 70], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (4.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 71], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 72], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 73], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (3.0ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 74], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 75], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 76], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 77], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (7.7ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 78], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 79], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 80], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 81], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 82], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  Rendered users/index.html.erb within layouts/application (1542.3ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (11.3ms)
+Completed 500 Internal Server Error in 1740ms (ActiveRecord: 119.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `picture' for nil:NilClass):
+    12:       <div class="dropdown-menu dropdown-menu-right" id="menu">
+    13:         <div class="avatar-burger">
+    14:           <button class="dropdown-item" id="profile-button" type="button">
+    15:               <%= cl_image_tag @user.picture, class: "avatar"%>
+    16:               <%= link_to "My Profile", user_path(current_user), class: "links" %>
+    17:           </button>
+    18:         </div>
+  
+app/views/shared/_navbar_bh.html.erb:15:in `_app_views_shared__navbar_bh_html_erb___1761973682340677364_70249792141940'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__1038746027201507093_70249771921380'
+Started GET "/users" for ::1 at 2019-06-03 15:46:17 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (23.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:44
+  [1m[36mComputedSkillsSet Load (10.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 88], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (10.1ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 91], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 94], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (1.7ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 97], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (2.7ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 86], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (36.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 87], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (20.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 89], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (3.1ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 92], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (23.0ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 95], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (12.9ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 83], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (1.6ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 84], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (5.9ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 90], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 93], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (3.0ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 96], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 85], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (2.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 53], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (2.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 54], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (2.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 55], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (10.1ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 56], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (15.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 57], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (13.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 58], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 59], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (2.6ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 60], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (39.1ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 61], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (7.0ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 62], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (6.0ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 63], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.7ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 64], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (2.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 65], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (13.9ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 66], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (6.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 67], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (5.9ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 68], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (67.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 69], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (3.0ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 70], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (16.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 71], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (6.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 72], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (2.1ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 73], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (3.6ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 74], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 75], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (7.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 76], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (1.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 77], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 78], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (16.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 79], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (1.7ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 80], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 81], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (1.6ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 82], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  Rendered users/index.html.erb within layouts/application (1598.7ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (27.2ms)
+Completed 500 Internal Server Error in 1947ms (ActiveRecord: 416.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `picture' for nil:NilClass):
+    12:       <div class="dropdown-menu dropdown-menu-right" id="menu">
+    13:         <div class="avatar-burger">
+    14:           <button class="dropdown-item" id="profile-button" type="button">
+    15:               <%= cl_image_tag @user.picture, class: "avatar"%>
+    16:               <%= link_to "My Profile", user_path(current_user), class: "links" %>
+    17:           </button>
+    18:         </div>
+  
+app/views/shared/_navbar_bh.html.erb:15:in `_app_views_shared__navbar_bh_html_erb___1761973682340677364_70249792421580'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__1038746027201507093_70249775086240'
+Started PUT "/__web_console/repl_sessions/3ee9e5b015124669f4817fd193b211c7" for ::1 at 2019-06-03 15:46:22 +0200
+Started PUT "/__web_console/repl_sessions/3ee9e5b015124669f4817fd193b211c7" for ::1 at 2019-06-03 15:46:23 +0200
+Started PUT "/__web_console/repl_sessions/6f8f0ded20bff9e47da944695b9efdf6" for ::1 at 2019-06-03 15:46:26 +0200
+Started PUT "/__web_console/repl_sessions/6f8f0ded20bff9e47da944695b9efdf6" for ::1 at 2019-06-03 15:46:26 +0200
+Started PUT "/__web_console/repl_sessions/6f8f0ded20bff9e47da944695b9efdf6" for ::1 at 2019-06-03 15:46:28 +0200
+Started GET "/users/96" for ::1 at 2019-06-03 15:47:04 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"96"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 96], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mChallenge Load (2.7ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challenger_id" = $1 AND "challenges"."status" = $2[0m  [["challenger_id", 96], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[36mChallenge Load (10.4ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challengee_id" = $1 AND "challenges"."status" = $2[0m  [["challengee_id", 96], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."winner" = $1[0m  [["winner", "96"]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."loser" = $1[0m  [["loser", "96"]]
+  ↳ app/views/users/show.html.erb:71
+  [1m[36mCACHE Challenge Load (0.0ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challenger_id" = $1 AND "challenges"."status" = $2[0m  [["challenger_id", 96], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[36mCACHE Challenge Load (0.0ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challengee_id" = $1 AND "challenges"."status" = $2[0m  [["challengee_id", 96], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."winner" = $1[0m  [["winner", "96"]]
+  ↳ app/views/users/show.html.erb:101
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."loser" = $1[0m  [["loser", "96"]]
+  ↳ app/views/users/show.html.erb:102
+  [1m[36mComputedSkillsSet Load (0.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 96], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:122
+  [1m[36mUserReview Load (1.0ms)[0m  [1m[34mSELECT "user_reviews".* FROM "user_reviews" WHERE "user_reviews"."receiver_id" = $1[0m  [["receiver_id", 96]]
+  ↳ app/views/users/show.html.erb:184
+  Rendered users/show.html.erb within layouts/application (792.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (8.9ms)
+  Rendered shared/_flashes.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 893ms (Views: 853.0ms | ActiveRecord: 29.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 15:47:24 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (13.8ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (91.7ms)
+Completed 500 Internal Server Error in 311ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `picture' for nil:NilClass):
+    12:       <div class="dropdown-menu dropdown-menu-right" id="menu">
+    13:         <div class="avatar-burger">
+    14:           <button class="dropdown-item" id="profile-button" type="button">
+    15:               <%= cl_image_tag @current_user.picture, class: "avatar"%>
+    16:               <%= link_to "My Profile", user_path(current_user), class: "links" %>
+    17:           </button>
+    18:         </div>
+  
+app/views/shared/_navbar_bh.html.erb:15:in `_app_views_shared__navbar_bh_html_erb___1761973682340677364_70249776474620'
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__1038746027201507093_70249792763460'
+Started GET "/" for ::1 at 2019-06-03 15:47:36 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 97], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (19.2ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 372ms (Views: 365.9ms | ActiveRecord: 1.4ms)
+
+
