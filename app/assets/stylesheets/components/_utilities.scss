@@ -11,3 +11,15 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+#fix-top{
+  position: sticky;
+  height: 50px;
+  top: 56px;
+  z-index: 99;
+  background: #ededed;
+}
+
+#played{
+  height: 80vh;
+}
