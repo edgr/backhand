@@ -1,8 +1,7 @@
+<%# raise %>
 
 <div class="container">
   <%= link_to '< back to search', users_path, class:"back" %>
-
-
   <div class="pic-b">
     <%= cl_image_tag @user.picture, class:"img-b" %>
     <div class="ranking-b">
@@ -48,12 +47,13 @@
       <p>height: <%= @user.weight %></p>
       <p>style: <%= @user.handedness %> - <%= @user.backhand_style %></p>
       <p>residence: <%= @user.address %></p>
+
       <%#= @user.club %>
     </div>
 
   </div>
 
-  <div class="player-bio hidden" style="height: 250px; margin-left: 10px; margin-right:10px" id="player_bio">
+  <div class="player-bio hidden" id="player_bio">
     <p><%= @user.bio %></p>
   </div>
 

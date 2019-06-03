@@ -1,1 +1,20 @@
+<<<<<<< HEAD
 .env*
+=======
+.bundle
+log/*.log
+tmp/**/*
+tmp/*
+!log/.keep
+!tmp/.keep
+*.swp
+.DS_Store
+public/assets
+public/packs
+public/packs-test
+node_modules
+yarn-error.log
+.byebug_history
+.env*
+server*
+>>>>>>> 3946c823198d31a4253edc2c41959d4e5409a72f

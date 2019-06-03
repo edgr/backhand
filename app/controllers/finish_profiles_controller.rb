@@ -12,7 +12,7 @@ class FinishProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:image, :style_of_play, :handedness,
+    params.require(:user).permit(:picture, :style_of_play, :handedness,
                                  :backhand_style, :club_id, :gender, :height, :weight, :birthday,
                                  :place_of_birth, :country, :bio)
   end
