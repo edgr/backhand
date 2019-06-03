@@ -34128,3 +34128,275 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 104ms (Views: 94.7ms | ActiveRecord: 6.3ms)
 
 
+Started GET "/challenges/25" for ::1 at 2019-06-03 11:34:11 +0200
+Processing by ChallengesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mChallenge Load (0.7ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:53
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:12
+  Rendering challenges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:16
+  Rendered challenges/_challenger-pending.html.erb (1.8ms)
+  Rendered challenges/show.html.erb within layouts/application (64.1ms)
+  Rendered shared/_navbar_bh.html.erb (3.7ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 2041ms (Views: 2017.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/challenges/25" for ::1 at 2019-06-03 11:37:46 +0200
+Processing by ChallengesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mChallenge Load (0.5ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:53
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:12
+  Rendering challenges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:16
+  Rendered challenges/_challenger-pending.html.erb (1.1ms)
+  Rendered challenges/show.html.erb within layouts/application (7.8ms)
+  Rendered shared/_navbar_bh.html.erb (5.4ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 71ms (Views: 63.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/challenges/25" for ::1 at 2019-06-03 11:38:04 +0200
+Processing by ChallengesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mChallenge Load (1.6ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:53
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:12
+  Rendering challenges/show.html.erb within layouts/application
+  [1m[36mUser Load (26.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:16
+  Rendered challenges/_challenger-pending.html.erb (1.1ms)
+  Rendered challenges/show.html.erb within layouts/application (59.3ms)
+  Rendered shared/_navbar_bh.html.erb (3.7ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (4.7ms)
+Completed 200 OK in 154ms (Views: 115.8ms | ActiveRecord: 29.5ms)
+
+
+Started GET "/challenges/25" for ::1 at 2019-06-03 11:38:16 +0200
+Processing by ChallengesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mChallenge Load (0.4ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:53
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:12
+  Rendering challenges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:17
+  Rendered challenges/_challenger-pending.html.erb (2.7ms)
+  Rendered challenges/show.html.erb within layouts/application (11.5ms)
+  Rendered shared/_navbar_bh.html.erb (3.4ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 76ms (Views: 69.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/challenges/25" for ::1 at 2019-06-03 11:39:37 +0200
+Processing by ChallengesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mChallenge Load (0.6ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:53
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:12
+  Rendering challenges/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:17
+  Rendered challenges/_challenger-pending.html.erb (0.8ms)
+  Rendered challenges/show.html.erb within layouts/application (8.4ms)
+  Rendered shared/_navbar_bh.html.erb (2.4ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 65ms (Views: 57.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users" for ::1 at 2019-06-03 11:40:02 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:46
+  [1m[36mComputedSkillsSet Load (0.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.9ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 17], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 19], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 20], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 21], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 22], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 23], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 24], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 25], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 27], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 28], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 29], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  Rendered users/index.html.erb within layouts/application (86.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.3ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 1962ms (Views: 1954.0ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 11:40:11 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (5.5ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 64ms (Views: 59.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2019-06-03 11:40:15 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:46
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 17], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 18], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 19], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 20], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 21], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 22], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 23], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 24], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 25], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.6ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (1.7ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 27], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 28], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 29], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:81
+  Rendered users/index.html.erb within layouts/application (47.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (2.7ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 83ms (Views: 74.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/users/16" for ::1 at 2019-06-03 11:40:17 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mChallenge Load (0.3ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challenger_id" = $1 AND "challenges"."status" = $2[0m  [["challenger_id", 16], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[36mChallenge Load (0.2ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challengee_id" = $1 AND "challenges"."status" = $2[0m  [["challengee_id", 16], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."winner" = $1[0m  [["winner", "16"]]
+  ↳ app/views/users/show.html.erb:83
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."loser" = $1[0m  [["loser", "16"]]
+  ↳ app/views/users/show.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.1ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 16], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:113
+  [1m[36mUserReview Load (2.4ms)[0m  [1m[34mSELECT "user_reviews".* FROM "user_reviews" WHERE "user_reviews"."receiver_id" = $1[0m  [["receiver_id", 16]]
+  ↳ app/views/users/show.html.erb:185
+  Rendered users/show.html.erb within layouts/application (14.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (5.8ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 59ms (Views: 51.3ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/challenges?user_id=16" for ::1 at 2019-06-03 11:40:22 +0200
+Processing by ChallengesController#create as HTML
+  Parameters: {"authenticity_token"=>"fngIEPbcUtgGTaN+tZQmTBYE+epw4boKJJlJyl54kKH3jbrmzhTNryOEoS0LI+/1G4052kgwocXq6Ic2zbOlwg==", "user_id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/challenges_controller.rb:25
+  [1m[36mChallenge Create (1.3ms)[0m  [1m[32mINSERT INTO "challenges" ("challenger_id", "challengee_id", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["challenger_id", 29], ["challengee_id", 16], ["status", "Pending"], ["created_at", "2019-06-03 09:40:22.884633"], ["updated_at", "2019-06-03 09:40:22.884633"]]
+  ↳ app/controllers/challenges_controller.rb:25
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/challenges_controller.rb:25
+Redirected to http://localhost:3000/challenges/26
+Completed 302 Found in 14ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/challenges/26" for ::1 at 2019-06-03 11:40:22 +0200
+Processing by ChallengesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mChallenge Load (0.4ms)[0m  [1m[34mSELECT  "challenges".* FROM "challenges" WHERE "challenges"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:53
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:11
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/challenges_controller.rb:12
+  Rendering challenges/show.html.erb within layouts/application
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/challenges/show.html.erb:17
+  Rendered challenges/_challenger-pending.html.erb (1.0ms)
+  Rendered challenges/show.html.erb within layouts/application (14.5ms)
+  Rendered shared/_navbar_bh.html.erb (1.5ms)
+  Rendered shared/_flashes.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 81ms (Views: 66.3ms | ActiveRecord: 7.6ms)
+
+

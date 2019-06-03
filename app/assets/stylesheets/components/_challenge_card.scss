@@ -27,11 +27,7 @@
   background-position: center center;
   border-top-right-radius: 8px;
   z-index: 2;
-
-
 }
-
-
 
 .current-user-vs {
   top-left-radius: 4px;
@@ -46,28 +42,15 @@
   z-index: 1;
 }
 
-
-// .vs {
-//   position: relative;
-//   margin-top: 70px;
-//   right : -110px;
-//   color: $blue;
-//   font-weight: bold;
-//   z-index: 1;
-//   word-break: break-all;
-
-
-// }
-
 #vs {
-  position: absolute;
-  left: 213px;
-  top: 90px;
-  z-index: 99;
-  color: $blue;
-  font-size: italic;
-  font-size: 48px;
-}
+    position: absolute;
+    left: +42%;
+    top: 36%;
+    z-index: 99;
+    color: #0095FF;
+    font-size: italic;
+    font-size: 48px;
+  }
 
 .current-user-name {
   position: absolute;
@@ -88,7 +71,7 @@
 .section {
   position: relative;
   clear: both;
-  padding: 0px;
+  padding-top: 10px;
   margin: 0px;
 }
 
