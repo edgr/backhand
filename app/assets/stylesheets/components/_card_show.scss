@@ -4,9 +4,6 @@
   margin-bottom: 20px;
 }
 
-.show {
-  height: 2000px;
-}
 
 .pic-b {
   position: relative;
@@ -44,28 +41,8 @@
   }
 }
 
-.ranking-b-left {
-  position: absolute;
-  display: flex;
-  align-items: baseline;
-  color: $black;
-  font-weight: bold;
-  font-size: 16px;
-  background-color: $gray;
-  // width: 70px;
-  left: 0px;
-  bottom: 0px;
-  border-top-right-radius: 5px;
-  padding-right: 6px;
-  padding-left: 6px;
-  .rank-b-left {
-    font-family: 'Saira Extra Condensed', sans-serif;
-    font-size: 30px;
-    margin-left: 3px;
-    color: white;
-    text-shadow: 0.5px 0.5px 2px black;
-  }
-}
+
+
 .name-flag-b {
   display: flex;
   justify-content: space-between;
@@ -78,8 +55,10 @@
     font-weight: bold;
   }
   .flag-b {
-    height: 26px;
+    height: 30px;
     width: 45px;
+    margin-top: 0;
+    line-height: 2.5em !important;
   }
 }
 
@@ -174,17 +153,50 @@
   margin-left: 10px;
   margin-right: 10px;
   color: $black;
+  background-color: white;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .wr {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 
+
+.rank-bb {
+ font-size: 24px;
+}
 
 .stats {
   display: flex;
+  align-items: center;
+
 }
+
+.three {
+  width: 50%;
+  height: 100%;
+  padding: 25px;
+  line-height: 25px;
+  border-left: 1px solid $gray;
+  padding-left: 37px;
+  margin-left: 13px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  span {
+    letter-spacing: 2px;
+  }
+}
+
+
+.small {
+  height: 40px;
+}
+
+
 
 // .thumb {
 //   display: flex;

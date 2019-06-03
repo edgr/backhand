@@ -46,8 +46,8 @@
 
 #vs {
   position: absolute;
-  left: 42%;
-  top: 13%;
+  left: 44%;
+  top: 24%;
   z-index: 99;
   color: #0095FF;
     // font-size: italic;
@@ -57,14 +57,14 @@
   .current-user-name {
     position: absolute;
     left: +22%;
-    top: 50%;
+    top: 30%;
     color: white;
   }
 
   .opponent-name {
     position: absolute;
-    left: +22%;
-    top: 50%;
+    right: 26%;
+    top: 30%;
     color: white;
   }
 
@@ -74,6 +74,116 @@
 
 }
 
+// this is for the challenge card styling
+.blue-box-b-left {
+  margin: 16px 3px 8px 3px;
+  background-color: $blue;
+  color: white;
+  font-size: 16px;
+  border-radius: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  text-align: center;
+}
+
+.ranking-b-left {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  color: $black;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: $gray;
+  // width: 70px;
+  left: 0px;
+  bottom: 0px;
+  border-top-right-radius: 5px;
+  padding-right: 6px;
+  padding-left: 6px;
+  .rank-b-left {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 30px;
+    margin-left: 3px;
+    color: white;
+    text-shadow: 0.5px 0.5px 2px black;
+  }
+}
+
+h4 {
+  background-color: $blue;
+}
+
+.bluevs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.skills-challenge {
+  display: flex;
+  // flex-wrap: wrap;
+  margin: 10px;
+  margin-top: 0;
+
+}
+
+.message {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bluevs {
+  h4 {
+  margin: 15px 3px 8px 0;
+  color: white;
+  font-size: 16px;
+  border-radius: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+
+  }
+}
+
+.bluevs-right {
+ h4 {
+  text-align: right;
+  margin-right: 8px;
+  background-color: $blue;
+ }
+}
+
+.bluevs-left {
+ h4 {
+  text-align: left;
+  margin-left: 8px;
+  background-color: $blue;
+ }
+}
+
+
+.ranking-b-left {
+  position: absolute;
+  display: flex;
+  align-items: baseline start;
+  color: $black;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: $gray;
+  // width: 70px;
+  left: 0px;
+  bottom: 0px;
+  border-top-right-radius: 5px;
+  padding-right: 6px;
+  padding-left: 6px;
+  .rank-b-left {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 30px;
+    margin-left: 3px;
+    color: white;
+    text-shadow: 0.5px 0.5px 2px black;
+  }
+}
 
 // This whole sections is to display the cards next to each other and avoid becoming two rows when
 // risized to the smallest screen
