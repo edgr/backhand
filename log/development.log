@@ -3908,3 +3908,224 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 323ms (Views: 97.0ms | ActiveRecord: 6.7ms)
 
 
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:19:26 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany", "", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:48
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:83
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:83
+  Rendered users/index.html.erb within layouts/application (75.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.6ms)
+  Rendered shared/_flashes.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 378ms (Views: 117.4ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:19:49 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany", "", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:48
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:83
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:83
+  Rendered users/index.html.erb within layouts/application (25.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (6.2ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 296ms (Views: 72.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:20:09 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany", "", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (47.1ms)[0m  [1m[34mSELECT COUNT(users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing) FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10)[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (52.9ms)
+Completed 500 Internal Server Error in 280ms (ActiveRecord: 47.1ms)
+
+
+  
+ActionView::Template::Error (PG::SyntaxError: ERROR:  syntax error at or near "AS"
+LINE 1: ...820917 - users.longitude) * PI() / 180 / 2), 2))) AS distanc...
+                                                             ^
+: SELECT COUNT(users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing) FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10)):
+    1: <div class="container">
+    2: 
+    3:   <div class="search-results">
+    4:     <span>Found <%= @users.count  %> players in <%= params[:search].join(" ") %></span>
+    5:   </div>
+    6: 
+    7:   <%= simple_form_for :search, url: users_path, method: :get do |f| %>
+  
+app/views/users/index.html.erb:4:in `_app_views_users_index_html_erb__793448622970166045_70246223498320'
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:20:27 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany", "", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ():
+    1: <div class="container">
+    2: 
+    3:   <div class="search-results">
+    4:     <% raise %>
+    5:     <span>Found <%= @users.count  %> players in <%= params[:search].join(" ") %></span>
+    6:   </div>
+    7: 
+  
+app/views/users/index.html.erb:4:in `_app_views_users_index_html_erb__793448622970166045_70246270750040'
+Started PUT "/__web_console/repl_sessions/ae0500ebcf2fb89414bbaadef0690d5e" for ::1 at 2019-06-03 16:20:39 +0200
+Started PUT "/__web_console/repl_sessions/ae0500ebcf2fb89414bbaadef0690d5e" for ::1 at 2019-06-03 16:20:40 +0200
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started PUT "/__web_console/repl_sessions/ae0500ebcf2fb89414bbaadef0690d5e" for ::1 at 2019-06-03 16:20:50 +0200
+Started PUT "/__web_console/repl_sessions/ae0500ebcf2fb89414bbaadef0690d5e" for ::1 at 2019-06-03 16:20:51 +0200
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started PUT "/__web_console/repl_sessions/ae0500ebcf2fb89414bbaadef0690d5e" for ::1 at 2019-06-03 16:20:56 +0200
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:4
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:21:06 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany", "", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  Rendered users/index.html.erb within layouts/application (33.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (3.5ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 300ms (Views: 83.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:22:32 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany", "", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (41.6ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  Rendered users/index.html.erb within layouts/application (67.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (5.5ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 360ms (Views: 77.7ms | ActiveRecord: 42.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:23:12 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany", "", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.7ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  Rendered users/index.html.erb within layouts/application (53.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (3.5ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 334ms (Views: 114.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:24:02 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany", "", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  Rendered users/index.html.erb within layouts/application (20.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (3.7ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 284ms (Views: 58.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:25:29 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany", "", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mComputedSkillsSet Load (0.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  Rendered users/index.html.erb within layouts/application (32.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (5.7ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 320ms (Views: 98.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:26:48 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany", "", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mComputedSkillsSet Load (0.9ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  Rendered users/index.html.erb within layouts/application (28.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (5.3ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 2965ms (Views: 2691.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=Beginner&search%5B%5D=Advanced&search%5B%5D=&search%5B%5D=Puncher&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:30:24 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["", "", "", "", "", "Beginner", "Advanced", "", "Puncher", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT users.*, NULL::text AS distance, NULL::text AS bearing FROM "users" WHERE (false)[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (22.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.2ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 308ms (Views: 88.2ms | ActiveRecord: 0.6ms)
+
+
