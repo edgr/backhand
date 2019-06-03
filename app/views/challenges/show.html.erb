@@ -1,19 +1,27 @@
 <div class="container">
   <%= link_to "Back to all your challenges", challenges_path, :method => :get %>
-<div>
-</div>
+
   <div class="section group">
     <h1 id="vs">VS</h1>
     <div class="col span_1_of_2 current-user-vs user-name">
-    <div class="overflow-wrap current-user-name">
-      <h1><%= current_user.first_name  %></h1>
+      <div class="overflow-wrap current-user-name">
+        <h1><%= current_user.first_name  %></h1>
+      </div>
+      <div class="ranking-b-left">
+        <span>WR</span>
+        <div class="rank-b-left">#<%= current_user.ranking %></div>
+      </div>
     </div>
+    <div class="col span_1_of_2 other-user-opponent-vs">
+      <div class="overflow-wrap opponent-name">
+      <h1><%= @challengee.first_name %></h1>
     </div>
-    <div class="col span_1_of_2 other-user-opponent-vs opponent-name">
-    <h1><%= @challengee.first_name %></h1>
+    <div class="ranking-b">
+      <span>WR</span>
+      <div class="rank-b">#<%= @challengee.ranking %></div>
     </div>
   </div>
-
+  <div class="message">
   <% if @challenge.challenger == current_user %>
       <% if @challenge.status == "Pending" %>
       <%= render partial: "challenger-pending" %>
@@ -27,6 +35,10 @@
       <%= render partial: "challengee-accepted" %>
     <% end %>
   <% end %>
+
+
+  </div>
+
 <!-- </div>
   <%# raise %>
 </div> -->

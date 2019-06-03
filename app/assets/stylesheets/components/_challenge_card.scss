@@ -8,11 +8,13 @@
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 4px;
   margin: 8px;
+
 }
 
 .vs-container {
   display: flex;
   justify-content: center;
+
   // position: relative;
 }
 
@@ -43,25 +45,33 @@
 }
 
 #vs {
-    position: absolute;
-    left: +42%;
-    top: 36%;
-    z-index: 99;
-    color: #0095FF;
-    font-size: italic;
+  position: absolute;
+  left: 42%;
+  top: 13%;
+  z-index: 99;
+  color: #0095FF;
+    // font-size: italic;
     font-size: 48px;
   }
 
-.current-user-name {
-  position: absolute;
-  bottom: 0;
-  left: 20;
-  color: white;
-}
+  .current-user-name {
+    position: absolute;
+    left: +22%;
+    top: 50%;
+    color: white;
+  }
 
-.opponent-name {
-  color: white;
-  padding: left 40px;
+  .opponent-name {
+    position: absolute;
+    left: +22%;
+    top: 50%;
+    color: white;
+  }
+
+.challenge-info {
+  padding: 30px 5px 30px 5px;
+  margin-top: 20px;
+
 }
 
 

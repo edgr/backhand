@@ -44,6 +44,28 @@
   }
 }
 
+.ranking-b-left {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  color: $black;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: $gray;
+  // width: 70px;
+  left: 0px;
+  bottom: 0px;
+  border-top-right-radius: 5px;
+  padding-right: 6px;
+  padding-left: 6px;
+  .rank-b-left {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 30px;
+    margin-left: 3px;
+    color: white;
+    text-shadow: 0.5px 0.5px 2px black;
+  }
+}
 .name-flag-b {
   display: flex;
   justify-content: space-between;
