@@ -1,8 +1,11 @@
 <div class="container">
 
   <div class="search-results">
-    <%# raise %>
+    <%#= raise %>
+    <% if params[:search].nil? %>
+    <% else %>
     <span>Found <%= @users.length  %> players in <%= params[:search].join(" ") %></span>
+    <% end %>
   </div>
 
   <%= simple_form_for :search, url: users_path, method: :get do |f| %>

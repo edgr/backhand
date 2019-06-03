@@ -4129,3 +4129,405 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 308ms (Views: 88.2ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2019-06-03 16:31:40 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.2ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 56ms (Views: 52.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Barcelona%2C+Catalunya%2C+Spain&button=" for ::1 at 2019-06-03 16:31:46 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Barcelona, Catalunya, Spain"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.3828939 - users.latitude) * PI() / 180 / 2), 2) + COS(41.3828939 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.1774322 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 2.1774322) / 57.2957795), ((users.latitude - 41.3828939) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 41.23816211688915 AND 41.52762568311085 AND users.longitude BETWEEN 1.9845358277181346 AND 2.3703285722818657 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.3828939 - users.latitude) * PI() / 180 / 2), 2) + COS(41.3828939 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.1774322 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (14.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (3.6ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 307ms (Views: 60.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=Intermediate&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:31:51 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["", "", "", "", "", "Intermediate", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((35.6276887 - users.latitude) * PI() / 180 / 2), 2) + COS(35.6276887 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((-78.919196 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - -78.919196) / 57.2957795), ((users.latitude - 35.6276887) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 35.48295691688915 AND 35.77242048311085 AND users.longitude BETWEEN -79.09725743901235 AND -78.74113456098765 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((35.6276887 - users.latitude) * PI() / 180 / 2), 2) + COS(35.6276887 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((-78.919196 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (20.0ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (10.0ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 286ms (Views: 71.6ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=Pro&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:32:02 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["", "", "", "", "", "Pro", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((45.706553 - users.latitude) * PI() / 180 / 2), 2) + COS(45.706553 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((3.9282904 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 3.9282904) / 57.2957795), ((users.latitude - 45.706553) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 45.56182121688915 AND 45.85128478311085 AND users.longitude BETWEEN 3.721037277481681 AND 4.135543522518319 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((45.706553 - users.latitude) * PI() / 180 / 2), 2) + COS(45.706553 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((3.9282904 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (21.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.7ms)
+  Rendered shared/_flashes.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 314ms (Views: 66.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=&search%5B%5D=&search%5B%5D=EDouard&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:32:16 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["", "", "EDouard", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((18.9134621 - users.latitude) * PI() / 180 / 2), 2) + COS(18.9134621 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((-72.0894027 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - -72.0894027) / 57.2957795), ((users.latitude - 18.9134621) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 18.76873031688915 AND 19.05819388311085 AND users.longitude BETWEEN -72.24239463620272 AND -71.93641076379727 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((18.9134621 - users.latitude) * PI() / 180 / 2), 2) + COS(18.9134621 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((-72.0894027 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (18.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (7.6ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 295ms (Views: 68.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:33:03 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (47.6ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 102ms (Views: 89.2ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=&button=" for ::1 at 2019-06-03 16:33:04 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>[""], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (43.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 187], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 176], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (1.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 177], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 178], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 179], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 180], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 175], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 181], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 182], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (6.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 183], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 184], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 188], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  Rendered users/index.html.erb within layouts/application (227.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (7.0ms)
+  Rendered shared/_flashes.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 329ms (Views: 246.6ms | ActiveRecord: 72.7ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Barcelona%2C+Catalunya%2C+Spain&button=" for ::1 at 2019-06-03 16:33:12 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Barcelona, Catalunya, Spain"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.3828939 - users.latitude) * PI() / 180 / 2), 2) + COS(41.3828939 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.1774322 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 2.1774322) / 57.2957795), ((users.latitude - 41.3828939) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 41.23816211688915 AND 41.52762568311085 AND users.longitude BETWEEN 1.9845358277181346 AND 2.3703285722818657 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.3828939 - users.latitude) * PI() / 180 / 2), 2) + COS(41.3828939 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.1774322 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (16.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (3.6ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 310ms (Views: 65.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&button=" for ::1 at 2019-06-03 16:33:25 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  Rendered users/index.html.erb within layouts/application (15.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.8ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 278ms (Views: 61.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/185" for ::1 at 2019-06-03 16:33:56 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"185"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 185], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mChallenge Load (3.1ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challenger_id" = $1 AND "challenges"."status" = $2[0m  [["challenger_id", 185], ["status", "Played"]]
+  ↳ app/models/user.rb:33
+  [1m[36mChallenge Load (0.3ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challengee_id" = $1 AND "challenges"."status" = $2[0m  [["challengee_id", 185], ["status", "Played"]]
+  ↳ app/models/user.rb:33
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."winner" = $1[0m  [["winner", "185"]]
+  ↳ app/views/users/show.html.erb:70
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."loser" = $1[0m  [["loser", "185"]]
+  ↳ app/views/users/show.html.erb:71
+  [1m[36mCACHE Challenge Load (0.0ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challenger_id" = $1 AND "challenges"."status" = $2[0m  [["challenger_id", 185], ["status", "Played"]]
+  ↳ app/models/user.rb:33
+  [1m[36mCACHE Challenge Load (0.0ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challengee_id" = $1 AND "challenges"."status" = $2[0m  [["challengee_id", 185], ["status", "Played"]]
+  ↳ app/models/user.rb:33
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."winner" = $1[0m  [["winner", "185"]]
+  ↳ app/views/users/show.html.erb:101
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."loser" = $1[0m  [["loser", "185"]]
+  ↳ app/views/users/show.html.erb:102
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:122
+  [1m[36mUserReview Load (41.8ms)[0m  [1m[34mSELECT "user_reviews".* FROM "user_reviews" WHERE "user_reviews"."receiver_id" = $1[0m  [["receiver_id", 185]]
+  ↳ app/views/users/show.html.erb:184
+  Rendered users/show.html.erb within layouts/application (135.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (3.4ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 268ms (Views: 95.0ms | ActiveRecord: 135.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&button=" for ::1 at 2019-06-03 16:34:36 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:84
+  Rendered users/index.html.erb within layouts/application (24.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (5.4ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 2206ms (Views: 1992.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=Intermediate&search%5B%5D=Semi-Pro&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:36:47 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["", "", "", "", "", "Intermediate", "Semi-Pro", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT users.*, NULL::text AS distance, NULL::text AS bearing FROM "users" WHERE (false)[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (21.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.3ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 312ms (Views: 89.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:37:37 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (7.4ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 87ms (Views: 82.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:38:20 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (21.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (20.2ms)
+  Rendered shared/_flashes.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 200ms (Views: 185.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Paris%2C+%C3%8Ele-de-France%2C+France&button=" for ::1 at 2019-06-03 16:38:29 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Paris, Île-de-France, France"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((48.8566101 - users.latitude) * PI() / 180 / 2), 2) + COS(48.8566101 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.3514992 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 2.3514992) / 57.2957795), ((users.latitude - 48.8566101) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 48.71187831688915 AND 49.00134188311085 AND users.longitude BETWEEN 2.131523939279367 AND 2.5714744607206335 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((48.8566101 - users.latitude) * PI() / 180 / 2), 2) + COS(48.8566101 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.3514992 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (42.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.8ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 635ms (Views: 103.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for ::1 at 2019-06-03 16:39:05 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:5
+  Rendered users/index.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `join' for nil:NilClass):
+    2: 
+    3:   <div class="search-results">
+    4:     <%# raise %>
+    5:     <span>Found <%= @users.length  %> players in <%= params[:search].join(" ") %></span>
+    6:   </div>
+    7: 
+    8:   <%= simple_form_for :search, url: users_path, method: :get do |f| %>
+  
+app/views/users/index.html.erb:5:in `_app_views_users_index_html_erb__793448622970166045_70246287819420'
+Started GET "/users" for ::1 at 2019-06-03 16:40:43 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/edouardgarret/code/edgr/backhand/app/views/users/index.html.erb:6: syntax error, unexpected tIVAR, expecting '('
+@output_buffer.safe_append='    <span>Found...
+^~~~~~~~~~~~~~):
+  
+app/views/users/index.html.erb:6: syntax error, unexpected tIVAR, expecting '('
+Started PUT "/__web_console/repl_sessions/427aae1fb6611d0511382324955cab29" for ::1 at 2019-06-03 16:40:48 +0200
+Started PUT "/__web_console/repl_sessions/427aae1fb6611d0511382324955cab29" for ::1 at 2019-06-03 16:40:50 +0200
+Started GET "/users" for ::1 at 2019-06-03 16:41:03 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/edouardgarret/code/edgr/backhand/app/views/users/index.html.erb:6: syntax error, unexpected tIVAR, expecting '('
+@output_buffer.safe_append='    <span>Found...
+^~~~~~~~~~~~~~):
+  
+app/views/users/index.html.erb:6: syntax error, unexpected tIVAR, expecting '('
+Started PUT "/__web_console/repl_sessions/833d620c0fd9cf12d369e2c546fefeea" for ::1 at 2019-06-03 16:41:06 +0200
+Started PUT "/__web_console/repl_sessions/833d620c0fd9cf12d369e2c546fefeea" for ::1 at 2019-06-03 16:41:07 +0200
+Started GET "/users" for ::1 at 2019-06-03 16:41:22 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ():
+    1: <div class="container">
+    2: 
+    3:   <div class="search-results">
+    4:     <%= raise %>
+    5:     <span>Found <%= @users.length  %> players in <%= params[:search].join(" ") %></span>
+    6:   </div>
+    7: 
+  
+app/views/users/index.html.erb:4:in `_app_views_users_index_html_erb__793448622970166045_70246291993000'
+Started PUT "/__web_console/repl_sessions/d4c7967e4a51cfd77122d3639928b18d" for ::1 at 2019-06-03 16:41:26 +0200
+Started PUT "/__web_console/repl_sessions/d4c7967e4a51cfd77122d3639928b18d" for ::1 at 2019-06-03 16:41:27 +0200
+Started PUT "/__web_console/repl_sessions/d4c7967e4a51cfd77122d3639928b18d" for ::1 at 2019-06-03 16:41:37 +0200
+Started PUT "/__web_console/repl_sessions/d4c7967e4a51cfd77122d3639928b18d" for ::1 at 2019-06-03 16:41:49 +0200
+Started PUT "/__web_console/repl_sessions/d4c7967e4a51cfd77122d3639928b18d" for ::1 at 2019-06-03 16:41:50 +0200
+Started GET "/users" for ::1 at 2019-06-03 16:42:24 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error ():
+    1: <div class="container">
+    2: 
+    3:   <div class="search-results">
+    4:     <%= raise %>
+    5:     <% if params[:search].nil? %>
+    6:     <% else %>
+    7:     <span>Found <%= @users.length  %> players in <%= params[:search].join(" ") %></span>
+  
+app/views/users/index.html.erb:4:in `_app_views_users_index_html_erb__793448622970166045_70246277816120'
+Started GET "/users" for ::1 at 2019-06-03 16:42:34 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:52
+  [1m[36mComputedSkillsSet Load (1.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 187], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 176], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 177], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 178], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 179], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 180], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 175], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 181], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 182], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 183], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 184], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 188], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  Rendered users/index.html.erb within layouts/application (60.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.6ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 125ms (Views: 117.1ms | ActiveRecord: 5.6ms)
+
+
