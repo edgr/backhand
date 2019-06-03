@@ -7,14 +7,15 @@ class UsersController < ApplicationController
     elsif params[:search].reject(&:blank?).empty?
       @users = User.all
     elsif params[:search].present?
+      # raise
       params[:search].delete("")
-      @users = User.search_user_fields(params[:search])
+      # @users = User.search_user_fields(params[:search])
+      @users = User.near(params[:search].join(" "), 10)
     end
   end
 
   def show
     @user = User.find(params[:id])
     @reviews = UserReview.where(receiver_id: @user.id)
-    #@search = params[:search]
   end
 end
