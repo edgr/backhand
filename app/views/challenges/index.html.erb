@@ -7,14 +7,14 @@
       </li>
     </ul>
 
-<div class="" id="outstanding">
-  <% @challenges.each do |challenge| %>
+<% @challenges.each do |challenge| %>
+  <div class="" id="outstanding">
     <div class="challenge-card">
       <!-- I, Max, am the challenger -->
         <% if challenge.challenger_id == current_user.id %>
           <i class="fas fa-arrow-up"></i>
-          <%= image_tag "nadal.jpg", class: "avatar"%>
           <% challengee = User.find(challenge.challengee_id) %>
+          <%= cl_image_tag challengee.picture, class: "avatar"%>
           <div class="name-and-date">
             <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %> </span>
             <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
@@ -23,8 +23,8 @@
         <!-- I, Max, am the challengee -->
         <% else %>
           <i class="fas fa-arrow-down"></i>
-          <%= image_tag "nadal.jpg", class: "avatar"%>
           <% challenger = User.find(challenge.challenger_id) %>
+          <%= cl_image_tag challenger.picture, class: "avatar"%>
           <div class="name-and-date">
             <span class="player-name"><%= challenger.first_name %> <%= challenger.last_name %> </span>
             <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
@@ -45,11 +45,20 @@
         <p>Declined</p>
       <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
 
-<div class="hidden" id="played">
-  <p>Here are the played matches</p>
-</div>
+  <div class="hidden" id="played">
+    <% if challenge.status == "Played" %>
+      <div class="challenge-card">
+        <h1>your played games</h1>
+      </div>
+    <% else %>
+      <h2>You have not recorded any matches.</h2>
+    <% end %>
+  </div>
+<% end %>
+
+
+
 
 
