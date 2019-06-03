@@ -6,9 +6,8 @@
 
       <%= simple_form_for(current_user, url:finish_profile_path(current_user), method: :patch) do |f| %>
         <div class="form-inputs form-label">
-          <label class="form-control-label select optional" for="user_style_of_play">PICTURE</label>
-          <%= f.file_field :image,
-                           label:"PICTURE" %>
+          <%= f.input :picture %>
+          <%= f.input :picture_cache, as: :hidden %>
           <%= f.input :style_of_play,
                       :collection => %w[baseliner attacker baseliner server-volleyer puncher],
                       label:"WHAT IS YOUR STYLE OF PLAY" %>
@@ -16,7 +15,7 @@
                       :collection => %w[righty lefty],
                       label:"ARE YOU A RIGHTY OR LEFTY" %>
           <%= f.input :backhand_style,
-                      :collection => %w[one handed backhand two handed backhand],
+                      :collection => ["one handed backhand", "two handed backhand"],
                       label:"WHAT IS YOUR BACKHAND STYLE" %>
           <%= f.input :club_id,
                       label:"PUT IN YOUR CLUB" %>

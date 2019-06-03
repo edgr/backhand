@@ -1,0 +1,29 @@
+.check_boxes {
+  .form-check {
+    input {
+      display: none;
+    }
+  }
+  label {
+    color: white;
+    margin: 0;
+    background-color: #0095ff70;
+    padding: 8px 16px;
+    margin: 4px;
+    border-radius: 25px;
+  }
+  label::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f067";
+    margin-right: 10px;
+  }
+  input[type=checkbox]:checked + label {
+    background-color: #0095FF;
+  }
+  input[type=checkbox]:checked + label::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+  }
+}
