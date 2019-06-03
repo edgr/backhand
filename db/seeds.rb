@@ -20,7 +20,7 @@ url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hx
     phone_number: Faker::Number.number(12),
     level: ["pro", "beginner", "intermediate","advanced","semi-pro"].sample,
     bio: Faker::Lorem.sentence(15),
-    address: Faker::Address.full_address,
+    address: "Barcelona",
     place_of_birth: "#{Faker::Address.city}, #{Faker::Address.country}",
     user_name: "@#{Faker::Lorem.word}",
     style_of_play: ["baseliner", "attacker", "baseliner","server-volleyer","puncher"].sample,
@@ -45,7 +45,7 @@ end
     first_name: 'Max',
     last_name: 'Mustermann',
     email: 'a@a.a',
-    address: 'frankfurt',
+    address: 'Barcelona',
     phone_number: '12345678912',
     level: 'pro',
     password: 'password'
@@ -55,7 +55,7 @@ end
     first_name: 'Bob',
     last_name: 'Sponge',
     email: 'b@b.b',
-    address: 'frankfurt',
+    address: 'Barcelona',
     phone_number: '12345678912',
     level: 'pro',
     password: 'password'

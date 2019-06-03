@@ -1,8 +1,41 @@
 <% @challenges.each do |challenge| %>
-<p>Player: <%= challenge.challenger_id %> vs Player: <%= challenge.challengee_id %></p>
- <p>Status: <%= challenge.status %></p>
- <p> <%= link_to "show more", challenge_path(challenge), :method => :get  %></p>
-<br>
+<%# raise %>
+  <div class="challenge-card">
+    <!-- I, Max, am the challenger -->
+      <% if challenge.challenger_id == current_user.id %>
+        <i class="fas fa-arrow-up"></i>
+        <%= image_tag "nadal.jpg", class: "avatar"%>
+        <% challengee = User.find(challenge.challengee_id) %>
+        <div class="name-and-date">
+          <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %> </span>
+          <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
+        </div>
+
+      <!-- I, Max, am the challengee -->
+      <% else %>
+        <i class="fas fa-arrow-down"></i>
+        <%= image_tag "nadal.jpg", class: "avatar"%>
+        <% challenger = User.find(challenge.challenger_id) %>
+        <div class="name-and-date">
+          <span class="player-name"><%= challenger.first_name %> <%= challenger.last_name %> </span>
+          <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
+        </div>
+      <% end %>
+
+    <!--  -->
+    <% if challenge.status == "Accepted" %>
+      <%= link_to "#{challenge.status}", challenge_path(challenge), :method => :get, class: "link-accepted" %> <i class="fas fa-angle-right"></i>
+    <% elsif challenge.status == "Pending" %>
+      <%= link_to challenge_path(challenge), :method => :get, class: "link" do %>
+      <div class="status-arrow">
+        <%= challenge.status %>
+        <i class="fas fa-angle-right"></i>
+      </div>
+      <% end %>
+    <% else %>
+      <p>Declined</p>
+    <% end %>
+  </div>
 <% end %>
 
 
