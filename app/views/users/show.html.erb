@@ -26,7 +26,16 @@
     </div>
   </div>
 
-  <div class="player-infos">
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <a href="#" data-target="player_info" class="tab-underlined active">Info</a>
+      </li>
+      <li>
+        <a href="#" data-target="player_bio" class="tab-underlined">Bio</a>
+      </li>
+    </ul>
+
+  <div class="player-infos" id="player_info">
     <%= @user.birthday %>
     <%= @user.place_of_birth %>
     <%= @user.height %>
@@ -35,7 +44,7 @@
     <%= @user.address %>
     <%#= @user.club %>
   </div>
-  <div class="player-bio">
+  <div class="player-bio" id="player_bio">
     <%= @user.bio %>
   </div>
 
