@@ -1579,3 +1579,42 @@ Completed 404 Not Found in 20ms (ActiveRecord: 18.4ms)
 ActiveRecord::RecordNotFound (Couldn't find User with 'id'=css-circular-prog-bar):
   
 app/controllers/users_controller.rb:16:in `show'
+Started GET "/users/13" for ::1 at 2019-06-03 10:19:36 +0200
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/monicaalonsoponce/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mChallenge Load (0.6ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challenger_id" = $1 AND "challenges"."status" = $2[0m  [["challenger_id", 13], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[36mChallenge Load (0.2ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges" WHERE "challenges"."challengee_id" = $1 AND "challenges"."status" = $2[0m  [["challengee_id", 13], ["status", "Played"]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."winner" = $1[0m  [["winner", "13"]]
+  ↳ app/views/users/show.html.erb:64
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "challenges" WHERE "challenges"."loser" = $1[0m  [["loser", "13"]]
+  ↳ app/views/users/show.html.erb:65
+  [1m[36mComputedSkillsSet Load (0.7ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 13], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:92
+  [1m[36mUserReview Load (0.9ms)[0m  [1m[34mSELECT "user_reviews".* FROM "user_reviews" WHERE "user_reviews"."receiver_id" = $1[0m  [["receiver_id", 13]]
+  ↳ app/views/users/show.html.erb:164
+  Rendered users/show.html.erb within layouts/application (106.9ms)
+  Rendered shared/_navbar_bh.html.erb (4.5ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 1922ms (Views: 1846.0ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/users/css-circular-prog-bar.css" for ::1 at 2019-06-03 10:19:38 +0200
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"css-circular-prog-bar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+Completed 404 Not Found in 9ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=css-circular-prog-bar):
+  
+app/controllers/users_controller.rb:16:in `show'
