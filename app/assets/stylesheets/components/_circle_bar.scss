@@ -1,17 +1,22 @@
 
 
 //styling
-$borderWidth: 7px;
+$borderWidth: 0.3em;
 $animationTime: 1.5s;
-$border-color-default: #F4F4F4;
-$border-color-fill: #0095FF;
-$size: 150px;
+$border-color-default: $gray;
+$border-color-fill: $blue;
+$size: 100px;
 
 //Create how many steps
 $howManySteps: 10; //this needs to be even.
 //for fun try using 20 and changine in the HTML the data-percentage to 15 or 85
 
 
+
+.pos {
+  padding-right: 70px;
+  padding-left: 0;
+}
 
 .progress-circle {
   width: $size;
@@ -76,13 +81,13 @@ $howManySteps: 10; //this needs to be even.
   .progress-circle-value {
     display: flex;
     border-radius: 50%;
-    font-size: 36px;
+    font-size: 24px;
     text-align: center;
     line-height: 20px;
     align-items: center;
     justify-content: center;
     height: 100%;
-    font-weight: 300;
+    font-weight: 400;
     div {
       margin-top: 10px;
     }
