@@ -2866,3 +2866,338 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 297ms (Views: 269.3ms | ActiveRecord: 11.3ms)
 
 
+Started DELETE "/users/sign_out" for ::1 at 2019-06-03 14:32:10 +0200
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9PNfViCCI1kiYe6AOTNdv7XTJZxIbWj2eFkQwrqmqTRUZUzVpzdm4JFIANh3sE1QgFmGuA5sT6OAzjQtIRCeMQ=="}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 185], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 1863ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 14:32:12 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (45.4ms)
+  Rendered shared/_navbar_bh.html.erb (5.3ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+WARNING: We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+
+You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+
+  npm install --save core-js@2    npm install --save core-js@3
+  yarn add core-js@2              yarn add core-js@3
+
+
+Hash: 2bfa33a550c9bb38b3e9
+Version: webpack 4.32.2
+Time: 1628ms
+Built at: 06/03/2019 2:32:18 PM
+                                     Asset       Size       Chunks             Chunk Names
+    js/application-0a5d32b1527ce1f70618.js    829 KiB  application  [emitted]  application
+js/application-0a5d32b1527ce1f70618.js.map    985 KiB  application  [emitted]  application
+                             manifest.json  364 bytes               [emitted]  
+Entrypoint application = js/application-0a5d32b1527ce1f70618.js js/application-0a5d32b1527ce1f70618.js.map
+[./app/javascript/packs/application.js] 238 bytes {application} [built]
+[./app/javascript/plugins/init_autocomplete.js] 253 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 78 hidden modules
+
+Completed 200 OK in 6234ms (Views: 6231.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 14:32:34 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.7ms)
+  Rendered shared/_navbar_bh.html.erb (1.2ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 74ms (Views: 69.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-06-03 14:32:38 +0200
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (22.3ms)
+  Rendered shared/_navbar_bh.html.erb (1.3ms)
+  Rendered shared/_flashes.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 76ms (Views: 74.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-06-03 14:32:56 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YSRM96lert98cT1wZF8AhP5mloQBpG8mVp4f7oHweJJThnQGVcYISsNCxZUUWaIbhxGqoWv02EOsdjE7DndXew==", "user"=>{"email"=>"d@d.d", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "d@d.d"], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (7.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "d@d.d"], ["encrypted_password", "$2a$11$Aew7VsTtrdTtZx8fiuQkt.S10P/3cbZgZIkuBqUeBUIIDHjQnAb4m"], ["created_at", "2019-06-03 12:32:56.674293"], ["updated_at", "2019-06-03 12:32:56.674293"]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mComputedSkillsSet Load (43.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 187], ["LIMIT", 1]]
+  ↳ app/models/user.rb:48
+  [1m[36mComputedSkillsSet Create (47.0ms)[0m  [1m[32mINSERT INTO "computed_skills_sets" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 187], ["created_at", "2019-06-03 12:32:56.802918"], ["updated_at", "2019-06-03 12:32:56.802918"]]
+  ↳ app/models/user.rb:48
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/sign_ups/187/edit
+Completed 302 Found in 359ms (ActiveRecord: 138.9ms)
+
+
+Started GET "/sign_ups/187/edit" for ::1 at 2019-06-03 14:32:56 +0200
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (11.2ms)
+  Rendered shared/_navbar_bh.html.erb (2.3ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 52ms (Views: 48.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sign_ups/187/edit" for ::1 at 2019-06-03 14:33:01 +0200
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (16.6ms)
+  Rendered shared/_navbar_bh.html.erb (2.2ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 64ms (Views: 57.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sign_ups/187/edit" for ::1 at 2019-06-03 14:33:27 +0200
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (17.5ms)
+  Rendered shared/_navbar_bh.html.erb (3.3ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+WARNING: We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+
+You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+
+  npm install --save core-js@2    npm install --save core-js@3
+  yarn add core-js@2              yarn add core-js@3
+
+
+Hash: 2b086f3cfa79d25580fd
+Version: webpack 4.32.2
+Time: 1936ms
+Built at: 06/03/2019 2:33:32 PM
+                                     Asset       Size       Chunks             Chunk Names
+    js/application-9daee15faae8843c5e90.js    829 KiB  application  [emitted]  application
+js/application-9daee15faae8843c5e90.js.map    985 KiB  application  [emitted]  application
+                             manifest.json  364 bytes               [emitted]  
+Entrypoint application = js/application-9daee15faae8843c5e90.js js/application-9daee15faae8843c5e90.js.map
+[./app/javascript/packs/application.js] 238 bytes {application} [built]
+[./app/javascript/plugins/init_autocomplete.js] 258 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 78 hidden modules
+
+Completed 200 OK in 5161ms (Views: 5155.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sign_ups/187/edit" for ::1 at 2019-06-03 14:34:24 +0200
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (313.9ms)
+  Rendered shared/_navbar_bh.html.erb (1.8ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 2204ms (Views: 2127.6ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/sign_ups/187/edit" for ::1 at 2019-06-03 14:39:14 +0200
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (59.5ms)
+  Rendered shared/_navbar_bh.html.erb (6.3ms)
+  Rendered shared/_flashes.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 170ms (Views: 154.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/sign_ups/187/edit" for ::1 at 2019-06-03 14:40:59 +0200
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[36mUser Load (47.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (91.0ms)
+  Rendered shared/_navbar_bh.html.erb (14.0ms)
+  Rendered shared/_flashes.html.erb (2.2ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+WARNING: We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+
+You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+
+  npm install --save core-js@2    npm install --save core-js@3
+  yarn add core-js@2              yarn add core-js@3
+
+
+Hash: 6f6c348efb57a2cad0b6
+Version: webpack 4.32.2
+Time: 2187ms
+Built at: 06/03/2019 2:41:05 PM
+                                     Asset       Size       Chunks             Chunk Names
+    js/application-ffd616995535d095aaa5.js    829 KiB  application  [emitted]  application
+js/application-ffd616995535d095aaa5.js.map    985 KiB  application  [emitted]  application
+                             manifest.json  364 bytes               [emitted]  
+Entrypoint application = js/application-ffd616995535d095aaa5.js js/application-ffd616995535d095aaa5.js.map
+[./app/javascript/packs/application.js] 245 bytes {application} [built]
+[./app/javascript/plugins/init_autocomplete.js] 279 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 78 hidden modules
+
+Completed 200 OK in 5897ms (Views: 5810.1ms | ActiveRecord: 47.7ms)
+
+
+Started GET "/sign_ups/187/edit" for ::1 at 2019-06-03 14:52:55 +0200
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (57.5ms)
+  Rendered shared/_navbar_bh.html.erb (5.3ms)
+  Rendered shared/_flashes.html.erb (2.0ms)
+  Rendered shared/_footer.html.erb (2.0ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+WARNING: We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+
+You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+
+  npm install --save core-js@2    npm install --save core-js@3
+  yarn add core-js@2              yarn add core-js@3
+
+
+Hash: 850e1c5f16e9906ed377
+Version: webpack 4.32.2
+Time: 1628ms
+Built at: 06/03/2019 2:52:59 PM
+                                     Asset       Size       Chunks             Chunk Names
+    js/application-314e5edbd1345a101fa8.js    829 KiB  application  [emitted]  application
+js/application-314e5edbd1345a101fa8.js.map    985 KiB  application  [emitted]  application
+                             manifest.json  364 bytes               [emitted]  
+Entrypoint application = js/application-314e5edbd1345a101fa8.js js/application-314e5edbd1345a101fa8.js.map
+[./app/javascript/packs/application.js] 245 bytes {application} [built]
+[./app/javascript/plugins/init_autocomplete.js] 280 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 78 hidden modules
+
+Completed 200 OK in 4590ms (Views: 4514.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/sign_ups/187/edit" for ::1 at 2019-06-03 14:53:04 +0200
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (23.9ms)
+  Rendered shared/_navbar_bh.html.erb (3.8ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 89ms (Views: 81.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sign_ups/187/edit" for ::1 at 2019-06-03 14:56:04 +0200
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (34.4ms)
+  Rendered shared/_navbar_bh.html.erb (3.6ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (2.4ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+WARNING: We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+
+You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+
+  npm install --save core-js@2    npm install --save core-js@3
+  yarn add core-js@2              yarn add core-js@3
+
+
+Hash: 25c3e3685d263e6c936b
+Version: webpack 4.32.2
+Time: 1608ms
+Built at: 06/03/2019 2:56:08 PM
+                                     Asset       Size       Chunks             Chunk Names
+    js/application-c06220030dbb7b4053b2.js    829 KiB  application  [emitted]  application
+js/application-c06220030dbb7b4053b2.js.map    985 KiB  application  [emitted]  application
+                             manifest.json  364 bytes               [emitted]  
+Entrypoint application = js/application-c06220030dbb7b4053b2.js js/application-c06220030dbb7b4053b2.js.map
+[./app/javascript/packs/application.js] 245 bytes {application} [built]
+[./app/javascript/plugins/init_autocomplete.js] 301 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 78 hidden modules
+
+Completed 200 OK in 4265ms (Views: 4256.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/sign_ups/187/edit" for ::1 at 2019-06-03 14:57:28 +0200
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (34.2ms)
+  Rendered shared/_navbar_bh.html.erb (2.8ms)
+  Rendered shared/_flashes.html.erb (2.1ms)
+  Rendered shared/_footer.html.erb (1.6ms)
+Completed 200 OK in 104ms (Views: 93.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/sign_ups/187/edit" for ::1 at 2019-06-03 14:57:29 +0200
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (26.2ms)
+  Rendered shared/_navbar_bh.html.erb (2.9ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 86ms (Views: 74.8ms | ActiveRecord: 0.6ms)
+
+
