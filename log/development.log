@@ -4531,3 +4531,90 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 125ms (Views: 117.1ms | ActiveRecord: 5.6ms)
 
 
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=&search%5B%5D=Frankfurt&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:43:10 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["", "Frankfurt", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 8.6820917) / 57.2957795), ((users.latitude - 50.1106444) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 49.96591261688915 AND 50.25537618311085 AND users.longitude BETWEEN 8.456409208947653 AND 8.907774191052349 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((50.1106444 - users.latitude) * PI() / 180 / 2), 2) + COS(50.1106444 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((8.6820917 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:7
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:87
+  Rendered users/index.html.erb within layouts/application (22.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (3.4ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 352ms (Views: 98.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:44:23 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.1ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+WARNING: We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+
+You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+
+  npm install --save core-js@2    npm install --save core-js@3
+  yarn add core-js@2              yarn add core-js@3
+
+
+Hash: 2ba0777a1a2df5828e29
+Version: webpack 4.32.2
+Time: 1835ms
+Built at: 06/03/2019 4:44:28 PM
+                                     Asset       Size       Chunks             Chunk Names
+    js/application-0668efba40cfdf10e8dd.js    830 KiB  application  [emitted]  application
+js/application-0668efba40cfdf10e8dd.js.map    986 KiB  application  [emitted]  application
+                             manifest.json  364 bytes               [emitted]  
+Entrypoint application = js/application-0668efba40cfdf10e8dd.js js/application-0668efba40cfdf10e8dd.js.map
+[./app/javascript/packs/application.js] 365 bytes {application} [built]
+[./app/javascript/plugins/autocomplete_city.js] 308 bytes {application} [built]
+[./app/javascript/plugins/init_autocomplete.js] 319 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 78 hidden modules
+
+Completed 200 OK in 5138ms (Views: 5134.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Barcelona%2C+Catalunya%2C+Spain&button=" for ::1 at 2019-06-03 16:44:32 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Barcelona, Catalunya, Spain"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.3828939 - users.latitude) * PI() / 180 / 2), 2) + COS(41.3828939 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.1774322 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 2.1774322) / 57.2957795), ((users.latitude - 41.3828939) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 41.23816211688915 AND 41.52762568311085 AND users.longitude BETWEEN 1.9845358277181346 AND 2.3703285722818657 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.3828939 - users.latitude) * PI() / 180 / 2), 2) + COS(41.3828939 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.1774322 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:7
+  Rendered users/index.html.erb within layouts/application (25.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.4ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 305ms (Views: 71.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=&search%5B%5D=Barcelona%2C+Catalunya%2C+Spain&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 16:44:38 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["", "Barcelona, Catalunya, Spain", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.3828939 - users.latitude) * PI() / 180 / 2), 2) + COS(41.3828939 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.1774322 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 2.1774322) / 57.2957795), ((users.latitude - 41.3828939) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 41.23816211688915 AND 41.52762568311085 AND users.longitude BETWEEN 1.9845358277181346 AND 2.3703285722818657 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.3828939 - users.latitude) * PI() / 180 / 2), 2) + COS(41.3828939 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.1774322 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 10) ORDER BY distance ASC[0m
+  ↳ app/views/users/index.html.erb:7
+  Rendered users/index.html.erb within layouts/application (24.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (7.9ms)
+  Rendered shared/_flashes.html.erb (2.0ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 494ms (Views: 98.3ms | ActiveRecord: 2.6ms)
+
+
