@@ -3201,3 +3201,433 @@ Processing by SignUpsController#edit as HTML
 Completed 200 OK in 86ms (Views: 74.8ms | ActiveRecord: 0.6ms)
 
 
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/sign_ups/188/edit" for ::1 at 2019-06-03 15:34:57 +0200
+  [1m[35m (21.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SignUpsController#edit as HTML
+  Parameters: {"id"=>"188"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering sign_ups/edit.html.erb within layouts/application
+  Rendered sign_ups/edit.html.erb within layouts/application (316.8ms)
+  Rendered shared/_navbar_bh.html.erb (1.8ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+WARNING: We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+
+You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+
+  npm install --save core-js@2    npm install --save core-js@3
+  yarn add core-js@2              yarn add core-js@3
+
+
+Hash: 80e47c9060451471e281
+Version: webpack 4.32.2
+Time: 1665ms
+Built at: 06/03/2019 3:35:04 PM
+                                     Asset       Size       Chunks             Chunk Names
+    js/application-7f97ed410f2451725f60.js    829 KiB  application  [emitted]  application
+js/application-7f97ed410f2451725f60.js.map    985 KiB  application  [emitted]  application
+                             manifest.json  364 bytes               [emitted]  
+Entrypoint application = js/application-7f97ed410f2451725f60.js js/application-7f97ed410f2451725f60.js.map
+[./app/javascript/packs/application.js] 272 bytes {application} [built]
+[./app/javascript/plugins/init_autocomplete.js] 319 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 78 hidden modules
+
+Completed 200 OK in 6439ms (Views: 6379.2ms | ActiveRecord: 5.9ms)
+
+
+Started PATCH "/sign_ups/188" for ::1 at 2019-06-03 15:35:45 +0200
+Processing by SignUpsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V8TEJK9nLz9jHnjE/1KSHZrmmw1n7T4KmtvAkr7fPIx1yxfbmGdXGFxH0a31whf9S9z6yxBEZBvWNP6pxVYLKw==", "user"=>{"first_name"=>"Inou", "last_name"=>"Ridder", "level"=>"Beginner", "address"=>"Ámsterdam, Noord-Holland, Países Bajos", "phone_number"=>"+3412121212"}, "commit"=>"Next", "id"=>"188"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sign_ups_controller.rb:8
+  [1m[36mUser Update (45.2ms)[0m  [1m[33mUPDATE "users" SET "first_name" = $1, "last_name" = $2, "level" = $3, "address" = $4, "phone_number" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["first_name", "Inou"], ["last_name", "Ridder"], ["level", "Beginner"], ["address", "Ámsterdam, Noord-Holland, Países Bajos"], ["phone_number", "+3412121212"], ["updated_at", "2019-06-03 13:35:45.050597"], ["id", 188]]
+  ↳ app/controllers/sign_ups_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sign_ups_controller.rb:8
+Redirected to http://localhost:3000/finish_profiles/188/edit
+Completed 302 Found in 65ms (ActiveRecord: 46.5ms)
+
+
+Started GET "/finish_profiles/188/edit" for ::1 at 2019-06-03 15:35:45 +0200
+Processing by FinishProfilesController#edit as HTML
+  Parameters: {"id"=>"188"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering finish_profiles/edit.html.erb within layouts/application
+  Rendered finish_profiles/edit.html.erb within layouts/application (222.8ms)
+  Rendered shared/_navbar_bh.html.erb (1.6ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 268ms (Views: 263.2ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2220887829087922155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeLatLngTypeToFloat (20190603133920)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (112.7ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "latitude" TYPE float[0m
+  ↳ db/migrate/20190603133920_change_lat_lng_type_to_float.rb:3
+  [1m[35m (7.3ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "longitude" TYPE float[0m
+  ↳ db/migrate/20190603133920_change_lat_lng_type_to_float.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190603133920"]]
+  ↳ bin/rails:9
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (41.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2220887829087922155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (92.2ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.3828939 - users.latitude) * PI() / 180 / 2), 2) + COS(41.3828939 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.1774322 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 2.1774322) / 57.2957795), ((users.latitude - 41.3828939) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 41.0934303337783 AND 41.6723574662217 AND users.longitude BETWEEN 1.7916394554362691 AND 2.563224944563731 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.3828939 - users.latitude) * PI() / 180 / 2), 2) + COS(41.3828939 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((2.1774322 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 20) ORDER BY distance ASC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.77904055 - users.latitude) * PI() / 180 / 2), 2) + COS(41.77904055 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((1.78190476278338 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 1.78190476278338) / 57.2957795), ((users.latitude - 41.77904055) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 41.4895769837783 AND 42.068504116221696 AND users.longitude BETWEEN 1.3937380868647642 AND 2.1700714387019957 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((41.77904055 - users.latitude) * PI() / 180 / 2), 2) + COS(41.77904055 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((1.78190476278338 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 20) ORDER BY distance ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (40.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (41.6ms)[0m  [1m[33mUPDATE "users" SET "latitude" = $1, "longitude" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["latitude", 52.3745403], ["longitude", 4.89797550561798], ["updated_at", "2019-06-03 13:42:40.015697"], ["id", 188]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "latitude" = $1, "longitude" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["latitude", 50.1106444], ["longitude", 8.6820917], ["updated_at", "2019-06-03 13:42:42.511646"], ["id", 185]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "latitude" = $1, "longitude" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["latitude", 50.1106444], ["longitude", 8.6820917], ["updated_at", "2019-06-03 13:42:42.744604"], ["id", 186]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT users.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((52.3745403 - users.latitude) * PI() / 180 / 2), 2) + COS(52.3745403 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((4.89797550561798 - users.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((users.longitude - 4.89797550561798) / 57.2957795), ((users.latitude - 52.3745403) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "users" WHERE (users.latitude BETWEEN 51.65088138444576 AND 53.09819921555424 AND users.longitude BETWEEN 3.712615506235707 AND 6.083335505000253 AND (3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((52.3745403 - users.latitude) * PI() / 180 / 2), 2) + COS(52.3745403 * PI() / 180) * COS(users.latitude * PI() / 180) * POWER(SIN((4.89797550561798 - users.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 50) ORDER BY distance ASC[0m
+Started GET "/" for ::1 at 2019-06-03 15:43:53 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/edouardgarret/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (58.1ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 113ms (Views: 102.2ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Inou&button=" for ::1 at 2019-06-03 15:43:59 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Inou"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (85.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN (SELECT "users"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))), (to_tsquery('simple', ''' ' || '["Inou"]' || ' ''' || ':*')), 0)) AS rank FROM "users" WHERE ((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))) @@ (to_tsquery('simple', ''' ' || '["Inou"]' || ' ''' || ':*')))) AS pg_search_7dfb4cf67742cb0660305e ON "users"."id" = pg_search_7dfb4cf67742cb0660305e.pg_search_id ORDER BY pg_search_7dfb4cf67742cb0660305e.rank DESC, "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:44
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 188], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  Rendered users/index.html.erb within layouts/application (230.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (5.4ms)
+  Rendered shared/_flashes.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 296ms (Views: 200.3ms | ActiveRecord: 89.7ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Inou&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=Advanced&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 15:44:09 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Inou", "", "", "", "", "Advanced", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN (SELECT "users"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))), (to_tsquery('simple', ''' ' || '["Inou",' || ' ''' || ':*') && to_tsquery('simple', ''' ' || '"Advanced"]' || ' ''' || ':*')), 0)) AS rank FROM "users" WHERE ((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))) @@ (to_tsquery('simple', ''' ' || '["Inou",' || ' ''' || ':*') && to_tsquery('simple', ''' ' || '"Advanced"]' || ' ''' || ':*')))) AS pg_search_7dfb4cf67742cb0660305e ON "users"."id" = pg_search_7dfb4cf67742cb0660305e.pg_search_id ORDER BY pg_search_7dfb4cf67742cb0660305e.rank DESC, "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:44
+  Rendered users/index.html.erb within layouts/application (61.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (30.8ms)
+  Rendered shared/_flashes.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 241ms (Views: 227.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Barcelona&button=" for ::1 at 2019-06-03 15:44:40 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Barcelona"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN (SELECT "users"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))), (to_tsquery('simple', ''' ' || '["Barcelona"]' || ' ''' || ':*')), 0)) AS rank FROM "users" WHERE ((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))) @@ (to_tsquery('simple', ''' ' || '["Barcelona"]' || ' ''' || ':*')))) AS pg_search_7dfb4cf67742cb0660305e ON "users"."id" = pg_search_7dfb4cf67742cb0660305e.pg_search_id ORDER BY pg_search_7dfb4cf67742cb0660305e.rank DESC, "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:44
+  Rendered users/index.html.erb within layouts/application (23.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.1ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 85ms (Views: 78.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Barcelona&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=Baseliner&search%5B%5D=Puncher&search%5B%5D=&search%5B%5D=Righty&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 15:45:02 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Barcelona", "", "", "", "", "", "Baseliner", "Puncher", "", "Righty", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN (SELECT "users"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))), (to_tsquery('simple', ''' ' || '["Barcelona",' || ' ''' || ':*') && to_tsquery('simple', ''' ' || '"Baseliner",' || ' ''' || ':*') && to_tsquery('simple', ''' ' || '"Puncher",' || ' ''' || ':*') && to_tsquery('simple', ''' ' || '"Righty"]' || ' ''' || ':*')), 0)) AS rank FROM "users" WHERE ((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))) @@ (to_tsquery('simple', ''' ' || '["Barcelona",' || ' ''' || ':*') && to_tsquery('simple', ''' ' || '"Baseliner",' || ' ''' || ':*') && to_tsquery('simple', ''' ' || '"Puncher",' || ' ''' || ':*') && to_tsquery('simple', ''' ' || '"Righty"]' || ' ''' || ':*')))) AS pg_search_7dfb4cf67742cb0660305e ON "users"."id" = pg_search_7dfb4cf67742cb0660305e.pg_search_id ORDER BY pg_search_7dfb4cf67742cb0660305e.rank DESC, "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:44
+  Rendered users/index.html.erb within layouts/application (71.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (8.3ms)
+  Rendered shared/_flashes.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 243ms (Views: 223.3ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 15:45:11 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (3.1ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 71ms (Views: 66.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Barcelona&button=" for ::1 at 2019-06-03 15:45:15 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Barcelona"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN (SELECT "users"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))), (to_tsquery('simple', ''' ' || '["Barcelona"]' || ' ''' || ':*')), 0)) AS rank FROM "users" WHERE ((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))) @@ (to_tsquery('simple', ''' ' || '["Barcelona"]' || ' ''' || ':*')))) AS pg_search_7dfb4cf67742cb0660305e ON "users"."id" = pg_search_7dfb4cf67742cb0660305e.pg_search_id ORDER BY pg_search_7dfb4cf67742cb0660305e.rank DESC, "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:44
+  Rendered users/index.html.erb within layouts/application (15.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (2.9ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 59.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Barcelona&search%5B%5D=Frankfurt&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&search%5B%5D=&commit=Search" for ::1 at 2019-06-03 15:45:32 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Barcelona", "Frankfurt", "", "", "", "", "", "", ""], "commit"=>"Search"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN (SELECT "users"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))), (to_tsquery('simple', ''' ' || '["Barcelona",' || ' ''' || ':*') && to_tsquery('simple', ''' ' || '"Frankfurt"]' || ' ''' || ':*')), 0)) AS rank FROM "users" WHERE ((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))) @@ (to_tsquery('simple', ''' ' || '["Barcelona",' || ' ''' || ':*') && to_tsquery('simple', ''' ' || '"Frankfurt"]' || ' ''' || ':*')))) AS pg_search_7dfb4cf67742cb0660305e ON "users"."id" = pg_search_7dfb4cf67742cb0660305e.pg_search_id ORDER BY pg_search_7dfb4cf67742cb0660305e.rank DESC, "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:44
+  Rendered users/index.html.erb within layouts/application (28.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (6.8ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 119ms (Views: 110.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 15:45:51 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (4.6ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 57ms (Views: 52.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=asdf&button=" for ::1 at 2019-06-03 15:46:16 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["asdf"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN (SELECT "users"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))), (to_tsquery('simple', ''' ' || '["asdf"]' || ' ''' || ':*')), 0)) AS rank FROM "users" WHERE ((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))) @@ (to_tsquery('simple', ''' ' || '["asdf"]' || ' ''' || ':*')))) AS pg_search_7dfb4cf67742cb0660305e ON "users"."id" = pg_search_7dfb4cf67742cb0660305e.pg_search_id ORDER BY pg_search_7dfb4cf67742cb0660305e.rank DESC, "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:44
+  Rendered users/index.html.erb within layouts/application (30.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (5.5ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 106ms (Views: 90.9ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 15:48:15 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar_bh.html.erb (6.2ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 59ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=&button=" for ::1 at 2019-06-03 15:49:31 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>[""], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:44
+  [1m[36mComputedSkillsSet Load (0.8ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 187], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.6ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 176], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 177], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (2.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 178], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 179], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (4.6ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 180], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 175], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 181], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 182], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 183], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 184], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 188], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.4ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  Rendered users/index.html.erb within layouts/application (146.3ms)
+  Rendered shared/_navbar_bh.html.erb (2.6ms)
+  Rendered shared/_flashes.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 236ms (Views: 212.2ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 15:50:06 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (10.1ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 94ms (Views: 89.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=&button=" for ::1 at 2019-06-03 15:50:15 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>[""], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:44
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 187], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 176], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.2ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 177], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 178], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 179], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 180], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 175], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 181], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 182], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 183], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 184], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 188], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.3ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 185], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  [1m[36mComputedSkillsSet Load (0.5ms)[0m  [1m[34mSELECT  "computed_skills_sets".* FROM "computed_skills_sets" WHERE "computed_skills_sets"."user_id" = $1 LIMIT $2[0m  [["user_id", 186], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:79
+  Rendered users/index.html.erb within layouts/application (120.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (5.2ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 195ms (Views: 184.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/challenges" for ::1 at 2019-06-03 15:50:57 +0200
+Processing by ChallengesController#index as HTML
+  Rendering challenges/index.html.erb within layouts/application
+  [1m[36mChallenge Load (1.3ms)[0m  [1m[34mSELECT "challenges".* FROM "challenges"[0m
+  ↳ app/views/challenges/index.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/challenges/index.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 185], ["LIMIT", 1]]
+  ↳ app/views/challenges/index.html.erb:27
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 185], ["LIMIT", 1]]
+  ↳ app/views/challenges/index.html.erb:27
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 185], ["LIMIT", 1]]
+  ↳ app/views/challenges/index.html.erb:27
+  Rendered challenges/index.html.erb within layouts/application (38.6ms)
+  Rendered shared/_navbar_bh.html.erb (1.5ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 95ms (Views: 77.8ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 15:51:14 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (3.7ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 53ms (Views: 49.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 15:53:56 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+  Rendered shared/_navbar_bh.html.erb (2.3ms)
+  Rendered shared/_flashes.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 70ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
