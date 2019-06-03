@@ -3631,3 +3631,208 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 70ms (Views: 66.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-06-03 16:01:22 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (44.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (59.2ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+WARNING: We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+
+You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+
+  npm install --save core-js@2    npm install --save core-js@3
+  yarn add core-js@2              yarn add core-js@3
+
+
+Hash: 1aba3ad3666754cd6ca2
+Version: webpack 4.32.2
+Time: 1094ms
+Built at: 06/03/2019 4:01:26 PM
+                                     Asset       Size       Chunks             Chunk Names
+    js/application-306ae38570c151cb7b14.js    501 KiB  application  [emitted]  application
+js/application-306ae38570c151cb7b14.js.map    623 KiB  application  [emitted]  application
+                             manifest.json  364 bytes               [emitted]  
+Entrypoint application = js/application-306ae38570c151cb7b14.js js/application-306ae38570c151cb7b14.js.map
+[./app/javascript/packs/application.js] 272 bytes {application} [built]
+[./app/javascript/plugins/init_autocomplete.js] 3.97 KiB {application} [built] [failed] [1 error]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 4 hidden modules
+
+ERROR in ./app/javascript/plugins/init_autocomplete.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/edouardgarret/code/edgr/backhand/app/javascript/plugins/init_autocomplete.js: Unexpected token, expected ";" (13:21)
+
+  11 |     });
+  12 |   }
+> 13 |   else (searchInput) {
+     |                      ^
+  14 |     places({
+  15 |       container: searchInput
+  16 |     }).configure({
+    at Parser.raise (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:6344:17)
+    at Parser.unexpected (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:7659:16)
+    at Parser.semicolon (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:7641:40)
+    at Parser.parseExpressionStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10323:10)
+    at Parser.parseStatementContent (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9922:19)
+    at Parser.parseStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9788:17)
+    at Parser.parseIfStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10143:51)
+    at Parser.parseStatementContent (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9833:21)
+    at Parser.parseStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9788:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10364:25)
+    at Parser.parseBlockBody (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10351:10)
+    at Parser.parseBlock (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10335:10)
+    at Parser.parseFunctionBody (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9408:24)
+    at Parser.parseArrowExpression (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9349:10)
+    at Parser.parseParenAndDistinguishExpression (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8986:12)
+    at Parser.parseExprAtom (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8760:21)
+    at Parser.parseExprSubscripts (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8413:23)
+    at Parser.parseMaybeUnary (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8393:21)
+    at Parser.parseExprOps (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8280:23)
+    at Parser.parseMaybeConditional (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8253:23)
+    at Parser.parseMaybeAssign (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8200:21)
+    at Parser.parseVar (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10439:26)
+    at Parser.parseVarStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10258:10)
+    at Parser.parseStatementContent (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9855:21)
+    at Parser.parseStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9788:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10364:25)
+    at Parser.parseBlockBody (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10351:10)
+    at Parser.parseTopLevel (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9717:10)
+    at Parser.parse (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:11233:17)
+    at parse (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:11269:38)
+ @ ./app/javascript/packs/application.js 3:0-71 11:0-23
+
+Completed 200 OK in 4091ms (Views: 4040.7ms | ActiveRecord: 45.0ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:03:26 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (10.3ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+WARNING: We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+
+You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+
+  npm install --save core-js@2    npm install --save core-js@3
+  yarn add core-js@2              yarn add core-js@3
+
+
+Hash: ad6ffdf08343606bdec2
+Version: webpack 4.32.2
+Time: 1781ms
+Built at: 06/03/2019 4:03:30 PM
+                                     Asset       Size       Chunks             Chunk Names
+    js/application-c63710db88ebf72c7a5d.js    834 KiB  application  [emitted]  application
+js/application-c63710db88ebf72c7a5d.js.map    985 KiB  application  [emitted]  application
+                             manifest.json  364 bytes               [emitted]  
+Entrypoint application = js/application-c63710db88ebf72c7a5d.js js/application-c63710db88ebf72c7a5d.js.map
+[./app/javascript/packs/application.js] 365 bytes {application} [built]
+[./app/javascript/plugins/autocomplete_city.js] 305 bytes {application} [built]
+[./app/javascript/plugins/init_autocomplete.js] 3.97 KiB {application} [built] [failed] [1 error]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 78 hidden modules
+
+ERROR in ./app/javascript/plugins/init_autocomplete.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/edouardgarret/code/edgr/backhand/app/javascript/plugins/init_autocomplete.js: Unexpected token, expected ";" (13:21)
+
+  11 |     });
+  12 |   }
+> 13 |   else (searchInput) {
+     |                      ^
+  14 |     places({
+  15 |       container: searchInput
+  16 |     }).configure({
+    at Parser.raise (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:6344:17)
+    at Parser.unexpected (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:7659:16)
+    at Parser.semicolon (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:7641:40)
+    at Parser.parseExpressionStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10323:10)
+    at Parser.parseStatementContent (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9922:19)
+    at Parser.parseStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9788:17)
+    at Parser.parseIfStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10143:51)
+    at Parser.parseStatementContent (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9833:21)
+    at Parser.parseStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9788:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10364:25)
+    at Parser.parseBlockBody (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10351:10)
+    at Parser.parseBlock (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10335:10)
+    at Parser.parseFunctionBody (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9408:24)
+    at Parser.parseArrowExpression (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9349:10)
+    at Parser.parseParenAndDistinguishExpression (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8986:12)
+    at Parser.parseExprAtom (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8760:21)
+    at Parser.parseExprSubscripts (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8413:23)
+    at Parser.parseMaybeUnary (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8393:21)
+    at Parser.parseExprOps (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8280:23)
+    at Parser.parseMaybeConditional (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8253:23)
+    at Parser.parseMaybeAssign (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:8200:21)
+    at Parser.parseVar (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10439:26)
+    at Parser.parseVarStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10258:10)
+    at Parser.parseStatementContent (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9855:21)
+    at Parser.parseStatement (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9788:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10364:25)
+    at Parser.parseBlockBody (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:10351:10)
+    at Parser.parseTopLevel (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:9717:10)
+    at Parser.parse (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:11233:17)
+    at parse (/Users/edouardgarret/code/edgr/backhand/node_modules/@babel/parser/lib/index.js:11269:38)
+ @ ./app/javascript/packs/application.js 3:0-71 12:0-23
+
+Completed 200 OK in 4414ms (Views: 4410.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:04:24 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (5.1ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/edouardgarret/code/edgr/backhand/public/packs
+Completed 200 OK in 3390ms (Views: 3387.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Barcelona%2C+Catalunya%2C+Spain&button=" for ::1 at 2019-06-03 16:05:03 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Barcelona, Catalunya, Spain"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (52.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN (SELECT "users"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))), (to_tsquery('simple', ''' ' || '["Barcelona,' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Catalunya,' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Spain"]' || ' ''' || ':*')), 0)) AS rank FROM "users" WHERE ((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))) @@ (to_tsquery('simple', ''' ' || '["Barcelona,' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Catalunya,' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Spain"]' || ' ''' || ':*')))) AS pg_search_7dfb4cf67742cb0660305e ON "users"."id" = pg_search_7dfb4cf67742cb0660305e.pg_search_id ORDER BY pg_search_7dfb4cf67742cb0660305e.rank DESC, "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:44
+  Rendered users/index.html.erb within layouts/application (108.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (5.3ms)
+  Rendered shared/_flashes.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 180ms (Views: 113.2ms | ActiveRecord: 52.8ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&search%5B%5D=Frankfurt+am+Main%2C+Hessen%2C+Germany&button=" for ::1 at 2019-06-03 16:05:10 +0200
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["Frankfurt am Main, Hessen, Germany"], "button"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN (SELECT "users"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))), (to_tsquery('simple', ''' ' || '["Frankfurt' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'am' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Main,' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Hessen,' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Germany"]' || ' ''' || ':*')), 0)) AS rank FROM "users" WHERE ((to_tsvector('simple', coalesce("users"."address"::text, '')) || to_tsvector('simple', coalesce("users"."level"::text, '')) || to_tsvector('simple', coalesce("users"."first_name"::text, '')) || to_tsvector('simple', coalesce("users"."last_name"::text, '')) || to_tsvector('simple', coalesce("users"."style_of_play"::text, '')) || to_tsvector('simple', coalesce("users"."gender"::text, '')) || to_tsvector('simple', coalesce("users"."country"::text, '')) || to_tsvector('simple', coalesce("users"."ranking"::text, '')) || to_tsvector('simple', coalesce("users"."handedness"::text, '')) || to_tsvector('simple', coalesce("users"."backhand_style"::text, '')) || to_tsvector('simple', coalesce("users"."review_score"::text, '')) || to_tsvector('simple', coalesce("users"."club_id"::text, ''))) @@ (to_tsquery('simple', ''' ' || '["Frankfurt' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'am' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Main,' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Hessen,' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Germany"]' || ' ''' || ':*')))) AS pg_search_7dfb4cf67742cb0660305e ON "users"."id" = pg_search_7dfb4cf67742cb0660305e.pg_search_id ORDER BY pg_search_7dfb4cf67742cb0660305e.rank DESC, "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:44
+  Rendered users/index.html.erb within layouts/application (32.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar_bh.html.erb:8
+  Rendered shared/_navbar_bh.html.erb (7.0ms)
+  Rendered shared/_flashes.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 107ms (Views: 95.5ms | ActiveRecord: 2.0ms)
+
+
