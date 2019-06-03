@@ -53,17 +53,38 @@
   </div>
 
 
+  <div class="stats">
 
-
-
-
-
-
-    <div class="stats">
-      <%= @user.all_challenges.count %>
-      <%= @user.challenges_won.count %>
-      <%= @user.challenges_lost.count %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 col-md-2">
+          <div class="progress-circle" data-percentage="20">
+            <span class="progress-circle-left">
+              <span class="progress-circle-bar"></span>
+            </span>
+            <span class="progress-circle-right">
+              <span class="progress-circle-bar"></span>
+            </span>
+            <div class="progress-circle-value">
+              <div>
+                <p>20%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+
+
+
+    <div class="three">
+      <%= @user.all_challenges.count %><p>matches</p>
+      <%= @user.challenges_won.count %><p>wins</p>
+      <%= @user.challenges_lost.count %><p>losses</p>
+    </div>
+
+  </div>
 
 
 </div>
