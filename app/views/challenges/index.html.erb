@@ -7,7 +7,7 @@
       </li>
     </ul>
 
-<% @challenges.each do |challenge| %>
+<% @unplayed_challenges.each do |challenge| %>
   <div class="" id="outstanding">
     <%= link_to challenge_path(challenge) do %>
     <div class="challenge-card">
@@ -41,7 +41,9 @@
     </div>
     <% end %>
   </div>
+<% end %>
 
+<% @played_challenges.each do |challenge| %>
   <div class="hidden" id="played">
     <% if challenge.status == "Played" %>
       <div class="challenge-card">

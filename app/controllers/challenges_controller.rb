@@ -3,7 +3,8 @@ class ChallengesController < ApplicationController
   before_action :set_challenge, only: %i[show update accept decline cancel]
 
   def index
-    @challenges = Challenge.all
+    @unplayed_challenges = Challenge.where(status == "Pending" || status == "Accepted" || status == "Declined")
+    @played_challenges = Challenge.where(status: "Played")
   end
 
   def show
