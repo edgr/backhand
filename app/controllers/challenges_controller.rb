@@ -8,6 +8,8 @@ class ChallengesController < ApplicationController
 
   def show
     if @challenge.status == "Accepted" || @challenge.status == "Pending"
+      @challenger = User.find(@challenge.challenger_id)
+      @challengee = User.find(@challenge.challengee_id)
       @challenge
     else
       redirect_to challenges_path

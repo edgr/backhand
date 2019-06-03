@@ -1,18 +1,12 @@
-
 .back {
   font-size: 12px;
   color: $black;
   margin-bottom: 20px;
 }
 
-
-
-
-// .player-card {
-//   height: 385px;
-//   background-color: $light-gray;
-//   border-radius: 8px;
-// }
+.show {
+  height: 2000px;
+}
 
 .pic-b {
   position: relative;
@@ -50,7 +44,6 @@
   }
 }
 
-
 .name-flag-b {
   display: flex;
   justify-content: space-between;
@@ -74,6 +67,7 @@
   margin: 10px;
   margin-top: 0;
 }
+
 .blue-box-b {
   margin: 0 3px 8px 0;
   background-color: $blue;
@@ -84,29 +78,87 @@
   padding-right: 3px;
 }
 
-// .group-progress {
-//   margin-top: 30px;
-// }
+.group-progress-strokes {
+  margin-top: 30px;
+}
 
-// .line-progress {
-//   display: flex;
-//   align-items: baseline;
-//   justify-content: space-between;
-//   margin-left: 10px;
-//   margin-right: 10px;
-//   p {
-//     color: $black;
-//     font-size: 12px;
-//     margin: 0;
-//   }
-// }
+.group-progress-fitness {
+  margin-top: 20px;
+}
+
+.line-progress-b {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  p {
+    color: $black;
+    font-size: 16px;
+    margin: 4px;
+  }
+}
 
 
-// .progress {
-//   height: 0.3em;
-//   background-color: $gray;
-//   width: 100px;
-// }
+.progress {
+  height: 0.4em;
+  background-color: $gray;
+  width: 180px;
+}
+
+
+.skills {
+  background-color: $light-gray;
+  margin: 0px 10px;
+  padding: 0;
+
+  h3 {
+  font-size: 24;
+  color: $black;
+  margin-left: 10px;
+  margin-top: 20px;
+  }
+}
+
+.strokes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.fitness {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.vertical {
+  font-size: 16px;
+  color: $gray;
+  transform: rotate(270deg);
+  margin: 0;
+  p {
+    margin: 0 !important;
+  }
+}
+
+.rankings {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: $black;
+}
+
+.wr {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 // .thumb {
 //   display: flex;

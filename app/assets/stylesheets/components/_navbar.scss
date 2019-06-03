@@ -34,21 +34,39 @@
   }
 }
 
-.avatar-burger {
-  display: flex;
-  justify-content: flex-end;
-  align-items: baseline;
-  margin-left: 20px;
-  #margin-left {
-  margin-left: -15px;
-  }
-  .avatar {
-  margin-top: 20px;
-  z-index: 99;
-
-  }
-}
-
 .fas {
   font-size: 26px;
 }
+
+// Menu items
+
+#menu {
+  width: 200px;
+}
+
+#profile-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  .links {
+    text-decoration: none;
+    color: $black;
+    :hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.menu-button {
+  padding: 8px 16px;
+  text-align: right;
+  .links {
+    text-decoration: none;
+    color: $black;
+    :hover {
+      text-decoration: none;
+    }
+  }
+}
+
