@@ -8,9 +8,10 @@ class ChallengesController < ApplicationController
   end
 
   def show
-    if @challenge.status == "accepted" || @challenge.status == "pending"
-      @challenger = User.find(@challenge.challenger_id)
-      @challengee = User.find(@challenge.challengee_id)
+    if @challenge.status == "accepted" || @challenge.status == "pending" || @challenge.status == "played"
+      @challenger = @challenge.challenger
+      @challengee = @challenge.challengee
+      @players = [@challenger, @challengee]
     else
       redirect_to challenges_path
     end
@@ -27,6 +28,11 @@ class ChallengesController < ApplicationController
     else
       redirect_to user_path(@challenge.challengee)
     end
+  end
+
+  def update
+    @challenge.update(challenge_params)
+    redirect_to new_challenge_user_review_path(@challenge)
   end
 
   def accept
@@ -54,6 +60,10 @@ class ChallengesController < ApplicationController
   end
 
   private
+
+  def challenge_params
+    params.require(:challenge).permit(:location, :date, :winner, :score)
+  end
 
   def set_challenge
     @challenge = Challenge.find(params[:id])
