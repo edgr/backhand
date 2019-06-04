@@ -28,23 +28,25 @@
   <div class="bluevs">
     <div class="bluevs-left">
       <div>
-        <p class="short-test"><%= current_user.level.downcase %></p>
+        <p class="short-test"><%= current_user.level %></p>
       </div>
       <div>
-        <p class="short-test"><%= current_user.style_of_play.downcase %></p>
+        <p class="short-test"><%= current_user.style_of_play %></p>
       </div>
-<!--       <p class="short-test"> heelloooooo</p>
-      <p class="short-test"> <%= current_user.level.downcase %></p>
-      <p class="short-test">looooooooooooooooong</p> -->
     </div>
 
     <div class="score">
-      <h2>0:0</h2>
+      <h1>0:0</h1>
     </div>
 
+    <div class="bluevs">
       <div class="bluevs-right">
-        <h4> <%= @challengee.level.downcase %></h4>
-        <h4><%= @challengee.style_of_play.downcase %></h4>
+        <div>
+          <p class="short-test"><%= @challengee.level %></p>
+        </div>
+        <div>
+          <p class="short-test"><%= @challengee.style_of_play %></p>
+        </div>
       </div>
 
 
