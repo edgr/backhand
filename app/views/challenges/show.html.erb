@@ -11,32 +11,38 @@
         </div>
         <div class="ranking-b-left">
           <span>WR</span>
-          <div class="rank-b-left">#<%= current_user.ranking %></div>
+          <div class="rank-b-left">
+            #<%= current_user.ranking %>
+          </div>
         </div>
       </div>
     <% end %>
 
     <%= link_to(user_path(@challengee)) do %>
-    <div class="col span_1_of_2 other-user-opponent-vs" style="background-image: url('<%= cl_image_path @challengee.picture %>') ">
-      <div class="overflow-wrap opponent-name justify-content-center">
-        <h1><%= @challengee.first_name %></h1>
+      <div class="col span_1_of_2 other-user-opponent-vs" style="background-image: url('<%= cl_image_path @challengee.picture %>') ">
+        <div class="overflow-wrap opponent-name justify-content-center">
+          <h1><%= @challengee.first_name %></h1>
+        </div>
+        <div class="ranking-b">
+          <span>WR</span>
+          <div class="rank-b">
+            #<%= @challengee.ranking %>
+          </div>
+        </div>
       </div>
-      <div class="ranking-b">
-        <span>WR</span>
-        <div class="rank-b">#<%= @challengee.ranking %></div>
-      </div>
-    </div>
     <% end %>
   </div>
 
   <div class="bluevs">
-    <div class="bluevs-left">
-      <div>
-        <p class="short-test"><%= current_user.level %></p>
-      </div>
-      <div>
-        <p class="short-test"><%= current_user.style_of_play %></p>
-      </div>
+    <div class="bluevs-left ">
+      <h4>
+        <%= current_user.level.downcase %>
+      </h4>
+      <% if current_user.style_of_play.nil? == false  %>
+        <h4>
+          <%= current_user.style_of_play.downcase%>
+        </h4>
+      <% end %>
     </div>
 
     <div class="score">
@@ -47,38 +53,35 @@
       <h1>0:0</h1>
     </div>
 
-    <div class="bluevs">
-      <div class="bluevs-right">
-        <div>
-          <p class="short-test"><%= @challengee.level %></p>
-        </div>
-        <div>
-          <p class="short-test"><%= @challengee.style_of_play %></p>
-        </div>
-      </div>
-
-
-</div>
-</div>
-    <div class="message">
-      <% if @challenge.challenger == current_user %>
-      <% if @challenge.status == "Pending" %>
-      <%= render partial: "challenger-pending" %>
-      <% else %>
-      <%= render partial: "challenger-accepted" %>
-      <% end %>
-      <% else %>
-      <% if @challenge.status == "Pending"  %>
-      <%= render partial: "challengee-pending" %>
-      <% else %>
-      <%= render partial: "challengee-accepted" %>
-      <% end %>
+    <div class="bluevs-right">
+      <h4>
+        <%= @challengee.level.downcase %>
+      </h4>
+      <% if current_user.style_of_play.nil? == false  %>
+        <h4>
+          <%= @challengee.style_of_play.downcase %>
+        </h4>
       <% end %>
     </div>
+  </div>
 
-
-
-<!-- </div>
-  <%# raise %>
-</div> -->
-
+  <div class="message">
+    <% if @challenge.challenger == current_user %>
+      <% if @challenge.status == "Pending" %>
+        <%= render partial: "challenger-pending" %>
+      <% elsif @challenge.status == "Accepted" %>
+        <%= render partial: "challenger-accepted" %>
+      <% else %>
+        <%= render partial: "challenger-played" %>
+      <% end %>
+    <% else %>
+      <% if @challenge.status == "Pending"  %>
+        <%= render partial: "challengee-pending" %>
+      <% elsif @challenge.status == "Accepted" %>
+        <%= render partial: "challengee-accepted" %>
+      <% else %>
+        <%= render partial: "challengee-played" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

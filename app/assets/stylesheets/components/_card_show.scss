@@ -66,7 +66,7 @@
   }
 }
 
-.skills-b {
+.skills-bb {
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
@@ -74,13 +74,13 @@
 }
 
 .blue-box-b {
-  margin: 0 3px 8px 0;
+  margin: 0 6px 8px 0;
   background-color: $blue;
   color: white;
   font-size: 16px;
   border-radius: 2px;
-  padding-left: 3px;
-  padding-right: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .group-progress-fitness {
@@ -107,11 +107,12 @@
 }
 
 
-.skills {
+.skills-b {
   background-color: $light-gray;
   margin: 0px -15px;
   padding: 0;
-  padding-bottom: 28px;
+  padding-bottom: 12px;
+  padding-top: 15px;
 
   h3 {
   font-size: 24;
@@ -126,8 +127,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 0;
-  margin-left: 10px;
+  // margin-left: 10px;
   margin-right: 10px;
 }
 
@@ -137,7 +139,7 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 25px;
-  margin-left: 10px;
+  // margin-left: 10px;
   margin-right: 10px;
 }
 
@@ -148,8 +150,12 @@
   margin: 0;
   margin-top: 22px;
   p {
-    margin: 0 !important;
+    // margin: 0 !important;
   }
+}
+
+.block {
+  // padding-left: 10px;
 }
 
 .rankings {
@@ -159,6 +165,7 @@
   background-color: white;
   padding-top: 18px;
   padding-bottom: 18px;
+  margin-top: 12px;
 }
 
 .wr {
@@ -198,19 +205,98 @@
   height: 40px;
 }
 
+.lis {
+  font-size: 24px;
+}
 
 
-// .thumb {
-//   display: flex;
-//   justify-content: flex-end;
-//   align-items: flex-end;
-//   align-items: baseline;
-//   margin-top: 30px;
-//   margin-right: 10px;
-//   font-size: 14px;
-//   color: $black;
-// }
+.format {
+  font-size: 16px;
+  color: $black;
+  line-height: 70%;
+  font-weight: 400;
+}
 
-// .font {
-//   font-family: 'Lato';
-// }
+.format-info {
+  font-weight: 300;
+
+}
+
+.tabs {
+  background-color: $light-gray;
+  margin: -15px;
+  margin-top: 68px;
+  padding-top: 28px;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+}
+
+#player_bio {
+  font-size: 16px;
+  font-weight: 400;
+  color: $black;
+}
+
+
+
+.comments {
+
+  h3 {
+  font-size: 24;
+  color: $black;
+  margin-left: 15px;
+  margin-top: 25px;
+  margin-bottom: 33px;
+  }
+}
+
+.thumb-b {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-items: baseline;
+  margin-top: 30px;
+  margin-right: 10px;
+  font-size: 24px;
+  color: $black;
+}
+
+.comment-thumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+
+.review-avatar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  p {
+    font-size: 16px;
+    font-weight: 300;
+    color: $black;
+    width: 73%;
+    margin-left: 10px;
+  }
+}
+
+.avatar-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 8px;
+  .avatar {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 5px;
+  }
+   h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: $black;
+  text-align: left;
+  }
+
+}
+
