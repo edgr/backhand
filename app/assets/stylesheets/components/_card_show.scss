@@ -107,7 +107,7 @@
 }
 
 
-.skills {
+.skills-b {
   background-color: $light-gray;
   margin: 0px -15px;
   padding: 0;
@@ -198,6 +198,24 @@
   height: 40px;
 }
 
+.lis {
+  font-size: 24px;
+}
+
+
+.format {
+  font-size: 16px;
+  color: $black;
+  line-height: 70%;
+}
+
+.tabs {
+  background-color: $light-gray;
+  margin: -15px;
+  margin-top: 68px;
+  padding-top: 20px;
+  padding-bottom: 3px;
+}
 
 
 // .thumb {
