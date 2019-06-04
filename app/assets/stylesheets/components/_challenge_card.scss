@@ -1,10 +1,12 @@
 // challenges dashboard page
 .link-challenge {
     text-decoration: none;
-    :hover {
-      text-decoration: none;
-    }
-  }
+}
+
+.link-challenge:hover {
+  text-decoration: none;
+}
+
 
 .challenge-card {
   position: relative;
@@ -27,12 +29,14 @@
     position: absolute;
     margin: -22px 0px 0px -18px;
     font-size: 14px;
+    color: $gray;
   }
   .fa-arrow-down {
     transform: rotate(-45deg);
     position: absolute;
     margin: -22px 0px 0px -18px;
     font-size: 14px;
+    color: $gray;
   }
 }
 
@@ -54,6 +58,9 @@
   margin-left: 16px;
   .player-name {
     color: $black;
+  }
+  .date {
+    color: $gray;
   }
 }
 
