@@ -4,18 +4,21 @@
   <div class="section group">
     <h1 id="vs">VS</h1>
 
-    <div class="col span_1_of_2 current-user-vs user-name text-center">
-      <div class="overflow-wrap current-user-name">
-        <h1><%= current_user.first_name  %></h1>
+    <%= link_to(user_path(current_user)) do %>
+      <div class="col span_1_of_2 current-user-vs user-name text-center" style="background-image: url('<%= cl_image_path current_user.picture %>') ">
+        <div class="overflow-wrap current-user-name justify-content-center">
+          <h1><%= current_user.first_name  %></h1>
+        </div>
+        <div class="ranking-b-left">
+          <span>WR</span>
+          <div class="rank-b-left">#<%= current_user.ranking %></div>
+        </div>
       </div>
-      <div class="ranking-b-left">
-        <span>WR</span>
-        <div class="rank-b-left">#<%= current_user.ranking %></div>
-      </div>
-    </div>
+    <% end %>
 
-    <div class="col span_1_of_2 other-user-opponent-vs">
-      <div class="overflow-wrap opponent-name">
+    <%= link_to(user_path(@challengee)) do %>
+    <div class="col span_1_of_2 other-user-opponent-vs" style="background-image: url('<%= cl_image_path @challengee.picture %>') ">
+      <div class="overflow-wrap opponent-name justify-content-center">
         <h1><%= @challengee.first_name %></h1>
       </div>
       <div class="ranking-b">
@@ -23,6 +26,7 @@
         <div class="rank-b">#<%= @challengee.ranking %></div>
       </div>
     </div>
+    <% end %>
   </div>
 
   <div class="bluevs">
@@ -36,6 +40,10 @@
     </div>
 
     <div class="score">
+   <!--    if the user has played with against the challenger before, it should
+      display the number of wins/losses
+      otherwise, it should be 0:0 -->
+
       <h1>0:0</h1>
     </div>
 
@@ -49,9 +57,6 @@
         </div>
       </div>
 
-
-    <!-- <div class="bluevs"> -->
-    <!-- </div> -->
 
 </div>
 </div>
@@ -70,6 +75,8 @@
       <% end %>
       <% end %>
     </div>
+
+
 
 <!-- </div>
   <%# raise %>
