@@ -17,36 +17,43 @@
     </span>
   </div>
 
-  <div class="skills-b">
-    <div class="blue-box-b p-2 m-2">
+  <div class="skills-bb">
+    <div class="blue-box-b">
       <%= @user.level %>
     </div>
-    <div class="blue-box-b p-2 m-2">
-    <%= @user.style_of_play %>
+    <div class="blue-box-b">
+      <%= @user.style_of_play %>
     </div>
   </div>
 
 
 <!-- tabs -->
+  <div class="tabs">
 
     <ul class="list-inline tabs-underlined">
       <li>
-        <a href="#" data-target="player_info" class="tab-underlined active">Info</a>
+        <a href="#" data-target="player_info" class="tab-underlined active lis">Info</a>
       </li>
       <li>
-        <a href="#" data-target="player_bio" class="tab-underlined">Bio</a>
+        <a href="#" data-target="player_bio" class="tab-underlined lis">Bio</a>
       </li>
     </ul>
 
   <div class="player-infos" id="player_info">
 
-    <div class="player-infos" style="height: 250px; margin-left: 10px; margin-right:10px">
-      <p>age: <%= @user.birthday %></p>
-      <p>place of birth: <%= @user.place_of_birth %></p>
-      <p>birthdate: <%= @user.height %></p>
-      <p>height: <%= @user.weight %></p>
-      <p>style: <%= @user.handedness %> - <%= @user.backhand_style %></p>
-      <p>residence: <%= @user.address %></p>
+    <div class="player-infos format" style="height: 250px; margin-left: 10px; margin-right:10px">
+      <br>
+      <!-- <p>age: <%= @user.birthday %></p> -->
+      <p>age: <span class="format-info"><%= @user.age %> years</span></p>
+
+      <p>birthday: <span class="format-info"><%= @user.birthday %></p>
+      <p>place of birth: <span class="format-info"><%= @user.place_of_birth %></span></p>
+      <br>
+      <p>height: <span class="format-info"><%= @user.height %> cm</span></p>
+      <p>weight: <span class="format-info"><%= @user.weight %> kg</span></p>
+      <br>
+      <p>style: <span class="format-info"><%= @user.handedness %> - <%= @user.backhand_style %></span></p>
+      <p>residence: <span class="format-info"><%= @user.address %></span></p>
 
       <%#= @user.club %>
     </div>
@@ -57,52 +64,51 @@
     <p><%= @user.bio %></p>
   </div>
 
+</div>
 
 <!-- end tabs -->
 
 <!-- Rankings & Stats -->
-<div class="rankings">
-  <h3>Rankings & Stats</h3>
 
-  <div class="wr">
-    <p>world mixed ranking</p>
-    <div class="rank-bb">#<%= @user.ranking %></div>
-  </div>
+  <div class="rankings">
+    <h3>Rankings & Stats</h3>
+
+    <div class="wr">
+      <p>world mixed ranking</p>
+      <div class="rank-bb">#<%= @user.ranking %></div>
+    </div>
+
+    <div class="stats">
 
 
-  <div class="stats">
-
-
-
-          <div class="progress-circle" data-percentage="20">
-            <span class="progress-circle-left">
-              <span class="progress-circle-bar"></span>
-            </span>
-            <span class="progress-circle-right">
-              <span class="progress-circle-bar"></span>
-            </span>
-            <div class="progress-circle-value">
-              <div>
-                <p>20%</p>
+            <div class="progress-circle" data-percentage="20">
+              <span class="progress-circle-left">
+                <span class="progress-circle-bar"></span>
+              </span>
+              <span class="progress-circle-right">
+                <span class="progress-circle-bar"></span>
+              </span>
+              <div class="progress-circle-value">
+                <div>
+                  <p>20%</p>
+                </div>
               </div>
             </div>
-          </div>
 
+      <div class="three">
+        <span><%= @user.all_challenges.count %> matches</span><br>
+        <span><%= @user.challenges_won.count %> wins</span><br>
+        <span><%= @user.challenges_lost.count %> losses</span><br>
+      </div>
 
-
-    <div class="three">
-      <span><%= @user.all_challenges.count %> matches</span><br>
-      <span><%= @user.challenges_won.count %> wins</span><br>
-      <span><%= @user.challenges_lost.count %> losses</span><br>
     </div>
 
   </div>
 
-</div>
 
 <!-- end Rankings & Stats -->
 
-<div class="skills">
+<div class="skills-b">
   <h3>Skills</h3>
   <div class="strokes">
     <div class="vertical">
@@ -173,15 +179,65 @@
 
 </div>
 
-  <p style="position: relative; bottom: -76px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-primary" %></p>
 
-  <h3>Comments:</h3>
-  <% @reviews.each do |review| %>
-    <p><%= review.content %></p>
-    <% if current_user.id == review.sender_id %>
-      <p><%= link_to 'Delete Comment', user_user_review_path(current_user, review), :method => :delete, :data => {:confirm => "Do you really want to delete this comment?"} %></p>
-    <% end %>
-  <% end %>
+
+
+<!-- comments -->
+
+<div class="comments">
+
+  <div class="comment-thumb">
+    <h3>Comments:</h3>
+
+    <div class="thumb-b">
+      <i class="far fa-thumbs-up"></i>
+      <div class= "font"><%= ((@user.computed_skills_set.volley)*10).to_i %>%</div>
+    </div>
+  </div>
+
+
+
+<div class="review-avatar">
+  <p>“Had a great time playing with Novak. He has a very decent backhand. Had a great time playing with Novak. He has a veryHad a great time playing with Novak. He has a very”</p>
+  <div class="avatar-name">
+    <%= cl_image_tag(@user.picture, class:"avatar") %>
+    <h2><%= @user.first_name %> <%= @user.last_name.first %>.</h2>
+  </div>
+</div>
+
+<div class="review-avatar">
+  <p>“Had a great time playing with Novak. He has a very decent backhand.”</p>
+  <div class="avatar-name">
+    <%= cl_image_tag(@user.picture, class:"avatar") %>
+    <h2><%= @user.first_name %> <%= @user.last_name.first %>.</h2>
+  </div>
+</div>
+
+<div class="review-avatar">
+  <p>“Had a great time playing with Novak. He has a very decent backhand. Had a great time playing with Novak.”</p>
+  <div class="avatar-name">
+    <%= cl_image_tag(@user.picture, class:"avatar") %>
+    <h2><%= @user.first_name %> <%= @user.last_name.first %>.</h2>
+  </div>
+</div>
+
+
+
+  <%# @reviews.each do |review| %>
+    <!-- <p><%#= review.content %></p> -->
+    <%# if current_user.id == review.sender_id %>
+      <!-- <p><%#= link_to 'Delete Comment', user_user_review_path(current_user, review), :method => :delete, :data => {:confirm => "Do you really want to delete this comment?"} %></p> -->
+    <%# end %>
+  <%# end %>
+
+</div>
+
+  <!-- end comments -->
+
+
+  <p style="position: fixed; bottom: 40px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-flat main-cta" %></p>
+
+
 
 </div>
 
