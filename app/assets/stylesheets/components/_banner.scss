@@ -2,26 +2,30 @@
   height: 60vh;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
   background-image: image-url("backhand-banner.jpg");
-  /*background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), image-url("backhand-banner.jpg");*/
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), image-url("backhand-banner.jpg");*/
   background-size: cover;
   width: 100vw;
   position: relative;
+  background-position: 94% 50%;
 
   h1 {
     color: white;
     font-weight: bold;
-    font-size: 36px;
-    margin-bottom: 25px;
+    font-size: 30px;
     margin-left: 25px;
+    position: absolute;
+    bottom: 100px;
+
   }
   p {
     color: white;
-    font-weight: lighter;
+    font-weight: 400;
     font-size: 16px;
-    margin-bottom: 25px;
     margin-left: 25px;
+    position: absolute;
+    bottom: 50px;
   }
 
 }
