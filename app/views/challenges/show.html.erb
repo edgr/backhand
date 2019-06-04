@@ -4,7 +4,7 @@
   <div class="section group">
     <h1 id="vs">VS</h1>
 
-    <div class="col span_1_of_2 current-user-vs user-name">
+    <div class="col span_1_of_2 current-user-vs user-name text-center">
       <div class="overflow-wrap current-user-name">
         <h1><%= current_user.first_name  %></h1>
       </div>
@@ -26,9 +26,16 @@
   </div>
 
   <div class="bluevs">
-    <div class="bluevs-left ">
-      <h4> <%= current_user.level.downcase %></h4>
-      <h4><%= current_user.style_of_play.downcase %></h4>
+    <div class="bluevs-left">
+      <div>
+        <p class="short-test"><%= current_user.level.downcase %></p>
+      </div>
+      <div>
+        <p class="short-test"><%= current_user.style_of_play.downcase %></p>
+      </div>
+<!--       <p class="short-test"> heelloooooo</p>
+      <p class="short-test"> <%= current_user.level.downcase %></p>
+      <p class="short-test">looooooooooooooooong</p> -->
     </div>
 
     <div class="score">
