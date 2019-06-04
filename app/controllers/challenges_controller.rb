@@ -3,12 +3,12 @@ class ChallengesController < ApplicationController
   before_action :set_challenge, only: %i[show update accept decline cancel]
 
   def index
-    @unplayed_challenges = Challenge.where(status == "Pending" || status == "Accepted" || status == "Declined")
-    @played_challenges = Challenge.where(status: "Played")
+    @unplayed_challenges = Challenge.where.not(status: "played")
+    @played_challenges = Challenge.where(status: "played")
   end
 
   def show
-    if @challenge.status == "Accepted" || @challenge.status == "Pending"
+    if @challenge.status == "accepted" || @challenge.status == "pending"
       @challenger = User.find(@challenge.challenger_id)
       @challengee = User.find(@challenge.challengee_id)
       @challenge
@@ -21,7 +21,7 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.new
     @challenge.challengee = User.find(params[:user_id])
     @challenge.challenger = current_user
-    @challenge.status = "Pending"
+    @challenge.status = "pending"
     if @challenge.valid?
       @challenge.save
       redirect_to challenge_path(@challenge)
@@ -31,19 +31,19 @@ class ChallengesController < ApplicationController
   end
 
   def accept
-    @challenge.status = "Accepted"
+    @challenge.status = "accepted"
     @challenge.save
     redirect_to challenge_path(@challenge)
   end
 
   def decline
-    @challenge.status = "Declined"
+    @challenge.status = "declined"
     @challenge.save
     redirect_to challenges_path
   end
 
   def cancel
-    @challenge.status = "Canceled"
+    @challenge.status = "canceled"
     @challenge.save
     redirect_to challenges_path
   end
