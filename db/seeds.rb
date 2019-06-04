@@ -64,7 +64,7 @@ end
   challenge = Challenge.create!(
     challenger_id: max.id,
     challengee_id: bob.id,
-    status: "pending"
+    status: "Pending"
     )
 
   UserReview.create!(
