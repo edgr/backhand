@@ -1,6 +1,6 @@
 class ChallengesController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_challenge, only: %i[show update accept decline cancel]
+  before_action :set_challenge, only: %i[show update accept decline cancel played]
 
   def index
     @challenges = Challenge.all
@@ -10,7 +10,6 @@ class ChallengesController < ApplicationController
     if @challenge.status == "Accepted" || @challenge.status == "Pending"
       @challenger = User.find(@challenge.challenger_id)
       @challengee = User.find(@challenge.challengee_id)
-      @challenge
     else
       redirect_to challenges_path
     end
@@ -45,6 +44,12 @@ class ChallengesController < ApplicationController
     @challenge.status = "Canceled"
     @challenge.save
     redirect_to challenges_path
+  end
+
+  def played
+    @challenge.status = "Played"
+    @challenge.save
+    redirect_to challenge_path(@challenge)
   end
 
   private

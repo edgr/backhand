@@ -1,0 +1,9 @@
+<h2>Record your Game</h2>
+
+<% simple_form_for @challenge do |f| %>
+  <%= f.input :date %>
+  <%= f.input :location %>
+  <%= f.input :winner %>
+  <%= f.input :score %>
+  <%= f.submit %>
+<% end %>

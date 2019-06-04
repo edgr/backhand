@@ -32,7 +32,7 @@
         <% end %>
 
       <!--  -->
-      <% if challenge.status == "Accepted" %>
+      <% if challenge.status == "Accepted" || (challenge.status == "ChallengerReviewed" && challenge.challenger != current_user) %>
         <%= link_to "#{challenge.status}", challenge_path(challenge), :method => :get, class: "link-accepted" %> <i class="fas fa-angle-right"></i>
       <% elsif challenge.status == "Pending" %>
         <%= link_to challenge_path(challenge), :method => :get, class: "link" do %>
@@ -42,7 +42,7 @@
         </div>
         <% end %>
       <% else %>
-        <p>Declined</p>
+        <p>Declined/Played</p>
       <% end %>
     </div>
   <% end %>
