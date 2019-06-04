@@ -41,6 +41,14 @@ class User < ApplicationRecord
   end
 
 
+  def age
+    ((Date.today - self.birthday).to_i)/ 365
+  end
+
+
+
+
+
 
   include PgSearch
   pg_search_scope :search_user_fields,
