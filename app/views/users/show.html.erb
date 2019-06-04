@@ -235,10 +235,12 @@
   <!-- end comments -->
 
 
-  <p style="position: fixed; bottom: 40px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-flat main-cta" %></p>
-
 
 
 </div>
+
+  <div class="main-cta">
+    <%= link_to "Challenge #{@user.first_name}", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-flat align-center cta" %>
+  </div>
 
 
