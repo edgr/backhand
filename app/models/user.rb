@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   after_create :set_skills
-  before_create :translate_address
 
   geocoded_by :address
   reverse_geocoded_by :latitude, :longitude
