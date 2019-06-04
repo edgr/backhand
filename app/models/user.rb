@@ -1,5 +1,11 @@
 class User < ApplicationRecord
   after_create :set_skills
+  before_create :translate_address
+
+  geocoded_by :address
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :geocode, if: :will_save_change_to_address?
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -34,6 +40,8 @@ class User < ApplicationRecord
   def challenges_lost
     Challenge.where(loser: self.id.to_s)
   end
+
+
 
   include PgSearch
   pg_search_scope :search_user_fields,

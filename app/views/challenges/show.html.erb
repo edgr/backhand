@@ -2,31 +2,67 @@
   <%= link_to "Back to all your challenges", challenges_path, :method => :get %>
 
   <div class="section group">
+    <h1 id="vs">VS</h1>
+
     <div class="col span_1_of_2 current-user-vs user-name">
-    <div class="user-name overflow-wrap ">
-      <h2>Current User Name</h2>
+      <div class="overflow-wrap current-user-name">
+        <h1><%= current_user.first_name  %></h1>
+      </div>
+      <div class="ranking-b-left">
+        <span>WR</span>
+        <div class="rank-b-left">#<%= current_user.ranking %></div>
+      </div>
     </div>
-    <div class="vs"><h1>VS</h1></div>
-    </div>
+
     <div class="col span_1_of_2 other-user-opponent-vs">
-    <h3>Opponent User Name</h3>
+      <div class="overflow-wrap opponent-name">
+        <h1><%= @challengee.first_name %></h1>
+      </div>
+      <div class="ranking-b">
+        <span>WR</span>
+        <div class="rank-b">#<%= @challengee.ranking %></div>
+      </div>
     </div>
   </div>
 
-  <% if @challenge.challenger == current_user %>
+  <div class="bluevs">
+    <div class="bluevs-left ">
+      <h4> <%= current_user.level.downcase %></h4>
+      <h4><%= current_user.style_of_play.downcase %></h4>
+    </div>
+
+    <div class="score">
+      <h2>0:0</h2>
+    </div>
+
+      <div class="bluevs-right">
+        <h4> <%= @challengee.level.downcase %></h4>
+        <h4><%= @challengee.style_of_play.downcase %></h4>
+      </div>
+
+
+    <!-- <div class="bluevs"> -->
+    <!-- </div> -->
+
+</div>
+</div>
+    <div class="message">
+      <% if @challenge.challenger == current_user %>
       <% if @challenge.status == "Pending" %>
       <%= render partial: "challenger-pending" %>
-    <% else %>
+      <% else %>
       <%= render partial: "challenger-accepted" %>
-    <% end %>
-  <% else %>
-    <% if @challenge.status == "Pending"  %>
+      <% end %>
+      <% else %>
+      <% if @challenge.status == "Pending"  %>
       <%= render partial: "challengee-pending" %>
-    <% else %>
+      <% else %>
       <%= render partial: "challengee-accepted" %>
-    <% end %>
-  <% end %>
-</div>
+      <% end %>
+      <% end %>
+    </div>
+
+<!-- </div>
   <%# raise %>
-</div>
+</div> -->
 
