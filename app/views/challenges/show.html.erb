@@ -4,69 +4,84 @@
   <div class="section group">
     <h1 id="vs">VS</h1>
 
-    <div class="col span_1_of_2 current-user-vs user-name text-center">
-      <div class="overflow-wrap current-user-name">
-        <h1><%= current_user.first_name  %></h1>
-      </div>
-      <div class="ranking-b-left">
-        <span>WR</span>
-        <div class="rank-b-left">
-          #<%= current_user.ranking %>
+    <%= link_to(user_path(current_user)) do %>
+      <div class="col span_1_of_2 current-user-vs user-name text-center" style="background-image: url('<%= cl_image_path current_user.picture %>') ">
+        <div class="overflow-wrap current-user-name justify-content-center">
+          <h1><%= current_user.first_name  %></h1>
+        </div>
+        <div class="ranking-b-left">
+          <span>WR</span>
+          <div class="rank-b-left">
+            #<%= current_user.ranking %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
 
-    <div class="col span_1_of_2 other-user-opponent-vs">
-      <div class="overflow-wrap opponent-name">
-        <h1><%= @challengee.first_name %></h1>
-      </div>
-      <div class="ranking-b">
-        <span>WR</span>
-        <div class="rank-b">
-          #<%= @challengee.ranking %>
+    <%= link_to(user_path(@challengee)) do %>
+      <div class="col span_1_of_2 other-user-opponent-vs" style="background-image: url('<%= cl_image_path @challengee.picture %>') ">
+        <div class="overflow-wrap opponent-name justify-content-center">
+          <h1><%= @challengee.first_name %></h1>
+        </div>
+        <div class="ranking-b">
+          <span>WR</span>
+          <div class="rank-b">
+            #<%= @challengee.ranking %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 
   <div class="bluevs">
     <div class="bluevs-left ">
-      <h4> <%= current_user.level.downcase %></h4>
+      <h4>
+        <%= current_user.level.downcase %>
+      </h4>
       <% if current_user.style_of_play.nil? == false  %>
-        <h4><%= current_user.style_of_play.downcase%></h4>
+        <h4>
+          <%= current_user.style_of_play.downcase%>
+        </h4>
       <% end %>
     </div>
 
     <div class="score">
+   <!--    if the user has played with against the challenger before, it should
+      display the number of wins/losses
+      otherwise, it should be 0:0 -->
+
       <h1>0:0</h1>
     </div>
 
     <div class="bluevs-right">
-      <h4> <%= @challengee.level.downcase %></h4>
+      <h4>
+        <%= @challengee.level.downcase %>
+      </h4>
       <% if current_user.style_of_play.nil? == false  %>
-        <h4><%= @challengee.style_of_play.downcase %></h4>
+        <h4>
+          <%= @challengee.style_of_play.downcase %>
+        </h4>
       <% end %>
     </div>
   </div>
-</div>
 
-    <div class="message">
-      <% if @challenge.challenger == current_user %>
-        <% if @challenge.status == "Pending" %>
-          <%= render partial: "challenger-pending" %>
-        <% elsif @challenge.status == "Accepted" %>
-          <%= render partial: "challenger-accepted" %>
-        <% else %>
-          <%= render partial: "challenger-played" %>
-        <% end %>
+  <div class="message">
+    <% if @challenge.challenger == current_user %>
+      <% if @challenge.status == "Pending" %>
+        <%= render partial: "challenger-pending" %>
+      <% elsif @challenge.status == "Accepted" %>
+        <%= render partial: "challenger-accepted" %>
       <% else %>
-        <% if @challenge.status == "Pending"  %>
-          <%= render partial: "challengee-pending" %>
-        <% elsif @challenge.status == "Accepted" %>
-          <%= render partial: "challengee-accepted" %>
-        <% else %>
-          <%= render partial: "challengee-played" %>
-        <% end %>
+        <%= render partial: "challenger-played" %>
       <% end %>
-    </div>
-
+    <% else %>
+      <% if @challenge.status == "Pending"  %>
+        <%= render partial: "challengee-pending" %>
+      <% elsif @challenge.status == "Accepted" %>
+        <%= render partial: "challengee-accepted" %>
+      <% else %>
+        <%= render partial: "challengee-played" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -4,7 +4,7 @@
 
 <p><%= link_to "Decline Challenge", decline_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to decline the Challenge?"}, class: "btn w-100 text-center" %></p>
 
-<p><%= link_to "Accept & Contact Player", accept_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Would you like to accept the challenge?"}, class: "btn btn-primary w-100 fixed-bottom" %></p>
+<p><%= link_to "Accept & Contact Player", accept_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Would you like to accept the challenge?"}, class: "btn btn-primary main-cta fixed-bottom" %></p>
 
 
-<%= link_to @challengee.first_name, user_path(@challengee), class: "btn-link" %> </h2>
+

@@ -1,11 +1,11 @@
 
 <div class="challenge-info p">
 
-  <h2 class="waiting-message text-center text-dark pt-3 pb-5">Waiting for an<br> answer from<br><%= link_to @challengee.first_name, user_path(@challengee), class: "btn-link" %> </h2>
+  <h2 class="waiting-message text-center text-dark pt-3 pb-5">Waiting for an answer<br> from<%= link_to @challengee.first_name, user_path(@challengee), class: "btn-link" %> </h2>
 
   <p class="text-center"><%= link_to "Decline Challenge", decline_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to decline the Challenge?"}, class: "btn w-100 text-center" %></p>
 
-  <p><%= link_to "Challenge another Player", users_path , :method => :get, :data => {:confirm => "Would you like to challenge another player?"}, class: "btn btn-primary w-100 fixed-bottom" %></p>
+  <p><%= link_to "Challenge another Player", users_path , :method => :get, :data => {:confirm => "Would you like to challenge another player?"}, class: "btn btn-primary main-cta fixed-bottom" %></p>
 
 </div>
 

@@ -64,7 +64,6 @@
 .other-user-opponent-vs {
   clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%);
   margin-right: -5px;
-  background-image: url("https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg");
   height: 30vh;
   background-size:     cover;
   background-repeat:   no-repeat;
@@ -76,7 +75,6 @@
 .current-user-vs {
   top-left-radius: 4px;
   clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
-  background-image: url("https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg");
   height: 30vh;
   background-size:     cover;
   background-repeat:   no-repeat;
@@ -88,8 +86,8 @@
 
 #vs {
   position: absolute;
-  left: 44%;
-  top: 24%;
+  left: 47%;
+  top: 30%;
   z-index: 99;
   font-size: 24px;
   color: $blue;
@@ -258,6 +256,7 @@
   clear: both;
   padding-top: 10px;
   margin: 0px;
+
 }
 
 /*  COLUMN SETUP  */
