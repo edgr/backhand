@@ -234,7 +234,8 @@
 
   <!-- end comments -->
 
-  <p style="position: relative; bottom: -76px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-primary" %></p>
+
+  <p style="position: fixed; bottom: 40px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-flat main-cta" %></p>
 
 
 
