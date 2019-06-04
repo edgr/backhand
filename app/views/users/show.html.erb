@@ -179,15 +179,64 @@
 
 </div>
 
+
+
+
+<!-- comments -->
+
+<div class="comments">
+
+  <div class="comment-thumb">
+    <h3>Comments:</h3>
+
+    <div class="thumb-b">
+      <i class="far fa-thumbs-up"></i>
+      <div class= "font"><%= ((@user.computed_skills_set.volley)*10).to_i %>%</div>
+    </div>
+  </div>
+
+
+
+<div class="review-avatar">
+  <p>“Had a great time playing with Novak. He has a very decent backhand. Had a great time playing with Novak. He has a veryHad a great time playing with Novak. He has a very”</p>
+  <div class="avatar-name">
+    <%= cl_image_tag(@user.picture, class:"avatar") %>
+    <h2><%= @user.first_name %> <%= @user.last_name.first %>.</h2>
+  </div>
+</div>
+
+<div class="review-avatar">
+  <p>“Had a great time playing with Novak. He has a very decent backhand.”</p>
+  <div class="avatar-name">
+    <%= cl_image_tag(@user.picture, class:"avatar") %>
+    <h2><%= @user.first_name %> <%= @user.last_name.first %>.</h2>
+  </div>
+</div>
+
+<div class="review-avatar">
+  <p>“Had a great time playing with Novak. He has a very decent backhand. Had a great time playing with Novak.”</p>
+  <div class="avatar-name">
+    <%= cl_image_tag(@user.picture, class:"avatar") %>
+    <h2><%= @user.first_name %> <%= @user.last_name.first %>.</h2>
+  </div>
+</div>
+
+
+
+  <%# @reviews.each do |review| %>
+    <!-- <p><%#= review.content %></p> -->
+    <%# if current_user.id == review.sender_id %>
+      <!-- <p><%#= link_to 'Delete Comment', user_user_review_path(current_user, review), :method => :delete, :data => {:confirm => "Do you really want to delete this comment?"} %></p> -->
+    <%# end %>
+  <%# end %>
+
+</div>
+
+  <!-- end comments -->
+
   <p style="position: relative; bottom: -76px"><%= link_to "Create Challenge", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-primary" %></p>
 
-  <h3>Comments:</h3>
-  <% @reviews.each do |review| %>
-    <p><%= review.content %></p>
-    <% if current_user.id == review.sender_id %>
-      <p><%= link_to 'Delete Comment', user_user_review_path(current_user, review), :method => :delete, :data => {:confirm => "Do you really want to delete this comment?"} %></p>
-    <% end %>
-  <% end %>
+
 
 </div>
 
