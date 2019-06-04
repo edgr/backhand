@@ -1,6 +1,6 @@
 class ChallengesController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_challenge, only: %i[show update accept decline cancel]
+  before_action :set_challenge, only: %i[show update accept decline cancel played]
 
   def index
     @unplayed_challenges = Challenge.where.not(status: "played")
@@ -8,10 +8,10 @@ class ChallengesController < ApplicationController
   end
 
   def show
-    if @challenge.status == "accepted" || @challenge.status == "pending"
-      @challenger = User.find(@challenge.challenger_id)
-      @challengee = User.find(@challenge.challengee_id)
-      @challenge
+    if @challenge.status == "accepted" || @challenge.status == "pending" || @challenge.status == "played"
+      @challenger = @challenge.challenger
+      @challengee = @challenge.challengee
+      @players = [@challenger, @challengee]
     else
       redirect_to challenges_path
     end
@@ -28,6 +28,11 @@ class ChallengesController < ApplicationController
     else
       redirect_to user_path(@challenge.challengee)
     end
+  end
+
+  def update
+    @challenge.update(challenge_params)
+    redirect_to new_challenge_user_review_path(@challenge)
   end
 
   def accept
@@ -48,7 +53,17 @@ class ChallengesController < ApplicationController
     redirect_to challenges_path
   end
 
+  def played
+    @challenge.status = "Played"
+    @challenge.save
+    redirect_to challenge_path(@challenge)
+  end
+
   private
+
+  def challenge_params
+    params.require(:challenge).permit(:location, :date, :winner, :score)
+  end
 
   def set_challenge
     @challenge = Challenge.find(params[:id])

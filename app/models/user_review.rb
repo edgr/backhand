@@ -6,7 +6,8 @@ class UserReview < ApplicationRecord
   after_create :set_receiver_score
 
   validate :difference_of_players
-  validates :thumb, :content, presence: true
+  validates :thumb, inclusion: { in: [true, false] }
+  validates :content, presence: true
   validates :serve, :return, :backhand, :forehand, :volley, :speed, :power, :endurance,
             presence: true
 

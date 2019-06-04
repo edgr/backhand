@@ -5,6 +5,7 @@
 <div class="challenge-info">
   <h3><%= @challenge.status %></h3>
   <h2>You have accepted <%= @challenger.first_name %>'s challenge.</h2>
+  <h2>Get in touch now! <%= @challenger.phone_number %></h2>
 </div>
 
 <p><%= link_to "Cancel Challenge", decline_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to decline the Challenge?"}%></p>
