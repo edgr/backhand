@@ -17,12 +17,12 @@
     </span>
   </div>
 
-  <div class="skills-b">
-    <div class="blue-box-b p-2 m-2">
+  <div class="skills-bb">
+    <div class="blue-box-b">
       <%= @user.level %>
     </div>
-    <div class="blue-box-b p-2 m-2">
-    <%= @user.style_of_play %>
+    <div class="blue-box-b">
+      <%= @user.style_of_play %>
     </div>
   </div>
 
@@ -44,16 +44,16 @@
     <div class="player-infos format" style="height: 250px; margin-left: 10px; margin-right:10px">
       <br>
       <!-- <p>age: <%= @user.birthday %></p> -->
-      <p>age: <%= @user.age %></p>
+      <p>age: <span class="format-info"><%= @user.age %> years</span></p>
 
-      <p>birthday: <%= @user.birthday %></p>
-      <p>place of birth: <%= @user.place_of_birth %></p>
+      <p>birthday: <span class="format-info"><%= @user.birthday %></p>
+      <p>place of birth: <span class="format-info"><%= @user.place_of_birth %></span></p>
       <br>
-      <p>height: <%= @user.height %></p>
-      <p>weight: <%= @user.weight %></p>
+      <p>height: <span class="format-info"><%= @user.height %> cm</span></p>
+      <p>weight: <span class="format-info"><%= @user.weight %> kg</span></p>
       <br>
-      <p>style: <%= @user.handedness %> - <%= @user.backhand_style %></p>
-      <p>residence: <%= @user.address %></p>
+      <p>style: <span class="format-info"><%= @user.handedness %> - <%= @user.backhand_style %></span></p>
+      <p>residence: <span class="format-info"><%= @user.address %></span></p>
 
       <%#= @user.club %>
     </div>
@@ -69,44 +69,42 @@
 <!-- end tabs -->
 
 <!-- Rankings & Stats -->
-<div class="rankings">
-  <h3>Rankings & Stats</h3>
 
-  <div class="wr">
-    <p>world mixed ranking</p>
-    <div class="rank-bb">#<%= @user.ranking %></div>
-  </div>
+  <div class="rankings">
+    <h3>Rankings & Stats</h3>
+
+    <div class="wr">
+      <p>world mixed ranking</p>
+      <div class="rank-bb">#<%= @user.ranking %></div>
+    </div>
+
+    <div class="stats">
 
 
-  <div class="stats">
-
-
-
-          <div class="progress-circle" data-percentage="20">
-            <span class="progress-circle-left">
-              <span class="progress-circle-bar"></span>
-            </span>
-            <span class="progress-circle-right">
-              <span class="progress-circle-bar"></span>
-            </span>
-            <div class="progress-circle-value">
-              <div>
-                <p>20%</p>
+            <div class="progress-circle" data-percentage="20">
+              <span class="progress-circle-left">
+                <span class="progress-circle-bar"></span>
+              </span>
+              <span class="progress-circle-right">
+                <span class="progress-circle-bar"></span>
+              </span>
+              <div class="progress-circle-value">
+                <div>
+                  <p>20%</p>
+                </div>
               </div>
             </div>
-          </div>
 
+      <div class="three">
+        <span><%= @user.all_challenges.count %> matches</span><br>
+        <span><%= @user.challenges_won.count %> wins</span><br>
+        <span><%= @user.challenges_lost.count %> losses</span><br>
+      </div>
 
-
-    <div class="three">
-      <span><%= @user.all_challenges.count %> matches</span><br>
-      <span><%= @user.challenges_won.count %> wins</span><br>
-      <span><%= @user.challenges_lost.count %> losses</span><br>
     </div>
 
   </div>
 
-</div>
 
 <!-- end Rankings & Stats -->
 

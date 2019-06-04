@@ -66,7 +66,7 @@
   }
 }
 
-.skills-b {
+.skills-bb {
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
@@ -74,13 +74,13 @@
 }
 
 .blue-box-b {
-  margin: 0 3px 8px 0;
+  margin: 0 6px 8px 0;
   background-color: $blue;
   color: white;
   font-size: 16px;
   border-radius: 2px;
-  padding-left: 3px;
-  padding-right: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .group-progress-fitness {
@@ -111,7 +111,8 @@
   background-color: $light-gray;
   margin: 0px -15px;
   padding: 0;
-  padding-bottom: 28px;
+  padding-bottom: 12px;
+  padding-top: 12px;
 
   h3 {
   font-size: 24;
@@ -148,7 +149,7 @@
   margin: 0;
   margin-top: 22px;
   p {
-    margin: 0 !important;
+    // margin: 0 !important;
   }
 }
 
@@ -159,6 +160,7 @@
   background-color: white;
   padding-top: 18px;
   padding-bottom: 18px;
+  margin-top: 12px;
 }
 
 .wr {
@@ -207,14 +209,27 @@
   font-size: 16px;
   color: $black;
   line-height: 70%;
+  font-weight: 400;
+}
+
+.format-info {
+  font-weight: 300;
+
 }
 
 .tabs {
   background-color: $light-gray;
   margin: -15px;
   margin-top: 68px;
-  padding-top: 20px;
+  padding-top: 25px;
   padding-bottom: 3px;
+  margin-bottom: 3px;
+}
+
+#player_bio {
+  font-size: 16px;
+  font-weight: 400;
+  color: $black;
 }
 
 
