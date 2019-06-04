@@ -1,11 +1,7 @@
 <%# raise %>
 
-<div class="container show">
-  <div class="back-link">
-    <%= link_to '< back to search', :back, class:"back" %>
-  </div>
-
-
+<div class="container">
+  <%= link_to '< back to search', users_path, class:"back" %>
   <div class="pic-b">
     <%= cl_image_tag @user.picture, class:"img-b" %>
     <div class="ranking-b">
@@ -15,18 +11,23 @@
   </div>
 
   <div class="name-flag-b">
-   <h2><%= @user.first_name %><%= @user.last_name %></h2>
-   <%= cl_image_tag @user.picture, class:"flag-b" %>
-    <!-- <span class="flag-icon flag-icon-gr">FLAG HERE</span> -->
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+        <% flag = @user.country.downcase.first(2) %>
+       <span class="flag-icon flag-icon-by flag-b flag-icon-<%= flag %>">
+    </span>
   </div>
+
   <div class="skills-b">
-    <div class="blue-box-b">
+    <div class="blue-box-b p-2 m-2">
       <%= @user.level %>
     </div>
-    <div class="blue-box-b">
+    <div class="blue-box-b p-2 m-2">
     <%= @user.style_of_play %>
     </div>
   </div>
+
+
+<!-- tabs -->
 
     <ul class="list-inline tabs-underlined">
       <li>
@@ -39,13 +40,14 @@
 
   <div class="player-infos" id="player_info">
 
-    <div class="player-infos">
-      <p><%= @user.birthday %></p>
-      <p><%= @user.place_of_birth %></p>
-      <p><%= @user.height %></p>
-      <p><%= @user.weight %></p>
-      <p><%= @user.handedness %> - <%= @user.backhand_style %></p>
-      <p><%= @user.address %></p>
+    <div class="player-infos" style="height: 250px; margin-left: 10px; margin-right:10px">
+      <p>age: <%= @user.birthday %></p>
+      <p>place of birth: <%= @user.place_of_birth %></p>
+      <p>birthdate: <%= @user.height %></p>
+      <p>height: <%= @user.weight %></p>
+      <p>style: <%= @user.handedness %> - <%= @user.backhand_style %></p>
+      <p>residence: <%= @user.address %></p>
+
       <%#= @user.club %>
     </div>
 
@@ -56,26 +58,22 @@
   </div>
 
 
+<!-- end tabs -->
+
 <!-- Rankings & Stats -->
 <div class="rankings">
   <h3>Rankings & Stats</h3>
 
   <div class="wr">
     <p>world mixed ranking</p>
-    <div class="rank-b">#<%= @user.ranking %></div>
+    <div class="rank-bb">#<%= @user.ranking %></div>
   </div>
 
-  <div class="stats">
-    <%= @user.all_challenges.count %>
-    <%= @user.challenges_won.count %>
-    <%= @user.challenges_lost.count %>
-  </div>
 
   <div class="stats">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3 col-md-2">
+
+
           <div class="progress-circle" data-percentage="20">
             <span class="progress-circle-left">
               <span class="progress-circle-bar"></span>
@@ -89,20 +87,17 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
 
 
 
     <div class="three">
-      <%= @user.all_challenges.count %><p>matches</p>
-      <%= @user.challenges_won.count %><p>wins</p>
-      <%= @user.challenges_lost.count %><p>losses</p>
+      <span><%= @user.all_challenges.count %> matches</span><br>
+      <span><%= @user.challenges_won.count %> wins</span><br>
+      <span><%= @user.challenges_lost.count %> losses</span><br>
     </div>
 
   </div>
+
 </div>
 
 <!-- end Rankings & Stats -->

@@ -12,7 +12,7 @@
   <div class="search-form-control form-group">
     <input class="form-control string required" type="text" name="search[query][]" id="search_query" value="<%= params[:search].try(:[], :query)&.join(" ") %>" />
       <button name="button" type="button" id="button-inside" class="btn btn-flat align-middle" data-toggle="modal" data-target="#exampleModal">
-      Filter
+        Filter
       </button>
   </div>
 
@@ -49,84 +49,89 @@
   <div class="container-fluid">
     <div class="row">
       <% @users.each do |user| %>
-        <%= link_to user_path(user), class: "col-6 text-decoration-none", :action => 'go' do %>
-          <div class="row">
-            <div class="col-12 p-1">
-              <div class="player-card">
+      <%= link_to user_path(user), class: "col-6 text-decoration-none", :action => 'go' do %>
+      <div class="row">
+        <div class="col-12 p-1">
+          <div class="player-card">
 
-                <div class="pic">
-                  <%= cl_image_tag user.picture, class:"img" %>
-                  <div class="ranking">
-                    <span>WR</span>
-                    <div class="rank"> #<%= user.ranking %></div>
-                  </div>
+            <div class="pic">
+              <%= cl_image_tag user.try(:picture), class:"img" %>
+              <div class="ranking">
+                <span>WR</span>
+                <div class="rank"> #<%= user.ranking %></div>
+              </div>
+            </div>
+
+            <div class="info">
+              <div class="main-info">
+                <div class="name-flag">
+                  <h2><%= user.first_name %> <%= user.last_name %></h2>
+                  <% if user.country %>
+                    <% flag = user.country.downcase.first(2) %>
+                  <span class="flag-icon flag-icon-by flag-icon-<%= flag %>">
+                  <% else %>
+                  <p>no country</p>
+                  <% end %>
                 </div>
 
-                <div class="info">
-                  <div class="main-info">
-                    <div class="name-flag">
-                      <h2><%= user.first_name %> <%= user.last_name %></h2>
-                      <%= cl_image_tag user.picture, class:"flag" %>
-                    </div>
 
-                    <div class="skills">
-                      <div class="blue-box">
-                        <%= user.level %>
-                      </div>
-                      <div class="blue-box">
-                        <%= user.style_of_play %>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="group-progress">
-                    <div class="line-progress">
-                      <p>serve</p>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: <%= ((user.computed_skills_set.serve)*10).to_i %>%" aria-valuenow="<%= ((user.computed_skills_set.serve)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-
-                    <div class="line-progress">
-                      <p>return</p>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: <%= ((user.computed_skills_set.return)*10).to_i %>%" aria-valuenow="<%= ((user.computed_skills_set.return)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-
-                    <div class="line-progress">
-                      <p>forehand</p>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: <%= ((user.computed_skills_set.forehand)*10).to_i %>%" aria-valuenow="<%= ((user.computed_skills_set.forehand)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-
-                    <div class="line-progress">
-                      <p>backhand</p>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: <%= ((user.computed_skills_set.backhand)*10).to_i %>%" aria-valuenow="<%= ((user.computed_skills_set.backhand)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-
-                    <div class="line-progress">
-                      <p>volley</p>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: <%= ((user.computed_skills_set.volley)*10).to_i %>%" aria-valuenow="<%= ((user.computed_skills_set.volley)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="thumb">
-                    <i class="far fa-thumbs-up"></i>
-                    <div class= "font"><%= ((user.computed_skills_set.volley)*10).to_i %>%</div>
-                  </div>
-
-                </div>
+             <div class="skills">
+              <div class="blue-box">
+                <%= user.level %>
+              </div>
+              <div class="blue-box">
+                <%= user.style_of_play %>
               </div>
             </div>
           </div>
-        <% end %>
-      <% end %>
+
+          <div class="group-progress">
+            <div class="line-progress">
+              <p>serve</p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <%= ((user.computed_skills_set.serve)*10).to_i %>%" aria-valuenow="<%= ((user.computed_skills_set.serve)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="line-progress">
+              <p>return</p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <%= ((user.computed_skills_set.return)*10).to_i %>%" aria-valuenow="<%= ((user.computed_skills_set.return)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="line-progress">
+              <p>forehand</p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <%= ((user.computed_skills_set.forehand)*10).to_i %>%" aria-valuenow="<%= ((user.computed_skills_set.forehand)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="line-progress">
+              <p>backhand</p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <%= ((user.computed_skills_set.backhand)*10).to_i %>%" aria-valuenow="<%= ((user.computed_skills_set.backhand)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="line-progress">
+              <p>volley</p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <%= ((user.computed_skills_set.volley)*10).to_i %>%" aria-valuenow="<%= ((user.computed_skills_set.volley)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="thumb">
+            <i class="far fa-thumbs-up"></i>
+            <div class= "font"><%= ((user.computed_skills_set.volley)*10).to_i %>%</div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
+  <% end %>
+  <% end %>
+</div>
 </div>
