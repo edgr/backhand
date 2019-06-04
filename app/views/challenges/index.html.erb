@@ -7,49 +7,72 @@
       </li>
     </ul>
 
-<div class="" id="outstanding">
-  <% @challenges.each do |challenge| %>
-    <div class="challenge-card">
-      <!-- I, Max, am the challenger -->
+<div class="box-size" id="outstanding">
+  <% @unplayed_challenges.each do |challenge| %>
+    <%= link_to challenge_path(challenge) do %>
+      <div class="challenge-card">
         <% if challenge.challenger_id == current_user.id %>
           <i class="fas fa-arrow-up"></i>
-          <%= image_tag "nadal.jpg", class: "avatar"%>
           <% challengee = User.find(challenge.challengee_id) %>
+          <%= cl_image_tag challengee.picture, class: "avatar" %>
           <div class="name-and-date">
-            <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %> </span>
+            <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %></span>
             <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
           </div>
-
-        <!-- I, Max, am the challengee -->
         <% else %>
           <i class="fas fa-arrow-down"></i>
-          <%= image_tag "nadal.jpg", class: "avatar"%>
           <% challenger = User.find(challenge.challenger_id) %>
+          <%= cl_image_tag challenger.picture, class: "avatar" %>
           <div class="name-and-date">
             <span class="player-name"><%= challenger.first_name %> <%= challenger.last_name %> </span>
             <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
           </div>
         <% end %>
 
-      <!--  -->
-      <% if challenge.status == "Accepted" || (challenge.status == "ChallengerReviewed" && challenge.challenger != current_user) %>
-        <%= link_to "#{challenge.status}", challenge_path(challenge), :method => :get, class: "link-accepted" %> <i class="fas fa-angle-right"></i>
-      <% elsif challenge.status == "Pending" %>
-        <%= link_to challenge_path(challenge), :method => :get, class: "link" do %>
-        <div class="status-arrow">
-          <%= challenge.status %>
+
+        <span><%= challenge.status %>
+        <% if challenge.status == "accepted" %>
+          <i class="fas fa-angle-right"></i></span>
+        <% elsif challenge.status == "pending" %>
           <i class="fas fa-angle-right"></i>
-        </div>
         <% end %>
-      <% else %>
-        <p>Declined/Played</p>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
-<div class="hidden" id="played">
-  <p>Here are the played matches</p>
+<div class="hidden box-size" id="played">
+  <% @played_challenges.each do |challenge| %>
+    <%= link_to challenge_path(challenge) do %>
+      <% if challenge.status == "played" %>
+        <div class="challenge-card">
+          <% if challenge.challenger_id == current_user.id %>
+            <% challengee = User.find(challenge.challengee_id) %>
+            <%= cl_image_tag challengee.picture, class: "avatar"%>
+            <div class="name-and-date">
+              <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %> </span>
+              <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
+            </div>
+              <span> <%= challenge.score %></span>
+              <i class="fas fa-angle-right"></i>
+          <% else %>
+            <% challenger = User.find(challenge.challenger_id) %>
+            <%= cl_image_tag challenger.picture, class: "avatar"%>
+            <div class="name-and-date">
+              <span class="player-name"><%= challenger.first_name %> <%= challenger.last_name %></span>
+              <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
+            </div>
+              <span><%= challenge.score %></span>
+              <span><i class="fas fa-angle-right"></i></span>
+          <% end %>
+        </div>
+      <% else %>
+        <h2>You have not recorded any matches.</h2>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
+
+
 
 
