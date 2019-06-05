@@ -6,8 +6,8 @@ class SearchUsers
   end
 
   def call
-    @scope = filter_by_text(@scope, params[:query]) if params[:query]
-    @scope = filter_by_location(@scope, params[:location]) if params[:location]
+    @scope = filter_by_text(@scope, params[:query]) if params[:query].present?
+    @scope = filter_by_location(@scope, params[:location]) if params[:location].present?
     @scope
   end
 

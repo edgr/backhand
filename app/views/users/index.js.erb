@@ -1,0 +1,18 @@
+function updateUsers() {
+  const usersContainer = document.querySelector('#users-container');
+  usersContainer.innerHTML = "<%= j render 'users', users: @users %>";
+}
+
+function updateQueryParameters() {
+  const form = document.querySelector('#search_query');
+  form.value = "";
+  form.value = "<%= @query %>";
+}
+
+function closeModal() {
+  document.querySelector('button.close').click();
+}
+
+updateUsers();
+updateQueryParameters();
+closeModal();
