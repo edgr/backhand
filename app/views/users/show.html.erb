@@ -47,7 +47,7 @@
       <!-- <p>age: <%= @user.birthday %></p> -->
       <p>age: <span class="format-info"><%= @user.age %> years</span></p>
 
-      <p>birthday: <span class="format-info"><%= @user.birthday %></p>
+      <p>birthday: <span class="format-info"><%= @user.birthday %></span></p>
       <p>place of birth: <span class="format-info"><%= @user.place_of_birth %></span></p>
       <br>
       <p>height: <span class="format-info"><%= @user.height %> cm</span></p>
@@ -180,11 +180,6 @@
 
 </div>
 
-
-
-
-<!-- comments -->
-
 <div class="comments">
 
   <div class="comment-thumb">
@@ -192,45 +187,21 @@
 
     <div class="thumb-b">
       <i class="far fa-thumbs-up"></i>
-      <div class= "font"><%= ((@user.computed_skills_set.volley)*10).to_i %>%</div>
+      <div class= "font">
+        <%= (@user.review_score) %>%
+      </div>
     </div>
   </div>
 
-
-
-<div class="review-avatar">
-  <p>“Had a great time playing with Novak. He has a very decent backhand. Had a great time playing with Novak. He has a veryHad a great time playing with Novak. He has a very”</p>
-  <div class="avatar-name">
-    <%= cl_image_tag(@user.picture, class:"avatar") %>
-    <h2><%= @user.first_name %> <%= @user.last_name.first %>.</h2>
-  </div>
-</div>
-
-<div class="review-avatar">
-  <p>“Had a great time playing with Novak. He has a very decent backhand.”</p>
-  <div class="avatar-name">
-    <%= cl_image_tag(@user.picture, class:"avatar") %>
-    <h2><%= @user.first_name %> <%= @user.last_name.first %>.</h2>
-  </div>
-</div>
-
-<div class="review-avatar">
-  <p>“Had a great time playing with Novak. He has a very decent backhand. Had a great time playing with Novak.”</p>
-  <div class="avatar-name">
-    <%= cl_image_tag(@user.picture, class:"avatar") %>
-    <h2><%= @user.first_name %> <%= @user.last_name.first %>.</h2>
-  </div>
-</div>
-
-
-
-  <%# @reviews.each do |review| %>
-    <!-- <p><%#= review.content %></p> -->
-    <%# if current_user.id == review.sender_id %>
-      <!-- <p><%#= link_to 'Delete Comment', user_user_review_path(current_user, review), :method => :delete, :data => {:confirm => "Do you really want to delete this comment?"} %></p> -->
-    <%# end %>
-  <%# end %>
-
+  <% @reviews.each do |review| %>
+    <div class="review-avatar">
+      <p><%= review.content %></p>
+      <div class="avatar-name">
+        <%= cl_image_tag(review.sender.picture, class:"avatar") %>
+        <h2><%= review.sender.first_name %> <%= review.sender.last_name.first %>.</h2>
+      </div>
+    </div>
+  <% end %>
 </div>
 
   <!-- end comments -->

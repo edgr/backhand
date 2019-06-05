@@ -13,6 +13,7 @@ class UserReviewsController < ApplicationController
     @user_review.sender_id = @sender.id
     @user_review.receiver_id = @receiver.id
     if @user_review.save
+      set_receiver_score
       skills_set_update
       redirect_to user_path(@receiver)
     else
@@ -26,6 +27,13 @@ class UserReviewsController < ApplicationController
   end
 
   private
+
+  def set_receiver_score
+    total_size = @receiver.received_reviews.length
+    thumbs_up = @receiver.received_reviews.count { |review| review.thumb? }
+    @receiver.review_score = (thumbs_up / total_size.to_f) * 100
+    @receiver.save
+  end
 
   def review_params
     params.require(:user_review).permit(:serve, :thumb, :volley, :return, :forehand, :backhand,
