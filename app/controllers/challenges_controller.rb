@@ -54,7 +54,7 @@ class ChallengesController < ApplicationController
   end
 
   def played
-    @challenge.status = "Played"
+    @challenge.status = "played"
     @challenge.save
     redirect_to challenge_path(@challenge)
   end
