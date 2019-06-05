@@ -32,6 +32,9 @@ class ChallengesController < ApplicationController
 
   def update
     @challenge.update(challenge_params)
+    if current_user == @challenge.challengee
+      game_value_challenger
+    end
     redirect_to new_challenge_user_review_path(@challenge)
   end
 
@@ -57,6 +60,45 @@ class ChallengesController < ApplicationController
     @challenge.status = "played"
     @challenge.save
     redirect_to challenge_path(@challenge)
+  end
+
+  def game_value_challenger
+    elo_points(@challenge.challenger.points, @challenge.challengee.points)
+    @challenge.challenger.points = @new_challenger_score
+    @challenge.challenger.save
+    @challenge.challengee.points = @new_challengee_score
+    @challenge.challengee.save
+  end
+
+  def elo_points(challenger_score, challengee_score)
+    difference = challenger_score - challengee_score
+    exponent = -(difference / 100.to_f)
+    probability = 1.to_f / (1.to_f + (10.to_f ** exponent))
+
+    if challenger_score < 2100.to_f
+      k_challenger = 32.to_f
+    elsif challenger_score > 2400.to_f
+      k_challenger = 16.to_f
+    else
+      k_challenger = 24.to_f
+    end
+
+    if challengee_score < 2100.to_f
+      k_challengee = 32.to_f
+    elsif challengee_score > 2400.to_f
+      k_challengee = 16.to_f
+    else
+      k_challengee = 24.to_f
+    end
+
+    if @challenge.winner.to_i == @challenge.challenger.id
+      s = 1.to_f
+    else
+      s = 0.to_f
+    end
+
+    @new_challenger_score = challenger_score + k_challenger * (s - probability)
+    @new_challengee_score = challengee_score + k_challengee * ((1.to_f - s) - (1.to_f - probability))
   end
 
   private

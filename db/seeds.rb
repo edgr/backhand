@@ -11,7 +11,7 @@ User.destroy_all
 
 puts "creating users"
 url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hxcpm8.jpg"
-10.times do
+5.times do
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -26,7 +26,6 @@ url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/djokovic_hx
     style_of_play: ["baseliner", "attacker", "baseliner","server-volleyer","puncher"].sample,
     gender: Faker::Gender.binary_type,
     country: Faker::Address.country,
-    picture: ["image/upload/v1559135396/tesurlfse9em5ngtdd7c.png"].sample,
     ranking: rand(1..1000),
     height: rand(150..200),
     weight: rand(50..100),
@@ -45,11 +44,28 @@ end
     first_name: 'Max',
     last_name: 'Mustermann',
     email: 'a@a.a',
-    address: 'Barcelona',
     phone_number: '12345678912',
     level: 'pro',
-    password: 'password'
+    password: 'password',
+    points: 1200,
+    country: 'Germany',
+    bio: Faker::Lorem.sentence(15),
+    address: "Barcelona",
+    place_of_birth: "#{Faker::Address.city}, #{Faker::Address.country}",
+    user_name: "@#{Faker::Lorem.word}",
+    style_of_play: ["baseliner", "attacker", "baseliner","server-volleyer","puncher"].sample,
+    gender: Faker::Gender.binary_type,
+    ranking: rand(1..1000),
+    height: rand(150..200),
+    weight: rand(50..100),
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude,
+    birthday: Faker::Date.birthday(18, 65),
+    handedness: ["righty","lefty"].sample,
+    backhand_style: ["one handed backhand","two handed backhand"].sample
     )
+  max.remote_picture_url = url
+  max.save
 
   bob = User.create!(
     first_name: 'Bob',
@@ -58,8 +74,25 @@ end
     address: 'Barcelona',
     phone_number: '12345678912',
     level: 'pro',
-    password: 'password'
+    password: 'password',
+    points: 1150,
+    country: 'Germany',
+    bio: Faker::Lorem.sentence(15),
+    place_of_birth: "#{Faker::Address.city}, #{Faker::Address.country}",
+    user_name: "@#{Faker::Lorem.word}",
+    style_of_play: ["baseliner", "attacker", "baseliner","server-volleyer","puncher"].sample,
+    gender: Faker::Gender.binary_type,
+    ranking: rand(1..1000),
+    height: rand(150..200),
+    weight: rand(50..100),
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude,
+    birthday: Faker::Date.birthday(18, 65),
+    handedness: ["righty","lefty"].sample,
+    backhand_style: ["one handed backhand","two handed backhand"].sample
     )
+  bob.remote_picture_url = url
+  bob.save
 
   challenge = Challenge.create!(
     challenger_id: max.id,
