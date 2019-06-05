@@ -1,15 +1,17 @@
-.main-cta {
+.cta-back {
   position: fixed;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  left: 0px;
   bottom: 0px;
   width: 100%;
   height: 80px;
   background-color: white;
   vertical-align: middle;
   z-index: 3;
-  .cta {
+  .cta-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,6 +20,7 @@
     font-size: 20px;
   }
 }
+
 
 .cta-home {
   width: 100%;

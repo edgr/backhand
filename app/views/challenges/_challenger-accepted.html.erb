@@ -1,6 +1,9 @@
-<div class="challenge-info">
-  <h2><%= link_to @challengee.first_name, user_path(@challengee) %><br>has accepted your challenge!</h2>
-  <h2>Get in touch now! <%= @challengee.phone_number %></h2>
+<div class="challenge-info text-dark">
+  <h2>Challenge accepted! Contact <%= link_to @challengee.first_name, user_path(@challengee) %> now!</h2>
+  <%= link_to "Cancel Challenge", cancel_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to cancel the Challenge?"} , class: "btn w-100 text-center" %>
+  <h3 class="phone_number"><%= @challengee.phone_number %></h3>
 </div>
-<p><%= link_to "Cancel Challenge", cancel_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to cancel the Challenge?"} , class: "btn w-100 text-center" %></p>
-<%= link_to "Record the Game", played_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to mark the challenge as played?"}, class: "btn btn-primary w-100" %>
+
+<div class="cta-back">
+  <%= link_to "Record the Game", played_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to mark the challenge as played?"}, class: "btn btn-primary cta-button" %>
+</div>
