@@ -14,8 +14,6 @@
     <h2><%= @user.first_name %> <%= @user.last_name %></h2>
       <div class="flag-3letters">
         <% flag = I18nData.country_code(@user.country).downcase %>
-        <%# letters = I18nData.country_code(@user.country) %>
-        <%# code = IsoCountryCodes.find('gb') %>
         <% code = ISO3166::Country.find_country_by_name(@user.country) %>
         <span class="flag-icon flag-icon-by flag-b flag-icon-<%= flag %>"></span>
         <span class="flag-letters-vertical"><%= code.alpha3 %></span>
