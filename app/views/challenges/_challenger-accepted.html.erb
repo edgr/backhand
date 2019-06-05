@@ -2,5 +2,5 @@
   <h2><%= link_to @challengee.first_name, user_path(@challengee), class: "btn-link" %><br>has accepted your challenge!</h2>
   <h2>Get in touch now! <%= @challengee.phone_number %></h2>
 </div>
-<p><%= link_to "Cancel Challenge", decline_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to decline the Challenge?"} , class: "btn w-100 text-center" %></p>
+<p><%= link_to "Cancel Challenge", cancel_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to cancel the Challenge?"} , class: "btn w-100 text-center" %></p>
 <%= link_to "Record the Game", played_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to mark the challenge as played?"}, class: "btn btn-primary w-100" %>
