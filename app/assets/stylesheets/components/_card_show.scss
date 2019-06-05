@@ -64,6 +64,15 @@
     margin-top: 0;
     line-height: 2.5em !important;
   }
+  .flag-3letters {
+    display: flex;
+      .flag-letters-vertical {
+      display: block;
+      margin: 0;
+      transform: rotate(270deg);
+      margin-right: -10px;
+    }
+  }
 }
 
 .skills-bb {

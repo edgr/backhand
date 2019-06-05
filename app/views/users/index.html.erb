@@ -67,7 +67,7 @@
                 <div class="name-flag">
                   <h2><%= user.first_name %> <%= user.last_name %></h2>
                   <% if user.country %>
-                    <% flag = user.country.downcase.first(2) %>
+                    <% flag = I18nData.country_code(user.country).downcase %>
                   <span class="flag-icon flag-icon-by flag-icon-<%= flag %>">
                   <% else %>
                   <p>no country</p>
