@@ -1,9 +1,9 @@
-<div class="challenge-info text-center text-dark pt-3 pb-5">
+<div class="challenge-info text-dark">
   <h2><%= link_to @challengee.first_name, user_path(@challengee), class: "btn-link"%> <br>has challenged you!</h2>
+  <%= link_to "Decline Challenge", decline_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to decline the Challenge?"}, class: "btn w-100 decline-cancel-link" %>
 </div>
 
 <div class="cta-back">
-  <%= link_to "Decline Challenge", decline_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to decline the Challenge?"}, class: "btn w-100 text-center" %>
   <%= link_to "Accept & Contact Player", accept_challenge_path(@challenge), :method => :patch, class: "btn btn-primary cta-button" %>
 </div>
 
