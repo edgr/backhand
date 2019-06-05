@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     if params[:search]
@@ -14,6 +14,18 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @reviews = UserReview.where(receiver_id: @user.id)
   end
+
+  # def edit
+  # end
+
+  # def update
+  #   @user = User.find(params[:id])
+  #   if @user.update(user_params)
+  #     redirect_to user_path(@user)
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   private
 
