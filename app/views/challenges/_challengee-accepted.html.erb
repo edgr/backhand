@@ -1,9 +1,9 @@
 <div class="challenge-info text-center text-dark pt-3 pb-5">
   <h2>You have accepted<br>
-    <%= link_to @challenger.first_name, user_path(@challenger), class: "btn-link" %><%= @challenger.first_name %>'s challenge.
+    <%= link_to @challenger.first_name, user_path(@challenger) %>'s challenge.
   </h2>
   <h2>
-    Get in touch now! <%= @challenger.phone_number %>
+    Get in touch now! <%= @challengee.phone_number %>
   </h2>
 
 </div>

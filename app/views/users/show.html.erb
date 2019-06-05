@@ -10,9 +10,12 @@
 
   <div class="name-flag-b">
     <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-        <% flag = @user.country.downcase.first(2) %>
-       <span class="flag-icon flag-icon-by flag-b flag-icon-<%= flag %>">
-    </span>
+      <div class="flag-3letters">
+        <% flag = I18nData.country_code(@user.country).downcase %>
+        <% code = ISO3166::Country.find_country_by_name(@user.country) %>
+        <span class="flag-icon flag-icon-by flag-b flag-icon-<%= flag %>"></span>
+        <span class="flag-letters-vertical"><%= code.alpha3 %></span>
+      </div>
   </div>
 
   <div class="skills-bb">
@@ -201,17 +204,33 @@
   <% end %>
 </div>
 
+  <!-- end comments -->
 
 
-  <%# @reviews.each do |review| %>
-    <!-- <p><%#= review.content %></p> -->
-    <%# if current_user.id == review.sender_id %>
-      <!-- <p><%#= link_to 'Delete Comment', user_user_review_path(current_user, review), :method => :delete, :data => {:confirm => "Do you really want to delete this comment?"} %></p> -->
-    <%# end %>
-  <%# end %>
 
-<div class="main-cta">
-  <%= link_to "Challenge #{@user.first_name}", create_challenge_path(user_id: @user.id), :method => :post, :data => {:confirm => "Would you like to challenge this player?"}, class: "btn btn-flat cta" %>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-flat cta-home" data-toggle="modal" data-target="#exampleModalCenter">
+    <%= "Challenge #{@user.first_name}" %>
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <p class= "col">Would you like to challenge this player?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No, thanks</button>
+          <button type="button">
+          <%= link_to "Yes!", create_challenge_path(user_id: @user.id), :method => :post, class:"btn btn-primary" %>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 

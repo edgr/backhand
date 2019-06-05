@@ -15,6 +15,8 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'geocoder'
+gem 'i18n_data'
+gem 'countries'
 
 # to select country in the sign up
 gem 'country_select'

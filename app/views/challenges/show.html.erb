@@ -7,7 +7,7 @@
     <%= link_to(user_path(current_user)) do %>
       <div class="col span_1_of_2 current-user-vs user-name text-center" style="background-image: url('<%= cl_image_path current_user.picture %>') ">
         <div class="overflow-wrap current-user-name justify-content-center">
-          <h1><%= current_user.first_name  %></h1>
+
         </div>
         <div class="ranking-b-left">
           <span>WR</span>
@@ -21,7 +21,7 @@
     <%= link_to(user_path(@challengee)) do %>
       <div class="col span_1_of_2 other-user-opponent-vs" style="background-image: url('<%= cl_image_path @challengee.picture %>') ">
         <div class="overflow-wrap opponent-name justify-content-center">
-          <h1><%= @challengee.first_name %></h1>
+
         </div>
         <div class="ranking-b">
           <span>WR</span>
@@ -34,31 +34,31 @@
   </div>
 
   <div class="bluevs">
-    <div class="bluevs-left ">
-      <h4>
+    <div class="bluevs-left">
+      <h4 class="blue-vs-element">
         <%= current_user.level.downcase %>
       </h4>
       <% if current_user.style_of_play.nil? == false  %>
-        <h4>
+        <h4 class="blue-vs-element">
           <%= current_user.style_of_play.downcase%>
         </h4>
       <% end %>
     </div>
 
-    <div class="score">
-   <!--    if the user has played with against the challenger before, it should
+   <!--  <div class="score">
+      if the user has played with against the challenger before, it should
       display the number of wins/losses
-      otherwise, it should be 0:0 -->
+      otherwise, it should be 0:0
 
       <h1>0:0</h1>
-    </div>
+    </div> -->
 
     <div class="bluevs-right">
-      <h4>
+      <h4 class="blue-vs-element">
         <%= @challengee.level.downcase %>
       </h4>
       <% if current_user.style_of_play.nil? == false  %>
-        <h4>
+        <h4 class="blue-vs-element">
           <%= @challengee.style_of_play.downcase %>
         </h4>
       <% end %>
