@@ -67,17 +67,17 @@
 
   <div class="message">
     <% if @challenge.challenger == current_user %>
-      <% if @challenge.status == "Pending" %>
+      <% if @challenge.status == "pending" %>
         <%= render partial: "challenger-pending" %>
-      <% elsif @challenge.status == "Accepted" %>
+      <% elsif @challenge.status == "accepted" %>
         <%= render partial: "challenger-accepted" %>
       <% else %>
         <%= render partial: "challenger-played" %>
       <% end %>
     <% else %>
-      <% if @challenge.status == "Pending"  %>
+      <% if @challenge.status == "pending"  %>
         <%= render partial: "challengee-pending" %>
-      <% elsif @challenge.status == "Accepted" %>
+      <% elsif @challenge.status == "accepted" %>
         <%= render partial: "challengee-accepted" %>
       <% else %>
         <%= render partial: "challengee-played" %>
