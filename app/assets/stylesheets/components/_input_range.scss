@@ -1,0 +1,57 @@
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+/*#############Thumb##############*/
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: $blue;
+  cursor: pointer;
+  margin-top: -6px;
+  border-radius: 50%;
+  border: 2px solid $white;
+}
+
+/*#############Track##############*/
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: $gray;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #ccc;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #ddd;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #ccc;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #ddd;
+}

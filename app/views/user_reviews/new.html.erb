@@ -2,18 +2,21 @@
   <h1>User Review</h1>
 
   <%= simple_form_for [@challenge, @user_review] do |f| %>
-    <%= f.input :thumb, as: :radio_buttons, collection: [['yes', true], ['no', false]], label:'Would you recommend playing with ...' %>
+    <div class="form-inline">
+      <%= f.input :thumb, as: :radio_buttons, collection: [['Of Course!', true], ['Not really..', false]], label:'Would you recommend playing with ...' %>
+    </div>
+
 
     <div>
     <h3>Rate the Skills of ...</h3>
-    <%= f.input :serve, as: :range, input_html: { min: '0', max: '10', step: '1' } %>
-    <%= f.input :return, as: :range, input_html: { min: '0', max: '10', step: '1' } %>
-    <%= f.input :forehand, as: :range, input_html: { min: '0', max: '10', step: '1' } %>
-    <%= f.input :backhand, as: :range, input_html: { min: '0', max: '10', step: '1' } %>
-    <%= f.input :volley, as: :range, input_html: { min: '0', max: '10', step: '1' } %>
-    <%= f.input :speed, as: :range, input_html: { min: '0', max: '10', step: '1' } %>
-    <%= f.input :power, as: :range, input_html: { min: '0', max: '10', step: '1' } %>
-    <%= f.input :endurance, as: :range, input_html: { min: '0', max: '10', step: '1' } %>
+    <%= f.input :serve, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
+    <%= f.input :return, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
+    <%= f.input :forehand, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
+    <%= f.input :backhand, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
+    <%= f.input :volley, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
+    <%= f.input :speed, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
+    <%= f.input :power, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
+    <%= f.input :endurance, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
     </div>
 
     <h3>Leave a comment</h3>
