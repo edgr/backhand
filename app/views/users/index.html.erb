@@ -26,7 +26,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <%= f.input :location, required: false, input_html: {name: "search[location]", value: params[:search][:location]} , as: :string %>
+          <%= f.input :location, required: false, input_html: {name: "search[location]", value: params[:search].try(:[], :location)} , as: :string %>
           <div class="d-flex inline justify-content-between">
             <%= f.input :first_name, required: false, input_html: {name: "search[query][]", class: "form-control inline"}  %>
             <%= f.input :last_name, required: false, input_html: {name: "search[query][]", class: "form-control"} %>
