@@ -3,10 +3,16 @@ class UsersController < ApplicationController
 
   def index
     if params[:search]
+      @query = format_query(params[:search])
       @users = SearchUsers.new(params[:search]).call
     else
       @users = User.all
     end
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
     update_ranking
   end
 
@@ -17,8 +23,14 @@ class UsersController < ApplicationController
 
   private
 
+  def format_query(params)
+    return unless params[:query].present?
+    params[:query] = params[:query].reject do |value|
+      value.blank?
+    end.join(" ")
+  end
+
   def update_ranking
-    @users = User.all
     @users = @users.sort_by { |user| user.points }
     counter = 1
     @users.each do |user|
