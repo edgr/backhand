@@ -9,8 +9,8 @@
           <%= f.input :first_name, label: "YOUR FIRST NAME" %>
           <%= f.input :last_name, label: "YOUR LAST NAME" %>
           <%= f.input :level, :collection => %w[Beginner Intermediate Advanced Semi-pro Pro], label:"PICK YOUR LEVEL" %>
-          <%= f.input :address, label:"ENTER YOUR ADDRESS" %>
-          <%= f.input :phone_number, label:"ENTER YOUR PHONE NUMBER" %>
+          <%= f.input :address, label:"YOUR LOCATION", placeholder: "example: Plaza De Cataluña, Barcelona"%>
+          <%= f.input :phone_number, label:"ENTER YOUR PHONE NUMBER", placeholder: "example: +34"%>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "Next", class: "btn btn-primary" %>

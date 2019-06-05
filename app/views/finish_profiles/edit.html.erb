@@ -10,30 +10,28 @@
           <%= f.input :picture_cache, as: :hidden %>
           <%= f.input :style_of_play,
                       :collection => %w[baseliner attacker baseliner server-volleyer puncher],
-                      label:"WHAT IS YOUR STYLE OF PLAY" %>
+                      label:"WHAT IS YOUR STYLE OF PLAY?" %>
           <%= f.input :handedness,
                       :collection => %w[righty lefty],
-                      label:"ARE YOU A RIGHTY OR LEFTY" %>
+                      label:"ARE YOU A RIGHTY OR LEFTY?" %>
           <%= f.input :backhand_style,
                       :collection => ["one handed backhand", "two handed backhand"],
-                      label:"WHAT IS YOUR BACKHAND STYLE" %>
-          <%= f.input :club_id,
-                      label:"PUT IN YOUR CLUB" %>
+                      label:"WHAT IS YOUR BACKHAND STYLE?" %>
           <%= f.input :gender,
-                      :collection => %w[Male Female Divers],
-                      label:"PUT IN YOUR GENDER" %>
+                      :collection => %w[Male Female Other],
+                      label:"GENDER" %>
           <div class="d-flex justify-content-between">
             <%= f.input :height,
-                        label:"PUT IN YOUR HEIGHT" %>
+                        label:"HEIGHT IN cm" %>
             <%= f.input :weight,
-                        label:"PUT IN YOUR WEIGHT" %>
+                        label:"WEIGHT IN kg" %>
           </div>
           <%= f.input :birthday,
                       :as => :date,
                       :start_year => Date.today.year - 12,
                       :end_year => 1940,
                       :order => [ :day, :month, :year],
-                      label:"PUT IN YOUR BIRTHDAY" %>
+                      label:"YOUR BIRTH DATE" %>
           <%= f.input :place_of_birth,
                       label:"PLACE OF BIRTH",
                       :placeholder => "Your Hometown" %>
