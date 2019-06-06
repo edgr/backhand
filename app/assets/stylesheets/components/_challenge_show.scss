@@ -28,29 +28,14 @@
 
 #vs {
   position: absolute;
-  left: 43%;
-  top: 37%;
+  left: 0;
+  right: 0;
   z-index: 99;
-  height: 50px;
   width: 50px;
-
-  }
-
-  .current-user-name {
-    position: absolute;
-    left: +22%;
-    top: 33%;
-    color: white;
-    text-align: center;
-  }
-
-  .opponent-name {
-    position: absolute;
-    right: 26%;
-    top: 33%;
-    color: white;
-    text-align: center;
-  }
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
 
 .challenge-info {
   display: flex;

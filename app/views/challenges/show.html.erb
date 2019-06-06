@@ -7,9 +7,6 @@
 
     <%= link_to(user_path(current_user)) do %>
       <div class="col span_1_of_2 current-user-vs user-name text-center" style="background-image: url('<%= cl_image_path current_user.picture %>') ">
-        <div class="overflow-wrap current-user-name justify-content-center">
-
-        </div>
         <div class="ranking-b-left">
           <span>WR</span>
           <div class="rank-b-left">
@@ -21,9 +18,6 @@
 
     <%= link_to(user_path(@challengee)) do %>
       <div class="col span_1_of_2 other-user-opponent-vs" style="background-image: url('<%= cl_image_path @challengee.picture %>') ">
-        <div class="overflow-wrap opponent-name justify-content-center">
-
-        </div>
         <div class="ranking-b">
           <span>WR</span>
           <div class="rank-b">
