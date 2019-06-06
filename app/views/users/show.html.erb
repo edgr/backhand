@@ -81,7 +81,7 @@
 
     <div class="stats">
 
-
+          <% unless @user.all_challenges.count == 0 %>
             <div class="progress-circle" data-percentage="<%= ((@user.challenges_won.count / @user.all_challenges.count.to_f) * 100).to_i %>">
               <span class="progress-circle-left">
                 <span class="progress-circle-bar"></span>
@@ -95,6 +95,21 @@
                 </div>
               </div>
             </div>
+          <% else %>
+              <div class="progress-circle" data-percentage="0">
+              <span class="progress-circle-left">
+                <span class="progress-circle-bar"></span>
+              </span>
+              <span class="progress-circle-right">
+                <span class="progress-circle-bar"></span>
+              </span>
+              <div class="progress-circle-value">
+                <div>
+                  <p>0%</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
 
       <div class="three">
         <span><%= @user.all_challenges.count %> matches</span><br>
