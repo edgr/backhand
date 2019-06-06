@@ -48,7 +48,7 @@
       <p>age: <span class="format-info"><%= @user.age %> years</span></p>
 
       <p>birthday: <span class="format-info"><%= @user.birthday %></span></p>
-      <p>place of birth: <span class="format-info"><%= @user.place_of_birth %></span></p>
+      <p>place of birth: <span class="format-info place"><%= @user.place_of_birth %></span></p>
       <br>
       <p>height: <span class="format-info"><%= @user.height %> cm</span></p>
       <p>weight: <span class="format-info"><%= @user.weight %> kg</span></p>
@@ -226,8 +226,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">No, thanks</button>
-          <button type="button">
-          <%= link_to "Yes!", create_challenge_path(user_id: @user.id), :method => :post, class:"btn btn-primary" %>
+          <button type="button" class="btn btn-primary white-bt">
+          <%= link_to "Yes!", create_challenge_path(user_id: @user.id), :method => :post %>
           </button>
         </div>
       </div>
