@@ -4,6 +4,7 @@
     <%= f.input :date, as: :string, input_html: { class: "datepicker" } %>
     <%= f.input :location %>
     <%= f.input :winner, collection: @players, label_method: :full_name, value_method: :id %>
+    <%= f.input :loser, as: :hidden %>
     <%= f.input :score, placeholder: "6:3    6:3" %>
     <%= f.submit %>
   <% end %>
