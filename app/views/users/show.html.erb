@@ -1,5 +1,7 @@
 <div class="container">
-  <%= link_to "< back".html_safe, :back, id:"back", class:"btn text-dark" %>
+  <div class="back-section">
+    <%= link_to "back".html_safe, :back, id:"back", class:"back-link" %>
+  </div>
   <div class="pic-b">
     <%= cl_image_tag(@user.picture, class:"img-b")  %>
     <div class="ranking-b">

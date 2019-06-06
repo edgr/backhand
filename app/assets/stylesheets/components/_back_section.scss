@@ -1,0 +1,14 @@
+.back-section {
+  display: flex;
+  justify-content: center;
+}
+
+.back-link {
+  font-size: 16px;
+  color: $gray;
+  margin-bottom: 16px;
+}
+
+.back-link:hover {
+  text-decoration: none;
+}
