@@ -7,8 +7,9 @@
 
   <% if user_signed_in? %>
     <div class="btn-group">
-      <i class="fas fa-bars text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target=“#menu”>
-      </i>
+      <div class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target=“#menu”><%= image_tag("hambur.jpg", :class => "hamb") %>
+      </div>
+
       <div class="dropdown-menu dropdown-menu-right" id="menu">
         <div class="avatar-burger">
           <button class="dropdown-item" id="profile-button" type="button">
