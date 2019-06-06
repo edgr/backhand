@@ -7,6 +7,9 @@
     <%= f.input :score, placeholder: "e.g. 6:2 6:2 or 6/2 6/2" %>
     <%= f.input :loser, as: :hidden %>
     <%= f.submit :confirm %>
+    <div class="cta-back">
+      <%= f.submit :confirm, class: "btn btn-primary cta-button" %>
+    </div>
   <% end %>
 </div>
 
