@@ -76,9 +76,20 @@
   <div class="rankings">
     <h3>Rankings & Stats</h3>
 
+
+
     <div class="wr">
-      <p>world mixed ranking</p>
+      <span>world ranking</span>
+      <span class="rank-bb">#<%= @user.ranking %></span>
+      <span>with</span>
+      <span class="rank-bb"><%= @user.points.to_d.truncate(2).to_f %></span>
+      <span>points</span>
+
+      <!-- <p>world ranking</p>
       <div class="rank-bb">#<%= @user.ranking %></div>
+      <p>with</p>
+      <div class="rank-bb"><%= @user.points.to_d.truncate(2).to_f %></div>
+      <p>points</p> -->
     </div>
 
     <div class="stats">
