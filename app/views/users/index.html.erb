@@ -1,10 +1,9 @@
 <div class="container">
 
   <div class="search-results">
-    <%# raise %>
     <% if params[:search].nil? %>
-    <% elsif params[:location].nil? %>
-    <span><%= @users.length  %> players</span>
+    <% elsif params[:search][:location].nil? %>
+    <span><%= @users.length  %> players matching your search.</span>
     <% else %>
     <span><%= @users.length  %> players in <%= params[:search][:location] %></span>
     <% end %>
