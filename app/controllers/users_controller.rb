@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
+  # after_action :set_query_indication, only: :index
 
   def index
     if params[:search]
@@ -37,10 +38,17 @@ class UsersController < ApplicationController
 
   def format_query(params)
     return unless params[:query].present?
+    set_query_indication
     params[:query] = params[:query].reject do |value|
       value.blank?
     end.join(" ")
   end
+
+  def set_query_indication
+    location = params[:search].try(:[], :location)
+    @indication = location.present? ? "in #{location}"  : "matching your query"
+  end
+
 
   def update_ranking
     @users = @users.sort_by { |user| user.points }

@@ -1,10 +1,12 @@
 <div class="container">
 
   <div class="search-results">
-    <%#= raise %>
-    <% if params[:search].nil? %>
+    <% if params[:search].try(:[], :location)&.present? %>
+      <span id="user-query-indicator">
+        <%= @users.length %> players in <%= params[:search][:location] %>
+      </span>
     <% else %>
-    <span><%= @users.length  %> players in <%= params[:search][:location] %></span>
+    <%= @users.length %> matching your query
     <% end %>
   </div>
 

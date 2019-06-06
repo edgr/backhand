@@ -13,6 +13,12 @@ function closeModal() {
   document.querySelector('button.close').click();
 }
 
+function updateQueryIndicator() {
+  const indication = document.querySelector('#user-query-indicator');
+  indication.innerText = "<%= @users.count %> players <%= @indication %>"
+}
+
 updateUsers();
 updateQueryParameters();
 closeModal();
+updateQueryIndicator();
