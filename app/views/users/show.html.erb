@@ -91,7 +91,7 @@
               </span>
               <div class="progress-circle-value">
                 <div>
-                  <p>20%</p>
+                  <p><%= ((@user.challenges_won.count / @user.all_challenges.count.to_f) * 100).to_i %>%</p>
                 </div>
               </div>
             </div>

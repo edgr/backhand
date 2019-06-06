@@ -91,7 +91,7 @@ class ChallengesController < ApplicationController
       k_challengee = 24.to_f
     end
 
-    if @challenge.winner.to_i == @challenge.challenger.id
+    if @challenge.winner == @challenge.challenger.id
       s = 1.to_f
     else
       s = 0.to_f
@@ -104,7 +104,7 @@ class ChallengesController < ApplicationController
   private
 
   def challenge_params
-    params.require(:challenge).permit(:location, :date, :winner, :score)
+    params.require(:challenge).permit(:location, :date, :winner, :score, :loser)
   end
 
   def set_challenge
