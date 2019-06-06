@@ -35,29 +35,20 @@
   </div>
 
   <div class="bluevs">
-    <div class="bluevs-left">
-      <h5 class="blue-vs-element">
+    <div class="bluevs-top">
+      <h4 class="blue-vs-element">
         <%= current_user.level.downcase %>
       </h4>
+      <h4 class="blue-vs-element">
+        <%= @challengee.level.downcase %>
+      </h4>
+    </div>
+    <div class="bluevs-bottom">
       <% if current_user.style_of_play.nil? == false  %>
         <h4 class="blue-vs-element">
           <%= current_user.style_of_play.downcase%>
         </h4>
       <% end %>
-    </div>
-
-   <!--  <div class="score">
-      if the user has played with against the challenger before, it should
-      display the number of wins/losses
-      otherwise, it should be 0:0
-
-      <h1>0:0</h1>
-    </div> -->
-
-    <div class="bluevs-right">
-      <h4 class="blue-vs-element">
-        <%= @challengee.level.downcase %>
-      </h4>
       <% if current_user.style_of_play.nil? == false  %>
         <h4 class="blue-vs-element">
           <%= @challengee.style_of_play.downcase %>

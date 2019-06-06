@@ -98,65 +98,27 @@
   }
 }
 
+.bluevs {
+  margin: 8px 3px 8px 0;
+}
+
+.bluevs-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bluevs-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
 .blue-vs-element {
   color: white;
   background-color: $blue;
-  // background-image: image-url("images/blue.png");
   font-size: 16px;
   border-radius: 2px;
   padding-left: 4px;
   padding-right: 4px;
-    h4{
-    }
-    display: inline-block;
-  }
-
-  .short-test{
-    color: white;
-    background-color: $blue;
-    display: inline-block;
-    border-radius: 2px;
-    padding-left: 4px;
-    padding-right: 4px;
-    margin-top: 2px;
-  }
-
-
-.bluevs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  padding-top: 1px;
-}
-
-.bluevs {
-  // h4 {
-  margin: 8px 3px 8px 0;
-  padding-left: 3px;
-  padding-right: 3px;
-}
-
-  // }
-.bluevs-right {
- // h4 {
-  text-align: right;
-  margin-right: 8px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-
-.bluevs-left {
- // h4 {
-  text-align: left;
-  margin-left: 8px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  // background-color: $blue;
- // }
 }
 
 .skills-challenge {
@@ -169,9 +131,6 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
-
-
 
 .ranking-b-left {
   position: absolute;
