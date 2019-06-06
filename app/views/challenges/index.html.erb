@@ -1,11 +1,11 @@
-    <ul class="list-inline tabs-underlined" id="fix-top">
-      <li>
-        <a href="#" data-target="outstanding" class="tab-underlined active">Sent/Received</a>
-      </li>
-      <li>
-        <a href="#" data-target="played" class="tab-underlined">Played</a>
-      </li>
-    </ul>
+<ul class="list-inline tabs-underlined" id="fix-top">
+  <li>
+    <a href="#" data-target="outstanding" class="tab-underlined active">Sent/Received</a>
+  </li>
+  <li>
+    <a href="#" data-target="played" class="tab-underlined">Played</a>
+  </li>
+</ul>
 
 <div class="box-size" id="outstanding">
   <% @unplayed_challenges.each do |challenge| %>
@@ -29,7 +29,6 @@
           </div>
         <% end %>
 
-
         <span class="status-arrow"><%= challenge.status %>
           <% if challenge.status == "accepted" %>
             <i class="fas fa-angle-right"></i>
@@ -48,6 +47,7 @@
       <% if challenge.status == "played" %>
         <div class="challenge-card">
           <% if challenge.challenger_id == current_user.id %>
+            <i class="fas fa-arrow-up"></i>
             <% challengee = User.find(challenge.challengee_id) %>
             <%= cl_image_tag challengee.picture, class: "avatar"%>
             <div class="name-and-date">
@@ -57,6 +57,7 @@
               <span> <%= challenge.score %></span>
               <i class="fas fa-angle-right"></i>
           <% else %>
+            <i class="fas fa-arrow-down"></i>
             <% challenger = User.find(challenge.challenger_id) %>
             <%= cl_image_tag challenger.picture, class: "avatar"%>
             <div class="name-and-date">
