@@ -3,7 +3,7 @@ class UserReviewsController < ApplicationController
   before_action :set_receiver, only: [:create]
 
   def new
-    @user_review = UserReview.new()
+    @user_review = UserReview.new
   end
 
   def create
