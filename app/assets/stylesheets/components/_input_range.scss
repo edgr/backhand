@@ -26,7 +26,7 @@ input[type=range]::-webkit-slider-thumb {
   width: 20px;
   background: $blue;
   cursor: pointer;
-  margin-top: -6px;
+  margin-top: -8px;
   border-radius: 50%;
   border: 2px solid $white;
 }
@@ -35,7 +35,7 @@ input[type=range]::-webkit-slider-thumb {
 
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 6px;
+  height: 4px;
   cursor: pointer;
   background: $gray;
 }
@@ -54,4 +54,16 @@ input[type=range]::-ms-fill-upper {
 
 input[type=range]:focus::-ms-fill-upper {
   background: #ddd;
+}
+
+.user_review_serve, .user_review_return, .user_review_forehand, .user_review_backhand, .user_review_volley, .user_review_speed, .user_review_power, .user_review_endurance {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  input {
+    width: 72%;
+  }
+  label {
+    margin: 0;
+  }
 }

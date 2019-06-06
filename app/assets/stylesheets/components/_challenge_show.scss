@@ -28,11 +28,12 @@
 
 #vs {
   position: absolute;
-  left: 45%;
-  top: 30%;
+  left: 43%;
+  top: 37%;
   z-index: 99;
-  font-size: 48px;
-  color: $blue;
+  height: 50px;
+  width: 50px;
+
   }
 
   .current-user-name {
@@ -100,6 +101,7 @@
 .blue-vs-element {
   color: white;
   background-color: $blue;
+  // background-image: image-url("images/blue.png");
   font-size: 16px;
   border-radius: 2px;
   padding-left: 4px;
@@ -133,22 +135,9 @@
   margin: 8px 3px 8px 0;
   padding-left: 3px;
   padding-right: 3px;
+}
 
   // }
-}
-
-.skills-challenge {
-  display: flex;
-  // flex-wrap: wrap;
-  margin: 10px;
-  margin-top: 0;
-}
-
-.message {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 .bluevs-right {
  // h4 {
   text-align: right;
@@ -156,9 +145,8 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  // background-color: $blue;
- // }
 }
+
 
 .bluevs-left {
  // h4 {
@@ -170,6 +158,20 @@
   // background-color: $blue;
  // }
 }
+
+.skills-challenge {
+  display: flex;
+  // flex-wrap: wrap;
+  margin: 10px;
+  margin-top: 0;
+}
+.message {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+
 
 .ranking-b-left {
   position: absolute;

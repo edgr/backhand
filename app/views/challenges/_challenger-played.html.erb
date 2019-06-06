@@ -5,6 +5,7 @@
     <%= f.input :location %>
     <%= f.input :winner, collection: @players, label_method: :full_name, value_method: :id %>
     <%= f.input :score, placeholder: "e.g. 6:2 6:2 or 6/2 6/2" %>
+    <%= f.input :loser, as: :hidden %>
     <%= f.submit %>
   <% end %>
 </div>

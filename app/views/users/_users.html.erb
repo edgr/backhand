@@ -21,7 +21,7 @@
               <%= user.first_name %> <%= user.last_name %>
             </h2>
             <% if user.country %>
-            <% flag = I18nData.country_code(user.country).downcase %>
+            <% flag = I18nData.country_code(user.country)&.downcase %>
             <span class="flag-icon flag-icon-by flag-icon-<%= flag %>"></span>
             <% else %>
             <p>
@@ -83,7 +83,7 @@
 
         <div class="thumb">
           <i class="far fa-thumbs-up"></i>
-          <div class= "font"><%= ((user.computed_skills_set.volley)*10).to_i %>%</div>
+          <div class= "font"><%= (user.review_score) %>%</div>
         </div>
       </div>
     </div>
