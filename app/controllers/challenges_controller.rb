@@ -3,7 +3,8 @@ class ChallengesController < ApplicationController
   before_action :set_challenge, only: %i[show update accept decline cancel played]
 
   def index
-    @unplayed_challenges = Challenge.where.not(status: "played").where(challenger_id: current_user).or(Challenge.where(challengee_id: current_user))
+    @unplayed_challenges = Challenge.where.not(status: "played")
+    @unplayed_challenges = @unplayed_challenges.where(challenger_id: current_user).or(@unplayed_challenges.where(challengee_id: current_user))
     @played_challenges = Challenge.where(status: "played").where(challenger_id: current_user).or(Challenge.where(challengee_id: current_user))
   end
 
