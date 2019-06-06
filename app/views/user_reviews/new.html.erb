@@ -1,10 +1,9 @@
 <div class="container">
-  <%# raise %>
 
   <%= simple_form_for [@challenge, @user_review] do |f| %>
 
     <fieldset class="form-group radio_buttons optional user_review_thumb">
-      <legend class="col-form-label pt-0">Would you recommend playing with <%= @user_review.receiver.first_name %>? </legend>
+      <legend class="col-form-label pt-0">Would you recommend playing with your partner? </legend>
       <input type="hidden" name="user_review[thumb]" value="">
       <div class="group-radio">
         <div class="form-check form-check-inline" id="thumb-down">
@@ -19,7 +18,7 @@
     </fieldset>
 
     <div class="form-group">
-      <p>How about <%= @user_review.receiver.first_name %> skills?</p>
+      <p>How about your partner's skills?</p>
       <%= f.input :serve, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
       <%= f.input :return, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
       <%= f.input :forehand, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
@@ -30,9 +29,9 @@
       <%= f.input :endurance, as: :range, input_html: { min: '0', max: '10', step: '1' }, required: false %>
     </div>
 
-    <%= f.input :content, as: :text, placeholder: "let other players know about #{@user_review.receiver.first_name}", label: false %>
+    <%= f.input :content, as: :text, placeholder: "let other players know something about your partner", label: false %>
     <div class="cta-back">
-      <%= f.button :submit, "Review #{@user_review.receiver.first_name} now",  class: "btn btn-primary cta-button" %>
+      <%= f.button :submit, "Review your partner now",  class: "btn btn-primary cta-button" %>
     </div>
   <% end %>
 </div>

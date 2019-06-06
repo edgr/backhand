@@ -3,8 +3,8 @@ class ChallengesController < ApplicationController
   before_action :set_challenge, only: %i[show update accept decline cancel played]
 
   def index
-    @unplayed_challenges = Challenge.where.not(status: "played")
-    @played_challenges = Challenge.where(status: "played")
+    @unplayed_challenges = Challenge.where.not(status: "played").where(challenger_id: current_user).or(Challenge.where(challengee_id: current_user))
+    @played_challenges = Challenge.where(status: "played").where(challenger_id: current_user).or(Challenge.where(challengee_id: current_user))
   end
 
   def show
@@ -15,6 +15,7 @@ class ChallengesController < ApplicationController
     else
       redirect_to challenges_path
     end
+    @user_review = UserReview.new
   end
 
   def create
