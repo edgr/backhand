@@ -6,7 +6,7 @@
         <%= @users.length %> players in <%= params[:search][:location] %>
       </span>
     <% else %>
-    <%= @users.length %> matching your query
+    <%= @users.length %> players matching your query
     <% end %>
   </div>
 
@@ -30,8 +30,8 @@
         <div class="modal-body">
           <%= f.input :location, required: false, input_html: {name: "search[location]", value: params[:search].try(:[], :location)} , as: :string %>
           <div class="d-flex inline justify-content-between">
-            <%= f.input :first_name, required: false, input_html: {name: "search[query][]", class: "form-control inline"}  %>
-            <%= f.input :last_name, required: false, input_html: {name: "search[query][]", class: "form-control"} %>
+            <%= f.input :first_name, required: false, input_html: {name: "search[query][]", class: "form-control inline mr-1"}  %>
+            <%= f.input :last_name, required: false, input_html: {name: "search[query][]", class: "form-control inline"} %>
           </div>
           <%= f.input :level, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: ['Beginner','Intermediate','Advanced','Semi-Pro','Pro'], wrapper: :vertical_collection_inline %>
           <%= f.input :style_of_play, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: ['Grinder','Baseliner','Server-Volleyer','Attacker','Puncher'], wrapper: :vertical_collection_inline %>

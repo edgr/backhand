@@ -5,8 +5,7 @@
 // challenge view page "vs" for opponent
 .other-user-opponent-vs {
   clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%);
-  margin-right: -5px;
-  height: 30vh;
+  height: 28vh;
   background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center;
@@ -17,40 +16,24 @@
 .current-user-vs {
   top-left-radius: 4px;
   clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
-  height: 30vh;
+  height: 28vh;
   background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center;
-  margin-right: 10px;
   border-top-left-radius: 8px;
   z-index: 1;
 }
 
 #vs {
   position: absolute;
-  left: 43%;
-  top: 37%;
+  left: 0;
+  right: 0;
   z-index: 99;
-  height: 50px;
   width: 50px;
-
-  }
-
-  .current-user-name {
-    position: absolute;
-    left: +22%;
-    top: 33%;
-    color: white;
-    text-align: center;
-  }
-
-  .opponent-name {
-    position: absolute;
-    right: 26%;
-    top: 33%;
-    color: white;
-    text-align: center;
-  }
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
 
 .challenge-info {
   display: flex;
@@ -98,65 +81,27 @@
   }
 }
 
+.bluevs {
+  margin: 8px 3px 8px 0;
+}
+
+.bluevs-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bluevs-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
 .blue-vs-element {
   color: white;
   background-color: $blue;
-  // background-image: image-url("images/blue.png");
   font-size: 16px;
   border-radius: 2px;
   padding-left: 4px;
   padding-right: 4px;
-    h4{
-    }
-    display: inline-block;
-  }
-
-  .short-test{
-    color: white;
-    background-color: $blue;
-    display: inline-block;
-    border-radius: 2px;
-    padding-left: 4px;
-    padding-right: 4px;
-    margin-top: 2px;
-  }
-
-
-.bluevs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  padding-top: 1px;
-}
-
-.bluevs {
-  // h4 {
-  margin: 8px 3px 8px 0;
-  padding-left: 3px;
-  padding-right: 3px;
-}
-
-  // }
-.bluevs-right {
- // h4 {
-  text-align: right;
-  margin-right: 8px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-
-.bluevs-left {
- // h4 {
-  text-align: left;
-  margin-left: 8px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  // background-color: $blue;
- // }
 }
 
 .skills-challenge {
@@ -169,9 +114,6 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
-
-
 
 .ranking-b-left {
   position: absolute;
@@ -202,19 +144,13 @@
 .section {
   position: relative;
   clear: both;
-  padding-top: 10px;
   margin: 0px;
-
 }
 
 /*  COLUMN SETUP  */
 .col {
-  display: block;
   float:left;
-  margin: 0% 0 0% 0%;
-}
-.col:first-child { margin-left: 0;
-
+  margin: 0;
 }
 
 /*  GROUPING  */
@@ -223,10 +159,6 @@
 .group:after { clear:both;}
 .group { zoom:1; /* For IE 6/7 */ }
 
-.span_2_of_2 {
-  width: 100%;
-  margin-right: 50px;
-}
-.span_1_of_2 {
-  width: 49.5%;
+.span {
+  width: 50%;
 }
