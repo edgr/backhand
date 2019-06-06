@@ -35,16 +35,14 @@
           <%= f.input :place_of_birth,
                       label:"PLACE OF BIRTH",
                       :placeholder => "Your Hometown" %>
-          <%= f.country_select :country,
-                      collection: @continents,
-                      as: :grouped_select,
-                      group_method: :countries,
-                      label:"NATIONALITY" %>
+            <%= f.input :country,
+                        collection: @continents,
+                        label:"NATIONALITY" %>
           <%= f.input :bio,
                       label: "TELL US MORE ABOUT YOURSELF" %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Save", class: "btn btn-primary" %>
+          <%= f.button :submit, "Save", class: "btn btn-primary cta-signup mb-3" %>
         </div>
       <% end %>
     </div>
