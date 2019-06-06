@@ -43,7 +43,7 @@
 
 <div class="hidden box-size" id="played">
   <% @played_challenges.each do |challenge| %>
-    <%= link_to challenge_path(challenge) do %>
+    <%= link_to challenge_path(challenge), class: "link-challenge" do %>
       <% if challenge.status == "played" %>
         <div class="challenge-card">
           <% if challenge.challenger_id == current_user.id %>
@@ -54,19 +54,22 @@
               <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %> </span>
               <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
             </div>
-              <span> <%= challenge.score %></span>
-              <i class="fas fa-angle-right"></i>
           <% else %>
             <i class="fas fa-arrow-down"></i>
             <% challenger = User.find(challenge.challenger_id) %>
             <%= cl_image_tag challenger.picture, class: "avatar"%>
             <div class="name-and-date">
-              <span class="player-name"><%= challenger.first_name %> <%= challenger.last_name %></span>
+              <span class="player-name">
+                <%= challenger.first_name %> <%= challenger.last_name %>
+              </span>
               <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
             </div>
-              <span><%= challenge.score %></span>
-              <span><i class="fas fa-angle-right"></i></span>
           <% end %>
+
+          <span class="status-arrow">
+            <%= challenge.score %>
+            <i class="fas fa-angle-right"></i>
+          </span>
         </div>
       <% else %>
         <h2>You have not recorded any matches.</h2>
