@@ -211,6 +211,11 @@
 <div class="comments">
 
   <div class="comment-thumb">
+    <% if @user.review_score.nil?  %>
+      <div class="mt-4 mx-auto">
+        <span><%= @user.first_name %> hasn't received any reviews yet!</span>
+      </div>
+    <% else %>
     <h3>Comments:</h3>
 
     <div class="thumb-b">
@@ -219,6 +224,7 @@
         <%= (@user.review_score) %>%
       </div>
     </div>
+    <% end %>
   </div>
 
   <% @reviews.each do |review| %>
