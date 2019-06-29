@@ -34,10 +34,11 @@
                       label:"YOUR BIRTH DATE" %>
           <%= f.input :place_of_birth,
                       label:"PLACE OF BIRTH",
+                      class: "search_location",
                       :placeholder => "Your Hometown" %>
-            <%= f.input :country,
-                        collection: @continents,
-                        label:"NATIONALITY" %>
+          <%= f.input :country,
+                      collection: @continents,
+                      label:"NATIONALITY" %>
           <%= f.input :bio,
                       label: "TELL US MORE ABOUT YOURSELF" %>
         </div>
