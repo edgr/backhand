@@ -1,5 +1,4 @@
 <div class="container">
-  <h2>Record your Game</h2>
   <%= simple_form_for(@challenge, url: challenge_path(@challenge), method: :patch) do |f| %>
     <div class="d-flex justify-between row">
       <%= f.input :date, as: :string, input_html: { class: "datepicker" }, wrapper_html: { class: "col-6" } %>
