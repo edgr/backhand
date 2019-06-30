@@ -60,7 +60,7 @@
       <% elsif @challenge.status == "accepted" %>
         <%= render partial: "challenger-accepted" %>
       <% else %>
-        <%= render partial: "challenger-played" %>
+        <%= render partial: "played" %>
       <% end %>
     <% else %>
       <% if @challenge.status == "pending"  %>
@@ -68,7 +68,7 @@
       <% elsif @challenge.status == "accepted" %>
         <%= render partial: "challengee-accepted" %>
       <% else %>
-        <%= render partial: "challengee-played" %>
+        <%= render partial: "played" %>
       <% end %>
     <% end %>
   </div>
