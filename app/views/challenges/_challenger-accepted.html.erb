@@ -1,6 +1,6 @@
 <div class="challenge-info text-dark">
   <h2>
-    Challenge accepted! Contact <%= link_to @challengee.first_name, user_path(@challengee) %> now!
+    Challenge accepted! Contact <%= @challengee.first_name %> now!
   </h2>
   <%= link_to "Cancel Challenge", cancel_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to cancel the Challenge?"} , class: "btn w-100 text-center" %>
 

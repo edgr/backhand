@@ -1,12 +1,14 @@
 <div class="challenge-info text-dark">
   <h2>Great, now contact<br>
-    <%= link_to @challenger.first_name, user_path(@challenger) %>!
+    <%= @challenger.first_name %>!
   </h2>
   <%= link_to "Cancel Challenge", cancel_challenge_path(@challenge), :method => :patch, :data => {:confirm => "Do your really want to cancel the Challenge?"}, class: "btn w-100 text-center" %>
 </div>
 
 <div class="cta-back">
-    <a href="https://wa.me/<%= @challenger.phone_number %>?text=Hello%20<%= @challenger.first_name %>%20I'm%20<%= @challengee.first_name %>%20from%20Backhand!%20Fancy%20playing%20some%20tennis?" class="btn btn-primary cta-button" role="button">Send a Whatsapp Message!</a>
+    <a href="https://wa.me/<%= @challenger.phone_number %>?text=Hello%20<%= @challenger.first_name %>%20I'm%20<%= @challengee.first_name %>%20from%20Backhand!%20Fancy%20playing%20some%20tennis?" class="btn btn-primary cta-button" role="button">
+    Send a Whatsapp Message!
+  </a>
 </div>
 
 
