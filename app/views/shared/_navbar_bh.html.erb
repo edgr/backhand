@@ -12,7 +12,7 @@
 
       <div class="dropdown-menu dropdown-menu-right" id="menu">
         <div class="avatar-burger">
-          <button class="dropdown-item" id="profile-button" type="button">
+          <button class="dropdown-item" type="button">
               <%= cl_image_tag current_user.picture, class: "avatar"%>
               <%= link_to "My Profile", user_path(current_user), class: "links" %>
           </button>
