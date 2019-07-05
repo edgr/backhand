@@ -9,7 +9,7 @@
           <%= f.input :picture %>
           <%= f.input :picture_cache, as: :hidden %>
           <%= f.input :style_of_play,
-                      :collection => %w[baseliner attacker baseliner server-volleyer puncher],
+                      :collection => %w[baseliner attacker grinder server-volleyer puncher],
                       label:"WHAT IS YOUR STYLE OF PLAY?" %>
           <%= f.input :handedness,
                       :collection => %w[righty lefty],
@@ -34,10 +34,11 @@
                       label:"YOUR BIRTH DATE" %>
           <%= f.input :place_of_birth,
                       label:"PLACE OF BIRTH",
+                      class: "search_location",
                       :placeholder => "Your Hometown" %>
-            <%= f.input :country,
-                        collection: @continents,
-                        label:"NATIONALITY" %>
+          <%= f.input :country,
+                      collection: @continents,
+                      label:"NATIONALITY" %>
           <%= f.input :bio,
                       label: "TELL US MORE ABOUT YOURSELF" %>
         </div>

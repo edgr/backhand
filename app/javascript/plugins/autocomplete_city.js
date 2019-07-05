@@ -1,7 +1,7 @@
 import places from 'places.js';
 
 const initAutocompleteCity = () => {
-  const searchInput = document.getElementById('search_location');
+  const searchInput = document.querySelector('.search_location');
   if (searchInput) {
     places({
       container: searchInput
