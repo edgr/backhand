@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @reviews = UserReview.where(receiver_id: @user.id)
+    @progressbar = ((@user.challenges_won.count / @user.all_challenges.count.to_f) * 100).to_i
   end
 
   # def edit
