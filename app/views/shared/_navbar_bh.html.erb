@@ -7,13 +7,13 @@
 
   <% if user_signed_in? %>
     <div class="btn-group">
-      <div class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target=“#menu”><%= image_tag("hambur.jpg", :class => "hamb") %>
+      <div class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target=“#menu”>
+        <%= cl_image_tag current_user.picture, class: "avatar-bordered"%>
       </div>
 
       <div class="dropdown-menu dropdown-menu-right" id="menu">
         <div class="avatar-burger">
-          <button class="dropdown-item" id="profile-button" type="button">
-              <%= cl_image_tag current_user.picture, class: "avatar"%>
+          <button class="dropdown-item menu-button" type="button">
               <%= link_to "My Profile", user_path(current_user), class: "links" %>
           </button>
         </div>
