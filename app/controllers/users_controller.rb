@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:height, :weight, :age, :first_name, :last_name, :email, :phone_number,
                                  :bio, :address, :style_of_play, :gender, :country, :birthday,
-                                 :backhand_style, :handedness, :picture)
+                                 :backhand_style, :handedness, :picture, :level)
   end
 
   def format_query(params)
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
 
   def set_query_indication
     location = params[:search].try(:[], :location)
-    @indication = location.present? ? "in #{location}"  : "matching your query"
+    @indication = location.present? ? "in #{location}" : "matching your query"
   end
 
   def update_ranking
