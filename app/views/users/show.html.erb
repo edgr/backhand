@@ -1,11 +1,7 @@
 <div class="container">
-  <div class="back-section">
+  <div class="back-section-space">
     <%= link_to "back".html_safe, :back, id:"back", class:"back-link" %>
-  </div>
-  <div >
-    <%= link_to edit_user_path(@user) do %>
-      <i class="fas fa-edit"></i>
-    <% end %>
+    <%= link_to 'edit', edit_user_path(@user) %>
   </div>
   <div class="pic-b">
     <%= cl_image_tag(@user.picture, class:"img-b")  %>
