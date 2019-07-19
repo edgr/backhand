@@ -1,23 +1,22 @@
-.dropdown-item:active {
-  background-color: white;
+.navbar-toggler {
+  border: none;
+  padding: 0;
 }
 
-.navbar-bh {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navbar {
   background: $black;
-  top: 0;
   position: sticky;
-  width: 100%;
+  top: 0;
   z-index: 100;
-  padding-left: 20px;
-  padding-right: 20px;
+  .navbar-nav {
+    .nav-link {
+      color: white;
+    }
+  }
 }
 
 .navbar-brand {
   display: flex;
-  align-items: center;
   font-size: 24px;
   .logo-back {
     color: $blue;
