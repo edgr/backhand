@@ -20,21 +20,30 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @reviews = UserReview.where(receiver_id: @user.id)
+    unless @user.all_challenges.count == 0
+      @progressbar = ((@user.challenges_won.count / @user.all_challenges.count.to_f) * 100).to_i
+    end
   end
 
-  # def edit
-  # end
+  def edit
+  end
 
-  # def update
-  #   @user = User.find(params[:id])
-  #   if @user.update(user_params)
-  #     redirect_to user_path(@user)
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
+  end
 
   private
+
+  def user_params
+    params.require(:user).permit(:height, :weight, :age, :first_name, :last_name, :email, :phone_number,
+                                 :bio, :address, :style_of_play, :gender, :country, :birthday,
+                                 :backhand_style, :handedness, :picture, :level)
+  end
 
   def format_query(params)
     return unless params[:query].present?
@@ -46,9 +55,8 @@ class UsersController < ApplicationController
 
   def set_query_indication
     location = params[:search].try(:[], :location)
-    @indication = location.present? ? "in #{location}"  : "matching your query"
+    @indication = location.present? ? "in #{location}" : "matching your query"
   end
-
 
   def update_ranking
     @users = @users.sort_by { |user| user.points }

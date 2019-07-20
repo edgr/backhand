@@ -79,11 +79,19 @@
           </div>
         </div>
 
+        <% if user.review_score.nil?  %>
+          <div class="thumb">
+            <span>No reviews yet!</span>
+          </div>
+        <% else %>
+          <div class="thumb">
+            <i class="far fa-thumbs-up"></i>
+            <div class= "font">
+              <%= (user.review_score) %>%
+            </div>
+          </div>
+        <% end %>
 
-        <div class="thumb">
-          <i class="far fa-thumbs-up"></i>
-          <div><%= (user.review_score) %>%</div>
-        </div>
       </div>
     </div>
   </div>

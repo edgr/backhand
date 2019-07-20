@@ -1,36 +1,33 @@
-<div class="navbar-bh">
-  <div class="navbar-brand">
-    <%= link_to root_path, class: "navbar-brand" do %>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <%= link_to root_path, class: "navbar-brand" do %>
     <p class="logo-back">BACK</p> <p class="logo-hand">HAND</p>
-    <% end %>
-  </div>
-
+  <% end %>
   <% if user_signed_in? %>
-    <div class="btn-group">
-      <div class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target=“#menu”><%= image_tag("hambur.jpg", :class => "hamb") %>
-      </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
+      <%= cl_image_tag current_user.picture, class: "avatar-bordered"%>
+    </button>
 
-      <div class="dropdown-menu dropdown-menu-right" id="menu">
-        <div class="avatar-burger">
-          <button class="dropdown-item" type="button">
-              <%= cl_image_tag current_user.picture, class: "avatar"%>
-              <%= link_to "My Profile", user_path(current_user), class: "links" %>
-          </button>
-        </div>
-        <button class="dropdown-item menu-button" type="button">
-          <%= link_to "Search partners", users_path, class: "links" %>
-        </button>
-        <button class="dropdown-item menu-button" type="button">
-         <%= link_to "My Challenges", challenges_path, class: "links" %>
-        </button>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item menu-button logout links" %>
-
-      </div>
+    <div class="collapse navbar-collapse" id="menu-content">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <%= link_to "My Profile", user_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Search partners", users_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Challenges", challenges_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      </ul>
     </div>
+
   <% else %>
     <div class="login-up">
       <%= link_to 'Sign up', new_user_registration_path, class: "nav-link text-white" %>
       <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
     </div>
   <% end %>
-</div>
+</nav>

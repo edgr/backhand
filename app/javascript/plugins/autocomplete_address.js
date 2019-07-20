@@ -6,7 +6,7 @@ const initAutocompleteAddress = () => {
     places({
       container: addressInput
     }).configure({
-      language: 'es'
+      language: 'en'
     });
   }
 };

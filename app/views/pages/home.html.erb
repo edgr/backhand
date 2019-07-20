@@ -1,7 +1,7 @@
 <div class="banner">
   <div class="banner-content">
-    <h1>Challenge tennis <br> players anywhere!</h1>
-    <p>... and get your international ranking!</p>
+    <!-- <h1>Play more.<br>Rank better.</h1> -->
+    <h1>PLAY MORE<br>RANK BETTER</h1>
   </div>
 </div>
 
@@ -10,7 +10,7 @@
   <div class="container text-left">
       <%= simple_form_for :search_home, url: users_path, method: :get do |f| %>
         <div class="search-form-control form-group">
-          <input class="form-control string" type="text" name="search[location]" id="search_location" placeholder="Search for a place!" />
+          <input class="search_location form-control string" type="text" name="search[location]" placeholder="Search for a place!" />
         </div>
           <button name="button" type="submit" class="btn btn-flat cta-home">
             Search

@@ -2,6 +2,11 @@
   <div class="back-section">
     <%= link_to "back".html_safe, :back, id:"back", class:"back-link" %>
   </div>
+  <div >
+    <%= link_to edit_user_path(@user) do %>
+      <i class="fas fa-edit"></i>
+    <% end %>
+  </div>
   <div class="pic-b">
     <%= cl_image_tag(@user.picture, class:"img-b")  %>
     <div class="ranking-b">
@@ -84,18 +89,12 @@
       <span>with</span>
       <span class="rank-bb"><%= @user.points.to_d.truncate(2).to_f %></span>
       <span>points</span>
-
-      <!-- <p>world ranking</p>
-      <div class="rank-bb">#<%= @user.ranking %></div>
-      <p>with</p>
-      <div class="rank-bb"><%= @user.points.to_d.truncate(2).to_f %></div>
-      <p>points</p> -->
     </div>
 
     <div class="stats">
 
           <% unless @user.all_challenges.count == 0 %>
-            <div class="progress-circle" data-percentage="<%= ((@user.challenges_won.count / @user.all_challenges.count.to_f) * 100).to_i %>">
+            <div class="progress-circle" data-percentage="<%= @progressbar %>">
               <span class="progress-circle-left">
                 <span class="progress-circle-bar"></span>
               </span>
@@ -104,7 +103,7 @@
               </span>
               <div class="progress-circle-value">
                 <div>
-                  <p><%= ((@user.challenges_won.count / @user.all_challenges.count.to_f) * 100).to_i %>%</p>
+                  <p> <%= @progressbar %>% </p>
                 </div>
               </div>
             </div>
@@ -211,6 +210,11 @@
 <div class="comments">
 
   <div class="comment-thumb">
+    <% if @user.review_score.nil?  %>
+      <div class="mt-4 mx-auto">
+        <span><%= @user.first_name %> hasn't received any reviews yet!</span>
+      </div>
+    <% else %>
     <h3>Comments:</h3>
 
     <div class="thumb-b">
@@ -219,6 +223,7 @@
         <%= (@user.review_score) %>%
       </div>
     </div>
+    <% end %>
   </div>
 
   <% @reviews.each do |review| %>
