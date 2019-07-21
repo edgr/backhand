@@ -21,27 +21,16 @@
   }
 }
 
-
 .cta-home {
   width: 100%;
   font-size: 20px;
 }
-
 
 .cta-signup {
   width: 100%;
   font-size: 20px;
   margin-top: 25px !important;
 }
-
-.weight-bt {
-  height: 2.9rem !important;
-}
-
-#button-inside {
-  padding: 3px 24px;
-}
-
 
 .col {
   color: $black;
@@ -51,3 +40,8 @@
   color: white;
 }
 
+// This is the 'filter' button inside the search
+
+#button-inside {
+  padding: 3px 24px;
+}
