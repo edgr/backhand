@@ -1,268 +1,270 @@
-<div class="container">
-  <div class="back-section-space">
-    <%= link_to "back".html_safe, :back, id:"back", class:"back-link" %>
-    <%= link_to 'edit', edit_user_path(@user) %>
-  </div>
-  <div class="pic-b">
-    <%= cl_image_tag(@user.picture, class:"img-b")  %>
-    <div class="ranking-b">
-      <span>WR</span>
-      <div class="rank-b">#<%= @user.ranking %></div>
+<% present @user do |user_presenter| %>
+  <div class="container">
+    <div class="back-section-space">
+      <%= link_to "back".html_safe, :back, id: "back", class: "back-link" %>
+      <%= link_to 'edit', edit_user_path(@user) %>
     </div>
-  </div>
-
-  <div class="name-flag-b">
-    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-      <div class="flag-3letters">
-        <% country_name = I18nData.countries[@user.country]&.downcase %>
-        <% code = ISO3166::Country.find_country_by_name(country_name) %>
-        <span class="flag-icon flag-icon-by flag-b flag-icon-<%= @user.country.downcase %>"></span>
-        <span class="flag-letters-vertical"><%= code&.alpha3 %></span>
+    <div class="pic-b">
+      <%= user_presenter.picture %>
+      <div class="ranking-b">
+        <span>WR</span>
+        <div class="rank-b">#<%= user_presenter.ranking %></div>
       </div>
-  </div>
-
-  <div class="skills-bb">
-    <div class="blue-box-b">
-      <%= @user.level %>
-    </div>
-    <div class="blue-box-b">
-      <%= @user.style_of_play %>
-    </div>
-  </div>
-
-
-<!-- tabs -->
-  <div class="tabs">
-
-    <ul class="list-inline tabs-underlined">
-      <li>
-        <a href data-target="player_info" class="tab-underlined active lis">Info</a>
-      </li>
-      <li>
-        <a href="#" data-target="player_bio" class="tab-underlined lis">Bio</a>
-      </li>
-    </ul>
-
-  <div class="player-infos" id="player_info">
-
-    <div class="player-infos format" style="height: 250px; margin-left: 10px; margin-right:10px">
-      <br>
-      <!-- <p>age: <%= @user.birthday %></p> -->
-      <p>age: <span class="format-info"><%= @user.age %> years</span></p>
-
-      <p>birthday: <span class="format-info"><%= @user.birthday %></span></p>
-      <p>place of birth: <span class="format-info place"><%= @user.place_of_birth %></span></p>
-      <br>
-      <p>height: <span class="format-info"><%= @user.height %> cm</span></p>
-      <p>weight: <span class="format-info"><%= @user.weight %> kg</span></p>
-      <br>
-      <p>style: <span class="format-info"><%= @user.handedness %> - <%= @user.backhand_style %></span></p>
-      <p>residence: <span class="format-info"><%= @user.address %></span></p>
-
-      <%#= @user.club %>
     </div>
 
-  </div>
-
-  <div class="player-bio hidden" id="player_bio">
-    <p><%= @user.bio %></p>
-  </div>
-
-</div>
-
-<!-- end tabs -->
-
-<!-- Rankings & Stats -->
-
-  <div class="rankings">
-    <h3>Rankings & Stats</h3>
-
-
-
-    <div class="wr">
-      <span>world ranking</span>
-      <span class="rank-bb">#<%= @user.ranking %></span>
-      <span>with</span>
-      <span class="rank-bb"><%= @user.points.to_d.truncate(2).to_f %></span>
-      <span>points</span>
+    <div class="name-flag-b">
+      <h2><%= user_presenter.full_name %></h2>
+        <div class="flag-3letters">
+          <span class="flag-icon flag-icon-by flag-b flag-icon-<%= @user.country.downcase %>"></span>
+          <span class="flag-letters-vertical">
+            <%= user_presenter.country_code %>
+          </span>
+        </div>
     </div>
 
-    <div class="stats">
+    <div class="skills-bb">
+      <div class="blue-box-b">
+        <%= user_presenter.level %>
+      </div>
+      <div class="blue-box-b">
+        <%= user_presenter.style %>
+      </div>
+    </div>
 
-          <% unless @user.all_challenges.count == 0 %>
-            <div class="progress-circle" data-percentage="<%= @progressbar %>">
-              <span class="progress-circle-left">
-                <span class="progress-circle-bar"></span>
-              </span>
-              <span class="progress-circle-right">
-                <span class="progress-circle-bar"></span>
-              </span>
-              <div class="progress-circle-value">
-                <div>
-                  <p> <%= @progressbar %>% </p>
-                </div>
-              </div>
-            </div>
-          <% else %>
-              <div class="progress-circle" data-percentage="0">
-              <span class="progress-circle-left">
-                <span class="progress-circle-bar"></span>
-              </span>
-              <span class="progress-circle-right">
-                <span class="progress-circle-bar"></span>
-              </span>
-              <div class="progress-circle-value">
-                <div>
-                  <p>0%</p>
-                </div>
-              </div>
-            </div>
-          <% end %>
 
-      <div class="three">
-        <span><%= @user.all_challenges.count %> matches</span><br>
-        <span><%= @user.challenges_won.count %> wins</span><br>
-        <span><%= @user.challenges_lost.count %> losses</span><br>
+  <!-- tabs -->
+    <div class="tabs">
+
+      <ul class="list-inline tabs-underlined">
+        <li>
+          <a href data-target="player_info" class="tab-underlined active lis">Info</a>
+        </li>
+        <li>
+          <a href="#" data-target="player_bio" class="tab-underlined lis">Bio</a>
+        </li>
+      </ul>
+
+    <div class="player-infos" id="player_info">
+
+      <div class="player-infos format" style="height: 250px; margin-left: 10px; margin-right:10px">
+        <br>
+        <!-- <p>age: <%= @user.birthday %></p> -->
+        <p>age: <span class="format-info"><%= @user.age %> years</span></p>
+
+        <p>birthday: <span class="format-info"><%= @user.birthday %></span></p>
+        <p>place of birth: <span class="format-info place"><%= @user.place_of_birth %></span></p>
+        <br>
+        <p>height: <span class="format-info"><%= @user.height %> cm</span></p>
+        <p>weight: <span class="format-info"><%= @user.weight %> kg</span></p>
+        <br>
+        <p>style: <span class="format-info"><%= @user.handedness %> - <%= @user.backhand_style %></span></p>
+        <p>residence: <span class="format-info"><%= @user.address %></span></p>
+
+        <%#= @user.club %>
       </div>
 
     </div>
 
+    <div class="player-bio hidden" id="player_bio">
+      <p><%= @user.bio %></p>
+    </div>
+
   </div>
 
+  <!-- end tabs -->
 
-<!-- end Rankings & Stats -->
+  <!-- Rankings & Stats -->
 
-<div class="skills-b">
-  <h3>Skills</h3>
-  <div class="strokes">
-    <div class="vertical">
-      <p>STROKES</p>
+    <div class="rankings">
+      <h3>Rankings & Stats</h3>
+
+
+
+      <div class="wr">
+        <span>world ranking</span>
+        <span class="rank-bb">#<%= user_presenter.ranking %></span>
+        <span>with</span>
+        <span class="rank-bb"><%= user_presenter.points %></span>
+        <span>points</span>
+      </div>
+
+      <div class="stats">
+
+            <% unless @user.all_challenges.count == 0 %>
+              <div class="progress-circle" data-percentage="<%= @progressbar %>">
+                <span class="progress-circle-left">
+                  <span class="progress-circle-bar"></span>
+                </span>
+                <span class="progress-circle-right">
+                  <span class="progress-circle-bar"></span>
+                </span>
+                <div class="progress-circle-value">
+                  <div>
+                    <p> <%= @progressbar %>% </p>
+                  </div>
+                </div>
+              </div>
+            <% else %>
+                <div class="progress-circle" data-percentage="0">
+                <span class="progress-circle-left">
+                  <span class="progress-circle-bar"></span>
+                </span>
+                <span class="progress-circle-right">
+                  <span class="progress-circle-bar"></span>
+                </span>
+                <div class="progress-circle-value">
+                  <div>
+                    <p>0%</p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+        <div class="three">
+          <span><%= @user.all_challenges.count %> matches</span><br>
+          <span><%= @user.challenges_won.count %> wins</span><br>
+          <span><%= @user.challenges_lost.count %> losses</span><br>
+        </div>
+
+      </div>
+
     </div>
-    <div class="block">
 
-            <div class="group-progress-strokes">
-              <div class="line-progress-b">
-                <p>serve</p>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.serve)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.serve)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="line-progress-b">
-                <p>return</p>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.return)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.return)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="line-progress-b">
-                <p>forehand</p>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.forehand)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.forehand)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="line-progress-b">
-                <p>backhand</p>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.backhand)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.backhand)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="line-progress-b">
-                <p>volley</p>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.volley)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.volley)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-    </div>
-  </div>
 
-  <div class="fitness">
-    <div class="vertical">
-      <p>FITNESS</p>
+  <!-- end Rankings & Stats -->
+
+  <div class="skills-b">
+    <h3>Skills</h3>
+    <div class="strokes">
+      <div class="vertical">
+        <p>STROKES</p>
+      </div>
+      <div class="block">
+
+              <div class="group-progress-strokes">
+                <div class="line-progress-b">
+                  <p>serve</p>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.serve %>%" aria-valuenow="<%= user_presenter.serve %>" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="line-progress-b">
+                  <p>return</p>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.return %>%" aria-valuenow="<%= user_presenter.return %>" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="line-progress-b">
+                  <p>forehand</p>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.forehand %>%" aria-valuenow="<%= user_presenter.forehand %>" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="line-progress-b">
+                  <p>backhand</p>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.backhand %>%" aria-valuenow="<%= user_presenter.backhand %>" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="line-progress-b">
+                  <p>volley</p>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.volley %>%" aria-valuenow="<%= user_presenter.volley %>" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+      </div>
     </div>
-    <div class="group-progress-fitness">
-      <div class="line-progress-b">
-        <p>speed</p>
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.speed)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.speed)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
+
+    <div class="fitness">
+      <div class="vertical">
+        <p>FITNESS</p>
+      </div>
+      <div class="group-progress-fitness">
+        <div class="line-progress-b">
+          <p>speed</p>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.speed %>%" aria-valuenow="<%= user_presenter.speed %>" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="line-progress-b">
+          <p>power</p>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.power %>%" aria-valuenow="<%= user_presenter.power %>" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="line-progress-b">
+          <p>endurance</p>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.endurance %>%" aria-valuenow="<%= user_presenter.endurance %>" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
         </div>
       </div>
-      <div class="line-progress-b">
-        <p>power</p>
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.power)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.power)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-      </div>
-      <div class="line-progress-b">
-        <p>endurance</p>
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: <%= ((@user.computed_skills_set.endurance)*10).to_i %>%" aria-valuenow="<%= ((@user.computed_skills_set.endurance)*10).to_i %>" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-      </div>
     </div>
+
   </div>
 
-</div>
+  <div class="comments">
 
-<div class="comments">
+    <div class="comment-thumb">
+      <% if @user.review_score.nil?  %>
+        <div class="mt-4 mx-auto">
+          <span><%= @user.first_name %> hasn't received any reviews yet!</span>
+        </div>
+      <% else %>
+      <h3>Comments:</h3>
 
-  <div class="comment-thumb">
-    <% if @user.review_score.nil?  %>
-      <div class="mt-4 mx-auto">
-        <span><%= @user.first_name %> hasn't received any reviews yet!</span>
+      <div class="thumb-b">
+        <i class="far fa-thumbs-up"></i>
+        <div>
+          <%= (@user.review_score) %>%
+        </div>
       </div>
-    <% else %>
-    <h3>Comments:</h3>
-
-    <div class="thumb-b">
-      <i class="far fa-thumbs-up"></i>
-      <div>
-        <%= (@user.review_score) %>%
-      </div>
+      <% end %>
     </div>
+
+    <% @reviews.each do |review| %>
+      <div class="review-avatar">
+        <p><%= review.content %></p>
+        <div class="avatar-name">
+          <%= cl_image_tag(review.sender.picture, class:"avatar") %>
+          <h2><%= review.sender.first_name %> <%= review.sender.last_name.first %>.</h2>
+        </div>
+      </div>
     <% end %>
   </div>
 
-  <% @reviews.each do |review| %>
-    <div class="review-avatar">
-      <p><%= review.content %></p>
-      <div class="avatar-name">
-        <%= cl_image_tag(review.sender.picture, class:"avatar") %>
-        <h2><%= review.sender.first_name %> <%= review.sender.last_name.first %>.</h2>
-      </div>
+    <!-- end comments -->
+
+
+
+    <!-- Button trigger modal -->
+    <div class="cta-back">
+      <button type="button" class="btn btn-flat cta-button" data-toggle="modal" data-target="#exampleModalCenter">
+        <%= "Challenge #{@user.first_name}" %>
+      </button>
     </div>
-  <% end %>
-</div>
-
-  <!-- end comments -->
 
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
 
-  <!-- Button trigger modal -->
-  <div class="cta-back">
-    <button type="button" class="btn btn-flat cta-button" data-toggle="modal" data-target="#exampleModalCenter">
-      <%= "Challenge #{@user.first_name}" %>
-    </button>
-  </div>
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-
-        <div class="modal-body">
-          <p class= "col">Would you like to challenge this player?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">No, thanks</button>
-          <button type="button" class="btn btn-primary white-bt">
-          <%= link_to "Yes!", create_challenge_path(user_id: @user.id), :method => :post %>
-          </button>
+          <div class="modal-body">
+            <p class= "col">Would you like to challenge this player?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No, thanks</button>
+            <button type="button" class="btn btn-primary white-bt">
+            <%= link_to "Yes!", create_challenge_path(user_id: @user.id), :method => :post %>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-</div>
+  </div>
+<% end %>
 
 
