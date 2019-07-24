@@ -1,8 +1,12 @@
 class UserPresenter < BasePresenter
   presents :user
-
+  # For the user show view
   def picture
     h.cl_image_tag(user.picture, class: "img-b")
+  end
+
+  def card_picture
+    h.cl_image_tag user.try(:picture), class:"img"
   end
 
   def full_name
@@ -50,4 +54,5 @@ class UserPresenter < BasePresenter
     code = ISO3166::Country.find_country_by_name(country_name)
     code&.alpha3
   end
+
 end
