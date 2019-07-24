@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_06_073525) do
+ActiveRecord::Schema.define(version: 2019_07_24_160325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,13 +52,6 @@ ActiveRecord::Schema.define(version: 2019_06_06_073525) do
     t.index ["user_id"], name: "index_computed_skills_sets_on_user_id"
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string "content"
-    t.string "kind"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "user_reviews", force: :cascade do |t|
     t.bigint "sender_id"
     t.bigint "receiver_id"
@@ -78,15 +71,6 @@ ActiveRecord::Schema.define(version: 2019_06_06_073525) do
     t.index ["challenge_id"], name: "index_user_reviews_on_challenge_id"
     t.index ["receiver_id"], name: "index_user_reviews_on_receiver_id"
     t.index ["sender_id"], name: "index_user_reviews_on_sender_id"
-  end
-
-  create_table "user_tags", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "tags_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["tags_id"], name: "index_user_tags_on_tags_id"
-    t.index ["users_id"], name: "index_user_tags_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -131,7 +115,5 @@ ActiveRecord::Schema.define(version: 2019_06_06_073525) do
   add_foreign_key "user_reviews", "challenges"
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
-  add_foreign_key "user_tags", "tags", column: "tags_id"
-  add_foreign_key "user_tags", "users", column: "users_id"
   add_foreign_key "users", "clubs"
 end
