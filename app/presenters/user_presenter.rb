@@ -1,10 +1,6 @@
 class UserPresenter < BasePresenter
   presents :user
 
-  # def edit
-  #   h.link_to 'edit', edit_user_path(@user)
-  # end
-
   def picture
     h.cl_image_tag(user.picture, class: "img-b")
   end
