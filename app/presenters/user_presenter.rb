@@ -13,18 +13,6 @@ class UserPresenter < BasePresenter
     "#{user.first_name} #{user.last_name}"
   end
 
-  def ranking
-    user.ranking
-  end
-
-  def level
-    user.level
-  end
-
-  def style
-    user.style_of_play
-  end
-
   def points
     user.points.to_d.truncate(2).to_f
   end

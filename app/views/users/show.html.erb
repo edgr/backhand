@@ -11,7 +11,7 @@
           WR
         </span>
         <div class="rank-b">
-          #<%= user_presenter.ranking %>
+          #<%= @user.ranking %>
         </div>
       </div>
     </div>
@@ -30,10 +30,10 @@
 
     <div class="skills-bb">
       <div class="blue-box-b">
-        <%= user_presenter.level %>
+        <%= @user.level %>
       </div>
       <div class="blue-box-b">
-        <%= user_presenter.style %>
+        <%= @user.style_of_play %>
       </div>
     </div>
 
@@ -85,7 +85,7 @@
           world ranking
         </span>
         <span class="rank-bb">
-          #<%= user_presenter.ranking %>
+          #<%= @user.ranking %>
         </span>
         <span>
           with
