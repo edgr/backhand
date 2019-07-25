@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   devise_for :users, controllers: { registrations: "registrations" }
+  resources :user_steps
 
-  resources :sign_ups
-  resources :finish_profiles
+  # resources :sign_ups
+  # resources :finish_profiles
 
   resources :challenges, only: [:index, :show, :update] do
     resources :user_reviews, only: [:new, :show, :create]

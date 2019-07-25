@@ -18,10 +18,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @reviews = UserReview.where(receiver_id: @user.id)
-    unless @user.all_challenges.count == 0
-      @progressbar = ((@user.challenges_won.count / @user.all_challenges.count.to_f) * 100).to_i
+    @user = current_user
+    # @user = User.find(params[:id])
+    @reviews = UserReview.where(receiver: @user)
+    if @user.present?
+      unless @user.all_challenges.count == 0
+        @progressbar = ((@user.challenges_won.count / @user.all_challenges.count.to_f) * 100).to_i
+      end
     end
   end
 
@@ -29,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.update(user_params)
       redirect_to user_path(@user)
     else

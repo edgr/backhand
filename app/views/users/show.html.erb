@@ -1,10 +1,14 @@
 <div class="container">
   <div class="back-section-space">
     <%= link_to "back".html_safe, :back, id:"back", class:"back-link" %>
-    <%= link_to 'edit', edit_user_path(@user) %>
+    <%= link_to 'edit', edit_user_registration_path %>
   </div>
   <div class="pic-b">
-    <%= cl_image_tag(@user.picture, class:"img-b")  %>
+    <% if @user.picture.present? %>
+      <%= cl_image_tag(@user.picture, class:"img-b")  %>
+    <% else %>
+      <%= image_tag "profile.png", class:"img-b" %>
+    <% end %>
     <div class="ranking-b">
       <span>WR</span>
       <div class="rank-b">#<%= @user.ranking %></div>
