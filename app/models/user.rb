@@ -45,7 +45,7 @@ class User < ApplicationRecord
   end
 
   def age
-    ((Date.today - self.birthday).to_i) / 365
+    (Date.today - self.birthday).to_i / 365
   end
 
   include PgSearch
