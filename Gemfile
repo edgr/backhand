@@ -26,6 +26,9 @@ gem 'webpacker'
 gem 'pg_search'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
+# rails multi step form
+gem 'wicked'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
