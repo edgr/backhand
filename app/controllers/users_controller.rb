@@ -28,25 +28,25 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    @user = current_user
-    if @user.update(user_params)
-      redirect_to user_path(@user)
-    else
-      render :edit
-    end
-  end
+  # def update
+  #   @user = current_user
+  #   if @user.update(user_params)
+  #     redirect_to user_path(@user)
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   private
 
-  def user_params
-    params.require(:user).permit(:height, :weight, :age, :first_name, :last_name, :email, :phone_number,
-                                 :bio, :address, :style_of_play, :gender, :country, :birthday,
-                                 :backhand_style, :handedness, :picture, :level)
-  end
+  # def user_params
+  #   params.require(:user).permit(:height, :weight, :age, :first_name, :last_name, :email, :phone_number,
+  #                                :bio, :address, :style_of_play, :gender, :country, :birthday,
+  #                                :backhand_style, :handedness, :picture, :level)
+  # end
 
   def format_query(params)
     return unless params[:query].present?
