@@ -2,3 +2,4 @@ florin:
   email: "florin.diconescu@gmail.com"
   first_name: "Florin"
   last_name: "Diconescu"
+  encrypted_password: password

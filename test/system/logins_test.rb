@@ -8,5 +8,11 @@ class LoginsTest < ApplicationSystemTestCase
   # end
   test "Login on homepage" do
     visit "/"
-    assert_selector "", text: "Login"
+    assert_selector "a", text: "Login"
+    click_on 'Login'
+    fill_in "user_email", with: "sandyhoeger@hilll.com"
+    fill_in "user_password", with: "password"
+    click_on "Log in"
+    save_and_open_screenshot
+  end
 end
