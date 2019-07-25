@@ -6,4 +6,7 @@ class LoginsTest < ApplicationSystemTestCase
   #
   #   assert_selector "h1", text: "Login"
   # end
+  test "Login on homepage" do
+    visit "/"
+    assert_selector "", text: "Login"
 end
