@@ -18,10 +18,11 @@ class User < ApplicationRecord
 
   has_one :computed_skills_set, dependent: :destroy
 
+  validates :first_name, :last_name, :level, :address, presence: true, on: :update
+  validates :birthday, presence: true, on: :update
   validates :phone_number, presence: true,
                            numericality: true,
                            length: { minimum: 10, maximum: 15 }
-  validates :first_name, :last_name, :address, presence: true, on: :update
 
   mount_uploader :picture, PictureUploader
 

@@ -1,15 +1,49 @@
 .banner{
-  height: 60vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), image-url("backhand-banner.jpg");
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), image-url("backhand-banner.jpg");
   background-size: cover;
   width: 100vw;
   position: relative;
+  background-position-x: 50%;
   h1 {
     color: white;
     font-weight: bold;
     font-size: 38px;
-    margin-left: 25px;
+    font-style: italic;
     position: absolute;
-    bottom: 40px;
+    bottom: 190px;
+    left: 30px
+  }
+  #home-cta {
+    position: absolute;
+    bottom: 120px;
+    left: 30px;
+    border-radius: 25px;
+    width: 220px;
+    font-size: 20px;
+    border: 1px solid $white;
   }
 }
+
+@media all and (min-width: 576px) {
+  .banner {
+    background-position-x: none;
+    h1 {
+      font-size: 60px;
+      left: 80px;
+      position: absolute;
+      bottom: 300px;
+      font-style: italic;
+    }
+    #home-cta {
+      position: absolute;
+      bottom: 220px;
+      left: 80px;
+      border-radius: 25px;
+      width: 280px;
+      font-size: 24px;
+      border: 1px solid $white;
+    }
+  }
+}
+
