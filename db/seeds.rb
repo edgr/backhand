@@ -35,10 +35,11 @@ end
 puts "destroy all"
 
 User.destroy_all
+Club.destroy_all
 
 puts "creating users"
 
-names = ['Monica', 'Nam', 'Juan', 'Carlos', 'Christine', 'Phillip', 'Joel', 'Lukas', 'Jackson', 'Ricardo', 'Meder', 'Cristobal', 'Valentin', 'David', 'Claire', 'Folrin', 'Ashley']
+names = ['Monica', 'Nam', 'Juan', 'Carlos', 'Christine', 'Phillip', 'Joel', 'Lukas', 'Jackson', 'Ricardo', 'Meder', 'Cristobal', 'Valentin', 'David', 'Claire', 'Florin', 'Ashley']
 url_1 = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559819198/federer_x12uh5.png"
 url_2 = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559818154/miami_hjtjig.jpg"
 url_3 = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559818154/old_bmnyon.png"
@@ -274,6 +275,17 @@ players.each do |player|
     player.save
 
 end
+
+puts "creating clubs"
+
+Club.create!(name: 'FC Barcelona')
+Club.create!(name: 'Real Madrid')
+Club.create!(name: 'Real Sociedad')
+Club.create!(name: 'FC Lisboa')
+Club.create!(name: 'Paris Saint Germain')
+Club.create!(name: 'FC Barcelona')
+
+puts "6 clubs created!"
 
 puts "Finished seeding"
 

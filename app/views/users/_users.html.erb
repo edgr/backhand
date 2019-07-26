@@ -6,7 +6,11 @@
           <div class="player-card">
 
             <div class="pic">
-              <%= user_presenter.card_picture %>
+              <% if user.picture.present? %>
+                <%= user_presenter.card_picture %>
+              <% else %>
+                <img class="img" src="<%= image_path 'profile.png' %>">
+              <% end %>
               <div class="ranking">
                 <span>WR</span>
                 <div class="rank">
