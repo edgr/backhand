@@ -1,3 +1,14 @@
+// SHARED
+
+.rankings, .skills-show, .tabs, .comments {
+  h3 {
+    color: $black;
+    margin: 0;
+  }
+  padding: 20px;
+  margin: 0 -15px;
+}
+
 // PICTURE RANKING SECTION
 
 .pic-show {
@@ -40,8 +51,6 @@
   background-color: $light-gray;
   margin: -15px;
   margin-top: 68px;
-  padding: 28px 15px 15px 15px;
-  margin-bottom: 3px;
 }
 
 .tab-title-show {
@@ -150,23 +159,13 @@
 
 .skills-show {
   background-color: $light-gray;
-  margin: 0px -15px;
-  padding-bottom: 12px;
-  padding-top: 15px;
-  h3 {
-    font-size: 24;
-    color: $black;
-    margin-left: 25px;
-    margin-top: 20px;
-    margin-bottom: 33px;
-  }
 }
 
 .strokes {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
+  margin: 10px 10px 0 0;
 }
 
 .fitness {
@@ -187,51 +186,37 @@
 // RANKING & POINTS SECTION
 
 .rankings {
-  margin-left: 10px;
-  margin-right: 10px;
   color: $black;
   background-color: white;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  margin-top: 12px;
 }
 
 .world-ranking {
-  margin-bottom: 30px;
+  padding: 20px 0;
 }
 
 .rank-points {
- font-size: 24px;
+  font-size: 24px;
   margin: 0 0.5rem;
 }
 
 .stats {
   display: flex;
   align-items: center;
+  padding: 0 20px;
 }
 
 .challenges-stats {
   width: 50%;
   line-height: 1.5;
   border-left: 1px solid $gray;
-  padding-left: 37px;
   margin-left: 13px;
-  margin-bottom: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 10px 0 10px 40px;
   span {
     letter-spacing: 1px;
   }
 }
 
 // COMMENTS SECTION
-
-.comments {
-  h3 {
-  color: $black;
-  margin: 25px 0 25px 15px;
-  }
-}
 
 .thumb-show {
   display: flex;
