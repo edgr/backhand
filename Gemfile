@@ -34,10 +34,16 @@ group :development do
 end
 
 group :development, :test do
+  gem 'rubocop', '~> 0.39.0'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
+  gem 'launchy'
 end

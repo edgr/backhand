@@ -16,8 +16,6 @@ class User < ApplicationRecord
   has_many :sent_challenges, class_name: 'Challenge', foreign_key: :challenger_id, dependent: :destroy
   has_many :received_challenges, class_name: 'Challenge', foreign_key: :challengee_id, dependent: :destroy
 
-  has_many :tags, through: :user_tags
-
   has_one :computed_skills_set, dependent: :destroy
 
   validates :phone_number, presence: true,
@@ -52,7 +50,7 @@ class User < ApplicationRecord
   end
 
   def full_name
-    "#{first_name} #{last_name}"
+    "#{first_name.capitalize} #{last_name.capitalize}"
   end
 
   def age
