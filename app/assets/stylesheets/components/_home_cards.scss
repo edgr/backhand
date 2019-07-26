@@ -1,13 +1,16 @@
 .how-it-works {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 32px 0px;
+  padding: 50px;
   h2 {
     font-family: $headers-font;
     color: $black;
     font-weight: bold;
+    text-align: center;
+  }
+  .how-it-works-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 32px 0px;
   }
 }
 

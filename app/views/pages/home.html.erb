@@ -1,50 +1,69 @@
 <div class="banner">
   <div class="banner-content">
-    <!-- <h1>Play more.<br>Rank better.</h1> -->
-    <h1>PLAY MORE<br>PLAY BETTER<br>RANK HIGHER.</h1>
+    <h1>
+      PLAY MORE<br>
+      PLAY BETTER<br>
+      RANK HIGHER.
+    </h1>
+    <%= link_to 'Browse Players', users_path, class: "btn btn-flat", id: "home-cta"%>
   </div>
 </div>
 
+<!-- Commenting out to be removed (one simple CTA) -->
+<%#= simple_form_for :search_home, url: users_path, method: :get do |f| %>
+  <!-- <div class="search-form-control form-group">
+    <input class="search_location form-control string" type="text" name="search[location]" placeholder="Search for a place!" />
+  </div>
+    <button name="button" type="submit" class="btn btn-flat cta-home">
+      Search
+    </button>
+<%# end %> -->
 
-<div class="main-container">
-  <div class="container text-left">
-      <%= simple_form_for :search_home, url: users_path, method: :get do |f| %>
-        <div class="search-form-control form-group">
-          <input class="search_location form-control string" type="text" name="search[location]" placeholder="Search for a place!" />
-        </div>
-          <button name="button" type="submit" class="btn btn-flat cta-home">
-            Search
-          </button>
-      <% end %>
-
-      <div class="row how-it-works">
-        <h2>How it works</h2>
-        <div class="explain-card">
-          <div class="card-number">
-            <p>01</p>
-          </div>
-          <div class="card-content">
-            <p>search and browse player around you</p>
-          </div>
-        </div>
-        <i class="fas fa-angle-down"></i>
-        <div class="explain-card">
-          <div class="card-number">
-            <p>02</p>
-          </div>
-          <div class="card-content">
-            <p>view player's profiles and challenge them</p>
-          </div>
-        </div>
-        <i class="fas fa-angle-down"></i>
-        <div class="explain-card">
-          <div class="card-number">
-            <p>03</p>
-          </div>
-          <div class="card-content">
-            <p>organize your game and play!</p>
-          </div>
-        </div>
+<div class="how-it-works">
+  <h2>Find players...</h2>
+  <div class="row how-it-works-cards">
+    <div class="explain-card">
+      <div class="card-number">
+        <p>01</p>
+      </div>
+      <div class="card-content">
+        <p>browse players around you</p>
+      </div>
+    </div>
+    <div class="explain-card">
+      <div class="card-number">
+        <p>02</p>
+      </div>
+      <div class="card-content">
+        <p>view player's profiles and contact them</p>
+      </div>
+    </div>
+    <div class="explain-card">
+      <div class="card-number">
+        <p>03</p>
+      </div>
+      <div class="card-content">
+        <p>organize your game and play!</p>
+      </div>
+    </div>
+  </div>
+  <h2>...and record your matches!</h2>
+  <div class="row how-it-works-cards">
+    <div class="explain-card">
+      <div class="card-number">
+        <p>04</p>
+      </div>
+      <div class="card-content">
+        <p>save the score and the winner </p>
+      </div>
+    </div>
+    <div class="explain-card">
+      <div class="card-number">
+        <p>05</p>
+      </div>
+      <div class="card-content">
+        <p>get your new ranking instantly!</p>
+      </div>
     </div>
   </div>
 </div>
