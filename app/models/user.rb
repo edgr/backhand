@@ -18,13 +18,24 @@ class User < ApplicationRecord
 
   has_one :computed_skills_set, dependent: :destroy
 
-  validates :first_name, :last_name, :level, :address, presence: true, on: :update
   validates :phone_number, presence: true,
                            numericality: true,
-                           length: { minimum: 10, maximum: 15 },
-                           on: :update
+                           length: { minimum: 10, maximum: 15 }
+  validates :first_name, :last_name, :address, presence: true, on: :update
 
   mount_uploader :picture, PictureUploader
+
+  def self.levels
+    %w[Beginner Intermediate Advanced Semi-pro Pro]
+  end
+
+  def self.genders
+    %w[Male Female Other]
+  end
+
+  def self.styles
+    %w[baseliner attacker grinder server-volleyer puncher]
+  end
 
   def all_challenges
     self.sent_challenges.played + self.received_challenges.played

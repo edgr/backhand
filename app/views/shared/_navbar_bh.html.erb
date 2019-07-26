@@ -4,7 +4,11 @@
   <% end %>
   <% if user_signed_in? %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
-      <%= cl_image_tag current_user.picture, class: "avatar-bordered"%>
+      <% if current_user.picture.present? %>
+        <%= cl_image_tag current_user.picture, class: "avatar-bordered"%>
+      <% else %>
+        <%= image_tag "profile.png", class: "avatar-bordered"%>
+      <% end %>
     </button>
 
     <div class="collapse navbar-collapse" id="menu-content">
