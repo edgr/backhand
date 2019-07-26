@@ -1,0 +1,48 @@
+<div class="main-container">
+  <div class="row">
+    <div class="form-login col-sm-12 col-md-4 offset-md-4">
+
+      <h2>Step 1: about you</h2>
+
+      <%= simple_form_for @user, url: wizard_path do |f| %>
+        <div class="form-inputs form-label">
+          <div class="d-flex justify-content-between">
+            <%= f.input :first_name,
+                        label: "FIRST NAME" %>
+            <%= f.input :last_name,
+                        label: "LAST NAME" %>
+          </div>
+          <%= f.input :address,
+                      label:"LOCATION",
+                      placeholder: "example: Plaza De Cataluña, Barcelona" %>
+          <%= f.input :country,
+                      collection: @continents,
+                      label:"NATIONALITY" %>
+          <div class="d-flex justify-content-between">
+            <%= f.input :place_of_birth,
+                        label:"PLACE OF BIRTH",
+                        class: "search_location" %>
+            <%= f.input :birthday,
+                        as: :date,
+                        start_year: Date.today.year - 12,
+                        end_year: 1940,
+                        order: [ :day, :month, :year],
+                        label:"BIRTHDATE" %>
+          </div>
+          <div class="d-flex justify-content-between">
+            <%= f.input :gender,
+                        collection: User.genders,
+                        label:"GENDER" %>
+            <%= f.input :height,
+                        label:"HEIGHT" %>
+            <%= f.input :weight,
+                        label:"WEIGHT" %>
+          </div>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Next", class: "btn btn-primary cta-signup mb-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

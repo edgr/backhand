@@ -1,12 +1,16 @@
 <% users.each do |user| %>
   <% present user do |user_presenter| %>
-    <%= link_to user_path(user), class: "col-6 text-decoration-none", :action => 'go' do %>
+    <%= link_to user_path(user), class: "col-6 col-md-4 text-decoration-none", :action => 'go' do %>
       <div class="row">
         <div class="col-12 p-1">
           <div class="player-card">
 
             <div class="pic">
-              <%= user_presenter.card_picture %>
+              <% if user.picture.present? %>
+                <%= user_presenter.card_picture %>
+              <% else %>
+                <img class="img" src="<%= image_path 'profile.png' %>">
+              <% end %>
               <div class="ranking">
                 <span>WR</span>
                 <div class="rank">

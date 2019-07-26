@@ -2,18 +2,21 @@
   <div class="container">
     <div class="back-section-space">
       <%= link_to "back".html_safe, :back, id: "back", class: "back-link" %>
-      <%= link_to 'edit', edit_user_path(@user) %>
     </div>
-    <div class="main-info-show">
-      <div class="pic-show">
+    <div class="pic-show">
+      <% if @user.picture.present? %>
         <%= user_presenter.picture %>
-        <div class="ranking-show">
-          <span>
-            WR
-          </span>
-          <div class="rank-show">
-            #<%= @user.ranking %>
-          </div>
+        <%#= cl_image_tag(@user.picture, class:"img-b") %>
+      <% else %>
+        <img class="img-show" src="<%= image_path 'profile.png' %>">
+        <%#= image_tag "profile.png" %>
+      <% end %>
+      <div class="ranking-show">
+        <span>
+          WR
+        </span>
+        <div class="rank-show">
+          #<%= @user.ranking %>
         </div>
       </div>
 
@@ -261,15 +264,19 @@
       <% end %>
     </div>
   </div>
-  <!-- end comments -->
-
-  <!-- Button trigger modal -->
-  <div class="cta-back">
-    <button type="button" class="btn btn-flat cta-button" data-toggle="modal" data-target="#exampleModalCenter">
-      <%= "Challenge #{@user.first_name}" %>
-    </button>
-  </div>
-
+    <!-- end comments -->
+    <% if @user == current_user %>
+      <div class="cta-back">
+        <%= link_to 'edit', edit_user_registration_path, class: "btn btn-flat cta-button" %>
+      </div>
+    <% else %>
+    <!-- Button trigger modal -->
+      <div class="cta-back">
+        <button type="button" class="btn btn-flat cta-button" data-toggle="modal" data-target="#exampleModalCenter">
+          <%= "Challenge #{@user.first_name}" %>
+        </button>
+      </div>
+    <% end %>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -287,7 +294,6 @@
         </div>
       </div>
     </div>
-  </div>
 <% end %>
 
 

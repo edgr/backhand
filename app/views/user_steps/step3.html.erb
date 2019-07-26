@@ -1,0 +1,20 @@
+<div class="main-container">
+  <div class="row">
+    <div class="form-login col-sm-12 col-md-4 offset-md-4">
+
+      <h2>Step 3: smile & shine!</h2>
+
+      <%= simple_form_for @user, url: wizard_path do |f| %>
+        <div class="form-inputs form-label">
+          <%= f.input :picture %>
+          <%= f.input :picture_cache, as: :hidden %>
+          <%= f.input :bio,
+                      label: "BIO" %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Next", class: "btn btn-primary cta-signup mb-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,11 @@
                       autofocus: true,
                       input_html: { autocomplete: "email" },
                       label: "YOUR EMAIL" %>
+          <%= f.input :phone_number,
+                      label:"YOUR MOBILE PHONE NUMBER",
+                      placeholder: "receive text alerts of new challenges",
+                      as: :tel,
+                      pattern: "[0-9]+" %>
           <%= f.input :password,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
