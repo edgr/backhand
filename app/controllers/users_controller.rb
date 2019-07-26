@@ -18,8 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
     @reviews = UserReview.where(receiver: @user)
     if @user.present?
       unless @user.all_challenges.count == 0
