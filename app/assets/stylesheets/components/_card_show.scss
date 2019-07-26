@@ -1,4 +1,4 @@
-// SHARED
+// MAIN & SHARED
 
 .rankings, .skills-show, .tabs, .comments {
   h3 {
@@ -8,6 +8,19 @@
   padding: 20px;
   margin: 0 -15px;
 }
+
+.main-info-show {
+  background-color: $white;
+  padding-bottom: 50px;
+}
+
+@media all and (min-width: 768px) {
+  .main-info-show {
+    margin: 0 -15px;
+  }
+}
+
+
 
 // PICTURE RANKING SECTION
 
@@ -50,7 +63,6 @@
 .tabs {
   background-color: $light-gray;
   margin: -15px;
-  margin-top: 68px;
 }
 
 .tab-title-show {
@@ -117,6 +129,21 @@
   }
 }
 
+@media all and (min-width: 768px) {
+  .name-flag-show {
+    align-items: flex-start;
+    .flag-3letters {
+      width: 80px;
+      .flag-icon {
+        width: 3em;
+      }
+      .flag-letters-vertical {
+        transform: none;
+      }
+    }
+  }
+}
+
 .level-style-show {
   display: flex;
   flex-wrap: wrap;
@@ -136,8 +163,17 @@
 
 // SKILLS SECTION
 
-.group-progress-fitness {
-  margin-top: 20px;
+.strokes, .fitness {
+  display: flex;
+  flex-direction: column;
+}
+
+.strokes {
+  margin-bottom: 20px;
+}
+
+.skills-subtitle {
+  text-align: right;
 }
 
 .line-progress-show {
@@ -148,40 +184,20 @@
     color: $black;
     font-size: 16px;
     margin: 4px;
+    width: 90px;
   }
 }
 
 .progress {
   height: 0.4em;
   background-color: $gray;
-  width: 180px;
+  width: 260px;
 }
 
 .skills-show {
   background-color: $light-gray;
 }
 
-.strokes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px 10px 0 0;
-}
-
-.fitness {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 25px;
-}
-
-.vertical {
-  font-size: 16px;
-  color: $gray;
-  transform: rotate(270deg);
-  margin: 0;
-  margin-top: 22px;
-}
 
 // RANKING & POINTS SECTION
 
@@ -219,6 +235,10 @@
 }
 
 // COMMENTS SECTION
+
+.comments {
+  background-color: $white;
+}
 
 .thumb-show {
   display: flex;
