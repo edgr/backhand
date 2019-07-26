@@ -21,6 +21,14 @@
   }
 }
 
+@media all and (min-width: 768px) {
+  .cta-back {
+    .cta-button {
+    width: 50%;
+    }
+  }
+}
+
 .cta-home {
   width: 100%;
   font-size: 20px;
