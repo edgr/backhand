@@ -26,6 +26,18 @@ class User < ApplicationRecord
 
   mount_uploader :picture, PictureUploader
 
+  def self.levels
+    %w[Beginner Intermediate Advanced Semi-pro Pro]
+  end
+
+  def self.genders
+    %w[Male Female Other]
+  end
+
+  def self.styles
+    %w[baseliner attacker grinder server-volleyer puncher]
+  end
+
   def all_challenges
     self.sent_challenges.played + self.received_challenges.played
   end
