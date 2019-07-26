@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 2019_07_26_155934) do
     t.string "backhand_style"
     t.bigint "club_id"
     t.integer "review_score"
-    t.string "status"
+    t.string "status", default: ""
     t.index ["club_id"], name: "index_users_on_club_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
