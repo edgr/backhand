@@ -17,7 +17,6 @@ $howManySteps: 100; //this needs to be even.
 .progress-circle {
   width: $size;
   height: $size;
-  margin: 0 auto;
   position: relative;
   &:after {
     content: "";

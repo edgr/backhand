@@ -190,6 +190,12 @@
   background-color: white;
 }
 
+.vertical-line {
+  width: 1px;
+  height: 90px;
+  background-color: #C4C4C4;
+}
+
 .world-ranking {
   padding: 20px 0;
 }
@@ -202,15 +208,11 @@
 .stats {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   padding: 0 20px;
 }
 
 .challenges-stats {
-  width: 50%;
-  line-height: 1.5;
-  border-left: 1px solid $gray;
-  margin-left: 13px;
-  padding: 10px 0 10px 40px;
   span {
     letter-spacing: 1px;
   }
