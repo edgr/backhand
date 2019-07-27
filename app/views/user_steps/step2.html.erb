@@ -19,7 +19,7 @@
                       collection: ["one handed backhand", "two handed backhand"],
                       label: "BACKHAND STYLE?" %>
           <label for="choose-a-club"> WHICH ONE IS YOUR CLUB? </label>
-          <select name="user[club][]" id="choose-a-club">
+          <select name="user[club][]" class="select2" id="choose-a-club" style="width: 100%">
             <% Club.all.each do |club| %>
               <option value="<%= club.id %>"><%= club.name %></option>
             <% end %>

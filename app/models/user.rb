@@ -10,6 +10,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  mount_uploader :picture, PictureUploader
+
   has_many :sent_reviews, class_name: 'UserReview', foreign_key: :sender_id, dependent: :destroy
   has_many :received_reviews, class_name: 'UserReview', foreign_key: :receiver_id, dependent: :destroy
 
@@ -18,13 +20,30 @@ class User < ApplicationRecord
 
   has_one :computed_skills_set, dependent: :destroy
 
-  validates :first_name, :last_name, :level, :address, presence: true, on: :update
-  validates :birthday, presence: true, on: :update
   validates :phone_number, presence: true,
                            numericality: true,
                            length: { minimum: 10, maximum: 15 }
 
-  mount_uploader :picture, PictureUploader
+  validates :first_name, :last_name, :address, :country, :place_of_birth, :birthday, :gender, :height, :weight, presence: true, if: :active_or_step1?
+  validates :level, :style_of_play, :handedness, :backhand_style, presence: true, if: :active_or_step2?
+  # validates :picture, presence: true, if: :active_or_step3?
+  validates :bio, presence: true, if: :active_or_step3?
+
+  def active?
+    status == 'active'
+  end
+
+  def active_or_step1?
+    status.include?('step1') || active?
+  end
+
+  def active_or_step2?
+    status.include?('step2') || active?
+  end
+
+  def active_or_step3?
+    status.include?('step3') || active?
+  end
 
   def self.levels
     %w[Beginner Intermediate Advanced Semi-pro Pro]

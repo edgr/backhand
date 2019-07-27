@@ -6,10 +6,11 @@
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.9",
     "flag-icon-css": "^3.3.0",
-    "flatpickr": "^4.6.1",
+    "flatpickr": "^4.6.2",
     "jquery": "^3.4.1",
     "places.js": "^1.16.4",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.15.0",
+    "select2": "^4.0.8"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.4.1"
