@@ -87,7 +87,8 @@ players = []
     birthday: Faker::Date.birthday(18, 65),
     points: rand(500..2000),
     handedness: ["righty","lefty"].sample,
-    backhand_style: ["one handed backhand","two handed backhand"].sample
+    backhand_style: ["one handed backhand","two handed backhand"].sample,
+    status: "active"
     )
   player.remote_picture_url = pictures[counter]
   player.save
@@ -117,7 +118,8 @@ end
     longitude: Faker::Address.longitude,
     birthday: Faker::Date.birthday(18, 65),
     handedness: ["righty","lefty"].sample,
-    backhand_style: ["one handed backhand","two handed backhand"].sample
+    backhand_style: ["one handed backhand","two handed backhand"].sample,
+    status: "active"
     )
   edouard.remote_picture_url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559818153/murrayy_hsuo8c.jpg"
   edouard.save
@@ -145,7 +147,8 @@ end
     longitude: Faker::Address.longitude,
     birthday: Faker::Date.birthday(18, 65),
     handedness: ["righty","lefty"].sample,
-    backhand_style: ["one handed backhand","two handed backhand"].sample
+    backhand_style: ["one handed backhand","two handed backhand"].sample,
+    status: "active"
     )
   leo.remote_picture_url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/nadal_m7vz84.jpg"
   players << leo
