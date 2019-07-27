@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'geocoder'
 gem 'i18n_data'
 gem 'countries'
+gem "select2-rails"
 
 # to select country in the sign up
 gem 'country_select'
