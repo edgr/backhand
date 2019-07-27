@@ -5,7 +5,9 @@
       PLAY BETTER<br>
       RANK HIGHER.
     </h1>
-    <%= link_to 'Browse Players', users_path, class: "btn btn-flat", id: "home-cta"%>
+    <%= link_to users_path, class: "btn btn-flat", id: "home-cta" do %>
+      <span>browse players</span>
+    <% end %>
   </div>
 </div>
 
