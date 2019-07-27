@@ -50,22 +50,25 @@
 
 // STEP 2
 
-#choose-a-club {
+// #choose-a-club {
+//   width: 100%;
+// }
+
+// .select2-selection__rendered, .select2-container--default .select2-selection--single {
+//   height: 38px;
+//   border-radius: 2px;
+//   border: 1px solid #ced4da;
+// }
+
+// .select2-container--default .select2-selection--single .select2-selection__arrow {
+//   height: 38px;
+// }
+
+// .select2-container--default .select2-selection--single {
+//   height: 38px;
+// }
+.select2-container--bootstrap {
   width: 100%;
-}
-
-.select2-selection__rendered, .select2-container--default .select2-selection--single {
-  height: 38px;
-  border-radius: 2px;
-  border: 1px solid #ced4da;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-  height: 38px;
-}
-
-.select2-container--default .select2-selection--single {
-  height: 38px;
 }
 
 .form-label {
