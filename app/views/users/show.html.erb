@@ -3,20 +3,22 @@
     <div class="back-section-space">
       <%= link_to "back".html_safe, :back, id: "back", class: "back-link" %>
     </div>
-    <div class="pic-show">
-      <% if @user.picture.present? %>
-        <%= user_presenter.picture %>
-        <%#= cl_image_tag(@user.picture, class:"img-b") %>
-      <% else %>
-        <img class="img-show" src="<%= image_path 'profile.png' %>">
-        <%#= image_tag "profile.png" %>
-      <% end %>
-      <div class="ranking-show">
-        <span>
-          WR
-        </span>
-        <div class="rank-show">
-          #<%= @user.ranking %>
+    <div class="main-info-show">
+      <div class="pic-show">
+        <% if @user.picture.present? %>
+          <%= user_presenter.picture %>
+          <%#= cl_image_tag(@user.picture, class:"img-b") %>
+        <% else %>
+          <img class="img-show" src="<%= image_path 'profile.png' %>">
+          <%#= image_tag "profile.png" %>
+        <% end %>
+        <div class="ranking-show">
+          <span>
+            WR
+          </span>
+          <div class="rank-show">
+            #<%= @user.ranking %>
+          </div>
         </div>
       </div>
 
