@@ -1,6 +1,6 @@
 <div class="main-container">
   <div class="row">
-    <div class="form-login col-sm-12 col-md-4 offset-md-4">
+    <div class="form-login col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 
       <h2>Step 1: about you</h2>
 
@@ -13,8 +13,7 @@
                         label: "LAST NAME" %>
           </div>
           <%= f.input :address,
-                      label:"LOCATION",
-                      placeholder: "example: Plaza De Cataluña, Barcelona" %>
+                      label:"ADDRESS" %>
           <%= f.input :country,
                       collection: @continents,
                       label:"NATIONALITY" %>
@@ -35,9 +34,11 @@
                         collection: User.genders,
                         label:"GENDER" %>
             <%= f.input :height,
-                        label:"HEIGHT" %>
+                        label:"HEIGHT",
+                        placeholder: "in cm" %>
             <%= f.input :weight,
-                        label:"WEIGHT" %>
+                        label:"WEIGHT",
+                        placeholder: "in kg" %>
           </div>
         </div>
         <div class="form-actions">
