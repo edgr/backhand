@@ -13,6 +13,16 @@
   }
 }
 
+.login-links {
+  margin-top: 25px;
+  color: $black;
+  text-align: center;
+  font-size: 16px;
+  p {
+    display: inline;
+  }
+}
+
 .form-signup {
   background: white;
   padding-top: 20px;
@@ -27,7 +37,6 @@
     margin-bottom: 0.5em;
   }
 }
-
 
 // STEP 1
 
@@ -93,15 +102,6 @@
 .form-label {
   color: $black;
   font-size: 16px;
-}
-
-.text-foot {
-  color: $black;
-  text-align: center;
-  font-size: 16px;
-  p {
-    display: inline;
-  }
 }
 
 .log {
