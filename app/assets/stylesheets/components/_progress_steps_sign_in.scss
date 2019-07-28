@@ -16,7 +16,7 @@
   font-weight: bold;
   color: $black;
   &.active {
-    border: 2px solid #ffffff;
+    border: 2px solid #0095FF;
     color: #ffffff;
     background-color: #0095FF;
   }
@@ -28,5 +28,8 @@
   width: calc(50% - 75px);
   height: 2px;
   background-color: black;
+  &.active {
+    background-color: #0095FF;
+  }
 }
 

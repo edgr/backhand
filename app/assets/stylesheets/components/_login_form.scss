@@ -13,6 +13,21 @@
   }
 }
 
+.form-signup {
+  background: white;
+  padding-top: 20px;
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: $black;
+    margin-bottom: 25px;
+  }
+  .form-group {
+    margin-bottom: 0.5em;
+  }
+}
+
 
 // STEP 1
 
