@@ -5,6 +5,7 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+@import "config/intlrewrite";
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -12,7 +13,6 @@
 @import "font-awesome";
 @import "flag-icon";
 @import "intl-tel-input/build/css/intlTelInput";
-@import "config/intl_rewrite";
 
 // Your CSS partials
 @import "components/index";
