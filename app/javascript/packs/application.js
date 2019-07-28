@@ -6,6 +6,7 @@ import { autoLoserSelection } from '../components/autoLoserSelection';
 import "../plugins/flatpickr";
 import 'select2/dist/css/select2.css';
 import { initSelect2 } from '../components/init_select2';
+import '../plugins/intl';
 
 const tabs = document.querySelectorAll(".tab-underlined");
 if (tabs) { tabs.forEach(addListener) };
@@ -14,3 +15,4 @@ initAutocompleteAddress();
 initAutocompleteCity();
 autoLoserSelection();
 initSelect2();
+

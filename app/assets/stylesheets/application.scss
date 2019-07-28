@@ -8,6 +8,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "flag-icon";
+@import "intl-tel-input/build/css/intlTelInput";
+@import "config/intl_rewrite";
 
 // Your CSS partials
 @import "components/index";
