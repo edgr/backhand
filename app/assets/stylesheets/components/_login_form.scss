@@ -1,7 +1,6 @@
 .form-login {
   background: white;
   padding-top: 20px;
-  margin-top: 50px;
   h2 {
     font-size: 24px;
     font-weight: bold;
@@ -9,24 +8,97 @@
     color: $black;
     margin-bottom: 25px;
   }
-  .btn {
-    margin-top: 50px;
-  }
 }
 
-.form-label {
-  color: $black;
-  font-size: 16px;
-}
-
-
-.text-foot {
+.login-links {
+  margin-top: 25px;
   color: $black;
   text-align: center;
   font-size: 16px;
   p {
     display: inline;
   }
+}
+
+.form-signup {
+  background: white;
+  padding-top: 20px;
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: $black;
+    margin-bottom: 25px;
+  }
+  .form-group {
+    margin-bottom: 0.5em;
+  }
+}
+
+// STEP 1
+
+.user_first_name {
+  margin-right: 5px;
+  flex-grow: 1;
+}
+
+.user_last_name {
+  margin-left: 5px;
+  flex-grow: 1;
+}
+
+.user_place_of_birth {
+  margin-right: 5px;
+}
+
+.user_birthday {
+  margin-left: 5px;
+}
+
+.user_gender {
+  width: 150px;
+  margin-right: 5px;
+}
+
+.user_height {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.user_weight {
+  margin-left: 5px;
+}
+
+// STEP 2
+
+.select2-container--bootstrap .select2-selection--single {
+  height: 38px;
+  .select2-selection__rendered {
+    padding-top: 2px;
+  }
+}
+
+.select2-container--bootstrap .select2-selection {
+  border: 1px solid #ced4da;
+  box-shadow: none;
+  border-radius: 2px;
+}
+
+// STEP 3
+
+.user_picture {
+  position: relative;
+}
+
+.user_bio {
+  textarea {
+    height: 200px;
+  }
+}
+
+.form-label {
+  color: $black;
+  font-size: 16px;
 }
 
 .log {

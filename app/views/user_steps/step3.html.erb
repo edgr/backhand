@@ -1,18 +1,42 @@
+<script>
+  const changeLabelValue = (event) => {
+    const label = document.querySelector('.custom-file-label')
+    const file = document.getElementById('user_picture').files[0]
+    if (label) {
+      label.innerHTML = file.name
+    }
+  }
+</script>
+
+
 <div class="main-container">
   <div class="row">
-    <div class="form-login col-sm-12 col-md-4 offset-md-4">
+    <div class="form-signup col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+      <div class="login-steps">
+        <ul class="sign-in-steps">
+          <li class="sign-in-step active">1</li>
+          <li class="sign-in-bar active"></li>
+          <li class="sign-in-step active">2</li>
+          <li class="sign-in-bar active"></li>
+          <li class="sign-in-step active">3</li>
+        </ul>
+      </div>
 
-      <h2>Step 3: smile & shine!</h2>
+      <h2>Smile & shine!</h2>
 
       <%= simple_form_for @user, url: wizard_path do |f| %>
         <div class="form-inputs form-label">
-          <%= f.input :picture %>
-          <%= f.input :picture_cache, as: :hidden %>
+          <div class="custom-file">
+            <%= f.input :picture, input_html: {class: "custom-file-input", onchange: "changeLabelValue(event)"} %>
+            <label class="custom-file-label" for="user_picture">upload your best picture!</label>
+            <%= f.input :picture_cache, as: :hidden %>
+          </div>
           <%= f.input :bio,
-                      label: "BIO" %>
+                      label: "BIO",
+                      placeholder: "This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc." %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Next", class: "btn btn-primary cta-signup mb-3" %>
+          <%= f.button :submit, "next", class: "btn btn-primary cta-signup mb-3" %>
         </div>
       <% end %>
     </div>

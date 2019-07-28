@@ -22,14 +22,14 @@
         <li class="nav-item">
           <%= link_to "My Challenges", challenges_path, class: "nav-link" %>
         </li>
-        <li class="nav-item ml-auto">
+        <li class="nav-item ml-lg-auto">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
       </ul>
     </div>
 
   <% else %>
-    <div class="login-up ml-auto">
+    <div class="login-up ml-lg-auto">
       <%= link_to 'Sign up', new_user_registration_path, class: "nav-link text-white" %>
       <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
     </div>
