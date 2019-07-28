@@ -78,6 +78,18 @@
   border-radius: 2px;
 }
 
+// STEP 3
+
+.user_picture {
+  position: relative;
+}
+
+.user_bio {
+  textarea {
+    height: 200px;
+  }
+}
+
 .form-label {
   color: $black;
   font-size: 16px;

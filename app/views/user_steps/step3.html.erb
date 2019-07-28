@@ -1,6 +1,6 @@
 <div class="main-container">
   <div class="row">
-    <div class="form-login col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+    <div class="form-signup col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
       <div class="login-steps">
         <ul class="sign-in-steps">
           <li class="sign-in-step active">1</li>
@@ -15,14 +15,17 @@
 
       <%= simple_form_for @user, url: wizard_path do |f| %>
         <div class="form-inputs form-label">
-          <%= f.input :picture %>
-          <%= f.input :picture_cache, as: :hidden %>
+          <div class="custom-file">
+            <%= f.input :picture, input_html: {class: "custom-file-input"} %>
+            <label class="custom-file-label" for="user_picture">PICTURE</label>
+            <%= f.input :picture_cache, as: :hidden %>
+          </div>
           <%= f.input :bio,
                       label: "BIO",
-                      placeholder: "This is where you can let other players know a bit more like when/where you like to play, how long you've been playing tennis, etc." %>
+                      placeholder: "This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc." %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Next", class: "btn btn-primary cta-signup mb-3" %>
+          <%= f.button :submit, "next", class: "btn btn-primary cta-signup mb-3" %>
         </div>
       <% end %>
     </div>
