@@ -1,0 +1,35 @@
+.sign-in-steps {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  align-items: center;
+}
+
+.sign-in-step {
+  list-style: none;
+  border: 2px solid $black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 47px;
+  font-weight: bold;
+  color: $black;
+  &.active {
+    border: 2px solid #0095FF;
+    color: #ffffff;
+    background-color: #0095FF;
+  }
+}
+
+.sign-in-bar {
+  list-style: none;
+  content: "";
+  width: calc(50% - 75px);
+  height: 2px;
+  background-color: black;
+  &.active {
+    background-color: #0095FF;
+  }
+}
+

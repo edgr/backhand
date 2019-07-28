@@ -1,94 +1,157 @@
 <div class="main-container">
   <div class="row">
-    <div class="form-login col-sm-12 col-md-4 offset-md-4">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <div class="form-login col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+      <h2>Edit Your Profile</h2>
+      <p class="help-save">Psst: if you make a change, don't forget to save below!</p>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-inputs form-label">
-          <%= f.input :email,
+        <div class="accordion" id="accordionEditProfile">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <button class="btn accordion-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Contact Info & Password
+              </button>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionEditProfile">
+              <div class="card-body">
+                <%= f.input :email,
                       required: true,
                       autofocus: true %>
-          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-          <% end %>
-          <%= f.input :first_name,
-                      label: "YOUR FIRST NAME" %>
-          <%= f.input :last_name,
-                      label: "YOUR LAST NAME" %>
-          <%= f.input :level,
-                      collection: User.levels,
-                      label:"PICK YOUR LEVEL" %>
-          <%= f.input :address,
-                      label: "YOUR LOCATION",
-                      placeholder: "example: Plaza De Cataluña, Barcelona" %>
-          <%= f.input :phone_number,
-                      label: "ENTER YOUR PHONE NUMBER",
-                      placeholder: "example: +34",
-                      as: :tel,
-                      pattern: "[0-9]+" %>
-          <%= f.input :password,
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <% end %>
+                <%= f.input :phone_number,
+                            label: "ENTER YOUR PHONE NUMBER",
+                            placeholder: "example: +34",
+                            as: :tel,
+                            pattern: "[0-9]+" %>
+                <%= f.input :password,
                       hint: "leave it blank if you don't want to change it",
                       required: false,
                       input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation,
+                <%= f.input :password_confirmation,
                       required: false,
                       input_html: { autocomplete: "new-password" } %>
-        </div>
-        <div>
-          <%= f.input :picture %>
-          <%= f.input :picture_cache, as: :hidden %>
-          <%= f.input :style_of_play,
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <button class="btn accordion-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                About You
+              </button>
+            </div>
+
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionEditProfile">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <%= f.input :first_name,
+                        label: "YOUR FIRST NAME" %>
+                  <%= f.input :last_name,
+                              label: "YOUR LAST NAME" %>
+                </div>
+                <%= f.input :address,
+                            label: "YOUR LOCATION",
+                            placeholder: "example: Plaza De Cataluña, Barcelona" %>
+                <%= f.input :country,
+                            collection: @continents,
+                            label: "NATIONALITY" %>
+                <div class="d-flex justify-content-between">
+                  <%= f.input :place_of_birth,
+                            label: "PLACE OF BIRTH",
+                            class: "search_location",
+                            placeholder: "Your Hometown" %>
+                  <%= f.input :birthday,
+                        input_html: {class: "datepicker"},
+                        as: :string,
+                        # start_year: Date.today.year - 12,
+                        # end_year: 1940,
+                        # order: [ :day, :month, :year],
+                        label:"BIRTHDATE" %>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <%= f.input :gender,
+                        collection: %w[Male Female Other],
+                        label: "GENDER" %>
+                  <%= f.input :height,
+                        label: "HEIGHT IN cm" %>
+                  <%= f.input :weight,
+                        label: "WEIGHT IN kg" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <button class="btn accordion-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                Your Game
+              </button>
+            </div>
+
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionEditProfile">
+              <div class="card-body">
+                <%= f.input :style_of_play,
                       collection: User.styles,
                       label: "WHAT IS YOUR STYLE OF PLAY?" %>
-          <%= f.input :handedness,
-                      collection: %w[righty lefty],
-                      label: "ARE YOU A RIGHTY OR LEFTY?" %>
-          <%= f.input :backhand_style,
-                      :collection => ["one handed backhand", "two handed backhand"],
-                      label:"WHAT IS YOUR BACKHAND STYLE?" %>
-          <%= f.input :gender,
-                      collection: %w[Male Female Other],
-                      label: "GENDER" %>
-        </div>
-        <div class="d-flex justify-content-between">
-          <%= f.input :height,
-                      label: "HEIGHT IN cm" %>
-          <%= f.input :weight,
-                      label: "WEIGHT IN kg" %>
-        </div>
-        <div>
-          <%= f.input :birthday,
-                      as: :date,
-                      start_year: Date.today.year - 12,
-                      end_year: 1940,
-                      order: [ :day, :month, :year],
-                      label: "YOUR BIRTH DATE" %>
-          <%= f.input :place_of_birth,
-                      label: "PLACE OF BIRTH",
-                      class: "search_location",
-                      placeholder: "Your Hometown" %>
-          <%= f.input :country,
-                      collection: @continents,
-                      label: "NATIONALITY" %>
-          <%= f.input :bio,
+                <%= f.input :handedness,
+                            collection: %w[righty lefty],
+                            label: "ARE YOU A RIGHTY OR LEFTY?" %>
+                <%= f.input :backhand_style,
+                            :collection => ["one handed backhand", "two handed backhand"],
+                            label:"WHAT IS YOUR BACKHAND STYLE?" %>
+                <label for="choose-a-club"> WHICH ONE IS YOUR CLUB? </label>
+                <select name="user[club][]" class="select2 form-control" id="choose-a-club">
+                  <% Club.all.each do |club| %>
+                    <option value="<%= club.id %>"><%= club.name %></option>
+                  <% end %>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <button class="btn accordion-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+                Picture & Bio
+              </button>
+            </div>
+
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionEditProfile">
+              <div class="card-body">
+                <%#= f.input :picture %>
+                <%#= f.input :picture_cache, as: :hidden %>
+                <%#= f.input :bio,
                       label: "TELL US MORE ABOUT YOURSELF" %>
+                <div class="form-inputs form-label">
+                  <div class="custom-file">
+                    <%= f.input :picture, input_html: {class: "custom-file-input", onchange: "changeLabelValue(event)"} %>
+                    <label class="custom-file-label" for="user_picture">upload your best picture!</label>
+                    <%= f.input :picture_cache, as: :hidden %>
+                  </div>
+                  <%= f.input :bio,
+                              label: "BIO",
+                              placeholder: "This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc." %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="save-profile">
           <%= f.input :current_password,
                       hint: "we need your current password to confirm your changes",
                       required: true,
                       input_html: { autocomplete: "current-password" } %>
-        </div>
-        <div class="form-actions">
-          <%= f.button :submit, "Save", class: "btn btn-primary cta-signup mb-3" %>
+          <div class="form-actions">
+            <%= f.button :submit, "save", class: "btn btn-primary cta-signup mb-3" %>
+          </div>
         </div>
       <% end %>
-
-      <h3>Cancel my account</h3>
-
-      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-      <%= link_to "Back", :back %>
+      <div class="cancel-account">
+        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      </div>
     </div>
   </div>
 </div>
