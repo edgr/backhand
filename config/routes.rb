@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # resources :finish_profiles
 
   resources :challenges, only: [:index, :show, :update] do
-    resources :user_reviews, only: [:new, :show, :create]
+    resources :user_reviews, only: [:new, :create]
   end
 
    resources :users, only: [ :index, :show, :edit, :update ] do
