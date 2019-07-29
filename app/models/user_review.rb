@@ -9,7 +9,7 @@ class UserReview < ApplicationRecord
   validates :serve, :return, :backhand, :forehand, :volley, :speed, :power, :endurance,
             presence: true
 
-  before_create :set_challenge, :set_receiver
+  before_create :set_receiver
   after_create :set_receiver_score, :skills_set_update
 
   private
@@ -18,19 +18,15 @@ class UserReview < ApplicationRecord
     errors.add(:sender_id, 'You can not review yourself') if sender_id == receiver_id
   end
 
-  def set_challenge
-    @challenge = Challenge.find(challenge_id)
-  end
-
   def set_receiver
-    @receiver = @challenge.other_user(@current_user)
+    receiver = User.find(self.receiver_id)
   end
 
   def set_receiver_score
-    total_size = @receiver.received_reviews.length
-    thumbs_up = @receiver.received_reviews.count { |review| review.thumb? }
-    @receiver.review_score = (thumbs_up / total_size.to_f) * 100
-    @receiver.save
+    total_size = receiver.received_reviews.length
+    thumbs_up = receiver.received_reviews.count { |review| review.thumb? }
+    receiver.review_score = (thumbs_up / total_size.to_f) * 100
+    receiver.save
   end
 
   def final_score(oldavgscore, newskillscore, length)
@@ -38,17 +34,16 @@ class UserReview < ApplicationRecord
   end
 
   def skills_set_update
-    @receiver_skills = ComputedSkillsSet.where(user_id: @receiver.id)[0]
+    @receiver_skills = ComputedSkillsSet.where(user_id: receiver.id)[0]
     length = @receiver_skills.user.received_reviews.length
-    user_review = params[:user_review]
 
     avg_serve_score = @receiver_skills.serve
     new_serve_score = serve.to_f
     @receiver_skills.serve = final_score(avg_serve_score, new_serve_score, length)
 
-    # avg_return_score = @receiver_skills.return
-    # new_return_score = return.to_f
-    # @receiver_skills.return = final_score(avg_return_score, new_return_score, length)
+    avg_return_score = @receiver_skills.return
+    new_return_score = self.return.to_f
+    @receiver_skills.return = final_score(avg_return_score, new_return_score, length)
 
     avg_forehand_score = @receiver_skills.forehand
     new_forehand_score = forehand.to_f
