@@ -24,10 +24,8 @@
                   <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
                 <% end %>
                 <%= f.input :phone_number,
-                            label: "ENTER YOUR PHONE NUMBER",
-                            placeholder: "example: +34",
                             as: :tel,
-                            pattern: "[0-9]+" %>
+                            pattern: "\+[0-9]+" %>
                 <%= f.input :password,
                       hint: "leave it blank if you don't want to change it",
                       required: false,
