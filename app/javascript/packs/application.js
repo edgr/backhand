@@ -7,6 +7,7 @@ import { initAutocompleteCity } from '../plugins/autocomplete_city';
 import { autoLoserSelection } from '../components/autoLoserSelection';
 import "../plugins/flatpickr";
 import { initSelect2 } from '../components/init_select2';
+import '../plugins/intl';
 import { changeLabelValue } from '../components/changelabelpictureupload';
 
 const tabs = document.querySelectorAll(".tab-underlined");
