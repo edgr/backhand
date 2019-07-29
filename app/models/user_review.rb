@@ -40,7 +40,7 @@ class UserReview < ApplicationRecord
   def skills_set_update
     @receiver_skills = ComputedSkillsSet.where(user_id: @receiver.id)[0]
     length = @receiver_skills.user.received_reviews.length
-    # user_review = params[:user_review]
+    user_review = params[:user_review]
 
     avg_serve_score = @receiver_skills.serve
     new_serve_score = serve.to_f
