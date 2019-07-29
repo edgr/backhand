@@ -41,7 +41,18 @@
   width: 100%;
 }
 
-#intl-error-msg {
+#valid-msg {
+  &.hide {
+    display: none;
+  }
+  margin-top: -1em;
+  margin-bottom: 1em;
+  width: 100%;
+  font-size: 80%;
+  color: #0b6623;
+}
+
+#error-msg {
   margin-top: -1em;
   margin-bottom: 1em;
   width: 100%;

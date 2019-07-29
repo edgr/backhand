@@ -17,8 +17,8 @@
                       label:"YOUR MOBILE PHONE NUMBER",
                       as: :tel,
                       pattern: "\+[0-9]+" %>
-          <p id="intl-valid-msg" class="hidden">Valid</p>
-          <p id="intl-error-msg" class="hidden"></p>
+          <span id="valid-msg" class="hide">✓Valid</span>
+          <span id="error-msg" class="hide"></span>
           <%= f.input :password,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
