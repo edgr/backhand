@@ -15,9 +15,10 @@
                       label: "YOUR EMAIL" %>
           <%= f.input :phone_number,
                       label:"YOUR MOBILE PHONE NUMBER",
-                      placeholder: "let other players contact you",
                       as: :tel,
-                      pattern: "[0-9]+" %>
+                      pattern: "\+[0-9]+" %>
+          <span id="valid-msg" class="hide">✓Valid</span>
+          <span id="error-msg" class="hide"></span>
           <%= f.input :password,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

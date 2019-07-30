@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
   validates :phone_number, presence: true,
                            numericality: true,
-                           length: { minimum: 10, maximum: 15 }
+                           length: { minimum: 8, maximum: 15 }
 
   validates :first_name, :last_name, :address, :country, :place_of_birth, :birthday, :gender, :height, :weight, presence: true, if: :active_or_step1?
   validates :level, :style_of_play, :handedness, :backhand_style, presence: true, if: :active_or_step2?
