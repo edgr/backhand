@@ -17,4 +17,4 @@ initAutocompleteAddress();
 initAutocompleteCity();
 autoLoserSelection();
 initSelect2();
-// changeLabelValue();
+changeLabelValue();
