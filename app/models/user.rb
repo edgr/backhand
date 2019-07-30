@@ -20,14 +20,14 @@ class User < ApplicationRecord
 
   has_one :computed_skills_set, dependent: :destroy
 
-  validates :phone_number, presence: true,
-                           numericality: true,
-                           length: { minimum: 8, maximum: 15 }
+  # validates :phone_number, presence: true,
+  #                          numericality: true,
+  #                          length: { minimum: 8, maximum: 15 }
 
-  validates :first_name, :last_name, :address, :country, :place_of_birth, :birthday, :gender, :height, :weight, presence: true, if: :active_or_step1?
-  validates :level, :style_of_play, :handedness, :backhand_style, presence: true, if: :active_or_step2?
-  # validates :picture, presence: true, if: :active_or_step3?
-  validates :bio, presence: true, if: :active_or_step3?
+  # validates :first_name, :last_name, :address, :country, :place_of_birth, :birthday, :gender, :height, :weight, presence: true, if: :active_or_step1?
+  # validates :level, :style_of_play, :handedness, :backhand_style, presence: true, if: :active_or_step2?
+  # # validates :picture, presence: true, if: :active_or_step3?
+  # validates :bio, presence: true, if: :active_or_step3?
 
   def active?
     status == 'active'
