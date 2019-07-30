@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_131143) do
+ActiveRecord::Schema.define(version: 2019_07_30_134031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,7 +82,9 @@ ActiveRecord::Schema.define(version: 2019_07_30_131143) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "match_id"
     t.index ["challenge_id"], name: "index_user_reviews_on_challenge_id"
+    t.index ["match_id"], name: "index_user_reviews_on_match_id"
     t.index ["receiver_id"], name: "index_user_reviews_on_receiver_id"
     t.index ["sender_id"], name: "index_user_reviews_on_sender_id"
   end
@@ -130,6 +132,7 @@ ActiveRecord::Schema.define(version: 2019_07_30_131143) do
   add_foreign_key "matches", "users", column: "opponent_id"
   add_foreign_key "matches", "users", column: "player_id"
   add_foreign_key "user_reviews", "challenges"
+  add_foreign_key "user_reviews", "matches"
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
   add_foreign_key "users", "clubs"
