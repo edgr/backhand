@@ -126,7 +126,7 @@
                       label: "TELL US MORE ABOUT YOURSELF" %>
                 <div class="form-inputs form-label">
                   <div class="custom-file">
-                    <%= f.input :picture, input_html: {class: "custom-file-input", onchange: "changeLabelValue(event)"} %>
+                    <%= f.input :picture, input_html: {class: "custom-file-input"} %>
                     <label class="custom-file-label" for="user_picture">upload your best picture!</label>
                     <%= f.input :picture_cache, as: :hidden %>
                   </div>
