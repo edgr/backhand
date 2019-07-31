@@ -1,10 +1,34 @@
 require 'rails_helper'
 
 RSpec.describe MatchesController, type: :controller do
-  it { should route(:get, '/matches').to(action: :index) }
-  describe "#index" do
-    it "should return all matches" do
 
-    end
+  describe "routes" do
+    it { should route(:get, '/matches').to(action: :index) }
+  end
+
+  describe "#index with user logged out" do
+    before { get :index }
+    it { expect(response).to have_http_status(302) }
+    it { should redirect_to('/users/sign_in') }
+  end
+
+  describe "#new with user logged out" do
+    before { get :new }
+    it { expect(response).to have_http_status(302) }
+    it { should redirect_to('/users/sign_in') }
+  end
+
+  describe "user logged in can access #index" do
+    login_user
+    it { expect(response).to have_http_status(:success) }
+    before { get :index }
+    it { should render_template("index") }
+  end
+
+  describe "user logged in can access #new" do
+    login_user
+    it { expect(response).to have_http_status(:success) }
+    before { get :new }
+    it { should render_template("new") }
   end
 end
