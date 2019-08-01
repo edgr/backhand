@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       format.js
     end
 
-    update_ranking
+    # update_ranking
   end
 
   def show
