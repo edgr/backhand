@@ -1,21 +1,30 @@
 function updateUsers() {
   const usersContainer = document.querySelector('#users-container');
-  usersContainer.innerHTML = "<%= j render 'users', users: @users %>";
+  if (usersContainer) {
+    usersContainer.innerHTML = "<%= j render 'users', users: @users %>";
+  }
 }
 
 function updateQueryParameters() {
   const form = document.querySelector('#search_query');
-  form.value = "";
-  form.value = "<%= @query %>";
+  if (form) {
+    form.value = "";
+    form.value = "<%= @query %>";
+  }
 }
 
 function closeModal() {
-  document.querySelector('button.close').click();
+  const close = document.querySelector('button.close')
+  if (close) {
+    close.click();
+  }
 }
 
 function updateQueryIndicator() {
   const indication = document.querySelector('#user-query-indicator');
-  indication.innerText = "<%= @users.count %> players <%= @indication %>"
+  if (indication) {
+    indication.innerText = "<%= @users.count %> players <%= @indication %>";
+  }
 }
 
 updateUsers();
