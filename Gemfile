@@ -30,6 +30,9 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 # rails multi step form
 gem 'wicked'
 
+# postmark gem for transactional emails
+gem 'postmark-rails'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'letter_opener'
