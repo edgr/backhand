@@ -1,5 +1,4 @@
 import intlTelInput from 'intl-tel-input';
-import $ from 'jquery';
 
 const input = document.getElementById("user_phone_number");
 const errorMsg = document.getElementById("error-msg");
@@ -12,7 +11,7 @@ if (input) {
     // formatOnInit: true,
     autoPlaceholder: "polite",
     preferredCountries: ['at', 'be', 'bg', 'cz', 'dk', 'de', 'ee', 'ie', 'el', 'es', 'fr', 'hr', 'it', 'cy', 'lv', 'lt', 'lu', 'hu', 'mt', 'nl', 'pl', 'pt', 'ro', 'si', 'sk', 'fi', 'se', 'uk'],
-    utilsScript: "../../build/js/utils.js?1562189064761"
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.2/js/utils.js"
   });
 
   const reset = () => {
@@ -27,7 +26,7 @@ if (input) {
     if (input.value.trim()) {
       if (iti.isValidNumber()) {
         validMsg.classList.remove("hide");
-        input.value = iti.getNumber();
+        input.value = iti.getNumber().replace(/\D/g,'');
     } else {
       input.classList.add("error");
       const errorCode = iti.getValidationError();

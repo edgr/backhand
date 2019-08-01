@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   const changeLabelValue = (event) => {
     const label = document.querySelector('.custom-file-label')
     const file = document.getElementById('user_picture').files[0]
@@ -6,7 +6,7 @@
       label.innerHTML = file.name
     }
   }
-</script>
+</script> -->
 
 
 <div class="main-container">
@@ -27,7 +27,7 @@
       <%= simple_form_for @user, url: wizard_path do |f| %>
         <div class="form-inputs form-label">
           <div class="custom-file">
-            <%= f.input :picture, input_html: {class: "custom-file-input", onchange: "changeLabelValue(event)"} %>
+            <%= f.input :picture, input_html: {class: "custom-file-input" } %> <!-- onchange: "changeLabelValue(event)" -->
             <label class="custom-file-label" for="user_picture">upload your best picture!</label>
             <%= f.input :picture_cache, as: :hidden %>
           </div>
