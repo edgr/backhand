@@ -5,7 +5,9 @@
         <%= @users.length %> players in <%= params[:search][:location] %>
       </span>
     <% else %>
-      <%= @users.length %> players matching your query
+      <span id="user-query-indicator">
+        <%= @users.length %> players matching your query
+      </span>
     <% end %>
   </div>
 
