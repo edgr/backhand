@@ -2,10 +2,12 @@
   <div class="search-results">
     <% if params[:search].try(:[], :location)&.present? %>
       <span id="user-query-indicator">
-        <%= @users.length %> players in <%= params[:search][:location] %>
+        <%= pluralize @users.length, 'player' %> in <%= params[:search][:location] %>
       </span>
     <% else %>
-      <%= @users.length %> players matching your query
+      <span id="user-query-indicator">
+        <%= pluralize @users.length, 'player' %> matching your query
+      </span>
     <% end %>
   </div>
 
