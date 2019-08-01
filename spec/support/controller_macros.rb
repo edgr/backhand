@@ -7,4 +7,8 @@ module ControllerMacros
       sign_in user
     end
   end
+
+  def create_match
+    FactoryBot.create(:match)
+  end
 end

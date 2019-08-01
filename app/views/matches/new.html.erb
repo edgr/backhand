@@ -1,1 +1,37 @@
-<h1>This is the new page</h1>
+<div class="main-container">
+  <div class="row">
+    <div class="form-login col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+      <%= simple_form_for @match, method: :post do |f| %>
+      <div class="d-flex justify-content-between">
+        <%= f.input :date,
+        input_html: {class: "datepicker"},
+        as: :string,
+        # start_year: Date.today.year - 12,
+        # end_year: 1940,
+        # order: [ :day, :month, :year],
+        label:"WHEN DID YOU PLAY?" %>
+        <div>
+          <label for="choose-club">WHERE DID YOU PLAY?</label>
+          <select name="user[club][]" class="select2 form-control" id="choose-a-club">
+            <% Club.all.each do |club| %>
+            <option value="<%= club.id %>"><%= club.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+      <label for="choose-club">WHO DID YOU PLAY WITH?</label>
+      <select class="select2 form-control" id="choose-player">
+        <% User.all.each do |user| %>
+        <option value="<%= user.id %>"><%= user.first_name %> <%= user.last_name %></option>
+        <% end %>
+      </select>
+      <%= f.input :winner %>
+      <label for="sets-played">HOW MANY SETS DID YOU PLAY?</label>
+      <input id="sets-played" type="range" min="1" max="5">
+      <%= f.input :score %>
+      <%= f.submit 'Record Match', class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
