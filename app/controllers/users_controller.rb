@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       format.js
     end
 
-    # update_ranking
+    update_ranking
   end
 
   def show
@@ -62,11 +62,11 @@ class UsersController < ApplicationController
 
   def update_ranking
     @users = @users.sort_by { |user| user.points }
-    counter = 1
-    @users.each do |user|
-      user.update(ranking: counter)
-      user.save
-      counter += 1
-    end
+    # counter = 1
+    # @users.each do |user|
+    #   user.update(ranking: counter)
+    #   user.save
+    #   counter += 1
+    # end
   end
 end
