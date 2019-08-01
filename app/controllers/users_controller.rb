@@ -8,13 +8,13 @@ class UsersController < ApplicationController
       @users = SearchUsers.new(params[:search]).call
     else
       @users = User.all
+      update_ranking
     end
     respond_to do |format|
       format.html
       format.js
     end
-
-    update_ranking
+    @users = @users.sort_by { |user| user.points }.reverse
   end
 
   def show
@@ -27,25 +27,8 @@ class UsersController < ApplicationController
     end
   end
 
-  # def edit
-  # end
-
-  # def update
-  #   @user = current_user
-  #   if @user.update(user_params)
-  #     redirect_to user_path(@user)
-  #   else
-  #     render :edit
-  #   end
-  # end
 
   private
-
-  # def user_params
-  #   params.require(:user).permit(:height, :weight, :age, :first_name, :last_name, :email, :phone_number,
-  #                                :bio, :address, :style_of_play, :gender, :country, :birthday,
-  #                                :backhand_style, :handedness, :picture, :level)
-  # end
 
   def format_query(params)
     return unless params[:query].present?
@@ -61,12 +44,12 @@ class UsersController < ApplicationController
   end
 
   def update_ranking
-    @users = @users.sort_by { |user| user.points }
-    # counter = 1
-    # @users.each do |user|
-    #   user.update(ranking: counter)
-    #   user.save
-    #   counter += 1
-    # end
+    @users = @users.sort_by { |user| user.points }.reverse
+    counter = 1
+    @users.each do |user|
+      user.update(ranking: counter)
+      user.save
+      counter += 1
+    end
   end
 end
