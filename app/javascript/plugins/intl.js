@@ -1,4 +1,5 @@
 import intlTelInput from 'intl-tel-input';
+import 'intl-tel-input/build/js/utils.js';
 
 const input = document.getElementById("user_phone_number");
 const errorMsg = document.getElementById("error-msg");
@@ -11,7 +12,7 @@ if (input) {
     // formatOnInit: true,
     autoPlaceholder: "polite",
     preferredCountries: ['at', 'be', 'bg', 'cz', 'dk', 'de', 'ee', 'ie', 'el', 'es', 'fr', 'hr', 'it', 'cy', 'lv', 'lt', 'lu', 'hu', 'mt', 'nl', 'pl', 'pt', 'ro', 'si', 'sk', 'fi', 'se', 'uk'],
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.2/js/utils.js"
+    utilsScript: "../../../../node_modules/intl-tel-input/build/js/utils.js"
   });
 
   const reset = () => {
