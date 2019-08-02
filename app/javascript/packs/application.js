@@ -9,6 +9,7 @@ import "../plugins/flatpickr";
 import { initSelect2 } from '../components/init_select2';
 import '../plugins/intl';
 import { changeLabelValue } from '../components/changelabelpictureupload';
+import { onChange } from '../components/select_winner';
 
 const tabs = document.querySelectorAll(".tab-underlined");
 if (tabs) { tabs.forEach(addListener) };
@@ -17,4 +18,5 @@ initAutocompleteAddress();
 initAutocompleteCity();
 autoLoserSelection();
 initSelect2();
+onChange();
 // changeLabelValue();
