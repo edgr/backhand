@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :user_reviews, only: [:new, :create]
   end
 
+  resources :matches, only: [:new, :create, :show, :index, :update]
+
    resources :users, only: [ :index, :show, :edit, :update ] do
     resources :user_reviews, only: [:destroy]
   end

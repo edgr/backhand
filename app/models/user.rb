@@ -15,8 +15,11 @@ class User < ApplicationRecord
   has_many :sent_reviews, class_name: 'UserReview', foreign_key: :sender_id, dependent: :destroy
   has_many :received_reviews, class_name: 'UserReview', foreign_key: :receiver_id, dependent: :destroy
 
-  has_many :sent_challenges, class_name: 'Challenge', foreign_key: :challenger_id, dependent: :destroy
-  has_many :received_challenges, class_name: 'Challenge', foreign_key: :challengee_id, dependent: :destroy
+  # has_many :sent_challenges, class_name: 'Challenge', foreign_key: :challenger_id, dependent: :destroy
+  # has_many :received_challenges, class_name: 'Challenge', foreign_key: :challengee_id, dependent: :destroy
+
+  has_many :matches, foreign_key: :player_id, dependent: :destroy
+  has_many :matches, foreign_key: :opponent_id, dependent: :destroy
 
   has_one :computed_skills_set, dependent: :destroy
 
@@ -74,7 +77,7 @@ class User < ApplicationRecord
   end
 
   def age
-    ((Date.today - self.birthday).to_i) / 365
+    (Date.today - self.birthday).to_i / 365
   end
 
   include PgSearch

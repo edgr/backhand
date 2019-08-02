@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_26_155934) do
+ActiveRecord::Schema.define(version: 2019_07_30_134031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,20 @@ ActiveRecord::Schema.define(version: 2019_07_26_155934) do
     t.index ["user_id"], name: "index_computed_skills_sets_on_user_id"
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.bigint "player_id"
+    t.bigint "opponent_id"
+    t.date "date"
+    t.string "location"
+    t.string "score"
+    t.string "winner"
+    t.string "loser"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["opponent_id"], name: "index_matches_on_opponent_id"
+    t.index ["player_id"], name: "index_matches_on_player_id"
+  end
+
   create_table "user_reviews", force: :cascade do |t|
     t.bigint "sender_id"
     t.bigint "receiver_id"
@@ -68,7 +82,9 @@ ActiveRecord::Schema.define(version: 2019_07_26_155934) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "match_id"
     t.index ["challenge_id"], name: "index_user_reviews_on_challenge_id"
+    t.index ["match_id"], name: "index_user_reviews_on_match_id"
     t.index ["receiver_id"], name: "index_user_reviews_on_receiver_id"
     t.index ["sender_id"], name: "index_user_reviews_on_sender_id"
   end
@@ -113,7 +129,10 @@ ActiveRecord::Schema.define(version: 2019_07_26_155934) do
   add_foreign_key "challenges", "users", column: "challengee_id"
   add_foreign_key "challenges", "users", column: "challenger_id"
   add_foreign_key "computed_skills_sets", "users"
+  add_foreign_key "matches", "users", column: "opponent_id"
+  add_foreign_key "matches", "users", column: "player_id"
   add_foreign_key "user_reviews", "challenges"
+  add_foreign_key "user_reviews", "matches"
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
   add_foreign_key "users", "clubs"
