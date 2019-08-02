@@ -2,10 +2,12 @@
   <div class="search-results">
     <% if params[:search].try(:[], :location)&.present? %>
       <span id="user-query-indicator">
-        <%= @users.length %> players in <%= params[:search][:location] %>
+        <%= pluralize @users.length, 'player' %> in <%= params[:search][:location] %>
       </span>
     <% else %>
-      <%= @users.length %> players matching your query
+      <span id="user-query-indicator">
+        <%= pluralize @users.length, 'player' %> matching your query
+      </span>
     <% end %>
   </div>
 
@@ -34,7 +36,7 @@
           </div>
           <%= f.input :level, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: ['Beginner','Intermediate','Advanced','Semi-Pro','Pro'], wrapper: :vertical_collection_inline %>
           <%= f.input :style_of_play, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: ['Grinder','Baseliner','Server-Volleyer','Attacker','Puncher'], wrapper: :vertical_collection_inline %>
-          <%#= f.input :country, input_html: {name: "search[query][]"}  %>
+          <%= f.input :country, input_html: {name: "search[query][]"}, label: "Nationality" %>
           <%= f.input :handedness, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: ['Righty','Lefty'], wrapper: :vertical_collection_inline %>
 
           <%= f.input :backhand_style, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: ['One handed','Two handed'], wrapper: :vertical_collection_inline  %>

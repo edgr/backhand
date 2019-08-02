@@ -267,35 +267,25 @@
     </div>
   </div>
     <!-- end comments -->
+  <% if user_signed_in? %>
     <% if @user == current_user %>
       <div class="cta-back">
         <%= link_to 'edit', edit_user_registration_path, class: "btn btn-flat cta-button" %>
       </div>
     <% else %>
-    <!-- Button trigger modal -->
       <div class="cta-back">
-        <button type="button" class="btn btn-flat cta-button" data-toggle="modal" data-target="#exampleModalCenter">
-          <%= "Challenge #{@user.first_name}" %>
-        </button>
+        <a href="https://wa.me/<%= @user.phone_number %>?text=Hello%20<%= @user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%20Fancy%20playing%20some%20tennis?" class="btn btn-primary cta-button" role="button">
+          Contact <%= @user.first_name %> on Whatsapp!
+        </a>
       </div>
     <% end %>
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-
-        <div class="modal-body">
-          <p class= "col">Would you like to challenge this player?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">No, thanks</button>
-          <button type="button" class="btn btn-primary white-bt">
-          <%= link_to "Yes!", create_challenge_path(user_id: @user.id), :method => :post %>
-          </button>
-        </div>
-      </div>
+  <% else %>
+    <div class="cta-back">
+      <%= link_to new_user_session_path, class: "btn btn-flat cta-button" do %>
+        <%= "Login or Sign up to contact #{@user.first_name}" %>
+      <% end %>
     </div>
+  <% end %>
 <% end %>
 
 
