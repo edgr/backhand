@@ -7,14 +7,14 @@
         input_html: {class: "datepicker"},
         as: :string,
         label:"WHEN DID YOU PLAY?" %>
-        <div>
+        <!-- <div>
           <label for="choose-club">WHERE DID YOU PLAY?</label>
           <select name="match[location][]" class="select2 form-control" id="choose-a-club">
-            <% Club.all.each do |club| %>
-            <option value="<%= club.id %>"><%= club.name %></option>
-            <% end %>
+            <%# Club.all.each do |club| %>
+            <option value="<%#= club.id %>"><%#= club.name %></option>
+            <%# end %>
           </select>
-        </div>
+        </div> -->
       </div>
       <%= f.association :opponent, label:"WHO DID YOU PLAY WITH?", input_html: {class: "select2 form-control"}, label_method: :full_name %>
       <%= f.input :winner, label: "WHO WON?", input_html: {class: "form-control"}, label_method: :full_name %>

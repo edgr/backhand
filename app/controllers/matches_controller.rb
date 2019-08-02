@@ -5,6 +5,7 @@ class MatchesController < ApplicationController
 
   def create
     @match = Match.new(match_params)
+    # @match.opponent = User.find(match_params[:opponent_id].to_i)
     if @match.save!
       redirect_to matches_path
     else
@@ -19,6 +20,6 @@ class MatchesController < ApplicationController
   private
 
   def match_params
-    params.require(:match).permit(:location, :date, :opponent, :winner, :score)
+    params.require(:match).permit(:location, :date, :opponent_id, :winner, :score)
   end
 end
