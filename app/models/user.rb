@@ -24,6 +24,7 @@ class User < ApplicationRecord
                            numericality: true,
                            length: { minimum: 8, maximum: 15 }
 
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }
   validates :first_name, :last_name, :address, :country, :place_of_birth, :birthday, :gender, :height, :weight, presence: true, if: :active_or_step1?
   validates :level, :style_of_play, :handedness, :backhand_style, presence: true, if: :active_or_step2?
   # validates :picture, presence: true, if: :active_or_step3?
