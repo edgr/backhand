@@ -20,15 +20,47 @@ class User < ApplicationRecord
 
   has_one :computed_skills_set, dependent: :destroy
 
+  validates :email, presence: true,
+                    uniqueness: true,
+                    format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }
   validates :phone_number, presence: true,
                            numericality: true,
                            length: { minimum: 8, maximum: 15 }
-
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }
-  validates :first_name, :last_name, :address, :country, :place_of_birth, :birthday, :gender, :height, :weight, presence: true, if: :active_or_step1?
-  validates :level, :style_of_play, :handedness, :backhand_style, presence: true, if: :active_or_step2?
+  validates :first_name, :last_name, presence: true,
+                                     length: { minimum: 2 },
+                                     if: :active_or_step1?
+  validates :address, presence: true,
+                      if: :active_or_step1?
+  validates :country, presence: true,
+                      length: { maximum: 60 },
+                      if: :active_or_step1?
+  validates :place_of_birth, presence: true,
+                             if: :active_or_step1?
+  validates :birthday, presence: true,
+                       if: :active_or_step1?
+  validates :gender, presence: true,
+                     inclusion: { in: %w(Male Female Other) },
+                     if: :active_or_step1?
+  validates :height, :weight, presence: true,
+                              length: { in: 2..3 },
+                              numericality: { only_integer: true },
+                              if: :active_or_step1?
+  validates :level, presence: true,
+                    inclusion: { in: %w(Beginner Intermediate Advanced Semi-pro Pro) },
+                    if: :active_or_step2?
+  validates :style_of_play, presence: true,
+                            inclusion: { in: %w(grinder baseliner attacker puncher server-volleyer) },
+                            if: :active_or_step2?
+  validates :handedness, presence: true,
+                         inclusion: { in: %w(righty lefty) },
+                         if: :active_or_step2?
+  validates :backhand_style, presence: true,
+                             inclusion: { in: ["one handed backhand", "two handed backhand"] },
+                             if: :active_or_step2?
+  validates :bio, presence: true,
+                  length: { maximum: 500 },
+                  if: :active_or_step3?
   # validates :picture, presence: true, if: :active_or_step3?
-  validates :bio, presence: true, if: :active_or_step3?
 
   def active?
     status == 'active'
