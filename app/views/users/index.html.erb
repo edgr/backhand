@@ -34,10 +34,10 @@
             <%= f.input :first_name, required: false, input_html: {name: "search[query][]", class: "form-control inline mr-1"}  %>
             <%= f.input :last_name, required: false, input_html: {name: "search[query][]", class: "form-control inline"} %>
           </div>
-          <%= f.input :club_id, collection: Club.all, input_html: {name: "search[query][]"}, label: "Club", input_html: { class: "select-club", placeholder: "if your club is not listed, let us know!" }  %>
+          <%= f.input :club, collection: Club.all, input_html: {name: "search[query][]", class: "select-club"}, label: "Club" %>
           <%= f.input :level, as: :check_boxes, required: false, input_html: {name: "search[query][]"}, collection: User.levels, wrapper: :vertical_collection_inline %>
           <%= f.input :style_of_play, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: User.styles, wrapper: :vertical_collection_inline %>
-          <%= f.input :country, input_html: {name: "search[query][]"}, label: "Country", input_html: { class: "select-country" } %>
+          <%= f.input :country, input_html: {name: "search[query][]", class: "select-country"}, label: "Country" %>
           <%= f.input :handedness, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: User.handedness, wrapper: :vertical_collection_inline %>
 
           <%= f.input :backhand_style, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: User.backhand, wrapper: :vertical_collection_inline  %>
