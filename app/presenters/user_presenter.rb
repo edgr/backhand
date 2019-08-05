@@ -2,11 +2,11 @@ class UserPresenter < BasePresenter
   presents :user
   # For the user show view
   def picture
-    h.cl_image_tag(user.picture, class: "img-show")
+    h.cl_image_tag(user.picture, secure: true, class: "img-show")
   end
 
   def card_picture
-    h.cl_image_tag user.try(:picture), class:"img"
+    h.cl_image_tag(user.try(:picture), secure: true, class: "img")
   end
 
   def full_name

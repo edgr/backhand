@@ -5,7 +5,7 @@
   <% if user_signed_in? %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
       <% if current_user.picture.present? %>
-        <%= cl_image_tag current_user.picture, class: "avatar-bordered"%>
+        <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", class: "avatar-bordered")%>
       <% else %>
         <%= image_tag "profile.png", class: "avatar-bordered"%>
       <% end %>
