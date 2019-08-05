@@ -103,7 +103,7 @@
       </div>
 
       <div class="stats">
-        <% unless @user.all_challenges.count == 0 %>
+        <% unless @user.matches.count == 0 %>
           <div class="progress-circle" data-percentage="<%= @progressbar %>">
             <span class="progress-circle-left">
               <span class="progress-circle-bar"></span>
@@ -135,9 +135,9 @@
 
         <div class="vertical-line"></div>
         <div class="challenges-stats">
-          <span><%= @user.all_challenges.count %> matches</span><br>
-          <span><%= @user.challenges_won.count %> wins</span><br>
-          <span><%= @user.challenges_lost.count %> losses</span><br>
+          <span><%= @user.matches.count %> matches</span><br>
+          <span><%= @user.matches_won.count %> wins</span><br>
+          <span><%= @user.matches_lost.count %> losses</span><br>
         </div>
       </div>
     </div>

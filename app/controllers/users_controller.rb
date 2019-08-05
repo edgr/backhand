@@ -21,8 +21,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @reviews = UserReview.where(receiver: @user)
     if @user.present?
-      unless @user.all_challenges.count == 0
-        @progressbar = ((@user.challenges_won.count / @user.all_challenges.count.to_f) * 100).to_i
+      unless @user.matches.count == 0
+        @progressbar = ((@user.matches_won.count / @user.matches.count.to_f) * 100).to_i
       end
     end
   end

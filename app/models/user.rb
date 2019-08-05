@@ -60,16 +60,16 @@ class User < ApplicationRecord
     %w[baseliner attacker grinder server-volleyer puncher]
   end
 
-  def all_challenges
-    self.sent_challenges.played + self.received_challenges.played
+  # def all_challenges
+  #   self.sent_challenges.played + self.received_challenges.played
+  # end
+
+  def matches_won
+    MatchResult.where(winner: self.id.to_s)
   end
 
-  def challenges_won
-    Challenge.where(winner: self.id.to_s)
-  end
-
-  def challenges_lost
-    Challenge.where(loser: self.id.to_s)
+  def matches_lost
+    MatchResult.where(loser: self.id.to_s)
   end
 
   def full_name
