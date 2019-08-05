@@ -155,6 +155,17 @@ end
 
   puts "finsihed creating players"
 
+  puts "creating clubs"
+
+  Club.create!(name: 'FC Barcelona')
+  Club.create!(name: 'Real Madrid')
+  Club.create!(name: 'Real Sociedad')
+  Club.create!(name: 'FC Lisboa')
+  Club.create!(name: 'Paris Saint Germain')
+  Club.create!(name: 'FC Barcelona')
+
+  puts "6 clubs created!"
+
   puts "creating matches"
   counter = 1
 
@@ -167,7 +178,7 @@ end
   match = Match.create!(
     player_1: player_1,
     player_2: player_2,
-    status: "pending"
+    club: Club.all.sample
     )
 
   set1 = MatchSet.create!(
@@ -193,11 +204,11 @@ end
   end
 
   if set1.player_1_games > set1.player_2_games && set2.player_1_games > set2.player_2_games
-    winner = match.player1
-    loser = match.player2
+    winner = match.player_1
+    loser = match.player_2
   elsif set1.player_1_games < set1.player_2_games && set2.player_1_games < set2.player_2_games
-    winner = match.player2
-    loser = match.player1
+    winner = match.player_2
+    loser = match.player_1
   else
     set3 = MatchSet.create!(
     match: match,
@@ -234,7 +245,7 @@ end
   player_1.update(points: points[0])
   player_2.update(points: points[1])
 
-  # Useless .save since .update is already saving
+  # Useless .save since .update is already saving the instance
   # player_1.save
   # player_2.save
 
@@ -244,8 +255,8 @@ end
 
   UserReview.create!(
     # challenge_id: challenge.id,
-    sender_id: challenge.challenger.id,
-    receiver_id: challenge.challengee.id,
+    sender: match.player_1,
+    receiver: match.player_2,
     content: comments.sample,
     serve: rand(1..10),
     return: rand(1..10),
@@ -260,8 +271,8 @@ end
 
     UserReview.create!(
     # challenge_id: challenge.id,
-    sender_id: challenge.challengee.id,
-    receiver_id: challenge.challenger.id,
+    sender: match.player_2,
+    receiver: match.player_1,
     content: comments.sample,
     serve: rand(1..10),
     return: rand(1..10),
@@ -320,17 +331,6 @@ players.each do |player|
     player.save
 
 end
-
-puts "creating clubs"
-
-Club.create!(name: 'FC Barcelona')
-Club.create!(name: 'Real Madrid')
-Club.create!(name: 'Real Sociedad')
-Club.create!(name: 'FC Lisboa')
-Club.create!(name: 'Paris Saint Germain')
-Club.create!(name: 'FC Barcelona')
-
-puts "6 clubs created!"
 
 puts "Finished seeding"
 
