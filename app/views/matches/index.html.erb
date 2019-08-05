@@ -14,8 +14,8 @@
 <div class="hidden box-size" id="played">
   <% if @matches.present? %>
     <% @matches.each do |match| %>
-      <%= link_to match_path(match), class: "link-challenge" do %>
-        <% if match.match_result.confirmed %>
+      <% if match.match_result.confirmed %>
+        <%= link_to match_path(match), class: "link-challenge" do %>
           <div class="challenge-card">
             <% if match.player_1 == current_user %>
               <i class="fas fa-arrow-up"></i>
