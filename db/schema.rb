@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_131143) do
+ActiveRecord::Schema.define(version: 2019_08_05_124717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,19 @@ ActiveRecord::Schema.define(version: 2019_07_30_131143) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_computed_skills_sets_on_user_id"
+  end
+
+  create_table "match_results", force: :cascade do |t|
+    t.bigint "match_id"
+    t.bigint "winner_id"
+    t.bigint "loser_id"
+    t.string "score"
+    t.boolean "confirmed", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["loser_id"], name: "index_match_results_on_loser_id"
+    t.index ["match_id"], name: "index_match_results_on_match_id"
+    t.index ["winner_id"], name: "index_match_results_on_winner_id"
   end
 
   create_table "matches", force: :cascade do |t|
@@ -125,6 +138,9 @@ ActiveRecord::Schema.define(version: 2019_07_30_131143) do
   add_foreign_key "challenges", "users", column: "challengee_id"
   add_foreign_key "challenges", "users", column: "challenger_id"
   add_foreign_key "computed_skills_sets", "users"
+  add_foreign_key "match_results", "matches"
+  add_foreign_key "match_results", "users", column: "loser_id"
+  add_foreign_key "match_results", "users", column: "winner_id"
   add_foreign_key "matches", "clubs"
   add_foreign_key "matches", "users", column: "player_1_id"
   add_foreign_key "matches", "users", column: "player_2_id"
