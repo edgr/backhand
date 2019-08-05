@@ -11,4 +11,16 @@ const initAutocompleteCity = () => {
   }
 };
 
+const initAutocompleteCityFilter = () => {
+  const searchInput = document.getElementById('search_location');
+  if (searchInput) {
+    places({
+      container: searchInput
+    }).configure({
+      type: 'city'
+    });
+  }
+};
+
 export { initAutocompleteCity };
+export { initAutocompleteCityFilter };

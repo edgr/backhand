@@ -29,12 +29,12 @@
           </button>
         </div>
         <div class="modal-body">
-          <%= f.input :location, required: false, input_html: {name: "search[location]", value: params[:search].try(:[], :location), class: "search_location"} , as: :string %>
+          <%= f.input :club, required: false, collection: Club.all, input_html: {name: "search[query][]", class: "select-club"}, label: "Club" %>
+          <%= f.input :location, required: false, input_html: {name: "search[location]", value: params[:search].try(:[], :location)}, id: "search_location", as: :string %>
           <div class="d-flex inline justify-content-between">
             <%= f.input :first_name, required: false, input_html: {name: "search[query][]", class: "form-control inline mr-1"}  %>
             <%= f.input :last_name, required: false, input_html: {name: "search[query][]", class: "form-control inline"} %>
           </div>
-          <%= f.input :club, collection: Club.all, input_html: {name: "search[query][]", class: "select-club"}, label: "Club" %>
           <%= f.input :level, as: :check_boxes, required: false, input_html: {name: "search[query][]"}, collection: User.levels, wrapper: :vertical_collection_inline %>
           <%= f.input :style_of_play, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: User.styles, wrapper: :vertical_collection_inline %>
           <%= f.input :country, input_html: {name: "search[query][]", class: "select-country"}, label: "Country" %>
