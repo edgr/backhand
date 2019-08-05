@@ -33,6 +33,9 @@ gem 'wicked'
 # postmark gem for transactional emails
 gem 'postmark-rails'
 
+# security gem to prevent low security password & more
+gem 'devise-security'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'letter_opener'
