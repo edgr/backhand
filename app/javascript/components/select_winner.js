@@ -1,4 +1,4 @@
-const selectBox = document.querySelector('.match_opponent');
+const selectBox = document.getElementById('match_player_2_id');
 const input = document.getElementById('select-winner');
 
 const changeOpponent = (event) => {
