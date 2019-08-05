@@ -5,5 +5,5 @@ class Match < ApplicationRecord
   has_many :match_sets, dependent: :destroy
   has_one :match_result, dependent: :destroy
 
-  validates :player_1, :player_2, :date, presence: :true
+  validates :player_1, :player_2, presence: :true # :date,
 end

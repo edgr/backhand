@@ -8,8 +8,8 @@ end
 
 FactoryBot.define do
   factory :match do
-    player { FactoryBot.create(:user) }
-    opponent { FactoryBot.create(:user) }
+    player_1 { FactoryBot.create(:user) }
+    player_2 { FactoryBot.create(:user) }
     score { "63 64" }
     date { "24-05-2019"}
     location { "La Salut" }

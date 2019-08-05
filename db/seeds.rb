@@ -1,35 +1,35 @@
 require 'faker'
 
-def elo_points(challenger_score, challengee_score, challenge)
-  difference = challenger_score - challengee_score
+def elo_points(player_1_score, player_2_score, match)
+  difference = player_1_score - player_2_score
   exponent = -(difference / 100.to_f)
   probability = 1.to_f / (1.to_f + (10.to_f ** exponent))
 
-  if challenger_score < 2100.to_f
-    k_challenger = 32.to_f
-  elsif challenger_score > 2400.to_f
-    k_challenger = 16.to_f
+  if player_1_score < 2100.to_f
+    k_player_1 = 32.to_f
+  elsif player_1_score > 2400.to_f
+    k_player_1 = 16.to_f
   else
-    k_challenger = 24.to_f
+    k_player_1 = 24.to_f
   end
 
-  if challengee_score < 2100.to_f
-    k_challengee = 32.to_f
-  elsif challengee_score > 2400.to_f
-    k_challengee = 16.to_f
+  if player_2_score < 2100.to_f
+    k_player_2 = 32.to_f
+  elsif player_2_score > 2400.to_f
+    k_player_2 = 16.to_f
   else
-    k_challengee = 24.to_f
+    k_player_2 = 24.to_f
   end
 
-  if challenge.winner == challenge.challenger.id
+  if match.match_result.winner == match.player_1
     s = 1.to_f
   else
     s = 0.to_f
   end
 
-  new_challenger_score = challenger_score + k_challenger * (s - probability)
-  new_challengee_score = challengee_score + k_challengee * ((1.to_f - s) - (1.to_f - probability))
-  return results = [new_challenger_score, new_challengee_score]
+  new_player_1_score = player_1_score + k_player_1 * (s - probability)
+  new_player_2_score = player_2_score + k_player_2 * ((1.to_f - s) - (1.to_f - probability))
+  return results = [new_player_1_score, new_player_2_score]
 end
 
 puts "destroy all"
@@ -155,53 +155,95 @@ end
 
   puts "finsihed creating players"
 
-  puts "creating challenges"
+  puts "creating matches"
   counter = 1
 
 100.times do
-  puts "creating challenge #{counter}"
+  puts "creating match #{counter}"
   counter += 1
 
-  challenger, challengee = players.sample(2)
+  player_1, player_2 = players.sample(2)
 
-  challenge = Challenge.create!(
-    challenger_id: challenger.id,
-    challengee_id: challengee.id,
+  match = Match.create!(
+    player_1: player_1,
+    player_2: player_2,
     status: "pending"
     )
 
-  score = "6:#{rand(1..5)}, 6:#{rand(1..5)}"
-  winner = [challenger.id, challengee.id].sample(1)
-  if winner == challenger.id
-    loser = challengee.id
-    winner = challenger.id
-  else
-    loser = challenger.id
-    winner = challengee.id
+  set1 = MatchSet.create!(
+    match: match,
+    player_1_games: rand(0..6),
+    player_2_games: rand(0..6)
+    )
+
+  if set1.player_2_games == set1.player_1_games
+    set1.player_2_games += 1
+    set1.save
   end
 
+  set2 = MatchSet.create!(
+    match: match,
+    player_1_games: rand(0..6),
+    player_2_games: rand(0..6)
+    )
 
-  challenge.update(
+  if set2.player_2_games == set2.player_1_games
+    set2.player_2_games += 1
+    set2.save
+  end
+
+  if set1.player_1_games > set1.player_2_games && set2.player_1_games > set2.player_2_games
+    winner = match.player1
+    loser = match.player2
+  elsif set1.player_1_games < set1.player_2_games && set2.player_1_games < set2.player_2_games
+    winner = match.player2
+    loser = match.player1
+  else
+    set3 = MatchSet.create!(
+    match: match,
+    player_1_games: rand(0..6),
+    player_2_games: rand(0..6)
+    )
+
+    if set3.player_2_games == set2.player_1_games
+      set3.player_2_games += 1
+      set3.save
+    end
+
+    if set3.player_1_games > set3.player_2_games
+      winner = match.player_1
+      loser = match.player_2
+    else
+      winner = match.player_2
+      loser = match.player_1
+    end
+  end
+
+  score = "#{set1.player_1_games}-#{set1.player_2_games} #{set2.player_1_games}-#{set2.player_2_games}"
+  score += " #{set3.player_1_games}-#{set3.player_2_games}" if set3
+
+  result = MatchResult.create!(
+    match: match,
     winner: winner,
     loser: loser,
     score: score,
-    status: "played"
+    confirmed: true
     )
-  challenge.save
 
-  points = elo_points(challenger.points, challengee.points, challenge)
-  challenger.update(points: points[0])
-  challengee.update(points: points[1])
+  points = elo_points(player_1.points, player_2.points, match)
+  player_1.update(points: points[0])
+  player_2.update(points: points[1])
 
-  challenger.save
-  challengee.save
+  # Useless .save since .update is already saving
+  # player_1.save
+  # player_2.save
 
   puts "creating reviews"
 
   comments = ["Had a great time on the tennis court.", "Looking forward to our next Game. This time I'll win.", "It was an intense game but I enjoyed it.", "Was great fun playing agaist you.", "Bad luck with your injury, hope you get well soon.🤕", "Bro, your BACKHAND is sick!!!😎", "It was an amazing match. Same time next week?", "Had a very fun time with you.", "He was not on my level. Smashed him in no time!", "Good match."]
 
   UserReview.create!(
-    challenge_id: challenge.id,
+    # challenge_id: challenge.id,
     sender_id: challenge.challenger.id,
     receiver_id: challenge.challengee.id,
     content: comments.sample,
@@ -217,7 +259,7 @@ end
     )
 
     UserReview.create!(
-    challenge_id: challenge.id,
+    # challenge_id: challenge.id,
     sender_id: challenge.challengee.id,
     receiver_id: challenge.challenger.id,
     content: comments.sample,
