@@ -18,8 +18,8 @@ class User < ApplicationRecord
   # has_many :sent_challenges, class_name: 'Challenge', foreign_key: :challenger_id, dependent: :destroy
   # has_many :received_challenges, class_name: 'Challenge', foreign_key: :challengee_id, dependent: :destroy
 
-  has_many :matches, foreign_key: :player_id, dependent: :destroy
-  has_many :matches, foreign_key: :opponent_id, dependent: :destroy
+  has_many :matches, foreign_key: :player_1_id, dependent: :destroy
+  has_many :matches, foreign_key: :player_2_id, dependent: :destroy
 
   has_one :computed_skills_set, dependent: :destroy
 
