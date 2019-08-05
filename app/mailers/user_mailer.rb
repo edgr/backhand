@@ -7,6 +7,10 @@ class UserMailer < ApplicationMailer
   #
   def welcome
     @user = params[:user]
-    mail(to: @user.email, subject: 'Welcome to Backhand')
+    mail(
+      to: @user.email,
+      subject: 'Welcome to Backhand',
+      name: @user.first_name
+    )
   end
 end
