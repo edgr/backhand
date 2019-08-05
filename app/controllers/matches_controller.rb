@@ -15,7 +15,8 @@ class MatchesController < ApplicationController
   end
 
   def index
-    @matches = Match.all
+    @matches = Match.where(player_1: current_user)
+    @matches += Match.where(player_2: current_user)
   end
 
   private

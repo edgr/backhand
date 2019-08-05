@@ -1,4 +1,49 @@
-<h1>Your matches</h1>
-<% Match.all.each do |match| %>
-  <%= match.date %>
-<% end %>
+<ul class="list-inline tabs-underlined" id="fix-top">
+  <li>
+    <a href="#" data-target="outstanding" class="tab-underlined active">Sent/Received</a>
+  </li>
+  <li>
+    <a href="#" data-target="played" class="tab-underlined">Played</a>
+  </li>
+</ul>
+
+<div class="box-size" id="outstanding">
+
+</div>
+
+<div class="hidden box-size" id="played">
+  <% if @matches.present? %>
+    <% @matches.each do |match| %>
+      <%= link_to match_path(match), class: "link-challenge" do %>
+        <% if match.match_result.confirmed %>
+          <div class="challenge-card">
+            <% if match.player_1 == current_user %>
+              <i class="fas fa-arrow-up"></i>
+              <%= cl_image_tag match.player_2.picture, class: "avatar"%>
+              <div class="name-and-date">
+                <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
+                <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %> </span>
+              </div>
+            <% else %>
+              <i class="fas fa-arrow-down"></i>
+              <%= cl_image_tag match.player_1.picture, class: "avatar"%>
+              <div class="name-and-date">
+                <span class="player-name">
+                  <%= match.player_1.first_name %> <%= match.player_1.last_name %>
+                </span>
+                <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %> </span>
+              </div>
+            <% end %>
+
+            <span class="status-arrow">
+              <%= match.match_result.score %>
+              <i class="fas fa-angle-right"></i>
+            </span>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% else %>
+  <p class="text-center">You haven't recorded any matches.</p>
+  <% end %>
+</div>
