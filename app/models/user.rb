@@ -87,6 +87,14 @@ class User < ApplicationRecord
     %w[Male Female Other]
   end
 
+  def self.handedness
+    %w[Righty Lefty]
+  end
+
+  def self.backhand
+    ['One Handed','Two Handed']
+  end
+
   def self.styles
     %w[baseliner attacker grinder server-volleyer puncher]
   end

@@ -103,7 +103,7 @@
                             :collection => ["one handed backhand", "two handed backhand"],
                             label:"WHAT IS YOUR BACKHAND STYLE?" %>
                 <label for="choose-a-club"> WHICH ONE IS YOUR CLUB? </label>
-                <select name="user[club][]" class="select2 form-control" id="choose-a-club">
+                <select name="user[club][]" class="select-your-club form-control" id="choose-a-club">
                   <% Club.all.each do |club| %>
                     <option value="<%= club.id %>"><%= club.name %></option>
                   <% end %>
