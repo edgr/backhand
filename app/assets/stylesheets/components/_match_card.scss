@@ -1,13 +1,13 @@
 // challenges dashboard page
-.link-challenge {
+.link-match {
     text-decoration: none;
 }
 
-.link-challenge:hover {
+.link-match:hover {
   text-decoration: none;
 }
 
-.challenge-card {
+.match-card {
   position: relative;
   display: flex;
   padding: 16px 24px;
@@ -39,14 +39,13 @@
   }
 }
 
-.status-arrow {
-  width: 75px;
+.score-arrow {
   display: flex;
   align-items: center;
   justify-content: space-between;
   .fa-angle-right {
     font-size: 16px;
-    margin-top: 4px;
+    margin: 4px 0 0 8px;
   }
 }
 
