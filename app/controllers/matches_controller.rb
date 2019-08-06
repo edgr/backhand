@@ -1,16 +1,22 @@
 class MatchesController < ApplicationController
   def new
     @match = Match.new
+    # @match.match_result.build
+    5.times { @match.match_sets.build }
   end
 
   def create
     @match = Match.new(match_params)
-    params[:winner].to_i == current_user.id ? loser_id = params[:match][:player_2_id] : loser_id = current_user.id
-    @match_result = MatchResult.create(match: @match, winner_id: params[:winner], loser_id: loser_id)
+    params[:match_result][:winner].to_i == current_user.id ? loser_id = params[:match][:player_2_id] : loser_id = current_user.id
+    @match_result = MatchResult.create(match: @match, winner_id: params[:match_result][:winner], loser_id: loser_id)
     @match.player_1 = current_user
-    raise
     if @match.save!
-      @match_result.update(match: @match)
+      score = ''
+      @match.match_sets.each do |set|
+        score += "#{set.player_1_games}-#{set.player_2_games} " if set.player_1_games.present?
+      end
+      @match_result.update(match: @match, score: score.chomp(' '))
+      raise
       redirect_to matches_path
     else
       render :new
@@ -26,7 +32,8 @@ class MatchesController < ApplicationController
   def match_params
     params.require(:match).permit(
       :date, :club_id, :player_2_id,
-      match_result_attributes: [:winner_id]
+      match_result_attributes: [:id, :winner_id, :_destroy],
+      match_sets_attributes: [:id, :player_1_games, :player_2_games, :_destroy]
     )
   end
 end

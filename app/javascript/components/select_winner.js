@@ -1,5 +1,5 @@
 const selectBox = document.getElementById('match_player_2_id');
-const input = document.getElementById('winner');
+const input = document.getElementById('match_result_winner');
 
 const changeOpponent = (event) => {
   if (input) {

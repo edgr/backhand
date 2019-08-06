@@ -16,19 +16,17 @@
           </select>
         </div> -->
         <%= f.association :club, label:"WHERE DID YOU PLAY?", input_html: {class: "select2 form-control"} %>
-      <!-- </div> -->
-      <%= f.association :player_2, label:"WHO DID YOU PLAY WITH?", input_html: {class: "select2 form-control"}, label_method: :full_name %>
-      <%= simple_fields_for @match_result do |r| %>
-        <%= r.input :winner, collection: [current_user], label_method: :full_name %>
-          <!-- <select id="select-winner" class="form-control"> -->
-            <!-- <option value="<%#= current_user.id %>">You</option> -->
-          <!-- </select> -->
-        <%# end %>
-      <% end %>
-      <label for="sets-played">HOW MANY SETS DID YOU PLAY?</label>
-      <input type="range" id="sets-played" name="sets-played" min="1" max="5">
-      <%#= f.input :score %>
-      <%= f.submit 'Record Match', class: "btn btn-primary" %>
+        <%= f.association :player_2, label:"WHO DID YOU PLAY WITH?", input_html: {class: "select2 form-control"}, label_method: :full_name %>
+        <%= simple_fields_for :match_result do |r| %>
+          <%= r.input :winner, collection: [current_user], label_method: :full_name %>
+        <% end %>
+        <label for="sets-played">HOW MANY SETS DID YOU PLAY?</label>
+        <input type="range" id="sets-played" name="sets-played" min="1" max="5">
+        <%= f.simple_fields_for :match_sets do |set_builder| %>
+          <%= render 'match_set', f: set_builder %>
+        <% end %>
+
+        <%= f.submit 'Record Match', class: "btn btn-primary" %>
 
       <% end %>
     </div>
