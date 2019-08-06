@@ -1,7 +1,6 @@
 class MatchesController < ApplicationController
   def new
     @match = Match.new
-    # @match.match_result.build
     5.times { @match.match_sets.build }
   end
 
@@ -16,7 +15,6 @@ class MatchesController < ApplicationController
         score += "#{set.player_1_games}-#{set.player_2_games} " if set.player_1_games.present?
       end
       @match_result.update(match: @match, score: score.chomp(' '))
-      raise
       redirect_to matches_path
     else
       render :new
