@@ -13,7 +13,7 @@ const initSelectCountry = () => {
   $('.select-country').select2 ({
     theme: "bootstrap",
     width: '100%',
-    placeholder: "Type in the country you are looking for",
+    placeholder: "Type in the player's country you are looking for",
     allowClear: true,
   });
 };
@@ -22,7 +22,7 @@ const initSelectClub = () => {
   $('.select-club').select2 ({
     theme: "bootstrap",
     width: '100%',
-    placeholder: "Type in the club you are looking for",
+    placeholder: "Type in the club where you are looking for players",
     allowClear: true,
   });
 };

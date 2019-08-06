@@ -1,22 +1,38 @@
-.search_first_name {
-  margin-right: .5rem;
-  width: 100%;
+// button section
+
+.search-filters {
+  padding: 0 20px;
+  margin-bottom: 15px;
 }
 
-.search_last_name {
-  margin-left: .5rem;
-  width: 100%;
+.filter-button {
+  height: 3.5rem;
 }
+
+.search_first_name {
+  margin-bottom: 0;
+  width: 100%;
+  label {
+    display: none;
+  }
+}
+
+#search_query {
+
+}
+
+@media all and (max-width: 768px) {
+  .or-use-text {
+    margin: 15px 0;
+  }
+}
+
+// filter form
+
 
 .search-form-control {
   position: relative;
-}
-
-.search-form-control .btn {
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  right: 8px;
+  padding: 0;
 }
 
 .search-form-control .form-control {

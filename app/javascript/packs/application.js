@@ -13,6 +13,7 @@ import { initSelectCountry } from '../components/init_select2';
 import { initSelectClub } from '../components/init_select2';
 import '../plugins/intl';
 import { changeLabelValue } from '../components/changelabelpictureupload';
+import { typeIn } from '../components/search';
 
 const tabs = document.querySelectorAll(".tab-underlined");
 if (tabs) { tabs.forEach(addListener) };
@@ -25,3 +26,4 @@ initSelectYourClub();
 initSelectCountry();
 initSelectClub();
 changeLabelValue();
+typeIn();
