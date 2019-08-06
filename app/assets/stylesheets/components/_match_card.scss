@@ -1,0 +1,62 @@
+// challenges dashboard page
+.link-match {
+    text-decoration: none;
+}
+
+.link-match:hover {
+  text-decoration: none;
+}
+
+.match-card {
+  position: relative;
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 8px;
+  .player-name {
+    color: $black;
+  }
+  .score {
+    text-align: right;
+    max-width: 120px;
+  }
+  .date-location {
+    .location {
+      color: $gray;
+      font-size: 14px;
+    }
+    .date {
+      font-size: 14px;
+      color: $gray;
+    }
+    .separator {
+      color: $black;
+    }
+  }
+}
+
+@media all and (max-width: 576px) {
+  .date-location {
+    display: flex;
+    flex-direction: column;
+    .separator {
+      display: none;
+    }
+  }
+}
+
+.name-and-date {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 16px;
+}
+
+.vs-container {
+  display: flex;
+  justify-content: center;
+}
