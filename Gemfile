@@ -54,4 +54,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
 end
