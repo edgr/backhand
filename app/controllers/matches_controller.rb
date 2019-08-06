@@ -8,7 +8,7 @@ class MatchesController < ApplicationController
     params[:winner].to_i == current_user.id ? loser_id = params[:match][:player_2_id] : loser_id = current_user.id
     @match_result = MatchResult.create(match: @match, winner_id: params[:winner], loser_id: loser_id)
     @match.player_1 = current_user
-
+    raise
     if @match.save!
       @match_result.update(match: @match)
       redirect_to matches_path
