@@ -15,8 +15,11 @@ class User < ApplicationRecord
   has_many :sent_reviews, class_name: 'UserReview', foreign_key: :sender_id, dependent: :destroy
   has_many :received_reviews, class_name: 'UserReview', foreign_key: :receiver_id, dependent: :destroy
 
-  has_many :sent_challenges, class_name: 'Challenge', foreign_key: :challenger_id, dependent: :destroy
-  has_many :received_challenges, class_name: 'Challenge', foreign_key: :challengee_id, dependent: :destroy
+  # has_many :sent_challenges, class_name: 'Challenge', foreign_key: :challenger_id, dependent: :destroy
+  # has_many :received_challenges, class_name: 'Challenge', foreign_key: :challengee_id, dependent: :destroy
+
+  has_many :matches, foreign_key: :player_1_id, dependent: :destroy
+  has_many :matches, foreign_key: :player_2_id, dependent: :destroy
 
   has_one :computed_skills_set, dependent: :destroy
 
@@ -99,16 +102,16 @@ class User < ApplicationRecord
     %w[baseliner attacker grinder server-volleyer puncher]
   end
 
-  def all_challenges
-    self.sent_challenges.played + self.received_challenges.played
+  # def all_challenges
+  #   self.sent_challenges.played + self.received_challenges.played
+  # end
+
+  def matches_won
+    MatchResult.where(winner: self.id.to_s)
   end
 
-  def challenges_won
-    Challenge.where(winner: self.id.to_s)
-  end
-
-  def challenges_lost
-    Challenge.where(loser: self.id.to_s)
+  def matches_lost
+    MatchResult.where(loser: self.id.to_s)
   end
 
   def full_name
@@ -116,7 +119,7 @@ class User < ApplicationRecord
   end
 
   def age
-    ((Date.today - self.birthday).to_i) / 365
+    (Date.today - self.birthday).to_i / 365
   end
 
   include PgSearch

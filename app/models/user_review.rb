@@ -1,7 +1,7 @@
 class UserReview < ApplicationRecord
   belongs_to :sender, class_name: 'User'
   belongs_to :receiver, class_name: 'User'
-  belongs_to :challenge
+  # belongs_to :challenge
 
   validate :difference_of_players
   validates :thumb, inclusion: { in: [true, false] }
@@ -34,7 +34,7 @@ class UserReview < ApplicationRecord
   end
 
   def skills_set_update
-    @receiver_skills = ComputedSkillsSet.where(user_id: receiver.id)[0]
+    @receiver_skills = ComputedSkillsSet.where(user: receiver)[0]
     length = @receiver_skills.user.received_reviews.length
 
     avg_serve_score = @receiver_skills.serve
