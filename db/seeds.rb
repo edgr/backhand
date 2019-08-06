@@ -71,7 +71,7 @@ players = []
     email: Faker::Internet.email,
     password: "Password1!",
     phone_number: Faker::Number.number(12),
-    level: ["pro", "beginner", "intermediate","advanced","semi-pro"].sample,
+    level: ["Pro", "Beginner", "Intermediate","Advanced","Semi-pro"].sample,
     bio: Faker::Lorem.sentence(15),
     address: "Barcelona",
     place_of_birth: "#{Faker::Address.city}, #{Faker::Address.country}",
