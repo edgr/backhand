@@ -11,47 +11,45 @@
     <% if @matches.present? %>
       <% @matches.each do |match| %>
         <% if match.match_result.winner == current_user %>
-          <%= link_to match_path(match), class: "link-match" do %>
-            <div class="match-card">
-              <% if match.player_1 == current_user %>
-                <%= cl_image_tag match.player_2.picture, class: "avatar"%>
-                <div class="name-and-date">
-                  <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
-                  <div class="date-location">
-                    <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
-                    <span class="separator"> - </span>
-                    <span class="location"><%= Club.find(match.club_id).name %></span>
-                  </div>
+          <div class="match-card">
+            <% if match.player_1 == current_user %>
+              <%= cl_image_tag match.player_2.picture, class: "avatar"%>
+              <div class="name-and-date">
+                <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
+                <div class="date-location">
+                  <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                  <span class="separator"> - </span>
+                  <span class="location"><%= Club.find(match.club_id).name %></span>
                 </div>
-                <span class="score">
-                  <% if match.match_result.confirmed %>
-                    <%= match.match_result.score %>
-                  <% else %>
-                    <%= match.player_2.first_name %> must confirm
-                  <% end %>
+              </div>
+              <span class="score">
+                <% if match.match_result.confirmed %>
+                  <%= match.match_result.score %>
+                <% else %>
+                  <%= match.player_2.first_name %> must confirm
+                <% end %>
+              </span>
+            <% else %>
+              <%= cl_image_tag match.player_1.picture, class: "avatar"%>
+              <div class="name-and-date">
+                <span class="player-name">
+                  <%= match.player_1.first_name %> <%= match.player_1.last_name %>
                 </span>
-              <% else %>
-                <%= cl_image_tag match.player_1.picture, class: "avatar"%>
-                <div class="name-and-date">
-                  <span class="player-name">
-                    <%= match.player_1.first_name %> <%= match.player_1.last_name %>
-                  </span>
-                  <div class="date-location">
-                    <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
-                    <span class="separator"> - </span>
-                    <span class="location"><%= Club.find(match.club_id).name %></span>
-                  </div>
+                <div class="date-location">
+                  <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                  <span class="separator"> - </span>
+                  <span class="location"><%= Club.find(match.club_id).name %></span>
                 </div>
-                <span class="score">
-                  <% if match.match_result.confirmed %>
-                    <%= match.match_result.score %>
-                  <% else %>
-                    <%= match.player_1.first_name %> must confirm
-                  <% end %>
-                </span>
-              <% end %>
-            </div>
-          <% end %>
+              </div>
+              <span class="score">
+                <% if match.match_result.confirmed %>
+                  <%= match.match_result.score %>
+                <% else %>
+                  <%= match.player_1.first_name %> must confirm
+                <% end %>
+              </span>
+            <% end %>
+          </div>
         <% end %>
       <% end %>
     <% else %>
@@ -64,48 +62,45 @@
     <% if @matches.present? %>
       <% @matches.each do |match| %>
         <% if match.match_result.loser == current_user  %>
-          <%= link_to match_path(match), class: "link-match" do %>
-            <div class="match-card">
-              <% if match.player_1 == current_user %>
-                <%= cl_image_tag match.player_2.picture, class: "avatar"%>
-                <div class="name-and-date">
-                  <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
-                  <div class="date-location">
-                    <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
-                    <span class="separator"> - </span>
-                    <span class="location"><%= Club.find(match.club_id).name %></span>
-                  </div>
+          <div class="match-card">
+            <% if match.player_1 == current_user %>
+              <%= cl_image_tag match.player_2.picture, class: "avatar"%>
+              <div class="name-and-date">
+                <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
+                <div class="date-location">
+                  <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                  <span class="separator"> - </span>
+                  <span class="location"><%= Club.find(match.club_id).name %></span>
                 </div>
-                <span class="score">
-                  <% if match.match_result.confirmed %>
-                    <%= match.match_result.score %>
-                  <% else %>
-                    <%= match.player_2.first_name %> must confirm
-                  <% end %>
+              </div>
+              <span class="score">
+                <% if match.match_result.confirmed %>
+                  <%= match.match_result.score %>
+                <% else %>
+                  <%= match.player_2.first_name %> must confirm
+                <% end %>
+              </span>
+            <% else %>
+              <%= cl_image_tag match.player_1.picture, class: "avatar"%>
+              <div class="name-and-date">
+                <span class="player-name">
+                  <%= match.player_1.first_name %> <%= match.player_1.last_name %>
                 </span>
-              <% else %>
-                <%= cl_image_tag match.player_1.picture, class: "avatar"%>
-                <div class="name-and-date">
-                  <span class="player-name">
-                    <%= match.player_1.first_name %> <%= match.player_1.last_name %>
-                  </span>
-                  <div class="date-location">
-                    <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
-                    <span class="separator"> - </span>
-                    <span class="location"><%= Club.find(match.club_id).name %></span>
-                  </div>
+                <div class="date-location">
+                  <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                  <span class="separator"> - </span>
+                  <span class="location"><%= Club.find(match.club_id).name %></span>
                 </div>
-                <span class="score">
-                  <% if match.match_result.confirmed %>
-                    <%= match.match_result.score %>
-                  <% else %>
-                    <%= match.player_1.first_name %> must confirm
-                  <% end %>
-                </span>
-              <% end %>
-
-            </div>
-          <% end %>
+              </div>
+              <span class="score">
+                <% if match.match_result.confirmed %>
+                  <%= match.match_result.score %>
+                <% else %>
+                  <%= match.player_1.first_name %> must confirm
+                <% end %>
+              </span>
+            <% end %>
+          </div>
         <% end %>
       <% end %>
     <% else %>

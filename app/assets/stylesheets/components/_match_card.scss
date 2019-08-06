@@ -1,11 +1,4 @@
 // challenges dashboard page
-.link-match {
-    text-decoration: none;
-}
-
-.link-match:hover {
-  text-decoration: none;
-}
 
 .match-card {
   position: relative;
@@ -23,6 +16,7 @@
   .score {
     text-align: right;
     max-width: 120px;
+    color: $black;
   }
   .date-location {
     .location {
