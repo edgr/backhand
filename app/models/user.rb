@@ -90,6 +90,14 @@ class User < ApplicationRecord
     %w[Male Female Other]
   end
 
+  def self.handedness
+    %w[Righty Lefty]
+  end
+
+  def self.backhand
+    ['One Handed','Two Handed']
+  end
+
   def self.styles
     %w[baseliner attacker grinder server-volleyer puncher]
   end
@@ -116,7 +124,7 @@ class User < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_user_fields,
-    against: [:address, :level, :first_name, :last_name, :style_of_play, :gender, :country, :ranking, :handedness, :backhand_style, :review_score, :club_id],
+    against: [:address, :level, :first_name, :last_name, :style_of_play, :gender, :country, :handedness, :backhand_style, :club_id],
     using: {
       tsearch: { prefix: true }
     }

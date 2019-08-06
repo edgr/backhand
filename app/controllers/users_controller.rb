@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     if params[:search]
       @query = format_query(params[:search])
       @users = SearchUsers.new(params[:search]).call
+      # raise
     else
       @users = User.all
       update_ranking
