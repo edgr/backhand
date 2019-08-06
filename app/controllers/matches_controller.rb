@@ -5,12 +5,12 @@ class MatchesController < ApplicationController
 
   def create
     @match = Match.new(match_params)
-    @match_result = MatchResult.create(match: @match)
+    params[:winner].to_i == current_user.id ? loser_id = params[:match][:player_2_id] : loser_id = current_user.id
+    @match_result = MatchResult.create(match: @match, winner_id: params[:winner], loser_id: loser_id)
     @match.player_1 = current_user
-    # @match.match_result = @match_result
 
     if @match.save!
-      @match_result = MatchResult.create(match: @match, winner: @match.player_1, loser: @match.player_2)
+      @match_result.update(match: @match)
       redirect_to matches_path
     else
       render :new
@@ -24,6 +24,9 @@ class MatchesController < ApplicationController
   private
 
   def match_params
-    params.require(:match).permit(:date, :club_id, :player_2_id)
+    params.require(:match).permit(
+      :date, :club_id, :player_2_id,
+      match_result_attributes: [:winner_id]
+    )
   end
 end

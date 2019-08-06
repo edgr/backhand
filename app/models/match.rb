@@ -7,6 +7,7 @@ class Match < ApplicationRecord
 
   validates :player_1, :player_2, presence: :true # :date,
   validate :difference_of_players
+  accepts_nested_attributes_for :match_result, :match_sets, allow_destroy: true
 
   private
 
