@@ -69,7 +69,9 @@
           <br>
           <p>style: <span class="details-info"><%= @user.handedness %> - <%= @user.backhand_style %></span></p>
           <p>residence: <span class="details-info address-place"><%= @user.address %></span></p>
-          <p>club: <span class="details-info"> <%= user_presenter.club %></span></p>
+          <% if @user.club_id.present? %>
+            <p>club: <span class="details-info"> <%= user_presenter.club %></span></p>
+          <% end %>
         </div>
       </div>
 
