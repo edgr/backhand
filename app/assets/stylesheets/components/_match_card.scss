@@ -10,42 +10,42 @@
 .match-card {
   position: relative;
   display: flex;
-  padding: 16px 24px;
+  padding: 16px;
   justify-content: space-between;
   align-items: center;
   background: white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
   border-radius: 4px;
   margin: 8px;
-  .avatar {
-    margin-left: 8px;
+  .player-name {
+    color: $black;
   }
-  .date {
-    font-size: 14px;
+  .score {
+    text-align: right;
+    max-width: 120px;
   }
-  .fa-arrow-up {
-    transform: rotate(45deg);
-    position: absolute;
-    margin: -22px 0px 0px -18px;
-    font-size: 14px;
-    color: $gray;
-  }
-  .fa-arrow-down {
-    transform: rotate(-45deg);
-    position: absolute;
-    margin: -22px 0px 0px -18px;
-    font-size: 14px;
-    color: $gray;
+  .date-location {
+    .location {
+      color: $gray;
+      font-size: 14px;
+    }
+    .date {
+      font-size: 14px;
+      color: $gray;
+    }
+    .separator {
+      color: $black;
+    }
   }
 }
 
-.score-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .fa-angle-right {
-    font-size: 16px;
-    margin: 4px 0 0 8px;
+@media all and (max-width: 576px) {
+  .date-location {
+    display: flex;
+    flex-direction: column;
+    .separator {
+      display: none;
+    }
   }
 }
 
@@ -54,17 +54,9 @@
   flex-direction: column;
   flex-grow: 1;
   margin-left: 16px;
-  .player-name {
-    color: $black;
-  }
-  .date {
-    color: $gray;
-  }
 }
 
 .vs-container {
   display: flex;
   justify-content: center;
-
-  // position: relative;
 }

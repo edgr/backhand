@@ -1,88 +1,115 @@
-<ul class="list-inline tabs-underlined" id="fix-top">
-  <li>
-    <a href="#" data-target="won" class="tab-underlined active">Won</a>
-  </li>
-  <li>
-    <a href="#" data-target="lost" class="tab-underlined">Lost</a>
-  </li>
-</ul>
-
-<div class="box-size" id="won">
-  <%# raise %>
-  <% if @matches.present? %>
-    <% @matches.each do |match| %>
-      <% if match.match_result.winner == current_user %>
-        <%= link_to match_path(match), class: "link-match" do %>
-          <div class="match-card">
-            <% if match.player_1 == current_user %>
-              <%= cl_image_tag match.player_2.picture, class: "avatar"%>
-              <div class="name-and-date">
-                <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
-                <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %> - <%= Club.find(match.club_id).name %> </span>
-              </div>
-            <% else %>
-              <%= cl_image_tag match.player_1.picture, class: "avatar"%>
-              <div class="name-and-date">
-                <span class="player-name">
-                  <%= match.player_1.first_name %> <%= match.player_1.last_name %>
+<div class="container">
+  <ul class="list-inline tabs-underlined" id="fix-top">
+    <li>
+      <a href="#" data-target="won" class="tab-underlined active">Won</a>
+    </li>
+    <li>
+      <a href="#" data-target="lost" class="tab-underlined">Lost</a>
+    </li>
+  </ul>
+  <div id="won">
+    <% if @matches.present? %>
+      <% @matches.each do |match| %>
+        <% if match.match_result.winner == current_user %>
+          <%= link_to match_path(match), class: "link-match" do %>
+            <div class="match-card">
+              <% if match.player_1 == current_user %>
+                <%= cl_image_tag match.player_2.picture, class: "avatar"%>
+                <div class="name-and-date">
+                  <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
+                  <div class="date-location">
+                    <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                    <span class="separator"> - </span>
+                    <span class="location"><%= Club.find(match.club_id).name %></span>
+                  </div>
+                </div>
+                <span class="score">
+                  <% if match.match_result.confirmed %>
+                    <%= match.match_result.score %>
+                  <% else %>
+                    <%= match.player_2.first_name %> must confirm
+                  <% end %>
                 </span>
-                <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %> - <%= Club.find(match.club_id).name %></span>
-              </div>
-            <% end %>
-
-            <span class="score-arrow">
-            <% if match.match_result.confirmed %>
-              <%= match.match_result.score %>
-            <% else %>
-              <%= "Your opponent has not confirmed yet" %>
-            <% end %>
-              <i class="fas fa-angle-right"></i>
-            </span>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
-  <% else %>
-  <p class="text-center">You haven't lost any matches. WOW!</p>
-  <% end %>
-
-</div>
-
-<div class="hidden box-size" id="lost">
-  <% if @matches.present? %>
-    <% @matches.each do |match| %>
-      <% if match.match_result.loser == current_user  %>
-        <%= link_to match_path(match), class: "link-match" do %>
-          <div class="match-card">
-            <% if match.player_1 == current_user %>
-              <%= cl_image_tag match.player_2.picture, class: "avatar"%>
-              <div class="name-and-date">
-                <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
-                <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %> - <%= Club.find(match.club_id).name %></span>
-              </div>
-            <% else %>
-              <%= cl_image_tag match.player_1.picture, class: "avatar"%>
-              <div class="name-and-date">
-                <span class="player-name">
-                  <%= match.player_1.first_name %> <%= match.player_1.last_name %>
-                </span>
-                <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %> - <%= Club.find(match.club_id).name %></span>
-              </div>
-            <% end %>
-
-            <span class="score-arrow">
-              <% if match.match_result.confirmed %>
-                <%= match.match_result.score %>
               <% else %>
-                <%= "Your opponent has not confirmed yet" %>
+                <%= cl_image_tag match.player_1.picture, class: "avatar"%>
+                <div class="name-and-date">
+                  <span class="player-name">
+                    <%= match.player_1.first_name %> <%= match.player_1.last_name %>
+                  </span>
+                  <div class="date-location">
+                    <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                    <span class="separator"> - </span>
+                    <span class="location"><%= Club.find(match.club_id).name %></span>
+                  </div>
+                </div>
+                <span class="score">
+                  <% if match.match_result.confirmed %>
+                    <%= match.match_result.score %>
+                  <% else %>
+                    <%= match.player_1.first_name %> must confirm
+                  <% end %>
+                </span>
               <% end %>
-              <i class="fas fa-angle-right"></i>
-            </span>
-          </div>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
+    <% else %>
+    <p class="text-center">You haven't lost any matches. WOW!</p>
     <% end %>
-  <% else %>
-  <p class="text-center">You haven't won any matches yet. Fix that!</p>
-  <% end %>
+
+  </div>
+
+  <div class="hidden" id="lost">
+    <% if @matches.present? %>
+      <% @matches.each do |match| %>
+        <% if match.match_result.loser == current_user  %>
+          <%= link_to match_path(match), class: "link-match" do %>
+            <div class="match-card">
+              <% if match.player_1 == current_user %>
+                <%= cl_image_tag match.player_2.picture, class: "avatar"%>
+                <div class="name-and-date">
+                  <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
+                  <div class="date-location">
+                    <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                    <span class="separator"> - </span>
+                    <span class="location"><%= Club.find(match.club_id).name %></span>
+                  </div>
+                </div>
+                <span class="score">
+                  <% if match.match_result.confirmed %>
+                    <%= match.match_result.score %>
+                  <% else %>
+                    <%= match.player_2.first_name %> must confirm
+                  <% end %>
+                </span>
+              <% else %>
+                <%= cl_image_tag match.player_1.picture, class: "avatar"%>
+                <div class="name-and-date">
+                  <span class="player-name">
+                    <%= match.player_1.first_name %> <%= match.player_1.last_name %>
+                  </span>
+                  <div class="date-location">
+                    <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                    <span class="separator"> - </span>
+                    <span class="location"><%= Club.find(match.club_id).name %></span>
+                  </div>
+                </div>
+                <span class="score">
+                  <% if match.match_result.confirmed %>
+                    <%= match.match_result.score %>
+                  <% else %>
+                    <%= match.player_1.first_name %> must confirm
+                  <% end %>
+                </span>
+              <% end %>
+
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% else %>
+    <p class="text-center">You haven't won any matches yet. Fix that!</p>
+    <% end %>
+  </div>
 </div>
