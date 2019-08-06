@@ -69,7 +69,7 @@ players = []
     first_name: names[counter],
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
-    password: "password",
+    password: "Password1!",
     phone_number: Faker::Number.number(12),
     level: ["pro", "beginner", "intermediate","advanced","semi-pro"].sample,
     bio: Faker::Lorem.sentence(15),
@@ -101,8 +101,8 @@ end
     last_name: 'Garret',
     email: 'a@a.a',
     phone_number: '34651952237',
-    level: 'pro',
-    password: 'password',
+    level: 'Pro',
+    password: 'Password1!',
     points: 1200,
     country: Faker::Address.country_code,
     bio: Faker::Lorem.sentence(15),
@@ -131,8 +131,8 @@ end
     email: 'b@b.b',
     address: 'Barcelona',
     phone_number: '01714170663',
-    level: 'pro',
-    password: 'password',
+    level: 'Pro',
+    password: 'Password1!',
     points: 1200,
     country: Faker::Address.country_code,
     bio: Faker::Lorem.sentence(15),
@@ -173,7 +173,8 @@ end
   puts "creating match #{counter}"
   counter += 1
 
-  player_1, player_2 = players.sample(2)
+  player_1 = edouard
+  player_2 = leo
 
   match = Match.create!(
     player_1: player_1,
