@@ -18,8 +18,7 @@ class MatchesController < ApplicationController
   end
 
   def index
-    @matches = Match.where(player_1: current_user)
-    @matches += Match.where(player_2: current_user)
+    @matches = Match.where("player_1_id = ? OR player_2_id = ?", current_user, current_user)
   end
 
   private
