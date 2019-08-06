@@ -55,4 +55,8 @@ class UserPresenter < BasePresenter
     code&.alpha3
   end
 
+  def club
+    Club.find(user.club_id).name
+  end
+
 end

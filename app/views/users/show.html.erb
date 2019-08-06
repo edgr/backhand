@@ -7,10 +7,8 @@
       <div class="pic-show">
         <% if @user.picture.present? %>
           <%= user_presenter.picture %>
-          <%#= cl_image_tag(@user.picture, class:"img-b") %>
         <% else %>
           <img class="img-show" src="<%= image_path 'profile.png' %>">
-          <%#= image_tag "profile.png" %>
         <% end %>
         <div class="ranking-show">
           <span>
@@ -71,6 +69,9 @@
           <br>
           <p>style: <span class="details-info"><%= @user.handedness %> - <%= @user.backhand_style %></span></p>
           <p>residence: <span class="details-info address-place"><%= @user.address %></span></p>
+          <% if @user.club_id.present? %>
+            <p>club: <span class="details-info"> <%= user_presenter.club %></span></p>
+          <% end %>
         </div>
       </div>
 
@@ -282,7 +283,7 @@
   <% else %>
     <div class="cta-back">
       <%= link_to new_user_session_path, class: "btn btn-flat cta-button" do %>
-        <%= "Login or Sign up to contact #{@user.first_name}" %>
+        <%= "Contact #{@user.first_name}" %>
       <% end %>
     </div>
   <% end %>
