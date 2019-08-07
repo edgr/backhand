@@ -177,6 +177,7 @@ end
   player_2 = leo
 
   match = Match.create!(
+    date: Date.today-rand(360),
     player_1: player_1,
     player_2: player_2,
     club: Club.all.sample
