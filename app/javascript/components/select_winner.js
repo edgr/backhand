@@ -1,5 +1,5 @@
 const selectBox = document.getElementById('match_player_2_id');
-const input = document.getElementById('select-winner');
+const input = document.getElementById('match_result_winner');
 
 const changeOpponent = (event) => {
   if (input) {
@@ -13,6 +13,8 @@ const changeOpponent = (event) => {
 
 const onChange = (event) => {
   if (selectBox) {
+    const fakeOption = `<option value=""> </option>`;
+    input.insertAdjacentHTML('beforeend', fakeOption);
     selectBox.onchange=changeOpponent;
   }
 };

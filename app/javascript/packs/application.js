@@ -14,6 +14,7 @@ import { initSelectClub } from '../components/init_select2';
 import '../plugins/intl';
 import { changeLabelValue } from '../components/changelabelpictureupload';
 import { onChange } from '../components/select_winner';
+import { selectSets } from '../components/select_sets';
 
 const tabs = document.querySelectorAll(".tab-underlined");
 if (tabs) { tabs.forEach(addListener) };
@@ -27,3 +28,4 @@ initSelectCountry();
 initSelectClub();
 changeLabelValue();
 onChange();
+selectSets();
