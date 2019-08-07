@@ -1,6 +1,6 @@
 <% if @matches.present? %>
   <% @matches.each do |match| %>
-    <% if match.match_result.winner == current_user %>
+    <% if match.match_result.confirmed == true && match.match_result.winner == current_user %>
       <div class="match-card">
         <% if match.player_1 == current_user %>
           <%= cl_image_tag match.player_2.picture, class: "avatar"%>
@@ -12,13 +12,6 @@
               <span class="location"><%= Club.find(match.club_id).name %></span>
             </div>
           </div>
-          <span class="score">
-            <% if match.match_result.confirmed %>
-              <%= match.match_result.score %>
-            <% else %>
-              <%= match.player_2.first_name %> must confirm
-            <% end %>
-          </span>
         <% else %>
           <%= cl_image_tag match.player_1.picture, class: "avatar"%>
           <div class="name-and-date">
@@ -31,14 +24,10 @@
               <span class="location"><%= Club.find(match.club_id).name %></span>
             </div>
           </div>
-          <span class="score">
-            <% if match.match_result.confirmed %>
-              <%= match.match_result.score %>
-            <% else %>
-              <%= match.player_1.first_name %> must confirm
-            <% end %>
-          </span>
         <% end %>
+        <span class="score">
+          <%= match.match_result.score %>
+        </span>
       </div>
     <% end %>
   <% end %>
