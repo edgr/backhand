@@ -122,6 +122,18 @@ class User < ApplicationRecord
     (Date.today - self.birthday).to_i / 365
   end
 
+  def notify
+    notification = 0
+    if self.matches.any?
+      self.matches.each { |match|
+        if match.player_2 == self
+          notification += 1 if match.match_result.confirmed == false
+        end
+      }
+    end
+    return notification
+  end
+
   include PgSearch
   pg_search_scope :search_user_fields,
     against: [:address, :level, :first_name, :last_name, :style_of_play, :gender, :country, :handedness, :backhand_style, :club_id],

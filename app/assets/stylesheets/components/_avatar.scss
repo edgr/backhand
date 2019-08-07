@@ -15,4 +15,20 @@
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+  position: relative;
+}
+
+.notifications {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 57%;
+  color: white;
+  background-color: red;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 12px;
 }
