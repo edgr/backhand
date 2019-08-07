@@ -35,7 +35,7 @@
         <div class="fill-the-score d-flex">
           <div class="players-columns">
             <div class="player_1_name"><%= current_user.first_name %> <%= current_user.last_name %></div>
-            <div class="player_2_name" id="player_2_name">Player 2</div>
+            <div class="player_2_name" id="player_2_name">Opponent</div>
           </div>
           <div class="score-boxes d-flex">
             <%= f.simple_fields_for :match_sets do |set_builder| %>
