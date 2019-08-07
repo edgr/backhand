@@ -18,20 +18,23 @@
         <%= f.association :club, label:"WHERE DID YOU PLAY?", input_html: {class: "select2 form-control"} %>
         <%= f.association :player_2, label:"WHO DID YOU PLAY WITH?", input_html: {class: "select2 form-control"}, label_method: :full_name %>
         <%= simple_fields_for :match_result do |r| %>
-          <%= r.input :winner, collection: [current_user], label_method: :full_name %>
+          <%= r.input :winner, label: "WHO WON?", collection: [current_user], label_method: :full_name %>
         <% end %>
         <div class="how-many-sets d-flex">
-          <strong>
-            <div class="display-sets-number p-4"></div>
-          </strong>
-          <div class="display-range-bar">
+          <div class="display-range-bar w-100">
             <label for="sets-played">HOW MANY SETS DID YOU PLAY?</label>
-            <input type="range" id="sets-played" name="sets-played" min="1" max="5">
+            <div class="d-flex">
+              <strong>
+                <div class="display-sets-number p-4"></div>
+              </strong>
+              <input type="range" id="sets-played" name="sets-played" min="1" max="5">
+            </div>
           </div>
         </div>
+        <hr class="score-separator-top">
         <div class="fill-the-score d-flex">
           <div class="players-columns">
-            <div class="player_1_name">Player 1</div>
+            <div class="player_1_name"><%= current_user.first_name %> <%= current_user.last_name %></div>
             <div class="player_2_name">Player 2</div>
           </div>
           <div class="score-boxes d-flex">
@@ -40,8 +43,9 @@
             <% end %>
           </div>
         </div>
+        <hr class="score-separator-bottom">
 
-        <%= f.submit 'Record Match', class: "btn btn-primary" %>
+        <%= f.submit 'record match', class: "btn btn-primary cta-next" %>
 
       <% end %>
     </div>

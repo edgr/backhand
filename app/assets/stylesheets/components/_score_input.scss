@@ -1,0 +1,28 @@
+.fill-the-score {
+  justify-content: space-between;
+}
+
+.set-played {
+  .set-input {
+    width: 15px;
+  }
+  .form-group {
+    margin: 8px 8px 8px 0;
+  }
+}
+
+.players-columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.score-separator-top {
+  background-color: $black;
+  margin-bottom: 0;
+}
+
+.score-separator-bottom {
+  background-color: $black;
+  margin-top: 0;
+}
