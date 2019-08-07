@@ -9,6 +9,11 @@
       <% else %>
         <%= image_tag "profile.png", class: "avatar-bordered"%>
       <% end %>
+      <% if current_user.notify > 0 %>
+          <div class="notifications">
+            <%= current_user.notify %>
+          </div>
+        <% end %>
     </button>
 
     <div class="collapse navbar-collapse" id="menu-content">
