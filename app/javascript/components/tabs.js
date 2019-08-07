@@ -1,7 +1,6 @@
 const tabsSwitcher = (event) => {
   event.preventDefault();
   const activeTab = document.querySelector(".tab-underlined.active");
-  console.log(activeTab.dataset.target);
   const currentContent = document.getElementById(activeTab.dataset.target);
   currentContent.classList.toggle("hidden");
 
