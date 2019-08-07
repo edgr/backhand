@@ -3,7 +3,7 @@ const input = document.getElementById('match_result_winner');
 
 const changeOpponent = (event) => {
   if (input) {
-    // input.lastChild.remove();
+    input.lastChild.remove();
     const selectedIndex = event.currentTarget.options.selectedIndex
     const opponentName = event.currentTarget.options[selectedIndex].innerText
     const opponent = `<option value="${event.currentTarget.value}">${opponentName}</option>`;
@@ -13,6 +13,8 @@ const changeOpponent = (event) => {
 
 const onChange = (event) => {
   if (selectBox) {
+    const fakeOption = `<option value=""> </option>`;
+    input.insertAdjacentHTML('beforeend', fakeOption);
     selectBox.onchange=changeOpponent;
   }
 };
