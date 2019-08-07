@@ -1,0 +1,53 @@
+<% if @matches.present? %>
+  <% @matches.each do |match| %>
+    <% if match.match_result.confirmed == false  %>
+      <div class="pending-match-card">
+        <% if match.player_1 == current_user %>
+          <div class="match-card">
+            <%= cl_image_tag match.player_2.picture, class: "avatar"%>
+            <div class="name-and-date">
+              <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
+              <div class="date-location">
+                <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
+                <span class="separator"> - </span>
+                <span class="location"><%= Club.find(match.club_id).name %></span>
+              </div>
+            </div>
+            <div class="score">
+              <%= match.match_result.score %>
+            </div>
+          </div>
+          <div class="link-pending-matches">
+            <%= link_to root_path do %>
+              Ask <%= match.player_2.first_name %> to confirm
+            <% end %>
+          </div>
+        <% else %>
+          <div class="match-card">
+            <%= cl_image_tag match.player_1.picture, class: "avatar"%>
+            <div class="name-and-date">
+              <span class="player-name">
+                <%= match.player_1.first_name %> <%= match.player_1.last_name %>
+              </span>
+              <div class="date-location">
+                <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
+                <span class="separator"> - </span>
+                <span class="location"><%= Club.find(match.club_id).name %></span>
+              </div>
+            </div>
+            <div class="score">
+              <span>
+                <%= match.match_result.score %>
+              </span>
+            </div>
+          </div>
+          <div class="link-pending-matches">
+            <%= link_to 'Confirm now!', root_path %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <p class="text-center">You have matches pending confirmation</p>
+<% end %>

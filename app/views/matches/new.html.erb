@@ -15,8 +15,8 @@
             <%# end %>
           </select>
         </div> -->
-        <%= f.association :club, label:"WHERE DID YOU PLAY?", input_html: {class: "select2 form-control"} %>
-        <%= f.association :player_2, label:"WHO DID YOU PLAY WITH?", input_html: {class: "select2 form-control"}, label_method: :full_name %>
+        <%= f.association :club, label:"WHERE DID YOU PLAY?", input_html: {class: "select-your-club form-control"} %>
+        <%= f.association :player_2, label:"WHO DID YOU PLAY WITH?", input_html: {class: "select-your-opponent form-control"}, label_method: :full_name %>
         <%= simple_fields_for :match_result do |r| %>
           <%= r.input :winner, label: "WHO WON?", collection: [current_user], label_method: :full_name %>
         <% end %>

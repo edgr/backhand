@@ -1,5 +1,14 @@
 import 'select2';
 
+const initSelectYourOpponent = () => {
+  $('.select-your-opponent').select2 ({
+    theme: "bootstrap",
+    width: '100%',
+    placeholder: "Cannot find your partner? Tell him/her to create an account!",
+    allowClear: true,
+  });
+};
+
 const initSelectYourClub = () => {
   $('.select-your-club').select2 ({
     theme: "bootstrap",
@@ -30,3 +39,4 @@ const initSelectClub = () => {
 export { initSelectYourClub };
 export { initSelectCountry };
 export { initSelectClub };
+export { initSelectYourOpponent}
