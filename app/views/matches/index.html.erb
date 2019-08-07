@@ -17,7 +17,7 @@
               <div class="name-and-date">
                 <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
                 <div class="date-location">
-                  <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                  <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
                   <span class="separator"> - </span>
                   <span class="location"><%= Club.find(match.club_id).name %></span>
                 </div>
@@ -36,7 +36,7 @@
                   <%= match.player_1.first_name %> <%= match.player_1.last_name %>
                 </span>
                 <div class="date-location">
-                  <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                  <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
                   <span class="separator"> - </span>
                   <span class="location"><%= Club.find(match.club_id).name %></span>
                 </div>
@@ -68,7 +68,7 @@
               <div class="name-and-date">
                 <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
                 <div class="date-location">
-                  <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                  <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
                   <span class="separator"> - </span>
                   <span class="location"><%= Club.find(match.club_id).name %></span>
                 </div>
@@ -87,7 +87,7 @@
                   <%= match.player_1.first_name %> <%= match.player_1.last_name %>
                 </span>
                 <div class="date-location">
-                  <span class="date"><%= match.created_at.to_date.strftime("%d %b %Y") %></span>
+                  <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
                   <span class="separator"> - </span>
                   <span class="location"><%= Club.find(match.club_id).name %></span>
                 </div>

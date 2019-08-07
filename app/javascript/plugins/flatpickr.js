@@ -8,3 +8,11 @@ flatpickr(".datepicker", {
   dateFormat: "d-m-Y",
   defaultDate: "16-07-2007"
 })
+
+flatpickr(".datepicker-match", {
+  altInput: true,
+  disableMobile: true,
+  altFormat: "j F Y",
+  dateFormat: "d-m-Y",
+  defaultDate: "01-08-2019"
+})
