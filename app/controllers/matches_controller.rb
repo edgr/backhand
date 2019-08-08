@@ -12,7 +12,9 @@ class MatchesController < ApplicationController
     if @match.save!
       score = ''
       @match.match_sets.each do |set|
-        score += "#{set.player_1_games}-#{set.player_2_games} " if set.player_1_games.present?
+        if set.player_1_games.present?
+          @match_result.winner == current_user ? score += "#{set.player_1_games}-#{set.player_2_games} " : score += "#{set.player_2_games}-#{set.player_1_games} "
+        end
       end
       @match_result.update(match: @match, score: score.chomp(' '))
       redirect_to matches_path

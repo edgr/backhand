@@ -11,9 +11,7 @@ Rails.application.routes.draw do
   resources :user_reviews, only: [:new, :create]
   # end
 
-  resources :matches, only: [:new, :create, :show, :index, :update] do
-   resources :match_results, only: :create
-  end
+  resources :matches, only: [:new, :create, :show, :index, :update]
 
   patch '/match_results/:id/confirm', to: 'match_results#confirm', as: 'confirm'
 
