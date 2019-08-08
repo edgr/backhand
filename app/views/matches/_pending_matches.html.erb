@@ -39,7 +39,7 @@
               </span>
             </div>
           </div>
-          <%= link_to 'Confirm now!', confirm_path(match.match_result), method: :patch, class: "link-pending-matches" %>
+          <%= link_to 'Confirm now!', confirm_path(match.match_result), method: :patch, data: {confirm: "Are you sure?"}, class: "link-pending-matches" %>
         <% end %>
       </div>
     <%# end %>
