@@ -2,30 +2,22 @@
   <div class="row">
     <div class="form-login col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
       <%= simple_form_for @match do |f| %>
-      <!-- <div class="d-flex justify-content-between"> -->
         <%= f.input :date,
         input_html: {class: "datepicker-match"},
         as: :string,
+        required: true,
         label:"WHEN DID YOU PLAY?" %>
-        <!-- <div>
-          <label for="choose-club">WHERE DID YOU PLAY?</label>
-          <select name="match[location][]" class="select2 form-control" id="choose-a-club">
-            <%# Club.all.each do |club| %>
-            <option value="<%#= club.id %>"><%#= club.name %></option>
-            <%# end %>
-          </select>
-        </div> -->
         <%= f.association :club, label:"WHERE DID YOU PLAY?", input_html: {class: "select-your-club form-control"} %>
-        <%= f.association :player_2, label:"WHO DID YOU PLAY WITH?", input_html: {class: "select-your-opponent form-control"}, label_method: :full_name %>
+        <%= f.association :player_2, label:"WITH WHOM?", input_html: {class: "select-your-opponent form-control"}, label_method: :full_name %>
         <%= simple_fields_for :match_result do |r| %>
-          <%= r.input :winner, label: "WHO WON?", collection: [current_user], label_method: :full_name %>
+          <%= r.input :winner, label: "WHO WON?", input_html: {class: "select-the-winner form-control"}, collection: [current_user], label_method: :full_name %>
         <% end %>
         <div class="how-many-sets d-flex">
           <div class="display-range-bar w-100">
             <label for="sets-played">HOW MANY SETS DID YOU PLAY?</label>
             <div class="d-flex">
               <strong>
-                <div class="display-sets-number p-4"></div>
+                <div class="display-sets-number"></div>
               </strong>
               <input type="range" id="sets-played" name="sets-played" min="1" max="5">
             </div>
@@ -34,10 +26,23 @@
         <hr class="score-separator-top">
         <div class="fill-the-score d-flex">
           <div class="players-columns">
-            <div class="player_1_name"><%= current_user.first_name %> <%= current_user.last_name %></div>
-            <div class="player_2_name" id="player_2_name">Opponent</div>
+            <div class="avatar-name-match-record">
+              <%= cl_image_tag current_user.picture, class: "avatar" %>
+              <div class="player_1_name">
+                <%= current_user.first_name %> <%= current_user.last_name %>
+              </div>
+            </div>
+            <div class="avatar-name-match-record">
+              <%= cl_image_tag User.find(current_user.id).picture, class: "avatar" %>
+              <div class="player_2_name" id="player_2_name">
+                Opponent
+              </div>
+            </div>
           </div>
           <div class="score-boxes d-flex">
+            <span class="new-match-sets">
+              set
+            </span>
             <%= f.simple_fields_for :match_sets do |set_builder| %>
               <%= render 'match_set', f: set_builder %>
             <% end %>

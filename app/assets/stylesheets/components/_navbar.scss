@@ -11,6 +11,9 @@
   .navbar-nav {
     .nav-link {
       color: white;
+      span {
+        position: relative;
+      }
     }
   }
 }
@@ -35,4 +38,19 @@
   .nav-link {
     padding-right: 0;
   }
+}
+
+.matches-notifications {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 57%;
+  color: $black;
+  background-color: $yellow;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  right: -10px;
 }

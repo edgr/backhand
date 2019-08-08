@@ -13,5 +13,5 @@ flatpickr(".datepicker-match", {
   disableMobile: true,
   altFormat: "j F Y",
   dateFormat: "d-m-Y",
-  defaultDate: "01-08-2019"
+  defaultDate: "today"
 })
