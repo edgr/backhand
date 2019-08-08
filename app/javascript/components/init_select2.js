@@ -16,7 +16,7 @@ const initSelectYourOpponent = () => {
 };
 
 const initSelectYourClub = () => {
-  $('.select-your-club').select2 ({
+  $('#user_club_id').select2 ({
     theme: "bootstrap",
     width: '100%'
   });

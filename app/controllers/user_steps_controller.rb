@@ -28,7 +28,7 @@ class UserStepsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :address, :country, :place_of_birth, :birthday, :gender, :height, :weight, :level, :style_of_play, :handedness, :backhand_style, :picture, :bio)
+    params.require(:user).permit(:first_name, :last_name, :address, :country, :place_of_birth, :birthday, :gender, :height, :weight, :level, :style_of_play, :handedness, :backhand_style, :picture, :bio, :club_id)
   end
 
   def send_welcome_email
