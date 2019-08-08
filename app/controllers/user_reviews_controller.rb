@@ -1,5 +1,4 @@
 class UserReviewsController < ApplicationController
-  before_action :set_challenge, only: %i[new create]
   before_action :set_receiver, only: [:create]
 
   def new
@@ -8,7 +7,6 @@ class UserReviewsController < ApplicationController
 
   def create
     @user_review = UserReview.new(review_params)
-    @user_review.challenge = @challenge
     @sender = current_user
     @user_review.sender_id = @sender.id
     @user_review.receiver_id = @receiver.id
@@ -29,10 +27,6 @@ class UserReviewsController < ApplicationController
   def review_params
     params.require(:user_review).permit(:serve, :thumb, :volley, :return, :forehand, :backhand,
                                         :speed, :power, :endurance, :content)
-  end
-
-  def set_challenge
-    @challenge = Challenge.find(params[:challenge_id])
   end
 
   def set_receiver
