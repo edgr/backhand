@@ -40,3 +40,7 @@
 .display-range-bar {
   margin-bottom: 1em;
 }
+
+.form-control[readonly] {
+  background-color: white;
+}
