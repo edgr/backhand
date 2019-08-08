@@ -12,6 +12,9 @@
               <span class="location"><%= Club.find(match.club_id).name %></span>
             </div>
           </div>
+          <span class="score">
+            <%= match.match_result.score.reverse %>
+          </span>
         <% else %>
           <%= cl_image_tag match.player_1.picture, class: "avatar"%>
           <div class="name-and-date">
@@ -24,6 +27,9 @@
               <span class="location"><%= Club.find(match.club_id).name %></span>
             </div>
           </div>
+          <span class="score">
+            <%= match.match_result.score %>
+          </span>
         <% end %>
         <span class="score">
           <%= match.match_result.score %>
