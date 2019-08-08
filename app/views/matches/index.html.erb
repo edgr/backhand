@@ -6,8 +6,15 @@
     <li>
       <a href="#" data-target="lost" class="tab-underlined">Lost</a>
     </li>
-    <li>
-      <a href="#" data-target="pending" class="tab-underlined">Pending</a>
+    <li id="pending-tab">
+      <a href="#" data-target="pending" class="tab-underlined">
+      Pending
+      </a>
+      <% if current_user.notify > 0 %>
+        <div class="pending-notifications">
+          <%= current_user.notify %>
+        </div>
+      <% end %>
     </li>
   </ul>
   <div id="won">

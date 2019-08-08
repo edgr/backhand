@@ -18,13 +18,13 @@
   position: relative;
 }
 
-.notifications {
+.avatar-notifications {
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 57%;
-  color: white;
-  background-color: red;
+  color: $black;
+  background-color: $yellow;
   width: 14px;
   height: 14px;
   border-radius: 50%;

@@ -10,10 +10,10 @@
         <%= image_tag "profile.png", class: "avatar-bordered"%>
       <% end %>
       <% if current_user.notify > 0 %>
-          <div class="notifications">
-            <%= current_user.notify %>
-          </div>
-        <% end %>
+        <div class="avatar-notifications">
+          <%= current_user.notify %>
+        </div>
+      <% end %>
     </button>
 
     <div class="collapse navbar-collapse" id="menu-content">
@@ -25,7 +25,16 @@
           <%= link_to "Search partners", users_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My Matches", matches_path, class: "nav-link" %>
+          <%= link_to matches_path, class: "nav-link" do %>
+          <span>
+            My Matches
+            <% if current_user.notify > 0 %>
+              <div class="matches-notifications">
+                <%= current_user.notify %>
+              </div>
+            <% end %>
+          </span>
+          <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "Record a Match", new_match_path, class: "nav-link" %>
