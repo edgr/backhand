@@ -15,6 +15,8 @@ Rails.application.routes.draw do
    resources :match_results, only: :create
   end
 
+  patch '/match_results/:id/confirm', to: 'match_results#confirm', as: 'confirm'
+
    resources :users, only: [ :index, :show, :edit, :update ] do
     resources :user_reviews, only: [:destroy]
   end

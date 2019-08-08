@@ -39,7 +39,8 @@
               </span>
             </div>
           </div>
-          <%= link_to 'Confirm now!', root_path, class: "link-pending-matches" %>
+          <%= link_to 'Confirm now!', confirm_path(match.match_result), method: :patch, class: "link-pending-matches" %>
+          <%#= link_to 'Accept', approved_path(booking), method: :patch, class: "btn-accept" %>
         <% end %>
       </div>
     <%# end %>
