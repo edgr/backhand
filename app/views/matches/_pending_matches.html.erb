@@ -17,11 +17,9 @@
               <%= match.match_result.score %>
             </div>
           </div>
-          <div class="link-pending-matches">
-            <%= link_to root_path do %>
-              Ask <%= match.player_2.first_name %> to confirm
-            <% end %>
-          </div>
+          <a href="https://wa.me/<%= match.player_2.phone_number %>?text=Hi%20<%= match.player_2.first_name %>! Can you please confirm the score of our match on https://www.backhandapp.com? Thank you!" class="link-pending-matches">
+            Ask <%= match.player_2.first_name %> to confirm
+          </a>
         <% else %>
           <div class="match-card">
             <%= cl_image_tag match.player_1.picture, class: "avatar"%>
