@@ -2,32 +2,46 @@
   justify-content: space-between;
 }
 
+.score-boxes {
+  position: relative;
+  .new-match-sets {
+    position: absolute;
+    left: -40px;
+  }
+}
+
 .set-played {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  span {
+    margin: 0 8px 8px 0;
+  }
   .set-input {
     width: 27px;
     padding: 0 2px;
     text-align: center;
   }
   .form-group {
-    margin: 10px 8px 10px 0;
+    margin: 4px 8px 4px 0;
   }
 }
 
 .players-columns {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   margin-left: 8px;
 }
 
 .score-separator-top {
   background-color: $black;
-  margin-bottom: 0;
+  margin-bottom: 8px;
 }
 
 .score-separator-bottom {
   background-color: $black;
-  margin-top: 0;
+  margin-top: 8px;
 }
 
 .display-sets-number {
@@ -43,4 +57,14 @@
 
 .form-control[readonly] {
   background-color: white;
+}
+
+.avatar-name-match-record {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.player_1_name, .player_2_name {
+  margin-left: 8px;
 }

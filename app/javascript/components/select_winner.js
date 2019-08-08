@@ -4,16 +4,19 @@ const opponentInScore = document.getElementById('player_2_name');
 
 const changeOpponent = (event) => {
   if (input) {
+    console.log(event.currentTarget.options.selectedIndex);
     input.lastChild.remove();
     opponentInScore.innerText = "";
 
     const selectedIndex = event.currentTarget.options.selectedIndex
     const opponentName = event.currentTarget.options[selectedIndex].innerText
+    // const opponentPicture = `<%= cl_image_tag User.find(current_user.${selectedIndex}).picture, class: "avatar" %>`
 
     const opponentOption = `<option value="${event.currentTarget.value}">${opponentName}</option>`;
     const opponentNameString = `${opponentName}`;
 
     input.insertAdjacentHTML('beforeend', opponentOption);
+    // opponentInScore.insertAdjacentHTML('beforeend', opponentPicture);
     opponentInScore.insertAdjacentHTML('beforeend', opponentNameString);
   }
 }
