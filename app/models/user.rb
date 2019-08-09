@@ -28,7 +28,7 @@ class User < ApplicationRecord
                     format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }
   validates :phone_number, presence: true,
                            uniqueness: true,
-                           numericality: true,
+                           # numericality: true,
                            length: { minimum: 8, maximum: 15 }
   validates :first_name, :last_name, presence: true,
                                      length: { minimum: 2 },
