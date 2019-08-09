@@ -102,14 +102,16 @@
                 <%= f.input :backhand_style,
                             :collection => ["one handed backhand", "two handed backhand"],
                             label:"WHAT IS YOUR BACKHAND STYLE?" %>
-                <label for="choose-a-club">
+                <%= f.association :club,
+                                  label: "WHICH ONE IS YOUR CLUB?" %>
+                <!-- <label for="choose-a-club">
                   WHICH ONE IS YOUR CLUB?
-                </label>
-                <select name="user[club][]" class="select-your-club form-control" id="choose-a-club">
-                  <% Club.all.each do |club| %>
-                    <option value="<%= club.id %>"><%= club.name %></option>
-                  <% end %>
-                </select>
+                </label> -->
+                <!-- <select name="user[club][]" class="select-your-club form-control" id="choose-a-club"> -->
+                  <%# Club.all.each do |club| %>
+                    <!-- <option value="<%#= club.id %>"><%#= club.name %></option> -->
+                  <%# end %>
+                <!-- </select> -->
               </div>
             </div>
           </div>

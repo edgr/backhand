@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :sent_reviews, class_name: 'UserReview', foreign_key: :sender_id, dependent: :destroy
   has_many :received_reviews, class_name: 'UserReview', foreign_key: :receiver_id, dependent: :destroy
 
+  belongs_to :club
+
   # has_many :sent_challenges, class_name: 'Challenge', foreign_key: :challenger_id, dependent: :destroy
   # has_many :received_challenges, class_name: 'Challenge', foreign_key: :challengee_id, dependent: :destroy
 
