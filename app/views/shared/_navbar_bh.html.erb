@@ -22,7 +22,7 @@
           <%= link_to "My Profile", user_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Search partners", users_path, class: "nav-link" %>
+          <%= link_to "Search players", users_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to matches_path, class: "nav-link" do %>
@@ -38,9 +38,6 @@
         </li>
         <li class="nav-item">
           <%= link_to "Record a Match", new_match_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Review a player", new_user_review_path, class: "nav-link" %>
         </li>
         <div class="d-flex ml-lg-auto">
           <li class="nav-item">
