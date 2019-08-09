@@ -1,6 +1,14 @@
 .alert {
   position: fixed;
   bottom: 16px;
-  right: 16px;
+  right: calc(50% - 200px)
+  left: calc(50% - 200px)
   z-index: 1000;
+  max-width: 400px;
+}
+
+.alert-info {
+  background-color: #f3ffae;
+  border-color: #f3ffae;
+  color: $gray;
 }
