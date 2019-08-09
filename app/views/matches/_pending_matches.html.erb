@@ -1,6 +1,6 @@
-<% if @matches.present? %>
-  <% @matches.each do |match| %>
-    <% if match.match_result.confirmed == false  %>
+<% if @pending_matches.present? %>
+  <% @pending_matches.each do |match| %>
+    <%# if match.match_result.confirmed == false  %>
       <div class="pending-match-card">
         <% if match.player_1 == current_user %>
           <div class="match-card">
@@ -10,7 +10,7 @@
               <div class="date-location">
                 <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
                 <span class="separator"> - </span>
-                <span class="location"><%= Club.find(match.club_id).name %></span>
+                <span class="location"><%= match.club.name %></span>
               </div>
             </div>
             <div class="score">
@@ -30,7 +30,7 @@
               <div class="date-location">
                 <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
                 <span class="separator"> - </span>
-                <span class="location"><%= Club.find(match.club_id).name %></span>
+                <span class="location"><%= match.club.name %></span>
               </div>
             </div>
             <div class="score">
@@ -39,10 +39,10 @@
               </span>
             </div>
           </div>
-          <%= link_to 'Confirm now!', root_path, class: "link-pending-matches" %>
+          <%= link_to 'Confirm now!', confirm_path(match.match_result), method: :patch, data: {confirm: "Are you sure?"}, class: "link-pending-matches" %>
         <% end %>
       </div>
-    <% end %>
+    <%# end %>
   <% end %>
 <% else %>
   <p class="text-center">You have matches pending confirmation</p>

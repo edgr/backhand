@@ -1,8 +1,15 @@
 class MatchResultsController < ApplicationController
-  def create
-    @match = Match.find(params[:match_id])
-    @match_result = MatchResult.new
-    @match_result.match = @match
-    @match_result.save
+  before_action :set_match_and_result
+
+  def confirm
+    @match_result.update(confirmed: true)
+    redirect_to matches_path
+  end
+
+  private
+
+  def set_match_and_result
+    @match = Match.find(params[:id])
+    @match_result = @match.match_result
   end
 end

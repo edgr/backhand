@@ -12,7 +12,9 @@ class MatchesController < ApplicationController
     if @match.save!
       score = ''
       @match.match_sets.each do |set|
-        score += "#{set.player_1_games}-#{set.player_2_games} " if set.player_1_games.present?
+        if set.player_1_games.present?
+          @match_result.winner == current_user ? score += "#{set.player_1_games}-#{set.player_2_games} " : score += "#{set.player_2_games}-#{set.player_1_games} "
+        end
       end
       @match_result.update(match: @match, score: score.chomp(' '))
       redirect_to matches_path
@@ -23,6 +25,10 @@ class MatchesController < ApplicationController
 
   def index
     @matches = Match.where("player_1_id = ? OR player_2_id = ?", current_user, current_user)
+    @won_matches = Match.joins(:match_result).where("winner_id = ? AND confirmed = ?", current_user, true).order(date: :desc)
+    @lost_matches = Match.joins(:match_result).where("loser_id = ? AND confirmed = ?", current_user, true).order(date: :desc)
+    @pending_matches = []
+    @matches.each { |match| @pending_matches << match if match.match_result.confirmed == false }
   end
 
   private
