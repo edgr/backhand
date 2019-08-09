@@ -11,19 +11,40 @@
   background-color: white;
   vertical-align: middle;
   z-index: 3;
-  .cta-button {
+  .cta-contact-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    height: 70%;
+    width: 50%;
+    margin: 0 8px 0 16px;
     font-size: 20px;
+    font-variant: small-caps;
+    padding: 4px 24px 8px 24px;
+  }
+  .cta-review-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    color: $blue;
+    width: 50%;
+    margin: 0 16px 0 8px;
+    font-size: 20px;
+    font-variant: small-caps;
+    border: solid 1px $blue;
+    padding: 4px 24px 8px 24px;
+    &:hover {
+      background-color: $white;
+      color: $blue;
+    }
   }
 }
 
+
+
 @media all and (min-width: 768px) {
   .cta-back {
-    .cta-button {
+    .cta-contact-button {
     width: 50%;
     }
   }
