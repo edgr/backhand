@@ -8,6 +8,8 @@ const showSets = (number) => {
     set.classList.remove('d-none');
     if (n > number) {
       set.classList.add('d-none');
+      set.children[0].innerText = '';
+      set.children[0].innerText = n;
     }
     n += 1;
   });
