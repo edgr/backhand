@@ -5,9 +5,11 @@ const setsPlayed = document.querySelectorAll('.set-played')
 const showSets = (number) => {
   let n = 1;
   setsPlayed.forEach((set) => {
-    set.classList.remove('hidden');
+    set.classList.remove('d-none');
     if (n > number) {
-      set.classList.add('hidden');
+      set.classList.add('d-none');
+      set.children[0].innerText = '';
+      set.children[0].innerText = n;
     }
     n += 1;
   });
