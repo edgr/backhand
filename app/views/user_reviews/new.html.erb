@@ -3,7 +3,7 @@
   <%= simple_form_for [@user, @user_review] do |f| %>
     <div class="user-review-step1">
       <fieldset class="form-group radio_buttons optional user_review_thumb">
-        <legend class="col-form-label pt-0">Would you recommend to others players to play with ...? </legend>
+        <legend class="col-form-label pt-0">Would you recommend to others players to play with <%= @user.first_name %>? </legend>
         <input type="hidden" name="user_review[thumb]" value="">
         <div class="group-radio">
           <div class="form-check form-check-inline" id="thumb-down">
@@ -16,8 +16,8 @@
           </div>
         </div>
       </fieldset>
-
-      <%= f.input :content, as: :text, label: "How is playing with ...?" %>
+      <label for="user_review[content]">How is playing with <%= @user.first_name %>?</label>
+      <%= f.input :content, as: :text, label: false %>
       <span class="btn btn-flat" id="next-review-step">Next</span>
     </div>
 
