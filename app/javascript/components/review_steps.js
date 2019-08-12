@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+
 const firstStep = document.querySelector('.user-review-step1');
 const nextStep = document.getElementById('next-review-step');
 const secondStep = document.querySelector('.user-review-step2');
