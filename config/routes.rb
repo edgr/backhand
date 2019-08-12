@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   # resources :finish_profiles
 
   # resources :challenges, only: [:index, :show, :update] do
-  resources :user_reviews, only: [:new, :create]
   # end
 
   resources :matches, only: [:new, :create, :show, :index, :update]
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   patch '/match_results/:id/confirm', to: 'match_results#confirm', as: 'confirm'
 
    resources :users, only: [ :index, :show, :edit, :update ] do
-    resources :user_reviews, only: [:destroy]
+    resources :user_reviews, only: [:new, :create, :destroy]
   end
 
   # post 'challenges', to:'challenges#create', as: :create_challenge

@@ -276,7 +276,7 @@
           <a href="https://wa.me/<%= @user.phone_number %>?text=Hello%20<%= @user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%20Fancy%20playing%20some%20tennis?" class="btn btn-flat cta-contact-button" role="button">
             contact
           </a>
-          <%= link_to new_user_review_path, class: "btn btn-flat cta-review-button" do %>
+          <%= link_to new_user_user_review_path(@user), class: "btn btn-flat cta-review-button" do %>
             <%= "review" %>
           <% end %>
         </div>
@@ -286,7 +286,7 @@
         <%= link_to new_user_session_path, class: "btn btn-flat cta-contact-button" do %>
           <%= "contact" %>
         <% end %>
-        <%= link_to new_user_review_path, class: "btn btn-flat cta-review-button" do %>
+        <%= link_to new_user_review_path(@user), class: "btn btn-flat cta-review-button" do %>
           <%= "review" %>
         <% end %>
       </div>

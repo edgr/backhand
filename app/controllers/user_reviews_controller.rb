@@ -1,17 +1,16 @@
 class UserReviewsController < ApplicationController
-  before_action :set_receiver, only: [:create]
 
   def new
+    @user = User.find(params[:user_id])
     @user_review = UserReview.new
   end
 
   def create
     @user_review = UserReview.new(review_params)
-    @sender = current_user
-    @user_review.sender_id = @sender.id
-    @user_review.receiver_id = @receiver.id
+    @user_review.receiver = User.find(params[:user_id])
+    @user_review.sender = current_user
     if @user_review.save
-      redirect_to user_path(@receiver)
+      redirect_to user_path(@user_review.receiver)
     else
       render :new
     end
@@ -27,10 +26,6 @@ class UserReviewsController < ApplicationController
   def review_params
     params.require(:user_review).permit(:serve, :thumb, :volley, :return, :forehand, :backhand,
                                         :speed, :power, :endurance, :content)
-  end
-
-  def set_receiver
-    @receiver = @challenge.other_user(current_user)
   end
 
   def final_score(oldavgscore, newskillscore, length)
