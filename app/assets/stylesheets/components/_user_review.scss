@@ -1,6 +1,7 @@
 .stroke-fitness-review {
   display: flex;
   align-items: center;
+  margin-bottom: 12px;
   .form-group {
     flex-grow: 1;
     flex-direction: column;
@@ -15,15 +16,25 @@
     }
   }
   .given-score {
-    width: 50px;
+    width: 30px;
     text-align: center;
     font-family: 'Saira Extra Condensed', sans-serif;
     color: $black;
+    font-size: 20px;
   }
 }
 
 .user-review-step1 {
   textarea {
     height: 100px;
+  }
+  legend, .user-comment {
+    color: $black;
+  }
+}
+
+.user-review-step2 {
+  p {
+    color: $black;
   }
 }

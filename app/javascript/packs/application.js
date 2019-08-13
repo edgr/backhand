@@ -18,6 +18,7 @@ import { changeLabelValue } from '../components/changelabelpictureupload';
 import { onChange } from '../components/select_winner';
 import { selectSets } from '../components/select_sets';
 import { reviewSteps } from '../components/review_steps';
+import { selectSkillValue } from '../components/skills_rating';
 
 const tabs = document.querySelectorAll(".tab-underlined");
 if (tabs) { tabs.forEach(addListener) };
@@ -35,3 +36,4 @@ changeLabelValue();
 onChange();
 selectSets();
 reviewSteps();
+selectSkillValue();

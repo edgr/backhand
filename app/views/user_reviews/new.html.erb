@@ -3,7 +3,7 @@
   <%= simple_form_for [@user, @user_review] do |f| %>
     <div class="user-review-step1">
       <fieldset class="form-group radio_buttons optional user_review_thumb">
-        <legend class="col-form-label pt-0">Would you recommend to others players to play with <%= @user.first_name %>? </legend>
+        <legend class="col-form-label pt-0">Would you recommend to other players to play with <%= @user.first_name %>? </legend>
         <input type="hidden" name="user_review[thumb]" value="">
         <div class="group-radio">
           <div class="form-check form-check-inline" id="thumb-down">
@@ -16,49 +16,51 @@
           </div>
         </div>
       </fieldset>
-      <label for="user_review[content]">How is playing with <%= @user.first_name %>?</label>
+      <label class="user-comment" for="user_review[content]">How is playing with <%= @user.first_name %>?</label>
       <%= f.input :content, as: :text, label: false %>
-      <span class="btn btn-flat" id="next-review-step">Next</span>
+      <div class="cta-back-unique">
+        <span class="btn btn-flat" id="next-review-step">Next</span>
+      </div>
     </div>
 
     <div class="form-group user-review-step2">
-      <p>How about your partner's skills?</p>
+      <p>How about <%= @user.first_name %>'s skills?</p>
       <div class="stroke-fitness-review">
         <span class="given-score">1</span>
-        <%= f.input :serve, as: :range, label: "serve", input_html: { min: '0', max: '10', step: '1' }, required: false %>
+        <%= f.input :serve, as: :range, label: "serve", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
       </div>
       <div class="stroke-fitness-review">
         <span class="given-score">1</span>
-        <%= f.input :return, as: :range, label: "return", input_html: { min: '0', max: '10', step: '1' }, required: false %>
+        <%= f.input :return, as: :range, label: "return", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
       </div>
       <div class="stroke-fitness-review">
         <span class="given-score">1</span>
-        <%= f.input :forehand, as: :range, label: "forehand", input_html: { min: '0', max: '10', step: '1' }, required: false %>
+        <%= f.input :forehand, as: :range, label: "forehand", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
       </div>
       <div class="stroke-fitness-review">
         <span class="given-score">1</span>
-        <%= f.input :backhand, as: :range, label: "backhand", input_html: { min: '0', max: '10', step: '1' }, required: false %>
+        <%= f.input :backhand, as: :range, label: "backhand", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
       </div>
       <div class="stroke-fitness-review">
         <span class="given-score">1</span>
-        <%= f.input :volley, as: :range, label: "volley", input_html: { min: '0', max: '10', step: '1' }, required: false %>
+        <%= f.input :volley, as: :range, label: "volley", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
       </div>
       <div class="stroke-fitness-review">
         <span class="given-score">1</span>
-        <%= f.input :speed, as: :range, label: "speed", input_html: { min: '0', max: '10', step: '1' }, required: false %>
+        <%= f.input :speed, as: :range, label: "speed", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
       </div>
       <div class="stroke-fitness-review">
         <span class="given-score">1</span>
-        <%= f.input :power, as: :range, label: "power", input_html: { min: '0', max: '10', step: '1' }, required: false %>
+        <%= f.input :power, as: :range, label: "power", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
       </div>
       <div class="stroke-fitness-review">
         <span class="given-score">1</span>
-        <%= f.input :endurance, as: :range, label: "endurance", input_html: { min: '0', max: '10', step: '1' }, required: false %>
+        <%= f.input :endurance, as: :range, label: "endurance", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
       </div>
-      <span class="btn btn-flat" id="back-review-step">Back</span>
 
-      <div class="cta-back-unique">
-        <%= f.button :submit, "Review your partner now",  class: "btn btn-flat" %>
+      <div class="cta-back-two-ctas">
+        <span class="btn btn-flat cta-back-button" id="back-review-step">back</span>
+        <%= f.button :submit, "review now",  class: "btn btn-flat cta-save-review" %>
       </div>
     </div>
 
