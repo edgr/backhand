@@ -17,6 +17,7 @@ import '../plugins/intl';
 import { changeLabelValue } from '../components/changelabelpictureupload';
 import { onChange } from '../components/select_winner';
 import { selectSets } from '../components/select_sets';
+import { reviewSteps } from '../components/review_steps';
 
 const tabs = document.querySelectorAll(".tab-underlined");
 if (tabs) { tabs.forEach(addListener) };
@@ -33,3 +34,4 @@ initSelectTheWinner();
 changeLabelValue();
 onChange();
 selectSets();
+reviewSteps();
