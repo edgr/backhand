@@ -11,23 +11,33 @@
     font-size: 38px;
     font-style: italic;
     position: absolute;
-    bottom: 190px;
+    bottom: 300px;
     left: 30px
   }
-  #home-cta {
+  .home-ctas-section {
     position: absolute;
-    bottom: 120px;
+    bottom: 170px;
     left: 30px;
-    border-radius: 25px;
-    width: 220px;
-    font-size: 20px;
-    border: 1px solid $white;
-    font-variant-caps: all-small-caps;
-    span {
-      vertical-align: text-bottom;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+    #home-cta {
+      border-radius: 25px;
+      width: 220px;
+      font-size: 20px;
+      border: 1px solid $white;
+      font-variant-caps: all-small-caps;
+      padding: 6px 24px 8px;
     }
   }
 }
+
 
 @media all and (min-width: 576px) {
   .banner {
@@ -39,17 +49,18 @@
       bottom: 300px;
       font-style: italic;
     }
-    #home-cta {
+    .home-ctas-section {
       position: absolute;
+      flex-direction: row;
       bottom: 220px;
       left: 80px;
-      border-radius: 25px;
-      width: 280px;
-      font-size: 24px;
-      border: 1px solid $white;
-      font-variant-caps: all-small-caps;
-      span {
-        vertical-align: text-bottom;
+      width: 450px;
+      height: 0px;
+      #home-cta {
+        width: 280px;
+        font-size: 24px;
+        border: 1px solid $white;
+        font-variant-caps: all-small-caps;
       }
     }
   }
