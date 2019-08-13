@@ -4,7 +4,6 @@ const opponentInScore = document.getElementById('player_2_name');
 
 const changeOpponent = (event) => {
   if (input) {
-    console.log(event.currentTarget.options.selectedIndex);
     input.lastChild.remove();
     opponentInScore.innerText = "";
 
