@@ -27,13 +27,13 @@
         <div class="fill-the-score d-flex">
           <div class="players-columns">
             <div class="avatar-name-match-record">
-              <%#= cl_image_tag current_user.picture, class: "avatar" %>
+              <img src="<%= cl_image_path current_user.picture %>" class="avatar">
               <div class="player_1_name">
                 <%= current_user.first_name %> <%= current_user.last_name %>
               </div>
             </div>
             <div class="avatar-name-match-record">
-              <%#= cl_image_tag User.find(current_user.id).picture, class: "avatar" %>
+              <img src="../assets/profile.png" class="avatar">
               <div class="player_2_name" id="player_2_name">
                 Opponent
               </div>
