@@ -23,6 +23,9 @@ class MatchResultsController < ApplicationController
   end
 
   def elo_points(player_1_points, player_2_points)
+
+    # using https://metinmediamath.wordpress.com/2013/11/27/how-to-calculate-the-elo-rating-including-example/
+
     transformed_rating_player_1 = 10**(player_1_points / 400)
     transformed_rating_player_2 = 10**(player_2_points / 400)
 
@@ -52,8 +55,6 @@ class MatchResultsController < ApplicationController
       s_player_1 = 0.to_f
       s_player_2 = 1.to_f
     end
-
-    # raise
 
     @new_player_1_points = player_1_points + k_player_1 * (s_player_1 - probability_player_1)
     @new_player_2_points = player_2_points + k_player_2 * (s_player_2 - probability_player_2)
