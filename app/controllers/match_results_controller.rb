@@ -1,5 +1,5 @@
 class MatchResultsController < ApplicationController
-  before_action :set_match_and_result
+  before_action :set_match_result
 
   def confirm
     @match_result.update(confirmed: true)
@@ -8,8 +8,7 @@ class MatchResultsController < ApplicationController
 
   private
 
-  def set_match_and_result
-    @match = Match.find(params[:id])
-    @match_result = @match.match_result
+  def set_match_result
+    @match_result = MatchResult.find(params[:id])
   end
 end
