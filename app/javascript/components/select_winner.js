@@ -10,11 +10,11 @@ let opponentPhotos = [];
 let i = 1;
 
 if (selectBox) {
-  selectSecondBox.options[1].innerText = selectSecondBox.options[1].innerText.split("-")[0];
+  selectSecondBox.options[1].innerText = selectSecondBox.options[1].innerText.split("|")[0];
   while (i < selectBox.options.length) {
-    opponentNames = opponentNames.concat(selectBox.options[i].innerText.split("-")[0]);
-    opponentPhotos = opponentPhotos.concat(selectBox.options[i].innerText.split("-")[1]);
-    selectBox.options[i].innerText = selectBox.options[i].innerText.split("-")[0]
+    opponentNames = opponentNames.concat(selectBox.options[i].innerText.split("|")[0]);
+    opponentPhotos = opponentPhotos.concat(selectBox.options[i].innerText.split("|")[1]);
+    selectBox.options[i].innerText = selectBox.options[i].innerText.split("|")[0];
     i ++;
   }
 }
