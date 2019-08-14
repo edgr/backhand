@@ -34,6 +34,7 @@ end
 
 puts "destroy all"
 
+MatchResult.destroy_all
 User.destroy_all
 Club.destroy_all
 
