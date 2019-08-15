@@ -10,14 +10,12 @@ const myFunction = (event) => {
     const opponentOption = `<option value="${event.currentTarget.value}">${event.currentTarget.options[i].innerText}</option>`;
     selectWinner.insertAdjacentHTML('beforeend', opponentOption);
 
-    const pictureLink = event.currentTarget.options[i].dataset.picture;
     const playerDivs = document.querySelectorAll('.avatar-name-match-record');
     const opponentPicture = playerDivs[1].firstElementChild;
-    opponentPicture.src = pictureLink;
+    opponentPicture.src = event.currentTarget.options[i].dataset.picture;
 
-    const opponentNameString = event.currentTarget.options[i].innerText;
     const opponentName = document.getElementById('player_2_name');
-    opponentName.innerText = opponentNameString;
+    opponentName.innerText = event.currentTarget.options[i].innerText;
   }
 }
 
