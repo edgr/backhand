@@ -31,6 +31,13 @@ class MatchesController < ApplicationController
     @matches.each { |match| @pending_matches << match if match.match_result.confirmed == false }
   end
 
+  def edit
+    @match = Match.find(params[:id])
+  end
+
+  def update
+  end
+
   private
 
   def match_params

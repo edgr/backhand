@@ -68,6 +68,8 @@ class User < ApplicationRecord
                   if: :active_or_step3?
   # validates :picture, presence: true, if: :active_or_step3?
 
+  scope :active, -> { where("status = 'active'") }
+
   def active?
     status == 'active'
   end
@@ -82,6 +84,10 @@ class User < ApplicationRecord
 
   def active_or_step3?
     status.include?('step3') || active?
+  end
+
+  def opponents
+    User.active.where.not(id: self.id)
   end
 
   def self.levels
@@ -117,7 +123,7 @@ class User < ApplicationRecord
   end
 
   def full_name
-    "#{first_name.capitalize} #{last_name.capitalize}|#{picture}"
+    "#{first_name.capitalize} #{last_name.capitalize}"
   end
 
   def age

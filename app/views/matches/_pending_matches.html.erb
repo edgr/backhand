@@ -17,6 +17,7 @@
               <%= match.match_result.score %>
             </div>
           </div>
+          <%= link_to 'edit', edit_match_path(match) %>
           <a href="https://wa.me/<%= match.player_2.phone_number %>?text=Hi%20<%= match.player_2.first_name %>! Can you please confirm the score of our match on https://www.backhandapp.com? Thank you!" class="link-pending-matches">
             Ask <%= match.player_2.first_name %> to confirm
           </a>
@@ -39,6 +40,7 @@
               </span>
             </div>
           </div>
+          <%= link_to 'edit', edit_match_path(match) %>
           <%= link_to 'Confirm now!', confirm_path(match.match_result), method: :patch, data: {confirm: "Are you sure?"}, class: "link-pending-matches" %>
         <% end %>
       </div>
