@@ -1,5 +1,5 @@
 class MatchResultsController < ApplicationController
-  before_action :set_match_result
+  before_action :set_match_and_match_result
 
   def confirm
     update_players_points
@@ -11,13 +11,15 @@ class MatchResultsController < ApplicationController
     points = EloPointsCalculator.new(@match, @match.player_1.points, @match.player_2.points)
     @match.player_1.points = points.calculate_player_1_points
     @match.player_2.points = points.calculate_player_2_points
+    raise
     @match.player_1.save
     @match.player_2.save
   end
 
   private
 
-  def set_match_result
+  def set_match_and_match_result
     @match_result = MatchResult.find(params[:id])
+    @match = Match.find(@match_result.match_id)
   end
 end
