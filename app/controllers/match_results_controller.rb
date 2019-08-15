@@ -11,7 +11,6 @@ class MatchResultsController < ApplicationController
     points = EloPointsCalculator.new(@match, @match.player_1.points, @match.player_2.points)
     @match.player_1.points = points.calculate_player_1_points
     @match.player_2.points = points.calculate_player_2_points
-    raise
     @match.player_1.save
     @match.player_2.save
   end
