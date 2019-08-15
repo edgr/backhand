@@ -15,7 +15,7 @@ const myFunction = (event) => {
     const opponentOption = `<option value="${event.currentTarget.value}">${event.currentTarget.options[i].innerText}</option>`;
     selectWinner.insertAdjacentHTML('beforeend', opponentOption);
 
-    const pictureLink = event.currentTarget.options[i].dataset.picture.slice(8,-2);
+    const pictureLink = event.currentTarget.options[i].dataset.picture;
     opponentPicture.src = pictureLink;
 
     const opponentNameString = `${event.currentTarget.options[i].innerText}`;

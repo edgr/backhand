@@ -11,7 +11,7 @@
         <%= f.input :player_2,
                     label:"WITH WHOM?",
                     input_html: { class: "select-your-opponent form-control" },
-                    collection: current_user.opponents.map{|z| [z.full_name, z.id, data:{picture: z.picture}]} %>
+                    collection: current_user.opponents.map{|z| [z.full_name, z.id, data:{picture: z.picture.url}]} %>
         <%= simple_fields_for :match_result do |r| %>
           <%= r.input :winner, label: "WHO WON?", input_html: {class: "select-the-winner form-control"}, collection: [current_user], label_method: :full_name %>
         <% end %>
