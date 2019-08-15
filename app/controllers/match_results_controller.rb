@@ -19,6 +19,6 @@ class MatchResultsController < ApplicationController
 
   def set_match_and_match_result
     @match_result = MatchResult.find(params[:id])
-    @match = Match.find(@match_result.match_id)
+    @match = @match_result.match
   end
 end
