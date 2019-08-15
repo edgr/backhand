@@ -1,5 +1,5 @@
 class MatchResultsController < ApplicationController
-  before_action :set_match_result
+  before_action :set_match_and_match_result
 
   def confirm
     update_players_points
@@ -17,7 +17,8 @@ class MatchResultsController < ApplicationController
 
   private
 
-  def set_match_result
+  def set_match_and_match_result
     @match_result = MatchResult.find(params[:id])
+    @match = Match.find(@match_result.match_id)
   end
 end
