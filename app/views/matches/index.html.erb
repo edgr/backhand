@@ -11,7 +11,7 @@
       <div class="final-score">
         <span class="score"><%= match.match_result.score %></span>
         <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
-        <span class="time"><%= match.club.name %></span>
+        <span class="location"><%= match.club.name %></span>
       </div>
       <div class="avatar-name-player-2">
         <%= cl_image_tag match.player_2.picture, class: "avatar"%>

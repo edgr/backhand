@@ -78,8 +78,11 @@
     .score {
       color: $black;
     }
-    .date, .time {
+    .date, .location {
       font-size: 12px;
+    }
+    .location {
+      text-align: center;
     }
   }
 }
