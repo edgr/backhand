@@ -3,7 +3,7 @@
     <%# if match.match_result.confirmed == false  %>
       <div class="pending-match-card">
         <% if match.player_1 == current_user %>
-          <div class="match-card">
+          <%= link_to edit_match_path(match), class: "match-card" do %>
             <%= cl_image_tag match.player_2.picture, class: "avatar"%>
             <div class="name-and-date">
               <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
@@ -16,8 +16,7 @@
             <div class="score">
               <%= match.match_result.score %>
             </div>
-          </div>
-          <%= link_to 'edit', edit_match_path(match) %>
+          <% end %>
           <a href="https://wa.me/<%= match.player_2.phone_number %>?text=Hi%20<%= match.player_2.first_name %>! Can you please confirm the score of our match on https://www.backhandapp.com? Thank you!" class="link-pending-matches">
             Ask <%= match.player_2.first_name %> to confirm
           </a>
@@ -40,7 +39,6 @@
               </span>
             </div>
           </div>
-          <%= link_to 'edit', edit_match_path(match) %>
           <%= link_to 'Confirm now!', confirm_path(match.match_result), method: :patch, data: {confirm: "Are you sure?"}, class: "link-pending-matches" %>
         <% end %>
       </div>
