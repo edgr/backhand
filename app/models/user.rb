@@ -108,12 +108,10 @@ class User < ApplicationRecord
   end
 
   def matches_won
-    # MatchResult.where(winner: self.id.to_s)
     MatchResult.where("winner_id = ? AND confirmed = ?", self.id.to_s, true)
   end
 
   def matches_lost
-    # MatchResult.where(loser: self.id.to_s)
     MatchResult.where("loser_id = ? AND confirmed = ?", self.id.to_s, true)
   end
 
@@ -145,11 +143,11 @@ class User < ApplicationRecord
     }
 
   def all_matches
-    Match.where("player_1_id = ? OR player_2_id = ?", self, self)
+    Match.where("matches.player_1_id = ? OR matches.player_2_id = ?", self, self)
   end
 
   def pending_matches
-    all_matches.joins(:match_result).where(confirmed: false)
+    all_matches.joins(:match_result).where("match_results.confirmed = false")
   end
 
   private
