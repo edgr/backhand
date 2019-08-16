@@ -25,6 +25,8 @@ class MatchesController < ApplicationController
 
   def index
     @matches = Match.all.order(date: :desc)
+    # I believe we only want the confirmed ones here, right? Let me know
+    # @matches = Match.joins(:match_result).where(confirmed: true)
   end
 
   def player_matches
