@@ -23,10 +23,6 @@ class MatchesController < ApplicationController
     end
   end
 
-  def all_matches
-    @matches = Match.all.order(date: :desc)
-  end
-
   def index
     @matches = Match.all.order(date: :desc)
   end
