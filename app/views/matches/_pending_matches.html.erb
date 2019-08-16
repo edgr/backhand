@@ -3,7 +3,7 @@
     <%# if match.match_result.confirmed == false  %>
       <div class="pending-match-card">
         <% if match.player_1 == current_user %>
-          <%= link_to edit_match_path(match), class: "match-card" do %>
+          <%= link_to edit_user_match_path(id: match.id), class: "match-card" do %>
             <%= cl_image_tag match.player_2.picture, class: "avatar"%>
             <div class="name-and-date">
               <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>

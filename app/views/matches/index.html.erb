@@ -1,31 +1,26 @@
 <div class="container">
-  <ul class="list-inline tabs-underlined" id="fix-top">
-    <li>
-      <a href="#" data-target="won" class="tab-underlined active">Won</a>
-    </li>
-    <li>
-      <a href="#" data-target="lost" class="tab-underlined">Lost</a>
-    </li>
-    <li id="pending-tab">
-      <a href="#" data-target="pending" class="tab-underlined">
-      Pending
-      </a>
-      <% if current_user.notify > 0 %>
-        <div class="pending-notifications">
-          <%= current_user.notify %>
+  <% @matches.each do |match| %>
+    <div class="index-match-card">
+      <div class="avatar-name-player-1">
+        <%= cl_image_tag match.player_1.picture, class: "avatar"%>
+        <div class="first-last-name">
+          <span class="first-name"><%= match.player_1.first_name %></span>
+          <span class="last-name"><%= match.player_1.last_name.upcase %></span>
         </div>
-      <% end %>
-    </li>
-  </ul>
-  <div id="won">
-    <%= render partial: "won_matches" %>
-  </div>
+      </div>
+      <div class="final-score">
+        <span class="score"><%= match.match_result.score %></span>
+        <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
+        <span class="location"><%= match.club.name %></span>
+      </div>
+      <div class="avatar-name-player-2">
+        <%= cl_image_tag match.player_2.picture, class: "avatar"%>
+        <div class="first-last-name">
+          <span class="first-name"><%= match.player_2.first_name %></span>
+          <span class="last-name"><%= match.player_2.last_name.upcase %></span>
+        </div>
+      </div>
+    </div>
 
-  <div class="hidden" id="lost">
-    <%= render partial: "lost_matches" %>
-  </div>
-
-  <div class="hidden" id="pending">
-    <%= render partial: "pending_matches" %>
-  </div>
+  <% end %>
 </div>

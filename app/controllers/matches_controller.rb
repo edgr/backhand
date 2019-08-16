@@ -19,6 +19,10 @@ class MatchesController < ApplicationController
   end
 
   def index
+    @matches = Match.joins(:match_result).where(confirmed: true)
+  end
+
+  def player_matches
     @matches = current_user.all_matches
     @won_matches = Match.joins(:match_result).where("winner_id = ? AND confirmed = ?", current_user, true).order(date: :desc)
     @lost_matches = Match.joins(:match_result).where("loser_id = ? AND confirmed = ?", current_user, true).order(date: :desc)

@@ -1,0 +1,31 @@
+<div class="container">
+  <ul class="list-inline tabs-underlined" id="fix-top">
+    <li>
+      <a href="#" data-target="won" class="tab-underlined active">Won</a>
+    </li>
+    <li>
+      <a href="#" data-target="lost" class="tab-underlined">Lost</a>
+    </li>
+    <li id="pending-tab">
+      <a href="#" data-target="pending" class="tab-underlined">
+      Pending
+      </a>
+      <% if current_user.notify > 0 %>
+        <div class="pending-notifications">
+          <%= current_user.notify %>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+  <div id="won">
+    <%= render partial: "won_matches" %>
+  </div>
+
+  <div class="hidden" id="lost">
+    <%= render partial: "lost_matches" %>
+  </div>
+
+  <div class="hidden" id="pending">
+    <%= render partial: "pending_matches" %>
+  </div>
+</div>
