@@ -13,7 +13,7 @@
                     input_html: { class: "select-your-opponent form-control" },
                     collection: current_user.opponents.map{|z| [z.full_name, z.id, data:{picture: z.picture.url}]} %>
         <%= simple_fields_for :match_result do |r| %>
-          <%= r.input :winner, label: "WHO WON?", input_html: {class: "select-the-winner form-control"}, collection: [current_user], label_method: :full_name %>
+          <%= r.input :winner, label: "WHO WON?", input_html: {class: "select-the-winner form-control"}, collection: [@match.player_1, @match.player_2], label_method: :full_name %>
         <% end %>
         <div class="how-many-sets d-flex">
           <div class="display-range-bar w-100">
@@ -36,7 +36,7 @@
               </div>
             </div>
             <div class="avatar-name-match-record">
-              <img src="<%= image_path 'profile.png' %>" class="avatar">
+              <img src="<%= cl_image_path @match.player_2.picture %>" class="avatar">
               <div class="player_2_name" id="player_2_name">
                 Opponent
               </div>
@@ -53,7 +53,7 @@
         </div>
         <hr class="score-separator-bottom">
 
-        <%= f.submit 'record match', class: "btn btn-primary cta-next" %>
+        <%= f.submit 'update match', class: "btn btn-primary cta-next" %>
 
       <% end %>
     </div>

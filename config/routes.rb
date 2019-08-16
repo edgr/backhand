@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # resources :challenges, only: [:index, :show, :update] do
   # end
 
-  resources :matches, only: [:new, :create, :show, :index, :update]
+  resources :matches, only: [:new, :create, :show, :index, :edit, :update]
 
   patch '/match_results/:id/confirm', to: 'match_results#confirm', as: 'confirm'
 
