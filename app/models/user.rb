@@ -144,6 +144,14 @@ class User < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  def all_matches
+    Match.where("player_1_id = ? OR player_2_id = ?", self, self)
+  end
+
+  def pending_matches
+    all_matches.joins(:match_result).where(confirmed: false)
+  end
+
   private
 
   def set_skills
