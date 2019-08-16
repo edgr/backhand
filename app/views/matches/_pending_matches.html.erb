@@ -3,7 +3,7 @@
     <%# if match.match_result.confirmed == false  %>
       <div class="pending-match-card">
         <% if match.player_1 == current_user %>
-          <%#= link_to edit_user_match_path(id: match.id), class: "match-card" do %>
+          <%= link_to edit_user_match_path(id: match.id), class: "match-card" do %>
             <%= cl_image_tag match.player_2.picture, class: "avatar"%>
             <div class="name-and-date">
               <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
@@ -16,7 +16,7 @@
             <div class="score">
               <%= match.match_result.score %>
             </div>
-          <%# end %>
+          <% end %>
           <a href="https://wa.me/<%= match.player_2.phone_number %>?text=Hi%20<%= match.player_2.first_name %>! Can you please confirm the score of our match on https://www.backhandapp.com? Thank you!" class="link-pending-matches">
             Ask <%= match.player_2.first_name %> to confirm
           </a>
