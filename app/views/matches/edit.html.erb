@@ -8,9 +8,12 @@
         required: true,
         label:"WHEN DID YOU PLAY?" %>
         <%= f.association :club, label:"WHERE DID YOU PLAY?", input_html: {class: "select-your-club form-control"} %>
-        <%= f.association :player_2, label:"WITH WHOM?", input_html: {class: "select-your-opponent form-control"}, label_method: :full_name %>
+        <%= f.input :player_2,
+                    label:"WITH WHOM?",
+                    input_html: { class: "select-your-opponent form-control" },
+                    collection: current_user.opponents.map{|z| [z.full_name, z.id, data:{picture: z.picture.url}]} %>
         <%= simple_fields_for :match_result do |r| %>
-          <%= r.input :winner, label: "WHO WON?", input_html: {class: "select-the-winner form-control"}, collection: [current_user], label_method: :full_name %>
+          <%= r.input :winner, label: "WHO WON?", input_html: {class: "select-the-winner form-control"}, collection: [@match.player_1, @match.player_2], label_method: :full_name %>
         <% end %>
         <div class="how-many-sets d-flex">
           <div class="display-range-bar w-100">
