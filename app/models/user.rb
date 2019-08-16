@@ -17,9 +17,6 @@ class User < ApplicationRecord
 
   belongs_to :club, optional: true
 
-  # has_many :sent_challenges, class_name: 'Challenge', foreign_key: :challenger_id, dependent: :destroy
-  # has_many :received_challenges, class_name: 'Challenge', foreign_key: :challengee_id, dependent: :destroy
-
   has_many :matches, foreign_key: :player_1_id, dependent: :destroy
   has_many :matches, foreign_key: :player_2_id, dependent: :destroy
 
@@ -110,16 +107,14 @@ class User < ApplicationRecord
     %w[baseliner attacker grinder server-volleyer puncher]
   end
 
-  # def all_challenges
-  #   self.sent_challenges.played + self.received_challenges.played
-  # end
-
   def matches_won
-    MatchResult.where(winner: self.id.to_s)
+    # MatchResult.where(winner: self.id.to_s)
+    MatchResult.where("winner_id = ? AND confirmed = ?", self.id.to_s, true)
   end
 
   def matches_lost
-    MatchResult.where(loser: self.id.to_s)
+    # MatchResult.where(loser: self.id.to_s)
+    MatchResult.where("loser_id = ? AND confirmed = ?", self.id.to_s, true)
   end
 
   def full_name
