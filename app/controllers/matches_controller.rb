@@ -29,11 +29,6 @@ class MatchesController < ApplicationController
 
   def index
     @matches = Match.all.order(date: :desc)
-    #@matches = Match.where("player_1_id = ? OR player_2_id = ?", current_user, current_user)
-    #@won_matches = Match.joins(:match_result).where("winner_id = ? AND confirmed = ?", current_user, true).order(date: :desc)
-    #@lost_matches = Match.joins(:match_result).where("loser_id = ? AND confirmed = ?", current_user, true).order(date: :desc)
-    #@pending_matches = []
-    #@matches.each { |match| @pending_matches << match if match.match_result.confirmed == false }
   end
 
   def player_matches

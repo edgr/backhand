@@ -24,6 +24,66 @@
   }
 }
 
+.index-match-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 8px 0;
+  width: 100%;
+  .avatar-name-player-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    .first-last-name {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .first-name {
+        font-size: 12px;
+        margin-top: 4px;
+        margin-bottom: -6px;
+      }
+      .last_name {
+        font-variant: caps;
+      }
+    }
+  }
+  .avatar-name-player-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    .first-last-name {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .first-name {
+        font-size: 12px;
+        margin-top: 4px;
+        margin-bottom: -6px;
+      }
+      .last_name {
+        font-variant: caps;
+      }
+    }
+  }
+  .final-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .score {
+      color: $black;
+    }
+    .date, .time {
+      font-size: 12px;
+    }
+  }
+}
+
 .match-card {
   position: relative;
   display: flex;
@@ -33,7 +93,7 @@
   background: white;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   border-radius: 4px;
-  margin: 8px;
+  margin: 8px 0;
   width: 100%;
   .player-name {
     color: $black;
