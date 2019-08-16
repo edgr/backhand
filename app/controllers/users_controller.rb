@@ -21,9 +21,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @reviews = UserReview.where(receiver: @user)
+    @played_matches = @user.matches_won + @user.matches_lost
     if @user.present?
-      unless @user.matches.count == 0
-        @progressbar = ((@user.matches_won.count / @user.matches.count.to_f) * 100).to_i
+      unless @played_matches.count == 0
+        @progressbar = ((@user.matches_won.count / @played_matches.count.to_f) * 100).to_i
       end
     end
   end
