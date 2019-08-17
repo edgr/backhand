@@ -12,14 +12,14 @@ class MatchesController < ApplicationController
     @match.player_1 = current_user
     if @match.save!
       update_match_result_score
-      redirect_to matches_path
+      redirect_to user_my_matches_path(current_user)
     else
       render :new
     end
   end
 
   def index
-    @matches = Match.joins(:match_result).where(confirmed: true)
+    @matches = Match.joins(:match_result).where("match_results.confirmed = true")
   end
 
   def player_matches
