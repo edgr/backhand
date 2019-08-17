@@ -19,7 +19,7 @@ class MatchesController < ApplicationController
   end
 
   def index
-    @matches = Match.joins(:match_result).where("match_results.confirmed = true")
+    @matches = Match.joins(:match_result).where("match_results.confirmed = true").order(date: :desc)
   end
 
   def player_matches
