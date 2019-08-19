@@ -61,8 +61,6 @@
   }
 }
 
-
-
 @media all and (min-width: 768px) {
   .cta-back-two-ctas, .cta-back-unique {
     max-width: 600px;
@@ -89,16 +87,4 @@
   margin-top: 1em;
   font-variant: small-caps;
   margin-bottom: 1em;
-}
-
-// styling for pop-up modal when challenging player
-
-.modal-body {
-  p {
-  color: $black;
-  }
-}
-
-.white-bt a {
-  color: white;
 }
