@@ -56,13 +56,13 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" id="match-result-confirm-body">
             <% if match.player_1 == match.match_result.winner %>
-              <p><%= match.player_1.first_name %> is asking you to confirm that you lost <%= match.match_result.score %>. Is this correct?</p>
+              <p class="result-sentence"><%= match.player_1.first_name %> is asking you to confirm that you lost <%= match.match_result.score %>. Is this correct?</p>
             <% else %>
-              <p><%= match.player_1.first_name %> is asking you to confirm that you won <%= match.match_result.score %>. Is this correct?</p>
+              <p class="result-sentence"><%= match.player_1.first_name %> is asking you to confirm that you won <%= match.match_result.score %>. Is this correct?</p>
             <% end %>
-            <p>If you disagree, click on 'No' below and discuss with your partner.</p>
+            <p class="result-sentence-info">PS. If you disagree, click on 'No' below and discuss with your partner.</p>
           </div>
           <div class="modal-footer" id="match-result-confirm-modal">
             <a href="https://wa.me/<%= match.player_1.phone_number %>?text=Hi%20<%= match.player_1.first_name %>!%20It seems that you made a mistake on the match record.%20Can you please fix it?" class="btn btn-secondary">
