@@ -38,6 +38,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    width: 25%;
     .first-last-name {
       display: flex;
       flex-direction: column;
@@ -57,6 +58,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    width: 25%;
     .first-last-name {
       display: flex;
       flex-direction: column;
@@ -66,8 +68,9 @@
         margin-top: 4px;
         margin-bottom: -6px;
       }
-      .last_name {
-        font-variant: caps;
+      .last-name {
+        // font-variant: caps;
+        text-align: right;
       }
     }
   }
