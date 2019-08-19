@@ -4,7 +4,7 @@ class MatchResultsController < ApplicationController
   def confirm
     update_players_points
     @match_result.update(confirmed: true)
-    redirect_to matches_path
+    redirect_to user_my_matches_path(current_user)
   end
 
   def update_players_points
