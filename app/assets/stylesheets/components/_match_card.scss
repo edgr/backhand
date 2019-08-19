@@ -52,6 +52,9 @@
         font-variant: caps;
       }
     }
+    &.winner-black {
+      color: $black;
+    }
   }
   .avatar-name-player-2 {
     display: flex;
@@ -69,9 +72,11 @@
         margin-bottom: -6px;
       }
       .last-name {
-        // font-variant: caps;
         text-align: right;
       }
+    }
+    &.winner-black {
+      color: $black;
     }
   }
   .final-score {

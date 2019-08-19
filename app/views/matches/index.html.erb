@@ -1,7 +1,8 @@
 <div class="container">
   <% @matches.each do |match| %>
     <div class="index-match-card">
-      <div class="avatar-name-player-1">
+      <!-- <div class="avatar-name-player-1"> -->
+      <div class="<%= match.match_result.winner == match.player_1 ? 'avatar-name-player-1 winner-black' : 'avatar-name-player-1' %>">
         <%= cl_image_tag match.player_1.picture, class: "avatar"%>
         <div class="first-last-name">
           <span class="first-name"><%= match.player_1.first_name %></span>
@@ -13,7 +14,8 @@
         <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
         <span class="location"><%= match.club.shortname %></span>
       </div>
-      <div class="avatar-name-player-2">
+      <!-- <div class="avatar-name-player-2"> -->
+      <div class="<%= match.match_result.winner == match.player_2 ? 'avatar-name-player-2 winner-black' : 'avatar-name-player-2' %>">
         <%= cl_image_tag match.player_2.picture, class: "avatar"%>
         <div class="first-last-name">
           <span class="first-name"><%= match.player_2.first_name %></span>
