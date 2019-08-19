@@ -14,7 +14,14 @@
               </div>
             </div>
             <div class="score">
-              <%= match.match_result.score %>
+              <span><%= match.match_result.score %></span>
+              <span>
+                <% if match.match_result.winner == match.player_1%>
+                  (you won)
+                <% else %>
+                  <%= "(#{match.player_2.first_name} won)" %>
+                <% end %>
+              </span>
             </div>
           <% end %>
           <a href="https://wa.me/<%= match.player_2.phone_number %>?text=Hi%20<%= match.player_2.first_name %>! Can you please confirm the score of our match on https://www.backhandapp.com? Thank you!" class="link-pending-matches">
@@ -36,6 +43,13 @@
             <div class="score">
               <span>
                 <%= match.match_result.score %>
+              </span>
+              <span>
+                <% if match.match_result.winner == match.player_2%>
+                  (you won)
+                <% else %>
+                  <%= "(#{match.player_1.first_name} won)" %>
+                <% end %>
               </span>
             </div>
           </div>
