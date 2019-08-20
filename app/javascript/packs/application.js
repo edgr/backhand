@@ -20,6 +20,7 @@ import { selectOpponent } from '../components/select_opponent';
 import { selectSets } from '../components/select_sets';
 import { reviewSteps } from '../components/review_steps';
 import { selectSkillValue } from '../components/skills_rating';
+import { picUpload } from '../components/pic_upload';
 
 const tabs = document.querySelectorAll(".tab-underlined");
 if (tabs) { tabs.forEach(addListener) };
@@ -39,3 +40,4 @@ selectOpponent();
 selectSets();
 reviewSteps();
 selectSkillValue();
+picUpload();

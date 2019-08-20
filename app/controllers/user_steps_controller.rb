@@ -22,6 +22,7 @@ class UserStepsController < ApplicationController
       step3
     end
     @user.update_attributes(user_params)
+    raise
     render_wizard @user
   end
 
