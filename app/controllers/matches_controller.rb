@@ -7,7 +7,7 @@ class MatchesController < ApplicationController
   def create
     @match = Match.new(match_params)
     @match.player_2 = User.find(params[:match][:player_2]) unless params[:match][:player_2].empty?
-    params[:match_result][:winner].to_i == current_user.id ? loser_id = params[:match][:player_2_id] : loser_id = current_user.id
+    params[:match_result][:winner].to_i == current_user.id ? loser_id = params[:match][:player_2].to_i : loser_id = current_user.id
     @match_result = MatchResult.create(match: @match, winner_id: params[:match_result][:winner], loser_id: loser_id)
     @match.player_1 = current_user
     if @match.save!
