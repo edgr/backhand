@@ -1,26 +1,21 @@
 <div class="container">
-  <table>
-    <thead>
-        <tr>
-            <th colspan="1">Ranking</th>
-            <th colspan="1">Country</th>
-            <th colspan="1">Name</th>
-            <th colspan="1">Club</th>
-            <th colspan="1">Points</th>
-        </tr>
-    </thead>
+  <table class="ranking-table">
     <tbody>
       <% @users.each do |user| %>
-        <% present user do |user_presenter| %>
-          <tr>
-            <td><%= user.ranking %></td>
-            <td>
-              <span class="flag-icon flag-icon-by flag-icon-<%= user.country.downcase %>"></span>
-            </td>
-            <td><%= user_presenter.full_name %></td>
-            <td><%= user.club.shortname %></td>
-            <td><%= user_presenter.points %> </td>
-          </tr>
+          <% present user do |user_presenter| %>
+            <tr>
+              <td class="center-text-table rankings-table"><%= user.ranking %></td>
+              <td class="center-text-table">
+                <span class="flag-icon flag-icon-by flag-icon-<%= user.country.downcase %>"></span>
+              </td>
+              <td class="text-align-left">
+                <%= link_to user_path(user) do %>
+                  <%= user_presenter.full_name %>
+                <% end %>
+              </td>
+              <td class="center-text-table"><%= user.club.shortname %></td>
+              <td class="center-text-table points-table"><%= user_presenter.points %> </td>
+            </tr>
         <% end %>
       <% end %>
     </tbody>
