@@ -29,6 +29,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def rankings
+    @users = User.all.sort_by { |user| user.points }.reverse
+  end
+
 
   private
 

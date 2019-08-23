@@ -1,0 +1,25 @@
+.ranking-table {
+  width: 100%;
+  a {
+    text-decoration: none;
+    display: block;
+    color: $black;
+  }
+  tbody {
+    font-size: 12px;
+    color: $black;
+    tr {
+      height: 40px;
+      border-bottom: solid 1px $gray;
+      .center-text-table {
+        text-align: center;
+      }
+      .text-align-left {
+        text-align: left;
+      }
+      .rankings-table, .points-table {
+        font-family: 'Saira Extra Condensed', sans-serif;
+      }
+    }
+  }
+}
