@@ -35,6 +35,7 @@ end
 puts "destroy all"
 
 MatchResult.destroy_all
+Match.destroy_all
 User.destroy_all
 Club.destroy_all
 
@@ -98,7 +99,7 @@ players = []
     birthday: Faker::Date.birthday(18, 65),
     points: rand(500..2000),
     handedness: ["righty","lefty"].sample,
-    club_id: [1,2,3,4,5].sample,
+    club_id: Club.all.sample.id,
     backhand_style: ["one handed backhand","two handed backhand"].sample,
     status: "active"
     )
@@ -130,7 +131,7 @@ end
     longitude: Faker::Address.longitude,
     birthday: Faker::Date.birthday(18, 65),
     handedness: ["righty","lefty"].sample,
-    club_id: [1,2,3,4,5].sample,
+    club_id: Club.all.sample.id,
     backhand_style: ["one handed backhand","two handed backhand"].sample,
     status: "active"
     )
@@ -160,7 +161,7 @@ end
     longitude: Faker::Address.longitude,
     birthday: Faker::Date.birthday(18, 65),
     handedness: ["righty","lefty"].sample,
-    club_id: [1,2,3,4,5].sample,
+    club_id: Club.all.sample.id,
     backhand_style: ["one handed backhand","two handed backhand"].sample,
     status: "active"
     )
