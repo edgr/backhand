@@ -13,7 +13,11 @@
                   <%= user_presenter.full_name %>
                 <% end %>
               </td>
-              <td class="center-text-table"><%= user.club.shortname %></td>
+              <td class="center-text-table">
+                <% if user.club.present? %>
+                  <%= user.club.shortname %>
+                <% end %>
+              </td>
               <td class="center-text-table points-table"><%= user_presenter.points %> </td>
             </tr>
         <% end %>
