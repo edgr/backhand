@@ -1,0 +1,28 @@
+<div class="container">
+  <table>
+    <thead>
+        <tr>
+            <th colspan="1">Ranking</th>
+            <th colspan="1">Country</th>
+            <th colspan="1">Name</th>
+            <th colspan="1">Club</th>
+            <th colspan="1">Points</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <% present user do |user_presenter| %>
+          <tr>
+            <td><%= user.ranking %></td>
+            <td>
+              <span class="flag-icon flag-icon-by flag-icon-<%= user.country.downcase %>"></span>
+            </td>
+            <td><%= user_presenter.full_name %></td>
+            <td><%= user.club.shortname %></td>
+            <td><%= user_presenter.points %> </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

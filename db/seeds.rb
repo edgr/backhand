@@ -38,6 +38,16 @@ MatchResult.destroy_all
 User.destroy_all
 Club.destroy_all
 
+puts "creating clubs"
+
+Club.create!(name: 'FC Barcelona', shortname: 'FCB')
+Club.create!(name: 'Real Madrid', shortname: 'RM')
+Club.create!(name: 'Real Sociedad', shortname: 'RS')
+Club.create!(name: 'FC Lisboa', shortname: 'FCL')
+Club.create!(name: 'Paris Saint Germain', shortname: 'PSG')
+
+puts "5 clubs created!"
+
 puts "creating users"
 
 names = ['Monica', 'Nam', 'Juan', 'Carlos', 'Christine', 'Phillip', 'Joel', 'Lukas', 'Jackson', 'Ricardo', 'Meder', 'Cristobal', 'Valentin', 'David', 'Claire', 'Florin', 'Ashley']
@@ -88,6 +98,7 @@ players = []
     birthday: Faker::Date.birthday(18, 65),
     points: rand(500..2000),
     handedness: ["righty","lefty"].sample,
+    club_id: [1,2,3,4,5].sample,
     backhand_style: ["one handed backhand","two handed backhand"].sample,
     status: "active"
     )
@@ -119,6 +130,7 @@ end
     longitude: Faker::Address.longitude,
     birthday: Faker::Date.birthday(18, 65),
     handedness: ["righty","lefty"].sample,
+    club_id: [1,2,3,4,5].sample,
     backhand_style: ["one handed backhand","two handed backhand"].sample,
     status: "active"
     )
@@ -148,6 +160,7 @@ end
     longitude: Faker::Address.longitude,
     birthday: Faker::Date.birthday(18, 65),
     handedness: ["righty","lefty"].sample,
+    club_id: [1,2,3,4,5].sample,
     backhand_style: ["one handed backhand","two handed backhand"].sample,
     status: "active"
     )
@@ -155,17 +168,6 @@ end
   players << leo
 
   puts "finsihed creating players"
-
-  puts "creating clubs"
-
-  Club.create!(name: 'FC Barcelona')
-  Club.create!(name: 'Real Madrid')
-  Club.create!(name: 'Real Sociedad')
-  Club.create!(name: 'FC Lisboa')
-  Club.create!(name: 'Paris Saint Germain')
-  Club.create!(name: 'FC Barcelona')
-
-  puts "6 clubs created!"
 
   puts "creating matches"
   counter = 1
