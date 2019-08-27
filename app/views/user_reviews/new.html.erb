@@ -19,12 +19,12 @@
       <label class="user-comment" for="user_review[content]">How is playing with <%= @user.first_name %>?</label>
       <%= f.input :content, as: :text, label: false %>
       <div class="cta-back-unique">
-        <span class="btn btn-flat" id="next-review-step">Next</span>
+        <span class="btn btn-flat" id="next-review-step">Review <%= @user.first_name %> skills</span>
       </div>
     </div>
 
     <div class="form-group user-review-step2">
-      <p>How about <%= @user.first_name %>'s skills?</p>
+      <p><%= @user.first_name %>'s skills</p>
       <div class="stroke-fitness-review">
         <span class="given-score">1</span>
         <%= f.input :serve, as: :range, label: "serve", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
@@ -45,6 +45,13 @@
         <span class="given-score">1</span>
         <%= f.input :volley, as: :range, label: "volley", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
       </div>
+      <div class="cta-back-unique">
+        <span class="btn btn-flat" id="last-review-step">Review <%= @user.first_name %> fitness</span>
+      </div>
+    </div>
+
+    <div class="form-group user-review-step3">
+      <p><%= @user.first_name %>'s fitness</p>
       <div class="stroke-fitness-review">
         <span class="given-score">1</span>
         <%= f.input :speed, as: :range, label: "speed", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
@@ -57,7 +64,6 @@
         <span class="given-score">1</span>
         <%= f.input :endurance, as: :range, label: "endurance", input_html: { min: '0', max: '10', step: '1', class: "review-skills-score" }, required: false %>
       </div>
-
       <div class="cta-back-two-ctas">
         <span class="btn btn-flat cta-back-button" id="back-review-step">back</span>
         <%= f.button :submit, "review now",  class: "btn btn-flat cta-save-review" %>
