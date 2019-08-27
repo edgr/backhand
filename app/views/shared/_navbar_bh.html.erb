@@ -3,18 +3,26 @@
     <p class="logo-back">BACK</p> <p class="logo-hand">HAND</p>
   <% end %>
   <% if user_signed_in? %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
-      <% if current_user.picture.present? %>
-        <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", class: "avatar-bordered")%>
-      <% else %>
-        <%= image_tag "profile.png", class: "avatar-bordered"%>
-      <% end %>
-      <% if current_user.notify > 0 %>
-        <div class="avatar-notifications">
-          <%= current_user.notify %>
-        </div>
-      <% end %>
-    </button>
+  <div class="d-flex d-lg-none">
+    <% present current_user do |user_presenter| %>
+      <span class="nav-points-ranking">
+        pts <%= user_presenter.points %><br>
+        #<%= user_presenter.ranking %>
+      </span>
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
+        <% if current_user.picture.present? %>
+          <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", class: "avatar-bordered")%>
+        <% else %>
+          <%= image_tag "profile.png", class: "avatar-bordered"%>
+        <% end %>
+        <% if current_user.notify > 0 %>
+          <div class="avatar-notifications">
+            <%= current_user.notify %>
+          </div>
+        <% end %>
+      </button>
+    <% end %>
+  </div>
 
     <div class="collapse navbar-collapse" id="menu-content">
       <ul class="navbar-nav w-100 mt-2 mt-lg-0">
@@ -46,23 +54,35 @@
           <%= link_to "Record a Match", new_match_path, class: "nav-link" %>
         </li>
         <div class="d-flex">
-          <li class="nav-item">
+          <li class="nav-item d-lg-none">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
 
           <li class="nav-item d-none d-lg-flex">
-            <% if current_user.picture.present? %>
-              <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", class: "avatar-bordered")%>
-            <% else %>
-              <%= image_tag "profile.png", class: "avatar-bordered"%>
-            <% end %>
-            <% if current_user.notify > 0 %>
-              <div class="avatar-notifications">
-                <%= current_user.notify %>
+            <% present current_user do |user_presenter| %>
+            <li class="nav-item dropdown d-none d-lg-flex">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <% if current_user.picture.present? %>
+                <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", class: "avatar-bordered")%>
+                <% else %>
+                  <%= image_tag "profile.png", class: "avatar-bordered"%>
+                <% end %>
+              </a>
+              <div class="dropdown-menu">
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
               </div>
+            </li>
+              <span class="nav-points-ranking d-none d-lg-flex  ">
+                pts <%= user_presenter.points %><br>
+                #<%= user_presenter.ranking %>
+              </span>
+              <% if current_user.notify > 0 %>
+                <div class="avatar-notifications">
+                  <%= current_user.notify %>
+                </div>
+              <% end %>
             <% end %>
           </li>
-
         </div>
         </li>
       </ul>

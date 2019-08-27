@@ -17,6 +17,10 @@ class UserPresenter < BasePresenter
     user.points.to_d.truncate(2).to_f
   end
 
+  def ranking
+    user.ranking
+  end
+
   def serve
     (user.computed_skills_set.serve * 10).to_i
   end

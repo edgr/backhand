@@ -55,3 +55,36 @@
   right: -10px;
   font-family: 'Saira Extra Condensed', sans-serif;
 }
+
+.nav-points-ranking {
+  align-self: flex-end;
+  margin-right: 8px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.dropdown-menu {
+  .nav-link {
+    color: $black !important;
+  }
+}
+
+.dropdown-toggle {
+  padding: 0 !important;
+  &:after {
+    display: none;
+  }
+}
+
+.dropdown-menu {
+  right: 0;
+}
+
+@media all and (min-width: 768px) {
+  .nav-points-ranking {
+    text-align: left;
+    margin-left: 8px;
+  }
+}
