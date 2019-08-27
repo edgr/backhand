@@ -1,7 +1,7 @@
 .stroke-fitness-review {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   .form-group {
     flex-grow: 1;
     flex-direction: column;
@@ -42,8 +42,9 @@
   }
 }
 
-.user-review-step2 {
+.user-review-step2, .user-review-step3 {
   p {
     color: $black;
+    text-align: center;
   }
 }
