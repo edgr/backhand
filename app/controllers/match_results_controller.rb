@@ -3,6 +3,7 @@ class MatchResultsController < ApplicationController
 
   def confirm
     update_players_points
+    update_players_levels
     @match_result.update(confirmed: true)
     redirect_to user_my_matches_path(current_user)
   end
@@ -16,6 +17,27 @@ class MatchResultsController < ApplicationController
   end
 
   private
+
+  def update_players_levels
+    players = []
+    players << @match.player_1
+    players << @match.player_2
+
+    players.each do |player|
+      if player.points >= 1800
+        player.level = "Pro"
+      elsif player.points >= 1400
+        player.level = "Semi-pro"
+      elsif player.points >= 1000
+        player.level = "Advanced"
+      elsif player.points >= 600
+        player.level = "Intermediate"
+      elsif player.points >= 0
+        player.level = "Beginner"
+      end
+      player.save
+    end
+  end
 
   def set_match_and_match_result
     @match_result = MatchResult.find(params[:id])
