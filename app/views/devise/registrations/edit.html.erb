@@ -115,9 +115,9 @@
               <div class="card-body">
                 <div class="form-inputs form-label">
                   <div class="custom-file imgUp">
-                    <div class="imagePreview" data-picture="<%= cl_image_path current_user.picture %>"></div>
+                    <div class="imagePreview"  id="edit-photo-form" data-picture="<%= cl_image_path current_user.picture %>"></div>
                     <label class="btn btn-primary upload">Upload
-                    <%= f.input :picture, input_html: {class: "edit-file-input"} %></label>
+                    <%= f.input :picture, input_html: {class: "custom-file-input"} %></label>
                     <%= f.input :picture_cache, as: :hidden %>
                   </div>
                   <%= f.input :bio,
