@@ -10,12 +10,12 @@
         <% else %>
           <img class="img-show" src="<%= image_path 'profile.png' %>">
         <% end %>
-        <div class="ranking-show">
+        <div class="points-show">
           <span>
-            WR
+            pts
           </span>
-          <div class="rank-show">
-            #<%= @user.ranking %>
+          <div class="point-show">
+            <%= user_presenter.points %>
           </div>
         </div>
       </div>

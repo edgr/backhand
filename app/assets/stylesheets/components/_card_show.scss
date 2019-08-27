@@ -35,22 +35,22 @@
   }
 }
 
-.ranking-show {
+.points-show {
   position: absolute;
   display: flex;
   align-items: baseline;
   color: $black;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   background-color: $gray;
   right: 0px;
   bottom: 0px;
   border-top-left-radius: 5px;
   padding-right: 6px;
   padding-left: 6px;
-  .rank-show {
+  .point-show {
     font-family: 'Saira Extra Condensed', sans-serif;
-    font-size: 30px;
+    font-size: 24px;
     margin-left: 3px;
     color: white;
     text-shadow: 0.5px 0.5px 2px black;

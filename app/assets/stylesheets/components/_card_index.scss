@@ -44,7 +44,7 @@
   padding: 10px;
 }
 
-.ranking {
+.points {
   position: absolute;
   display: flex;
   align-items: baseline;
@@ -56,9 +56,9 @@
   border-top-left-radius: 5px;
   padding-right: 6px;
   padding-left: 6px;
-  .rank {
+  .point {
     font-family: 'Saira Extra Condensed', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     margin-left: 3px;
     color: white;
     text-shadow: 0.5px 0.5px 2px black;

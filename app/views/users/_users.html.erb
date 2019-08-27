@@ -11,10 +11,10 @@
               <% else %>
                 <img class="img" src="<%= image_path 'profile.png' %>">
               <% end %>
-              <div class="ranking">
-                <span>WR</span>
-                <div class="rank">
-                  #<%= user.ranking %>
+              <div class="points">
+                <span>pts</span>
+                <div class="point">
+                  <%= user_presenter.points %>
                 </div>
               </div>
             </div>
