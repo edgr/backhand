@@ -257,12 +257,14 @@
       <% @reviews.each do |review| %>
         <div class="review-avatar">
           <p><%= review.content %></p>
-          <div class="avatar-name">
-            <%= cl_image_tag(review.sender.picture, class:"avatar") %>
-            <h2>
-              <%= review.sender.first_name %> <%= review.sender.last_name.first %>.
-            </h2>
-          </div>
+            <%= link_to user_path(review.sender) do %>
+            <div class="avatar-name">
+              <%= cl_image_tag(review.sender.picture, class:"avatar") %>
+              <h2>
+                <%= review.sender.first_name %>
+              </h2>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
