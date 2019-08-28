@@ -29,7 +29,9 @@ class UsersController < ApplicationController
   end
 
   def rankings
-    @users = User.all.sort_by { |user| user.ranking }
+    @users = User.where(status: "active")
+    update_ranking
+    @users = @users.sort_by { |user| user.ranking }
   end
 
 
