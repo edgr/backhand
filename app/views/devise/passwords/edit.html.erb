@@ -10,7 +10,7 @@
 
       <div class="form-inputs">
         <%= f.input :password,
-        label: "New password",
+        label: "New password (min 8 characters)",
         required: true,
         autofocus: true,
         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
