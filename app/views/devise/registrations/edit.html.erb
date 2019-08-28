@@ -114,11 +114,12 @@
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionEditProfile">
               <div class="card-body">
                 <div class="form-inputs form-label">
-                  <div class="custom-file imgUp">
+                  <div class="custom-file">
                     <div class="imagePreview"  id="edit-photo-form" data-picture="<%= cl_image_path current_user.picture %>"></div>
-                    <label class="btn btn-primary upload">Upload
-                    <%= f.input :picture, input_html: {class: "custom-file-input"} %></label>
-                    <%= f.input :picture_cache, as: :hidden %>
+                    <label class="btn btn-primary upload">Upload Picture
+                      <%= f.input :picture, input_html: {class: "custom-file-input"}, label: false %>
+                      <%= f.input :picture_cache, as: :hidden %>
+                    </label>
                   </div>
                   <%= f.input :bio,
                               label: "BIO",
