@@ -15,12 +15,12 @@
 
       <%= simple_form_for @user, url: wizard_path do |f| %>
         <div class="form-inputs form-label">
-          <div class="custom-file imgUp">
+          <div class="custom-file">
             <div class="imagePreview"></div>
-            <label class="btn btn-primary upload">Upload
-            <%= f.input :picture, input_html: {class: "custom-file-input" } %></label>
-
+            <label class="btn btn-primary upload">Upload Picture
+            <%= f.input :picture, input_html: {class: "custom-file-input" }, label: false %>
             <%= f.input :picture_cache, as: :hidden %>
+            </label>
           </div>
           <%= f.input :bio,
                       label: "BIO",
