@@ -2,7 +2,7 @@ class SearchUsers
   attr_reader :params
   def initialize(params = {})
     @params = params
-    @scope = User.all
+    @scope = User.where(status: "active")
   end
 
   def call
