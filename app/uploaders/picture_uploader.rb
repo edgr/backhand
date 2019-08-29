@@ -1,24 +1,9 @@
 class PictureUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
-  version :rotated_90 do
-    eager
-    cloudinary_transformation transformation: [
-      { angle: 90 }
-    ]
-  end
+  process :custom_angle
 
-  version :rotated_180 do
-    eager
-    cloudinary_transformation transformation: [
-      { angle: 180 }
-    ]
-  end
-
-  version :rotated_270 do
-    eager
-    cloudinary_transformation transformation: [
-      { angle: 270 }
-    ]
+  def custom_angle
+    return :x => model.angle
   end
 end

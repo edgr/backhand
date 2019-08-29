@@ -1,4 +1,5 @@
 const imagePreview = document.querySelector(".imagePreview");
+const imageAngle = document.getElementById("user_angle");
 
 const getOrientation = (file, callback) => {
   const reader = new FileReader();
@@ -50,6 +51,7 @@ const convertRotationToDegrees = (number) => {
     default:
       rotationInDegrees = 0;
   }
+  imageAngle.value = rotationInDegrees;
   imagePreview.setAttribute('style',`transform:rotate(${rotationInDegrees}deg)`);
 }
 
