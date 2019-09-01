@@ -115,7 +115,11 @@
               <div class="card-body">
                 <div class="form-inputs form-label">
                   <div class="custom-file">
-                    <div class="imagePreview"  id="edit-photo-form" data-picture="<%= cl_image_path current_user.picture %>"></div>
+                    <% if @user.picture.present? %>
+                      <div class="imagePreview"  id="edit-photo-form" data-picture="<%= cl_image_path current_user.picture %>"></div>
+                    <% else %>
+                      <img src="<%= image_path 'profile.png' %>" class="avatar">
+                    <% end %>
                     <label class="btn btn-primary upload">Upload Picture
                       <%= f.input :picture, input_html: {class: "custom-file-input"}, label: false %>
                       <%= f.input :picture_cache, as: :hidden %>
