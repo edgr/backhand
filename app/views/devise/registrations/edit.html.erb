@@ -116,7 +116,7 @@
                 <div class="form-inputs form-label">
                   <div class="custom-file">
                     <% if @user.picture.present? %>
-                      <div class="imagePreview"  id="edit-photo-form" data-picture="<%= cl_image_path current_user.picture %>"></div>
+                      <img src="http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg" alt="" class="imagePreview" id="edit-photo-form" data-picture="<%= cl_image_path current_user.picture %>">
                     <% else %>
                       <img src="<%= image_path 'profile.png' %>" class="avatar">
                     <% end %>
@@ -125,6 +125,7 @@
                       <%= f.input :picture_cache, as: :hidden %>
                     </label>
                   </div>
+                  <input type="hidden" id="user_angle" name="user[angle]" value="0">
                   <%= f.input :bio,
                               label: "BIO",
                               placeholder: "This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc." %>

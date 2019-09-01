@@ -1,5 +1,4 @@
 class UserMailer < ApplicationMailer
-
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -10,6 +9,7 @@ class UserMailer < ApplicationMailer
     mail(
       to: @user.email,
       subject: 'Welcome to Backhand',
+      bcc: 'edouard@backhandapp.com',
       name: @user.first_name
     )
   end
