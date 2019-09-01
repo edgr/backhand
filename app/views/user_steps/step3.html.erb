@@ -16,7 +16,7 @@
       <%= simple_form_for @user, url: wizard_path do |f| %>
         <div class="form-inputs form-label">
           <div class="custom-file">
-            <img src="http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg" alt="" class="imagePreview">
+            <div class="imagePreview"></div>
             <label class="btn btn-primary upload">Upload Picture
             <%= f.input :picture, input_html: {class: "custom-file-input" }, label: false %>
             <%= f.input :picture_cache, as: :hidden %>
