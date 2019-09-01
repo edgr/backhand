@@ -16,12 +16,13 @@
       <%= simple_form_for @user, url: wizard_path do |f| %>
         <div class="form-inputs form-label">
           <div class="custom-file">
-            <div class="imagePreview"></div>
+            <img src="http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg" alt="" class="imagePreview">
             <label class="btn btn-primary upload">Upload Picture
             <%= f.input :picture, input_html: {class: "custom-file-input" }, label: false %>
             <%= f.input :picture_cache, as: :hidden %>
             </label>
           </div>
+          <input type="hidden" id="user_angle" name="user[angle]" value="0">
           <%= f.input :bio,
                       label: "BIO",
                       placeholder: "This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc." %>
