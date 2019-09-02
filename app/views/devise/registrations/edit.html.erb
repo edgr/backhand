@@ -116,8 +116,9 @@
                 <div class="form-inputs form-label">
                   <div class="custom-file">
                     <% if @user.picture.present? %>
-                      <img src="http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg" alt="" class="imagePreview" id="edit-photo-form" data-picture="<%= cl_image_path current_user.picture %>">
+                      <div class="imagePreview"  id="edit-photo-form" data-picture="<%= cl_image_path current_user.picture %>"></div>
                     <% else %>
+                      <div class="imagePreview"  id="edit-photo-form"></div>
                       <img src="http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg" alt="" class="imagePreview">
                     <% end %>
                     <label class="btn btn-primary upload">Upload Picture

@@ -52,21 +52,30 @@ const convertRotationToDegrees = (number) => {
       rotationInDegrees = 0;
   }
   imageAngle.value = rotationInDegrees;
-  imagePreview.setAttribute('style',`transform:rotate(${rotationInDegrees}deg)`);
+  if (rotationInDegrees == 90 || rotationInDegrees == 270) {
+    imagePreview.style.transform = `rotate(${rotationInDegrees}deg)`;
+    imagePreview.style.width = '210px';
+    imagePreview.style.backgroundSize = 'cover';
+  } else {
+    imagePreview.style.transform = `rotate(${rotationInDegrees}deg)`;
+    imagePreview.style.height = '210px';
+    imagePreview.style.width = '100%';
+    imagePreview.style.backgroundSize = 'cover';
+  }
 }
 
 const photoPreview = () => {
   const uploadInput = document.querySelector(".custom-file-input");
   const edit = document.getElementById("edit-photo-form");
   if (edit) {
-    imagePreview.src = imagePreview.dataset.picture
+    imagePreview.style.backgroundImage = `url(${imagePreview.dataset.picture})`
   }
   if (uploadInput) {
     uploadInput.addEventListener('change', () => {
       const fReader = new FileReader();
       fReader.readAsDataURL(uploadInput.files[0]);
       fReader.addEventListener('loadend', (event) => {
-        imagePreview.src = event.target.result;
+        imagePreview.style.backgroundImage = `url("${event.target.result}")`;
         getOrientation(uploadInput.files[0], (orientation) => {
           convertRotationToDegrees(orientation);
         });
