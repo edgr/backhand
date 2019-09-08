@@ -34,7 +34,7 @@
 
       <div class="level-style-show">
         <div class="level-style">
-          <%= @user.level %>
+          <%= @user.level.downcase %>
         </div>
         <div class="level-style">
           <%= @user.style_of_play %>
@@ -59,7 +59,7 @@
         <div class="details">
           <br>
           <!-- <p>age: <%= @user.birthday %></p> -->
-          <p>age: <span class="details-info"><%= @user.age %> years</span></p>
+          <p>age: <span class="details-info"><%= @user.age %> years old</span></p>
 
           <p>birthday: <span class="details-info"><%= @user.birthday %></span></p>
           <p>place of birth: <span class="details-info address-place"><%= @user.place_of_birth %></span></p>
