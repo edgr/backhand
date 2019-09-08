@@ -24,14 +24,26 @@ class MatchResultsController < ApplicationController
     players << @match.player_2
 
     players.each do |player|
-      if player.points >= 1800
+      if player.points >= 2200
         player.level = "Pro"
-      elsif player.points >= 1400
+      elsif player.points >= 2000
+        player.level = "Semi-pro +"
+      elsif player.points >= 1800
         player.level = "Semi-pro"
+      elsif player.points >= 1600
+        player.level = "Expert +"
+      elsif player.points >= 1400
+        player.level = "Expert"
+      elsif player.points >= 1200
+        player.level = "Advanced +"
       elsif player.points >= 1000
         player.level = "Advanced"
+      elsif player.points >= 800
+        player.level = "Intermediate +"
       elsif player.points >= 600
         player.level = "Intermediate"
+      elsif player.points >= 400
+        player.level = "Beginner +"
       elsif player.points >= 0
         player.level = "Beginner"
       end

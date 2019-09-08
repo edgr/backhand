@@ -38,15 +38,27 @@ class UserStepsController < ApplicationController
   def set_points
     case params[:user][:level]
     when "Beginner"
+      @user.points = 200
+    when "Beginner +"
       @user.points = 400
     when "Intermediate"
+      @user.points = 600
+    when "Intermediate +"
       @user.points = 800
     when "Advanced"
+      @user.points = 1000
+    when "Advanced +"
       @user.points = 1200
-    when "Semi-pro"
+    when "Expert"
+      @user.points = 1400
+    when "Expert +"
       @user.points = 1600
-    when "Pro"
+    when "Semi-pro"
+      @user.points = 1800
+    when "Semi-pro +"
       @user.points = 2000
+    when "Pro"
+      @user.points = 2200
     end
   end
 
