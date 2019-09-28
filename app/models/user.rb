@@ -87,6 +87,10 @@ class User < ApplicationRecord
     User.active.where.not(id: self.id)
   end
 
+  def partners
+    User.active.where.not(id: self.id)
+  end
+
   def self.levels
     # %w[Beginner 'Beginner +' Intermediate 'Intermediate +' Advanced 'Advanced +' Expert 'Expert +' Semi-pro 'Semi-pro +' Pro]
     ["Beginner", "Beginner +", "Intermediate", "Intermediate +", "Advanced", "Advanced +", "Expert", "Expert +", "Semi-pro", "Semi-pro +", "Pro"]

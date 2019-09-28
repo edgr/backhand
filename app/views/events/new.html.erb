@@ -1,0 +1,15 @@
+<div class="container">
+  <%= simple_form_for [@user, @event] do |f| %>
+    <%= f.input :player_2,
+        label:"WHO WILL YOU PLAY WITH?",
+        input_html: { class: "select-your-opponent form-control" },
+        collection: current_user.opponents.map{|z| [z.full_name, z.id]} %>
+    <%= f.input :date_time,
+        input_html: {class: "datepicker-event"},
+        as: :string,
+        required: true,
+        label:"WHEN WILL YOU PLAY?" %>
+    <%= f.association :club, label:"WHERE WILL YOU PLAY?", input_html: {class: "select-club form-control"} %>
+    <%= f.submit %>
+  <% end %>
+</div>
