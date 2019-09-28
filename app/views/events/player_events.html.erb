@@ -1,0 +1,18 @@
+<div class="container">
+  <% @events.each do |event| %>
+    <div class="event-card">
+      <div class="avatar-name-club">
+        <%= cl_image_tag event.player_2.picture, class: "avatar"%>
+        <div class="name-club">
+          <span class="name">
+            <%= event.player_2.full_name %>
+          </span>
+          <span class="club">
+            at <%= event.club.name %>
+          </span>
+        </div>
+      </div>
+      <%= event.date_time.strftime("%I:%M%p") %>
+    </div>
+  <% end %>
+</div>
