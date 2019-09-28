@@ -147,6 +147,10 @@ class User < ApplicationRecord
     Match.where("matches.player_1_id = ? OR matches.player_2_id = ?", self, self)
   end
 
+  def all_events
+    Event.where("events.player_1_id = ? OR events.player_2_id = ? OR events.player_3_id = ? OR events.player_4_id = ?", self, self, self, self)
+  end
+
   def pending_matches
     all_matches.joins(:match_result).where("match_results.confirmed = false")
   end
