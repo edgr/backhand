@@ -31,10 +31,6 @@ class UserStepsController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :address, :country, :place_of_birth, :birthday, :gender, :height, :weight, :level, :style_of_play, :handedness, :backhand_style, :picture, :bio, :club_id, :angle)
   end
 
-  def send_welcome_email
-    UserMailer.with(user: @user).welcome.deliver_now
-  end
-
   def set_points
     case params[:user][:level]
     when "Beginner"
@@ -64,6 +60,9 @@ class UserStepsController < ApplicationController
 
   def step3
     @user.status = 'active'
-    send_welcome_email
+  end
+
+  def finish_wizard_path
+    welcome_path
   end
 end
