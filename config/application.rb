@@ -23,3 +23,7 @@ module Backhand
   end
 end
 
+Raven.configure do |config|
+  config.dsn = 'https://ad0d285d9a0548c3af5d56ca1b405a93:5fe34898083e43b0ad63632c7571e435@sentry.io/1767983'
+end
+
