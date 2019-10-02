@@ -27,6 +27,8 @@ gem 'webpacker'
 gem 'pg_search'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
+gem "sentry-raven"
+
 # rails multi step form
 gem 'wicked'
 
