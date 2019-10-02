@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def welcome
     send_welcome_email
-    redirect_to root_path
+    # redirect_to root_path
   end
 
   private
