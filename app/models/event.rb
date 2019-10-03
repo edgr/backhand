@@ -10,6 +10,11 @@ class Event < ApplicationRecord
   validates :date_time, presence: true
   scope :upcoming, -> { where("date_time >= ?", Date.today) }
 
+  def event_partners(user)
+    users = User.where.not(id: user.id)
+    users.where("id = ? or id = ? or id = ? or id = ?", player_1, player_2, player_3, player_4)
+  end
+
   private
 
   def difference_of_players

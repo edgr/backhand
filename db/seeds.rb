@@ -354,5 +354,22 @@ end
     )
 end
 
+10.times do
+  puts "creating doublem event #{counter}"
+  counter += 1
+
+  player_1 = edouard
+  player_2 = leo
+
+  event = Event.create!(
+    date_time: DateTime.tomorrow+rand(360),
+    player_1: player_1,
+    player_2: player_2,
+    player_3: User.where.not("email = ? or email = ?", "a@a.a", "b@b.b").sample,
+    player_4: User.where.not("email = ? or email = ?", "a@a.a", "b@b.b").sample,
+    club: Club.all.sample
+    )
+end
+
 puts "Finished seeding"
 
