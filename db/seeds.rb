@@ -36,6 +36,7 @@ puts "destroy all"
 
 MatchResult.destroy_all
 Match.destroy_all
+Event.destroy_all
 User.destroy_all
 Club.destroy_all
 
@@ -336,6 +337,38 @@ players.each do |player|
     player.review_score = (thumbs_up / total_size.to_f) * 100
     player.save
 
+end
+
+10.times do
+  puts "creating event #{counter}"
+  counter += 1
+
+  player_1 = edouard
+  player_2 = leo
+
+  event = Event.create!(
+    date_time: DateTime.tomorrow+rand(360),
+    player_1: player_1,
+    player_2: player_2,
+    club: Club.all.sample
+    )
+end
+
+10.times do
+  puts "creating doublem event #{counter}"
+  counter += 1
+
+  player_1 = edouard
+  player_2 = leo
+
+  event = Event.create!(
+    date_time: DateTime.tomorrow+rand(360),
+    player_1: player_1,
+    player_2: player_2,
+    player_3: User.where.not("email = ? or email = ?", "a@a.a", "b@b.b").sample,
+    player_4: User.where.not("email = ? or email = ?", "a@a.a", "b@b.b").sample,
+    club: Club.all.sample
+    )
 end
 
 puts "Finished seeding"

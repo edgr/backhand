@@ -15,6 +15,13 @@ const initSelectYourOpponent = () => {
   });
 };
 
+const initSelectYourPartners = () => {
+  $('.select-your-partners').select2 ({
+    theme: "bootstrap",
+    width: '100%'
+  });
+};
+
 const initSelectYourClub = () => {
   $('#user_club_id').select2 ({
     theme: "bootstrap",
@@ -34,7 +41,6 @@ const initSelectClub = () => {
   $('.select-club').select2 ({
     theme: "bootstrap",
     width: '100%',
-    placeholder: "Type in the club where you are looking for players"
   });
 };
 
@@ -42,4 +48,5 @@ export { initSelectYourClub };
 export { initSelectCountry };
 export { initSelectClub };
 export { initSelectYourOpponent};
+export { initSelectYourPartners};
 export { initSelectTheWinner};

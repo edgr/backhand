@@ -23,3 +23,14 @@ if (matchPicker) {
     defaultDate: "today"
   });
 }
+
+const eventPicker = document.querySelector(".datepicker-event");
+
+if (eventPicker) {
+  flatpickr(".datepicker-event", {
+    altInput: true,
+    disableMobile: true,
+    enableTime: true,
+    defaultDate: new Date().fp_incr(1)
+  });
+}

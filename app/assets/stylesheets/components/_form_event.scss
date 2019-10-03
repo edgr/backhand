@@ -1,0 +1,15 @@
+.add-remove-players {
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: $gray;
+    span {
+      color: white;
+      font-size: 40px;
+      background-color: $blue;
+      padding: 0px 14px;
+      padding-bottom: 6px;
+      border-radius: 50%;
+    }
+  }
+}

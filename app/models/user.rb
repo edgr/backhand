@@ -87,6 +87,10 @@ class User < ApplicationRecord
     User.active.where.not(id: self.id)
   end
 
+  def partners
+    User.active.where.not(id: self.id)
+  end
+
   def self.levels
     # %w[Beginner 'Beginner +' Intermediate 'Intermediate +' Advanced 'Advanced +' Expert 'Expert +' Semi-pro 'Semi-pro +' Pro]
     ["Beginner", "Beginner +", "Intermediate", "Intermediate +", "Advanced", "Advanced +", "Expert", "Expert +", "Semi-pro", "Semi-pro +", "Pro"]
@@ -145,6 +149,10 @@ class User < ApplicationRecord
 
   def all_matches
     Match.where("matches.player_1_id = ? OR matches.player_2_id = ?", self, self)
+  end
+
+  def all_events
+    Event.upcoming.where("events.player_1_id = ? OR events.player_2_id = ? OR events.player_3_id = ? OR events.player_4_id = ?", self, self, self, self)
   end
 
   def pending_matches
