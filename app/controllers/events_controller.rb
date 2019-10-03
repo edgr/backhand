@@ -7,9 +7,6 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.player_1 = current_user
-    # @event.player_2 = User.find(params[:event][:player_2])
-    # @event.player_3 = User.find(params[:event][:player_3]) if params[:event][:player_3]
-    # @event.player_4 = User.find(params[:event][:player_4]) if params[:event][:player_4]
     if @event.save!
       redirect_to user_my_agenda_path(current_user)
     else
@@ -25,7 +22,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(
-      :player_2_id, :player_2_id, :player_4_id,
+      :player_2_id, :player_3_id, :player_4_id,
       :date_time, :club_id
     )
   end
