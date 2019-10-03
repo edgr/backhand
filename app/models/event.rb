@@ -8,7 +8,7 @@ class Event < ApplicationRecord
   validates :player_1, :player_2, presence: :true
   # validates :difference_of_players
   validates :date_time, presence: true
-  scope :upcoming, -> { where("date_time >= Date.today") }
+  scope :upcoming, -> { where("date_time >= ?", Date.today) }
 
   private
 
