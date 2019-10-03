@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   belongs_to :club, optional: true
 
   validates :player_1, :player_2, presence: :true
-  # validates :difference_of_players
+  validate :difference_of_players
   validates :date_time, presence: true
   scope :upcoming, -> { where("date_time >= ?", Date.today) }
 
