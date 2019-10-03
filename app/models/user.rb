@@ -121,11 +121,11 @@ class User < ApplicationRecord
   end
 
   def full_name
-    "#{first_name.capitalize} #{last_name.capitalize}"
+    (first_name && last_name) ? "#{first_name.capitalize} #{last_name.capitalize}" : email
   end
 
   def age
-    (Date.today - self.birthday).to_i / 365
+    (Date.today - self.birthday).to_i / 365 if self.birthday
   end
 
   def notify
