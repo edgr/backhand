@@ -1,13 +1,12 @@
 class EventsController < ApplicationController
   def new
-    @user = current_user
     @event = Event.new
   end
 
   def create
     @event = Event.new(event_params)
     @event.player_1 = current_user
-    if @event.save!
+    if @event.save
       redirect_to user_my_agenda_path(current_user)
     else
       render :new

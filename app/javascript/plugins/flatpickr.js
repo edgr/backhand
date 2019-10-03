@@ -31,8 +31,6 @@ if (eventPicker) {
     altInput: true,
     disableMobile: true,
     enableTime: true,
-    dateFormat: "Y-m-d H:i",
-    altFormat: "j F Y",
-    defaultDate: "tomorrow"
+    defaultDate: new Date().fp_incr(1)
   });
 }

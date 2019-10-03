@@ -1,5 +1,5 @@
 <div class="container">
-  <%= simple_form_for [@user, @event] do |f| %>
+  <%= simple_form_for [current_user, @event] do |f| %>
     <div class="event-partners">
       <%= f.association :player_2,
           label:"WHO WILL YOU PLAY WITH?",
