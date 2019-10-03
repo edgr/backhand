@@ -1,15 +1,9 @@
-.add-remove-players {
-  display: flex;
-  justify-content: space-between;
-  a {
-    color: $gray;
-    span {
-      color: white;
-      font-size: 40px;
-      background-color: $blue;
-      padding: 0px 14px;
-      padding-bottom: 6px;
-      border-radius: 50%;
-    }
+.event_date_time {
+  margin-top: 16px;
+}
+
+.event_player_3, .event_player_4 {
+  label {
+    display: none;
   }
 }

@@ -13,7 +13,7 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
-  .btn-flat {
+  .btn-flat, .cta-next {
     width: 90%;
   }
 }
@@ -60,6 +60,35 @@
     }
   }
 }
+
+.add-player, .remove-player {
+  color: $blue;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $blue;
+  }
+  i {
+    display: flex;
+    align-items: center;
+    span {
+      font-family: "Lato";
+      font-size: 16px;
+      margin-left: 8px;
+      color: $gray;
+    }
+  }
+}
+
+.remove-player {
+  color: #ffad63;
+}
+
+.add-remove-players {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 @media all and (min-width: 768px) {
   .cta-back-two-ctas, .cta-back-unique {
