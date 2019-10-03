@@ -7,22 +7,36 @@
   border-radius: 4px;
   margin: 8px 0;
   width: 100%;
-  .avatar-name-club {
+  .all-players {
     display: flex;
     align-items: center;
   }
-  .name-club {
+  .partners-avatars {
     display: flex;
-    flex-direction: column;
-    margin-left: 16px;
-    .name {
-      font-size: 20px;
-      color: $gray;
+    align-items: center;
+    >:nth-child(2), >:nth-child(3) {
+      margin-left: -10px;
     }
   }
-  .club {
-    font-size: 12px;
+  .partners-names {
+    display: flex;
+    font-size: 16px;
     color: $gray;
-    margin-left: 60px;
+    >:nth-child(2), >:nth-child(3) {
+      &:before {
+        content: " , ";
+      }
+    }
+  }
+  .date-club {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: $black;
+    .club {
+      font-size: 12px;
+      color: $gray;
+      margin-left: 60px;
+    }
   }
 }

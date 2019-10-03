@@ -13,12 +13,20 @@
           collection: current_user.opponents.map{|z| [z.full_name, z.id]} %>
     </div>
     <div class="add-remove-players">
-      <%= link_to '#', class: "add" do %>
-        <span>+</span> Add player
+      <%= link_to '#', class: "add add-player" do %>
+        <i class="fas fa-plus-circle">
+          <span>
+            add player
+          </span>
+        </i>
       <% end %>
 
-      <%= link_to '#', class: "remove" do %>
-        <span>-</span> Remove player
+      <%= link_to '#', class: "remove remove-player" do %>
+        <i class="fas fa-minus-circle">
+          <span>
+            remove player
+          </span>
+        </i>
       <% end %>
     </div>
 
@@ -28,6 +36,6 @@
         required: true,
         label:"WHEN WILL YOU PLAY?" %>
     <%= f.association :club, label:"WHERE WILL YOU PLAY?", input_html: {class: "select-club form-control"} %>
-    <%= f.submit %>
+    <%= f.submit 'create event', class: "btn btn-primary cta-next" %>
   <% end %>
 </div>
