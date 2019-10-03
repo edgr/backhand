@@ -152,7 +152,7 @@ class User < ApplicationRecord
   end
 
   def all_events
-    Event.where("events.player_1_id = ? OR events.player_2_id = ? OR events.player_3_id = ? OR events.player_4_id = ?", self, self, self, self)
+    Event.upcoming.where("events.player_1_id = ? OR events.player_2_id = ? OR events.player_3_id = ? OR events.player_4_id = ?", self, self, self, self)
   end
 
   def pending_matches

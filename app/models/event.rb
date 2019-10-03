@@ -3,10 +3,12 @@ class Event < ApplicationRecord
   belongs_to :player_2, -> { where('status = ?', 'active') }, class_name: 'User'
   belongs_to :player_3, -> { where('status = ?', 'active') }, class_name: 'User', optional: true
   belongs_to :player_4, -> { where('status = ?', 'active') }, class_name: 'User', optional: true
-  belongs_to :club
+  belongs_to :club, optional: true
 
   validates :player_1, :player_2, presence: :true
-  validate :difference_of_players
+  # validates :difference_of_players
+  validates :date_time, presence: true
+  scope :upcoming, -> { where("date_time >= Date.today") }
 
   private
 
