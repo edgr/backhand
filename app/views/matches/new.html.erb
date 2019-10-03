@@ -30,13 +30,9 @@
         <div class="fill-the-score d-flex">
           <div class="players-columns">
             <div class="avatar-name-match-record">
-              <% if current_user.picture.present? %>
-                <img src="<%= cl_image_path current_user.picture %>" class="avatar">
-              <% else %>
-                <img src="<%= image_path 'profile.png' %>" class="avatar">
-              <% end %>
+              <img src="<%= image_path get_picture(current_user) %>" class="avatar">
               <div class="player_1_name">
-                <%= current_user.first_name %> <%= current_user.last_name %>
+                <%= current_user.full_name %>
               </div>
             </div>
             <div class="avatar-name-match-record">
