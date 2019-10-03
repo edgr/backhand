@@ -36,5 +36,8 @@
     </div>
   <% else %>
     <p class="text-center">You have no upcoming events</p>
+    <div class="cta-back-unique">
+      <%= link_to 'add event', new_user_event_path, class: "btn btn-primary cta-next" %>
+    </div>
   <% end %>
 </div>
