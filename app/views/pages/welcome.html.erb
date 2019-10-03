@@ -1,6 +1,12 @@
-<div class="welcome">
-  Welcome <%= current_user.first_name.capitalize %>!
+<div class="container">
+  <div class="welcome">
+    <h1>
+      Welcome <%= current_user.first_name.capitalize%>!
+    </h1>
+    <p>Thank you for joining Backhand.<br>We count on you to invite other tennis players to join us!</p>
+    <p>
+      Redirecting you to home in <span id="countdown">6</span> seconds.
+    </p>
+  </div>
 </div>
-<%= link_to root_path, class: 'btn btn-primary', style: "width: 100px" do %>
-  <i class="fas fa-spinner fa-pulse"></i><span id="countdown">6</span>
-<% end %>
+
