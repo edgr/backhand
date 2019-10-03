@@ -2,23 +2,30 @@
   <% @events.each do |event| %>
     <div class="event-card">
       <div class="all-players">
-        <% event.event_partners(current_user).each do |partner| %>
-          <div class="avatar-name-club">
-            <%= cl_image_tag partner.picture, class: "avatar"%>
-            <div class="name-club">
-              <span class="name">
-                <%= partner.full_name %>
-              </span>
-            </div>
-          </div>
+        <div class="partners-avatars">
+          <% event.event_partners(current_user).each do |partner| %>
+              <%= cl_image_tag partner.picture, class: "avatar"%>
+          <% end %>
+        </div>
+        <div class="partners-names">
+          <% event.event_partners(current_user).each do |partner| %>
+              <span><%= partner.first_name %></span>
         <% end %>
+        </div>
+      </div>
+      <div class="date-club">
+        <span>
+          <%= event.date_time.strftime("%A %-d") %>
+        </span>
+        <span>
+          <%= event.date_time.strftime("%I:%M%p") %>
+        </span>
         <% if event.club %>
           <span class="club">
             at <%= event.club.name %>
           </span>
         <% end %>
       </div>
-      <%= event.date_time.strftime("%I:%M%p") %>
     </div>
   <% end %>
 </div>
