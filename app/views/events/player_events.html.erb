@@ -1,36 +1,37 @@
 <div class="container">
   <% if @events.present? %>
-    <% @events.each do |event| %>
-      <div class="event-card">
-        <div class="all-players">
-          <div class="avatars-names">
-            <div class="partners-avatars">
-              <% event.event_partners(current_user).each do |partner| %>
-                  <%= cl_image_tag partner.picture, class: "avatar-bordered"%>
+    <p class="text-center">Today is <%= Date.today.strftime("%A %-b %-d") %></p>
+      <% @events.each do |event| %>
+        <div class="event-card">
+          <div class="all-players">
+            <div class="avatars-names">
+              <div class="partners-avatars">
+                <% event.event_partners(current_user).each do |partner| %>
+                    <%= cl_image_tag partner.picture, class: "avatar-bordered"%>
+                <% end %>
+              </div>
+              <div class="partners-names">
+                <% event.event_partners(current_user).each do |partner| %>
+                    <span><%= partner.first_name %></span>
               <% end %>
-            </div>
-            <div class="partners-names">
-              <% event.event_partners(current_user).each do |partner| %>
-                  <span><%= partner.first_name %></span>
-            <% end %>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="date-club">
-          <span>
-            <%= event.date_time.strftime("%A %-b %-d") %>
-          </span>
-          <span>
-            <%= event.date_time.strftime("%I:%M%p") %>
-          </span>
-          <% if event.club %>
-            <span class="club">
-              at <%= event.club.name %>
+          <div class="date-club">
+            <span>
+              <%= event.date_time.strftime("%A %-b %-d") %>
             </span>
-          <% end %>
+            <span>
+              <%= event.date_time.strftime("%I:%M%p") %>
+            </span>
+            <% if event.club %>
+              <span class="club">
+                at <%= event.club.name %>
+              </span>
+            <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
     <div class="cta-back-unique">
       <%= link_to 'add event', new_user_event_path, class: "btn btn-primary cta-next" %>
     </div>
