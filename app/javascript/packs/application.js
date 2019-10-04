@@ -22,7 +22,7 @@ import { selectSkillValue } from '../components/skills_rating';
 import { photoPreview } from '../components/photo_preview';
 import { addPlayer } from '../components/new_event';
 import { welcomeRedirect } from '../components/redirect';
-import { showTrash } from '../components/event_trash';
+import { showTrash } from '../components/event_actions';
 
 const tabs = document.querySelectorAll(".tab-underlined");
 if (tabs) { tabs.forEach(addListener) };

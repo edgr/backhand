@@ -3,12 +3,22 @@
   align-items: center;
   .card-delete {
     height: 100px;
-    width: 40%;
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     i {
       color: red;
+    }
+  }
+  .card-edit {
+    height: 100px;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      color: $blue;
     }
   }
 }

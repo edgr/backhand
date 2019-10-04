@@ -1,0 +1,41 @@
+<div class="container">
+  <%= simple_form_for [current_user, @event] do |f| %>
+    <div class="event-partners">
+      <%= f.association :player_2,
+          label:"WHO WILL YOU PLAY WITH?",
+          input_html: { class: "select-your-opponent form-control" },
+          collection: current_user.opponents.map{|z| [z.full_name, z.id]} %>
+      <%= f.association :player_3,
+          input_html: { class: "select-your-opponent form-control" },
+          collection: current_user.opponents.map{|z| [z.full_name, z.id]} %>
+      <%= f.association :player_4,
+          input_html: { class: "select-your-opponent form-control" },
+          collection: current_user.opponents.map{|z| [z.full_name, z.id]} %>
+    </div>
+    <div class="add-remove-players">
+      <%= link_to '#', class: "add add-player" do %>
+        <i class="fas fa-plus-circle">
+          <span>
+            add player
+          </span>
+        </i>
+      <% end %>
+
+      <%= link_to '#', class: "remove remove-player" do %>
+        <i class="fas fa-minus-circle">
+          <span>
+            remove player
+          </span>
+        </i>
+      <% end %>
+    </div>
+
+    <%= f.input :date_time,
+        input_html: {class: "datepicker-event"},
+        as: :string,
+        required: true,
+        label:"WHEN WILL YOU PLAY?" %>
+    <%= f.association :club, label:"WHERE WILL YOU PLAY?", input_html: {class: "select-club form-control"} %>
+    <%= f.submit 'update', class: "btn btn-primary cta-next" %>
+  <% end %>
+</div>

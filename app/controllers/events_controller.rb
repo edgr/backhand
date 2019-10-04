@@ -22,6 +22,10 @@ class EventsController < ApplicationController
     redirect_to user_my_agenda_path(current_user)
   end
 
+  def edit
+    @event = Event.find(params[:id]).destroy
+  end
+
   private
 
   def event_params
