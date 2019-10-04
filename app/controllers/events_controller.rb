@@ -17,6 +17,11 @@ class EventsController < ApplicationController
     @events = current_user.all_events.order(date_time: :asc)
   end
 
+  def destroy
+    Event.find(params[:id]).destroy
+    redirect_to user_my_agenda_path(current_user)
+  end
+
   private
 
   def event_params
