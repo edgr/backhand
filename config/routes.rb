@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :user_reviews, only: [:new, :create, :destroy]
     get '/my_matches', to: 'matches#player_matches', as: 'my_matches'
     get '/my_agenda', to: 'events#player_events', as: 'my_agenda'
-    resources :events, only: [:new, :create]
+    resources :events, only: [:new, :create, :edit, :destroy]
   end
 
   get '/rankings', to: 'users#rankings', as: 'rankings'
