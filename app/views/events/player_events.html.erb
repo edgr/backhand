@@ -32,18 +32,20 @@
               <% end %>
             </div>
           </div>
-          <div class="card-delete d-none">
-            <%= link_to user_event_path(current_user, event),
-              method: :delete,
-              data: { confirm: "Are you sure?" } do %>
-                <i class="fas fa-trash-alt"></i>
-              <% end %>
-          </div>
-          <div class="card-edit d-none">
-            <%= link_to edit_user_event_path(current_user, event) do %>
-                <i class="fas fa-edit"></i>
-              <% end %>
-          </div>
+          <% if event.player_1 == current_user %>
+            <div class="card-delete d-none">
+              <%= link_to user_event_path(current_user, event),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+                  <i class="fas fa-trash-alt"></i>
+                <% end %>
+            </div>
+            <div class="card-edit d-none">
+              <%= link_to edit_user_event_path(current_user, event) do %>
+                  <i class="fas fa-edit"></i>
+                <% end %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     <div class="cta-back-unique">
