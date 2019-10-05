@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container events-container">
   <% if @events.present? %>
     <p class="text-center">Today is <%= Date.today.strftime("%A %-b %-d") %></p>
       <% @events.each do |event| %>
@@ -40,11 +40,11 @@
                   <i class="fas fa-trash-alt"></i>
                 <% end %>
             </div>
-            <div class="card-edit d-none">
-              <%= link_to edit_user_event_path(current_user, event) do %>
+            <!-- <div class="card-edit d-none">
+              <%#= link_to edit_user_event_path(current_user, event) do %>
                   <i class="fas fa-edit"></i>
-                <% end %>
-            </div>
+                <#% end %>
+            </div> -->
           <% end %>
         </div>
       <% end %>
