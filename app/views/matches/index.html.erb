@@ -3,7 +3,7 @@
     <div class="index-match-card">
       <%= link_to user_path(match.player_1) do %>
         <div class="<%= match.match_result.winner == match.player_1 ? 'avatar-name-player-1 winner-black' : 'avatar-name-player-1' %>">
-          <%= cl_image_tag match.player_1.picture, class: "avatar"%>
+          <%= cl_image_tag match.player_1.picture, quality: "auto", class: "avatar"%>
           <div class="first-last-name">
             <span class="first-name"><%= match.player_1.first_name %></span>
             <span class="last-name"><%= match.player_1.last_name.upcase %></span>
@@ -17,7 +17,7 @@
       </div>
       <%= link_to user_path(match.player_2) do %>
         <div class="<%= match.match_result.winner == match.player_2 ? 'avatar-name-player-2 winner-black' : 'avatar-name-player-2' %>">
-          <%= cl_image_tag match.player_2.picture, class: "avatar"%>
+          <%= cl_image_tag match.player_2.picture, quality: "auto", class: "avatar"%>
           <div class="first-last-name">
             <span class="first-name"><%= match.player_2.first_name %></span>
             <span class="last-name"><%= match.player_2.last_name.upcase %></span>

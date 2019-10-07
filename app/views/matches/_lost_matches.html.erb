@@ -3,7 +3,7 @@
     <%# if match.match_result.confirmed == true && match.match_result.loser == current_user  %>
       <div class="match-card">
         <% if match.player_1 == current_user %>
-          <%= cl_image_tag match.player_2.picture, class: "avatar"%>
+          <%= cl_image_tag match.player_2.picture, quality: "auto", class: "avatar"%>
           <div class="name-and-date">
             <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
             <div class="date-location">
@@ -16,7 +16,7 @@
             <%= match.match_result.score %>
           </span>
         <% else %>
-          <%= cl_image_tag match.player_1.picture, class: "avatar"%>
+          <%= cl_image_tag match.player_1.picture, quality: "auto", class: "avatar"%>
           <div class="name-and-date">
             <span class="player-name">
               <%= match.player_1.first_name %> <%= match.player_1.last_name %>
