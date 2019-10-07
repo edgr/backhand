@@ -11,7 +11,7 @@
       </span>
       <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
         <% if current_user.picture.present? %>
-          <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", class: "avatar-bordered")%>
+          <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", quality: "auto", class: "avatar-bordered")%>
         <% else %>
           <%= image_tag "profile.png", class: "avatar-bordered"%>
         <% end %>
@@ -70,7 +70,7 @@
             <li class="nav-item dropdown d-none d-lg-flex">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <% if current_user.picture.present? %>
-                <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", class: "avatar-bordered")%>
+                <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", quality: "auto", class: "avatar-bordered")%>
                 <% else %>
                   <%= image_tag "profile.png", class: "avatar-bordered"%>
                 <% end %>

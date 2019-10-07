@@ -259,7 +259,7 @@
           <p><%= review.content %></p>
             <%= link_to user_path(review.sender) do %>
             <div class="avatar-name">
-              <%= cl_image_tag(review.sender.picture, class:"avatar") %>
+              <%= cl_image_tag(review.sender.picture, quality: "auto", class:"avatar") %>
               <h2>
                 <%= review.sender.first_name %>
               </h2>

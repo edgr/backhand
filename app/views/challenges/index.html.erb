@@ -15,7 +15,7 @@
           <% if challenge.challenger_id == current_user.id %>
             <i class="fas fa-arrow-up"></i>
             <% challengee = User.find(challenge.challengee_id) %>
-            <%= cl_image_tag challengee.picture, class: "avatar" %>
+            <%= cl_image_tag challengee.picture, quality: "auto", class: "avatar" %>
             <div class="name-and-date">
               <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %></span>
               <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
@@ -23,7 +23,7 @@
           <% else %>
             <i class="fas fa-arrow-down"></i>
             <% challenger = User.find(challenge.challenger_id) %>
-            <%= cl_image_tag challenger.picture, class: "avatar" %>
+            <%= cl_image_tag challenger.picture, quality: "auto", class: "avatar" %>
             <div class="name-and-date">
               <span class="player-name"><%= challenger.first_name %> <%= challenger.last_name %> </span>
               <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
@@ -54,7 +54,7 @@
             <% if challenge.challenger_id == current_user.id %>
               <i class="fas fa-arrow-up"></i>
               <% challengee = User.find(challenge.challengee_id) %>
-              <%= cl_image_tag challengee.picture, class: "avatar"%>
+              <%= cl_image_tag challengee.picture, quality: "auto", class: "avatar"%>
               <div class="name-and-date">
                 <span class="player-name"><%= challengee.first_name %> <%= challengee.last_name %> </span>
                 <span class="date"><%= challenge.created_at.to_date.strftime("%d %b %Y") %> </span>
@@ -62,7 +62,7 @@
             <% else %>
               <i class="fas fa-arrow-down"></i>
               <% challenger = User.find(challenge.challenger_id) %>
-              <%= cl_image_tag challenger.picture, class: "avatar"%>
+              <%= cl_image_tag challenger.picture, quality: "auto", class: "avatar"%>
               <div class="name-and-date">
                 <span class="player-name">
                   <%= challenger.first_name %> <%= challenger.last_name %>

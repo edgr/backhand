@@ -10,7 +10,7 @@ class MatchesController < ApplicationController
     params[:match_result][:winner].to_i == current_user.id ? loser_id = params[:match][:player_2].to_i : loser_id = current_user.id
     @match_result = MatchResult.create(match: @match, winner_id: params[:match_result][:winner], loser_id: loser_id)
     @match.player_1 = current_user
-    if @match.save!
+    if @match.save
       update_match_result_score
       redirect_to user_my_matches_path(current_user)
     else

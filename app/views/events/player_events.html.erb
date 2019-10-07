@@ -8,7 +8,7 @@
               <div class="avatars-names">
                 <div class="partners-avatars">
                   <% event.event_partners(current_user).each do |partner| %>
-                      <%= cl_image_tag partner.picture, class: "avatar-bordered"%>
+                      <%= cl_image_tag partner.picture, quality: "auto", class: "avatar-bordered"%>
                   <% end %>
                 </div>
                 <div class="partners-names">
