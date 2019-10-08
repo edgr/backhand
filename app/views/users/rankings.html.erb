@@ -7,7 +7,7 @@
               <td class="center-text-table rankings-table"><%= user.ranking %></td>
               <td class="center-text-table">
                 <% if user.country.present? %>
-                  <span class="flag-icon flag-icon-by flag-icon-<%= user.country.downcase %>"></span>
+                  <span class="flag-icon flag-icon-<%= user.country.downcase %>"></span>
                 <% else %>
                   <i class="far fa-flag"></i>
                 <% end %>
