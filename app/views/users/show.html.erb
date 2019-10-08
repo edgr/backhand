@@ -270,9 +270,13 @@
     </div>
     <% if user_signed_in? %>
       <% if @user == current_user %>
-        <div class="cta-back-unique">
-          <%= link_to 'edit', edit_user_registration_path, class: "btn btn-flat" %>
-        </div>
+        <%= link_to edit_user_registration_path do %>
+          <button class="mdc-fab app-fab--absolute" aria-label="edit">
+            <span class="mdc-fab__icon material-icons">
+              edit
+            </span>
+          </button>
+        <% end %>
       <% else %>
         <button id="more-button" class="mdc-fab app-fab--absolute" aria-label="open">
           <span class="mdc-fab__icon material-icons">
