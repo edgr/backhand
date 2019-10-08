@@ -1,7 +1,6 @@
-const moreButton = document.getElementById('more-button')
-
-if (moreButton) {
-  const openActions = () => {
+const openActions = () => {
+  const moreButton = document.getElementById('more-button')
+  if (moreButton) {
     const reviewButton = document.getElementById('review-button')
     const whatsappButton = document.getElementById('whatsapp-button')
     const innerIcon = moreButton.querySelector('.mdc-fab__icon')
