@@ -1,6 +1,15 @@
 .navbar-toggler {
   border: none;
   padding: 0;
+  outline: none;
+  &:focus {
+      outline: none;
+    }
+  img {
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .navbar {
