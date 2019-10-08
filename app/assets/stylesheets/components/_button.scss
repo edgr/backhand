@@ -1,3 +1,27 @@
+.mdc-fab {
+  background-color: $blue;
+}
+
+#whatsapp-button {
+  i {
+    font-size: 30px;
+  }
+}
+
+.app-fab--absolute {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.b-90 {
+  bottom: 90px;
+}
+
+.b-160 {
+  bottom: 160px;
+}
+
 .cta-back-unique {
   display: flex;
   align-items: center;

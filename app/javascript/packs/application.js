@@ -23,6 +23,7 @@ import { photoPreview } from '../components/photo_preview';
 import { addPlayer } from '../components/new_event';
 import { welcomeRedirect } from '../components/redirect';
 import { showTrash } from '../components/event_actions';
+import { openActions } from '../components/actions_button';
 
 const tabs = document.querySelectorAll(".tab-underlined");
 if (tabs) { tabs.forEach(addListener) };
@@ -45,3 +46,4 @@ photoPreview();
 addPlayer();
 welcomeRedirect();
 showTrash();
+openActions();
