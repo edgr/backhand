@@ -48,21 +48,25 @@
           <% end %>
         </div>
       <% end %>
-    <%= link_to new_user_event_path do %>
-      <button class="mdc-fab app-fab--absolute" aria-label="create-event">
-        <span class="mdc-fab__icon material-icons">
-          add
-        </span>
-      </button>
-    <% end %>
+    <div class="actions-wrapper">
+      <%= link_to new_user_event_path do %>
+        <button class="mdc-fab app-fab--absolute" aria-label="create-event">
+          <span class="mdc-fab__icon material-icons">
+            add
+          </span>
+        </button>
+      <% end %>
+    </div>
   <% else %>
     <p class="text-center">You have no upcoming events</p>
-    <%= link_to new_user_event_path do %>
-      <button class="mdc-fab app-fab--absolute" aria-label="create-event">
-        <span class="mdc-fab__icon material-icons">
-          add
-        </span>
-      </button>
-    <% end %>
+    <div class="actions-wrapper">
+      <%= link_to new_user_event_path do %>
+        <button class="mdc-fab app-fab--absolute" aria-label="create-event">
+          <span class="mdc-fab__icon material-icons">
+            add
+          </span>
+        </button>
+      <% end %>
+    </div>
   <% end %>
 </div>

@@ -1,3 +1,12 @@
+.actions-wrapper {
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 .mdc-fab {
   background-color: $blue;
 }
@@ -5,6 +14,7 @@
 #whatsapp-button {
   i {
     font-size: 30px;
+    text-decoration: none;
   }
 }
 
@@ -24,6 +34,32 @@
 
 .b-230 {
   bottom: 230px;
+}
+
+@media all and (min-width: 992px) {
+  .mdc-fab {
+    &:hover {
+      &:before {
+        background-color: transparent;
+      }
+      &:after {
+        background-color: transparent;
+      }
+    }
+  }
+  .actions-wrapper {
+    position: absolute;
+    top: 0;
+    right: -80px;
+    display: flex;
+    flex-direction: column;
+  }
+  .app-fab--absolute {
+    position: unset;
+  }
+  .b-90, .b-160, .b-230 {
+    margin-top: 16px;
+  }
 }
 
 .cta-back-unique {

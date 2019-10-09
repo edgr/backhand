@@ -1,8 +1,5 @@
 <% present @user do |user_presenter| %>
   <div class="container">
-    <div class="back-section-space">
-      <%= link_to "back".html_safe, :back, id: "back", class: "back-link" %>
-    </div>
     <div class="main-info-show">
       <div class="pic-show">
         <% if @user.picture.present? %>
@@ -268,14 +265,37 @@
         </div>
       <% end %>
     </div>
-    <% if user_signed_in? %>
-      <% if @user == current_user %>
-        <%= link_to edit_user_registration_path do %>
-          <button class="mdc-fab app-fab--absolute" aria-label="Favorite">
+    <div class="actions-wrapper">
+      <% if user_signed_in? %>
+        <% if @user == current_user %>
+          <%= link_to edit_user_registration_path do %>
+            <button class="mdc-fab app-fab--absolute" aria-label="Favorite">
+              <span class="mdc-fab__icon material-icons">
+                edit
+              </span>
+            </button>
+          <% end %>
+        <% else %>
+          <button id="more-button" class="mdc-fab app-fab--absolute" aria-label="open">
             <span class="mdc-fab__icon material-icons">
-              edit
+              add
             </span>
           </button>
+          <button id="copy-link-button" class="mdc-fab b-230 app-fab--absolute hidden" aria-label="link">
+            <span class="mdc-fab__icon material-icons">
+              link
+            </span>
+          </button>
+          <a href="https://wa.me/<%= @user.phone_number %>?text=Hello%20<%= @user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%20Fancy%20playing%20some%20tennis?">
+            <button id="whatsapp-button" class="mdc-fab b-160 app-fab--absolute hidden" aria-label="Favorite">
+              <i class="fab fa-whatsapp"></i>
+            </button>
+          </a>
+          <%= link_to new_user_user_review_path(@user) do %>
+            <button id="review-button" class="mdc-fab b-90 app-fab--absolute hidden" aria-label="Favorite">
+              <span class="mdc-fab__icon material-icons">edit</span>
+            </button>
+          <% end %>
         <% end %>
       <% else %>
         <button id="more-button" class="mdc-fab app-fab--absolute" aria-label="open">
@@ -283,45 +303,24 @@
             add
           </span>
         </button>
-        <button id="copy-link-button" class="mdc-fab b-230 app-fab--absolute hidden" aria-label="link">
-          <span class="mdc-fab__icon material-icons">
-            link
-          </span>
-        </button>
-        <a href="https://wa.me/<%= @user.phone_number %>?text=Hello%20<%= @user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%20Fancy%20playing%20some%20tennis?">
+        <div class="d-flex">
+          <button id="copy-link-button" class="mdc-fab b-230 app-fab--absolute hidden" aria-label="link">
+            <span class="mdc-fab__icon material-icons">
+              link
+            </span>
+          </button>
+        </div>
+        <%= link_to new_user_session_path do %>
           <button id="whatsapp-button" class="mdc-fab b-160 app-fab--absolute hidden" aria-label="Favorite">
             <i class="fab fa-whatsapp"></i>
           </button>
-        </a>
+        <% end %>
         <%= link_to new_user_user_review_path(@user) do %>
           <button id="review-button" class="mdc-fab b-90 app-fab--absolute hidden" aria-label="Favorite">
             <span class="mdc-fab__icon material-icons">edit</span>
           </button>
         <% end %>
       <% end %>
-    <% else %>
-      <button id="more-button" class="mdc-fab app-fab--absolute" aria-label="open">
-        <span class="mdc-fab__icon material-icons">
-          add
-        </span>
-      </button>
-      <div class="d-flex">
-        <button id="copy-link-button" class="mdc-fab b-230 app-fab--absolute hidden" aria-label="link">
-          <span class="mdc-fab__icon material-icons">
-            link
-          </span>
-        </button>
-      </div>
-      <%= link_to new_user_session_path do %>
-        <button id="whatsapp-button" class="mdc-fab b-160 app-fab--absolute hidden" aria-label="Favorite">
-          <i class="fab fa-whatsapp"></i>
-        </button>
-      <% end %>
-      <%= link_to new_user_user_review_path(@user) do %>
-        <button id="review-button" class="mdc-fab b-90 app-fab--absolute hidden" aria-label="Favorite">
-          <span class="mdc-fab__icon material-icons">edit</span>
-        </button>
-      <% end %>
-    <% end %>
+    </div>
   </div>
 <% end %>
