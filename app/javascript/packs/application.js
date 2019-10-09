@@ -24,6 +24,8 @@ import { addPlayer } from '../components/new_event';
 import { welcomeRedirect } from '../components/redirect';
 import { showTrash } from '../components/event_actions';
 import { openActions } from '../components/actions_button';
+import { copyLink } from '../components/copy_to_clipboard';
+// import { triggerShare } from '../components/share_profile';
 
 const tabs = document.querySelectorAll(".tab-underlined");
 if (tabs) { tabs.forEach(addListener) };
@@ -47,3 +49,5 @@ addPlayer();
 welcomeRedirect();
 showTrash();
 openActions();
+copyLink();
+// triggerShare();

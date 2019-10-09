@@ -283,6 +283,11 @@
             add
           </span>
         </button>
+        <button id="copy-link-button" class="mdc-fab b-230 app-fab--absolute hidden" aria-label="link">
+          <span class="mdc-fab__icon material-icons">
+            link
+          </span>
+        </button>
         <a href="https://wa.me/<%= @user.phone_number %>?text=Hello%20<%= @user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%20Fancy%20playing%20some%20tennis?">
           <button id="whatsapp-button" class="mdc-fab b-160 app-fab--absolute hidden" aria-label="Favorite">
             <i class="fab fa-whatsapp"></i>
@@ -300,6 +305,13 @@
           add
         </span>
       </button>
+      <div class="d-flex">
+        <button id="copy-link-button" class="mdc-fab b-230 app-fab--absolute hidden" aria-label="link">
+          <span class="mdc-fab__icon material-icons">
+            link
+          </span>
+        </button>
+      </div>
       <%= link_to new_user_session_path do %>
         <button id="whatsapp-button" class="mdc-fab b-160 app-fab--absolute hidden" aria-label="Favorite">
           <i class="fab fa-whatsapp"></i>
