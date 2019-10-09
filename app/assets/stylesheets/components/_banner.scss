@@ -8,11 +8,12 @@
   h1 {
     color: white;
     font-weight: bold;
-    font-size: 38px;
+    font-size: 42px;
     font-style: italic;
     position: absolute;
     bottom: 300px;
-    left: 30px
+    left: 30px;
+    margin-bottom: 10px;
   }
   .home-ctas-section {
     position: absolute;
@@ -28,12 +29,10 @@
       text-decoration: none;
     }
     #home-cta {
-      border-radius: 25px;
-      width: 220px;
-      font-size: 20px;
-      border: 1px solid $white;
-      font-variant-caps: all-small-caps;
-      padding: 6px 24px 8px;
+      border-radius: 30px;
+      font-size: 16px;
+      border: 2px solid $white;
+      padding: 12px 40px;
     }
   }
 }
@@ -57,10 +56,10 @@
       width: 450px;
       height: 0px;
       #home-cta {
-        width: 280px;
+        border-radius: 38px;
         font-size: 24px;
-        border: 1px solid $white;
-        font-variant-caps: all-small-caps;
+        border: 2px solid $white;
+        padding: 16px 48px;
       }
     }
   }
