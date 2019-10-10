@@ -1,3 +1,67 @@
+.actions-wrapper {
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.mdc-fab {
+  background-color: $blue;
+}
+
+#whatsapp-button {
+  i {
+    font-size: 30px;
+    text-decoration: none;
+  }
+}
+
+.app-fab--absolute {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.b-90 {
+  bottom: 90px;
+}
+
+.b-160 {
+  bottom: 160px;
+}
+
+.b-230 {
+  bottom: 230px;
+}
+
+@media all and (min-width: 992px) {
+  .mdc-fab {
+    &:hover {
+      &:before {
+        background-color: transparent;
+      }
+      &:after {
+        background-color: transparent;
+      }
+    }
+  }
+  .actions-wrapper {
+    position: absolute;
+    top: 0;
+    right: -80px;
+    display: flex;
+    flex-direction: column;
+  }
+  .app-fab--absolute {
+    position: unset;
+  }
+  .b-90, .b-160, .b-230 {
+    margin-top: 16px;
+  }
+}
+
 .cta-back-unique {
   display: flex;
   align-items: center;

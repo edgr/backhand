@@ -48,13 +48,25 @@
           <% end %>
         </div>
       <% end %>
-    <div class="cta-back-unique">
-      <%= link_to 'add event', new_user_event_path, class: "btn btn-primary cta-next" %>
+    <div class="actions-wrapper">
+      <%= link_to new_user_event_path do %>
+        <button class="mdc-fab app-fab--absolute" aria-label="create-event">
+          <span class="mdc-fab__icon material-icons">
+            add
+          </span>
+        </button>
+      <% end %>
     </div>
   <% else %>
     <p class="text-center">You have no upcoming events</p>
-    <div class="cta-back-unique">
-      <%= link_to 'add event', new_user_event_path, class: "btn btn-primary cta-next" %>
+    <div class="actions-wrapper">
+      <%= link_to new_user_event_path do %>
+        <button class="mdc-fab app-fab--absolute" aria-label="create-event">
+          <span class="mdc-fab__icon material-icons">
+            add
+          </span>
+        </button>
+      <% end %>
     </div>
   <% end %>
 </div>

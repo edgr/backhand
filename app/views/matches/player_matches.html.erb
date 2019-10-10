@@ -28,4 +28,13 @@
   <div class="hidden" id="pending">
     <%= render partial: "pending_matches" %>
   </div>
+  <div class="actions-wrapper">
+    <%= link_to new_match_path do %>
+      <button class="mdc-fab app-fab--absolute" aria-label="open">
+        <span class="mdc-fab__icon material-icons">
+          add
+        </span>
+      </button>
+    <% end %>
+  </div>
 </div>
