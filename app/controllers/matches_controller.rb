@@ -1,4 +1,6 @@
 class MatchesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index]
+
   def new
     @match = Match.new
     5.times { @match.match_sets.build }
