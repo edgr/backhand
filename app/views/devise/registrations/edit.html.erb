@@ -65,7 +65,7 @@
                             class: "search_location",
                             placeholder: "Your Hometown" %>
                   <%= f.input :birthday,
-                        input_html: {class: "datepicker"},
+                        input_html: {class: "datepicker-edit"},
                         as: :string,
                         label:"BIRTHDATE" %>
                 </div>
@@ -137,7 +137,7 @@
         </div>
 
         <div class="save-profile">
-          <%= f.input :current_password,
+          <%#= f.input :current_password,
                       hint: "we need your current password to confirm your changes",
                       required: true,
                       input_html: { autocomplete: "current-password" } %>
