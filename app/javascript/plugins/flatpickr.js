@@ -12,6 +12,16 @@ if (signupPicker) {
   });
 }
 
+const editPicker = document.querySelector(".datepicker-edit");
+
+if (editPicker) {
+  flatpickr(".datepicker-edit", {
+    altInput: true,
+    altFormat: "j F Y",
+    dateFormat: "d-m-Y"
+  });
+}
+
 const matchPicker = document.querySelector(".datepicker-match");
 
 if (matchPicker) {
