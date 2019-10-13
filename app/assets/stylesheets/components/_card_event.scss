@@ -50,7 +50,7 @@
     color: $gray;
     >:nth-child(2), >:nth-child(3) {
       &:before {
-        content: " , ";
+        content: ", ";
       }
     }
   }
@@ -59,10 +59,10 @@
     flex-direction: column;
     align-items: flex-end;
     color: $black;
+    min-width: 90px;
     .club {
       font-size: 12px;
       color: $gray;
-      margin-left: 60px;
     }
   }
 }
