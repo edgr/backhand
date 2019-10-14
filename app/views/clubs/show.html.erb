@@ -1,1 +1,16 @@
-<h1><%= @club.name %></h1>
+<div class="club-container">
+  <%= cl_image_tag(@club.picture) %>
+  <div class="main-info">
+    <h1><%= @club.name %></h1>
+    <span class="club-email"> <%= @club.email %></span>
+    <span class="club-phone"> <%= @club.phone_number %></span>
+  </div>
+  <div class="map">
+    <span class="club-address"> <%= @club.address %></span>
+
+  </div>
+  <div class="about">
+    <h2>About</h2>
+    <span class="club-desc"> <%= @club.description %></span>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+.club-container {
+  img {
+    width: 100%;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .main-info {
+    color: $black;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    .club-phone {
+      margin-bottom: 12px;
+    }
+  }
+  .about {
+    color: $black;
+    padding: 16px;
+    h2 {
+      font-size: 20px;
+    }
+  }
+}
