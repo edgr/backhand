@@ -56,6 +56,8 @@ Club.create!(
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   description: Faker::Lorem.sentence(60),
   website: Faker::Internet.url,
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
   picture: club_url_1,
   )
 Club.create!(
@@ -66,6 +68,8 @@ Club.create!(
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   description: Faker::Lorem.sentence(60),
   website: Faker::Internet.url,
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
   picture: club_url_2,
   )
 Club.create!(
@@ -76,6 +80,8 @@ Club.create!(
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   description: Faker::Lorem.sentence(60),
   website: Faker::Internet.url,
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
   picture: club_url_3,
   )
 Club.create!(
@@ -86,6 +92,8 @@ Club.create!(
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   description: Faker::Lorem.sentence(60),
   website: Faker::Internet.url,
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
   picture: club_url_4,
   )
 Club.create!(
@@ -96,6 +104,8 @@ Club.create!(
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   description: Faker::Lorem.sentence(60),
   website: Faker::Internet.url,
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
   picture: club_url_5,
   )
 

@@ -1,6 +1,7 @@
 //= require select2
 
 import "bootstrap";
+import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import { addListener } from "../components/tabs";
 import { initAutocompleteAddress } from '../plugins/autocomplete_address';
 import { initAutocompleteCity } from '../plugins/autocomplete_city';
@@ -25,6 +26,8 @@ import { welcomeRedirect } from '../components/redirect';
 import { showTrash } from '../components/event_actions';
 import { openActions } from '../components/actions_button';
 import { copyLink } from '../components/copy_to_clipboard';
+import { initMapbox } from '../plugins/init_mapbox';
+import { initMapboxClubShow } from '../plugins/init_mapbox_club_show';
 // import { triggerShare } from '../components/share_profile';
 
 const tabs = document.querySelectorAll(".tab-underlined");
@@ -50,4 +53,6 @@ welcomeRedirect();
 showTrash();
 openActions();
 copyLink();
+initMapbox();
+initMapboxClubShow();
 // triggerShare();

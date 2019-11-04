@@ -1,4 +1,5 @@
-<h1>Clubs</h1>
+<div id="map" style="width: 100%; height: 400px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 <% @clubs.all.each do |club| %>
   <%= link_to club_path(club) do %>
     <p><%= club.name %></p>
