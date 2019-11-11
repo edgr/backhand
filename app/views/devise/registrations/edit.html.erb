@@ -122,10 +122,7 @@
                       <img src="http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg" alt="" class="imagePreview">
                     <% end %>
                     <label class="btn btn-primary upload">Upload Picture
-                      <!-- <input accept="image/*" class="form-control-file is-valid file optional custom-file-input" type="file" name="user[picture]" id="user_picture"> -->
-                      <%= f.file_field :picture, accept: 'image/png,image/jpeg', input_html: {class: "custom-file-input"}, label: false %>
-                      <%#= f.input :picture, accept: 'image/*', input_html: {class: "custom-file-input"}, label: false %>
-                      <%#= f.input :picture_cache, as: :hidden %>
+                      <%= f.input :picture, input_html: {class: 'custom-file-input', accept: 'image/*'}, label: false %>
                     </label>
                   </div>
                   <input type="hidden" id="user_angle" name="user[angle]" value="0">
