@@ -18,7 +18,7 @@
           <div class="custom-file">
             <div class="imagePreview"></div>
             <label class="btn btn-primary upload">Upload Picture
-            <%= f.input :picture, input_html: {class: "custom-file-input" }, label: false %>
+            <%= f.input :picture, input_html: {class: "custom-file-input", accept: 'image/*'}, label: false %>
             <%#= f.input :picture_cache, as: :hidden %>
             </label>
           </div>
