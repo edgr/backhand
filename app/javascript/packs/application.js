@@ -25,6 +25,7 @@ import { welcomeRedirect } from '../components/redirect';
 import { showTrash } from '../components/event_actions';
 import { openActions } from '../components/actions_button';
 import { copyLink } from '../components/copy_to_clipboard';
+import { verifyPhoto } from '../components/verifyPhoto';
 // import { triggerShare } from '../components/share_profile';
 
 const tabs = document.querySelectorAll(".tab-underlined");
@@ -50,4 +51,6 @@ welcomeRedirect();
 showTrash();
 openActions();
 copyLink();
+verifyPhoto();
+
 // triggerShare();
