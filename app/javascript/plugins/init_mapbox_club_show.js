@@ -17,6 +17,7 @@ const initMapboxClubShow = () => {
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
     }
+    map.scrollZoom.disable();
   }
 };
 

@@ -2,8 +2,9 @@
   <%= cl_image_tag(@club.picture) %>
   <div class="main-info">
     <h1><%= @club.name %></h1>
-    <span class="club-email"> <%= @club.email %></span>
-    <span class="club-phone"> <%= @club.phone_number %></span>
+    <a href="<%= @club.website %>" class="club-website"> <%= @club.website %></a>
+    <a href="mailto:<%= @club.email %>" class="club-email"> <%= @club.email %></a>
+    <a href="tel:<%= @club.phone_number %>" class="club-phone"> <%= @club.phone_number %></a>
     <span class="club-address"> <%= @club.address %></span>
   </div>
   <div class="map">

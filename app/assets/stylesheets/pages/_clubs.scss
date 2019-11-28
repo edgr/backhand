@@ -4,14 +4,20 @@
   }
   h1 {
     font-size: 24px;
+    margin-bottom: 0;
   }
   .main-info {
     color: $black;
     padding: 16px;
     display: flex;
     flex-direction: column;
-    .club-phone {
+    .club-phone, .club-website {
       margin-bottom: 12px;
+    }
+    .club-website, .club-phone, .club-email {
+      text-decoration: none;
+      color: $black;
+      width: fit-content;
     }
   }
   .about {
