@@ -28,6 +28,7 @@ import { openActions } from '../components/actions_button';
 import { copyLink } from '../components/copy_to_clipboard';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initMapboxClubShow } from '../plugins/init_mapbox_club_show';
+import { verifyPhoto } from '../components/verifyPhoto';
 // import { triggerShare } from '../components/share_profile';
 
 const tabs = document.querySelectorAll(".tab-underlined");
@@ -55,4 +56,6 @@ openActions();
 copyLink();
 initMapbox();
 initMapboxClubShow();
+verifyPhoto();
+
 // triggerShare();
