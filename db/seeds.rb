@@ -344,7 +344,6 @@ end
   comments = ["Had a great time on the tennis court.", "Looking forward to our next Game. This time I'll win.", "It was an intense game but I enjoyed it.", "Was great fun playing agaist you.", "Bad luck with your injury, hope you get well soon.🤕", "Bro, your BACKHAND is sick!!!😎", "It was an amazing match. Same time next week?", "Had a very fun time with you.", "He was not on my level. Smashed him in no time!", "Good match."]
 
   UserReview.create!(
-    # challenge_id: challenge.id,
     sender: match.player_1,
     receiver: match.player_2,
     content: comments.sample,
@@ -360,7 +359,6 @@ end
     )
 
     UserReview.create!(
-    # challenge_id: challenge.id,
     sender: match.player_2,
     receiver: match.player_1,
     content: comments.sample,
