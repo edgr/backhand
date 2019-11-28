@@ -14,7 +14,7 @@ class MatchesController < ApplicationController
     @match.player_1 = current_user
     if @match.save
       update_match_result_score
-      redirect_to user_my_matches_path(current_user)
+      redirect_to my_matches_path
     else
       render :new
     end
