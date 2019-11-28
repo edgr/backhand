@@ -1,7 +1,22 @@
-<div id="map" style="width: 100%; height: 400px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+<div id="map" style="width: 100%; height: 300px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
-<% @clubs.all.each do |club| %>
-  <%= link_to club_path(club) do %>
-    <p><%= club.name %></p>
+<div class="clubs-container">
+  <% @clubs.all.each do |club| %>
+    <% present club do |club_presenter| %>
+      <%= link_to club_path(club), class: "club-card" do %>
+        <span class="club-title">
+          <%= club.name %>
+        </span>
+        <span class="club-players">
+          <%= club_presenter.players_count %>
+        </span>
+        <span class="club-courts">
+          15 clay courts
+        </span>
+        <span class="club-access">
+          Members only
+        </span>
+      <% end %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
