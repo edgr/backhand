@@ -38,6 +38,7 @@ MatchResult.destroy_all
 Match.destroy_all
 Event.destroy_all
 User.destroy_all
+Court.destroy_all
 Club.destroy_all
 
 puts "creating clubs"
@@ -59,6 +60,7 @@ Club.create!(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   picture: club_url_1,
+  access: "Private, members only"
   )
 Club.create!(
   name: 'Real Madrid',
@@ -71,6 +73,7 @@ Club.create!(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   picture: club_url_2,
+  access: "Semi-private, invitation possible"
   )
 Club.create!(
   name: 'Real Sociedad',
@@ -83,6 +86,7 @@ Club.create!(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   picture: club_url_3,
+  access: "Public"
   )
 Club.create!(
   name: 'FC Lisboa',
@@ -95,6 +99,7 @@ Club.create!(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   picture: club_url_4,
+  access: "Semi-private, invitation possible"
   )
 Club.create!(
   name: 'Paris Saint Germain',
@@ -107,9 +112,26 @@ Club.create!(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   picture: club_url_5,
+  access: "Private, members only"
   )
 
 puts "5 clubs created!"
+
+puts "creating courts"
+
+50.times do
+  Court.create!(
+    name: ["Court 1", "Court 2", "Court 3"].sample,
+    surface: ["Clay", "Hard", "Grass", "Carpet"].sample,
+    indoor: [false, true].sample,
+    lights: [false, true].sample,
+    water: [false, true].sample,
+    single: [false, true].sample,
+    club_id: Club.all.sample.id
+    )
+end
+
+puts "courts created!"
 
 puts "creating users"
 
