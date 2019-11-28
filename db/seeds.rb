@@ -38,17 +38,100 @@ MatchResult.destroy_all
 Match.destroy_all
 Event.destroy_all
 User.destroy_all
+Court.destroy_all
 Club.destroy_all
 
 puts "creating clubs"
 
-Club.create!(name: 'FC Barcelona', shortname: 'FCB')
-Club.create!(name: 'Real Madrid', shortname: 'RM')
-Club.create!(name: 'Real Sociedad', shortname: 'RS')
-Club.create!(name: 'FC Lisboa', shortname: 'FCL')
-Club.create!(name: 'Paris Saint Germain', shortname: 'PSG')
+club_url_1 = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1571083490/FC-Barcelona-fc-barcelona-336927_1024_754_mlwy2m.jpg"
+club_url_2 = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1571083487/RealMadrid_Wallpaper4_urlcnr.jpg"
+club_url_3 = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1571083484/nuevo-fichaje-de-la-real-sociedad_cnd1m3.jpg"
+club_url_4 = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1571083480/lisboa_h9qg6j.jpg"
+club_url_5 = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1571083474/Visite-du-Parc-des-Princes-Experience-Paris-Saint-Germain-Vue-ae%CC%81rienne-_-630x405-_-_-OTCP-DR_cdkqso.jpg"
+
+Club.create!(
+  name: 'FC Barcelona',
+  shortname: 'FCB',
+  address: Faker::Address.full_address,
+  email: Faker::Internet.email,
+  phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+  description: Faker::Lorem.sentence(60),
+  website: Faker::Internet.url,
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
+  picture: club_url_1,
+  access: "Private, members only"
+  )
+Club.create!(
+  name: 'Real Madrid',
+  shortname: 'RM',
+  address: Faker::Address.full_address,
+  email: Faker::Internet.email,
+  phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+  description: Faker::Lorem.sentence(60),
+  website: Faker::Internet.url,
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
+  picture: club_url_2,
+  access: "Semi-private, invitation possible"
+  )
+Club.create!(
+  name: 'Real Sociedad',
+  shortname: 'RS',
+  address: Faker::Address.full_address,
+  email: Faker::Internet.email,
+  phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+  description: Faker::Lorem.sentence(60),
+  website: Faker::Internet.url,
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
+  picture: club_url_3,
+  access: "Public"
+  )
+Club.create!(
+  name: 'FC Lisboa',
+  shortname: 'FCL',
+  address: Faker::Address.full_address,
+  email: Faker::Internet.email,
+  phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+  description: Faker::Lorem.sentence(60),
+  website: Faker::Internet.url,
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
+  picture: club_url_4,
+  access: "Semi-private, invitation possible"
+  )
+Club.create!(
+  name: 'Paris Saint Germain',
+  shortname: 'PSG',
+  address: Faker::Address.full_address,
+  email: Faker::Internet.email,
+  phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+  description: Faker::Lorem.sentence(60),
+  website: Faker::Internet.url,
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
+  picture: club_url_5,
+  access: "Private, members only"
+  )
 
 puts "5 clubs created!"
+
+puts "creating courts"
+
+50.times do
+  Court.create!(
+    name: ["Court 1", "Court 2", "Court 3"].sample,
+    surface: ["Clay", "Hard", "Grass", "Carpet"].sample,
+    indoor: [false, true].sample,
+    lights: [false, true].sample,
+    water: [false, true].sample,
+    single: [false, true].sample,
+    club_id: Club.all.sample.id
+    )
+end
+
+puts "courts created!"
 
 puts "creating users"
 
