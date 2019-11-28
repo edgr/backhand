@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_194247) do
+ActiveRecord::Schema.define(version: 2019_11_28_060245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_10_14_194247) do
     t.string "picture"
     t.integer "latitude"
     t.integer "longitude"
+    t.string "access"
   end
 
   create_table "computed_skills_sets", force: :cascade do |t|
