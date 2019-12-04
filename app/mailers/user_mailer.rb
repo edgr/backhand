@@ -9,12 +9,10 @@ class UserMailer < ApplicationMailer
   #
 
   def welcome
-    @user = params[:user]
+    user = params[:user]
     mail(
-      to: @user.email,
-      subject: 'Welcome to Backhand',
-      bcc: 'edouard@backhandapp.com',
-      name: @user.first_name
+      to: user.email,
+      bcc: 'edouard@backhandapp.com'
     )
   end
 
