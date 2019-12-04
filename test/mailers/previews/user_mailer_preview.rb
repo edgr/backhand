@@ -13,7 +13,11 @@ class UserMailerPreview < ActionMailer::Preview
     partner = User.last
     event = Event.first
 
-    UserMailer.with(inviter: inviter, partner: partner, event: event).new_game.deliver_now
+    UserMailer.with(
+      inviter: inviter,
+      partner: partner,
+      event: event
+    ).new_game.deliver_now
   end
 
 end

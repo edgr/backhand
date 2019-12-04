@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   after_create :set_skills
+  after_create :subscribe_to_newsletter
 
   geocoded_by :address
   reverse_geocoded_by :latitude, :longitude
@@ -163,5 +164,9 @@ class User < ApplicationRecord
 
   def set_skills
     self.computed_skills_set = ComputedSkillsSet.new
+  end
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
   end
 end
