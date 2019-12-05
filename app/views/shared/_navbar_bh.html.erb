@@ -39,11 +39,7 @@
           <%= link_to "My Profile", user_path(current_user), class: "nav-link ml-lg-auto" %>
         </li>
         <li class="nav-item">
-          <%= link_to my_agenda_path, class: "nav-link" do %>
-            <span class="new-feature">
-              My Calendar
-            </span>
-          <% end %>
+          <%= link_to "My Calendar", my_agenda_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to my_matches_path, class: "nav-link" do %>
@@ -56,9 +52,6 @@
               <% end %>
             </span>
           <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Record a Match", new_match_path, class: "nav-link" %>
         </li>
         <div class="d-flex">
           <li class="nav-item d-lg-none">
