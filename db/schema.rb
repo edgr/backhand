@@ -10,26 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_063406) do
+ActiveRecord::Schema.define(version: 2019_11_28_223143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "challenges", force: :cascade do |t|
-    t.bigint "challenger_id"
-    t.bigint "challengee_id"
-    t.string "score"
-    t.string "location"
-    t.string "status"
-    t.string "proposed_time_slots"
-    t.date "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "winner"
-    t.integer "loser"
-    t.index ["challengee_id"], name: "index_challenges_on_challengee_id"
-    t.index ["challenger_id"], name: "index_challenges_on_challenger_id"
-  end
 
   create_table "clubs", force: :cascade do |t|
     t.string "name"
@@ -130,7 +114,6 @@ ActiveRecord::Schema.define(version: 2019_11_28_063406) do
   create_table "user_reviews", force: :cascade do |t|
     t.bigint "sender_id"
     t.bigint "receiver_id"
-    t.bigint "challenge_id"
     t.integer "serve"
     t.integer "return"
     t.integer "backhand"
@@ -143,7 +126,6 @@ ActiveRecord::Schema.define(version: 2019_11_28_063406) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["challenge_id"], name: "index_user_reviews_on_challenge_id"
     t.index ["receiver_id"], name: "index_user_reviews_on_receiver_id"
     t.index ["sender_id"], name: "index_user_reviews_on_sender_id"
   end
@@ -186,8 +168,6 @@ ActiveRecord::Schema.define(version: 2019_11_28_063406) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "challenges", "users", column: "challengee_id"
-  add_foreign_key "challenges", "users", column: "challenger_id"
   add_foreign_key "computed_skills_sets", "users"
   add_foreign_key "courts", "clubs"
   add_foreign_key "events", "clubs"
@@ -202,7 +182,6 @@ ActiveRecord::Schema.define(version: 2019_11_28_063406) do
   add_foreign_key "matches", "clubs"
   add_foreign_key "matches", "users", column: "player_1_id"
   add_foreign_key "matches", "users", column: "player_2_id"
-  add_foreign_key "user_reviews", "challenges"
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
   add_foreign_key "users", "clubs"
