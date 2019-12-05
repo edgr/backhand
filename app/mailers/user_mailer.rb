@@ -44,9 +44,32 @@ class UserMailer < ApplicationMailer
     mail to: @receiver.email
   end
 
+  def new_match_result
+    @player_1 = params[:player_1]
+    @player_2 = params[:player_2]
+    @match = params[:match]
+    winner = User.find(@match.match_result.winner_id)
+    @winner = winner_name_in_email(winner)
+    self.template_model = {
+      player_1_first_name: @player_1.first_name,
+      player_2_first_name: @player_2.first_name,
+      match_result: @match.match_result.score,
+      winner: @winner
+    }
+    mail to: @player_2.email
+  end
+
   private
 
   def sender_url(id)
     "https://www.backhandapp.com/users/#{id}/user_reviews/new"
+  end
+
+  def winner_name_in_email(winner)
+    if winner == @player_2
+      "You"
+    else
+      @player_1.first_name
+    end
   end
 end

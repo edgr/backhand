@@ -31,4 +31,16 @@ class UserMailerPreview < ActionMailer::Preview
     ).new_player_review.deliver_now
   end
 
+  def new_match_result
+    @player_1 = User.find(273)
+    @player_2 = User.find(274)
+    @match = Match.first
+
+    UserMailer.with(
+      player_1: @player_1,
+      player_2: @player_2,
+      match: @match
+    ).new_match_result.deliver_now
+  end
+
 end
