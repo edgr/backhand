@@ -7,7 +7,7 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.with(user: @user).welcome
   end
 
-  def new_game
+  def new_game_event
     @inviter = User.find(273)
     @partner = User.find(274)
     @event = Event.first
@@ -16,7 +16,7 @@ class UserMailerPreview < ActionMailer::Preview
       inviter: @inviter,
       partner: @partner,
       event: @event
-    ).new_game.deliver_now
+    ).new_game_event.deliver_now
   end
 
   def new_player_review

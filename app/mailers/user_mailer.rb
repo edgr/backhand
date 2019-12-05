@@ -10,13 +10,16 @@ class UserMailer < ApplicationMailer
 
   def welcome
     @user = params[:user]
+    self.template_model = {
+      player_first_name: @user.first_name
+    }
     mail(
       to: @user.email,
       bcc: 'edouard@backhandapp.com'
     )
   end
 
-  def new_game
+  def new_game_event
     @inviter = params[:inviter]
     @partner = params[:partner]
     @event = params[:event]
