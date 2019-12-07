@@ -22,5 +22,17 @@ const initAutocompleteCityFilter = () => {
   }
 };
 
+const initAutocompleteClubAddress = () => {
+  const searchInput = document.getElementById('clubs-address');
+  if (searchInput) {
+    places({
+      container: searchInput
+    }).configure({
+      type: 'city'
+    });
+  }
+};
+
 export { initAutocompleteCity };
 export { initAutocompleteCityFilter };
+export { initAutocompleteClubAddress };

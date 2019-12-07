@@ -3,6 +3,14 @@ class ClubsController < ApplicationController
 
   def index
     @clubs = Club.geocoded
+    if params[:search_clubs].nil?
+      address = request.location.city
+      @clubs = @clubs.near(address, 25)
+    elsif params[:search_clubs][:location].present?
+      @clubs = @clubs.near(params[:search_clubs][:location], 250)
+    else
+      @clubs = Club.geocoded
+    end
     @markers = @clubs.map do |club|
       {
         lat: club.latitude,
