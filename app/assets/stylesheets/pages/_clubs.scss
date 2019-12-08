@@ -1,3 +1,71 @@
+.clubs-map {
+  #map {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .clubs-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    .club-card {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+@media all and (min-width: 992px) {
+  .clubs-map {
+    display: flex;
+    flex-direction: row-reverse;
+    #map {
+      height: 100vh;
+      width: 400px;
+      position: sticky;
+      top: 0;
+    }
+    .clubs-container {
+      flex-grow: 1;
+      .clubs-results {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 16px;
+        flex-grow: 1;
+        .club-card {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+.clubs-search {
+  display: flex;
+  .search_clubs_location {
+    flex-grow: 1;
+  }
+  .search-clubs-btn {
+    font-size: 24px;
+    height: 38px;
+    margin-left: 8px;
+    color: $white;
+    background-color: $blue;
+    border: none;
+    border-radius: 5px;
+    padding: 0 12px;
+  }
+}
+
+.mapboxgl-popup-content {
+  padding: 12px 24px 10px !important;
+  span {
+    font-weight: 600;
+    color: $black;
+  }
+}
+
 .club-container {
   img {
     width: 100%;
