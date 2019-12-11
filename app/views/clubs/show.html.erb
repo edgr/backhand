@@ -10,8 +10,21 @@
   <div class="map">
     <div id="map-show" style="width: 100%; height: 300px;" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
-  <div class="about">
-    <h2>About</h2>
-    <span class="club-desc"> <%= @club.description %></span>
+  <div class="courts">
+    <h2>Courts</h2>
+    <% present @club do |club_presenter| %>
+      <span class="club-courts">
+        <%= club_presenter.courts %>
+      </span><br>
+      <span>
+        <%= club_presenter.courts_indoors %>
+      </span><br>
+      <span>
+        <%= club_presenter.courts_with_lights %>
+      </span><br>
+      <span>
+        <%= club_presenter.singles_courts %>
+      </span>
+    <% end %>
   </div>
 </div>

@@ -1,0 +1,44 @@
+.club-container {
+  img {
+    width: 100%;
+    max-height: 400px;
+  }
+  h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+  .main-info {
+    color: $black;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    .club-phone, .club-website {
+      margin-bottom: 12px;
+    }
+    .club-website, .club-phone, .club-email {
+      text-decoration: none;
+      color: $black;
+      width: fit-content;
+    }
+  }
+  .courts {
+    color: $black;
+    padding: 16px;
+    h2 {
+      font-size: 20px;
+    }
+  }
+}
+
+@media all and (min-width: 992px) {
+  .club-container {
+    h1 {
+      font-size: 32px;
+    }
+    .main-info {
+      .club-phone, .club-website {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
