@@ -34,6 +34,7 @@ end
 
 puts "destroy all"
 
+Shoutout.destroy_all
 MatchResult.destroy_all
 Match.destroy_all
 Event.destroy_all
@@ -230,7 +231,7 @@ end
     address: 'Barcelona',
     phone_number: '01714170663',
     level: 'Pro',
-    password: 'Password1!',
+    password: 'password',
     points: 1200,
     country: Faker::Address.country_code,
     bio: Faker::Lorem.sentence(15),

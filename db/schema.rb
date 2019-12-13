@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_223143) do
+ActiveRecord::Schema.define(version: 2019_12_12_062022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2019_11_28_223143) do
     t.text "description"
     t.string "website"
     t.string "picture"
-    t.integer "latitude"
-    t.integer "longitude"
+    t.float "latitude"
+    t.float "longitude"
     t.string "access"
   end
 
@@ -111,6 +111,16 @@ ActiveRecord::Schema.define(version: 2019_11_28_223143) do
     t.index ["player_2_id"], name: "index_matches_on_player_2_id"
   end
 
+  create_table "shoutouts", force: :cascade do |t|
+    t.boolean "recipients"
+    t.integer "minimum_level"
+    t.string "message"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shoutouts_on_user_id"
+  end
+
   create_table "user_reviews", force: :cascade do |t|
     t.bigint "sender_id"
     t.bigint "receiver_id"
@@ -182,6 +192,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_223143) do
   add_foreign_key "matches", "clubs"
   add_foreign_key "matches", "users", column: "player_1_id"
   add_foreign_key "matches", "users", column: "player_2_id"
+  add_foreign_key "shoutouts", "users"
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
   add_foreign_key "users", "clubs"

@@ -1,0 +1,40 @@
+<div class="container">
+  <% @shoutouts.each do |shoutout| %>
+    <% present shoutout.user do |user_presenter| %>
+      <div class="shoutout-card">
+        <div class="shoutout-user">
+          <%= cl_image_tag shoutout.user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", quality: "auto", class: "avatar-bordered"%>
+          <div class="name-info">
+            <div class="name">
+              <span>
+                <%= shoutout.user.first_name %>
+              </span>
+              <span>
+                <%= shoutout.user.last_name %>
+              </span>
+            </div>
+            <div class="more-info">
+              <span class="level-style">
+                <%= shoutout.user.style_of_play %>
+              </span>
+              <span class="level-style">
+                <%= shoutout.user.level %>
+              </span>
+            </div>
+          </div>
+          <div class="points">
+            <span><%= user_presenter.points %> pts</span>
+          </div>
+        </div>
+        <p>
+          <%= shoutout.message %>
+        </p>
+      </div>
+      <% if shoutout.user != current_user %>
+        <div class="shoutout-link">
+          <a href="https://wa.me/<%= shoutout.user.phone_number %>?text=Hello%20<%= shoutout.user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%">Contact <%= shoutout.user.first_name %></a>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
