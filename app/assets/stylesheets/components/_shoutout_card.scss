@@ -1,58 +1,75 @@
 .shoutout-card {
   width: 100%;
   max-width: 500px;
+  position: relative;
   margin: 16px auto 0;
-  padding: 16px 16px 32px;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   border-radius: 4px;
-  .shoutout-user {
-    display: flex;
-    margin-bottom: 12px;
-    align-items: flex-start;
-    img {
-      margin-right: 12px;
-    }
-    .name-info {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      margin-top: -6px;
-      .name {
-        font-size: 20px;
-        color: $black;
-      }
-      .more-info {
-        margin-top: -6px;
-        .level-style {
-          font-size: 12px;
+  border-bottom: none;
+  .shoutout-info {
+    padding: 16px;
+    a {
+      text-decoration: none;
+        .shoutout-user {
+        display: flex;
+        margin-bottom: 12px;
+        align-items: flex-start;
+        img {
+          margin-right: 12px;
+        }
+        .name-info {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          margin-top: -6px;
+          .name {
+            font-size: 20px;
+            color: $black;
+          }
+          .club {
+            font-size: 12px;
+            color: $gray;
+          }
+          .more-info {
+            margin-top: -6px;
+            .level-style {
+              font-size: 12px;
+            }
+          }
+          .points {
+            position: unset;
+            background-color: unset;
+            padding: 0;
+            display: flex;
+            font-size: 12px;
+            color: $light-gray;
+          }
         }
       }
     }
-    .points {
-      position: unset;
-      background-color: unset;
-      padding: 0;
-      display: flex;
-      font-size: 12px;
+    .created-ago {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 14px;
+    }
+    p {
+      margin: 0 0 0 52px;
+      color: $black;
     }
   }
-  p {
-    margin: 0 0 0 52px;
-    color: $black;
+  .shoutout-link {
+    width: 100%;
+    text-align: center;
+    background-color: $blue;
+    padding: 8px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    text-decoration: none;
+    border-color: #0095FF;
+    a {
+      color: $white;
+    }
   }
 }
 
-.shoutout-link {
-  width: 100%;
-  text-align: center;
-  background-color: $blue;
-  padding: 8px;
-  margin-top: -8px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  text-decoration: none;
-  border-color: #0095FF;
-  a {
-    color: $white;
-  }
-}

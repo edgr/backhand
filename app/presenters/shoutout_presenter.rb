@@ -8,7 +8,7 @@ class ShoutoutPresenter < BasePresenter
     elsif seconds < 3600
       minutes = seconds / 60
       "#{minutes.to_i}m ago"
-    else minutes > 60
+    else
       hours = seconds / 3600
       "#{hours.to_i}h ago"
     end

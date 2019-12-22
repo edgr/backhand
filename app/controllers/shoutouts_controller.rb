@@ -6,7 +6,7 @@ class ShoutoutsController < ApplicationController
   end
 
   def index
-    @shoutouts = Shoutout.all.order(created_at: :desc)
+    @shoutouts = Shoutout.where(created_at: 24.hours.ago..Time.now).order(created_at: :desc)
   end
 
   def create
