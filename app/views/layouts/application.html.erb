@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="https://res.cloudinary.com/namhaichau/image/upload/v1559467568/backhand_favicon_r9h26v.png" type="image/png" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.css" />
   <title><%= meta_title %></title>
   <meta name="description" content="<%= meta_description %>">
 
@@ -54,6 +55,7 @@
   <%= yield %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.js"></script>
 </body>
 <footer>
   <% if current_page?(root_path) %>
