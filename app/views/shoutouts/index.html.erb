@@ -21,9 +21,18 @@
                 <%= shoutout.user.level %>
               </span>
             </div>
+            <div class="points">
+              <span>
+                <%= user_presenter.points %> pts
+              </span>
+            </div>
           </div>
-          <div class="points">
-            <span><%= user_presenter.points %> pts</span>
+          <div class="created-at">
+            <span>
+              <% present shoutout do |shoutout| %>
+                <%= shoutout.created_at %>
+              <% end %>
+            </span>
           </div>
         </div>
         <p>

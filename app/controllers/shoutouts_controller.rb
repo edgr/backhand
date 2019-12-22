@@ -6,7 +6,7 @@ class ShoutoutsController < ApplicationController
   end
 
   def index
-    @shoutouts = Shoutout.all
+    @shoutouts = Shoutout.all.order(created_at: :desc)
   end
 
   def create
@@ -24,5 +24,4 @@ class ShoutoutsController < ApplicationController
   def shoutout_params
     params.require(:shoutout).permit(:minimum_level, :message, :recipients)
   end
-
 end
