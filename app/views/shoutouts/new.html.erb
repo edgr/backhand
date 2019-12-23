@@ -2,7 +2,7 @@
   <%= simple_form_for @shoutout do |f| %>
     <%= f.input :recipients, label: "send to", collection:["players in my club only", "players outside my club only", "everyone in my area"], selected: ["players in my club only"]%>
     <div id="level-slider"></div>
-    <%= f.input :minimum_level, as: :range %>
+    <%= f.input :minimum_level %>
     <%= f.input :message %>
     <%= f.submit %>
   <% end %>

@@ -12,6 +12,9 @@ const startSlider = () => {
             'max': 2400
         }
     });
+    slider.noUiSlider.on('update', (event) => {
+      console.log(slider.noUiSlider.get())
+    })
   }
 }
 
