@@ -22,6 +22,6 @@ class ShoutoutsController < ApplicationController
   private
 
   def shoutout_params
-    params.require(:shoutout).permit(:minimum_level, :message, :recipients)
+    params.require(:shoutout).permit(:minimum_level, :maximum_level, :message, :recipients)
   end
 end
