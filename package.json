@@ -15,7 +15,8 @@
     "places.js": "^1.16.4",
     "popper.js": "^1.15.0",
     "select2": "^4.0.8",
-    "sweetalert": "^2.1.2"
+    "sweetalert": "^2.1.2",
+    "wnumb": "^1.2.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.4.1"
