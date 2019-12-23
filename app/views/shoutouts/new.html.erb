@@ -1,10 +1,10 @@
 <div class="container">
   <%= simple_form_for @shoutout do |f| %>
-    <%= f.input :recipients, label: "send to", collection:["players in my club only", "players outside my club only", "everyone in my area"], selected: ["players in my club only"]%>
+    <%= f.input :recipients, label: false, collection: [['0', 'players in my club only'], ['1', 'players outside my club only'], ['2', 'everyone in my area']], label_method: :second, value_method: :first, selected: ["players in my club only"] %>
     <div id="level-slider"></div>
     <%= f.input :minimum_level %>
     <%= f.input :maximum_level %>
-    <%= f.input :message %>
-    <%= f.submit %>
+    <%= f.input :message, label: false %>
+    <%= f.submit "send", class:"btn btn-primary cta-main" %>
   <% end %>
 </div>

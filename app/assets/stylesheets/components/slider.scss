@@ -1,7 +1,17 @@
 #level-slider {
-  margin-top: 70px;
+  margin-top: 60px;
   .noUi-connect {
     background-color: $blue;
+  }
+  .noUi-tooltip {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    border: none;
+  }
+  .noUi-handle {
+    outline: none;
+    &:focus {
+      outline:none;
+    }
   }
 }
 

@@ -12,6 +12,7 @@ const startSlider = () => {
         connect: true,
         behaviour: 'drag',
         margin: 600,
+        limit: 1200,
         step: 50,
         tooltips: true,
         format: wNumb({

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_015952) do
+ActiveRecord::Schema.define(version: 2019_12_23_043748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,9 +112,9 @@ ActiveRecord::Schema.define(version: 2019_12_23_015952) do
   end
 
   create_table "shoutouts", force: :cascade do |t|
-    t.boolean "recipients"
+    t.text "recipients"
     t.integer "minimum_level"
-    t.string "message"
+    t.text "message"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
