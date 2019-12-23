@@ -6,7 +6,8 @@ class ShoutoutsController < ApplicationController
   end
 
   def index
-    @shoutouts = Shoutout.recent.order(created_at: :desc)
+    shoutouts = Shoutout.recent.order(created_at: :desc)
+    @shoutouts = targets(shoutouts)
   end
 
   def create
@@ -37,6 +38,17 @@ class ShoutoutsController < ApplicationController
     end
     recipients.map do |recipient|
       recipient.id
+    end
+  end
+
+  def targets(shoutouts_list)
+    targets = []
+    shoutouts_list.each do |shoutout|
+      if shoutout.recipients.include? current_user.id
+        targets << shoutout
+      elsif shoutout.user == current_user
+        targets << shoutout
+      end
     end
   end
 end
