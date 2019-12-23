@@ -29,16 +29,16 @@ class ShoutoutsController < ApplicationController
 
   def recipients
     club_id = current_user.club.id
+    range = params[:shoutout][:minimum_level].to_i..params[:shoutout][:maximum_level].to_i
     if params[:shoutout][:recipients] == "0"
       recipients = User.where(club_id: club_id)
-    elsif params[:shoutout][:recipients] == "1"
-      recipients = User.where.not(club_id: club_id)
     else
       recipients = User.all
     end
     recipients.map do |recipient|
       recipient.id
     end
+    raise
   end
 
   def targets(shoutouts_list)
