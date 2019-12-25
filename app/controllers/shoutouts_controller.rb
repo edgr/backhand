@@ -35,7 +35,7 @@ class ShoutoutsController < ApplicationController
     if user_choice == "0"
       recipients = User.where(club_id: current_user.club.id)
     else
-      recipients = User.all
+      recipients = User.near(current_user.address, 25)
     end
     recipients = recipients.reject { |recipient| recipient.id == current_user.id }
     range = params[:shoutout][:minimum_level].to_i..params[:shoutout][:maximum_level].to_i
