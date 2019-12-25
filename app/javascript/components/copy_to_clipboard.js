@@ -21,12 +21,7 @@ const copyLink = () => {
     button.addEventListener('click', (event) => {
       event.preventDefault();
       const copy = window.location.href;
-      console.log(copy);
       copyStringToClipboard(copy);
-      // document.getElementById("alarm-msg").innerHTML = "copied";
-      // setTimeout(function(){
-        // document.getElementById("alarm-msg").innerHTML = '';
-      // }, 1000);
     })
   }
 }

@@ -3,3 +3,53 @@
 .search_home {
   margin: 55px 0px;
 }
+
+#hidden-share-button {
+  visibility: hidden;
+}
+
+@mixin share-button {
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    opacity: .85;
+  }
+}
+
+#share-modal {
+  .modal-header {
+    h5 {
+      font-size: 16px;
+      color: $black;
+    }
+  }
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    .share-fb {
+      @include share-button
+      background-color: #3b5999;
+    }
+
+    .share-tw {
+      @include share-button
+      background-color: #1da1f3;
+    }
+
+    .share-lk {
+      @include share-button
+      background-color: #0076b4;
+    }
+    #copy-link-button {
+      @include share-button
+      cursor: pointer;
+      background-color: $blue;
+      user-select: none;
+    }
+  }
+}
