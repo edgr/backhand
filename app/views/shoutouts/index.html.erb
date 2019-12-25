@@ -41,7 +41,7 @@
         <% end %>
         <% if shoutout.user == current_user %>
           <div class="shoutout-link-red">
-            <%= link_to "delete", shoutout_path(shoutout),
+            <%= link_to "remove", shoutout_path(shoutout),
                 method: :delete,
                 data: { confirm: "Are you sure?" } %>
           </div>
@@ -49,4 +49,13 @@
       </div>
     <% end %>
   <% end %>
+  <div class="actions-wrapper">
+    <%= link_to new_shoutout_path do %>
+      <button class="mdc-fab app-fab--absolute" aria-label="open">
+        <span class="mdc-fab__icon material-icons">
+          add
+        </span>
+      </button>
+    <% end %>
+  </div>
 </div>

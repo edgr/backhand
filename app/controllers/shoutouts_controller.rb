@@ -1,6 +1,4 @@
 class ShoutoutsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index]
-
   def new
     @shoutout = Shoutout.new
   end
