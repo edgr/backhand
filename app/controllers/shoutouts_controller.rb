@@ -6,8 +6,7 @@ class ShoutoutsController < ApplicationController
   end
 
   def index
-    shoutouts = Shoutout.recent.order(created_at: :desc)
-    @shoutouts = shoutouts_to_display(shoutouts)
+    @shoutouts = shoutouts_to_display(Shoutout.recent.order(created_at: :desc))
   end
 
   def create
@@ -19,6 +18,11 @@ class ShoutoutsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    Shoutout.find(params[:id]).destroy
+    redirect_to shoutouts_path
   end
 
   private
@@ -33,6 +37,7 @@ class ShoutoutsController < ApplicationController
     else
       recipients = User.all
     end
+    recipients = recipients.reject { |recipient| recipient.id == current_user.id }
     range = params[:shoutout][:minimum_level].to_i..params[:shoutout][:maximum_level].to_i
     return recipients.map do |recipient|
       recipient.id if range.include? recipient.points.to_i
@@ -40,12 +45,11 @@ class ShoutoutsController < ApplicationController
   end
 
   def shoutouts_to_display(shoutouts_list)
-    shoutouts_to_display = []
-    shoutouts_list.each do |shoutout|
+    shoutouts_list.select do |shoutout|
       if shoutout.recipients.include? current_user.id
-        shoutouts_to_display << shoutout
-      elsif shoutout.user == current_user
-        shoutouts_to_display << shoutout
+        shoutout
+      elsif shoutout.user_id == current_user.id
+        shoutout
       end
     end
   end
