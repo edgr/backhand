@@ -28,7 +28,7 @@
       color: $white;
       text-decoration: none;
     }
-    #home-cta {
+    #home-cta, #tell-your-friends {
       border-radius: 30px;
       font-size: 16px;
       border: 2px solid $white;
@@ -54,7 +54,7 @@
       left: 80px;
       width: 450px;
       height: 0px;
-      #home-cta {
+      #home-cta, #tell-your-friends {
         border-radius: 38px;
         font-size: 24px;
         border: 2px solid $white;
