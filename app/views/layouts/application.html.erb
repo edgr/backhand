@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <title><%= meta_title %></title>
   <meta name="description" content="<%= meta_description %>">
+  <meta name="theme-color" content="#000000"/>
 
   <!-- Facebook Open Graph data -->
   <meta property="og:title" content="<%= meta_title %>" />
@@ -56,7 +57,7 @@
   <%= javascript_pack_tag 'application' %>
 </body>
 <footer>
-  <% if current_page?(root_path) %>
+  <% if current_page?(root_path) || current_page?('/404') || current_page?('/500') %>
   <%= render 'shared/footer' %>
   <% end %>
 </footer>
