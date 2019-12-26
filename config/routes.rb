@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # get 'errors/not_found'
-  # get 'errors/internal_server_error'
   root to: 'pages#home'
   get '/welcome', to: 'pages#welcome', as: 'welcome'
   match '/404', to: 'errors#not_found', via: :all
