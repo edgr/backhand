@@ -68,6 +68,8 @@ class User < ApplicationRecord
 
   scope :active, -> { where("status = 'active'") }
 
+  store :settings, accessors: [:new_shoutout_email, :new_review_email, :new_match_email]
+
   def active?
     status == 'active'
   end
@@ -106,7 +108,7 @@ class User < ApplicationRecord
   end
 
   def self.backhand
-    ['One Handed','Two Handed']
+    ['One Handed', 'Two Handed']
   end
 
   def self.styles
