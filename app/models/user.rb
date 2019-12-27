@@ -68,7 +68,11 @@ class User < ApplicationRecord
 
   scope :active, -> { where("status = 'active'") }
 
-  store :settings, accessors: [:new_shoutout_email, :new_review_email, :new_match_email]
+  typed_store :settings do |s|
+    s.boolean :new_shoutout_email, default: true, null: false
+    s.boolean :new_review_email, default: true, null: false
+    s.boolean :new_match_email, default: true, null: false
+  end
 
   def active?
     status == 'active'
