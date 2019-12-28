@@ -61,3 +61,69 @@ en:
     logout: "Log Out"
     login: "Login"
     see_more: "see more"
+  users:
+    show:
+      info: "Info"
+      bio: "Bio"
+      age: "age: "
+      years_old: "years old"
+      birthday: "birthday: "
+      place_of_birth: "place of birth: "
+      height: "height: "
+      weight: "weight: "
+      style_of_play: "style: "
+      residence: "residence: "
+      world_ranking: "world ranking"
+      with: "with"
+      points: "points"
+      skills: "Skills"
+      strokes: "STROKES"
+      serve: "serve"
+      return: "return"
+      forehand: "forehand"
+      backhand: "backhand"
+      volley: "volley"
+      fitness: "FITNESS"
+      speed: "speed"
+      power: "power"
+      endurance: "endurance"
+      comments: "Comments"
+      no_reviews_yet: "hasn't received any reviews yet!"
+      matches: "matches"
+      wins: "wins"
+      losses: "losses"
+      rankings_and_stats: "Rankings & Stats"
+      club: "club: "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
