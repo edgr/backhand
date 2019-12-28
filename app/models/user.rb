@@ -70,8 +70,10 @@ class User < ApplicationRecord
 
   typed_store :settings do |s|
     s.boolean :new_shoutout_email, default: true, null: false
-    s.boolean :new_review_email, default: true, null: false
-    s.boolean :new_match_email, default: true, null: false
+    s.boolean :new_player_review_email, default: true, null: false
+    s.boolean :new_match_result_email, default: true, null: false
+    s.boolean :new_game_event_email, default: true, null: false
+    s.boolean :confirmed_match_result_email, default: true, null: false
   end
 
   def active?
