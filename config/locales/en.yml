@@ -100,34 +100,31 @@ en:
       second_p_html: "In short, the formula adds/remove points to each player based on the outcome of the match (win/lose) and their initial points."
       third_p_html: "The important thing to do if you want your ranking to be more and more accurate is to <strong>record your matches</strong> on Backhand! ;)"
       got_it: "Got it!"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    index:
+      in: "in"
+      player: "player"
+      matching_query: "matching your query"
+      type_anything: "Type in anything and hit enter"
+      or_use: "or use"
+      filters: "Filters"
+      filter_results: "Filter your results"
+      club: "Club"
+      location: "Location"
+      country: "Country"
+      level: "Level"
+      style_of_play: "Style of play"
+      handedness: "Handedness"
+      backhand_style: "Backhand style"
+      gender: "Gender"
+      search: "Search"
+  matches:
+    new:
+      when: "WHEN DID YOU PLAY?"
+      where: "WHERE DID YOU PLAY?"
+      whom: "WITH WHOM?"
+      won: "WHO WON?"
+      sets: "HOW MANY SETS DID YOU PLAY?"
+      opponent: "Opponent"
+      set: "set"
+      record: "record match"
 
