@@ -143,6 +143,11 @@
             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionEditProfile">
               <div class="card-body">
                 <div class="settings-section">
+                  <h5>Language</h5>
+                  <%= f.input :language, as: :select, collection: [['en', 'english'], ['es', 'spanish'], ['fr', 'french']], label_method: :second, value_method: :first, label: false, include_blank: false %>
+                </div>
+                <div class="settings-section">
+                  <h5>Notifications</h5>
                   <%= f.label :new_shoutout_email do %>
                     <span>New Shoutout Email</span>
                     <%= f.check_box :new_shoutout_email %>
