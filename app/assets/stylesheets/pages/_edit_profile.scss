@@ -24,3 +24,17 @@
 abbr {
   text-decoration: none !important;
 }
+
+#collapseFive {
+  .card-body {
+    .settings-section {
+      display: flex;
+      flex-direction: column;
+      label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}

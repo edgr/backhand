@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_07_074111) do
+ActiveRecord::Schema.define(version: 2019_12_27_045737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,17 @@ ActiveRecord::Schema.define(version: 2019_12_07_074111) do
     t.index ["player_2_id"], name: "index_matches_on_player_2_id"
   end
 
+  create_table "shoutouts", force: :cascade do |t|
+    t.text "recipients"
+    t.integer "minimum_level"
+    t.text "message"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "maximum_level"
+    t.index ["user_id"], name: "index_shoutouts_on_user_id"
+  end
+
   create_table "user_reviews", force: :cascade do |t|
     t.bigint "sender_id"
     t.bigint "receiver_id"
@@ -163,6 +174,7 @@ ActiveRecord::Schema.define(version: 2019_12_07_074111) do
     t.integer "review_score"
     t.string "status", default: ""
     t.integer "angle", default: 0
+    t.jsonb "settings", default: "{}", null: false
     t.index ["club_id"], name: "index_users_on_club_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -182,6 +194,7 @@ ActiveRecord::Schema.define(version: 2019_12_07_074111) do
   add_foreign_key "matches", "clubs"
   add_foreign_key "matches", "users", column: "player_1_id"
   add_foreign_key "matches", "users", column: "player_2_id"
+  add_foreign_key "shoutouts", "users"
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
   add_foreign_key "users", "clubs"

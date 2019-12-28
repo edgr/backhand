@@ -133,6 +133,40 @@
               </div>
             </div>
           </div>
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <button class="btn accordion-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
+                Settings
+              </button>
+            </div>
+
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionEditProfile">
+              <div class="card-body">
+                <div class="settings-section">
+                  <%= f.label :new_shoutout_email do %>
+                    <span>New Shoutout Email</span>
+                    <%= f.check_box :new_shoutout_email %>
+                  <% end %>
+                  <%= f.label :new_player_review_email do %>
+                    <span>New Player Review Email</span>
+                    <%= f.check_box :new_player_review_email %>
+                  <% end %>
+                  <%= f.label :new_game_event_email do %>
+                    <span>New Match Emails</span>
+                    <%= f.check_box :new_game_event_email %>
+                  <% end %>
+                  <%= f.label :confirmed_match_result_email do %>
+                    <span>Confirmed Match Result Emails</span>
+                    <%= f.check_box :confirmed_match_result_email %>
+                  <% end %>
+                  <%= f.label :new_match_result_email do %>
+                    <span>New Match Result Emails</span>
+                    <%= f.check_box :new_match_result_email %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="save-profile">
