@@ -39,21 +39,25 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content elo-explained">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">How does rankings work?</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">
+          <%= t('.title') %>
+        </h5>
       </div>
       <div class="modal-body">
         <p>
-          The ranking system we use is the <strong>Elo Ranking</strong>. It is designed to reflect as accurately as possible the level of a player overtime.
+          <%= t('.first_p_html') %>
         </p>
         <p>
-          In short, the formula adds/remove points to each player based on the outcome of the match (win/lose) and their initial points.
+          <%= t('.second_p_html') %>
         </p>
         <p>
-          The important thing to do if you want your ranking to be more and more accurate is to <strong>record your matches</strong> on Backhand! ;)
+          <%= t('third_p_html') %>
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <%= t('.got_it') %>
+        </button>
       </div>
     </div>
   </div>

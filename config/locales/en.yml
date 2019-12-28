@@ -94,8 +94,12 @@ en:
       losses: "losses"
       rankings_and_stats: "Rankings & Stats"
       club: "club: "
-
-
+    rankings:
+      title: "How does rankings work?"
+      first_p_html: "The ranking system we use is the <strong>Elo Ranking</strong>. It is designed to reflect as accurately as possible the level of a player overtime."
+      second_p_html: "In short, the formula adds/remove points to each player based on the outcome of the match (win/lose) and their initial points."
+      third_p_html: "The important thing to do if you want your ranking to be more and more accurate is to <strong>record your matches</strong> on Backhand! ;)"
+      got_it: "Got it!"
 
 
 
