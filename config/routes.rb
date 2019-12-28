@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   resources :user_steps
 
-  scope '(:locale)', locale: /fr|es/ do
+  scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
+    get '/:locale', to: 'pages#home'
     root to: 'pages#home'
     get '/welcome', to: 'pages#welcome', as: 'welcome'
     match '/404', to: 'errors#not_found', via: :all
@@ -23,6 +24,5 @@ Rails.application.routes.draw do
 
     resources :clubs, only: [:index, :show]
   end
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
