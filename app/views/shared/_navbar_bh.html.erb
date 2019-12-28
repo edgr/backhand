@@ -27,24 +27,24 @@
     <div class="collapse navbar-collapse" id="menu-content">
       <ul class="navbar-nav w-100 mt-2 mt-lg-0">
         <li class="nav-item">
-          <%= link_to "Players", users_path, class: "nav-link" %>
+          <%= link_to t('navbar.players'), users_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Rankings", rankings_path, class: "nav-link" %>
+          <%= link_to t('navbar.rankings'), rankings_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Matches", matches_path, class: "nav-link" %>
+          <%= link_to t('navbar.matches'), matches_path, class: "nav-link" %>
         </li>
         <li class="nav-item ml-lg-auto">
-          <%= link_to "My Profile", user_path(current_user), class: "nav-link ml-lg-auto" %>
+          <%= link_to t('navbar.my_profile'), user_path(current_user), class: "nav-link ml-lg-auto" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My Calendar", my_agenda_path, class: "nav-link" %>
+          <%= link_to t('navbar.my_calendar'), my_agenda_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to my_matches_path, class: "nav-link" do %>
             <span>
-              My Matches
+              <%= t('navbar.my_matches') %>
               <% if current_user.notify > 0 %>
                 <div class="matches-notifications">
                   <%= current_user.notify %>
@@ -55,7 +55,7 @@
         </li>
         <div class="d-flex">
           <li class="nav-item d-lg-none">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
 
           <li class="nav-item d-none d-lg-flex">
@@ -90,27 +90,27 @@
 
   <% else %>
     <button class="navbar-toggler see-more-menu d-flex d-lg-none" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
-      see more
+      <%= t('navbar.see_more') %>
     </button>
     <div class="collapse navbar-collapse" id="menu-content">
       <ul class="navbar-nav w-100 mt-2 mt-lg-0">
         <li class="nav-item">
-          <%= link_to "Players", users_path, class: "nav-link" %>
+          <%= link_to t('navbar.players'), users_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Rankings", rankings_path, class: "nav-link" %>
+          <%= link_to t('navbar.rankings'), rankings_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Matches", matches_path, class: "nav-link" %>
+          <%= link_to t('navbar.matches'), matches_path, class: "nav-link" %>
         </li>
         <li>
-          <%= link_to "Login", new_user_session_path, class: "d-flex d-lg-none nav-link text-white" %>
+          <%= link_to t('navbar.login'), new_user_session_path, class: "d-flex d-lg-none nav-link text-white" %>
         </li>
       </ul>
     </div>
     <div class="login-up ml-lg-auto d-none d-lg-flex">
       <%#= link_to 'Sign up', new_user_registration_path, class: "nav-link text-white" %>
-      <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
+      <%= link_to t('navbar.login'), new_user_session_path, class: "nav-link text-white" %>
     </div>
   <% end %>
 </nav>
