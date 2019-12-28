@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :set_locale
   before_action :store_user_location!, if: :storable_location?
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -38,5 +39,13 @@ class ApplicationController < ActionController::Base
   def set_raven_context
     Raven.user_context(id: session[:current_user_id]) # or anything else in session
     Raven.extra_context(params: params.to_unsafe_h, url: request.url)
+  end
+
+  def set_locale
+    I18n.locale = params.fetch(:locale, I18n.default_locale).to_sym
+  end
+
+  def default_url_options
+    { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
 end

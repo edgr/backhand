@@ -31,3 +31,24 @@
 
 en:
   hello: "Hello world"
+  home:
+    home_title_html: "PLAY MORE<br>PLAY BETTER<br>RANK HIGHER."
+    join_us: "JOIN US FOR FREE"
+    subtitle_1: "Find players..."
+    browse_players: "browse players around you"
+    view_profile: "view player's profiles and contact them"
+    organize_game: "organize your game and play!"
+    subtitle_2: "...and record your matches!"
+    save_score: "save the score and the winner"
+    new_ranking: "get your new ranking instantly!"
+    home_logged_in_title_html: "TELL<br>YOUR<br>FRIENDS."
+    invite: "INVITE"
+    thank_you: "Thanks in advance!"
+    share_facebook: "Share on Facebook"
+    share_twitter: "Share on Twitter"
+    share_linkedin: "Share on LinkedIn"
+  footer:
+    tagline_1: "Made with"
+    tagline_2: "in Barcelona"
+    email: "hello@backhandapp.com"
+    copyright: "© Copyright - 2020"
