@@ -127,4 +127,23 @@ en:
       opponent: "Opponent"
       set: "set"
       record: "record match"
+  events:
+    player_events:
+      today: "Today is"
+      are_you_sure: "Are you sure?"
+      no_upcoming_events: "You have no upcoming events"
+    new:
+      who: "WHO WILL YOU PLAY WITH?"
+      when: "WHEN WILL YOU PLAY?"
+      where: "WHERE WILL YOU PLAY?"
+      remove_player: "remove player"
+      add_player: "add player"
+      create_event: "create event"
+    edit:
+      who: "WHO WILL YOU PLAY WITH?"
+      when: "WHEN WILL YOU PLAY?"
+      where: "WHERE WILL YOU PLAY?"
+      remove_player: "remove player"
+      add_player: "add player"
+      update_event: "update"
 
