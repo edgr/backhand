@@ -15,10 +15,6 @@ fr:
     share_facebook: "Partagez sur Facebook"
     share_twitter: "Partagez sur Twitter"
     share_linkedin: "Partagez sur LinkedIn"
-  welcome:
-    title: "Bienvenue %{current_user}"
-    first_p_html: "Merci d'avoir rejoint Backhand.<br>Nous comptons sur vous pour inviter d'autres joueurs de tennis à nous rejoindre !"
-    second_p_html: "Vous allez être redirigé vers la page d'accueil dans <span id="countdown">6</span> secondes."
   footer:
     tagline_1: "Fait avec"
     tagline_2: "à Barcelone"
@@ -148,6 +144,9 @@ fr:
       no_clubs: "Nous n'avons pas encore recensé les clubs dans cette zone. Faites-le nous savoir !"
     show:
       courts: "Courts"
+  user_reviews:
+    new:
+      recommend: "Recommanderiez-vous %{partner} à d'autres joueurs(es) ?"
   errors:
     internal_server_error:
       first_p: "Oups, il semblerait que nous ayons raté ce coup..."
