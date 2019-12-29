@@ -102,7 +102,7 @@ fr:
   matches:
     new:
       when: "QUAND AVEZ-VOUS JOUÉ ?"
-      where: "OÙ AVEZ-VOUS JOUÉ?"
+      where: "OÙ AVEZ-VOUS JOUÉ ?"
       whom: "AVEC QUI?"
       won: "QUI A GAGNÉ?"
       sets: "COMBIEN DE SETS AVEZ-VOUS JOUÉ ?"
@@ -128,3 +128,8 @@ fr:
       remove_player: "retirer le joueur"
       add_player: "ajouter un joueur"
       update_event: "créér"
+  clubs:
+    index:
+      no_clubs: "Nous n'avons pas encore recensé les clubs dans cette zone. Faites-le nous savoir !"
+    show:
+      courts: "Courts"

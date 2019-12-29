@@ -153,4 +153,8 @@ en:
       remove_player: "remove player"
       add_player: "add player"
       update_event: "update"
-
+  clubs:
+    index:
+      no_clubs: "No clubs in this area yet. Let us know!"
+    show:
+      courts: "Courts"
