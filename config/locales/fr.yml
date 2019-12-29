@@ -70,7 +70,6 @@ fr:
       third_p_html: "L'important, si vous souhaitez que votre classement s'affine le plus possible est <strong>d'enregistrer vos matchs</strong> sur Backhand! ;)"
       got_it: "Ok !"
     index:
-      in: "dans"
       player: "joueur"
       players:
         zero:  'Aucun joueur'

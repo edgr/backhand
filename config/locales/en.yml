@@ -101,7 +101,6 @@ en:
       third_p_html: "The important thing to do if you want your ranking to be more and more accurate is to <strong>record your matches</strong> on Backhand! ;)"
       got_it: "Got it!"
     index:
-      in: "in"
       player: "player"
       players:
         zero:  'No players'
