@@ -11,9 +11,15 @@
         </div>
       <% end %>
       <div class="final-score">
-        <span class="score"><%= match.match_result.score %></span>
-        <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
-        <span class="location"><%= match.club.shortname %></span>
+        <span class="score">
+          <%= match.match_result.score %>
+        </span>
+        <span class="date">
+          <%= t('.match_date', match_date: (l match.date, format: :medium_long)) %>
+        </span>
+        <span class="location">
+          <%= match.club.shortname %>
+        </span>
       </div>
       <%= link_to user_path(match.player_2) do %>
         <div class="<%= match.match_result.winner == match.player_2 ? 'avatar-name-player-2 winner-black' : 'avatar-name-player-2' %>">

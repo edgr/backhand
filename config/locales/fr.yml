@@ -100,6 +100,8 @@ fr:
       volley: "vollée"
       no_reviews: "Pas de commentaires !"
   matches:
+    index:
+      match_date: "%{match_date}"
     new:
       when: "QUAND AVEZ-VOUS JOUÉ ?"
       where: "OÙ AVEZ-VOUS JOUÉ ?"
@@ -214,6 +216,7 @@ fr:
     formats:
       default: "%d/%m/%Y"
       long: "%e %B %Y"
+      medium_long: "%e %b %Y"
       medium: "%e %B"
       short: "%e %b"
     month_names:

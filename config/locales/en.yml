@@ -125,6 +125,8 @@ en:
       volley: "volley"
       no_reviews: "No reviews yet!"
   matches:
+    index:
+      match_date: "%{match_date}"
     new:
       when: "WHEN DID YOU PLAY?"
       where: "WHERE DID YOU PLAY?"
@@ -237,6 +239,7 @@ en:
     formats:
       default: "%Y-%m-%d"
       long: "%B %d, %Y"
+      medium_long: "%b %d, %Y"
       medium: "%B %d"
       short: "%b %d"
     month_names:
