@@ -1,8 +1,7 @@
 <div class="container events-container">
   <% if @events.present? %>
     <p class="text-center">
-      <%= t('.today') %>
-      <%= Date.today.strftime("%A %-b %-d") %>
+      <%= t('.today', date: (l Date.today, format: :medium) ) %>
     </p>
     <% @events.each do |event| %>
       <div class="card-and-actions">
@@ -23,10 +22,10 @@
           </div>
           <div class="date-club">
             <span>
-              <%= event.date_time.strftime("%a %-b %-d") %>
+              <%= t('.event_date', event_date: (l event.date_time.to_date, format: :short) ) %>
             </span>
             <span>
-              <%= event.date_time.strftime("%I:%M%p") %>
+              <%= t('.event_time', event_time: (l event.date_time, format: :very_short) ) %>
             </span>
             <% if event.club %>
               <span class="club">
