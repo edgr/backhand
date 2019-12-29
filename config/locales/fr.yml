@@ -133,3 +133,12 @@ fr:
       no_clubs: "Nous n'avons pas encore recensé les clubs dans cette zone. Faites-le nous savoir !"
     show:
       courts: "Courts"
+  errors:
+    internal_server_error:
+      first_p: "Oups, il semblerait que nous ayons raté ce coup..."
+      second_p_html: "Nous allons repérer l'erreur et la résoudre rapidement. Mais n'heésitez pas à nous le faire savoir, cela peut nous aider dans notre investigation. 🕵️‍♂️ </p>
+    <p>At your service,<br>The Backhand Team</p>"
+    not_found:
+      first_p: "Non, non, vous ne pouvez pas sautez par dessus le filet et y jouer un coup... 🤪"
+      second_p: "Plus sérieusement, il semble que votre requête contienne un erreur. Si vous pensez qu'il y a erreur de notre part, faites-le nous savoir !"
+      third_p_html: "À votre service,<br>The Backhand Team"

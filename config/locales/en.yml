@@ -158,3 +158,12 @@ en:
       no_clubs: "No clubs in this area yet. Let us know!"
     show:
       courts: "Courts"
+  errors:
+    internal_server_error:
+      first_p: "Oups, it looks like we've missed that shot..."
+      second_p_html: "We will spot the error in our logs and fix it asap. But feel free to let us know too to help us investigate. 🕵️‍♂️ </p>
+    <p>At your service,<br>The Backhand Team</p>"
+    not_found:
+      first_p: "No, you cannot jump over the net and play a shot there... 🤪"
+      second_p: "More seriously, it seems that something was wrong with your request. If you are sure of what you were doing, let us know!"
+      third_p_html: "At your service,<br>The Backhand Team"
