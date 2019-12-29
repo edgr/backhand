@@ -72,12 +72,17 @@ fr:
     index:
       in: "dans"
       player: "joueur"
+      players:
+        zero:  'Aucun joueur'
+        one:   'Un joueur'
+        other: '%{count} joueurs'
       matching_query: "correspondants à votre recherche"
       type_anything: "Écrivez ici et tapez 'entrer'"
       or_use: "ou utilisez"
       filters: "Filtres"
       filter_results: "Filtrez vos résultas"
       club: "Club"
+      search_results_location: "à %{location}"
       location: "Localisation"
       country: "Pays"
       level: "Niveau"

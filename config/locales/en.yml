@@ -103,12 +103,17 @@ en:
     index:
       in: "in"
       player: "player"
+      players:
+        zero:  'No players'
+        one:   'One player'
+        other: '%{count} players'
       matching_query: "matching your query"
       type_anything: "Type in anything and hit enter"
       or_use: "or use"
       filters: "Filters"
       filter_results: "Filter your results"
       club: "Club"
+      search_results_location: "in %{location}"
       location: "Location"
       country: "Country"
       level: "Level"
@@ -192,12 +197,15 @@ en:
   errors:
     internal_server_error:
       first_p: "Oups, it looks like we've missed that shot..."
-      second_p_html: "We will spot the error in our logs and fix it asap. But feel free to let us know too to help us investigate. 🕵️‍♂️ </p>
-    <p>At your service,<br>The Backhand Team</p>"
+      second_p_html: "We will spot the error in our logs and fix it asap. But feel free to let us know too to help us investigate. 🕵️‍♂️ </p><p>At your service,<br>The Backhand Team</p>"
     not_found:
       first_p: "No, you cannot jump over the net and play a shot there... 🤪"
       second_p: "More seriously, it seems that something was wrong with your request. If you are sure of what you were doing, let us know!"
       third_p_html: "At your service,<br>The Backhand Team"
+  controllers:
+    user:
+      matching_query: "matching your querysssss"
+
   activerecord:
     errors:
       messages:
