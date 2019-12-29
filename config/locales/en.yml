@@ -134,6 +134,15 @@ en:
       opponent: "Opponent"
       set: "set"
       record: "record match"
+    lost_matches:
+      match_date: "%{match_date}"
+      no_lost_matches: "You haven't lost any matches. WOW!"
+    won_matches:
+      match_date: "%{match_date}"
+      no_won_matches: "You haven't won any matches yet. Fix that!"
+    pending_matches:
+      match_date: "%{match_date}"
+      no_pending_matches: "You have no matches pending confirmation"
   events:
     player_events:
       today: "Today is %{date}"

@@ -109,6 +109,15 @@ fr:
       opponent: "Adversaire"
       set: "set"
       record: "enregistrer"
+    lost_matches:
+      match_date: "%{match_date}"
+      no_lost_matches: "Vous n'avez pas perdu un seul match !"
+    won_matches:
+      match_date: "%{match_date}"
+      no_won_matches: "Vous n'avez pas encore gagné de match. Ça va venir ;) !"
+    pending_matches:
+      match_date: "%{match_date}"
+      no_pending_matches: "Vous n'avez pas de match en attente de confirmation"
   events:
     player_events:
       today: "Nous sommes le %{date}"
