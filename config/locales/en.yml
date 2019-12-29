@@ -46,6 +46,10 @@ en:
     share_facebook: "Share on Facebook"
     share_twitter: "Share on Twitter"
     share_linkedin: "Share on LinkedIn"
+  welcome:
+    title: "Welcome %{current_user}"
+    first_p_html: "Thank you for joining Backhand.<br>We count on you to invite other tennis players to join us!"
+    second_p_html: "Redirecting you to home in <span id="countdown">6</span> seconds."
   footer:
     tagline_1: "Made with"
     tagline_2: "in Barcelona"
