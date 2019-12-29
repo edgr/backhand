@@ -72,10 +72,14 @@ fr:
     index:
       player: "joueur"
       players:
+        zero:  'Aucun joueur correspondant à votre recherche'
+        one:   'Un joueur correspondant à votre recherche'
+        other: '%{count} joueurs correspondants à votre recherche'
+      players_with_location:
         zero:  'Aucun joueur'
         one:   'Un joueur'
         other: '%{count} joueurs'
-      matching_query: "correspondants à votre recherche"
+      matching_query: "correspondant(s) à votre recherche"
       type_anything: "Écrivez ici et tapez 'entrer'"
       or_use: "ou utilisez"
       filters: "Filtres"

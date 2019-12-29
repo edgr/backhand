@@ -2,13 +2,13 @@
   <div class="search-results">
     <% if params[:search].try(:[], :location)&.present? %>
       <span id="user-query-indicator">
-        <%= t('.players', count: @users.count) %>
-        <%= params[:search][:location] %>
+        <%#= t('.players_with_location', count: @users.count) %>
+        <%#= params[:search][:location] %>
       </span>
     <% else %>
       <span id="user-query-indicator">
         <%= t('.players', count: @users.count) %>
-        <%= t('.matching_query') %>
+        <%#= t('.matching_query', count: @users.count) %>
       </span>
     <% end %>
   </div>

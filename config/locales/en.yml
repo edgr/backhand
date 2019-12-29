@@ -103,6 +103,10 @@ en:
     index:
       player: "player"
       players:
+        zero:  'No players matching your query'
+        one:   'One player matching your query'
+        other: '%{count} players matching your query'
+      players_with_location:
         zero:  'No players'
         one:   'One player'
         other: '%{count} players'
