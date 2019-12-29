@@ -117,6 +117,13 @@ en:
       backhand_style: "Backhand style"
       gender: "Gender"
       search: "Search"
+    users:
+      serve: "serve"
+      return: "return"
+      forehand: "forehand"
+      backhand: "backhand"
+      volley: "volley"
+      no_reviews: "No reviews yet!"
   matches:
     new:
       when: "WHEN DID YOU PLAY?"

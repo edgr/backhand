@@ -86,6 +86,19 @@ fr:
       backhand_style: "Revers"
       gender: "Genre"
       search: "Recherche"
+      serve: "service"
+      return: "retour"
+      forehand: "coup droit"
+      backhand: "revers"
+      volley: "vollée"
+      no_reviews: "Pas de commentaires !"
+    users:
+      serve: "service"
+      return: "retour"
+      forehand: "coup droit"
+      backhand: "revers"
+      volley: "vollée"
+      no_reviews: "Pas de commentaires !"
   matches:
     new:
       when: "QUAND AVEZ-VOUS JOUÉ ?"

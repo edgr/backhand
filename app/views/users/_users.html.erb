@@ -48,7 +48,7 @@
               <div class="group-progress">
                 <div class="line-progress">
                   <p>
-                    serve
+                    <%= t('.serve') %>
                   </p>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.serve %>%" aria-valuenow="<%= user_presenter.serve %>" aria-valuemin="0" aria-valuemax="100"></div>
@@ -56,28 +56,36 @@
                 </div>
 
                 <div class="line-progress">
-                  <p>return</p>
+                  <p>
+                    <%= t('.return') %>
+                  </p>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.return %>%" aria-valuenow="<%= user_presenter.return %>" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
 
                 <div class="line-progress">
-                  <p>forehand</p>
+                  <p>
+                    <%= t('.forehand') %>
+                  </p>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.forehand %>%" aria-valuenow="<%= user_presenter.forehand %>" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
 
                 <div class="line-progress">
-                  <p>backhand</p>
+                  <p>
+                    <%= t('.backhand') %>
+                  </p>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.backhand %>%" aria-valuenow="<%= user_presenter.backhand %>" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
 
                 <div class="line-progress">
-                  <p>volley</p>
+                  <p>
+                    <%= t('.volley') %>
+                  </p>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.volley %>%" aria-valuenow="<%= user_presenter.volley %>" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
@@ -86,7 +94,9 @@
 
               <% if user.review_score.nil?  %>
                 <div class="thumb">
-                  <span>No reviews yet!</span>
+                  <span>
+                    <%= t('.no_reviews') %>
+                  </span>
                 </div>
               <% else %>
                 <div class="thumb">
