@@ -172,6 +172,21 @@ en:
   user_reviews:
     new:
       recommend: "Would you recommend to other players to play with %{partner}?"
+      not_really: "Not really.."
+      of_course: "Of Course!"
+      how_is_playing: "How is playing with %{partner}?"
+      review_skills: "Review %{partner} skills"
+      serve: "serve"
+      return: "return"
+      forehand: "forehand"
+      backhand: "backhand"
+      volley: "volley"
+      speed: "speed"
+      power: "power"
+      endurance: "endurance"
+      next: "next"
+      back: "back"
+      review_now: "review now"
   errors:
     internal_server_error:
       first_p: "Oups, it looks like we've missed that shot..."

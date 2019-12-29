@@ -147,6 +147,21 @@ fr:
   user_reviews:
     new:
       recommend: "Recommanderiez-vous %{partner} à d'autres joueurs(es) ?"
+      not_really: "Pas vraiment.."
+      of_course: "Bien sûr !"
+      how_is_playing: "Comment a été votre match/entrainement avec %{partner}?"
+      review_skills: "Évaluer %{partner}"
+      serve: "service"
+      return: "retour"
+      forehand: "coup droit"
+      backhand: "revers"
+      volley: "vollée"
+      speed: "vitesse"
+      power: "puissance"
+      endurance: "endurance"
+      next: "suivant"
+      back: "retour"
+      review_now: "enregistrer"
   errors:
     internal_server_error:
       first_p: "Oups, il semblerait que nous ayons raté ce coup..."
