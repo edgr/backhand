@@ -111,17 +111,6 @@ ActiveRecord::Schema.define(version: 2019_12_27_045737) do
     t.index ["player_2_id"], name: "index_matches_on_player_2_id"
   end
 
-  create_table "shoutouts", force: :cascade do |t|
-    t.text "recipients"
-    t.integer "minimum_level"
-    t.text "message"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "maximum_level"
-    t.index ["user_id"], name: "index_shoutouts_on_user_id"
-  end
-
   create_table "user_reviews", force: :cascade do |t|
     t.bigint "sender_id"
     t.bigint "receiver_id"
@@ -194,7 +183,6 @@ ActiveRecord::Schema.define(version: 2019_12_27_045737) do
   add_foreign_key "matches", "clubs"
   add_foreign_key "matches", "users", column: "player_1_id"
   add_foreign_key "matches", "users", column: "player_2_id"
-  add_foreign_key "shoutouts", "users"
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
   add_foreign_key "users", "clubs"
