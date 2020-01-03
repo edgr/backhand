@@ -1,0 +1,403 @@
+fr:
+  home:
+    home_title_html: "PLAY MORE<br>PLAY BETTER<br>RANK HIGHER."
+    join_us: "REJOIGNEZ-NOUS !"
+    subtitle_1: "Trouvez des joueurs..."
+    browse_players: "cherches des joueurs autour de vous"
+    view_profile: "consultez leurs profils et contactez-les"
+    organize_game: "organisez votre rencontre et jouez !"
+    subtitle_2: "...et sauvegardez vos matchs !"
+    save_score: "enregistrez le score et le gagnant"
+    new_ranking: "obtenez votre nouveau classement instantanément !"
+    home_logged_in_title_html: "TELL<br>YOUR<br>FRIENDS."
+    invite: "INVITEZ"
+    thank_you: "Merci d'avance !"
+    share_facebook: "Partagez sur Facebook"
+    share_twitter: "Partagez sur Twitter"
+    share_linkedin: "Partagez sur LinkedIn"
+  footer:
+    tagline_1: "Fait avec"
+    tagline_2: "à Barcelone"
+    email: "hello@backhandapp.com"
+    copyright: "© Tous droits réservés - 2020"
+  navbar:
+    players: "Joueurs"
+    rankings: "Classements"
+    matches: "Matchs"
+    my_profile: "Mon Profil"
+    my_matches: "Mes Matchs"
+    my_calendar: "Mon Calendrier"
+    logout: "Se déconnecter"
+    login: "S'identifier"
+    see_more: "voir plus"
+  users:
+    show:
+      info: "Info"
+      bio: "Bio"
+      age: "age: "
+      years_old: "ans"
+      birthday: "date de naissance: "
+      place_of_birth: "lieu de naissance: "
+      height: "taille: "
+      weight: "poids: "
+      style_of_play: "style: "
+      residence: "residence: "
+      world_ranking: "classement international"
+      with: "avec"
+      points: "points"
+      skills: "Qualités"
+      strokes: "COUPS"
+      serve: "service"
+      return: "retour"
+      forehand: "coup droit"
+      backhand: "revers"
+      volley: "vollée"
+      fitness: "PHYSIQUE"
+      speed: "vitesse"
+      power: "puissance"
+      endurance: "endurance"
+      comments: "Commentaires"
+      no_reviews_yet: "n'a pas encore reçu de commentaires"
+      matches: "matchs"
+      wins: "victoires"
+      losses: "défaites"
+      rankings_and_stats: "Classements & Statistiques"
+      club: "club: "
+    rankings:
+      title: "Comment fonctionne le classement"
+      first_p_html: "Le système de classement que nous utilisons est le <strong>Elo Ranking</strong>. Il est fait pour refléter de façon précise le niveau d'un joueur."
+      second_p_html: "En bref, la formule ajoute/retire des points à chacun des joueurs en fonction du résultat d'un match (victoire/défaite) et leurs nombres de points initiaux."
+      third_p_html: "L'important, si vous souhaitez que votre classement s'affine le plus possible est <strong>d'enregistrer vos matchs</strong> sur Backhand! ;)"
+      got_it: "Ok !"
+    index:
+      player: "joueur"
+      players:
+        zero:  'Aucun joueur correspondant à votre recherche'
+        one:   'Un joueur correspondant à votre recherche'
+        other: '%{count} joueurs correspondants à votre recherche'
+      players_with_location:
+        zero:  'Aucun joueur'
+        one:   'Un joueur'
+        other: '%{count} joueurs'
+      matching_query: "correspondant(s) à votre recherche"
+      type_anything: "Écrivez ici et tapez 'entrer'"
+      or_use: "ou utilisez"
+      filters: "Filtres"
+      filter_results: "Filtrez vos résultas"
+      club: "Club"
+      search_results_location: "à %{location}"
+      location: "Localisation"
+      country: "Pays"
+      level: "Niveau"
+      style_of_play: "Style de jeu"
+      handedness: "Droitier/Gaucher"
+      backhand_style: "Revers"
+      gender: "Genre"
+      search: "Recherche"
+      serve: "service"
+      return: "retour"
+      forehand: "coup droit"
+      backhand: "revers"
+      volley: "vollée"
+      no_reviews: "Pas de commentaires !"
+    users:
+      serve: "service"
+      return: "retour"
+      forehand: "coup droit"
+      backhand: "revers"
+      volley: "vollée"
+      no_reviews: "Pas de commentaires !"
+  matches:
+    index:
+      match_date: "%{match_date}"
+    new:
+      when: "QUAND AVEZ-VOUS JOUÉ ?"
+      where: "OÙ AVEZ-VOUS JOUÉ ?"
+      whom: "AVEC QUI?"
+      won: "QUI A GAGNÉ?"
+      sets: "COMBIEN DE SETS AVEZ-VOUS JOUÉ ?"
+      opponent: "Adversaire"
+      set: "set"
+      record: "enregistrer"
+    lost_matches:
+      match_date: "%{match_date}"
+      no_lost_matches: "Vous n'avez pas perdu un seul match !"
+    won_matches:
+      match_date: "%{match_date}"
+      no_won_matches: "Vous n'avez pas encore gagné de match. Ça va venir ;) !"
+    pending_matches:
+      match_date: "%{match_date}"
+      no_pending_matches: "Vous n'avez pas de match en attente de confirmation"
+  events:
+    player_events:
+      today: "Nous sommes le %{date}"
+      event_date: "%{event_date}"
+      event_time: "%{event_time}"
+      are_you_sure: "Êtes-vous sûr(e)?"
+      no_upcoming_events: "Vous n'avez pas d'événements à venir"
+    new:
+      who: "AVEC QUI ALLEZ-VOUS JOUER ?"
+      when: "QUAND ALLEZ-VOUS JOUER ?"
+      where: "OÙ ALLEZ-VOUS JOUER ?"
+      remove_player: "retirer le joueur"
+      add_player: "ajouter un joueur"
+      create_event: "créér"
+    edit:
+      who: "AVEC QUI ALLEZ-VOUS JOUER ?"
+      when: "QUAND ALLEZ-VOUS JOUER ?"
+      where: "OÙ ALLEZ-VOUS JOUER ?"
+      remove_player: "retirer le joueur"
+      add_player: "ajouter un joueur"
+      update_event: "créér"
+  clubs:
+    index:
+      no_clubs: "Nous n'avons pas encore recensé les clubs dans cette zone. Faites-le nous savoir !"
+    show:
+      courts: "Courts"
+  user_reviews:
+    new:
+      recommend: "Recommanderiez-vous %{partner} à d'autres joueurs(es) ?"
+      not_really: "Pas vraiment.."
+      of_course: "Bien sûr !"
+      how_is_playing: "Comment a été votre match/entrainement avec %{partner}?"
+      review_skills: "Évaluer %{partner}"
+      serve: "service"
+      return: "retour"
+      forehand: "coup droit"
+      backhand: "revers"
+      volley: "vollée"
+      speed: "vitesse"
+      power: "puissance"
+      endurance: "endurance"
+      next: "suivant"
+      back: "retour"
+      review_now: "enregistrer"
+  errors:
+    internal_server_error:
+      first_p: "Oups, il semblerait que nous ayons raté ce coup..."
+      second_p_html: "Nous allons repérer l'erreur et la résoudre rapidement. Mais n'heésitez pas à nous le faire savoir, cela peut nous aider dans notre investigation. 🕵️‍♂️ </p>
+    <p>At your service,<br>The Backhand Team</p>"
+    not_found:
+      first_p: "Non, non, vous ne pouvez pas sautez par dessus le filet et y jouer un coup... 🤪"
+      second_p: "Plus sérieusement, il semble que votre requête contienne un erreur. Si vous pensez qu'il y a erreur de notre part, faites-le nous savoir !"
+      third_p_html: "À votre service,<br>The Backhand Team"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
+            dépendant(e) existe
+          has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
+            dépendants existent
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    -
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: "%d/%m/%Y"
+      long: "%e %B %Y"
+      medium_long: "%e %b %Y"
+      medium: "%e %B"
+      short: "%e %b"
+    month_names:
+    -
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: environ une heure
+        other: environ %{count} heures
+      about_x_months:
+        one: environ un mois
+        other: environ %{count} mois
+      about_x_years:
+        one: environ un an
+        other: environ %{count} ans
+      almost_x_years:
+        one: presqu'un an
+        other: presque %{count} ans
+      half_a_minute: une demi-minute
+      less_than_x_seconds:
+        zero: moins d'une seconde
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+      less_than_x_minutes:
+        zero: moins d'une minute
+        one: moins d'une minute
+        other: moins de %{count} minutes
+      over_x_years:
+        one: plus d'un an
+        other: plus de %{count} ans
+      x_seconds:
+        one: 1 seconde
+        other: "%{count} secondes"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_days:
+        one: 1 jour
+        other: "%{count} jours"
+      x_months:
+        one: 1 mois
+        other: "%{count} mois"
+      x_years:
+        one: 1 an
+        other: "%{count} ans"
+    prompts:
+      second: Seconde
+      minute: Minute
+      hour: Heure
+      day: Jour
+      month: Mois
+      year: Année
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: doit être accepté(e)
+      blank: doit être rempli(e)
+      confirmation: ne concorde pas avec %{attribute}
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      model_invalid: 'Validation échouée : %{errors}'
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
+      other_than: doit être différent de %{count}
+      present: doit être vide
+      required: doit exister
+      taken: n'est pas disponible
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+    template:
+      body: 'Veuillez vérifier les champs suivants : '
+      header:
+        one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
+        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  helpers:
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un(e) %{model}
+      submit: Enregistrer ce(tte) %{model}
+      update: Modifier ce(tte) %{model}
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: milliard
+          million: million
+          quadrillion: million de milliards
+          thousand: millier
+          trillion: billion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: octet
+            other: octets
+          eb: Eo
+          gb: Go
+          kb: ko
+          mb: Mo
+          pb: Po
+          tb: To
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%A %d %B %Y %Hh%M"
+      short: "%d %b %Hh%M"
+      very_short: "%Hh%M"
+    pm: pm

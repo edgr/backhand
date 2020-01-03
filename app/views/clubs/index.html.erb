@@ -10,7 +10,9 @@
     <% end %>
     <div class="clubs-results">
       <% if @clubs.empty? %>
-        <p>No clubs in this area yet. Let us know!</p>
+        <p>
+          <%= t('.no_clubs') %>
+        </p>
       <% else %>
         <% @clubs.all.each do |club| %>
           <% present club do |club_presenter| %>

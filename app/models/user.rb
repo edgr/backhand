@@ -74,6 +74,7 @@ class User < ApplicationRecord
     s.boolean :new_match_result_email, default: true, null: false
     s.boolean :new_game_event_email, default: true, null: false
     s.boolean :confirmed_match_result_email, default: true, null: false
+    s.string :language, default: 'en'
   end
 
   def active?
