@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   after_create :set_skills
+  after_create :subscribe_to_newsletter
 
   geocoded_by :address
   reverse_geocoded_by :latitude, :longitude
@@ -67,6 +68,15 @@ class User < ApplicationRecord
 
   scope :active, -> { where("status = 'active'") }
 
+  typed_store :settings do |s|
+    s.boolean :new_shoutout_email, default: true, null: false
+    s.boolean :new_player_review_email, default: true, null: false
+    s.boolean :new_match_result_email, default: true, null: false
+    s.boolean :new_game_event_email, default: true, null: false
+    s.boolean :confirmed_match_result_email, default: true, null: false
+    s.string :language, default: 'en'
+  end
+
   def active?
     status == 'active'
   end
@@ -105,7 +115,7 @@ class User < ApplicationRecord
   end
 
   def self.backhand
-    ['One Handed','Two Handed']
+    ['One Handed', 'Two Handed']
   end
 
   def self.styles
@@ -163,5 +173,9 @@ class User < ApplicationRecord
 
   def set_skills
     self.computed_skills_set = ComputedSkillsSet.new
+  end
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
   end
 end

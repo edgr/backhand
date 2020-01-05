@@ -1,55 +1,57 @@
 <div class="container events-container">
   <% if @events.present? %>
-    <p class="text-center">Today is <%= Date.today.strftime("%A %-b %-d") %></p>
-      <% @events.each do |event| %>
-        <div class="card-and-actions">
-          <div class="event-card">
-            <div class="all-players">
-              <div class="avatars-names">
-                <div class="partners-avatars">
-                  <% event.event_partners(current_user).each do |partner| %>
-                      <%= cl_image_tag partner.picture, quality: "auto", class: "avatar-bordered"%>
-                  <% end %>
-                </div>
-                <div class="partners-names">
-                  <% event.event_partners(current_user).each do |partner| %>
-                      <span><%= partner.first_name %></span>
+    <p class="text-center">
+      <%= t('.today', date: (l Date.today, format: :medium) ) %>
+    </p>
+    <% @events.each do |event| %>
+      <div class="card-and-actions">
+        <div class="event-card">
+          <div class="all-players">
+            <div class="avatars-names">
+              <div class="partners-avatars">
+                <% event.event_partners(current_user).each do |partner| %>
+                    <%= cl_image_tag partner.picture, quality: "auto", class: "avatar-bordered"%>
                 <% end %>
-                </div>
+              </div>
+              <div class="partners-names">
+                <% event.event_partners(current_user).each do |partner| %>
+                    <span><%= partner.first_name %></span>
+              <% end %>
               </div>
             </div>
-            <div class="date-club">
-              <span>
-                <%= event.date_time.strftime("%a %-b %-d") %>
-              </span>
-              <span>
-                <%= event.date_time.strftime("%I:%M%p") %>
-              </span>
-              <% if event.club %>
-                <span class="club">
-                  at <%= event.club.shortname %>
-                </span>
-              <% end %>
-            </div>
           </div>
-          <% if event.player_1 == current_user %>
-            <div class="card-delete d-none">
-              <%= link_to user_event_path(current_user, event),
-                method: :delete,
-                data: { confirm: "Are you sure?" } do %>
-                  <i class="fas fa-trash-alt"></i>
-                <% end %>
-            </div>
-            <!-- <div class="card-edit d-none">
-              <%#= link_to edit_user_event_path(current_user, event) do %>
-                  <i class="fas fa-edit"></i>
-                <#% end %>
-            </div> -->
-          <% end %>
+          <div class="date-club">
+            <span>
+              <%= t('.event_date', event_date: (l event.date_time.to_date, format: :short) ) %>
+            </span>
+            <span>
+              <%= t('.event_time', event_time: (l event.date_time, format: :very_short) ) %>
+            </span>
+            <% if event.club %>
+              <span class="club">
+                at <%= event.club.shortname %>
+              </span>
+            <% end %>
+          </div>
         </div>
-      <% end %>
+        <% if event.player_1 == current_user %>
+          <div class="card-delete d-none">
+            <%= link_to user_event_path(current_user, event),
+              method: :delete,
+              data: { confirm: t('.are_you_sure') } do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+          </div>
+          <!-- <div class="card-edit d-none">
+            <%#= link_to edit_user_event_path(current_user, event) do %>
+                <i class="fas fa-edit"></i>
+              <#% end %>
+          </div> -->
+        <% end %>
+      </div>
+    <% end %>
     <div class="actions-wrapper">
-      <%= link_to new_user_event_path do %>
+      <%= link_to new_user_event_path(current_user) do %>
         <button class="mdc-fab app-fab--absolute" aria-label="create-event">
           <span class="mdc-fab__icon material-icons">
             add
@@ -58,9 +60,11 @@
       <% end %>
     </div>
   <% else %>
-    <p class="text-center">You have no upcoming events</p>
+    <p class="text-center">
+      <%= t('.no_upcoming_events') %>
+    </p>
     <div class="actions-wrapper">
-      <%= link_to new_user_event_path do %>
+      <%= link_to new_user_event_path(current_user) do %>
         <button class="mdc-fab app-fab--absolute" aria-label="create-event">
           <span class="mdc-fab__icon material-icons">
             add

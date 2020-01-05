@@ -1,7 +1,6 @@
 class UserReview < ApplicationRecord
   belongs_to :sender, class_name: 'User'
   belongs_to :receiver, class_name: 'User'
-  # belongs_to :challenge
 
   validate :difference_of_players
   validates :thumb, inclusion: { in: [true, false] }

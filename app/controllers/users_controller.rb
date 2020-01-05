@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
   def set_query_indication
     location = params[:search].try(:[], :location)
-    @indication = location.present? ? "in #{location}" : "matching your query"
+    @indication = location.present? ? t('.search_results_location', location: location) : t('.matching_query')
   end
 
   def update_ranking

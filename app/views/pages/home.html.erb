@@ -1,77 +1,125 @@
-<div class="banner">
-  <div class="banner-content">
-    <h1>
-      PLAY MORE<br>
-      PLAY BETTER<br>
-      RANK HIGHER.
-    </h1>
-    <div class="home-ctas-section">
-      <%= link_to new_user_registration_path, class: "btn btn-flat", id: "home-cta" do %>
-        <span>JOIN US FOR FREE</span>
-      <% end %>
-      <!-- <span>or</span>
-      <%#= link_to users_path do %>
-        <span>browse players</span>
-      <%# end %> -->
+<% if current_user.nil? %>
+  <div class="banner">
+    <div class="banner-content">
+      <h1>
+        <%= t('home.home_title_html') %>
+      </h1>
+      <div class="home-ctas-section">
+        <%= link_to new_user_registration_path, class: "btn btn-flat", id: "home-cta" do %>
+          <span><%= t('home.join_us') %></span>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+  <div class="how-it-works">
+    <h2>
+      <%= t('home.subtitle_1') %>
+    </h2>
+    <div class="row how-it-works-cards">
+      <div class="explain-card">
+        <div class="card-number">
+          <p>01</p>
+        </div>
+        <div class="card-content">
+          <p>
+            <%= t('home.browse_players') %>
+          </p>
+        </div>
+      </div>
+      <div class="explain-card">
+        <div class="card-number">
+          <p>02</p>
+        </div>
+        <div class="card-content">
+          <p>
+            <%= t('home.view_profile') %>
+          </p>
+        </div>
+      </div>
+      <div class="explain-card">
+        <div class="card-number">
+          <p>03</p>
+        </div>
+        <div class="card-content">
+          <p>
+            <%= t('home.organize_game') %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <h2>
+      <%= t('home.subtitle_2') %>
+    </h2>
+    <div class="row how-it-works-cards">
+      <div class="explain-card">
+        <div class="card-number">
+          <p>04</p>
+        </div>
+        <div class="card-content">
+          <p>
+            <%= t('home.save_score') %>
+          </p>
+        </div>
+      </div>
+      <div class="explain-card">
+        <div class="card-number">
+          <p>05</p>
+        </div>
+        <div class="card-content">
+          <p>
+            <%= t('home.new_ranking') %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 
-<!-- Commenting out to be removed (one simple CTA) -->
-<%#= simple_form_for :search_home, url: users_path, method: :get do |f| %>
-  <!-- <div class="search-form-control form-group">
-    <input class="search_location form-control string" type="text" name="search[location]" placeholder="Search for a place!" />
+<% if current_user %>
+  <div class="banner">
+    <div class="banner-content">
+      <h1>
+        <%= t('home.home_logged_in_title_html') %>
+      </h1>
+      <div class="home-ctas-section">
+        <span id="tell-your-friends" class="btn btn-flat">
+          <%= t('home.invite') %>
+        </span>
+        <button id="hidden-share-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#share-modal">
+          <%= t('home.invite') %>
+        </button>
+      </div>
+    </div>
   </div>
-    <button name="button" type="submit" class="btn btn-flat cta-home">
-      Search
-    </button>
-<%# end %> -->
+  <!-- Modal -->
+  <div class="modal fade" id="share-modal" tabindex="-1" role="dialog" aria-labelledby="share-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="share-modal-title">
+            <%= t('home.thank_you') %>
+          </h5>
+          <button id="share-modal-close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.backhandapp.com%2F" class="share-fb">
+            <%= t('home.share_facebook') %>
+          </a>
+          <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.backhandapp.com%2F&hashtags=tennis,tennisapp,backhandapp" class="share-tw">
+            <%= t('home.share_twitter') %>
+          </a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.backhandapp.com%2F" class="share-lk">
+            <%= t('home.share_linkedin') %>
+          </a>
+          <!-- <span id="copy-link-button">
+            Copy link
+          </span> -->
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="how-it-works">
-  <h2>Find players...</h2>
-  <div class="row how-it-works-cards">
-    <div class="explain-card">
-      <div class="card-number">
-        <p>01</p>
-      </div>
-      <div class="card-content">
-        <p>browse players around you</p>
-      </div>
-    </div>
-    <div class="explain-card">
-      <div class="card-number">
-        <p>02</p>
-      </div>
-      <div class="card-content">
-        <p>view player's profiles and contact them</p>
-      </div>
-    </div>
-    <div class="explain-card">
-      <div class="card-number">
-        <p>03</p>
-      </div>
-      <div class="card-content">
-        <p>organize your game and play!</p>
-      </div>
-    </div>
-  </div>
-  <h2>...and record your matches!</h2>
-  <div class="row how-it-works-cards">
-    <div class="explain-card">
-      <div class="card-number">
-        <p>04</p>
-      </div>
-      <div class="card-content">
-        <p>save the score and the winner </p>
-      </div>
-    </div>
-    <div class="explain-card">
-      <div class="card-number">
-        <p>05</p>
-      </div>
-      <div class="card-content">
-        <p>get your new ranking instantly!</p>
-      </div>
-    </div>
-  </div>
-</div>
+<% end %>
+

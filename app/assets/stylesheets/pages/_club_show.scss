@@ -1,6 +1,7 @@
 .club-container {
   img {
     width: 100%;
+    max-height: 400px;
   }
   h1 {
     font-size: 24px;
@@ -20,11 +21,24 @@
       width: fit-content;
     }
   }
-  .about {
+  .courts {
     color: $black;
     padding: 16px;
     h2 {
       font-size: 20px;
+    }
+  }
+}
+
+@media all and (min-width: 992px) {
+  .club-container {
+    h1 {
+      font-size: 32px;
+    }
+    .main-info {
+      .club-phone, .club-website {
+        margin-bottom: 24px;
+      }
     }
   }
 }

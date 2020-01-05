@@ -24,3 +24,29 @@
 abbr {
   text-decoration: none !important;
 }
+
+#collapseFive {
+  .card-body {
+    .settings-section {
+      display: flex;
+      flex-direction: column;
+      label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.settings-section {
+  .form-check {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-left: 0;
+  }
+  .form-check-input {
+    position: unset;
+  }
+}

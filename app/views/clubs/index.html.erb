@@ -1,22 +1,38 @@
-<div id="map" style="width: 100%; height: 300px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-<div class="clubs-container">
-  <% @clubs.all.each do |club| %>
-    <% present club do |club_presenter| %>
-      <%= link_to club_path(club), class: "club-card" do %>
-        <span class="club-title">
-          <%= club.name %>
-        </span>
-        <span class="club-players">
-          <%= club_presenter.players_count %>
-        </span>
-        <span class="club-courts">
-          <%= club_presenter.courts %>
-        </span>
-        <span class="club-access">
-          <%= club.access %>
-        </span>
-      <% end %>
+<div class="clubs-map">
+  <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+  <div class="clubs-container">
+    <%= simple_form_for :search_clubs, url: clubs_path, method: "GET" do |f| %>
+      <div class="clubs-search">
+        <%= f.input :location, label: false, input_html: { id: "clubs-address" } %>
+        <input type="submit" class="search-clubs-btn fa fa-input" name="commit" value="&#xf002" data-disable-with="&#xf002">
+      </div>
     <% end %>
-  <% end %>
+    <div class="clubs-results">
+      <% if @clubs.empty? %>
+        <p>
+          <%= t('.no_clubs') %>
+        </p>
+      <% else %>
+        <% @clubs.all.each do |club| %>
+          <% present club do |club_presenter| %>
+            <%= link_to club_path(club), class: "club-card" do %>
+              <span class="club-title">
+                <%= club.name %>
+              </span>
+              <span class="club-players">
+                <%= club_presenter.players_count %>
+              </span>
+              <span class="club-courts">
+                <%= club_presenter.courts %>
+              </span>
+              <span class="club-access">
+                <%= club.access %>
+              </span>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>

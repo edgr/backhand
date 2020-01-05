@@ -133,6 +133,30 @@
               </div>
             </div>
           </div>
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <button class="btn accordion-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
+                Settings
+              </button>
+            </div>
+
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionEditProfile">
+              <div class="card-body">
+                <div class="settings-section">
+                  <h5>Language</h5>
+                  <%= f.input :language, as: :select, collection: [['en', 'english'], ['fr', 'french']], label_method: :second, value_method: :first, label: false, include_blank: false %>
+                </div>
+                <div class="settings-section">
+                  <h5>Notifications</h5>
+                    <%= f.input :new_shoutout_email, as: :boolean %>
+                    <%= f.input :new_player_review_email, as: :boolean %>
+                    <%= f.input :new_game_event_email, as: :boolean %>
+                    <%= f.input :confirmed_match_result_email, as: :boolean %>
+                    <%= f.input :new_match_result_email, as: :boolean %>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="save-profile">

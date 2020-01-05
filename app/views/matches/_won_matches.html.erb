@@ -7,7 +7,9 @@
           <div class="name-and-date">
             <span class="player-name"><%= match.player_2.first_name %> <%= match.player_2.last_name %> </span>
             <div class="date-location">
-              <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
+              <span class="date">
+                <%= t('.match_date', match_date: (l match.date, format: :short ))%>
+              </span>
               <span class="separator"> - </span>
               <span class="location"><%= match.club.shortname %></span>
             </div>
@@ -22,7 +24,9 @@
               <%= match.player_1.first_name %> <%= match.player_1.last_name %>
             </span>
             <div class="date-location">
-              <span class="date"><%= match.date.strftime("%d %b %Y") %></span>
+              <span class="date">
+                <%= t('.match_date', match_date: (l match.date, format: :short ))%>
+              </span>
               <span class="separator"> - </span>
               <span class="location"><%= match.club.shortname %></span>
             </div>
@@ -35,5 +39,7 @@
     <%# end %>
   <% end %>
 <% else %>
-  <p class="text-center">You haven't won any matches yet. Fix that!</p>
+  <p class="text-center">
+    <%= t('.no_won_matches') %>
+  </p>
 <% end %>

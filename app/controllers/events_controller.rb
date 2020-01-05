@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     @event.player_1 = current_user
     if @event.save
       inform_players
-      redirect_to user_my_agenda_path(current_user)
+      redirect_to my_agenda_path
     else
       render :new
     end
@@ -20,7 +20,7 @@ class EventsController < ApplicationController
 
   def destroy
     Event.find(params[:id]).destroy
-    redirect_to user_my_agenda_path(current_user)
+    redirect_to my_agenda_path
   end
 
   def edit

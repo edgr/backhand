@@ -17,7 +17,9 @@ gem 'simple_form'
 gem 'geocoder'
 gem 'i18n_data'
 gem 'countries'
-gem "select2-rails"
+gem 'select2-rails'
+gem 'gibbon'
+gem 'activerecord-typedstore'
 
 # to select country in the sign up
 gem 'country_select'
