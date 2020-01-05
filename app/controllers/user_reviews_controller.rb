@@ -38,6 +38,6 @@ class UserReviewsController < ApplicationController
       sender: @user_review.sender,
       receiver: @user_review.receiver,
       user_review: @user_review
-    ).new_player_review.deliver_now
+    ).new_player_review.deliver_now unless @user_review.receiver.settings[:new_player_review_email] == false
   end
 end
