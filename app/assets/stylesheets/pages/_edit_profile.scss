@@ -38,3 +38,15 @@ abbr {
     }
   }
 }
+
+.settings-section {
+  .form-check {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-left: 0;
+  }
+  .form-check-input {
+    position: unset;
+  }
+}
