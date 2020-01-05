@@ -37,8 +37,24 @@ class EventsController < ApplicationController
   end
 
   def inform_players
-    UserMailer.with(inviter: @event.player_1, partner: @event.player_2, event: @event).new_game_event.deliver_now
-    UserMailer.with(inviter: @event.player_1, partner: @event.player_3, event: @event).new_game_event.deliver_now if @event.player_3.nil? == false
-    UserMailer.with(inviter: @event.player_1, partner: @event.player_4, event: @event).new_game_event.deliver_now if @event.player_4.nil? == false
+    UserMailer.with(
+      inviter: @event.player_1,
+      partner: @event.player_2,
+      event: @event
+    ).new_game_event.deliver_now unless @event.player_2.settings[:new_game_event_email] == false
+    if @event.player_3.nil? == false
+      UserMailer.with(
+        inviter: @event.player_1,
+        partner: @event.player_3,
+        event: @event
+      ).new_game_event.deliver_now unless @event.player_3.settings[:new_game_event_email] == false
+    end
+    if @event.player_4.nil? == false
+      UserMailer.with(
+        inviter: @event.player_1,
+        partner: @event.player_4,
+        event: @event
+      ).new_game_event.deliver_now unless @event.player_4.settings[:new_game_event_email] == false
+    end
   end
 end

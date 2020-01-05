@@ -62,6 +62,18 @@ class UserMailer < ApplicationMailer
     mail to: @player_2.email
   end
 
+  def confirmed_match_result
+    @player_1 = params[:player_1]
+    @player_2 = params[:player_2]
+    @match_result = params[:match_result]
+    self.template_model = {
+      player_1_first_name: @player_1.first_name,
+      player_2_first_name: @player_2.first_name,
+      match_result: @match_result.score
+    }
+    mail to: @player_1.email
+  end
+
   private
 
   def sender_url(id)
