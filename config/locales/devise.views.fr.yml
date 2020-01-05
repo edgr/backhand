@@ -10,6 +10,7 @@ fr:
         current_sign_in_at: Date de la connexion actuelle
         current_sign_in_ip: IP de la connexion actuelle
         email: Courriel
+        phone_number: Mobile
         encrypted_password: Mot de passe crypté
         failed_attempts: Tentatives échouées
         last_sign_in_at: Date de la dernière connexion
@@ -124,6 +125,7 @@ fr:
         sign_in_with_provider: Connexion avec %{provider}
         sign_up: Inscription
         no_account_yet: Pas encore de compte ?
+        already_account: Tu as déjà un compte?
       minimum_password_length:
         one: "(%{count} caractère au moins)"
         other: "(%{count} caractères au moins)"

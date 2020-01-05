@@ -126,6 +126,7 @@ en:
         sign_in_with_provider: Sign in with %{provider}
         sign_up: Sign up
         no_account_yet: Don't have an account yet?
+        already_account: Already have an account?
       minimum_password_length:
         one: "(%{count} character minimum)"
         other: "(%{count} characters minimum)"
