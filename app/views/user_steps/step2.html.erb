@@ -11,27 +11,29 @@
         </ul>
       </div>
 
-      <h2>About your game</h2>
+      <h2>
+        <%= t('.about_game') %>
+      </h2>
 
       <%= simple_form_for @user, url: wizard_path do |f| %>
         <div class="form-inputs form-label">
           <%= f.input :level,
                       collection: User.levels,
-                      label: "PICK YOUR LEVEL" %>
+                      label: t('.level') %>
           <%= f.input :style_of_play,
                       collection: User.styles,
-                      label:"WHAT IS YOUR STYLE OF PLAY?" %>
+                      label: t('.style_of_play') %>
           <%= f.input :handedness,
                       collection: %w[righty lefty],
-                      label: "RIGHTY OR LEFTIE?" %>
+                      label: t('.handedness') %>
           <%= f.input :backhand_style,
                       collection: ["one handed backhand", "two handed backhand"],
-                      label: "BACKHAND STYLE?" %>
+                      label: t('.backhand_style') %>
           <%= f.association :club,
-                            label: "WHICH ONE IS YOUR CLUB?" %>
+                      label: t('.your_club') %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "next", class: "btn btn-primary cta-signup mb-3" %>
+          <%= f.button :submit, t('.next'), class: "btn btn-primary cta-signup mb-3" %>
         </div>
       <% end %>
     </div>

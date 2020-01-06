@@ -200,6 +200,26 @@ en:
   user_steps:
     step1:
       about_you: "About you"
+      first_name: "FIRST NAME"
+      last_name: "LAST NAME"
+      address: "ADDRESS"
+      nationality: "NATIONALITY"
+      place_birth: "PLACE OF BIRTH"
+      birthdate: "BIRTHDATE"
+      gender: "GENDER"
+      height: "HEIGHT"
+      weight: "WEIGHT"
+      in_cm: "in cm"
+      in_kg: "in kg"
+      next: "next"
+    step2:
+      about_game: "About your game"
+      level: "Level"
+      style_of_play: "Style of play"
+      handedness: "Righty or Lefty"
+      backhand_style: "Backhand style"
+      your_club: "Select your club"
+      next: "next"
   wicked:
     step1: "step1"
     step2: "step2"

@@ -19,38 +19,38 @@
         <div class="form-inputs form-label">
           <div class="d-flex justify-content-between">
             <%= f.input :first_name,
-                        label: "FIRST NAME" %>
+                        label: t('.first_name') %>
             <%= f.input :last_name,
-                        label: "LAST NAME" %>
+                        label: t('.last_name') %>
           </div>
           <%= f.input :address,
-                      label:"ADDRESS" %>
+                      label: t('.address') %>
           <%= f.input :country,
                       collection: @continents,
-                      label:"NATIONALITY" %>
+                      label: t('.nationality') %>
           <div class="d-flex justify-content-between">
             <%= f.input :place_of_birth,
-                        label:"PLACE OF BIRTH",
+                        label: t('.place_birth'),
                         class: "search_location" %>
             <%= f.input :birthday,
                         input_html: {class: "datepicker-signup"},
                         as: :string,
-                        label:"BIRTHDATE" %>
+                        label: t('.birthdate') %>
           </div>
           <div class="d-flex justify-content-between">
             <%= f.input :gender,
                         collection: User.genders,
-                        label:"GENDER" %>
+                        label: t('.gender') %>
             <%= f.input :height,
-                        label:"HEIGHT",
-                        placeholder: "in cm" %>
+                        label: t('.height'),
+                        placeholder: t('.in_cm') %>
             <%= f.input :weight,
-                        label:"WEIGHT",
-                        placeholder: "in kg" %>
+                        label: t('.weight'),
+                        placeholder: t('.in_kg') %>
           </div>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "next", class: "btn btn-primary cta-signup mb-3" %>
+          <%= f.button :submit, t('.next'), class: "btn btn-primary cta-signup mb-3" %>
         </div>
       <% end %>
     </div>
