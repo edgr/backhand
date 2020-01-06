@@ -197,6 +197,13 @@ en:
       next: "next"
       back: "back"
       review_now: "review now"
+  user_steps:
+    step1:
+      about_you: "About you"
+  wicked:
+    step1: "step1"
+    step2: "step2"
+    step3: "step3"
   errors:
     internal_server_error:
       first_p: "Oups, it looks like we've missed that shot..."

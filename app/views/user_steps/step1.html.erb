@@ -11,7 +11,9 @@
         </ul>
       </div>
 
-      <h2>About you</h2>
+      <h2>
+        <%= t('.about_you') %>
+      </h2>
 
       <%= simple_form_for @user, url: wizard_path do |f| %>
         <div class="form-inputs form-label">

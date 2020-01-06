@@ -172,6 +172,13 @@ fr:
       next: "suivant"
       back: "retour"
       review_now: "enregistrer"
+  user_steps:
+    step1:
+      about_you: "À propos de vous"
+  wicked:
+    step1: "step1"
+    step2: "step2"
+    step3: "step3"
   errors:
     internal_server_error:
       first_p: "Oups, il semblerait que nous ayons raté ce coup..."

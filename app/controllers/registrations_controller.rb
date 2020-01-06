@@ -3,6 +3,8 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def after_sign_up_path_for(resource)
+    resource.settings[:language] = locale.to_s
+    current_user.save!
     user_steps_path
   end
 
