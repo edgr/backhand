@@ -61,6 +61,11 @@ en:
     logout: "Log Out"
     login: "Login"
     see_more: "see more"
+  pages:
+    welcome:
+      title: "Welcome %{current_user}!"
+      first_p_html: "Thank you for creating your account.<br>Make sure to invite your friends!"
+      home_link: "homepage"
   users:
     show:
       info: "Info"

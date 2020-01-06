@@ -15,6 +15,11 @@ es:
     share_facebook: "Compartir en Facebook"
     share_twitter: "Compartir en Twitter"
     share_linkedin: "Compartir en LinkedIn"
+  pages:
+    welcome:
+      title: "¡Bienvenido %{current_user}!"
+      first_p_html: "Gracias por haber creido tu cuenta.<br>¡No olvides de invitar a tus amigos/as!"
+      home_link: "página principal"
   footer:
     tagline_1: "Hecho con"
     tagline_2: "en Barcelona"
