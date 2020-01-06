@@ -20,6 +20,7 @@ gem 'countries'
 gem 'select2-rails'
 gem 'gibbon'
 gem 'activerecord-typedstore'
+gem 'devise-i18n'
 
 # to select country in the sign up
 gem 'country_select'

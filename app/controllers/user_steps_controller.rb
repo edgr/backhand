@@ -1,5 +1,5 @@
 class UserStepsController < ApplicationController
-  include Wicked::Wizard
+  include Wicked::Wizard::Translated
   steps :step1, :step2, :step3
 
   def show

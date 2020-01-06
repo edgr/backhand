@@ -15,6 +15,11 @@ fr:
     share_facebook: "Partagez sur Facebook"
     share_twitter: "Partagez sur Twitter"
     share_linkedin: "Partagez sur LinkedIn"
+  pages:
+    welcome:
+      title: "Bienvenue %{current_user}!"
+      first_p_html: "Merci d'avoir créé ton compte.<br>N'oublie pas d'inviter tes ami(e)s !"
+      home_link: "page d'accueil"
   footer:
     tagline_1: "Fait avec"
     tagline_2: "à Barcelone"
@@ -172,6 +177,39 @@ fr:
       next: "suivant"
       back: "retour"
       review_now: "enregistrer"
+  user_steps:
+    step1:
+      about_you: "À propos de vous"
+      first_name: "PRÉNOM"
+      last_name: "NOM"
+      address: "ADRESSE"
+      nationality: "NATIONALITÉ"
+      place_birth: "LIEU DE NAISSANCE"
+      birthdate: "DATE DE NAISSANCE"
+      gender: "GENRE"
+      height: "TAILLE"
+      weight: "POIDS"
+      in_cm: "en cm"
+      in_kg: "en kg"
+      next: "suivant"
+    step2:
+      about_game: "Votre tennis"
+      level: "Niveau"
+      style_of_play: "Style de jeu"
+      handedness: "Droitier ou Gaucher"
+      backhand_style: "Style de revers"
+      your_club: "Choisissez votre club"
+      next: "suivant"
+    step3:
+      smile: "Souriez!"
+      upload: "Sélectionner"
+      bio: "Bio"
+      explanation: "Partagez votre expérience du tennis ici !"
+      next: "suivant"
+  wicked:
+    step1: "step1"
+    step2: "step2"
+    step3: "step3"
   errors:
     internal_server_error:
       first_p: "Oups, il semblerait que nous ayons raté ce coup..."

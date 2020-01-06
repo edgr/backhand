@@ -61,6 +61,11 @@ en:
     logout: "Log Out"
     login: "Login"
     see_more: "see more"
+  pages:
+    welcome:
+      title: "Welcome %{current_user}!"
+      first_p_html: "Thank you for creating your account.<br>Make sure to invite your friends!"
+      home_link: "homepage"
   users:
     show:
       info: "Info"
@@ -197,6 +202,39 @@ en:
       next: "next"
       back: "back"
       review_now: "review now"
+  user_steps:
+    step1:
+      about_you: "About you"
+      first_name: "FIRST NAME"
+      last_name: "LAST NAME"
+      address: "ADDRESS"
+      nationality: "NATIONALITY"
+      place_birth: "PLACE OF BIRTH"
+      birthdate: "BIRTHDATE"
+      gender: "GENDER"
+      height: "HEIGHT"
+      weight: "WEIGHT"
+      in_cm: "in cm"
+      in_kg: "in kg"
+      next: "next"
+    step2:
+      about_game: "About your game"
+      level: "Level"
+      style_of_play: "Style of play"
+      handedness: "Righty or Lefty"
+      backhand_style: "Backhand style"
+      your_club: "Select your club"
+      next: "next"
+    step3:
+      smile: "Smile and shine!"
+      upload: "Upload Picture"
+      bio: "Bio"
+      explanation: "This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc."
+      next: "next"
+  wicked:
+    step1: "step1"
+    step2: "step2"
+    step3: "step3"
   errors:
     internal_server_error:
       first_p: "Oups, it looks like we've missed that shot..."
