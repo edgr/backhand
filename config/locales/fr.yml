@@ -195,6 +195,12 @@ fr:
       backhand_style: "Style de revers"
       your_club: "Choisissez votre club"
       next: "suivant"
+    step3:
+      smile: "Souriez!"
+      upload: "Sélectionner"
+      bio: "Bio"
+      explanation: "Partagez votre expérience du tennis ici !"
+      next: "suivant"
   wicked:
     step1: "step1"
     step2: "step2"

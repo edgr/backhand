@@ -11,21 +11,23 @@
         </ul>
       </div>
 
-      <h2>Smile & shine!</h2>
+      <h2>
+        <%= t('.smile') %>
+      </h2>
 
       <%= simple_form_for @user, url: wizard_path do |f| %>
         <div class="form-inputs form-label">
           <div class="custom-file">
             <div class="imagePreview"></div>
-            <label class="btn btn-primary upload">Upload Picture
+            <label class="btn btn-primary upload"> <%= t('.upload') %>
             <%= f.input :picture, input_html: {class: "custom-file-input", accept: 'image/*'}, label: false %>
             <%#= f.input :picture_cache, as: :hidden %>
             </label>
           </div>
           <input type="hidden" id="user_angle" name="user[angle]" value="0">
           <%= f.input :bio,
-                      label: "BIO",
-                      placeholder: "This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc." %>
+                      label: t('.bio'),
+                      placeholder: t('.explanation') %>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "next", class: "btn btn-primary cta-signup mb-3", id: "step3-submit" %>

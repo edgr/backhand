@@ -220,6 +220,12 @@ en:
       backhand_style: "Backhand style"
       your_club: "Select your club"
       next: "next"
+    step3:
+      smile: "Smile and shine!"
+      upload: "Upload Picture"
+      bio: "Bio"
+      explanation: "This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc."
+      next: "next"
   wicked:
     step1: "step1"
     step2: "step2"
