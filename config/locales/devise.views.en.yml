@@ -101,6 +101,30 @@ en:
         unhappy: Unhappy?
         update: Update
         we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
+        save_changes_below: "Psst: if you make a change, don't forget to save below!"
+        contact_password: Contact Info & Password
+        about_you: About you
+        your_game: Your game
+        picture_bio: Picture & Bio
+        settings: Settings
+        first_name: First Name
+        last_name: Last Name
+        location: Location
+        nationality: Nationality
+        place_of_birth: Place of birth
+        birthdate: Birthdate
+        gender: Gender
+        height: Height in cm
+        weight: Weight in kg
+        style_of_play: Style of play
+        righty_lefty: Righty or lefty?
+        backhand_style: Backhand style
+        club: "Which one is your club?"
+        upload: Upload picture
+        bio: Bio
+        description: This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc.
+        languages: Language
+        notifications: Notifications
       new:
         sign_up: Sign up
       signed_up: Welcome! You have signed up successfully.

@@ -100,8 +100,32 @@ es:
         leave_blank_if_you_don_t_want_to_change_it: dejar en blanco si no desea cambiarla
         title: Editar %{resource}
         unhappy: "¿Disconforme?"
-        update: Actualizar
+        update: Guardar
         we_need_your_current_password_to_confirm_your_changes: necesitamos su contraseña actual para confirmar los cambios
+        save_changes_below: "Nos olvides guardar tus cambios"
+        contact_password: Contacto & Contraseña
+        about_you: Sobre ti
+        your_game: Tu juego
+        picture_bio: Foto & Bio
+        settings: Parámetros
+        first_name: Nombre
+        last_name: Appellido
+        location: Dirección
+        nationality: Nationalidad
+        place_of_birth: Lugar de nacimiento
+        birthdate: Fecha de nacimiento
+        gender: Genero
+        height: Tamaño en cm
+        weight: Peso en kg
+        style_of_play: Estilo de juego
+        righty_lefty: Diestro o Zurdo?
+        backhand_style: Revés
+        club: "Cual es tu club?"
+        upload: "Seleccionar"
+        bio: Bio
+        description: Comparte aquí tu experiencia con el tenis, tus disponibilidades, etc.
+        languages: Idióma
+        notifications: Notificaciones
       new:
         sign_up: Registrarse
       signed_up: Bienvenido. Tu cuenta fue creada.

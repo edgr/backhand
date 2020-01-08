@@ -169,6 +169,18 @@ class User < ApplicationRecord
     all_matches.joins(:match_result).where("match_results.confirmed = false")
   end
 
+  def soft_delete
+    update_attribute(:deleted_at, Time.current)
+  end
+
+  def active_for_authentication?
+    super && !deleted_at
+  end
+
+  def inactive_message
+    !deleted_at ? super : :deleted_account
+  end
+
   private
 
   def set_skills
