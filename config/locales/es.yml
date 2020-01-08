@@ -35,7 +35,7 @@ es:
     logout: "Cerrar Sesión"
     login: "Iniciar"
     see_more: "ver más"
-    language: Idióma
+    language: idióma
   users:
     show:
       info: "Info"
