@@ -89,9 +89,6 @@
     </div>
 
   <% else %>
-    <button class="navbar-toggler see-more-menu d-flex d-lg-none" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
-      <%= t('navbar.see_more') %>
-    </button>
     <div class="collapse navbar-collapse" id="menu-content">
       <ul class="navbar-nav w-100 mt-2 mt-lg-0">
         <li class="nav-item">
@@ -107,6 +104,21 @@
           <%= link_to t('navbar.login'), new_user_session_path, class: "d-flex d-lg-none nav-link text-white" %>
         </li>
       </ul>
+    </div>
+    <div class="language-more">
+      <div class="nav-item dropdown d-lg-flex">
+        <button class="navbar-toggler language-menu dropdown-toggle d-lg-flex" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <%= t('navbar.language') %>
+        </button>
+        <div class="dropdown-menu">
+          <%= link_to "français", root_path(locale: :fr), class: "nav-link text-white" %>
+          <%= link_to "español", root_path(locale: :es), class: "nav-link text-white" %>
+          <%= link_to "english", root_path(locale: :en), class: "nav-link text-white" %>
+        </div>
+      </div>
+      <button class="navbar-toggler see-more-menu d-flex d-lg-none" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
+        <%= t('navbar.see_more') %>
+      </button>
     </div>
     <div class="login-up ml-lg-auto d-none d-lg-flex">
       <%#= link_to 'Sign up', new_user_registration_path, class: "nav-link text-white" %>

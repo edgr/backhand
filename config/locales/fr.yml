@@ -35,6 +35,7 @@ fr:
     logout: "Se déconnecter"
     login: "S'identifier"
     see_more: "voir plus"
+    language: Langue
   users:
     show:
       info: "Info"

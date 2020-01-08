@@ -61,6 +61,7 @@ en:
     logout: "Log Out"
     login: "Login"
     see_more: "see more"
+    language: Language
   pages:
     welcome:
       title: "Welcome %{current_user}!"

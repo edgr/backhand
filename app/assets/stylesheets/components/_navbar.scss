@@ -12,7 +12,7 @@
   }
 }
 
-.see-more-menu {
+.see-more-menu, .language-menu {
   color: white !important;
   font-size: 1rem;
 }
@@ -29,6 +29,9 @@
         position: relative;
       }
     }
+  }
+  .language-more {
+    display: flex;
   }
 }
 
@@ -94,6 +97,7 @@
 
 .dropdown-menu {
   right: 0;
+  left: unset;
 }
 
 @media all and (min-width: 768px) {
