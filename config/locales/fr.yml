@@ -1,6 +1,6 @@
 fr:
   home:
-    home_title_html: "PLAY MORE<br>PLAY BETTER<br>RANK HIGHER."
+    home_title_html: "JOUE PLUS<br>JOUE MIEUX."
     join_us: "REJOIGNEZ-NOUS !"
     subtitle_1: "Trouvez des joueurs..."
     browse_players: "cherches des joueurs autour de vous"
@@ -34,8 +34,8 @@ fr:
     my_calendar: "Mon Calendrier"
     logout: "Se déconnecter"
     login: "S'identifier"
-    see_more: "voir plus"
-    language: langue
+    see_more: "Voir plus"
+    language: Langue
   users:
     show:
       info: "Info"
