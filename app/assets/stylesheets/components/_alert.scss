@@ -8,7 +8,16 @@
 }
 
 .alert-info {
-  background-color: #f3ffae;
-  border-color: #f3ffae;
-  color: $gray;
+  background-color: $yellow;
+  border-color: $yellow;
+  color: $black;
+}
+
+@media all and (max-width: 576px) {
+  .alert {
+    right: 0;
+    left: 0;
+    max-width: 100%;
+    margin: 0 16px !important;
+  }
 }
