@@ -347,7 +347,6 @@
               link
             </span>
           </button>
-          <%# raise %>
           <% if @user.settings[:show_my_whatsapp] == true %>
             <a href="https://wa.me/<%= @user.phone_number %>?text=Hello%20<%= @user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%20Fancy%20playing%20some%20tennis?">
               <button id="whatsapp-button" class="mdc-fab b-160 app-fab--absolute hidden" aria-label="Favorite">
