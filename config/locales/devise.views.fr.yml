@@ -98,8 +98,32 @@ fr:
         leave_blank_if_you_don_t_want_to_change_it: laissez ce champ vide pour le laisser inchangé
         title: Éditer %{resource}
         unhappy: Pas content ?
-        update: Modifier
+        update: Enregistrer
         we_need_your_current_password_to_confirm_your_changes: nous avons besoin de votre mot de passe actuel pour valider ces modifications
+        save_changes_below: "N'oublie pas d'enregister tes changements"
+        contact_password: Contact & Mot de passe
+        about_you: À propos de toi
+        your_game: Ton jeu
+        picture_bio: Photo & Bio
+        settings: Paramètres
+        first_name: Prénom
+        last_name: Nom
+        location: Adresse
+        nationality: Nationalité
+        place_of_birth: Lieu de naissance
+        birthdate: Date de naissance
+        gender: Genre
+        height: Taille en cm
+        weight: Poids en kg
+        style_of_play: Style de jeu
+        righty_lefty: Droitier ou gaucher?
+        backhand_style: Revers
+        club: "Quel est ton club?"
+        upload: "Sélectionner"
+        bio: Bio
+        description: Partages ici ton expérience du tennis, tes disponibilités, etc.
+        languages: Langue
+        notifications: Notifications
       new:
         sign_up: Inscription
       signed_up: Bienvenue ! Vous vous êtes bien enregistré(e).
