@@ -324,6 +324,8 @@
         </div>
       <% end %>
     </div>
+
+    <!-- actions -->
     <div class="actions-wrapper">
       <% if user_signed_in? %>
         <% if @user == current_user %>
@@ -345,11 +347,14 @@
               link
             </span>
           </button>
-          <a href="https://wa.me/<%= @user.phone_number %>?text=Hello%20<%= @user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%20Fancy%20playing%20some%20tennis?">
-            <button id="whatsapp-button" class="mdc-fab b-160 app-fab--absolute hidden" aria-label="Favorite">
-              <i class="fab fa-whatsapp"></i>
-            </button>
-          </a>
+          <%# raise %>
+          <% if @user.settings[:whatsapp] == true %>
+            <a href="https://wa.me/<%= @user.phone_number %>?text=Hello%20<%= @user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%20Fancy%20playing%20some%20tennis?">
+              <button id="whatsapp-button" class="mdc-fab b-160 app-fab--absolute hidden" aria-label="Favorite">
+                <i class="fab fa-whatsapp"></i>
+              </button>
+            </a>
+          <% end %>
           <%= link_to new_user_user_review_path(@user) do %>
             <button id="review-button" class="mdc-fab b-90 app-fab--absolute hidden" aria-label="Favorite">
               <span class="mdc-fab__icon material-icons">edit</span>
