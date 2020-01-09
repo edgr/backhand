@@ -31,7 +31,7 @@
 
 en:
   home:
-    home_title_html: "PLAY MORE<br>PLAY BETTER<br>RANK HIGHER."
+    home_title_html: "PLAY MORE<br>PLAY BETTER."
     join_us: "JOIN US FOR FREE"
     subtitle_1: "Find players..."
     browse_players: "browse players around you"
@@ -60,7 +60,8 @@ en:
     my_calendar: "My Calendar"
     logout: "Log Out"
     login: "Login"
-    see_more: "see more"
+    see_more: "See more"
+    language: Language
   pages:
     welcome:
       title: "Welcome %{current_user}!"

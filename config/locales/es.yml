@@ -1,6 +1,6 @@
 es:
   home:
-    home_title_html: "PLAY MORE<br>PLAY BETTER<br>RANK HIGHER."
+    home_title_html: "JUEGA MÁS<br>JUEGA MEJOR."
     join_us: "APÚNTATE"
     subtitle_1: "Busca jugadores..."
     browse_players: "busca jugadores a tu alrededor"
@@ -34,7 +34,8 @@ es:
     my_calendar: "Mi Agenda"
     logout: "Cerrar Sesión"
     login: "Iniciar"
-    see_more: "ver más"
+    see_more: "Ver más"
+    language: Idióma
   users:
     show:
       info: "Info"
