@@ -5,7 +5,7 @@
 }
 
 #hidden-share-button {
-  visibility: hidden;
+  display: none;
 }
 
 @mixin share-button {
