@@ -10,7 +10,7 @@ const initMapboxClubShow = () => {
       container: 'map-show',
       style: 'mapbox://styles/mapbox/streets-v10',
       center: [marker.lng, marker.lat],
-      zoom: 8
+      zoom: 12
     });
     if (marker){
       new mapboxgl.Marker()

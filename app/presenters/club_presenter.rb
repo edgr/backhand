@@ -30,8 +30,8 @@ class ClubPresenter < BasePresenter
   end
 
   def singles_courts
-    if club.singles_courts.count == 0
-      "no \'singles only\' with lights"
+    if club.singles_courts.count > 0
+      "no \'singles only\'"
     elsif club.singles_courts.count == 1
       "1 \'singles only\' court"
     else
