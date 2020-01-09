@@ -11,7 +11,7 @@ class ClubPresenter < BasePresenter
 
   def courts_indoors
     if club.courts_indoors.count == 0
-      "no indoor courts"
+      "0 indoor courts"
     elsif club.courts_indoors.count == 1
       "1 indoor court"
     else
@@ -21,7 +21,7 @@ class ClubPresenter < BasePresenter
 
   def courts_with_lights
     if club.courts_with_lights.count == 0
-      "no courts with lights"
+      "0 courts with lights"
     elsif club.courts_with_lights.count == 1
       "1 court with lights"
     else
@@ -30,9 +30,7 @@ class ClubPresenter < BasePresenter
   end
 
   def singles_courts
-    if club.singles_courts.count == 0
-      "no \'singles only\' with lights"
-    elsif club.singles_courts.count == 1
+    if club.singles_courts.count == 1
       "1 \'singles only\' court"
     else
       "#{club.singles_courts.count} \"singles only\" court(s)"
