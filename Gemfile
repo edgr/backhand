@@ -41,6 +41,9 @@ gem 'postmark-rails'
 # security gem to prevent low security password & more
 gem 'devise-security'
 
+# admin dashboard
+gem 'rails_admin', '~> 2.0'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
