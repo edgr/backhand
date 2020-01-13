@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   after_create :set_skills
-  after_create :subscribe_to_newsletter
+  # after_create :subscribe_to_newsletter
 
   geocoded_by :address
   reverse_geocoded_by :latitude, :longitude
