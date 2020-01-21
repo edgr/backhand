@@ -8,6 +8,7 @@
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   img {
     width: 100%;
+    object-fit: cover;
   }
   .club-info {
     padding: 8px 12px;
@@ -31,5 +32,13 @@
   &:hover {
     text-decoration: none;
     color: $black;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .club-card {
+    img {
+      height: 280px;
+    }
   }
 }

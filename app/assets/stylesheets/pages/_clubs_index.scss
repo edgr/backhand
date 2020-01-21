@@ -46,10 +46,10 @@
     display: flex;
     flex-direction: row-reverse;
     #map {
-      height: 100vh;
-      width: 400px;
+      height: calc(100vh - 62px);
+      width: 60%;
       position: sticky;
-      top: 0;
+      top: 62px;
     }
     .clubs-container {
       flex-grow: 1;
