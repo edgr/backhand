@@ -1,4 +1,24 @@
 fr:
+  player_count:
+    zero: ""
+    one: "1 joueur/se"
+    other: "%{count} joueurs/ses "
+  courts_count:
+    zero: ""
+    one: "%{count} court"
+    other: "%{count} courts"
+  indoors_count:
+    zero: "aucun court couvert"
+    one: "1 court couvert"
+    other: "%{count} courts couverts"
+  with_lights:
+    zero: "aucun court avec éclairage"
+    one: "1 court avec éclairage"
+    other: "%{count} courts avec éclairage"
+  singles_only:
+    zero: ""
+    one: "1 court pour simple uniquement (pas de double)"
+    other: "%{count} courts pour simple uniquement (pas de double)"
   home:
     home_title_html: "JOUE PLUS<br>JOUE MIEUX."
     join_us: "REJOIGNEZ-NOUS !"
