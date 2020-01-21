@@ -2,7 +2,11 @@ class ClubPresenter < BasePresenter
   presents :club
   # For the user show view
   def players_count
-    "#{club.users.count} players" unless club.users.count == 0
+    if club.users.count == 1
+      "#{club.users.count} player"
+    e≥lse
+      "#{club.users.count} players" unless club.users.count == 0
+    end
   end
 
   def courts

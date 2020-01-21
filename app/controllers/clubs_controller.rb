@@ -2,14 +2,12 @@ class ClubsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @clubs = Club.geocoded
-    if params[:search_clubs].nil?
-      address = request.location.city
-      @clubs = @clubs.near(address, 25)
-    elsif params[:search_clubs][:location].present?
-      @clubs = @clubs.near(params[:search_clubs][:location], 250)
+    address = request.location.city
+    @clubs = Club.near(address, 25)
+    if params[:search_clubs].present?
+      @clubs = Club.near(params[:search_clubs][:location], 25)
     else
-      @clubs = Club.geocoded
+      @clubs = Club.all
     end
     @markers = @clubs.map do |club|
       {
