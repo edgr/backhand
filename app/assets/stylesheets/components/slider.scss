@@ -1,0 +1,21 @@
+#level-slider {
+  margin-top: 60px;
+  .noUi-connect {
+    background-color: $blue;
+  }
+  .noUi-tooltip {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    border: none;
+  }
+  .noUi-handle {
+    outline: none;
+    &:focus {
+      outline:none;
+    }
+  }
+}
+
+.shoutout_minimum_level, .shoutout_maximum_level {
+  height: 0px;
+  visibility: hidden;
+}

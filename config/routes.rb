@@ -23,8 +23,8 @@ Rails.application.routes.draw do
     get '/rankings', to: 'users#rankings', as: 'rankings'
 
     resources :matches, only: [:index, :show, :new, :create, :edit, :update]
-
     resources :clubs, param: :slug, only: [:index, :show]
+    resources :shoutouts, only: [:index, :new, :create, :destroy]  
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

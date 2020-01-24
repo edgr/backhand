@@ -63,4 +63,7 @@ class UserPresenter < BasePresenter
     Club.find(user.club_id).name
   end
 
+  def plays_at
+    "member at #{user.club.name}" if user.club.present?
+  end
 end
