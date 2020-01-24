@@ -1,16 +1,25 @@
 <div class="club-container">
-  <%= cl_image_tag(@club.picture) %>
-  <div class="main-info">
-    <h1><%= @club.name %></h1>
-    <a href="<%= @club.website %>" class="club-website"> <%= @club.website %></a>
-    <a href="mailto:<%= @club.email %>" class="club-email"> <%= @club.email %></a>
-    <a href="tel:<%= @club.phone_number %>" class="club-phone"> <%= @club.phone_number %></a>
-    <span class="club-address"> <%= @club.address %></span>
+  <div class="club-banner col-lg-8">
+    <%= cl_image_tag(@club.picture) %>
   </div>
-  <div class="map">
-    <div id="map-show" style="width: 100%; height: 300px;" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="wrapper-map col-lg-4">
+    <div id="map-show" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
-  <div class="courts">
+  <div class="main-info col-lg-8">
+    <h1>
+      <%= @club.name %>
+    </h1>
+    <a href="<%= @club.website %>" class="club-website">
+      <%= @club.website %>
+    </a>
+    <a href="mailto:<%= @club.email %>" class="club-email">
+      <%= @club.email %>
+    </a>
+    <a href="tel:<%= @club.phone_number %>" class="club-phone">
+      <%= @club.phone_number %>
+    </a>
+  </div>
+  <div class="courts col-lg-8">
     <h2>
       <%= t('.courts') %>
     </h2>

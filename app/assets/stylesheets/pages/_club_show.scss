@@ -1,11 +1,26 @@
 .club-container {
-  img {
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  .club-banner {
     max-height: 400px;
+    padding: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   h1 {
     font-size: 24px;
     margin-bottom: 0;
+  }
+  .wrapper-map {
+    padding: 0;
+    order: 2;
+    #map-show {
+      width: 100%;
+      height: 300px;
+    }
   }
   .main-info {
     color: $black;
@@ -24,6 +39,7 @@
   .courts {
     color: $black;
     padding: 16px;
+    order: 4;
     h2 {
       font-size: 20px;
     }
@@ -32,13 +48,32 @@
 
 @media all and (min-width: 992px) {
   .club-container {
+    display: flex;
+    flex-direction: unset;
+    flex-wrap: wrap;
+    .club-banner {
+      height: 400px;
+    }
     h1 {
       font-size: 32px;
+    }
+    .wrapper-map {
+      position: sticky;
+      height: calc(100vh - 62px);
+      top: 62px;
+      margin-top: -400px;
+      order: unset;
+      #map-show {
+        height: 100%;
+      }
     }
     .main-info {
       .club-phone, .club-website {
         margin-bottom: 24px;
       }
+    }
+    .courts {
+      order: unset;
     }
   }
 }
