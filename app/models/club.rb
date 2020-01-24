@@ -1,6 +1,7 @@
 class Club < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  before_create :set_slug
 
   has_many :users
   has_many :matches
@@ -32,5 +33,15 @@ class Club < ApplicationRecord
 
   def singles_courts
     self.courts.find_all { |court| court.single == true }
+  end
+
+  def to_param
+    slug
+  end
+
+  private
+
+  def set_slug
+    self.slug = name.downcase.split(/\W+/).join('-')
   end
 end

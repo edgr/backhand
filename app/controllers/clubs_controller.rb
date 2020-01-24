@@ -21,7 +21,7 @@ class ClubsController < ApplicationController
   end
 
   def show
-    @club = Club.find(params[:id])
+    @club = Club.find_by(slug: params[:slug])
     @marker = {
       lat: @club.latitude,
       lng: @club.longitude
