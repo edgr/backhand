@@ -30,6 +30,26 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  player_count:
+    zero: ""
+    one: "1 player"
+    other: "%{count} players "
+  courts_count:
+    zero: ""
+    one: "%{count} court"
+    other: "%{count} courts"
+  indoors_count:
+    zero: "no indoor courts"
+    one: "1 indoor court"
+    other: "%{count} indoor courts"
+  with_lights:
+    zero: "no courts with lights"
+    one: "1 court with lights"
+    other: "%{count} courts with lights"
+  singles_only:
+    zero: ""
+    one: "1 'singles only' court"
+    other: "%{count} 'singles only' courts"
   home:
     home_title_html: "PLAY MORE<br>PLAY BETTER."
     join_us: "JOIN US FOR FREE"

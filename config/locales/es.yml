@@ -1,4 +1,24 @@
 es:
+  player_count:
+    zero: ""
+    one: "1 jugador/ra"
+    other: "%{count} jugadores/as "
+  courts_count:
+    zero: ""
+    one: "%{count} pista"
+    other: "%{count} pistas"
+  indoors_count:
+    zero: "ninguna pista interior"
+    one: "1 pista interior"
+    other: "%{count} pistas interior"
+  with_lights:
+    zero: "ninguna pista con luz"
+    one: "1 pista con luz"
+    other: "%{count} pistas con luz"
+  singles_only:
+    zero: ""
+    one: "1 pista para individuales (no dobles)"
+    other: "%{count} pistas para individuales (no dobles)"
   home:
     home_title_html: "JUEGA MÁS<br>JUEGA MEJOR."
     join_us: "APÚNTATE"
