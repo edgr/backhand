@@ -68,6 +68,16 @@ class User < ApplicationRecord
 
   scope :active, -> { where("status = 'active'") }
 
+  typed_store :settings do |s|
+    s.boolean :new_shoutout_email, default: true, null: false
+    s.boolean :new_player_review_email, default: true, null: false
+    s.boolean :new_match_result_email, default: true, null: false
+    s.boolean :new_game_event_email, default: true, null: false
+    s.boolean :confirmed_match_result_email, default: true, null: false
+    s.boolean :show_my_whatsapp, default: true, null: false
+    s.string :language, default: 'en'
+  end
+
   def active?
     status == 'active'
   end
@@ -106,7 +116,7 @@ class User < ApplicationRecord
   end
 
   def self.backhand
-    ['One Handed','Two Handed']
+    ['One Handed', 'Two Handed']
   end
 
   def self.styles
@@ -158,6 +168,18 @@ class User < ApplicationRecord
 
   def pending_matches
     all_matches.joins(:match_result).where("match_results.confirmed = false")
+  end
+
+  def soft_delete
+    update_attribute(:deleted_at, Time.current)
+  end
+
+  def active_for_authentication?
+    super && !deleted_at
+  end
+
+  def inactive_message
+    !deleted_at ? super : :deleted_account
   end
 
   private

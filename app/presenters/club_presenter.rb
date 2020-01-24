@@ -1,12 +1,24 @@
 class ClubPresenter < BasePresenter
   presents :club
-  # For the user show view
+  # For the club show and index views
   def players_count
-    "#{club.users.count} players" unless club.users.count == 0
+    I18n.t('.player_count', count: club.users.count).to_s
   end
 
   def courts
-    "#{club.courts.count} courts (#{courts_type(club.courts)})"
+    "#{I18n.t('courts_count', count: club.courts.count)} (#{courts_type(club.courts)})"
+  end
+
+  def courts_indoors
+    I18n.t('indoors_count', count: club.courts_indoors.count).to_s
+  end
+
+  def courts_with_lights
+    I18n.t('.with_lights', count: club.courts_with_lights.count).to_s
+  end
+
+  def singles_courts
+    I18n.t('singles_only', count: club.singles_courts.count).to_s
   end
 
   private

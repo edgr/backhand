@@ -10,6 +10,7 @@ class UserReviewsController < ApplicationController
     @user_review.receiver = User.find(params[:user_id])
     @user_review.sender = current_user
     if @user_review.save
+      inform_receiver
       redirect_to user_path(@user_review.receiver)
     else
       render :new
@@ -30,5 +31,13 @@ class UserReviewsController < ApplicationController
 
   def final_score(oldavgscore, newskillscore, length)
     final_score = (oldavgscore * (length - 1) + newskillscore) / length
+  end
+
+  def inform_receiver
+    UserMailer.with(
+      sender: @user_review.sender,
+      receiver: @user_review.receiver,
+      user_review: @user_review
+    ).new_player_review.deliver_now unless @user_review.receiver.settings[:new_player_review_email] == false
   end
 end

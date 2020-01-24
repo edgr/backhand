@@ -1,34 +1,21 @@
 .banner{
-  height: 100vh;
+  height: calc(100vh - 56px);
   background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), image-url("backhand-banner.jpg");
   background-size: cover;
   width: 100vw;
   position: relative;
   background-position-x: 50%;
-  h1 {
-    color: white;
-    font-weight: bold;
-    font-size: 42px;
-    font-style: italic;
+  .banner-content {
     position: absolute;
-    bottom: 300px;
-    left: 30px;
-    margin-bottom: 10px;
-  }
-  .home-ctas-section {
-    position: absolute;
-    bottom: 170px;
-    left: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 120px;
-    a {
-      color: $white;
-      text-decoration: none;
+    bottom: 20vh;
+    left: 10vw;
+    h1 {
+      color: white;
+      font-weight: bold;
+      font-style: italic;
+      margin-bottom: 16px;
     }
-    #home-cta {
+    #home-cta, #tell-your-friends {
       border-radius: 30px;
       font-size: 16px;
       border: 2px solid $white;
@@ -39,27 +26,18 @@
 
 @media all and (min-width: 576px) {
   .banner {
-    background-position-x: none;
-    h1 {
-      font-size: 80px;
+    .banner-content {
+      bottom: 160px;
       left: 80px;
-      position: absolute;
-      bottom: 300px;
-      font-style: italic;
-    }
-    .home-ctas-section {
-      position: absolute;
-      flex-direction: row;
-      bottom: 220px;
-      left: 80px;
-      width: 450px;
-      height: 0px;
-      #home-cta {
-        border-radius: 38px;
-        font-size: 24px;
-        border: 2px solid $white;
-        padding: 16px 48px;
+      h1 {
+        font-size: 4rem;
       }
+    }
+    #home-cta, #tell-your-friends {
+      border-radius: 38px;
+      font-size: 24px;
+      border: 2px solid $white;
+      padding: 16px 48px;
     }
   }
 }

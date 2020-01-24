@@ -19,6 +19,8 @@ gem 'i18n_data'
 gem 'countries'
 gem 'select2-rails'
 gem 'gibbon'
+gem 'activerecord-typedstore'
+gem 'devise-i18n'
 
 # to select country in the sign up
 gem 'country_select'
@@ -39,9 +41,11 @@ gem 'postmark-rails'
 # security gem to prevent low security password & more
 gem 'devise-security'
 
+# admin dashboard
+gem 'rails_admin', '~> 2.0'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem 'letter_opener'
 end
 
 group :development, :test do

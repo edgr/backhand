@@ -53,65 +53,55 @@ club_url_5 = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1571083474/Visi
 Club.create!(
   name: 'FC Barcelona',
   shortname: 'FCB',
-  address: Faker::Address.full_address,
+  address: "C. d'Arístides Maillol, 12, 08028 Barcelona, España",
   email: Faker::Internet.email,
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   description: Faker::Lorem.sentence(60),
   website: Faker::Internet.url,
-  latitude: Faker::Address.latitude,
-  longitude: Faker::Address.longitude,
   picture: club_url_1,
   access: "Private, members only"
   )
 Club.create!(
   name: 'Real Madrid',
   shortname: 'RM',
-  address: Faker::Address.full_address,
+  address: 'Av. de Concha Espina, 1, 28036 Madrid, España',
   email: Faker::Internet.email,
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   description: Faker::Lorem.sentence(60),
   website: Faker::Internet.url,
-  latitude: Faker::Address.latitude,
-  longitude: Faker::Address.longitude,
   picture: club_url_2,
   access: "Semi-private, invitation possible"
   )
 Club.create!(
   name: 'Real Sociedad',
   shortname: 'RS',
-  address: Faker::Address.full_address,
+  address: '1, Anoeta Pasealekua, 20014 Donostia, Gipuzkoa, España',
   email: Faker::Internet.email,
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   description: Faker::Lorem.sentence(60),
   website: Faker::Internet.url,
-  latitude: Faker::Address.latitude,
-  longitude: Faker::Address.longitude,
   picture: club_url_3,
   access: "Public"
   )
 Club.create!(
   name: 'FC Lisboa',
   shortname: 'FCL',
-  address: Faker::Address.full_address,
+  address: 'Rua Professor Fernando da Fonseca, 1501-806 Lisboa, Portugalia',
   email: Faker::Internet.email,
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   description: Faker::Lorem.sentence(60),
   website: Faker::Internet.url,
-  latitude: Faker::Address.latitude,
-  longitude: Faker::Address.longitude,
   picture: club_url_4,
   access: "Semi-private, invitation possible"
   )
 Club.create!(
   name: 'Paris Saint Germain',
   shortname: 'PSG',
-  address: Faker::Address.full_address,
+  address: '24 Rue du Commandant Guilbaud, 75016 Paris, Francia',
   email: Faker::Internet.email,
   phone_number: Faker::PhoneNumber.phone_number_with_country_code,
   description: Faker::Lorem.sentence(60),
   website: Faker::Internet.url,
-  latitude: Faker::Address.latitude,
-  longitude: Faker::Address.longitude,
   picture: club_url_5,
   access: "Private, members only"
   )
@@ -437,7 +427,7 @@ end
 end
 
 10.times do
-  puts "creating doublem event #{counter}"
+  puts "creating double event #{counter}"
   counter += 1
 
   player_1 = edouard

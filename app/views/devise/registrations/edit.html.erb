@@ -1,8 +1,9 @@
 <div class="main-container">
   <div class="row">
     <div class="form-login col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-      <h2>Edit Your Profile</h2>
-      <p class="help-save">Psst: if you make a change, don't forget to save below!</p>
+      <p class="help-save">
+        <%= t('.save_changes_below') %>
+      </p>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
@@ -11,7 +12,7 @@
           <div class="card">
             <div class="card-header" id="headingOne">
               <button class="btn accordion-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Contact Info & Password
+                <%= t('.contact_password') %>
               </button>
             </div>
 
@@ -21,7 +22,7 @@
                       required: true,
                       autofocus: true %>
                 <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                  <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                  <p><%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %></p>
                 <% end %>
                 <%= f.input :phone_number,
                             as: :tel,
@@ -29,7 +30,7 @@
                 <span id="valid-msg" class="hide">✓Valid</span>
                 <span id="error-msg" class="hide"></span>
                 <%= f.input :password,
-                      hint: "leave it blank if you don't want to change it",
+                      hint: t(".leave_blank_if_you_don_t_want_to_change_it"),
                       required: false,
                       input_html: { autocomplete: "new-password" } %>
                 <%= f.input :password_confirmation,
@@ -41,7 +42,7 @@
           <div class="card">
             <div class="card-header" id="headingTwo">
               <button class="btn accordion-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-                About You
+                <%= t('.about_you') %>
               </button>
             </div>
 
@@ -49,34 +50,34 @@
               <div class="card-body">
                 <div class="d-flex justify-content-between">
                   <%= f.input :first_name,
-                        label: "YOUR FIRST NAME" %>
+                        label: t('.first_name') %>
                   <%= f.input :last_name,
-                              label: "YOUR LAST NAME" %>
+                              label: t('.last_name') %>
                 </div>
                 <%= f.input :address,
-                            label: "YOUR LOCATION",
+                            label: t('.location'),
                             placeholder: "example: Plaza De Cataluña, Barcelona" %>
                 <%= f.input :country,
                             collection: @continents,
-                            label: "NATIONALITY" %>
+                            label: t('.nationality') %>
                 <div class="d-flex justify-content-between">
                   <%= f.input :place_of_birth,
-                            label: "PLACE OF BIRTH",
+                            label: t('.place_of_birth'),
                             class: "search_location",
-                            placeholder: "Your Hometown" %>
+                            placeholder: t('.place_of_birth') %>
                   <%= f.input :birthday,
                         input_html: {class: "datepicker-edit"},
                         as: :string,
-                        label:"BIRTHDATE" %>
+                        label: t('.birthdate') %>
                 </div>
                 <div class="d-flex justify-content-between">
                   <%= f.input :gender,
                         collection: %w[Male Female Other],
-                        label: "GENDER" %>
+                        label: t('.gender') %>
                   <%= f.input :height,
-                        label: "HEIGHT IN cm" %>
+                        label: t('.height') %>
                   <%= f.input :weight,
-                        label: "WEIGHT IN kg" %>
+                        label: t('.weight') %>
                 </div>
               </div>
             </div>
@@ -84,7 +85,7 @@
           <div class="card">
             <div class="card-header" id="headingThree">
               <button class="btn accordion-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
-                Your Game
+                <%= t('.your_game') %>
               </button>
             </div>
 
@@ -92,22 +93,22 @@
               <div class="card-body">
                 <%= f.input :style_of_play,
                       collection: User.styles,
-                      label: "WHAT IS YOUR STYLE OF PLAY?" %>
+                      label: t('.style_of_play') %>
                 <%= f.input :handedness,
                             collection: %w[righty lefty],
-                            label: "ARE YOU A RIGHTY OR LEFTY?" %>
+                            label: t('.righty_lefty') %>
                 <%= f.input :backhand_style,
                             :collection => ["one handed backhand", "two handed backhand"],
-                            label:"WHAT IS YOUR BACKHAND STYLE?" %>
+                            label: t('.backhand_style') %>
                 <%= f.association :club,
-                                  label: "WHICH ONE IS YOUR CLUB?" %>
+                                  label: t('.club') %>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="card-header" id="headingFour">
               <button class="btn accordion-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
-                Picture & Bio
+                <%= t('.picture_bio') %>
               </button>
             </div>
 
@@ -121,14 +122,44 @@
                       <div class="imagePreview"  id="edit-photo-form"></div>
                       <img src="http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg" alt="" class="imagePreview">
                     <% end %>
-                    <label class="btn btn-primary upload">Upload Picture
+                    <label class="btn btn-primary upload">
+                      <%= t('.upload') %>
                       <%= f.input :picture, input_html: {class: 'custom-file-input', accept: 'image/*'}, label: false %>
                     </label>
                   </div>
                   <input type="hidden" id="user_angle" name="user[angle]" value="0">
                   <%= f.input :bio,
-                              label: "BIO",
-                              placeholder: "This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc." %>
+                              label: t('.bio'),
+                              placeholder: t('.description') %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <button class="btn accordion-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
+                <%= t('.settings') %>
+              </button>
+            </div>
+
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionEditProfile">
+              <div class="card-body">
+                <div class="settings-section">
+                  <h5>
+                    <%= t('.languages') %>
+                  </h5>
+                  <%= f.input :language, as: :select, collection: [['en', 'english'], ['fr', 'french'], ['es', 'spanish']], label_method: :second, value_method: :first, label: false, include_blank: false %>
+                </div>
+                <div class="settings-section">
+                  <h5>
+                    <%= t('.notifications') %>
+                  </h5>
+                    <%= f.input :new_shoutout_email, as: :boolean %>
+                    <%= f.input :new_player_review_email, as: :boolean %>
+                    <%= f.input :new_game_event_email, as: :boolean %>
+                    <%= f.input :confirmed_match_result_email, as: :boolean %>
+                    <%= f.input :show_my_whatsapp, as: :boolean %>
+                    <%= f.input :new_match_result_email, as: :boolean %>
                 </div>
               </div>
             </div>
@@ -137,16 +168,19 @@
 
         <div class="save-profile">
           <%#= f.input :current_password,
-                      hint: "we need your current password to confirm your changes",
+                      hint: t(".we_need_your_current_password_to_confirm_your_changes"),
                       required: true,
                       input_html: { autocomplete: "current-password" } %>
           <div class="form-actions">
-            <%= f.button :submit, "save", class: "btn btn-primary cta-signup mb-3" %>
+            <%= f.button :submit, t(".update"), class: "btn btn-primary cta-signup mb-3" %>
           </div>
         </div>
       <% end %>
       <div class="cancel-account">
-        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+        <p>
+          <%= t('.unhappy') %>
+          <%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+        </p>
       </div>
     </div>
   </div>

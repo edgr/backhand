@@ -23,7 +23,7 @@ function closeModal() {
 function updateQueryIndicator() {
   const indication = document.querySelector('#user-query-indicator');
   if (indication) {
-    indication.innerText = "<%= @users.count %> players <%= @indication %>";
+    indication.innerText = "<%= t('.players_with_location', count: @users.count) %> <%= @indication %>";
   }
 }
 

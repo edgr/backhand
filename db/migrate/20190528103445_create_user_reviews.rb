@@ -3,7 +3,6 @@ class CreateUserReviews < ActiveRecord::Migration[5.2]
     create_table :user_reviews do |t|
       t.references :sender
       t.references :receiver
-      t.references :challenge
       t.integer :serve
       t.integer :return
       t.integer :backhand
@@ -19,6 +18,5 @@ class CreateUserReviews < ActiveRecord::Migration[5.2]
     end
     add_foreign_key :user_reviews, :users, column: :sender_id
     add_foreign_key :user_reviews, :users, column: :receiver_id
-    add_foreign_key :user_reviews, :challenges, column: :challenge_id
   end
 end

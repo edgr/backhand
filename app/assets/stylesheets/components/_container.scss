@@ -7,7 +7,7 @@
 }
 
 .clubs-container {
-  padding: 15px;
+  padding: 12px 8px;
 }
 
 @media all and (min-width: 768px) {
@@ -17,6 +17,14 @@
   }
   .container-index {
     max-width: 900px;
+  }
+  .club-container {
+    // max-width: 900px;
+    // margin: auto;
+    // margin-top: 32px;
+  }
+  .clubs-container {
+    padding: 16px;
   }
 }
 

@@ -45,29 +45,71 @@
 
       <ul class="list-inline tabs-underlined">
         <li>
-          <a href data-target="player_info" class="tab-underlined active tab-title-show">Info</a>
+          <a href data-target="player_info" class="tab-underlined active tab-title-show">
+            <%= t('show.info') %>
+          </a>
         </li>
         <li>
-          <a href="#" data-target="player_bio" class="tab-underlined tab-title-show">Bio</a>
+          <a href="#" data-target="player_bio" class="tab-underlined tab-title-show">
+            <%= t('show.bio') %>
+          </a>
         </li>
       </ul>
 
       <div class="player-infos" id="player_info">
         <div class="details">
+          <p>
+            <%= t('.age') %>
+            <span class="details-info">
+              <%= force_age(@user) %>
+              <%= t('.years_old') %>
+            </span>
+          </p>
+          <p>
+            <%= t('.birthday') %>
+            <span class="details-info">
+              <%= @user.birthday %>
+            </span>
+          </p>
+          <p>
+            <%= t('.place_of_birth') %>
+            <span class="details-info address-place">
+              <%= @user.place_of_birth %>
+            </span>
+          </p>
           <br>
-          <!-- <p>age: <%= @user.birthday %></p> -->
-          <p>age: <span class="details-info"><%= force_age(@user) %> years old</span></p>
-
-          <p>birthday: <span class="details-info"><%= @user.birthday %></span></p>
-          <p>place of birth: <span class="details-info address-place"><%= @user.place_of_birth %></span></p>
+          <p>
+            <%= t('.height') %>
+            <span class="details-info">
+              <%= @user.height %> cm
+            </span>
+          </p>
+          <p>
+            <%= t('.weight') %>
+            <span class="details-info">
+              <%= @user.weight %> kg
+            </span>
+          </p>
           <br>
-          <p>height: <span class="details-info"><%= @user.height %> cm</span></p>
-          <p>weight: <span class="details-info"><%= @user.weight %> kg</span></p>
-          <br>
-          <p>style: <span class="details-info"><%= @user.handedness %> - <%= @user.backhand_style %></span></p>
-          <p>residence: <span class="details-info address-place"><%= @user.address %></span></p>
+          <p>
+            <%= t('.style_of_play') %>
+            <span class="details-info">
+              <%= @user.handedness %> - <%= @user.backhand_style %>
+            </span>
+          </p>
+          <p>
+            <%= t('.residence') %>
+            <span class="details-info address-place">
+              <%= @user.address %>
+            </span>
+          </p>
           <% if @user.club_id.present? %>
-            <p>club: <span class="details-info"> <%= user_presenter.club %></span></p>
+            <p>
+              <%= t('.club') %>
+              <span class="details-info">
+                <%= user_presenter.club %>
+              </span>
+            </p>
           <% end %>
         </div>
       </div>
@@ -80,23 +122,25 @@
 
     <!-- Rankings & Stats -->
     <div class="rankings">
-      <h3>Rankings & Stats</h3>
+      <h3>
+        <%= t('.rankings_and_stats') %>
+      </h3>
 
       <div class="world-ranking">
         <span>
-          world ranking
+          <%= t('.world_ranking') %>
         </span>
         <span class="rank-points">
           #<%= @user.ranking %>
         </span>
         <span>
-          with
+          <%= t('.with') %>
         </span>
         <span class="rank-points">
           <%= user_presenter.points %>
         </span>
         <span>
-          points
+          <%= t('.points') %>
         </span>
       </div>
 
@@ -133,9 +177,18 @@
 
         <div class="vertical-line"></div>
         <div class="matches-stats">
-          <span><%= @played_matches.count %> matches</span><br>
-          <span><%= @user.matches_won.count %> wins</span><br>
-          <span><%= @user.matches_lost.count %> losses</span><br>
+          <span>
+            <%= @played_matches.count %>
+            <%= t('.matches') %>
+            </span><br>
+          <span>
+            <%= @user.matches_won.count %>
+            <%= t('.wins') %>
+            </span><br>
+          <span>
+            <%= @user.matches_lost.count %>
+            <%= t('.losses') %>
+          </span><br>
         </div>
       </div>
     </div>
@@ -144,19 +197,19 @@
     <!-- skills -->
     <div class="skills-show">
       <h3>
-        Skills
+        <%= t('.skills') %>
       </h3>
 
 
       <div class="strokes">
         <span class="skills-subtitle">
-          STROKES
+          <%= t('.strokes') %>
         </span>
 
         <div class="group-progress-strokes">
           <div class="line-progress-show">
             <p>
-              serve
+              <%= t('.serve') %>
             </p>
             <div class="progress">
               <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.serve %>%" aria-valuenow="<%= user_presenter.serve %>" aria-valuemin="0" aria-valuemax="100"></div>
@@ -164,7 +217,8 @@
           </div>
           <div class="line-progress-show">
             <p>
-              return
+              <%= t('.return') %>
+
             </p>
             <div class="progress">
               <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.return %>%" aria-valuenow="<%= user_presenter.return %>" aria-valuemin="0" aria-valuemax="100"></div>
@@ -172,7 +226,7 @@
           </div>
           <div class="line-progress-show">
             <p>
-              forehand
+              <%= t('.forehand') %>
             </p>
             <div class="progress">
               <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.forehand %>%" aria-valuenow="<%= user_presenter.forehand %>" aria-valuemin="0" aria-valuemax="100"></div>
@@ -180,7 +234,7 @@
           </div>
           <div class="line-progress-show">
             <p>
-              backhand
+              <%= t('.backhand') %>
             </p>
             <div class="progress">
               <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.backhand %>%" aria-valuenow="<%= user_presenter.backhand %>" aria-valuemin="0" aria-valuemax="100"></div>
@@ -188,7 +242,7 @@
           </div>
           <div class="line-progress-show">
             <p>
-              volley
+              <%= t('.volley') %>
             </p>
             <div class="progress">
               <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.volley %>%" aria-valuenow="<%= user_presenter.volley %>" aria-valuemin="0" aria-valuemax="100"></div>
@@ -200,12 +254,12 @@
 
       <div class="fitness">
         <span class="skills-subtitle">
-          FITNESS
+          <%= t('.fitness') %>
         </span>
         <div class="group-progress-fitness">
           <div class="line-progress-show">
             <p>
-              speed
+              <%= t('.speed') %>
             </p>
             <div class="progress">
               <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.speed %>%" aria-valuenow="<%= user_presenter.speed %>" aria-valuemin="0" aria-valuemax="100"></div>
@@ -213,7 +267,7 @@
           </div>
           <div class="line-progress-show">
             <p>
-              power
+              <%= t('.power') %>
             </p>
             <div class="progress">
               <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.power %>%" aria-valuenow="<%= user_presenter.power %>" aria-valuemin="0" aria-valuemax="100"></div>
@@ -221,7 +275,7 @@
           </div>
           <div class="line-progress-show">
             <p>
-              endurance
+              <%= t('.endurance') %>
             </p>
             <div class="progress">
               <div class="progress-bar" role="progressbar" style="width: <%= user_presenter.endurance %>%" aria-valuenow="<%= user_presenter.endurance %>" aria-valuemin="0" aria-valuemax="100"></div>
@@ -238,10 +292,15 @@
       <div class="comment-thumb">
         <% if @user.review_score.nil?  %>
           <div class="mt-4 mx-auto">
-            <span><%= @user.first_name %> hasn't received any reviews yet!</span>
+            <span>
+              <%= @user.first_name %>
+              <%= t('no_reviews_yet') %>
+            </span>
           </div>
         <% else %>
-        <h3>Comments</h3>
+        <h3>
+          <%= t('.comments') %>
+        </h3>
 
         <div class="thumb-show">
           <i class="far fa-thumbs-up"></i>
@@ -265,6 +324,8 @@
         </div>
       <% end %>
     </div>
+
+    <!-- actions -->
     <div class="actions-wrapper">
       <% if user_signed_in? %>
         <% if @user == current_user %>
@@ -286,11 +347,13 @@
               link
             </span>
           </button>
-          <a href="https://wa.me/<%= @user.phone_number %>?text=Hello%20<%= @user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%20Fancy%20playing%20some%20tennis?">
-            <button id="whatsapp-button" class="mdc-fab b-160 app-fab--absolute hidden" aria-label="Favorite">
-              <i class="fab fa-whatsapp"></i>
-            </button>
-          </a>
+          <% if @user.settings[:show_my_whatsapp] == true %>
+            <a href="https://wa.me/<%= @user.phone_number %>?text=Hello%20<%= @user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%20Fancy%20playing%20some%20tennis?">
+              <button id="whatsapp-button" class="mdc-fab b-160 app-fab--absolute hidden" aria-label="Favorite">
+                <i class="fab fa-whatsapp"></i>
+              </button>
+            </a>
+          <% end %>
           <%= link_to new_user_user_review_path(@user) do %>
             <button id="review-button" class="mdc-fab b-90 app-fab--absolute hidden" aria-label="Favorite">
               <span class="mdc-fab__icon material-icons">edit</span>

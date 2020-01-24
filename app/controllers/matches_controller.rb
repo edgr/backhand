@@ -14,6 +14,7 @@ class MatchesController < ApplicationController
     @match.player_1 = current_user
     if @match.save
       update_match_result_score
+      inform_player_2
       redirect_to my_matches_path
     else
       render :new
@@ -56,5 +57,13 @@ class MatchesController < ApplicationController
       end
     end
     @match_result.update(match: @match, score: score.chomp(' '))
+  end
+
+  def inform_player_2
+    UserMailer.with(
+      player_1: @match.player_1,
+      player_2: @match.player_2,
+      match: @match
+    ).new_match_result.deliver_now unless @match.player_2.settings[:new_match_result_email] == false
   end
 end

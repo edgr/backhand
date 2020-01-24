@@ -12,9 +12,10 @@
   }
 }
 
-.see-more-menu {
+.see-more-menu, .language-menu {
   color: white !important;
   font-size: 1rem;
+  margin-left: 12px;
 }
 
 .navbar {
@@ -29,6 +30,9 @@
         position: relative;
       }
     }
+  }
+  .language-more {
+    display: flex;
   }
 }
 
@@ -85,6 +89,16 @@
   }
 }
 
+.dropdown-menu {
+  right: 0;
+  left: unset;
+  .nav-link {
+    .flag-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
 .dropdown-toggle {
   padding: 0 !important;
   &:after {
@@ -92,13 +106,16 @@
   }
 }
 
-.dropdown-menu {
-  right: 0;
-}
 
 @media all and (min-width: 768px) {
   .nav-points-ranking {
     text-align: left;
     margin-left: 8px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .navbar-brand {
+    font-size: 20px;
   }
 }

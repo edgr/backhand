@@ -2,7 +2,7 @@
   <%= simple_form_for [current_user, @event] do |f| %>
     <div class="event-partners">
       <%= f.association :player_2,
-          label:"WHO WILL YOU PLAY WITH?",
+          label: t('.who'),
           input_html: { class: "select-your-opponent form-control" },
           collection: current_user.opponents.map{|z| [z.full_name, z.id]} %>
       <%= f.association :player_3,
@@ -16,7 +16,7 @@
       <%= link_to '#', class: "add add-player" do %>
         <i class="fas fa-plus-circle">
           <span>
-            add player
+            <%= t('.add_player') %>
           </span>
         </i>
       <% end %>
@@ -24,7 +24,7 @@
       <%= link_to '#', class: "remove remove-player" do %>
         <i class="fas fa-minus-circle">
           <span>
-            remove player
+            <%= t('.remove_player') %>
           </span>
         </i>
       <% end %>
@@ -34,8 +34,11 @@
         input_html: {class: "datepicker-event"},
         as: :string,
         required: true,
-        label:"WHEN WILL YOU PLAY?" %>
-    <%= f.association :club, label:"WHERE WILL YOU PLAY?", input_html: {class: "select-club form-control"} %>
-    <%= f.submit 'create event', class: "btn btn-primary cta-next" %>
+        label: t('.when') %>
+    <%= f.association :club,
+        label: t('.where'),
+        input_html: {class: "select-club form-control"} %>
+    <%= f.submit t('.create_event'),
+        class: "btn btn-primary cta-next" %>
   <% end %>
 </div>
