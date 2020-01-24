@@ -1,7 +1,7 @@
 <div class="clubs-map">
-  <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  <div class="col-lg-4" id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
-  <div class="clubs-container">
+  <div class="clubs-container col-lg-8">
     <%= simple_form_for :search_clubs, url: clubs_path, method: "GET" do |f| %>
       <div class="clubs-search">
         <%= f.input :location, label: false, input_html: { id: "clubs-address" } %>
