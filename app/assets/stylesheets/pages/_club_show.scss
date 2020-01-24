@@ -62,18 +62,19 @@
       position: sticky;
       height: calc(100vh - 62px);
       top: 62px;
-      margin-top: -400px;
       order: unset;
       #map-show {
         height: 100%;
       }
     }
     .main-info {
+      margin-top: -260px;
       .club-phone, .club-website {
         margin-bottom: 24px;
       }
     }
     .courts {
+      margin-top: -100px;
       order: unset;
     }
   }
