@@ -10,7 +10,7 @@ class ShoutoutsController < ApplicationController
   def create
     @shoutout = Shoutout.new(shoutout_params)
     @shoutout.user = current_user
-    @shoutout.recipients = recipients(params[:shoutout][:recipients])
+    @shoutout.recipients = filter_recipients(params[:shoutout][:recipients])
     if @shoutout.save!
       redirect_to shoutouts_path
     else
@@ -29,7 +29,7 @@ class ShoutoutsController < ApplicationController
     params.require(:shoutout).permit(:minimum_level, :maximum_level, :message)
   end
 
-  def recipients(user_choice)
+  def filter_recipients(user_choice)
     if user_choice == "0"
       recipients = User.where(club_id: current_user.club.id)
     else
