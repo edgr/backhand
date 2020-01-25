@@ -160,9 +160,9 @@ es:
       who: "¿CON QUIÉN VAS A JUGAR?"
       when: "¿CUANDO VAS A JUGAR?"
       where: "¿DÓNDE VAS A JUGAR?"
-      remove_player: "remove player"
-      add_player: "add player"
-      create_event: "create event"
+      remove_player: "quitar jugador"
+      add_player: "añadir jugador"
+      create_event: "creer evento"
     edit:
       who: "WHO WILL YOU PLAY WITH?"
       when: "WHEN WILL YOU PLAY?"
@@ -175,6 +175,14 @@ es:
       no_clubs: "No hay clubes en esta área todavía. ¡Haznos saber!"
     show:
       courts: "Pistas"
+  shoutouts:
+    index:
+      contact: "contactar"
+      remove: "quitar"
+    new:
+      my_club: "jugadores/as en mi club"
+      everyone: "todos/as cerca de mi"
+      send: "enviar"
   user_reviews:
     new:
       recommend: "¿Recomendarías %{partner} a otros jugadores para jugar?"
