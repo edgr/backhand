@@ -127,7 +127,7 @@ es:
       forehand: "drive"
       backhand: "revés"
       volley: "volea"
-      no_reviews: "¡Ningún comentarios!"
+      no_reviews: "0 com."
   matches:
     index:
       match_date: "%{match_date}"

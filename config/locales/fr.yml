@@ -126,14 +126,14 @@ fr:
       forehand: "coup droit"
       backhand: "revers"
       volley: "vollée"
-      no_reviews: "Pas de commentaires !"
+      no_reviews: "0 com."
     users:
       serve: "service"
       return: "retour"
       forehand: "coup droit"
       backhand: "revers"
       volley: "vollée"
-      no_reviews: "Pas de commentaires !"
+      no_reviews: "0 com."
   matches:
     index:
       match_date: "%{match_date}"
