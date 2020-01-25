@@ -1,4 +1,6 @@
 class ShoutoutsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index]
+
   def new
     @shoutout = Shoutout.new
   end
@@ -44,9 +46,13 @@ class ShoutoutsController < ApplicationController
 
   def shoutouts_to_display(shoutouts_list)
     shoutouts_list.select do |shoutout|
-      if shoutout.recipients.include? current_user.id
-        shoutout
-      elsif shoutout.user_id == current_user.id
+      if user_signed_in?
+        if shoutout.recipients.include? current_user.id
+          shoutout
+        elsif shoutout.user_id == current_user.id
+          shoutout
+        end
+      else
         shoutout
       end
     end
