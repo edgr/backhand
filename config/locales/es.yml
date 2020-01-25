@@ -19,6 +19,7 @@ es:
     zero: ""
     one: "1 pista para individuales (no dobles)"
     other: "%{count} pistas para individuales (no dobles)"
+  member_at: "socio en"
   home:
     home_title_html: "JUEGA MÁS<br>JUEGA MEJOR."
     join_us: "APÚNTATE"

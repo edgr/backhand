@@ -64,6 +64,6 @@ class UserPresenter < BasePresenter
   end
 
   def plays_at
-    "member at #{user.club.name}" if user.club.present?
+     "#{I18n.t('.member_at').to_s} #{user.club.name}" if user.club.present?
   end
 end
