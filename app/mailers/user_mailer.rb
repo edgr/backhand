@@ -74,6 +74,19 @@ class UserMailer < ApplicationMailer
     mail to: @player_1.email
   end
 
+  def new_shoutout
+    @inviter = params[:inviter]
+    @recipient = params[:recipient]
+    @shoutout = params[:shoutout]
+    self.template_model = {
+      inviter_first_name: @inviter.first_name,
+      inviter_points: @inviter.points,
+      recipient_first_name: @recipient.first_name,
+      shoutout: @shoutout.message
+    }
+    mail to: @recipient.email
+  end
+
   private
 
   def sender_url(id)

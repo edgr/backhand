@@ -12,6 +12,7 @@ class ShoutoutsController < ApplicationController
     @shoutout.user = current_user
     @shoutout.recipients = recipients(params[:shoutout][:recipients])
     if @shoutout.save!
+      inform_recipients(@shoutout.recipients)
       redirect_to shoutouts_path
     else
       render :new
@@ -31,15 +32,27 @@ class ShoutoutsController < ApplicationController
 
   def recipients(user_choice)
     if user_choice == "0"
-      recipients = User.where(club_id: current_user.club.id)
+      recipients = User.where(club_id: current_user.club_id)
     else
       recipients = User.near(current_user.address, 25)
     end
     recipients = recipients.reject { |recipient| recipient.id == current_user.id }
     range = params[:shoutout][:minimum_level].to_i..params[:shoutout][:maximum_level].to_i
-    return recipients.map do |recipient|
+    recipients.map do |recipient|
       recipient.id if range.include? recipient.points.to_i
     end.compact
+  end
+
+  def inform_recipients(list)
+    inviter = User.find(@shoutout.user_id)
+    list.each do |recipient|
+      recipient = User.find(recipient)
+      UserMailer.with(
+        inviter: inviter,
+        recipient: recipient,
+        shoutout: @shoutout
+      ).new_shoutout.deliver_now unless recipient.settings[:new_shoutout_email] == false
+    end
   end
 
   def shoutouts_to_display(shoutouts_list)

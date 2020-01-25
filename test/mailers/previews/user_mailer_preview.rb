@@ -8,8 +8,8 @@ class UserMailerPreview < ActionMailer::Preview
   end
 
   def new_game_event
-    @inviter = User.find(273)
-    @partner = User.find(274)
+    @inviter = User.first
+    @partner = User.last
     @event = Event.first
 
     UserMailer.with(
@@ -20,8 +20,8 @@ class UserMailerPreview < ActionMailer::Preview
   end
 
   def new_player_review
-    @sender = User.find(273)
-    @receiver = User.find(274)
+    @sender = User.first
+    @receiver = User.last
     @user_review = UserReview.first
 
     UserMailer.with(
@@ -32,8 +32,8 @@ class UserMailerPreview < ActionMailer::Preview
   end
 
   def new_match_result
-    @player_1 = User.find(273)
-    @player_2 = User.find(274)
+    @player_1 = User.first
+    @player_2 = User.last
     @match = Match.first
 
     UserMailer.with(
@@ -44,8 +44,8 @@ class UserMailerPreview < ActionMailer::Preview
   end
 
   def confirmed_match_result
-    @player_1 = User.find(273)
-    @player_2 = User.find(274)
+    @player_1 = User.first
+    @player_2 = User.last
     @match = Match.first
 
     UserMailer.with(
@@ -53,6 +53,19 @@ class UserMailerPreview < ActionMailer::Preview
       player_2: @player_2,
       match: @match
     ).confirmed_match_result.deliver_now unless @player_2.settings[:confirmed_match_result_email] == false
+  end
+
+  def new_shoutout
+    @inviter = User.first
+    @recipient = User.last
+    @shoutout = Shoutout.first
+
+    self.template_model = {
+      inviter_first_name: @inviter.first_name,
+      inviter_points: @inviter.points,
+      recipient_first_name: @recipient.first_name,
+      shoutout: @shoutout.message
+    }.new_shoutout.deliver_now unless @recipient.settings[:new_shoutout_email] == false
   end
 
 end
