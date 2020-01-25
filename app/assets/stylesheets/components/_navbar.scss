@@ -42,6 +42,7 @@
   .logo-back {
     color: $blue;
     font-weight: bold;
+    font-style: italic;
     margin: 0;
   }
   .logo-hand {
@@ -111,11 +112,5 @@
   .nav-points-ranking {
     text-align: left;
     margin-left: 8px;
-  }
-}
-
-@media all and (max-width: 768px) {
-  .navbar-brand {
-    font-size: 20px;
   }
 }
