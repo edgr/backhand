@@ -1,7 +1,7 @@
 .search-results {
   margin-bottom: 16px;
   text-align: center;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .player-card {
@@ -49,7 +49,7 @@
   display: flex;
   align-items: baseline;
   color: $black;
-  font-size: 10px;
+  font-size: 1rem;
   background-color: $gray;
   right: 0px;
   bottom: 0px;
@@ -71,8 +71,8 @@
   align-items: baseline;
   h2 {
     color: $black;
-    font-size: 16px;
     font-weight: bold;
+    font-size: 2rem;
   }
 }
 
@@ -85,7 +85,7 @@
   margin: 0 3px 8px 0;
   background-color: $blue;
   color: white;
-  font-size: 10px;
+  font-size: 1rem;
   border-radius: 2px;
   padding-left: 3px;
   padding-right: 3px;
@@ -97,7 +97,7 @@
   justify-content: space-between;
   p {
     color: $black;
-    font-size: 12px;
+    font-size: 1.2rem;
     margin: 0;
   }
 }
@@ -115,6 +115,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: baseline;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: $black;
 }

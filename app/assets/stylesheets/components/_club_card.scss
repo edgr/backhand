@@ -19,14 +19,8 @@
       font-weight: bold;
       margin-bottom: 16px;
     }
-    .club-courts {
-      font-size: 14px;
-    }
-    .club-access {
-      font-size: 14px;
-    }
-    .club-players {
-      font-size: 14px;
+    .club-courts, .club-access, .club-players {
+      font-size: 1.4rem;
     }
   }
   &:hover {

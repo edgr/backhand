@@ -46,7 +46,6 @@
   }
   .partners-names {
     display: flex;
-    font-size: 16px;
     color: $gray;
     >:nth-child(2), >:nth-child(3) {
       &:before {
@@ -61,7 +60,7 @@
     color: $black;
     min-width: 90px;
     .club {
-      font-size: 12px;
+      font-size: 1.2rem;
       color: $gray;
     }
   }
