@@ -98,15 +98,15 @@
           <%= t('navbar.language') %>
         </button>
         <div class="dropdown-menu">
-          <%= link_to root_path(locale: :fr), class: "nav-link text-white" do %>
+          <%= link_to url_for(locale: :fr), class: "nav-link text-white" do %>
             <span class="flag-icon flag-icon-fr %>"></span>
             <span>français</span>
           <% end %>
-          <%= link_to root_path(locale: :es), class: "nav-link text-white" do %>
+          <%= link_to url_for(locale: :es), class: "nav-link text-white" do %>
             <span class="flag-icon flag-icon-es %>"></span>
             <span>español</span>
           <% end %>
-          <%= link_to root_path(locale: :en), class: "nav-link text-white" do %>
+          <%= link_to url_for(locale: :en), class: "nav-link text-white" do %>
             <span class="flag-icon flag-icon-gb %>"></span>
             <span>english</span>
           <% end %>
