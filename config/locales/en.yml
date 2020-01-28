@@ -282,6 +282,12 @@ en:
           semi_pro: "Semi-Pro"
           semi_pro_plus: "Semi-Pro +"
           pro: "Pro"
+        style_of_play:
+          baseliner: "Baseliner"
+          attacker: "Attacker"
+          grinder: "Grinder"
+          server_volleyer: "Serve & volley"
+          puncher: "Counter-puncher"
   errors:
     internal_server_error:
       first_p: "Oups, it looks like we've missed that shot..."

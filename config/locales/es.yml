@@ -251,6 +251,12 @@ es:
           semi_pro: "Semi-Pro"
           semi_pro_plus: "Semi-Pro +"
           pro: "Pro"
+        style_of_play:
+          baseliner: "Fundo"
+          attacker: "Atacante"
+          grinder: "Defensor"
+          server_volleyer: "Servidor & volleyeur"
+          puncher: "Contra-Atacante"
   errors:
     internal_server_error:
       first_p: "Parece que nos hemos perdido ese tiro ...."

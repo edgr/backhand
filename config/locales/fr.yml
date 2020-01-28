@@ -257,6 +257,12 @@ fr:
           semi_pro: "Semi-Pro"
           semi_pro_plus: "Semi-Pro +"
           pro: "Pro"
+        style_of_play:
+          baseliner: "Fond de court"
+          attacker: "Attaquant"
+          grinder: "Défenseur"
+          server_volleyer: "Serveur & volleyeur"
+          puncher: "Contre-Attaquant"
   errors:
     internal_server_error:
       first_p: "Oups, il semblerait que nous ayons raté ce coup..."
