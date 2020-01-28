@@ -232,6 +232,12 @@ fr:
     step1: "step1"
     step2: "step2"
     step3: "step3"
+  simple_form:
+    options:
+      user:
+        handedness:
+          righty: "Droitier"
+          lefty: "Gaucher"
   errors:
     internal_server_error:
       first_p: "Oups, il semblerait que nous ayons raté ce coup..."

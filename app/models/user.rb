@@ -112,7 +112,7 @@ class User < ApplicationRecord
   end
 
   def self.handedness
-    %w[Righty Lefty]
+    [:righty, :lefty]
   end
 
   def self.backhand

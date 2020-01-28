@@ -95,7 +95,8 @@
                       collection: User.styles,
                       label: t('.style_of_play') %>
                 <%= f.input :handedness,
-                            collection: %w[righty lefty],
+                            # collection: %w[righty lefty],
+                            collection: User.handedness,
                             label: t('.righty_lefty') %>
                 <%= f.input :backhand_style,
                             :collection => ["one handed backhand", "two handed backhand"],
