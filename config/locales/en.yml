@@ -266,6 +266,10 @@ en:
         backhand_style:
           one_handed_backhand: "One Handed"
           two_handed_backhand: "Two Handed"
+        gender:
+          male: "Male"
+          female: "Female"
+          other: "Other"
   errors:
     internal_server_error:
       first_p: "Oups, it looks like we've missed that shot..."

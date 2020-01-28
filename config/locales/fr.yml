@@ -241,6 +241,10 @@ fr:
         backhand_style:
           one_handed_backhand: "Une main"
           two_handed_backhand: "Deux mains"
+        gender:
+          male: "Homme"
+          female: "Femme"
+          other: "Autre"
   errors:
     internal_server_error:
       first_p: "Oups, il semblerait que nous ayons raté ce coup..."

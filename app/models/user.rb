@@ -43,7 +43,7 @@ class User < ApplicationRecord
   validates :birthday, presence: true,
                        if: :active_or_step1?
   validates :gender, presence: true,
-                     inclusion: { in: %w[Male Female Other] },
+                     inclusion: { in: %w[male female other] },
                      if: :active_or_step1?
   validates :height, :weight, presence: true,
                               length: { in: 2..3 },
@@ -108,7 +108,7 @@ class User < ApplicationRecord
   end
 
   def self.genders
-    %w[Male Female Other]
+    [:male, :female, :other]
   end
 
   def self.handedness
