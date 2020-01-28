@@ -1,6 +1,6 @@
 class ChangeLevelsAndStylesInUsers < ActiveRecord::Migration[5.2]
   def change
-    User.all.each do |user|
+    User.active.each do |user|
       if user.level == "Semi-pro +"
         user.level = user.level.gsub('-', '_').gsub(' +', '_plus').downcase
         puts user.level
