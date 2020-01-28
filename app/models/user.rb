@@ -50,7 +50,7 @@ class User < ApplicationRecord
                               numericality: { only_integer: true },
                               if: :active_or_step1?
   validates :level, presence: true,
-                    inclusion: { in: ["Beginner", "Beginner +", "Intermediate", "Intermediate +", "Advanced", "Advanced +", "Expert", "Expert +", "Semi-pro", "Semi-pro +", "Pro"] },
+                    inclusion: { in: ["beginner", "beginner_plus", "intermediate", "intermediate_plus", "advanced", "advanced_plus", "expert", "expert_plus", "semi_pro", "semi_pro_plus", "pro"] },
                     if: :active_or_step2?
   validates :style_of_play, presence: true,
                             inclusion: { in: %w[grinder baseliner attacker puncher server-volleyer] },
@@ -103,8 +103,7 @@ class User < ApplicationRecord
   end
 
   def self.levels
-    # %w[Beginner 'Beginner +' Intermediate 'Intermediate +' Advanced 'Advanced +' Expert 'Expert +' Semi-pro 'Semi-pro +' Pro]
-    ["Beginner", "Beginner +", "Intermediate", "Intermediate +", "Advanced", "Advanced +", "Expert", "Expert +", "Semi-pro", "Semi-pro +", "Pro"]
+    %i[beginner beginner_plus intermediate intermediate_plus advanced advanced_plus expert expert_plus semi_pro semi_pro_plus pro]
   end
 
   def self.genders

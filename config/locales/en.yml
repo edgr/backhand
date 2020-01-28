@@ -270,6 +270,18 @@ en:
           male: "Male"
           female: "Female"
           other: "Other"
+        level:
+          beginner: "Beginner"
+          beginner_plus: "Beginner +"
+          intermediate: "Intermediate"
+          intermediate_plus: "Intermediate +"
+          advanced: "Advanced"
+          advanced_plus: "Advanced +"
+          expert: "Expert"
+          expert_plus: "Expert +"
+          semi_pro: "Semi-Pro"
+          semi_pro_plus: "Semi-Pro +"
+          pro: "Pro"
   errors:
     internal_server_error:
       first_p: "Oups, it looks like we've missed that shot..."

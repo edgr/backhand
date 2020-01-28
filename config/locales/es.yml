@@ -239,6 +239,18 @@ es:
           male: "Hombre"
           female: "Mujer"
           other: "Otro"
+        level:
+          beginner: "Principante"
+          beginner_plus: "Principante +"
+          intermediate: "Intermediario"
+          intermediate_plus: "Intermediario +"
+          advanced: "Avanzado"
+          advanced_plus: "Avanzado +"
+          expert: "Experto"
+          expert_plus: "Experto +"
+          semi_pro: "Semi-Pro"
+          semi_pro_plus: "Semi-Pro +"
+          pro: "Pro"
   errors:
     internal_server_error:
       first_p: "Parece que nos hemos perdido ese tiro ...."
