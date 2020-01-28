@@ -224,6 +224,8 @@ en:
       next: "next"
       back: "back"
       review_now: "review now"
+      please_write: "Please write something about your partner!"
+      please_rate: "Please rate your partner!"
   user_steps:
     step1:
       about_you: "About you"

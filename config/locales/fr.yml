@@ -199,6 +199,8 @@ fr:
       next: "suivant"
       back: "retour"
       review_now: "enregistrer"
+      please_write: "Écris quelque chose à propos de ton partenaire!"
+      please_rate: "Évalue ton partenaire!"
   user_steps:
     step1:
       about_you: "À propos de vous"

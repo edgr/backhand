@@ -193,6 +193,8 @@ es:
       next: "siguiente"
       back: "atrás"
       review_now: "revisar ahora"
+      please_write: "¡Escribe algo sobre tu compañero/a!"
+      please_rate: "¡Evalúa tu compañero/a!"
   user_steps:
     step1:
       about_you: "Sobre ti"
