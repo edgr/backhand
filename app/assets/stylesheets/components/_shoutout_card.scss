@@ -36,17 +36,17 @@
           flex-grow: 1;
           margin-top: -6px;
           .name {
-            font-size: 2rem;
+            font-size: 20px;
             color: $black;
           }
           .club {
-            font-size: 1.2rem;
+            font-size: 12px;
             color: $gray;
           }
           .more-info {
             margin-top: -6px;
             .level-style {
-              font-size: 1.2rem;
+              font-size: 12px;
             }
           }
           .points {
@@ -54,7 +54,7 @@
             background-color: unset;
             padding: 0;
             display: flex;
-            font-size: 1.2rem;
+            font-size: 12px;
             color: $light-gray;
           }
         }
@@ -64,7 +64,7 @@
       position: absolute;
       top: 16px;
       right: 16px;
-      font-size: 1.4rem;
+      font-size: 14px;
     }
     p {
       margin: 0 0 0 52px;
