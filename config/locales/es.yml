@@ -224,6 +224,7 @@ es:
       bio: "Bio"
       explanation: "¡Comparte tu experiencia del tenis aquí!"
       next: "siguiente"
+      please_photo: "¡Una foto por favor! :)"
   wicked:
     step1: "step1"
     step2: "step2"

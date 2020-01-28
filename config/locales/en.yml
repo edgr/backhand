@@ -255,6 +255,7 @@ en:
       bio: "Bio"
       explanation: "This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc."
       next: "next"
+      please_photo: "A profile picture is mandatory :)"
   wicked:
     step1: "step1"
     step2: "step2"
