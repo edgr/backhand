@@ -108,15 +108,15 @@ class User < ApplicationRecord
   end
 
   def self.genders
-    [:male, :female, :other]
+    %i[male female other]
   end
 
   def self.handedness
-    [:righty, :lefty]
+    %i[righty lefty]
   end
 
   def self.backhand_style
-    [:one_handed_backhand, :two_handed_backhand]
+    %i[one_handed_backhand two_handed_backhand]
   end
 
   def self.styles
