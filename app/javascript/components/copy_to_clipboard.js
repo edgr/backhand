@@ -6,13 +6,19 @@ const copyStringToClipboard = (str) => {
    // Set non-editable to avoid focus and move outside of view
    el.setAttribute('readonly', '');
    el.style = {position: 'absolute', left: '-9999px'};
-   document.body.appendChild(el);
-   // Select text inside element
-   el.select();
-   // Copy text to clipboard
-   document.execCommand('copy');
-   // Remove temporary element
-   document.body.removeChild(el);
+
+   if (window.location.href.includes('users')) {
+     document.body.appendChild(el);
+     el.select();
+     document.execCommand('copy');
+     document.body.removeChild(el);
+   } else {
+     const modal = document.querySelector('.modal-content');
+     modal.appendChild(el);
+     el.select();
+     document.execCommand('copy');
+     modal.removeChild(el);
+   }
 }
 
 const copyLink = () => {
