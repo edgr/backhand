@@ -158,7 +158,7 @@ en:
       forehand: "forehand"
       backhand: "backhand"
       volley: "volley"
-      no_reviews: "No reviews yet!"
+      no_reviews: "No rev."
   matches:
     index:
       match_date: "%{match_date}"
