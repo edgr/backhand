@@ -199,6 +199,8 @@ fr:
       next: "suivant"
       back: "retour"
       review_now: "enregistrer"
+      please_write: "Écris quelque chose à propos de ton partenaire!"
+      please_rate: "Évalue ton partenaire!"
   user_steps:
     step1:
       about_you: "À propos de vous"
@@ -228,6 +230,7 @@ fr:
       bio: "Bio"
       explanation: "Partagez votre expérience du tennis ici !"
       next: "suivant"
+      please_photo: "Une photo s'il te plait ! :)"
   wicked:
     step1: "step1"
     step2: "step2"

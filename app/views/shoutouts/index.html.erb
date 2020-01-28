@@ -43,7 +43,7 @@
           <div class="shoutout-link-red">
             <%= link_to "remove", shoutout_path(shoutout),
                 method: :delete,
-                data: { confirm: "Are you sure?" } %>
+                data: { confirm: t('.are_you_sure') } %>
           </div>
         <% end %>
       </div>

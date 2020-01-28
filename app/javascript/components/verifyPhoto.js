@@ -6,7 +6,8 @@ const verifyPhoto = () => {
       const image = document.querySelector('.imagePreview').style.backgroundImage
       if (image === "") {
         event.preventDefault();
-        swal('A profile picture is mandatory :)')
+        const alert = document.querySelector('.please-photo').innerText
+        swal(alert)
       }
     })
   }

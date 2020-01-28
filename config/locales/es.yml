@@ -193,6 +193,8 @@ es:
       next: "siguiente"
       back: "atrás"
       review_now: "revisar ahora"
+      please_write: "¡Escribe algo sobre tu compañero/a!"
+      please_rate: "¡Evalúa tu compañero/a!"
   user_steps:
     step1:
       about_you: "Sobre ti"
@@ -222,6 +224,7 @@ es:
       bio: "Bio"
       explanation: "¡Comparte tu experiencia del tenis aquí!"
       next: "siguiente"
+      please_photo: "¡Una foto por favor! :)"
   wicked:
     step1: "step1"
     step2: "step2"

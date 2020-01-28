@@ -21,10 +21,12 @@ const reviewSteps = () => {
           firstStep.style.display = 'none';
           secondStep.style.display = '';
         } else {
-          swal('Please write something about your partner!')
+          const alert = document.querySelector('.please-write').innerText
+          swal(alert)
         }
       } else {
-      swal('Please rate your partner!')
+        const alert = document.querySelector('.please-rate').innerText
+        swal(alert)
       }
     });
     backStep.addEventListener('click', () => {
