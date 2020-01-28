@@ -238,6 +238,9 @@ fr:
         handedness:
           righty: "Droitier"
           lefty: "Gaucher"
+        backhand_style:
+          one_handed_backhand: "Une main"
+          two_handed_backhand: "Deux mains"
   errors:
     internal_server_error:
       first_p: "Oups, il semblerait que nous ayons raté ce coup..."

@@ -263,6 +263,9 @@ en:
         handedness:
           righty: "Righty"
           lefty: "Lefty"
+        backhand_style:
+          one_handed_backhand: "One Handed"
+          two_handed_backhand: "Two Handed"
   errors:
     internal_server_error:
       first_p: "Oups, it looks like we've missed that shot..."
