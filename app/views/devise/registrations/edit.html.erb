@@ -92,7 +92,7 @@
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionEditProfile">
               <div class="card-body">
                 <%= f.input :style_of_play,
-                      collection: User.styles,
+                      collection: User.style_of_play,
                       label: t('.style_of_play') %>
                 <%= f.input :handedness,
                             collection: User.handedness,

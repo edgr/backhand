@@ -248,6 +248,24 @@ fr:
           male: "Homme"
           female: "Femme"
           other: "Autre"
+        level:
+          beginner: "Débutant"
+          beginner_plus: "Débutant +"
+          intermediate: "Intermediaire"
+          intermediate_plus: "Intermediaire +"
+          advanced: "Avancé"
+          advanced_plus: "Avancé +"
+          expert: "Expert"
+          expert_plus: "Expert +"
+          semi_pro: "Semi-Pro"
+          semi_pro_plus: "Semi-Pro +"
+          pro: "Pro"
+        style_of_play:
+          baseliner: "Fond de court"
+          attacker: "Attaquant"
+          grinder: "Défenseur"
+          server_volleyer: "Serveur & volleyeur"
+          puncher: "Contre-Attaquant"
   errors:
     internal_server_error:
       first_p: "Oups, il semblerait que nous ayons raté ce coup..."

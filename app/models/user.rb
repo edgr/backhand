@@ -50,10 +50,10 @@ class User < ApplicationRecord
                               numericality: { only_integer: true },
                               if: :active_or_step1?
   validates :level, presence: true,
-                    inclusion: { in: ["Beginner", "Beginner +", "Intermediate", "Intermediate +", "Advanced", "Advanced +", "Expert", "Expert +", "Semi-pro", "Semi-pro +", "Pro"] },
+                    inclusion: { in: %w[beginner beginner_plus intermediate intermediate_plus advanced advanced_plus expert expert_plus semi_pro semi_pro_plus pro] },
                     if: :active_or_step2?
   validates :style_of_play, presence: true,
-                            inclusion: { in: %w[grinder baseliner attacker puncher server-volleyer] },
+                            inclusion: { in: %w[grinder baseliner attacker puncher server_volleyer] },
                             if: :active_or_step2?
   validates :handedness, presence: true,
                          inclusion: { in: %w[righty lefty] },
@@ -103,8 +103,7 @@ class User < ApplicationRecord
   end
 
   def self.levels
-    # %w[Beginner 'Beginner +' Intermediate 'Intermediate +' Advanced 'Advanced +' Expert 'Expert +' Semi-pro 'Semi-pro +' Pro]
-    ["Beginner", "Beginner +", "Intermediate", "Intermediate +", "Advanced", "Advanced +", "Expert", "Expert +", "Semi-pro", "Semi-pro +", "Pro"]
+    %i[beginner beginner_plus intermediate intermediate_plus advanced advanced_plus expert expert_plus semi_pro semi_pro_plus pro]
   end
 
   def self.genders
@@ -119,8 +118,8 @@ class User < ApplicationRecord
     %i[one_handed_backhand two_handed_backhand]
   end
 
-  def self.styles
-    %w[baseliner attacker grinder server-volleyer puncher]
+  def self.style_of_play
+    %i[baseliner attacker grinder server_volleyer puncher]
   end
 
   def matches_won
