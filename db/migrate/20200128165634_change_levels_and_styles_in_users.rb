@@ -1,25 +1,19 @@
 class ChangeLevelsAndStylesInUsers < ActiveRecord::Migration[5.2]
   def change
-    sv_players = User.where(style_of_play: "server-volleyer")
-    sv_players.each do |player|
-      player.style_of_play = "server_volleyer"
-      player.save!
-    end
-
-    spp_players = User.where(level: "Semi-pro +")
-    spp_players.each do |player|
-      player.level = player.level.gsub('-', '_').gsub(' +', '_plus').downcase
-      player.save!
-    end
-
-    sp_players = User.where(level: "Semi-pro")
-    sp_players.each do |player|
-      player.level = player.level.gsub('-', '_').downcase
-      player.save!
-    end
-
     User.all.each do |user|
-      user.level = user.level.gsub(' +', '_plus').downcase
+      if user.level == "Semi-pro +"
+        user.level = user.level.gsub('-', '_').gsub(' +', '_plus').downcase
+        puts user.level
+      elsif user.level == "Semi-pro"
+        user.level = user.level.gsub('-', '_').downcase
+        puts user.level
+      else
+        user.level = user.level.gsub(' +', '_plus').downcase
+        puts user.level
+      end
+      if user.style_of_play == "server-volleyer"
+        user.style_of_play = "server_volleyer"
+      end
       user.save!
     end
   end
