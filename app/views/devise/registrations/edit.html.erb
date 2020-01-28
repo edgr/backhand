@@ -72,7 +72,7 @@
                 </div>
                 <div class="d-flex justify-content-between">
                   <%= f.input :gender,
-                        collection: %w[Male Female Other],
+                        collection: User.genders,
                         label: t('.gender') %>
                   <%= f.input :height,
                         label: t('.height') %>
@@ -95,10 +95,10 @@
                       collection: User.styles,
                       label: t('.style_of_play') %>
                 <%= f.input :handedness,
-                            collection: %w[righty lefty],
+                            collection: User.handedness,
                             label: t('.righty_lefty') %>
                 <%= f.input :backhand_style,
-                            :collection => ["one handed backhand", "two handed backhand"],
+                            collection: User.backhand_style,
                             label: t('.backhand_style') %>
                 <%= f.association :club,
                                   label: t('.club') %>

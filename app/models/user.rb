@@ -43,7 +43,7 @@ class User < ApplicationRecord
   validates :birthday, presence: true,
                        if: :active_or_step1?
   validates :gender, presence: true,
-                     inclusion: { in: %w(Male Female Other) },
+                     inclusion: { in: %w[male female other] },
                      if: :active_or_step1?
   validates :height, :weight, presence: true,
                               length: { in: 2..3 },
@@ -53,13 +53,13 @@ class User < ApplicationRecord
                     inclusion: { in: ["Beginner", "Beginner +", "Intermediate", "Intermediate +", "Advanced", "Advanced +", "Expert", "Expert +", "Semi-pro", "Semi-pro +", "Pro"] },
                     if: :active_or_step2?
   validates :style_of_play, presence: true,
-                            inclusion: { in: %w(grinder baseliner attacker puncher server-volleyer) },
+                            inclusion: { in: %w[grinder baseliner attacker puncher server-volleyer] },
                             if: :active_or_step2?
   validates :handedness, presence: true,
-                         inclusion: { in: %w(righty lefty) },
+                         inclusion: { in: %w[righty lefty] },
                          if: :active_or_step2?
   validates :backhand_style, presence: true,
-                             inclusion: { in: ["one handed backhand", "two handed backhand"] },
+                             inclusion: { in: %w[one_handed_backhand two_handed_backhand] },
                              if: :active_or_step2?
   validates :bio, presence: true,
                   length: { maximum: 500 },
@@ -108,15 +108,15 @@ class User < ApplicationRecord
   end
 
   def self.genders
-    %w[Male Female Other]
+    %i[male female other]
   end
 
   def self.handedness
-    %w[Righty Lefty]
+    %i[righty lefty]
   end
 
-  def self.backhand
-    ['One Handed', 'Two Handed']
+  def self.backhand_style
+    %i[one_handed_backhand two_handed_backhand]
   end
 
   def self.styles

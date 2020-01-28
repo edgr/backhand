@@ -257,6 +257,19 @@ en:
     step1: "step1"
     step2: "step2"
     step3: "step3"
+  simple_form:
+    options:
+      user:
+        handedness:
+          righty: "Righty"
+          lefty: "Lefty"
+        backhand_style:
+          one_handed_backhand: "One Handed"
+          two_handed_backhand: "Two Handed"
+        gender:
+          male: "Male"
+          female: "Female"
+          other: "Other"
   errors:
     internal_server_error:
       first_p: "Oups, it looks like we've missed that shot..."

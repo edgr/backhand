@@ -226,6 +226,19 @@ es:
     step1: "step1"
     step2: "step2"
     step3: "step3"
+  simple_form:
+    options:
+      user:
+        handedness:
+          righty: "Diestro"
+          lefty: "Zurdo"
+        backhand_style:
+          one_handed_backhand: "Una mano"
+          two_handed_backhand: "Dos manos"
+        gender:
+          male: "Hombre"
+          female: "Mujer"
+          other: "Otro"
   errors:
     internal_server_error:
       first_p: "Parece que nos hemos perdido ese tiro ...."
