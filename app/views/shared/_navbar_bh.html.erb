@@ -1,6 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <p class="logo-back">BACK</p> <p class="logo-hand">HAND</p>
+  <% if user_signed_in? %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <p class="logo-back">B</p> <p class="logo-hand">H</p>
+    <% end %>
+  <% else %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <p class="logo-back">BACK</p> <p class="logo-hand">HAND</p>
+    <% end %>
   <% end %>
   <% if user_signed_in? %>
     <div class="d-flex d-lg-none">
@@ -101,15 +107,15 @@
           <%= t('navbar.language') %>
         </button>
         <div class="dropdown-menu">
-          <%= link_to root_path(locale: :fr), class: "nav-link text-white" do %>
+          <%= link_to url_for(locale: :fr), class: "nav-link text-white" do %>
             <span class="flag-icon flag-icon-fr %>"></span>
             <span>français</span>
           <% end %>
-          <%= link_to root_path(locale: :es), class: "nav-link text-white" do %>
+          <%= link_to url_for(locale: :es), class: "nav-link text-white" do %>
             <span class="flag-icon flag-icon-es %>"></span>
             <span>español</span>
           <% end %>
-          <%= link_to root_path(locale: :en), class: "nav-link text-white" do %>
+          <%= link_to url_for(locale: :en), class: "nav-link text-white" do %>
             <span class="flag-icon flag-icon-gb %>"></span>
             <span>english</span>
           <% end %>

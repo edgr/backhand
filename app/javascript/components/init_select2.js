@@ -32,8 +32,7 @@ const initSelectYourClub = () => {
 const initSelectCountry = () => {
   $('.select-country').select2 ({
     theme: "bootstrap",
-    width: '100%',
-    placeholder: "Type in the player's country you are looking for"
+    width: '100%'
   });
 };
 

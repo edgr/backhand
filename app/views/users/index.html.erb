@@ -46,10 +46,10 @@
           <%= f.input :location, required: false, input_html: {name: "search[location]", value: params[:search].try(:[], :location)}, id: "search_location", as: :string, label: t('.location') %>
           <%= f.input :country, input_html: {name: "search[query][]", class: "select-country"}, label: t('.country') %>
           <%= f.input :level, as: :check_boxes, required: false, input_html: {name: "search[query][]"}, collection: User.levels, wrapper: :vertical_collection_inline, label: t('.level') %>
-          <%= f.input :style_of_play, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: User.styles, wrapper: :vertical_collection_inline, label: t('.style_of_play') %>
+          <%= f.input :style_of_play, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: User.style_of_play, wrapper: :vertical_collection_inline, label: t('.style_of_play') %>
           <%= f.input :handedness, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: User.handedness, wrapper: :vertical_collection_inline, label: t('.handedness') %>
 
-          <%= f.input :backhand_style, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: User.backhand, wrapper: :vertical_collection_inline, label: t('.backhand_style')  %>
+          <%= f.input :backhand_style, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: User.backhand_style, wrapper: :vertical_collection_inline, label: t('.backhand_style')  %>
           <%= f.input :gender, as: :check_boxes, required: false, input_html: {name: "search[query][]"} , collection: User.genders, wrapper: :vertical_collection_inline, label: t('.gender') %>
         </div>
         <div class="modal-footer">

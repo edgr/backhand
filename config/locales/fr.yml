@@ -128,14 +128,14 @@ fr:
       forehand: "coup droit"
       backhand: "revers"
       volley: "vollée"
-      no_reviews: "Pas de commentaires !"
+      no_reviews: "0 com."
     users:
       serve: "service"
       return: "retour"
       forehand: "coup droit"
       backhand: "revers"
       volley: "vollée"
-      no_reviews: "Pas de commentaires !"
+      no_reviews: "0 com."
   matches:
     index:
       match_date: "%{match_date}"
@@ -201,6 +201,8 @@ fr:
       next: "suivant"
       back: "retour"
       review_now: "enregistrer"
+      please_write: "Écris quelque chose à propos de ton partenaire!"
+      please_rate: "Évalue ton partenaire!"
   user_steps:
     step1:
       about_you: "À propos de vous"
@@ -230,10 +232,42 @@ fr:
       bio: "Bio"
       explanation: "Partagez votre expérience du tennis ici !"
       next: "suivant"
+      please_photo: "Une photo s'il te plait ! :)"
   wicked:
     step1: "step1"
     step2: "step2"
     step3: "step3"
+  simple_form:
+    options:
+      user:
+        handedness:
+          righty: "Droitier"
+          lefty: "Gaucher"
+        backhand_style:
+          one_handed_backhand: "Une main"
+          two_handed_backhand: "Deux mains"
+        gender:
+          male: "Homme"
+          female: "Femme"
+          other: "Autre"
+        level:
+          beginner: "Débutant"
+          beginner_plus: "Débutant +"
+          intermediate: "Intermediaire"
+          intermediate_plus: "Intermediaire +"
+          advanced: "Avancé"
+          advanced_plus: "Avancé +"
+          expert: "Expert"
+          expert_plus: "Expert +"
+          semi_pro: "Semi-Pro"
+          semi_pro_plus: "Semi-Pro +"
+          pro: "Pro"
+        style_of_play:
+          baseliner: "Fond de court"
+          attacker: "Attaquant"
+          grinder: "Défenseur"
+          server_volleyer: "Serveur & volleyeur"
+          puncher: "Contre-Attaquant"
   errors:
     internal_server_error:
       first_p: "Oups, il semblerait que nous ayons raté ce coup..."

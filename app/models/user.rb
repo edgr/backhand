@@ -43,23 +43,23 @@ class User < ApplicationRecord
   validates :birthday, presence: true,
                        if: :active_or_step1?
   validates :gender, presence: true,
-                     inclusion: { in: %w(Male Female Other) },
+                     inclusion: { in: %w[male female other] },
                      if: :active_or_step1?
   validates :height, :weight, presence: true,
                               length: { in: 2..3 },
                               numericality: { only_integer: true },
                               if: :active_or_step1?
   validates :level, presence: true,
-                    inclusion: { in: ["Beginner", "Beginner +", "Intermediate", "Intermediate +", "Advanced", "Advanced +", "Expert", "Expert +", "Semi-pro", "Semi-pro +", "Pro"] },
+                    inclusion: { in: %w[beginner beginner_plus intermediate intermediate_plus advanced advanced_plus expert expert_plus semi_pro semi_pro_plus pro] },
                     if: :active_or_step2?
   validates :style_of_play, presence: true,
-                            inclusion: { in: %w(grinder baseliner attacker puncher server-volleyer) },
+                            inclusion: { in: %w[grinder baseliner attacker puncher server_volleyer] },
                             if: :active_or_step2?
   validates :handedness, presence: true,
-                         inclusion: { in: %w(righty lefty) },
+                         inclusion: { in: %w[righty lefty] },
                          if: :active_or_step2?
   validates :backhand_style, presence: true,
-                             inclusion: { in: ["one handed backhand", "two handed backhand"] },
+                             inclusion: { in: %w[one_handed_backhand two_handed_backhand] },
                              if: :active_or_step2?
   validates :bio, presence: true,
                   length: { maximum: 500 },
@@ -103,24 +103,23 @@ class User < ApplicationRecord
   end
 
   def self.levels
-    # %w[Beginner 'Beginner +' Intermediate 'Intermediate +' Advanced 'Advanced +' Expert 'Expert +' Semi-pro 'Semi-pro +' Pro]
-    ["Beginner", "Beginner +", "Intermediate", "Intermediate +", "Advanced", "Advanced +", "Expert", "Expert +", "Semi-pro", "Semi-pro +", "Pro"]
+    %i[beginner beginner_plus intermediate intermediate_plus advanced advanced_plus expert expert_plus semi_pro semi_pro_plus pro]
   end
 
   def self.genders
-    %w[Male Female Other]
+    %i[male female other]
   end
 
   def self.handedness
-    %w[Righty Lefty]
+    %i[righty lefty]
   end
 
-  def self.backhand
-    ['One Handed', 'Two Handed']
+  def self.backhand_style
+    %i[one_handed_backhand two_handed_backhand]
   end
 
-  def self.styles
-    %w[baseliner attacker grinder server-volleyer puncher]
+  def self.style_of_play
+    %i[baseliner attacker grinder server_volleyer puncher]
   end
 
   def matches_won

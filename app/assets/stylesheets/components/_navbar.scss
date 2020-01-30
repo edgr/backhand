@@ -15,6 +15,9 @@
 .see-more-menu, .language-menu {
   color: white !important;
   font-size: 1rem;
+}
+
+.see-more-menu {
   margin-left: 12px;
 }
 
@@ -42,6 +45,7 @@
   .logo-back {
     color: $blue;
     font-weight: bold;
+    font-style: italic;
     margin: 0;
   }
   .logo-hand {
@@ -111,11 +115,5 @@
   .nav-points-ranking {
     text-align: left;
     margin-left: 8px;
-  }
-}
-
-@media all and (max-width: 768px) {
-  .navbar-brand {
-    font-size: 20px;
   }
 }

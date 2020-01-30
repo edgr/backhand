@@ -129,7 +129,7 @@ es:
       forehand: "drive"
       backhand: "revés"
       volley: "volea"
-      no_reviews: "¡Ningún comentarios!"
+      no_reviews: "0 com."
   matches:
     index:
       match_date: "%{match_date}"
@@ -195,6 +195,8 @@ es:
       next: "siguiente"
       back: "atrás"
       review_now: "revisar ahora"
+      please_write: "¡Escribe algo sobre tu compañero/a!"
+      please_rate: "¡Evalúa tu compañero/a!"
   user_steps:
     step1:
       about_you: "Sobre ti"
@@ -224,10 +226,42 @@ es:
       bio: "Bio"
       explanation: "¡Comparte tu experiencia del tenis aquí!"
       next: "siguiente"
+      please_photo: "¡Una foto por favor! :)"
   wicked:
     step1: "step1"
     step2: "step2"
     step3: "step3"
+  simple_form:
+    options:
+      user:
+        handedness:
+          righty: "Diestro"
+          lefty: "Zurdo"
+        backhand_style:
+          one_handed_backhand: "Una mano"
+          two_handed_backhand: "Dos manos"
+        gender:
+          male: "Hombre"
+          female: "Mujer"
+          other: "Otro"
+        level:
+          beginner: "Principante"
+          beginner_plus: "Principante +"
+          intermediate: "Intermediario"
+          intermediate_plus: "Intermediario +"
+          advanced: "Avanzado"
+          advanced_plus: "Avanzado +"
+          expert: "Experto"
+          expert_plus: "Experto +"
+          semi_pro: "Semi-Pro"
+          semi_pro_plus: "Semi-Pro +"
+          pro: "Pro"
+        style_of_play:
+          baseliner: "Fundo"
+          attacker: "Atacante"
+          grinder: "Defensor"
+          server_volleyer: "Servidor & volleyeur"
+          puncher: "Contra-Atacante"
   errors:
     internal_server_error:
       first_p: "Parece que nos hemos perdido ese tiro ...."

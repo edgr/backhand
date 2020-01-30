@@ -72,7 +72,7 @@
                 </div>
                 <div class="d-flex justify-content-between">
                   <%= f.input :gender,
-                        collection: %w[Male Female Other],
+                        collection: User.genders,
                         label: t('.gender') %>
                   <%= f.input :height,
                         label: t('.height') %>
@@ -92,13 +92,13 @@
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionEditProfile">
               <div class="card-body">
                 <%= f.input :style_of_play,
-                      collection: User.styles,
+                      collection: User.style_of_play,
                       label: t('.style_of_play') %>
                 <%= f.input :handedness,
-                            collection: %w[righty lefty],
+                            collection: User.handedness,
                             label: t('.righty_lefty') %>
                 <%= f.input :backhand_style,
-                            :collection => ["one handed backhand", "two handed backhand"],
+                            collection: User.backhand_style,
                             label: t('.backhand_style') %>
                 <%= f.association :club,
                                   label: t('.club') %>
@@ -179,7 +179,9 @@
       <div class="cancel-account">
         <p>
           <%= t('.unhappy') %>
-          <%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+          <%= link_to t(".cancel_my_account"), registration_path(resource_name),
+            data: { confirm: t('.are_you_sure') },
+            method: :delete %>
         </p>
       </div>
     </div>
