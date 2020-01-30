@@ -19,6 +19,7 @@ fr:
     zero: ""
     one: "1 court pour simple uniquement (pas de double)"
     other: "%{count} courts pour simple uniquement (pas de double)"
+  member_at: "membre à"
   home:
     home_title_html: "JOUE PLUS<br>JOUE MIEUX."
     join_us: "REJOIGNEZ-NOUS !"
@@ -50,6 +51,7 @@ fr:
     rankings: "Classements"
     matches: "Matchs"
     clubs: "Clubs"
+    shoutouts: "Shoutouts"
     my_profile: "Mon Profil"
     my_matches: "Mes Matchs"
     my_calendar: "Mon Calendrier"

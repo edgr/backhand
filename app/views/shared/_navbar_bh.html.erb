@@ -44,6 +44,9 @@
         <li class="nav-item">
           <%= link_to t('navbar.clubs'), clubs_path, class: "nav-link new-feature" %>
         </li>
+        <li class="nav-item">
+          <%= link_to t('navbar.shoutouts'), shoutouts_path, class: "nav-link new-feature" %>
+        </li>
         <li class="nav-item ml-lg-auto">
           <%= link_to t('navbar.my_profile'), user_path(current_user), class: "nav-link ml-lg-auto" %>
         </li>
@@ -135,6 +138,9 @@
         </li>
         <li class="nav-item">
           <%= link_to t('navbar.clubs'), clubs_path, class: "nav-link new-feature" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('navbar.shoutouts'), shoutouts_path, class: "nav-link new-feature" %>
         </li>
         <li>
           <%= link_to t('navbar.login'), new_user_session_path, class: "d-flex d-lg-none nav-link text-white" %>

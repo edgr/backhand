@@ -50,6 +50,7 @@ en:
     zero: ""
     one: "1 'singles only' court"
     other: "%{count} 'singles only' courts"
+  member_at: "member at"
   home:
     home_title_html: "PLAY MORE<br>PLAY BETTER."
     join_us: "JOIN US FOR FREE"
@@ -76,6 +77,7 @@ en:
     rankings: "Rankings"
     matches: "Matches"
     clubs: "Clubs"
+    shoutouts: "Shoutouts"
     my_profile: "My Profile"
     my_matches: "My Matches"
     my_calendar: "My Calendar"
