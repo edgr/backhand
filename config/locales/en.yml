@@ -208,6 +208,14 @@ en:
       no_clubs: "No clubs in this area yet. Let us know!"
     show:
       courts: "Courts"
+  shoutouts:
+    index:
+      contact: "contact"
+      remove: "remove"
+    new:
+      my_club: "players in my club"
+      everyone: "everyone in my area"
+      send: "send"
   user_reviews:
     new:
       recommend: "Would you recommend to other players to play with %{partner}?"
