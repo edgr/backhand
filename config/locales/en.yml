@@ -52,6 +52,7 @@ en:
     other: "%{count} 'singles only' courts"
   member_at: "member at"
   new_event_email_subject: "Game/Training with with %{inviter} - Backhandapp.com"
+  new_player_review_email_subject: "New Review from %{sender} - Backhandapp.com"
   event_date: "%{event_date}"
   event_time: "%{event_time}"
   home:

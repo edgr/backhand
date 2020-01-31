@@ -21,6 +21,7 @@ es:
     other: "%{count} pistas para individuales (no dobles)"
   member_at: "socio en"
   new_event_email_subject: "Partido/Entreno con %{inviter} - Backhandapp.com"
+  new_player_review_email_subject: "Nuevo Comentario de %{sender} - Backhandapp.com"
   event_date: "%{event_date}"
   event_time: "%{event_time}"
   home:

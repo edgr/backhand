@@ -41,7 +41,10 @@ class UserMailer < ApplicationMailer
     @receiver = params[:receiver]
     @user_review = params[:user_review]
     @url = sender_url(@sender.id)
+    I18n.locale = @receiver.language
     self.template_model = {
+      "#{@receiver.language}": true,
+      subject: I18n.t('.new_player_review_email_subject', sender: @sender.first_name),
       sender_first_name: @sender.first_name,
       receiver_first_name: @receiver.first_name,
       user_review_content: @user_review.content,
