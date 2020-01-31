@@ -20,6 +20,7 @@ es:
     one: "1 pista para individuales (no dobles)"
     other: "%{count} pistas para individuales (no dobles)"
   member_at: "socio en"
+  new_event_email_subject: "Partido/Entreno con %{inviter} - Backhandapp.com"
   home:
     home_title_html: "JUEGA MÁS<br>JUEGA MEJOR."
     join_us: "APÚNTATE"

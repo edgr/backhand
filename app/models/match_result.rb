@@ -24,27 +24,27 @@ class MatchResult < ApplicationRecord
 
     players.each do |player|
       if player.points >= 2200
-        player.level = "Pro"
+        player.level = "pro"
       elsif player.points >= 2000
-        player.level = "Semi-pro +"
+        player.level = "semi_pro_plus"
       elsif player.points >= 1800
-        player.level = "Semi-pro"
+        player.level = "semi_pro"
       elsif player.points >= 1600
-        player.level = "Expert +"
+        player.level = "expert_plus"
       elsif player.points >= 1400
-        player.level = "Expert"
+        player.level = "expert"
       elsif player.points >= 1200
-        player.level = "Advanced +"
+        player.level = "advanced_plus"
       elsif player.points >= 1000
-        player.level = "Advanced"
+        player.level = "advanced"
       elsif player.points >= 800
-        player.level = "Intermediate +"
+        player.level = "intermediate_plus"
       elsif player.points >= 600
-        player.level = "Intermediate"
+        player.level = "intermediate"
       elsif player.points >= 400
-        player.level = "Beginner +"
+        player.level = "beginner_plus"
       elsif player.points >= 0
-        player.level = "Beginner"
+        player.level = "beginner"
       end
       player.save
     end

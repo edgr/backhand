@@ -22,9 +22,22 @@
   }
 }
 
+.new-feature-shoutouts {
+  display: none;
+  &:after {
+    left: 56px;
+  }
+}
+
 @media all and (min-width: 992px) {
   .new-feature {
     position: relative;
+    &:after {
+      left: unset;
+      right: -8px;
+    }
+  }
+  .new-feature-shoutouts {
     &:after {
       left: unset;
       right: -16px;

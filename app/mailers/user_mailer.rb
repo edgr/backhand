@@ -23,7 +23,10 @@ class UserMailer < ApplicationMailer
     @inviter = params[:inviter]
     @partner = params[:partner]
     @event = params[:event]
+    I18n.locale = @partner.language
     self.template_model = {
+      subject: I18n.t('.new_event_email_subject', inviter: @inviter.first_name),
+      "#{@partner.language}": true,
       inviter_first_name: @inviter.first_name,
       partner_first_name: @partner.first_name,
       date: @event.date_time.strftime("%A %b %e"),

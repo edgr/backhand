@@ -35,19 +35,19 @@
         </div>
         <% if user_signed_in? %>
           <% if shoutout.user != current_user %>
-          <div class="shoutout-link-blue">
-            <a href="https://wa.me/<%= shoutout.user.phone_number %>?text=Hello%20<%= shoutout.user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%">
-              <%= t('.contact') %> <%= shoutout.user.first_name %>
-            </a>
-          </div>
-        <% end %>
-  
-        <% if shoutout.user == current_user %>
-          <div class="shoutout-link-red">
-            <%= link_to t('.remove'), shoutout_path(shoutout),
-                method: :delete,
-                data: { confirm: t('.are_you_sure') } %>
-          </div>
+            <div class="shoutout-link-blue">
+              <a href="https://wa.me/<%= shoutout.user.phone_number %>?text=Hello%20<%= shoutout.user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%">
+                <%= t('.contact') %> <%= shoutout.user.first_name %>
+              </a>
+            </div>
+          <% end %>
+          <% if shoutout.user == current_user %>
+            <div class="shoutout-link-red">
+              <%= link_to t('.remove'), shoutout_path(shoutout),
+                  method: :delete,
+                  data: { confirm: t('.are_you_sure') } %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     <% end %>
