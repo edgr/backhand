@@ -21,6 +21,8 @@ fr:
     other: "%{count} courts pour simple uniquement (pas de double)"
   member_at: "membre à"
   new_event_email_subject: "Match/Entrainement avec %{inviter} - Backhandapp.com"
+  event_date: "%{event_date}"
+  event_time: "%{event_time}"
   home:
     home_title_html: "JOUE PLUS<br>JOUE MIEUX."
     join_us: "REJOIGNEZ-NOUS !"
