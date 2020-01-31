@@ -52,6 +52,8 @@ en:
     other: "%{count} 'singles only' courts"
   member_at: "member at"
   new_event_email_subject: "Game/Training with with %{inviter} - Backhandapp.com"
+  event_date: "%{event_date}"
+  event_time: "%{event_time}"
   home:
     home_title_html: "PLAY MORE<br>PLAY BETTER."
     join_us: "JOIN US FOR FREE"

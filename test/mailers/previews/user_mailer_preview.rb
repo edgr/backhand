@@ -13,7 +13,6 @@ class UserMailerPreview < ActionMailer::Preview
     @event = Event.first
 
     UserMailer.with(
-      "#{partner.language}": true,
       inviter: @inviter,
       partner: @partner,
       event: @event
