@@ -53,6 +53,9 @@ en:
   member_at: "member at"
   new_event_email_subject: "Game/Training with with %{inviter} - Backhandapp.com"
   new_player_review_email_subject: "New Review from %{sender} - Backhandapp.com"
+  new_match_result_email_subject: "New Match Result from %{sender} - Backhandapp.com"
+  new_confirmed_match_result_email_subject: "Match Result Confirmed by from %{sender} - Backhandapp.com"
+  new_shoutout_email_subject: "%{sender} Wants To Play Tennis - Backhandapp.com"
   event_date: "%{event_date}"
   event_time: "%{event_time}"
   home:

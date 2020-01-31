@@ -59,7 +59,10 @@ class UserMailer < ApplicationMailer
     @match = params[:match]
     winner = User.find(@match.match_result.winner_id)
     @winner = winner_name_in_email(winner)
+    I18n.locale = @player_2.language
     self.template_model = {
+      "#{@player_2.language}": true,
+      subject: I18n.t('.new_match_result_email_subject', sender: @player_1.first_name),
       player_1_first_name: @player_1.first_name,
       player_2_first_name: @player_2.first_name,
       match_result: @match.match_result.score,
@@ -72,7 +75,10 @@ class UserMailer < ApplicationMailer
     @player_1 = params[:player_1]
     @player_2 = params[:player_2]
     @match_result = params[:match_result]
+    I18n.locale = @player_1.language
     self.template_model = {
+      "#{@player_1.language}": true,
+      subject: I18n.t('.new_confirmed_match_result_email_subject', sender: @player_1.first_name),
       player_1_first_name: @player_1.first_name,
       player_2_first_name: @player_2.first_name,
       match_result: @match_result.score
@@ -84,9 +90,13 @@ class UserMailer < ApplicationMailer
     @inviter = params[:inviter]
     @recipient = params[:recipient]
     @shoutout = params[:shoutout]
+    I18n.locale = @recipient.language
     self.template_model = {
+      "#{@recipient.language}": true,
+      subject: I18n.t('.new_shoutout_email_subject', sender: @inviter.first_name),
       inviter_first_name: @inviter.first_name,
       inviter_points: @inviter.points,
+      inviter_ranking: @inviter.ranking,
       recipient_first_name: @recipient.first_name,
       shoutout: @shoutout.message
     }

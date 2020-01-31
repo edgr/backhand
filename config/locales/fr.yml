@@ -22,6 +22,9 @@ fr:
   member_at: "membre à"
   new_event_email_subject: "Match/Entrainement avec %{inviter} - Backhandapp.com"
   new_player_review_email_subject: "Nouveau Commentaire de %{sender} - Backhandapp.com"
+  new_match_result_email_subject: "Nouveau Résultat De Match De %{sender} - Backhandapp.com"
+  new_confirmed_match_result_email_subject: "Résultat Du Match Confirmé Par %{sender} - Backhandapp.com"
+  new_shoutout_email_subject: "%{sender} Veut Jouer Au Tennis - Backhandapp.com"
   event_date: "%{event_date}"
   event_time: "%{event_time}"
   home:
