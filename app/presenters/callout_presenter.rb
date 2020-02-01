@@ -1,8 +1,8 @@
-class ShoutoutPresenter < BasePresenter
-  presents :shoutout
+class CalloutPresenter < BasePresenter
+  presents :callout
 
   def created_at
-    seconds = (Time.now - shoutout.created_at)
+    seconds = (Time.now - callout.created_at)
     if seconds < 60
       "#{seconds.to_i}s ago"
     elsif seconds < 3600
