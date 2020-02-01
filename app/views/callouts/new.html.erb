@@ -1,5 +1,5 @@
 <div class="container">
-  <%= simple_form_for @shoutout do |f| %>
+  <%= simple_form_for @callout do |f| %>
     <%= f.input :recipients, label: false, collection: [['0', t('.my_club')], ['1', t('.everyone')]], label_method: :second, value_method: :first, selected: ["players in my club only"] %>
     <div id="level-slider"></div>
     <%= f.input :minimum_level %>
