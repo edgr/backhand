@@ -95,7 +95,7 @@ class UserMailer < ApplicationMailer
       "#{@recipient.language}": true,
       subject: I18n.t('.new_shoutout_email_subject', sender: @inviter.first_name),
       inviter_first_name: @inviter.first_name,
-      inviter_points: @inviter.points,
+      inviter_points: @inviter.points.truncate(2),
       inviter_ranking: @inviter.ranking,
       recipient_first_name: @recipient.first_name,
       shoutout: @shoutout.message
