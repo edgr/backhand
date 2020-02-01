@@ -55,17 +55,17 @@ class UserMailerPreview < ActionMailer::Preview
     ).confirmed_match_result.deliver_now unless @player_2.settings[:confirmed_match_result_email] == false
   end
 
-  def new_shoutout
+  def new_callout
     @inviter = User.first
     @recipient = User.last
-    @shoutout = Shoutout.first
+    @callout = Callout.first
 
     self.template_model = {
       inviter_first_name: @inviter.first_name,
       inviter_points: @inviter.points,
       recipient_first_name: @recipient.first_name,
-      shoutout: @shoutout.message
-    }.new_shoutout.deliver_now unless @recipient.settings[:new_shoutout_email] == false
+      callout: @callout.message
+    }.new_callout.deliver_now unless @recipient.settings[:new_callout_email] == false
   end
 
 end

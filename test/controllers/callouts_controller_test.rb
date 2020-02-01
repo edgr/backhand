@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ShoutoutTest < ActiveSupport::TestCase
+class CalloutsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
