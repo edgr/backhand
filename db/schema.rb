@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_082009) do
+ActiveRecord::Schema.define(version: 2020_02_01_133841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "callouts", force: :cascade do |t|
+    t.text "recipients"
+    t.integer "minimum_level"
+    t.text "message"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "maximum_level"
+    t.index ["user_id"], name: "index_callouts_on_user_id"
+  end
 
   create_table "clubs", force: :cascade do |t|
     t.string "name"
@@ -112,17 +123,6 @@ ActiveRecord::Schema.define(version: 2020_01_28_082009) do
     t.index ["player_2_id"], name: "index_matches_on_player_2_id"
   end
 
-  create_table "shoutouts", force: :cascade do |t|
-    t.text "recipients"
-    t.integer "minimum_level"
-    t.text "message"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "maximum_level"
-    t.index ["user_id"], name: "index_shoutouts_on_user_id"
-  end
-
   create_table "user_reviews", force: :cascade do |t|
     t.bigint "sender_id"
     t.bigint "receiver_id"
@@ -183,6 +183,7 @@ ActiveRecord::Schema.define(version: 2020_01_28_082009) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "callouts", "users"
   add_foreign_key "computed_skills_sets", "users"
   add_foreign_key "courts", "clubs"
   add_foreign_key "events", "clubs"
@@ -197,7 +198,6 @@ ActiveRecord::Schema.define(version: 2020_01_28_082009) do
   add_foreign_key "matches", "clubs"
   add_foreign_key "matches", "users", column: "player_1_id"
   add_foreign_key "matches", "users", column: "player_2_id"
-  add_foreign_key "shoutouts", "users"
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
   add_foreign_key "users", "clubs"

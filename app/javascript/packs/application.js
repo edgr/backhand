@@ -29,7 +29,7 @@ import { copyLink } from '../components/copy_to_clipboard';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initMapboxClubShow } from '../plugins/init_mapbox_club_show';
 import { verifyPhoto } from '../components/verifyPhoto';
-import { startSlider } from '../components/select_shoutout_level';
+import { startSlider } from '../components/select_callout_level';
 import { tellYourFriends } from '../components/tell_your_friends';
 // import { triggerShare } from '../components/share_profile';
 

@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :shoutout do
+  factory :callout do
     recipients { false }
     minimum_level { 1 }
     message { "MyString" }

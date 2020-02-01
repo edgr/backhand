@@ -34,7 +34,7 @@ end
 
 puts "destroy all"
 
-Shoutout.destroy_all
+Callout.destroy_all
 MatchResult.destroy_all
 Match.destroy_all
 Event.destroy_all

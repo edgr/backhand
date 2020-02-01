@@ -2,8 +2,8 @@ import noUiSlider from "nouislider";
 import wNumb from "wnumb";
 
 const slider = document.getElementById('level-slider');
-const minLevel = document.getElementById('shoutout_minimum_level');
-const maxLevel = document.getElementById('shoutout_maximum_level');
+const minLevel = document.getElementById('callout_minimum_level');
+const maxLevel = document.getElementById('callout_maximum_level');
 
 const startSlider = () => {
   if (slider) {

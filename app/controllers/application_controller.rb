@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:phone_number])
     devise_parameter_sanitizer.permit(:account_update) do |user|
-      user.permit(:first_name, :last_name, :level, :address, :phone_number, :picture, :style_of_play, :handedness, :backhand_style, :gender, :height, :weight, :birthday, :place_of_birth, :country, :bio, :club_id, :angle, :new_shoutout_email, :new_game_event_email, :new_match_result_email, :new_player_review_email, :confirmed_match_result_email, :language, :show_my_whatsapp)
+      user.permit(:first_name, :last_name, :level, :address, :phone_number, :picture, :style_of_play, :handedness, :backhand_style, :gender, :height, :weight, :birthday, :place_of_birth, :country, :bio, :club_id, :angle, :new_callout_email, :new_game_event_email, :new_match_result_email, :new_player_review_email, :confirmed_match_result_email, :language, :show_my_whatsapp)
     end
   end
 

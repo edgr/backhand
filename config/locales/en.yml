@@ -55,7 +55,7 @@ en:
   new_player_review_email_subject: "New Review from %{sender} - Backhandapp.com"
   new_match_result_email_subject: "New Match Result from %{sender} - Backhandapp.com"
   new_confirmed_match_result_email_subject: "Match Result Confirmed by from %{sender} - Backhandapp.com"
-  new_shoutout_email_subject: "%{sender} Wants To Play Tennis - Backhandapp.com"
+  new_callout_email_subject: "%{sender} Wants To Play Tennis - Backhandapp.com"
   event_date: "%{event_date}"
   event_time: "%{event_time}"
   home:
@@ -84,7 +84,7 @@ en:
     rankings: "Rankings"
     matches: "Matches"
     clubs: "Clubs"
-    shoutouts: "Callouts"
+    callouts: "Callouts"
     my_profile: "My Profile"
     my_matches: "My Matches"
     my_calendar: "My Calendar"
@@ -215,7 +215,7 @@ en:
       no_clubs: "No clubs in this area yet. Let us know!"
     show:
       courts: "Courts"
-  shoutouts:
+  callouts:
     index:
       contact: "contact"
       remove: "remove"
