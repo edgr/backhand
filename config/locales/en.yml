@@ -219,6 +219,7 @@ en:
     index:
       contact: "contact"
       remove: "remove"
+      are_you_sure: "Are you sure?"
     new:
       my_club: "players in my club"
       everyone: "everyone in my area"

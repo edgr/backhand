@@ -194,6 +194,7 @@ fr:
     index:
       contact: "contacter"
       remove: "supprimer"
+      are_you_sure: "Es-tu sûr(e)?"
     new:
       my_club: "joueurs/es de mon club"
       everyone: "tout le monde autour de moi"

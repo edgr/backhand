@@ -188,6 +188,7 @@ es:
     index:
       contact: "contactar"
       remove: "quitar"
+      are_you_sure: "¿Estás seguro/a?"
     new:
       my_club: "jugadores/as en mi club"
       everyone: "todos/as cerca de mi"
