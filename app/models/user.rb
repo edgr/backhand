@@ -69,7 +69,7 @@ class User < ApplicationRecord
   scope :active, -> { where("status = 'active'") }
 
   typed_store :settings do |s|
-    s.boolean :new_shoutout_email, default: true, null: false
+    s.boolean :new_callout_email, default: true, null: false
     s.boolean :new_player_review_email, default: true, null: false
     s.boolean :new_match_result_email, default: true, null: false
     s.boolean :new_game_event_email, default: true, null: false
