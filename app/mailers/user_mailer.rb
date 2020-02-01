@@ -86,19 +86,19 @@ class UserMailer < ApplicationMailer
     mail to: @player_1.email
   end
 
-  def new_shoutout
+  def new_callout
     @inviter = params[:inviter]
     @recipient = params[:recipient]
-    @shoutout = params[:shoutout]
+    @callout = params[:callout]
     I18n.locale = @recipient.language
     self.template_model = {
       "#{@recipient.language}": true,
-      subject: I18n.t('.new_shoutout_email_subject', sender: @inviter.first_name),
+      subject: I18n.t('.new_callout_email_subject', sender: @inviter.first_name),
       inviter_first_name: @inviter.first_name,
       inviter_points: @inviter.points.truncate(2),
       inviter_ranking: @inviter.ranking,
       recipient_first_name: @recipient.first_name,
-      shoutout: @shoutout.message
+      callout: @callout.message
     }
     mail to: @recipient.email
   end
