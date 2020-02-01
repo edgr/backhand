@@ -21,6 +21,10 @@ es:
     other: "%{count} pistas para individuales (no dobles)"
   member_at: "socio en"
   new_event_email_subject: "Partido/Entreno con %{inviter} - Backhandapp.com"
+  new_player_review_email_subject: "Nuevo Comentario de %{sender} - Backhandapp.com"
+  new_match_result_email_subject: "Nuevo Resultado De Partido De %{sender} - Backhandapp.com"
+  new_confirmed_match_result_email_subject: "Resultado Del Partido Confirmado Por %{sender} - Backhandapp.com"
+  new_shoutout_email_subject: "%{sender} Quiere Jugar Al Tenis - Backhandapp.com"
   event_date: "%{event_date}"
   event_time: "%{event_time}"
   home:
@@ -54,7 +58,7 @@ es:
     rankings: "Clasificaciones"
     matches: "Partidos"
     clubs: "Clubes"
-    shoutouts: "Shoutouts"
+    shoutouts: "Callouts"
     my_profile: "Mi Perfil"
     my_matches: "Mis Partidos"
     my_calendar: "Mi Agenda"
@@ -184,6 +188,7 @@ es:
     index:
       contact: "contactar"
       remove: "quitar"
+      are_you_sure: "¿Estás seguro/a?"
     new:
       my_club: "jugadores/as en mi club"
       everyone: "todos/as cerca de mi"
