@@ -22,7 +22,7 @@
   }
 }
 
-.new-feature-shoutouts {
+.new-feature-callouts {
   display: none;
   &:after {
     left: 56px;
@@ -37,7 +37,7 @@
       right: -8px;
     }
   }
-  .new-feature-shoutouts {
+  .new-feature-callouts {
     &:after {
       left: unset;
       right: -16px;
