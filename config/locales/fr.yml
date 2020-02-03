@@ -195,6 +195,7 @@ fr:
       contact: "contacter"
       remove: "supprimer"
       are_you_sure: "Es-tu sûr(e)?"
+      no_callouts_html: "Désolé, il n'y a pas de Callouts pour le moment 😢!<br>Créé ton propre Callout !"
     new:
       my_club: "joueurs/es de mon club"
       everyone: "tout le monde autour de moi"

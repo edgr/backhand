@@ -220,6 +220,7 @@ en:
       contact: "contact"
       remove: "remove"
       are_you_sure: "Are you sure?"
+      no_callouts_html: "Sorry but there is not callouts at the moment 😢.<br>Callout to other players!"
     new:
       my_club: "players in my club"
       everyone: "everyone in my area"

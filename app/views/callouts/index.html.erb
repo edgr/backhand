@@ -1,55 +1,59 @@
 <div class="container">
-  <% @callouts.each do |callout| %>
-    <% present callout.user do |user_presenter| %>
-      <div class="callout-card">
-        <div class="callout-info">
-          <%= link_to user_path(callout.user) do %>
-            <div class="callout-user">
-                <%= cl_image_tag callout.user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", quality: "auto", class: "avatar-bordered"%>
-              <div class="name-info">
-                <div class="name">
-                    <%= callout.user.first_name %>
-                </div>
-                <div class="more-info">
-                  <span class="level-style">
-                    <%= callout.user.style_of_play %>
-                  </span>
-                  <span class="level-style">
-                    <%= callout.user.level %>
-                  </span>
-                </div>
-                <div class="club">
-                  <%= user_presenter.plays_at %>
+  <% if @callouts.count == 0 %>
+    <p class="no-callouts"><%= t('.no_callouts_html') %></p>
+  <% else %>
+    <% @callouts.each do |callout| %>
+      <% present callout.user do |user_presenter| %>
+        <div class="callout-card">
+          <div class="callout-info">
+            <%= link_to user_path(callout.user) do %>
+              <div class="callout-user">
+                  <%= cl_image_tag callout.user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", quality: "auto", class: "avatar-bordered"%>
+                <div class="name-info">
+                  <div class="name">
+                      <%= callout.user.first_name %>
+                  </div>
+                  <div class="more-info">
+                    <span class="level-style">
+                      <%= callout.user.style_of_play %>
+                    </span>
+                    <span class="level-style">
+                      <%= callout.user.level %>
+                    </span>
+                  </div>
+                  <div class="club">
+                    <%= user_presenter.plays_at %>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-          <div class="created-ago">
-            <% present callout do |callout| %>
-              <%= callout.created_at %>
             <% end %>
+            <div class="created-ago">
+              <% present callout do |callout| %>
+                <%= callout.created_at %>
+              <% end %>
+            </div>
+            <p>
+              <%= callout.message %>
+            </p>
           </div>
-          <p>
-            <%= callout.message %>
-          </p>
+          <% if user_signed_in? %>
+            <% if callout.user != current_user %>
+              <div class="callout-link-blue">
+                <a href="https://wa.me/<%= callout.user.phone_number %>?text=Hello%20<%= callout.user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%">
+                  <%= t('.contact') %> <%= callout.user.first_name %>
+                </a>
+              </div>
+            <% end %>
+            <% if callout.user == current_user %>
+              <div class="callout-link-red">
+                <%= link_to t('.remove'), callout_path(callout),
+                    method: :delete,
+                    data: { confirm: t('.are_you_sure') } %>
+              </div>
+            <% end %>
+          <% end %>
         </div>
-        <% if user_signed_in? %>
-          <% if callout.user != current_user %>
-            <div class="callout-link-blue">
-              <a href="https://wa.me/<%= callout.user.phone_number %>?text=Hello%20<%= callout.user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%">
-                <%= t('.contact') %> <%= callout.user.first_name %>
-              </a>
-            </div>
-          <% end %>
-          <% if callout.user == current_user %>
-            <div class="callout-link-red">
-              <%= link_to t('.remove'), callout_path(callout),
-                  method: :delete,
-                  data: { confirm: t('.are_you_sure') } %>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+      <% end %>
     <% end %>
   <% end %>
   <div class="actions-wrapper">

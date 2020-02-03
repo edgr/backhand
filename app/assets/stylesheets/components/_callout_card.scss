@@ -1,3 +1,8 @@
+.no-callouts {
+  text-align: center;
+  color: $black;
+}
+
 @mixin callout-link {
   width: 100%;
   text-align: center;
