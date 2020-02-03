@@ -15,11 +15,21 @@ if (signupPicker) {
 const editPicker = document.querySelector(".datepicker-edit");
 
 if (editPicker) {
-  flatpickr(".datepicker-edit", {
-    altInput: true,
-    altFormat: "j F Y",
-    dateFormat: "d-m-Y"
-  });
+  const birthdate = editPicker.getAttribute("age");
+  if (birthdate === "") {
+    flatpickr(".datepicker-edit", {
+      altInput: true,
+      altFormat: "j F Y",
+      dateFormat: "d-m-Y",
+    });
+  } else {
+    flatpickr(".datepicker-edit", {
+      altInput: true,
+      altFormat: "j F Y",
+      dateFormat: "d-m-Y",
+      defaultDate: new Date(birthdate)
+    });
+  }
 }
 
 const matchPicker = document.querySelector(".datepicker-match");
