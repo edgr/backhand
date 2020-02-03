@@ -66,4 +66,12 @@ class UserPresenter < BasePresenter
   def plays_at
      "#{I18n.t('.member_at').to_s} #{user.club.name}" if user.club.present?
   end
+
+  def level(player_level)
+    I18n.t(player_level)
+  end
+
+  def style(player_style)
+    I18n.t(player_style)
+  end
 end

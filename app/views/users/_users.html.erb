@@ -37,10 +37,10 @@
 
                 <div class="skills">
                   <div class="blue-box">
-                    <%= user.level.downcase %>
+                    <%= user_presenter.level(user.level) %>
                   </div>
                   <div class="blue-box">
-                    <%= user.style_of_play %>
+                    <%= user_presenter.style(user.style_of_play) %>
                   </div>
                 </div>
               </div>
