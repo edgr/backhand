@@ -34,9 +34,9 @@ class CalloutsController < ApplicationController
 
   def filter_recipients(user_choice)
     if user_choice == "0"
-      recipients = User.where(club_id: current_user.club_id)
+      recipients = User.active.where(club_id: current_user.club_id)
     else
-      recipients = User.near(current_user.address, 25)
+      recipients = User.active.near(current_user.address, 25)
     end
     recipients = recipients.reject { |recipient| recipient.id == current_user.id }
     range = params[:callout][:minimum_level].to_i..params[:callout][:maximum_level].to_i
