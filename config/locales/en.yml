@@ -74,6 +74,9 @@ en:
   puncher: "puncher"
   server_volleyer: "server-volleyer"
   attacker: "attacker"
+  seconds_ago: "%{seconds}s ago"
+  minutes_ago: "%{minutes}m ago"
+  hours_ago: "%{hours}h ago"
   home:
     home_title_html: "PLAY MORE<br>PLAY BETTER."
     join_us: "JOIN US FOR FREE"

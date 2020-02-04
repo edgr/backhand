@@ -43,6 +43,9 @@ es:
   puncher: "contra-atacante"
   server_volleyer: "saque-volea"
   attacker: "atacante"
+  seconds_ago: "hace %{seconds}s"
+  minutes_ago: "hace %{minutes} min"
+  hours_ago: "hace %{hours} hora(s)"
   home:
     home_title_html: "JUEGA MÁS<br>JUEGA MEJOR."
     join_us: "APÚNTATE"
