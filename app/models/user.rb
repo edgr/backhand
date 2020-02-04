@@ -67,6 +67,7 @@ class User < ApplicationRecord
   # validates :picture, presence: true, if: :active_or_step3?
 
   scope :active, -> { where("status = 'active'") }
+  scope :ordered_by_points, -> { order(points: :desc) }
 
   typed_store :settings do |s|
     s.boolean :new_callout_email, default: true, null: false

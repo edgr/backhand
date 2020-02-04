@@ -7,14 +7,14 @@ class UsersController < ApplicationController
       @query = format_query(params[:search])
       @users = SearchUsers.new(params[:search]).call
     else
-      @users = User.where(status: "active")
+      @users = User.active.ordered_by_points
       update_ranking
     end
     respond_to do |format|
       format.html
       format.js
     end
-    @users = @users.sort_by { |user| user.points }.reverse
+    @users = @users.ordered_by_points.paginate(page: params[:page], per_page: 12)
   end
 
   def show
@@ -29,11 +29,10 @@ class UsersController < ApplicationController
   end
 
   def rankings
-    @users = User.where(status: "active")
+    @users = User.active
     update_ranking
-    @users = @users.sort_by { |user| user.ranking }
+    @users = @users.ordered_by_points
   end
-
 
   private
 
@@ -51,12 +50,7 @@ class UsersController < ApplicationController
   end
 
   def update_ranking
-    @users = @users.sort_by { |user| user.points }.reverse
-    counter = 1
-    @users.each do |user|
-      user.update(ranking: counter)
-      user.save
-      counter += 1
-    end
+    @users = @users.ordered_by_points
+    @users.each_with_index { |user, index| user.update(ranking: index + 1) }
   end
 end

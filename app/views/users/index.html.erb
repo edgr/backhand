@@ -7,7 +7,7 @@
       </span>
     <% else %>
       <span id="user-query-indicator">
-        <%= t('.players', count: @users.count) %>
+        <%= t('.players', count: @users.total_entries) %>
         <%#= t('.matching_query', count: @users.count) %>
       </span>
     <% end %>
@@ -63,5 +63,6 @@
     <div class="row" id="users-container">
       <%= render 'users', users: @users %>
     </div>
+    <%= will_paginate @users %>
   </div>
 </div>
