@@ -4,13 +4,13 @@ class CalloutPresenter < BasePresenter
   def created_at
     seconds = (Time.now - callout.created_at)
     if seconds < 60
-      "#{seconds.to_i}s ago"
+      I18n.t('.seconds_ago', seconds: seconds.to_i)
     elsif seconds < 3600
       minutes = seconds / 60
-      "#{minutes.to_i}m ago"
+      I18n.t('.minutes_ago', minutes: minutes.to_i)
     else
       hours = seconds / 3600
-      "#{hours.to_i}h ago"
+      I18n.t('.hours_ago', hours: hours.to_i)
     end
   end
 end
