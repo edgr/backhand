@@ -65,6 +65,9 @@
     </div>
     <div id="infinite-scrolling">
       <%= will_paginate @users %>
+      <p class="loading-users hidden">
+        <%= t('.loading_users') %>
+      </p>
     </div>
   </div>
 </div>

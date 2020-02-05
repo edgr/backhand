@@ -180,6 +180,7 @@ en:
       backhand_style: "Backhand style"
       gender: "Gender"
       search: "Search"
+      loading_users: "loading..."
     users:
       serve: "serve"
       return: "return"
