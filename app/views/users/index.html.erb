@@ -63,6 +63,8 @@
     <div class="row" id="users-container">
       <%= render 'users', users: @users %>
     </div>
-    <%= will_paginate @users %>
+    <div id="infinite-scrolling">
+      <%= will_paginate @users %>
+    </div>
   </div>
 </div>

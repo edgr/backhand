@@ -1,12 +1,12 @@
 function updateUsers() {
-  const usersContainer = document.querySelector('#users-container');
+  var usersContainer = document.querySelector('#users-container');
   if (usersContainer) {
     usersContainer.innerHTML = "<%= j render 'users', users: @users %>";
   }
 }
 
 function updateQueryParameters() {
-  const form = document.querySelector('#search_query');
+  var form = document.querySelector('#search_query');
   if (form) {
     form.value = "";
     form.value = "<%= @query %>";
@@ -14,20 +14,41 @@ function updateQueryParameters() {
 }
 
 function closeModal() {
-  const close = document.querySelector('button.close')
+  var close = document.querySelector('button.close')
   if (close) {
     close.click();
   }
 }
 
 function updateQueryIndicator() {
-  const indication = document.querySelector('#user-query-indicator');
+  var indication = document.querySelector('#user-query-indicator');
   if (indication) {
-    indication.innerText = "<%= t('.players_with_location', count: @users.count) %> <%= @indication %>";
+    indication.innerText = "<%= t('.players_with_location', count: @users.total_entries) %> <%= @indication %>";
   }
 }
 
-updateUsers();
-updateQueryParameters();
-closeModal();
-updateQueryIndicator();
+function appendUsers() {
+  var usersContainer = document.querySelector('#users-container');
+  usersContainer.insertAdjacentHTML('beforeend', "<%= j render 'users', users: @users %>");
+  <% if @users.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate @users %>');
+  <% else %>
+    $(window).off('scroll');
+    $('.pagination').remove();
+  <% end %>
+}
+
+
+var scrollTop = $(document).scrollTop();
+var windowHeight = $(window).height();
+var bodyHeight = $(document).height() - windowHeight;
+var scrollPercentage = (scrollTop / bodyHeight);
+if (scrollPercentage > 0.8) {
+  appendUsers();
+} else {
+  updateUsers();
+  updateQueryParameters();
+  closeModal();
+  updateQueryIndicator();
+}
+

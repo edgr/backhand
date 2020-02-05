@@ -1,5 +1,5 @@
-//= require select2
-
+import $ from 'jquery';
+global.$ = jQuery;
 import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import { addListener } from "../components/tabs";
@@ -32,6 +32,8 @@ import { verifyPhoto } from '../components/verifyPhoto';
 import { startSlider } from '../components/select_callout_level';
 import { tellYourFriends } from '../components/tell_your_friends';
 // import { triggerShare } from '../components/share_profile';
+import { infiniteScroll } from '../components/infinite_scroll';
+
 
 const tabs = document.querySelectorAll(".tab-underlined");
 if (tabs) { tabs.forEach(addListener) };
@@ -62,3 +64,4 @@ verifyPhoto();
 startSlider();
 tellYourFriends();
 // triggerShare();
+infiniteScroll();
