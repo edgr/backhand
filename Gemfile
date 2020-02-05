@@ -28,7 +28,7 @@ gem 'flag-icons-rails'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
-gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 
 gem "sentry-raven"
 
@@ -43,6 +43,9 @@ gem 'devise-security'
 
 # admin dashboard
 gem 'rails_admin', '~> 2.0'
+
+# pagination
+gem 'will_paginate', '~> 3.1.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
