@@ -22,6 +22,6 @@ class MatchResultsController < ApplicationController
       player_1: @match_result.match.player_1,
       player_2: @match_result.match.player_2,
       match_result: @match_result
-    ).confirmed_match_result.deliver_now unless @match_result.match.player_1.settings[:confirmed_match_result_email] == false
+    ).confirmed_match_result.deliver_later unless @match_result.match.player_1.settings[:confirmed_match_result_email] == false
   end
 end

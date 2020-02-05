@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
     get '/:locale', to: 'pages#home'
