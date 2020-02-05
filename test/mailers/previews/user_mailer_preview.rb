@@ -51,7 +51,7 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.with(
       player_1: @player_1,
       player_2: @player_2,
-      match: @match
+      match_result: @match.match_result
     ).confirmed_match_result.deliver_now unless @player_2.settings[:confirmed_match_result_email] == false
   end
 
@@ -60,12 +60,11 @@ class UserMailerPreview < ActionMailer::Preview
     @recipient = User.last
     @callout = Callout.first
 
-    self.template_model = {
-      inviter_first_name: @inviter.first_name,
-      inviter_points: @inviter.points,
-      recipient_first_name: @recipient.first_name,
-      callout: @callout.message
-    }.new_callout.deliver_now unless @recipient.settings[:new_callout_email] == false
+    UserMailer.with(
+      inviter: @inviter,
+      recipient: @recipient,
+      callout: @callout
+    ).new_callout.deliver_now unless @recipient.settings[:new_callout_email] == false
   end
 
 end
