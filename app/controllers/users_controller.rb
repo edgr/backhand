@@ -5,11 +5,12 @@ class UsersController < ApplicationController
   def index
     if params[:search]
       @query = format_query(params[:search])
-      @users = SearchUsers.new(params[:search]).call.ordered_by_points.paginate(page: params[:page], per_page: 20)
+      @users = SearchUsers.new(params[:search]).call
+                          .order(Arel.sql("RANDOM()")).paginate(page: params[:page], per_page: 12)
     else
-      @users = User.active.ordered_by_points
+      @users = User.active
       update_ranking
-      @users = @users.paginate(page: params[:page], per_page: 20)
+      @users = @users.order(Arel.sql("RANDOM()")).paginate(page: params[:page], per_page: 20)
     end
     respond_to :html, :js
   end
@@ -29,12 +30,9 @@ class UsersController < ApplicationController
   private
 
   def format_query(params)
-    return
-    unless params[:query].present?
+    return unless params[:query].present?
     set_query_indication
-    params[:query] = params[:query].reject do |value|
-      value.blank?
-    end.join(" ")
+    params[:query] = params[:query].reject(&:blank?).join(" ")
   end
 
   def set_query_indication
@@ -43,7 +41,7 @@ class UsersController < ApplicationController
   end
 
   def update_ranking
-    @users.each_with_index { |user, index| user.update(ranking: index + 1) }
+    @users.ordered_by_points.each_with_index { |user, index| user.update(ranking: index + 1) }
   end
 
   def calculate_progressbar(user)
