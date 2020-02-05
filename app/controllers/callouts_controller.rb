@@ -53,7 +53,7 @@ class CalloutsController < ApplicationController
         inviter: inviter,
         recipient: recipient,
         callout: @callout
-      ).new_callout.deliver_now unless recipient.settings[:new_callout_email] == false
+      ).new_callout.deliver_later unless recipient.settings[:new_callout_email] == false
     end
   end
 
