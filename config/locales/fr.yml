@@ -155,6 +155,7 @@ fr:
       backhand: "revers"
       volley: "vollée"
       no_reviews: "0 com."
+      loading_users: "chargement..."
     users:
       serve: "service"
       return: "retour"

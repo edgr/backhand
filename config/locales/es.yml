@@ -148,7 +148,8 @@ es:
       handedness: "Diestro/Zurdo"
       backhand_style: "Estilo de revés"
       gender: "Género"
-      search: "Bucar"
+      search: "Buscar"
+      loading_users: "cargando..."
     users:
       serve: "servicio"
       return: "resto"
