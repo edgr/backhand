@@ -8,7 +8,7 @@ const infiniteScroll = () => {
       const bodyHeight = $(document).height() - windowHeight;
       const scrollPercentage = (scrollTop / bodyHeight);
       if (moreUsersUrl && (scrollPercentage > 0.8)) {
-        $('#infinite-scrolling .pagination').html('<i class="fas fa-spinner"></i>');
+        $('#infinite-scrolling .pagination').html('<p class="loading">loading...</p>');
         $.getScript(moreUsersUrl);
       }
     });
