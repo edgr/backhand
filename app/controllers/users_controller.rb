@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @reviews = UserReview.where(receiver: @user)
     @played_matches = @user.matches_won + @user.matches_lost
-    @progressbar = calculate_progrssbar(@user) if @user.present? && @played_matches.size.positive?
+    @progressbar = calculate_progressbar(@user) if @user.present? && @played_matches.size.positive?
   end
 
   def rankings
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
     @users.each_with_index { |user, index| user.update(ranking: index + 1) }
   end
 
-  def calculate_progrssbar(user)
+  def calculate_progressbar(user)
     played_matches = user.matches_won + user.matches_lost
     ((user.matches_won.count / played_matches.count.to_f) * 100).to_i
   end
