@@ -12,6 +12,6 @@ class PagesController < ApplicationController
   private
 
   def send_welcome_email
-    UserMailer.with(user: current_user).welcome.deliver_now
+    UserMailer.with(user: current_user).welcome.deliver_later
   end
 end

@@ -16,7 +16,7 @@ class UserMailerPreview < ActionMailer::Preview
       inviter: @inviter,
       partner: @partner,
       event: @event
-    ).new_game_event.deliver_now unless @partner.settings[:new_game_event] == false
+    ).new_game_event.deliver_later unless @partner.settings[:new_game_event] == false
   end
 
   def new_player_review
@@ -28,7 +28,7 @@ class UserMailerPreview < ActionMailer::Preview
       sender: @sender,
       receiver: @receiver,
       user_review: @user_review
-    ).new_player_review.deliver_now unless @receiver.settings[:new_player_review_email] == false
+    ).new_player_review.deliver_later unless @receiver.settings[:new_player_review_email] == false
   end
 
   def new_match_result
@@ -40,7 +40,7 @@ class UserMailerPreview < ActionMailer::Preview
       player_1: @player_1,
       player_2: @player_2,
       match: @match
-    ).new_match_result.deliver_now unless @player_2.settings[:new_match_result_email] == false
+    ).new_match_result.deliver_later unless @player_2.settings[:new_match_result_email] == false
   end
 
   def confirmed_match_result
@@ -52,7 +52,7 @@ class UserMailerPreview < ActionMailer::Preview
       player_1: @player_1,
       player_2: @player_2,
       match_result: @match.match_result
-    ).confirmed_match_result.deliver_now unless @player_2.settings[:confirmed_match_result_email] == false
+    ).confirmed_match_result.deliver_later unless @player_2.settings[:confirmed_match_result_email] == false
   end
 
   def new_callout
@@ -64,7 +64,7 @@ class UserMailerPreview < ActionMailer::Preview
       inviter: @inviter,
       recipient: @recipient,
       callout: @callout
-    ).new_callout.deliver_now unless @recipient.settings[:new_callout_email] == false
+    ).new_callout.deliver_later unless @recipient.settings[:new_callout_email] == false
   end
 
 end

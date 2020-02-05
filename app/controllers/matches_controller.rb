@@ -64,6 +64,6 @@ class MatchesController < ApplicationController
       player_1: @match.player_1,
       player_2: @match.player_2,
       match: @match
-    ).new_match_result.deliver_now unless @match.player_2.settings[:new_match_result_email] == false
+    ).new_match_result.deliver_later unless @match.player_2.settings[:new_match_result_email] == false
   end
 end
