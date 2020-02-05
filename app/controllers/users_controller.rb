@@ -6,12 +6,11 @@ class UsersController < ApplicationController
     if params[:search]
       @query = format_query(params[:search])
       @users = SearchUsers.new(params[:search]).call
-                          .order(Arel.sql("RANDOM()")).paginate(page: params[:page], per_page: 20)
     else
       @users = User.active
       update_ranking
-      @users = @users.order(Arel.sql("RANDOM()")).paginate(page: params[:page], per_page: 20)
     end
+    @users = @users.order(Arel.sql("RANDOM()")).paginate(page: params[:page], per_page: 20)
     respond_to :html, :js
   end
 
