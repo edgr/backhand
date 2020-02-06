@@ -1,6 +1,8 @@
-<div class="container">
+<div class="callouts-container">
   <% if @callouts.count == 0 %>
-    <p class="no-callouts"><%= t('.no_callouts_html') %></p>
+    <p class="no-callouts">
+      <%= t('.no_callouts_html') %>
+    </p>
   <% else %>
     <% @callouts.each do |callout| %>
       <% present callout.user do |user_presenter| %>

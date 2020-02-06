@@ -3,10 +3,6 @@ module UserHelper
     user.country || "Spain"
   end
 
-  def force_level(user)
-    user.level || "Beginner"
-  end
-
   def force_age(user)
     user.age || 99
   end

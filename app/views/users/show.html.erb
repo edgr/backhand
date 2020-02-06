@@ -31,7 +31,7 @@
 
       <div class="level-style-show">
         <div class="level-style">
-          <%= force_level(@user).downcase %>
+          <%= user_presenter.level(@user.level) %>
         </div>
         <div class="level-style">
           <%= @user.style_of_play %>

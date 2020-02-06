@@ -44,8 +44,8 @@ fr:
   server_volleyer: "serveur-volleyeur"
   attacker: "attaquant"
   seconds_ago: "il y a %{seconds}s"
-  minutes_ago: "il y a %{minutes} min"
-  hours_ago: "il y a %{hours} heure(s)"
+  minutes_ago: "il y a %{minutes}m"
+  hours_ago: "il y a %{hours}h"
   home:
     home_title_html: "JOUE PLUS<br>JOUE MIEUX."
     join_us: "REJOIGNEZ-NOUS !"

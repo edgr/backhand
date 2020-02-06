@@ -10,6 +10,11 @@
   padding: 12px 8px;
 }
 
+.callouts-container {
+  padding: 16px;
+  min-height: calc(100vh - 62px);
+}
+
 @media all and (min-width: 768px) {
   .container {
     max-width: 600px;
@@ -17,11 +22,6 @@
   }
   .container-index {
     max-width: 900px;
-  }
-  .club-container {
-    // max-width: 900px;
-    // margin: auto;
-    // margin-top: 32px;
   }
   .clubs-container {
     padding: 16px;
