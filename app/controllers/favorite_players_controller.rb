@@ -1,5 +1,5 @@
 class FavoritePlayersController < ApplicationController
-  before_action :set_user
+  before_action :set_favorited
 
   def create
     Favorite.create(favorited: @favorited_player, user: current_user)
@@ -11,7 +11,7 @@ class FavoritePlayersController < ApplicationController
 
   private
 
-  def set_user
+  def set_favorited
     @favorited_player = User.find(params[:id])
   end
 end
