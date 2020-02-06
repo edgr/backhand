@@ -45,6 +45,11 @@
               </div>
             <% end %>
             <% if callout.user == current_user %>
+              <div class="callout-link-yellow">
+                <%= link_to t('.already_found'), callout_path(callout),
+                    method: :delete,
+                    data: { confirm: t('.are_you_sure') } %>
+              </div>
               <div class="callout-link-red">
                 <%= link_to t('.remove'), callout_path(callout),
                     method: :delete,

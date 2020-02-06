@@ -89,5 +89,12 @@
       }
     }
   }
+  .callout-link-yellow {
+    @include callout-link
+    background-color: $yellow;
+    a {
+      color: $black;
+    }
+  }
 }
 
