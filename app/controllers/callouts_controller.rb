@@ -13,7 +13,6 @@ class CalloutsController < ApplicationController
     @callout = Callout.new(callout_params)
     @callout.user = current_user
     @callout.recipients = filter_recipients(params[:callout][:recipients])
-    raise
     if @callout.save!
       inform_recipients(@callout.recipients)
       redirect_to callouts_path
