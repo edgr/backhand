@@ -26,6 +26,13 @@ class CalloutsController < ApplicationController
     redirect_to callouts_path
   end
 
+  def status
+    @callout = Callout.find(params[:id])
+    @callout.status = "found"
+    @callout.save!
+    redirect_to callouts_path
+  end
+
   private
 
   def callout_params

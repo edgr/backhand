@@ -216,6 +216,7 @@ fr:
       remove: "supprimer"
       are_you_sure: "Es-tu sûr(e)?"
       no_callouts_html: "Désolé, il n'y a pas de Callouts pour le moment 😢!<br>Créé ton propre Callout !"
+      already_found: "déjà trouvé"
     new:
       my_club: "joueurs/es de mon club"
       everyone: "tout le monde autour de moi"
