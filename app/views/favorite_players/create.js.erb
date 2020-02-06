@@ -1,0 +1,19 @@
+function removeAdd() {
+  var addLink = document.querySelector('.favorite');
+  console.log(addLink);
+  if (addLink) {
+    addLink.innerHTML = "";
+    console.log(addLink);
+    addLink.innerHTML = `<a data-remote="true" rel="nofollow" data-method="delete" href="/es/favorite_players/336"><i id="fav-star" class="fas fa-star"></i></a>`;
+  }
+}
+
+function fullStar() {
+  var star = document.getElementById('fav-star')
+  if (star) {
+    star.classList.add("go-yellow")
+  }
+}
+
+removeAdd();
+fullStar();

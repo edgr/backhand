@@ -1,0 +1,17 @@
+function removeRemove() {
+  var addLink = document.querySelector('.favorite')
+  if (addLink) {
+    addLink.innerHTML = "";
+    addLink.innerHTML = `<a data-remote="true" rel="nofollow" data-method="post" href="/es/favorite_players?id=336"><i id="fav-star" class="far fa-star go-yellow"></i></a>`;
+  }
+}
+
+function fullStar() {
+  var star = document.getElementById('fav-star')
+  if (star) {
+    star.classList.add("go-grey")
+  }
+}
+
+removeRemove();
+fullStar();
