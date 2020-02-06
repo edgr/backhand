@@ -241,6 +241,8 @@ en:
       remove: "remove"
       are_you_sure: "Are you sure?"
       no_callouts_html: "Sorry but there is not callouts at the moment 😢.<br>Callout to other players!"
+      already_found: "already found"
+      sorry_found: "%{name} already found someone!"
     new:
       my_club: "players in my club"
       everyone: "everyone in my area"

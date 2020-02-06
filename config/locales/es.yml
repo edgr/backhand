@@ -210,6 +210,8 @@ es:
       remove: "quitar"
       are_you_sure: "¿Estás seguro/a?"
       no_callouts_html: "Lo siento, noy hay Callouts por ahora 😢.<br>Crea tu proprio Callout !"
+      already_found: "¡ya he quedado!"
+      sorry_found: "%{name} ya ha quedado!"
     new:
       my_club: "jugadores/as en mi club"
       everyone: "todos/as cerca de mi"
