@@ -41,7 +41,7 @@ class CalloutsController < ApplicationController
   end
 
   def filter_recipients(user_choice)
-    if user_choice == "0"
+    if user_choice == "2"
       recipients = current_user.favorite_players
     elsif user_choice == "1"
       recipients = User.active.where(club_id: current_user.club_id)
