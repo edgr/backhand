@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="favorite">
-          <% if current_user.favorites.includes(@user) %>
+          <% if current_user.favorite_players.includes(@user)%>
             <%= link_to favorite_players_path(id: @user), method: :post, remote: true do %>
               <i id="fav-star" class="far fa-star"></i>
             <% end %>
