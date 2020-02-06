@@ -1,6 +1,10 @@
 .no-callouts {
   text-align: center;
   color: $black;
+  position: absolute;
+  width: 300px;
+  left: calc(50vw - 150px);
+  top: 50%;
 }
 
 @mixin callout-link {
@@ -21,7 +25,7 @@
   width: 100%;
   max-width: 500px;
   position: relative;
-  margin: 0px auto 16px;
+  margin: 0 auto 16px;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   border-radius: 4px;
   border-bottom: none;
