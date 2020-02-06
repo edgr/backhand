@@ -38,11 +38,17 @@
           </div>
           <% if user_signed_in? %>
             <% if callout.user != current_user %>
-              <div class="callout-link-blue">
-                <a href="https://wa.me/<%= callout.user.phone_number %>?text=Hello%20<%= callout.user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%">
-                  <%= t('.contact') %> <%= callout.user.first_name %>
-                </a>
-              </div>
+              <% if callout.status == "found" %>
+                <div class="callout-grey">
+                  <%= t('.sorry_found', name: callout.user.first_name) %>
+                </div>
+              <% else %>
+                <div class="callout-link-blue">
+                  <a href="https://wa.me/<%= callout.user.phone_number %>?text=Hello%20<%= callout.user.first_name %>%20I'm%20<%= current_user.first_name %>%20from%20https://www.backhandapp.com!%">
+                    <%= t('.contact') %> <%= callout.user.first_name %>
+                  </a>
+                </div>
+              <% end %>
             <% end %>
             <% if callout.user == current_user %>
               <div class="callout-link-yellow">
