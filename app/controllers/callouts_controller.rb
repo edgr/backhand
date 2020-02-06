@@ -13,6 +13,7 @@ class CalloutsController < ApplicationController
     @callout = Callout.new(callout_params)
     @callout.user = current_user
     @callout.recipients = filter_recipients(params[:callout][:recipients])
+    raise
     if @callout.save!
       inform_recipients(@callout.recipients)
       redirect_to callouts_path
@@ -41,6 +42,8 @@ class CalloutsController < ApplicationController
 
   def filter_recipients(user_choice)
     if user_choice == "0"
+      recipients = current_user.favorite_players
+    elsif user_choice == "1"
       recipients = User.active.where(club_id: current_user.club_id)
     else
       recipients = User.active.near(current_user.address, 25)

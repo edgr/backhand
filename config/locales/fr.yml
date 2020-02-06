@@ -221,6 +221,7 @@ fr:
     new:
       my_club: "joueurs/es de mon club"
       everyone: "tout le monde autour de moi"
+      my_favorites: "mes partenaires préférés"
       send: "envoyer"
   user_reviews:
     new:

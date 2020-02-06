@@ -246,6 +246,7 @@ en:
     new:
       my_club: "players in my club"
       everyone: "everyone in my area"
+      my_favorites: "my preferred partners"
       send: "send"
   user_reviews:
     new:
