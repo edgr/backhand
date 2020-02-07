@@ -15,18 +15,20 @@
             <%= user_presenter.points %>
           </div>
         </div>
-        <% if @user != current_user %>
-          <div class="favorite" data-user-id="<%= @user.id %>">
-            <% if current_user.favorite_players.include?(@user)%>
-              <%= link_to favorite_player_path(@user), method: :delete, remote: true do %>
-                <i id="fav-star" class="fas fa-star"></i>
+        <% if user_signed_in? %>
+          <% if @user != current_user %>
+            <div class="favorite" data-user-id="<%= @user.id %>">
+              <% if current_user.favorite_players.include?(@user)%>
+                <%= link_to favorite_player_path(@user), method: :delete, remote: true do %>
+                  <i id="fav-star" class="fas fa-star"></i>
+                <% end %>
+              <% else %>
+                <%= link_to favorite_players_path(id: @user), method: :post, remote: true do %>
+                  <i id="fav-star" class="far fa-star"></i>
+                <% end %>
               <% end %>
-            <% else %>
-              <%= link_to favorite_players_path(id: @user), method: :post, remote: true do %>
-                <i id="fav-star" class="far fa-star"></i>
-              <% end %>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
 
