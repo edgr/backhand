@@ -1,9 +1,7 @@
 function removeAdd() {
   var addLink = document.querySelector('.favorite');
-  if (addLink) {
-    addLink.innerHTML = "";
-    addLink.innerHTML = `<a data-remote="true" rel="nofollow" data-method="delete" href="/es/favorite_players/336"><i id="fav-star" class="fas fa-star"></i></a>`;
-  }
+  var id = addLink.getAttribute('data-user-id');
+  addLink.innerHTML = `<a data-remote="true" rel="nofollow" data-method="delete" href="/es/favorite_players/${id}"><i id="fav-star" class="fas fa-star"></i></a>`;
 }
 
 removeAdd();
