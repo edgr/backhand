@@ -1,0 +1,7 @@
+function removeRemove() {
+  var addLink = document.querySelector('.favorite')
+  var id = addLink.getAttribute('data-user-id');
+  addLink.innerHTML = `<a data-remote="true" rel="nofollow" data-method="post" href="/es/favorite_players?id=${id}"><i id="fav-star" class="far fa-star go-yellow"></i></a>`;
+}
+
+removeRemove();

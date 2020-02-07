@@ -23,6 +23,9 @@ class User < ApplicationRecord
 
   has_one :computed_skills_set, dependent: :destroy
 
+  has_many :favorites
+  has_many :favorite_players, through: :favorites, source: :favorited, source_type: 'User'
+
   validates :email, presence: true,
                     uniqueness: true,
                     format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }

@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
     patch '/callouts/:id/status', to: 'callouts#status', as: 'status'
 
+    resources :favorite_players, only: [:create, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
