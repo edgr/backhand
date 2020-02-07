@@ -65,6 +65,9 @@
             </span>
           <% end %>
         </li>
+        <li class="nav-item">
+          <%= link_to t('navbar.my_favorites'), my_favorites_path, class: "nav-link" %>
+        </li>
         <div class="d-flex">
           <li class="nav-item d-lg-none">
             <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete, class: "nav-link" %>

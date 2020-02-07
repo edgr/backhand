@@ -21,10 +21,12 @@ Rails.application.routes.draw do
     resources :users, only: [ :index, :show, :edit, :update ] do
       resources :user_reviews, only: [:new, :create, :destroy]
       resources :events, only: [:new, :create, :edit, :destroy]
+      resources :favorite_players, only: [ :index ]
     end
 
     get '/my_agenda', to: 'events#player_events', as: 'my_agenda'
     get '/my_matches', to: 'matches#player_matches', as: 'my_matches'
+    get '/my_favorites', to: 'favorite_players#index', as: 'my_favorites'
     get '/rankings', to: 'users#rankings', as: 'rankings'
 
     resources :matches, only: [:index, :show, :new, :create, :edit, :update]

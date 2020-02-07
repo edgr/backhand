@@ -81,6 +81,7 @@ es:
     my_profile: "Mi Perfil"
     my_matches: "Mis Partidos"
     my_calendar: "Mi Agenda"
+    my_favorites: "Mis Favoritos"
     logout: "Cerrar Sesión"
     login: "Iniciar"
     see_more: "Ver más"
@@ -267,6 +268,11 @@ es:
       explanation: "¡Comparte tu experiencia del tenis aquí!"
       next: "siguiente"
       please_photo: "¡Una foto por favor! :)"
+  favorite_players:
+    index:
+      add_favorite_html: "¡Añades un jugador favorito cliqueando en la estralla en su perfil!"
+      title: "Favorite Players"
+      first_p_html: "Esto es tu lista de jugadores favoritos. Está lista es muy útil para <strong>Callouts</strong>. Allí, puedes selectionar \"mis favoritos\" para enviar un callout solo a tus jugadores favoritos."
   wicked:
     step1: "step1"
     step2: "step2"

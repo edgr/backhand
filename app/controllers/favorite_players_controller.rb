@@ -1,5 +1,5 @@
 class FavoritePlayersController < ApplicationController
-  before_action :set_favorited
+  before_action :set_favorited, only: [ :create, :destroy ]
 
   def create
     Favorite.create(favorited: @favorited_player, user: current_user) if already_favorited.nil?
@@ -7,6 +7,10 @@ class FavoritePlayersController < ApplicationController
 
   def destroy
     Favorite.where(favorited_id: @favorited_player.id, user_id: current_user.id).first.destroy
+  end
+
+  def index
+    @favorites = current_user.favorite_players
   end
 
   private

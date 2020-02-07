@@ -1,0 +1,66 @@
+<div class="container">
+  <% if @favorites.size == 0 %>
+    <div class="no-favorite">
+      <div class="add-favorite">
+        <p><%= t('.add_favorite_html') %></p>
+        <i id="fav-star" class="far fa-star"></i>
+      </div>
+    </div>
+  <% else %>
+    <div class="favorite-cards">
+      <% @favorites.each do |favorite| %>
+        <% present favorite do |user_presenter| %>
+          <div class="favorite-card">
+            <div class="pic-tags">
+              <%= cl_image_tag favorite.picture, quality: "auto", class: "avatar-large"%>
+              <div class="tags">
+                <div class="blue-box">
+                  <%= user_presenter.points %>
+                </div>
+                <div class="blue-box">
+                  <%= user_presenter.level(favorite.level) %>
+                </div>
+              </div>
+            </div>
+            <div class="name">
+              <%= user_presenter.full_name %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="actions-wrapper">
+    <button type="button" class="mdc-fab app-fab--absolute" aria-label="question" data-toggle="modal" data-target="#exampleModalCenter">
+      <span class="help-questionmark">?</span>
+    </button>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content elo-explained">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">
+          <%= t('.title') %>
+        </h5>
+      </div>
+      <div class="modal-body">
+        <p>
+          <%= t('.first_p_html') %>
+        </p>
+        <p>
+          <%#= t('.second_p_html') %>
+        </p>
+        <p>
+          <%#= t('.third_p_html') %>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <%= t('.got_it') %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
