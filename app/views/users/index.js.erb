@@ -2,6 +2,15 @@ function updateUsers() {
   var usersContainer = document.querySelector('#users-container');
   if (usersContainer) {
     usersContainer.innerHTML = "<%= j render 'users', users: @users %>";
+    <% if @users.next_page %>
+      var nextPage = document.querySelector('.pagination');
+      if (nextPage) { $('.pagination').remove() }
+      var infScroll = document.getElementById('infinite-scrolling');
+      infScroll.insertAdjacentHTML('beforeend', "<%= j will_paginate @users %>")
+    <% else %>
+      $(window).off('scroll');
+      $('.pagination').remove();
+    <% end %>
   }
 }
 
