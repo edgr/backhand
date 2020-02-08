@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       @users = User.active
       update_ranking
     end
-    @users = @users.order(Arel.sql("RANDOM()")).paginate(page: params[:page], per_page: 20)
+    @users = @users.order(Arel.sql("RANDOM()")).paginate(page: params[:page], per_page: 12)
     respond_to :html, :js
   end
 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def format_query(params)
     return unless params[:query].present?
     set_query_indication
-    params[:query] = params[:query].reject(&:blank?).join(" ")
+    params[:query] = [params[:query]].flatten.reject(&:blank?).join(" ")
   end
 
   def set_query_indication
