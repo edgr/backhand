@@ -1,359 +1,41 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  player_count:
-    zero: ""
-    one: "1 player"
-    other: "%{count} players "
-  courts_count:
-    zero: ""
-    one: "%{count} court"
-    other: "%{count} courts"
-  indoors_count:
-    zero: "no indoor courts"
-    one: "1 indoor court"
-    other: "%{count} indoor courts"
-  with_lights:
-    zero: "no courts with lights"
-    one: "1 court with lights"
-    other: "%{count} courts with lights"
-  singles_only:
-    zero: ""
-    one: "1 'singles only' court"
-    other: "%{count} 'singles only' courts"
-  member_at: "member at"
-  new_event_email_subject: "Game/Training with with %{inviter} - Backhandapp.com"
-  new_player_review_email_subject: "New Review from %{sender} - Backhandapp.com"
-  new_match_result_email_subject: "New Match Result from %{sender} - Backhandapp.com"
-  new_confirmed_match_result_email_subject: "Match Result Confirmed by from %{sender} - Backhandapp.com"
-  new_callout_email_subject: "%{sender} Wants To Play Tennis - Backhandapp.com"
-  event_date: "%{event_date}"
-  event_time: "%{event_time}"
-  beginner: "beginner"
-  beginner_plus: "beginner +"
-  intermediate: "intermediate"
-  intermediate_plus: "intermediate +"
-  advanced: "advanced"
-  advanced_plus: "advanced +"
-  expert: "expert"
-  expert_plus: "expert +"
-  semi_pro: "semi-pro"
-  semi_pro_plus: "semi-pro +"
-  pro: "pro"
-  grinder: "grinder"
-  baseliner: "baseliner"
-  puncher: "puncher"
-  server_volleyer: "server-volleyer"
-  attacker: "attacker"
-  seconds_ago: "%{seconds}s ago"
-  minutes_ago: "%{minutes}m ago"
-  hours_ago: "%{hours}h ago"
-  home:
-    home_title_html: "PLAY MORE<br>PLAY BETTER."
-    join_us: "JOIN US FOR FREE"
-    subtitle_1: "Find players..."
-    browse_players: "browse players around you"
-    view_profile: "view player's profiles and contact them"
-    organize_game: "organize your game and play!"
-    subtitle_2: "...and record your matches!"
-    save_score: "save the score and the winner"
-    new_ranking: "get your new ranking instantly!"
-    home_logged_in_title_html: "TELL YOUR<br>FRIENDS."
-    invite: "INVITE"
-    thank_you: "Thanks in advance!"
-    share_facebook: "Share on Facebook"
-    share_twitter: "Share on Twitter"
-    share_linkedin: "Share on LinkedIn"
-  footer:
-    tagline_1: "Made with"
-    tagline_2: "in Barcelona"
-    email: "hello@backhandapp.com"
-    copyright: "© Copyright - 2020"
-  navbar:
-    players: "Players"
-    rankings: "Rankings"
-    matches: "Matches"
-    clubs: "Clubs"
-    callouts: "Callouts"
-    my_profile: "My Profile"
-    my_matches: "My Matches"
-    my_calendar: "My Calendar"
-    my_favorites: "Preferred Partners"
-    logout: "Log Out"
-    login: "Login"
-    see_more: "See more"
-    language: Language
-  pages:
-    welcome:
-      title: "Welcome %{current_user}!"
-      first_p_html: "Thank you for creating your account.<br>Make sure to invite your friends!"
-      home_link: "homepage"
-  users:
-    show:
-      info: "Info"
-      bio: "Bio"
-      age: "age: "
-      years_old: "years old"
-      birthday: "birthday: "
-      place_of_birth: "place of birth: "
-      height: "height: "
-      weight: "weight: "
-      style_of_play: "style: "
-      residence: "residence: "
-      world_ranking: "world ranking"
-      with: "with"
-      points: "points"
-      skills: "Skills"
-      strokes: "STROKES"
-      serve: "serve"
-      return: "return"
-      forehand: "forehand"
-      backhand: "backhand"
-      volley: "volley"
-      fitness: "FITNESS"
-      speed: "speed"
-      power: "power"
-      endurance: "endurance"
-      comments: "Comments"
-      no_reviews_yet: "hasn't received any reviews yet!"
-      matches: "matches"
-      wins: "wins"
-      losses: "losses"
-      rankings_and_stats: "Rankings & Stats"
-      club: "club: "
-    rankings:
-      title: "How does rankings work?"
-      first_p_html: "The ranking system we use is the <strong>Elo Ranking</strong>. It is designed to reflect as accurately as possible the level of a player overtime."
-      second_p_html: "In short, the formula adds/remove points to each player based on the outcome of the match (win/lose) and their initial points."
-      third_p_html: "The important thing to do if you want your ranking to be more and more accurate is to <strong>record your matches</strong> on Backhand! ;)"
-      got_it: "Got it!"
-    index:
-      player: "player"
-      players:
-        zero:  'No players matching your query'
-        one:   'One player matching your query'
-        other: '%{count} players matching your query'
-      players_with_location:
-        zero:  'No players'
-        one:   'One player'
-        other: '%{count} players'
-      matching_query: "matching your query"
-      type_anything: "Type in anything and hit enter"
-      or_use: "or use"
-      filters: "Filters"
-      filter_results: "Filter your results"
-      club: "Club"
-      search_results_location: "in %{location}"
-      location: "Location"
-      country: "Country"
-      level: "Level"
-      style_of_play: "Style of play"
-      handedness: "Handedness"
-      backhand_style: "Backhand style"
-      gender: "Gender"
-      search: "Search"
-      loading_users: "loading..."
-    users:
-      serve: "serve"
-      return: "return"
-      forehand: "forehand"
-      backhand: "backhand"
-      volley: "volley"
-      no_reviews: "No rev."
-  matches:
-    index:
-      match_date: "%{match_date}"
-    new:
-      when: "WHEN DID YOU PLAY?"
-      where: "WHERE DID YOU PLAY?"
-      whom: "WITH WHOM?"
-      won: "WHO WON?"
-      sets: "HOW MANY SETS DID YOU PLAY?"
-      opponent: "Opponent"
-      set: "set"
-      record: "record match"
-    lost_matches:
-      match_date: "%{match_date}"
-      no_lost_matches: "You haven't lost any matches. WOW!"
-    won_matches:
-      match_date: "%{match_date}"
-      no_won_matches: "You haven't won any matches yet. Fix that!"
-    pending_matches:
-      match_date: "%{match_date}"
-      no_pending_matches: "You have no matches pending confirmation"
-  events:
-    player_events:
-      today: "Today is %{date}"
-      event_date: "%{event_date}"
-      event_time: "%{event_time}"
-      are_you_sure: "Are you sure?"
-      no_upcoming_events: "You have no upcoming events"
-    new:
-      who: "WHO WILL YOU PLAY WITH?"
-      when: "WHEN WILL YOU PLAY?"
-      where: "WHERE WILL YOU PLAY?"
-      remove_player: "remove player"
-      add_player: "add player"
-      create_event: "create event"
-    edit:
-      who: "WHO WILL YOU PLAY WITH?"
-      when: "WHEN WILL YOU PLAY?"
-      where: "WHERE WILL YOU PLAY?"
-      remove_player: "remove player"
-      add_player: "add player"
-      update_event: "update"
-  clubs:
-    index:
-      no_clubs: "No clubs in this area yet. Let us know!"
-    show:
-      courts: "Courts"
-  callouts:
-    index:
-      contact: "contact"
-      remove: "remove"
-      are_you_sure: "Are you sure?"
-      no_callouts_html: "Sorry but there is not callouts at the moment 😢.<br>Callout to other players!"
-      already_found: "already found"
-      sorry_found: "%{name} already found someone!"
-    new:
-      my_club: "players in my club"
-      everyone: "everyone in my area"
-      my_favorites: "my preferred partners"
-      send: "send"
-  user_reviews:
-    new:
-      recommend: "Would you recommend to other players to play with %{partner}?"
-      not_really: "Not really.."
-      of_course: "Of Course!"
-      how_is_playing: "How is playing with %{partner}?"
-      review_skills: "Review %{partner} skills"
-      serve: "serve"
-      return: "return"
-      forehand: "forehand"
-      backhand: "backhand"
-      volley: "volley"
-      speed: "speed"
-      power: "power"
-      endurance: "endurance"
-      next: "next"
-      back: "back"
-      review_now: "review now"
-      please_write: "Please write something about your partner!"
-      please_rate: "Please rate your partner!"
-  user_steps:
-    step1:
-      about_you: "About you"
-      first_name: "FIRST NAME"
-      last_name: "LAST NAME"
-      address: "ADDRESS"
-      nationality: "NATIONALITY"
-      place_birth: "PLACE OF BIRTH"
-      birthdate: "BIRTHDATE"
-      gender: "GENDER"
-      height: "HEIGHT"
-      weight: "WEIGHT"
-      in_cm: "in cm"
-      in_kg: "in kg"
-      next: "next"
-    step2:
-      about_game: "About your game"
-      level: "Level"
-      style_of_play: "Style of play"
-      handedness: "Righty or Lefty"
-      backhand_style: "Backhand style"
-      your_club: "Select your club"
-      next: "next"
-    step3:
-      smile: "Smile and shine!"
-      upload: "Upload Picture"
-      bio: "Bio"
-      explanation: "This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc."
-      next: "next"
-      please_photo: "A profile picture is mandatory :)"
-  favorite_players:
-    index:
-      add_favorite_html: "add a favorite by clicking on the star of a player's profile!"
-      title: "Favorite Players"
-      first_p_html: "This is your list of Favorite Players. This list is especially useful in <strong>Callouts</strong>. There, you can select \"my favorites\" in order to send a callout only to your favorite players."
-  wicked:
-    step1: "step1"
-    step2: "step2"
-    step3: "step3"
-  simple_form:
-    options:
-      user:
-        handedness:
-          righty: "Righty"
-          lefty: "Lefty"
-        backhand_style:
-          one_handed_backhand: "One Handed"
-          two_handed_backhand: "Two Handed"
-        gender:
-          male: "Male"
-          female: "Female"
-          other: "Other"
-        level:
-          beginner: "Beginner"
-          beginner_plus: "Beginner +"
-          intermediate: "Intermediate"
-          intermediate_plus: "Intermediate +"
-          advanced: "Advanced"
-          advanced_plus: "Advanced +"
-          expert: "Expert"
-          expert_plus: "Expert +"
-          semi_pro: "Semi-Pro"
-          semi_pro_plus: "Semi-Pro +"
-          pro: "Pro"
-        style_of_play:
-          baseliner: "Baseliner"
-          attacker: "Attacker"
-          grinder: "Grinder"
-          server_volleyer: "Serve & volley"
-          puncher: "Counter-puncher"
-  errors:
-    internal_server_error:
-      first_p: "Oups, it looks like we've missed that shot..."
-      second_p_html: "We will spot the error in our logs and fix it asap. But feel free to let us know too to help us investigate. 🕵️‍♂️ </p><p>At your service,<br>The Backhand Team</p>"
-    not_found:
-      first_p: "No, you cannot jump over the net and play a shot there... 🤪"
-      second_p: "More seriously, it seems that something was wrong with your request. If you are sure of what you were doing, let us know!"
-      third_p_html: "At your service,<br>The Backhand Team"
   activerecord:
     errors:
       messages:
         record_invalid: 'Validation failed: %{errors}'
         restrict_dependent_destroy:
-          has_one: Cannot delete record because a dependent %{record} exists
           has_many: Cannot delete record because dependent %{record} exist
+          has_one: Cannot delete record because a dependent %{record} exists
+  advanced: advanced
+  advanced_plus: advanced +
+  attacker: attacker
+  baseliner: baseliner
+  beginner: beginner
+  beginner_plus: beginner +
+  callouts:
+    index:
+      already_found: already found
+      are_you_sure: Are you sure?
+      contact: contact
+      no_callouts_html: "Sorry but there is not callouts at the moment \U0001F622.<br>Callout
+        to other players!"
+      remove: remove
+      sorry_found: "%{name} already found someone!"
+    new:
+      everyone: everyone in my area
+      my_club: players in my club
+      my_favorites: my preferred partners
+      send: send
+  clubs:
+    index:
+      no_clubs: No clubs in this area yet. Let us know!
+    show:
+      courts: Courts
+  courts_count:
+    one: "%{count} court"
+    other: "%{count} courts"
+    zero: ''
   date:
     abbr_day_names:
     - Sun
@@ -364,7 +46,7 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    -
+    - 
     - Jan
     - Feb
     - Mar
@@ -388,11 +70,11 @@ en:
     formats:
       default: "%Y-%m-%d"
       long: "%B %d, %Y"
-      medium_long: "%b %d, %Y"
       medium: "%B %d"
+      medium_long: "%b %d, %Y"
       short: "%b %d"
     month_names:
-    -
+    - 
     - January
     - February
     - March
@@ -424,36 +106,36 @@ en:
         one: almost 1 year
         other: almost %{count} years
       half_a_minute: half a minute
-      less_than_x_seconds:
-        one: less than 1 second
-        other: less than %{count} seconds
       less_than_x_minutes:
         one: less than a minute
         other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
         one: over 1 year
         other: over %{count} years
-      x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-      x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
       x_days:
         one: 1 day
         other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
         one: 1 month
         other: "%{count} months"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
       x_years:
         one: 1 year
         other: "%{count} years"
     prompts:
-      second: Second
-      minute: Minute
-      hour: Hour
       day: Day
+      hour: Hour
+      minute: Minute
       month: Month
+      second: Second
       year: Year
   errors:
     format: "%{attribute} %{message}"
@@ -493,6 +175,44 @@ en:
       header:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
+  event_date: "%{event_date}"
+  event_time: "%{event_time}"
+  events:
+    edit:
+      add_player: add player
+      remove_player: remove player
+      update_event: update
+      when: WHEN WILL YOU PLAY?
+      where: WHERE WILL YOU PLAY?
+      who: WHO WILL YOU PLAY WITH?
+    new:
+      add_player: add player
+      create_event: create event
+      remove_player: remove player
+      when: WHEN WILL YOU PLAY?
+      where: WHERE WILL YOU PLAY?
+      who: WHO WILL YOU PLAY WITH?
+    player_events:
+      are_you_sure: Are you sure?
+      event_date: "%{event_date}"
+      event_time: "%{event_time}"
+      no_upcoming_events: You have no upcoming events
+      today: Today is %{date}
+  expert: expert
+  expert_plus: expert +
+  favorite_players:
+    index:
+      add_favorite_html: add a favorite by clicking on the star of a player's profile!
+      first_p_html: This is your list of Favorite Players. This list is especially
+        useful in <strong>Callouts</strong>. There, you can select "my favorites"
+        in order to send a callout only to your favorite players.
+      title: Favorite Players
+  footer:
+    copyright: "© Copyright - 2020"
+    email: hello@backhandapp.com
+    tagline_1: Made with
+    tagline_2: in Barcelona
+  grinder: grinder
   helpers:
     select:
       prompt: Please select
@@ -500,6 +220,72 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+  home:
+    browse_players: browse players around you
+    home_logged_in_title_html: TELL YOUR<br>FRIENDS.
+    home_title_html: PLAY MORE<br>PLAY BETTER.
+    invite: INVITE
+    join_us: JOIN US FOR FREE
+    new_ranking: get your new ranking instantly!
+    organize_game: organize your game and play!
+    save_score: save the score and the winner
+    share_facebook: Share on Facebook
+    share_linkedin: Share on LinkedIn
+    share_twitter: Share on Twitter
+    subtitle_1: Find players...
+    subtitle_2: "...and record your matches!"
+    thank_you: Thanks in advance!
+    view_profile: view player's profiles and contact them
+  hours_ago: "%{hours}h ago"
+  indoors_count:
+    one: 1 indoor court
+    other: "%{count} indoor courts"
+    zero: no indoor courts
+  intermediate: intermediate
+  intermediate_plus: intermediate +
+  matches:
+    index:
+      match_date: "%{match_date}"
+    lost_matches:
+      match_date: "%{match_date}"
+      no_lost_matches: You haven't lost any matches. WOW!
+    new:
+      opponent: Opponent
+      record: record match
+      set: set
+      sets: HOW MANY SETS DID YOU PLAY?
+      when: WHEN DID YOU PLAY?
+      where: WHERE DID YOU PLAY?
+      whom: WITH WHOM?
+      won: WHO WON?
+    pending_matches:
+      match_date: "%{match_date}"
+      no_pending_matches: You have no matches pending confirmation
+    won_matches:
+      match_date: "%{match_date}"
+      no_won_matches: You haven't won any matches yet. Fix that!
+  member_at: member at
+  minutes_ago: "%{minutes}m ago"
+  navbar:
+    callouts: Callouts
+    clubs: Clubs
+    language: Language
+    login: Login
+    logout: Log Out
+    matches: Matches
+    my_calendar: My Calendar
+    my_favorites: Preferred Partners
+    my_matches: My Matches
+    my_profile: My Profile
+    players: Players
+    rankings: Rankings
+    see_more: See more
+  new_callout_email_subject: "%{sender} Wants To Play Tennis - Backhandapp.com"
+  new_confirmed_match_result_email_subject: Match Result Confirmed by from %{sender}
+    - Backhandapp.com
+  new_event_email_subject: Game/Training with with %{inviter} - Backhandapp.com
+  new_match_result_email_subject: New Match Result from %{sender} - Backhandapp.com
+  new_player_review_email_subject: New Review from %{sender} - Backhandapp.com
   number:
     currency:
       format:
@@ -550,6 +336,57 @@ en:
     precision:
       format:
         delimiter: ''
+  pages:
+    welcome:
+      first_p_html: Thank you for creating your account.<br>Make sure to invite your
+        friends!
+      home_link: homepage
+      title: Welcome %{current_user}!
+  player_count:
+    one: 1 player
+    other: "%{count} players "
+    zero: ''
+  pro: pro
+  puncher: puncher
+  seconds_ago: "%{seconds}s ago"
+  semi_pro: semi-pro
+  semi_pro_plus: semi-pro +
+  server_volleyer: server-volleyer
+  simple_form:
+    options:
+      user:
+        backhand_style:
+          one_handed_backhand: One Handed
+          two_handed_backhand: Two Handed
+        gender:
+          female: Female
+          male: Male
+          other: Other
+        handedness:
+          lefty: Lefty
+          righty: Righty
+        level:
+          advanced: Advanced
+          advanced_plus: Advanced +
+          beginner: Beginner
+          beginner_plus: Beginner +
+          expert: Expert
+          expert_plus: Expert +
+          intermediate: Intermediate
+          intermediate_plus: Intermediate +
+          pro: Pro
+          semi_pro: Semi-Pro
+          semi_pro_plus: Semi-Pro +
+        style_of_play:
+          attacker: Attacker
+          baseliner: Baseliner
+          grinder: Grinder
+          puncher: Counter-puncher
+          server_volleyer: Serve & volley
+  singles_only:
+    one: 1 'singles only' court
+    other: "%{count} 'singles only' courts"
+    zero: ''
   support:
     array:
       last_word_connector: ", and "
@@ -563,4 +400,139 @@ en:
       short: "%d %b %H:%M"
       very_short: "%H:%M"
     pm: pm
-
+  user_reviews:
+    new:
+      back: back
+      backhand: backhand
+      endurance: endurance
+      forehand: forehand
+      how_is_playing: How is playing with %{partner}?
+      next: next
+      not_really: Not really..
+      of_course: Of Course!
+      please_rate: Please rate your partner!
+      please_write: Please write something about your partner!
+      power: power
+      recommend: Would you recommend to other players to play with %{partner}?
+      return: return
+      review_now: review now
+      review_skills: Review %{partner} skills
+      serve: serve
+      speed: speed
+      volley: volley
+  user_steps:
+    step1:
+      about_you: About you
+      address: ADDRESS
+      birthdate: BIRTHDATE
+      first_name: FIRST NAME
+      gender: GENDER
+      height: HEIGHT
+      in_cm: in cm
+      in_kg: in kg
+      last_name: LAST NAME
+      nationality: NATIONALITY
+      next: next
+      place_birth: PLACE OF BIRTH
+      weight: WEIGHT
+    step2:
+      about_game: About your game
+      backhand_style: Backhand style
+      handedness: Righty or Lefty
+      level: Level
+      next: next
+      style_of_play: Style of play
+      your_club: Select your club
+    step3:
+      bio: Bio
+      explanation: This is where you can let other players know a bit more. For example,
+        when/where you prefer to play, how long you've been playing tennis, etc.
+      next: next
+      please_photo: A profile picture is mandatory :)
+      smile: Smile and shine!
+      upload: Upload Picture
+  users:
+    index:
+      backhand_style: Backhand style
+      club: Club
+      country: Country
+      filter_results: Filter your results
+      filters: Filters
+      gender: Gender
+      handedness: Handedness
+      level: Level
+      loading_users: loading...
+      location: Location
+      matching_query: matching your query
+      or_use: or use
+      player: player
+      players:
+        one: One player matching your query
+        other: "%{count} players matching your query"
+        zero: No players matching your query
+      players_with_location:
+        one: One player
+        other: "%{count} players"
+        zero: No players
+      search: Search
+      search_results_location: in %{location}
+      style_of_play: Style of play
+      type_anything: Type in anything and hit enter
+    rankings:
+      first_p_html: The ranking system we use is the <strong>Elo Ranking</strong>.
+        It is designed to reflect as accurately as possible the level of a player
+        overtime.
+      got_it: Got it!
+      second_p_html: In short, the formula adds/remove points to each player based
+        on the outcome of the match (win/lose) and their initial points.
+      third_p_html: The important thing to do if you want your ranking to be more
+        and more accurate is to <strong>record your matches</strong> on Backhand!
+        ;)
+      title: How does rankings work?
+    show:
+      age: 'age: '
+      backhand: backhand
+      bio: Bio
+      birthday: 'birthday: '
+      club: 'club: '
+      comments: Comments
+      endurance: endurance
+      fitness: FITNESS
+      forehand: forehand
+      height: 'height: '
+      info: Info
+      losses: losses
+      matches: matches
+      no_reviews_yet: hasn't received any reviews yet!
+      place_of_birth: 'place of birth: '
+      points: points
+      power: power
+      rankings_and_stats: Rankings & Stats
+      residence: 'residence: '
+      return: return
+      serve: serve
+      skills: Skills
+      speed: speed
+      strokes: STROKES
+      style_of_play: 'style: '
+      volley: volley
+      weight: 'weight: '
+      wins: wins
+      with: with
+      world_ranking: world ranking
+      years_old: years old
+    users:
+      backhand: backhand
+      forehand: forehand
+      no_reviews: No rev.
+      return: return
+      serve: serve
+      volley: volley
+  wicked:
+    step1: step1
+    step2: step2
+    step3: step3
+  with_lights:
+    one: 1 court with lights
+    other: "%{count} courts with lights"
+    zero: no courts with lights

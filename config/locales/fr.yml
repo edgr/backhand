@@ -1,336 +1,44 @@
+---
 fr:
-  player_count:
-    zero: ""
-    one: "1 joueur/se"
-    other: "%{count} joueurs/ses "
-  courts_count:
-    zero: ""
-    one: "%{count} court"
-    other: "%{count} courts"
-  indoors_count:
-    zero: "aucun court couvert"
-    one: "1 court couvert"
-    other: "%{count} courts couverts"
-  with_lights:
-    zero: "aucun court avec éclairage"
-    one: "1 court avec éclairage"
-    other: "%{count} courts avec éclairage"
-  singles_only:
-    zero: ""
-    one: "1 court pour simple uniquement (pas de double)"
-    other: "%{count} courts pour simple uniquement (pas de double)"
-  member_at: "membre à"
-  new_event_email_subject: "Match/Entrainement avec %{inviter} - Backhandapp.com"
-  new_player_review_email_subject: "Nouveau Commentaire de %{sender} - Backhandapp.com"
-  new_match_result_email_subject: "Nouveau Résultat De Match De %{sender} - Backhandapp.com"
-  new_confirmed_match_result_email_subject: "Résultat Du Match Confirmé Par %{sender} - Backhandapp.com"
-  new_callout_email_subject: "%{sender} Veut Jouer Au Tennis - Backhandapp.com"
-  event_date: "%{event_date}"
-  event_time: "%{event_time}"
-  beginner: "débutant"
-  beginner_plus: "débutant +"
-  intermediate: "intermediaire"
-  intermediate_plus: "intermediaire +"
-  advanced: "avancé(e)"
-  advanced_plus: "avancé(e) +"
-  expert: "expert"
-  expert_plus: "expert +"
-  semi_pro: "semi-pro"
-  semi_pro_plus: "semi-pro +"
-  pro: "pro"
-  grinder: "défenseur"
-  baseliner: "baseliner"
-  puncher: "contre-attaquant"
-  server_volleyer: "serveur-volleyeur"
-  attacker: "attaquant"
-  seconds_ago: "il y a %{seconds}s"
-  minutes_ago: "il y a %{minutes}m"
-  hours_ago: "il y a %{hours}h"
-  home:
-    home_title_html: "JOUE PLUS<br>JOUE MIEUX."
-    join_us: "REJOIGNEZ-NOUS !"
-    subtitle_1: "Trouvez des joueurs..."
-    browse_players: "cherches des joueurs autour de vous"
-    view_profile: "consultez leurs profils et contactez-les"
-    organize_game: "organisez votre rencontre et jouez !"
-    subtitle_2: "...et sauvegardez vos matchs !"
-    save_score: "enregistrez le score et le gagnant"
-    new_ranking: "obtenez votre nouveau classement instantanément !"
-    home_logged_in_title_html: "INVITE TES<br>AMIS."
-    invite: "INVITER"
-    thank_you: "Merci d'avance !"
-    share_facebook: "Partagez sur Facebook"
-    share_twitter: "Partagez sur Twitter"
-    share_linkedin: "Partagez sur LinkedIn"
-  pages:
-    welcome:
-      title: "Bienvenue %{current_user}!"
-      first_p_html: "Merci d'avoir créé ton compte.<br>N'oublie pas d'inviter tes ami(e)s !"
-      home_link: "page d'accueil"
-  footer:
-    tagline_1: "Fait avec"
-    tagline_2: "à Barcelone"
-    email: "hello@backhandapp.com"
-    copyright: "© Tous droits réservés - 2020"
-  navbar:
-    players: "Joueurs"
-    rankings: "Classements"
-    matches: "Matchs"
-    clubs: "Clubs"
-    callouts: "Callouts"
-    my_profile: "Mon Profil"
-    my_matches: "Mes Matchs"
-    my_calendar: "Mon Calendrier"
-    my_favorites: "Mes Favoris"
-    logout: "Se déconnecter"
-    login: "S'identifier"
-    see_more: "Voir plus"
-    language: Langue
-  users:
-    show:
-      info: "Info"
-      bio: "Bio"
-      age: "age: "
-      years_old: "ans"
-      birthday: "date de naissance: "
-      place_of_birth: "lieu de naissance: "
-      height: "taille: "
-      weight: "poids: "
-      style_of_play: "style: "
-      residence: "residence: "
-      world_ranking: "classement international"
-      with: "avec"
-      points: "points"
-      skills: "Qualités"
-      strokes: "COUPS"
-      serve: "service"
-      return: "retour"
-      forehand: "coup droit"
-      backhand: "revers"
-      volley: "vollée"
-      fitness: "PHYSIQUE"
-      speed: "vitesse"
-      power: "puissance"
-      endurance: "endurance"
-      comments: "Commentaires"
-      no_reviews_yet: "n'a pas encore reçu de commentaires"
-      matches: "matchs"
-      wins: "victoires"
-      losses: "défaites"
-      rankings_and_stats: "Classements & Statistiques"
-      club: "club: "
-    rankings:
-      title: "Comment fonctionne le classement"
-      first_p_html: "Le système de classement que nous utilisons est le <strong>Elo Ranking</strong>. Il est fait pour refléter de façon précise le niveau d'un joueur."
-      second_p_html: "En bref, la formule ajoute/retire des points à chacun des joueurs en fonction du résultat d'un match (victoire/défaite) et leurs nombres de points initiaux."
-      third_p_html: "L'important, si vous souhaitez que votre classement s'affine le plus possible est <strong>d'enregistrer vos matchs</strong> sur Backhand! ;)"
-      got_it: "Ok !"
-    index:
-      player: "joueur"
-      players:
-        zero:  'Aucun joueur correspondant à votre recherche'
-        one:   'Un joueur correspondant à votre recherche'
-        other: '%{count} joueurs correspondants à votre recherche'
-      players_with_location:
-        zero:  'Aucun joueur'
-        one:   'Un joueur'
-        other: '%{count} joueurs'
-      matching_query: "correspondant(s) à votre recherche"
-      type_anything: "Écrivez ici et tapez 'entrer'"
-      or_use: "ou utilisez"
-      filters: "Filtres"
-      filter_results: "Filtrez vos résultas"
-      club: "Club"
-      search_results_location: "à %{location}"
-      location: "Localisation"
-      country: "Pays"
-      level: "Niveau"
-      style_of_play: "Style de jeu"
-      handedness: "Droitier/Gaucher"
-      backhand_style: "Revers"
-      gender: "Genre"
-      search: "Recherche"
-      serve: "service"
-      return: "retour"
-      forehand: "coup droit"
-      backhand: "revers"
-      volley: "vollée"
-      no_reviews: "0 com."
-      loading_users: "chargement..."
-    users:
-      serve: "service"
-      return: "retour"
-      forehand: "coup droit"
-      backhand: "revers"
-      volley: "vollée"
-      no_reviews: "0 com."
-  matches:
-    index:
-      match_date: "%{match_date}"
-    new:
-      when: "QUAND AVEZ-VOUS JOUÉ ?"
-      where: "OÙ AVEZ-VOUS JOUÉ ?"
-      whom: "AVEC QUI?"
-      won: "QUI A GAGNÉ?"
-      sets: "COMBIEN DE SETS AVEZ-VOUS JOUÉ ?"
-      opponent: "Adversaire"
-      set: "set"
-      record: "enregistrer"
-    lost_matches:
-      match_date: "%{match_date}"
-      no_lost_matches: "Vous n'avez pas perdu un seul match !"
-    won_matches:
-      match_date: "%{match_date}"
-      no_won_matches: "Vous n'avez pas encore gagné de match. Ça va venir ;) !"
-    pending_matches:
-      match_date: "%{match_date}"
-      no_pending_matches: "Vous n'avez pas de match en attente de confirmation"
-  events:
-    player_events:
-      today: "Nous sommes le %{date}"
-      event_date: "%{event_date}"
-      event_time: "%{event_time}"
-      are_you_sure: "Êtes-vous sûr(e)?"
-      no_upcoming_events: "Vous n'avez pas d'événements à venir"
-    new:
-      who: "AVEC QUI ALLEZ-VOUS JOUER ?"
-      when: "QUAND ALLEZ-VOUS JOUER ?"
-      where: "OÙ ALLEZ-VOUS JOUER ?"
-      remove_player: "retirer le joueur"
-      add_player: "ajouter un joueur"
-      create_event: "créér"
-    edit:
-      who: "AVEC QUI ALLEZ-VOUS JOUER ?"
-      when: "QUAND ALLEZ-VOUS JOUER ?"
-      where: "OÙ ALLEZ-VOUS JOUER ?"
-      remove_player: "retirer le joueur"
-      add_player: "ajouter un joueur"
-      update_event: "créér"
-  clubs:
-    index:
-      no_clubs: "Nous n'avons pas encore recensé les clubs dans cette zone. Faites-le nous savoir !"
-    show:
-      courts: "Courts"
-  callouts:
-    index:
-      contact: "contacter"
-      remove: "supprimer"
-      are_you_sure: "Es-tu sûr(e)?"
-      no_callouts_html: "Désolé, il n'y a pas de Callouts pour le moment 😢!<br>Créé ton propre Callout !"
-      already_found: "déjà trouvé"
-      sorry_found: "%{name} a déjà trouvé quelqu'un !"
-    new:
-      my_club: "joueurs/es de mon club"
-      everyone: "tout le monde autour de moi"
-      my_favorites: "mes partenaires préférés"
-      send: "envoyer"
-  user_reviews:
-    new:
-      recommend: "Recommanderiez-vous %{partner} à d'autres joueurs(es) ?"
-      not_really: "Pas vraiment.."
-      of_course: "Bien sûr !"
-      how_is_playing: "Comment a été votre match/entrainement avec %{partner}?"
-      review_skills: "Évaluer %{partner}"
-      serve: "service"
-      return: "retour"
-      forehand: "coup droit"
-      backhand: "revers"
-      volley: "vollée"
-      speed: "vitesse"
-      power: "puissance"
-      endurance: "endurance"
-      next: "suivant"
-      back: "retour"
-      review_now: "enregistrer"
-      please_write: "Écris quelque chose à propos de ton partenaire!"
-      please_rate: "Évalue ton partenaire!"
-  user_steps:
-    step1:
-      about_you: "À propos de vous"
-      first_name: "PRÉNOM"
-      last_name: "NOM"
-      address: "ADRESSE"
-      nationality: "NATIONALITÉ"
-      place_birth: "LIEU DE NAISSANCE"
-      birthdate: "DATE DE NAISSANCE"
-      gender: "GENRE"
-      height: "TAILLE"
-      weight: "POIDS"
-      in_cm: "en cm"
-      in_kg: "en kg"
-      next: "suivant"
-    step2:
-      about_game: "Votre tennis"
-      level: "Niveau"
-      style_of_play: "Style de jeu"
-      handedness: "Droitier ou Gaucher"
-      backhand_style: "Style de revers"
-      your_club: "Choisissez votre club"
-      next: "suivant"
-    step3:
-      smile: "Souriez!"
-      upload: "Sélectionner"
-      bio: "Bio"
-      explanation: "Partagez votre expérience du tennis ici !"
-      next: "suivant"
-      please_photo: "Une photo s'il te plait ! :)"
-  favorite_players:
-    index:
-      add_favorite_html: "ajoute un joueur favori en cliquant sur l'étoile sur son profil !"
-      title: "Favorite Players"
-      first_p_html: "Ceci est votre liste de joueurs favoris. Cette liste est particulièrement utile pour les <strong>Callouts</strong>. Vous pouvez y sélectionner  \"mes favoris\" afin d'envoyer votre callout uniquement à vos joueurs préférés."
-  wicked:
-    step1: "step1"
-    step2: "step2"
-    step3: "step3"
-  simple_form:
-    options:
-      user:
-        handedness:
-          righty: "Droitier"
-          lefty: "Gaucher"
-        backhand_style:
-          one_handed_backhand: "Une main"
-          two_handed_backhand: "Deux mains"
-        gender:
-          male: "Homme"
-          female: "Femme"
-          other: "Autre"
-        level:
-          beginner: "Débutant"
-          beginner_plus: "Débutant +"
-          intermediate: "Intermediaire"
-          intermediate_plus: "Intermediaire +"
-          advanced: "Avancé"
-          advanced_plus: "Avancé +"
-          expert: "Expert"
-          expert_plus: "Expert +"
-          semi_pro: "Semi-Pro"
-          semi_pro_plus: "Semi-Pro +"
-          pro: "Pro"
-        style_of_play:
-          baseliner: "Fond de court"
-          attacker: "Attaquant"
-          grinder: "Défenseur"
-          server_volleyer: "Serveur & volleyeur"
-          puncher: "Contre-Attaquant"
-  errors:
-    internal_server_error:
-      first_p: "Oups, il semblerait que nous ayons raté ce coup..."
-      second_p_html: "Nous allons repérer l'erreur et la résoudre rapidement. Mais n'heésitez pas à nous le faire savoir, cela peut nous aider dans notre investigation. 🕵️‍♂️ </p><p>At your service,<br>The Backhand Team</p>"
-    not_found:
-      first_p: "Non, non, vous ne pouvez pas sautez par dessus le filet et y jouer un coup... 🤪"
-      second_p: "Plus sérieusement, il semble que votre requête contienne un erreur. Si vous pensez qu'il y a erreur de notre part, faites-le nous savoir !"
-      third_p_html: "À votre service,<br>The Backhand Team"
   activerecord:
     errors:
       messages:
         record_invalid: 'La validation a échoué : %{errors}'
         restrict_dependent_destroy:
-          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
-            dépendant(e) existe
           has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
             dépendants existent
+          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
+            dépendant(e) existe
+  advanced: avancé(e)
+  advanced_plus: avancé(e) +
+  attacker: attaquant
+  baseliner: baseliner
+  beginner: débutant
+  beginner_plus: débutant +
+  callouts:
+    index:
+      already_found: déjà trouvé
+      are_you_sure: Es-tu sûr(e)?
+      contact: contacter
+      no_callouts_html: "Désolé, il n'y a pas de Callouts pour le moment \U0001F622!<br>Créé
+        ton propre Callout !"
+      remove: supprimer
+      sorry_found: "%{name} a déjà trouvé quelqu'un !"
+    new:
+      everyone: tout le monde autour de moi
+      my_club: joueurs/es de mon club
+      my_favorites: mes partenaires préférés
+      send: envoyer
+  clubs:
+    index:
+      no_clubs: Nous n'avons pas encore recensé les clubs dans cette zone. Faites-le
+        nous savoir !
+    show:
+      courts: Courts
+  courts_count:
+    one: "%{count} court"
+    other: "%{count} courts"
+    zero: ''
   date:
     abbr_day_names:
     - dim
@@ -341,7 +49,7 @@ fr:
     - ven
     - sam
     abbr_month_names:
-    -
+    - 
     - jan.
     - fév.
     - mar.
@@ -365,11 +73,11 @@ fr:
     formats:
       default: "%d/%m/%Y"
       long: "%e %B %Y"
-      medium_long: "%e %b %Y"
       medium: "%e %B"
+      medium_long: "%e %b %Y"
       short: "%e %b"
     month_names:
-    -
+    - 
     - janvier
     - février
     - mars
@@ -401,38 +109,38 @@ fr:
         one: presqu'un an
         other: presque %{count} ans
       half_a_minute: une demi-minute
-      less_than_x_seconds:
-        zero: moins d'une seconde
-        one: moins d'une seconde
-        other: moins de %{count} secondes
       less_than_x_minutes:
-        zero: moins d'une minute
         one: moins d'une minute
         other: moins de %{count} minutes
+        zero: moins d'une minute
+      less_than_x_seconds:
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+        zero: moins d'une seconde
       over_x_years:
         one: plus d'un an
         other: plus de %{count} ans
-      x_seconds:
-        one: 1 seconde
-        other: "%{count} secondes"
-      x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
       x_days:
         one: 1 jour
         other: "%{count} jours"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
         one: 1 mois
         other: "%{count} mois"
+      x_seconds:
+        one: 1 seconde
+        other: "%{count} secondes"
       x_years:
         one: 1 an
         other: "%{count} ans"
     prompts:
-      second: Seconde
-      minute: Minute
-      hour: Heure
       day: Jour
+      hour: Heure
+      minute: Minute
       month: Mois
+      second: Seconde
       year: Année
   errors:
     format: "%{attribute} %{message}"
@@ -472,6 +180,45 @@ fr:
       header:
         one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
         other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  event_date: "%{event_date}"
+  event_time: "%{event_time}"
+  events:
+    edit:
+      add_player: ajouter un joueur
+      remove_player: retirer le joueur
+      update_event: créér
+      when: QUAND ALLEZ-VOUS JOUER ?
+      where: OÙ ALLEZ-VOUS JOUER ?
+      who: AVEC QUI ALLEZ-VOUS JOUER ?
+    new:
+      add_player: ajouter un joueur
+      create_event: créér
+      remove_player: retirer le joueur
+      when: QUAND ALLEZ-VOUS JOUER ?
+      where: OÙ ALLEZ-VOUS JOUER ?
+      who: AVEC QUI ALLEZ-VOUS JOUER ?
+    player_events:
+      are_you_sure: Êtes-vous sûr(e)?
+      event_date: "%{event_date}"
+      event_time: "%{event_time}"
+      no_upcoming_events: Vous n'avez pas d'événements à venir
+      today: Nous sommes le %{date}
+  expert: expert
+  expert_plus: expert +
+  favorite_players:
+    index:
+      add_favorite_html: ajoute un joueur favori en cliquant sur l'étoile sur son
+        profil !
+      first_p_html: Ceci est votre liste de joueurs favoris. Cette liste est particulièrement
+        utile pour les <strong>Callouts</strong>. Vous pouvez y sélectionner  "mes
+        favoris" afin d'envoyer votre callout uniquement à vos joueurs préférés.
+      title: Favorite Players
+  footer:
+    copyright: "© Tous droits réservés - 2020"
+    email: hello@backhandapp.com
+    tagline_1: Fait avec
+    tagline_2: à Barcelone
+  grinder: défenseur
   helpers:
     select:
       prompt: Veuillez sélectionner
@@ -479,6 +226,72 @@ fr:
       create: Créer un(e) %{model}
       submit: Enregistrer ce(tte) %{model}
       update: Modifier ce(tte) %{model}
+  home:
+    browse_players: cherches des joueurs autour de vous
+    home_logged_in_title_html: INVITE TES<br>AMIS.
+    home_title_html: JOUE PLUS<br>JOUE MIEUX.
+    invite: INVITER
+    join_us: REJOIGNEZ-NOUS !
+    new_ranking: obtenez votre nouveau classement instantanément !
+    organize_game: organisez votre rencontre et jouez !
+    save_score: enregistrez le score et le gagnant
+    share_facebook: Partagez sur Facebook
+    share_linkedin: Partagez sur LinkedIn
+    share_twitter: Partagez sur Twitter
+    subtitle_1: Trouvez des joueurs...
+    subtitle_2: "...et sauvegardez vos matchs !"
+    thank_you: Merci d'avance !
+    view_profile: consultez leurs profils et contactez-les
+  hours_ago: il y a %{hours}h
+  indoors_count:
+    one: 1 court couvert
+    other: "%{count} courts couverts"
+    zero: aucun court couvert
+  intermediate: intermediaire
+  intermediate_plus: intermediaire +
+  matches:
+    index:
+      match_date: "%{match_date}"
+    lost_matches:
+      match_date: "%{match_date}"
+      no_lost_matches: Vous n'avez pas perdu un seul match !
+    new:
+      opponent: Adversaire
+      record: enregistrer
+      set: set
+      sets: COMBIEN DE SETS AVEZ-VOUS JOUÉ ?
+      when: QUAND AVEZ-VOUS JOUÉ ?
+      where: OÙ AVEZ-VOUS JOUÉ ?
+      whom: AVEC QUI?
+      won: QUI A GAGNÉ?
+    pending_matches:
+      match_date: "%{match_date}"
+      no_pending_matches: Vous n'avez pas de match en attente de confirmation
+    won_matches:
+      match_date: "%{match_date}"
+      no_won_matches: Vous n'avez pas encore gagné de match. Ça va venir ;) !
+  member_at: membre à
+  minutes_ago: il y a %{minutes}m
+  navbar:
+    callouts: Callouts
+    clubs: Clubs
+    language: Langue
+    login: S'identifier
+    logout: Se déconnecter
+    matches: Matchs
+    my_calendar: Mon Calendrier
+    my_favorites: Mes Favoris
+    my_matches: Mes Matchs
+    my_profile: Mon Profil
+    players: Joueurs
+    rankings: Classements
+    see_more: Voir plus
+  new_callout_email_subject: "%{sender} Veut Jouer Au Tennis - Backhandapp.com"
+  new_confirmed_match_result_email_subject: Résultat Du Match Confirmé Par %{sender}
+    - Backhandapp.com
+  new_event_email_subject: Match/Entrainement avec %{inviter} - Backhandapp.com
+  new_match_result_email_subject: Nouveau Résultat De Match De %{sender} - Backhandapp.com
+  new_player_review_email_subject: Nouveau Commentaire de %{sender} - Backhandapp.com
   number:
     currency:
       format:
@@ -529,6 +342,57 @@ fr:
     precision:
       format:
         delimiter: ''
+  pages:
+    welcome:
+      first_p_html: Merci d'avoir créé ton compte.<br>N'oublie pas d'inviter tes ami(e)s
+        !
+      home_link: page d'accueil
+      title: Bienvenue %{current_user}!
+  player_count:
+    one: 1 joueur/se
+    other: "%{count} joueurs/ses "
+    zero: ''
+  pro: pro
+  puncher: contre-attaquant
+  seconds_ago: il y a %{seconds}s
+  semi_pro: semi-pro
+  semi_pro_plus: semi-pro +
+  server_volleyer: serveur-volleyeur
+  simple_form:
+    options:
+      user:
+        backhand_style:
+          one_handed_backhand: Une main
+          two_handed_backhand: Deux mains
+        gender:
+          female: Femme
+          male: Homme
+          other: Autre
+        handedness:
+          lefty: Gaucher
+          righty: Droitier
+        level:
+          advanced: Avancé
+          advanced_plus: Avancé +
+          beginner: Débutant
+          beginner_plus: Débutant +
+          expert: Expert
+          expert_plus: Expert +
+          intermediate: Intermediaire
+          intermediate_plus: Intermediaire +
+          pro: Pro
+          semi_pro: Semi-Pro
+          semi_pro_plus: Semi-Pro +
+        style_of_play:
+          attacker: Attaquant
+          baseliner: Fond de court
+          grinder: Défenseur
+          puncher: Contre-Attaquant
+          server_volleyer: Serveur & volleyeur
+  singles_only:
+    one: 1 court pour simple uniquement (pas de double)
+    other: "%{count} courts pour simple uniquement (pas de double)"
+    zero: ''
   support:
     array:
       last_word_connector: " et "
@@ -542,3 +406,145 @@ fr:
       short: "%d %b %Hh%M"
       very_short: "%Hh%M"
     pm: pm
+  user_reviews:
+    new:
+      back: retour
+      backhand: revers
+      endurance: endurance
+      forehand: coup droit
+      how_is_playing: Comment a été votre match/entrainement avec %{partner}?
+      next: suivant
+      not_really: Pas vraiment..
+      of_course: Bien sûr !
+      please_rate: Évalue ton partenaire!
+      please_write: Écris quelque chose à propos de ton partenaire!
+      power: puissance
+      recommend: Recommanderiez-vous %{partner} à d'autres joueurs(es) ?
+      return: retour
+      review_now: enregistrer
+      review_skills: Évaluer %{partner}
+      serve: service
+      speed: vitesse
+      volley: vollée
+  user_steps:
+    step1:
+      about_you: À propos de vous
+      address: ADRESSE
+      birthdate: DATE DE NAISSANCE
+      first_name: PRÉNOM
+      gender: GENRE
+      height: TAILLE
+      in_cm: en cm
+      in_kg: en kg
+      last_name: NOM
+      nationality: NATIONALITÉ
+      next: suivant
+      place_birth: LIEU DE NAISSANCE
+      weight: POIDS
+    step2:
+      about_game: Votre tennis
+      backhand_style: Style de revers
+      handedness: Droitier ou Gaucher
+      level: Niveau
+      next: suivant
+      style_of_play: Style de jeu
+      your_club: Choisissez votre club
+    step3:
+      bio: Bio
+      explanation: Partagez votre expérience du tennis ici !
+      next: suivant
+      please_photo: Une photo s'il te plait ! :)
+      smile: Souriez!
+      upload: Sélectionner
+  users:
+    index:
+      backhand: revers
+      backhand_style: Revers
+      club: Club
+      country: Pays
+      filter_results: Filtrez vos résultas
+      filters: Filtres
+      forehand: coup droit
+      gender: Genre
+      handedness: Droitier/Gaucher
+      level: Niveau
+      loading_users: chargement...
+      location: Localisation
+      matching_query: correspondant(s) à votre recherche
+      no_reviews: 0 com.
+      or_use: ou utilisez
+      player: joueur
+      players:
+        one: Un joueur correspondant à votre recherche
+        other: "%{count} joueurs correspondants à votre recherche"
+        zero: Aucun joueur correspondant à votre recherche
+      players_with_location:
+        one: Un joueur
+        other: "%{count} joueurs"
+        zero: Aucun joueur
+      return: retour
+      search: Recherche
+      search_results_location: à %{location}
+      serve: service
+      style_of_play: Style de jeu
+      type_anything: Écrivez ici et tapez 'entrer'
+      volley: vollée
+    rankings:
+      first_p_html: Le système de classement que nous utilisons est le <strong>Elo
+        Ranking</strong>. Il est fait pour refléter de façon précise le niveau d'un
+        joueur.
+      got_it: Ok !
+      second_p_html: En bref, la formule ajoute/retire des points à chacun des joueurs
+        en fonction du résultat d'un match (victoire/défaite) et leurs nombres de
+        points initiaux.
+      third_p_html: L'important, si vous souhaitez que votre classement s'affine le
+        plus possible est <strong>d'enregistrer vos matchs</strong> sur Backhand!
+        ;)
+      title: Comment fonctionne le classement
+    show:
+      age: 'age: '
+      backhand: revers
+      bio: Bio
+      birthday: 'date de naissance: '
+      club: 'club: '
+      comments: Commentaires
+      endurance: endurance
+      fitness: PHYSIQUE
+      forehand: coup droit
+      height: 'taille: '
+      info: Info
+      losses: défaites
+      matches: matchs
+      no_reviews_yet: n'a pas encore reçu de commentaires
+      place_of_birth: 'lieu de naissance: '
+      points: points
+      power: puissance
+      rankings_and_stats: Classements & Statistiques
+      residence: 'residence: '
+      return: retour
+      serve: service
+      skills: Qualités
+      speed: vitesse
+      strokes: COUPS
+      style_of_play: 'style: '
+      volley: vollée
+      weight: 'poids: '
+      wins: victoires
+      with: avec
+      world_ranking: classement international
+      years_old: ans
+    users:
+      backhand: revers
+      forehand: coup droit
+      no_reviews: 0 com.
+      return: retour
+      serve: service
+      volley: vollée
+  wicked:
+    step1: step1
+    step2: step2
+    step3: step3
+  with_lights:
+    one: 1 court avec éclairage
+    other: "%{count} courts avec éclairage"
+    zero: aucun court avec éclairage
