@@ -453,17 +453,20 @@ en:
       upload: Upload Picture
   users:
     index:
+      backhand: backhand
       backhand_style: Backhand style
       club: Club
       country: Country
       filter_results: Filter your results
       filters: Filters
+      forehand: forehand
       gender: Gender
       handedness: Handedness
       level: Level
       loading_users: loading...
       location: Location
       matching_query: matching your query
+      no_reviews: 0 com.
       or_use: or use
       player: player
       players:
@@ -474,10 +477,13 @@ en:
         one: One player
         other: "%{count} players"
         zero: No players
+      return: return
       search: Search
       search_results_location: in %{location}
+      serve: serve
       style_of_play: Style of play
       type_anything: Type in anything and hit enter
+      volley: volley
     rankings:
       first_p_html: The ranking system we use is the <strong>Elo Ranking</strong>.
         It is designed to reflect as accurately as possible the level of a player
