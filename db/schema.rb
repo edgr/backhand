@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_08_184918) do
+ActiveRecord::Schema.define(version: 2020_02_09_132835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 2020_02_08_184918) do
     t.integer "maximum_level"
     t.string "status"
     t.index ["user_id"], name: "index_callouts_on_user_id"
+  end
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "clubs", force: :cascade do |t|
@@ -134,6 +140,16 @@ ActiveRecord::Schema.define(version: 2020_02_08_184918) do
     t.index ["player_2_id"], name: "index_matches_on_player_2_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id"
+    t.bigint "chat_room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "user_reviews", force: :cascade do |t|
     t.bigint "sender_id"
     t.bigint "receiver_id"
@@ -215,6 +231,8 @@ ActiveRecord::Schema.define(version: 2020_02_08_184918) do
   add_foreign_key "matches", "clubs"
   add_foreign_key "matches", "users", column: "player_1_id"
   add_foreign_key "matches", "users", column: "player_2_id"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "user_reviews", "users", column: "receiver_id"
   add_foreign_key "user_reviews", "users", column: "sender_id"
   add_foreign_key "users", "clubs"
