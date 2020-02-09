@@ -1,9 +1,5 @@
 ---
 fr:
-  lefty: "gaucher"
-  righty: "droitier"
-  one_handed_backhand: "revers à une main"
-  two_handed_backhand: "revers à 2 mains"
   activerecord:
     errors:
       messages:
@@ -49,7 +45,7 @@ fr:
     - ven
     - sam
     abbr_month_names:
-    -
+    - 
     - jan.
     - fév.
     - mar.
@@ -77,7 +73,7 @@ fr:
       medium_long: "%e %b %Y"
       short: "%e %b"
     month_names:
-    -
+    - 
     - janvier
     - février
     - mars
@@ -246,6 +242,7 @@ fr:
     zero: aucun court couvert
   intermediate: intermediaire
   intermediate_plus: intermediaire +
+  lefty: gaucher
   matches:
     index:
       match_date: "%{match_date}"
@@ -338,6 +335,7 @@ fr:
     precision:
       format:
         delimiter: ''
+  one_handed_backhand: revers à une main
   pages:
     welcome:
       first_p_html: Merci d'avoir créé ton compte.<br>N'oublie pas d'inviter tes ami(e)s !
@@ -349,6 +347,7 @@ fr:
     zero: ''
   pro: pro
   puncher: contre-attaquant
+  righty: droitier
   seconds_ago: il y a %{seconds}s
   semi_pro: semi-pro
   semi_pro_plus: semi-pro +
@@ -403,6 +402,7 @@ fr:
       short: "%d %b %Hh%M"
       very_short: "%Hh%M"
     pm: pm
+  two_handed_backhand: revers à 2 mains
   user_reviews:
     new:
       back: retour

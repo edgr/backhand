@@ -1,9 +1,5 @@
 ---
 es:
-  lefty: "zurdo"
-  righty: "diestro"
-  one_handed_backhand: "revès con 1 mano"
-  two_handed_backhand: "revès con 2 manos"
   activerecord:
     errors:
       messages:
@@ -49,7 +45,7 @@ es:
     - vie
     - sáb
     abbr_month_names:
-    -
+    - 
     - ene
     - feb
     - mar
@@ -77,7 +73,7 @@ es:
       medium_long: "%e %b %Y"
       short: "%-d %b"
     month_names:
-    -
+    - 
     - enero
     - febrero
     - marzo
@@ -244,6 +240,7 @@ es:
     zero: ninguna pista interior
   intermediate: intermediario
   intermediate_plus: intermediario +
+  lefty: zurdo
   matches:
     index:
       match_date: "%{match_date}"
@@ -340,6 +337,7 @@ es:
     precision:
       format:
         delimiter: ''
+  one_handed_backhand: revès con 1 mano
   pages:
     welcome:
       first_p_html: Gracias por haber creido tu cuenta.<br>¡No olvides de invitar a tus amigos/as!
@@ -351,6 +349,7 @@ es:
     zero: ''
   pro: pro
   puncher: contra-atacante
+  righty: diestro
   seconds_ago: hace %{seconds}s
   semi_pro: semi-pro
   semi_pro_plus: semi-pro +
@@ -405,6 +404,7 @@ es:
       short: "%-d de %b %H:%M"
       very_short: "%Hh%M"
     pm: pm
+  two_handed_backhand: revès con 2 manos
   user_reviews:
     new:
       back: atrás
