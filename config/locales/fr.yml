@@ -5,10 +5,8 @@ fr:
       messages:
         record_invalid: 'La validation a échoué : %{errors}'
         restrict_dependent_destroy:
-          has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
-            dépendants existent
-          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
-            dépendant(e) existe
+          has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent
+          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record} dépendant(e) existe
   advanced: avancé(e)
   advanced_plus: avancé(e) +
   attacker: attaquant
@@ -20,8 +18,7 @@ fr:
       already_found: déjà trouvé
       are_you_sure: Es-tu sûr(e)?
       contact: contacter
-      no_callouts_html: "Désolé, il n'y a pas de Callouts pour le moment \U0001F622!<br>Créé
-        ton propre Callout !"
+      no_callouts_html: "Désolé, il n'y a pas de Callouts pour le moment \U0001F622!<br>Créé ton propre Callout !"
       remove: supprimer
       sorry_found: "%{name} a déjà trouvé quelqu'un !"
     new:
@@ -31,8 +28,7 @@ fr:
       send: envoyer
   clubs:
     index:
-      no_clubs: Nous n'avons pas encore recensé les clubs dans cette zone. Faites-le
-        nous savoir !
+      no_clubs: Nous n'avons pas encore recensé les clubs dans cette zone. Faites-le nous savoir !
     show:
       courts: Courts
   courts_count:
@@ -207,11 +203,8 @@ fr:
   expert_plus: expert +
   favorite_players:
     index:
-      add_favorite_html: ajoute un joueur favori en cliquant sur l'étoile sur son
-        profil !
-      first_p_html: Ceci est votre liste de joueurs favoris. Cette liste est particulièrement
-        utile pour les <strong>Callouts</strong>. Vous pouvez y sélectionner  "mes
-        favoris" afin d'envoyer votre callout uniquement à vos joueurs préférés.
+      add_favorite_html: ajoute un joueur favori en cliquant sur l'étoile sur son profil !
+      first_p_html: Ceci est votre liste de joueurs favoris. Cette liste est particulièrement utile pour les <strong>Callouts</strong>. Vous pouvez y sélectionner  "mes favoris" afin d'envoyer votre callout uniquement à vos joueurs préférés.
       title: Favorite Players
   footer:
     copyright: "© Tous droits réservés - 2020"
@@ -287,8 +280,7 @@ fr:
     rankings: Classements
     see_more: Voir plus
   new_callout_email_subject: "%{sender} Veut Jouer Au Tennis - Backhandapp.com"
-  new_confirmed_match_result_email_subject: Résultat Du Match Confirmé Par %{sender}
-    - Backhandapp.com
+  new_confirmed_match_result_email_subject: Résultat Du Match Confirmé Par %{sender} - Backhandapp.com
   new_event_email_subject: Match/Entrainement avec %{inviter} - Backhandapp.com
   new_match_result_email_subject: Nouveau Résultat De Match De %{sender} - Backhandapp.com
   new_player_review_email_subject: Nouveau Commentaire de %{sender} - Backhandapp.com
@@ -344,8 +336,7 @@ fr:
         delimiter: ''
   pages:
     welcome:
-      first_p_html: Merci d'avoir créé ton compte.<br>N'oublie pas d'inviter tes ami(e)s
-        !
+      first_p_html: Merci d'avoir créé ton compte.<br>N'oublie pas d'inviter tes ami(e)s !
       home_link: page d'accueil
       title: Bienvenue %{current_user}!
   player_count:
@@ -359,6 +350,8 @@ fr:
   semi_pro_plus: semi-pro +
   server_volleyer: serveur-volleyeur
   simple_form:
+    error_notification:
+      default_message: il y a un problème
     options:
       user:
         backhand_style:
@@ -490,16 +483,10 @@ fr:
       type_anything: Écrivez ici et tapez 'entrer'
       volley: vollée
     rankings:
-      first_p_html: Le système de classement que nous utilisons est le <strong>Elo
-        Ranking</strong>. Il est fait pour refléter de façon précise le niveau d'un
-        joueur.
+      first_p_html: Le système de classement que nous utilisons est le <strong>Elo Ranking</strong>. Il est fait pour refléter de façon précise le niveau d'un joueur.
       got_it: Ok !
-      second_p_html: En bref, la formule ajoute/retire des points à chacun des joueurs
-        en fonction du résultat d'un match (victoire/défaite) et leurs nombres de
-        points initiaux.
-      third_p_html: L'important, si vous souhaitez que votre classement s'affine le
-        plus possible est <strong>d'enregistrer vos matchs</strong> sur Backhand!
-        ;)
+      second_p_html: En bref, la formule ajoute/retire des points à chacun des joueurs en fonction du résultat d'un match (victoire/défaite) et leurs nombres de points initiaux.
+      third_p_html: L'important, si vous souhaitez que votre classement s'affine le plus possible est <strong>d'enregistrer vos matchs</strong> sur Backhand! ;)
       title: Comment fonctionne le classement
     show:
       age: 'age: '

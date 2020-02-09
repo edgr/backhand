@@ -18,8 +18,7 @@ en:
       already_found: already found
       are_you_sure: Are you sure?
       contact: contact
-      no_callouts_html: "Sorry but there is not callouts at the moment \U0001F622.<br>Callout
-        to other players!"
+      no_callouts_html: "Sorry but there is not callouts at the moment \U0001F622.<br>Callout to other players!"
       remove: remove
       sorry_found: "%{name} already found someone!"
     new:
@@ -203,9 +202,7 @@ en:
   favorite_players:
     index:
       add_favorite_html: add a favorite by clicking on the star of a player's profile!
-      first_p_html: This is your list of Favorite Players. This list is especially
-        useful in <strong>Callouts</strong>. There, you can select "my favorites"
-        in order to send a callout only to your favorite players.
+      first_p_html: This is your list of Favorite Players. This list is especially useful in <strong>Callouts</strong>. There, you can select "my favorites" in order to send a callout only to your favorite players.
       title: Favorite Players
   footer:
     copyright: "© Copyright - 2020"
@@ -281,8 +278,7 @@ en:
     rankings: Rankings
     see_more: See more
   new_callout_email_subject: "%{sender} Wants To Play Tennis - Backhandapp.com"
-  new_confirmed_match_result_email_subject: Match Result Confirmed by from %{sender}
-    - Backhandapp.com
+  new_confirmed_match_result_email_subject: Match Result Confirmed by from %{sender} - Backhandapp.com
   new_event_email_subject: Game/Training with with %{inviter} - Backhandapp.com
   new_match_result_email_subject: New Match Result from %{sender} - Backhandapp.com
   new_player_review_email_subject: New Review from %{sender} - Backhandapp.com
@@ -338,8 +334,7 @@ en:
         delimiter: ''
   pages:
     welcome:
-      first_p_html: Thank you for creating your account.<br>Make sure to invite your
-        friends!
+      first_p_html: Thank you for creating your account.<br>Make sure to invite your friends!
       home_link: homepage
       title: Welcome %{current_user}!
   player_count:
@@ -353,6 +348,8 @@ en:
   semi_pro_plus: semi-pro +
   server_volleyer: server-volleyer
   simple_form:
+    error_notification:
+      default_message: something's wrong
     options:
       user:
         backhand_style:
@@ -445,8 +442,7 @@ en:
       your_club: Select your club
     step3:
       bio: Bio
-      explanation: This is where you can let other players know a bit more. For example,
-        when/where you prefer to play, how long you've been playing tennis, etc.
+      explanation: This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc.
       next: next
       please_photo: A profile picture is mandatory :)
       smile: Smile and shine!
@@ -485,15 +481,10 @@ en:
       type_anything: Type in anything and hit enter
       volley: volley
     rankings:
-      first_p_html: The ranking system we use is the <strong>Elo Ranking</strong>.
-        It is designed to reflect as accurately as possible the level of a player
-        overtime.
+      first_p_html: The ranking system we use is the <strong>Elo Ranking</strong>. It is designed to reflect as accurately as possible the level of a player overtime.
       got_it: Got it!
-      second_p_html: In short, the formula adds/remove points to each player based
-        on the outcome of the match (win/lose) and their initial points.
-      third_p_html: The important thing to do if you want your ranking to be more
-        and more accurate is to <strong>record your matches</strong> on Backhand!
-        ;)
+      second_p_html: In short, the formula adds/remove points to each player based on the outcome of the match (win/lose) and their initial points.
+      third_p_html: The important thing to do if you want your ranking to be more and more accurate is to <strong>record your matches</strong> on Backhand! ;)
       title: How does rankings work?
     show:
       age: 'age: '
