@@ -49,7 +49,7 @@
           <%= user_presenter.level(@user.level) %>
         </div>
         <div class="level-style">
-          <%= @user.style_of_play %>
+          <%= user_presenter.style(@user.style_of_play) %>
         </div>
       </div>
 
@@ -109,7 +109,7 @@
           <p>
             <%= t('.style_of_play') %>
             <span class="details-info">
-              <%= @user.handedness %> - <%= @user.backhand_style %>
+              <%= user_presenter.handedness(@user.handedness) %> - <%= user_presenter.backhand_style(@user.backhand_style) %>
             </span>
           </p>
           <p>
