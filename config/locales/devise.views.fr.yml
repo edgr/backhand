@@ -48,7 +48,7 @@ fr:
     mailer:
       confirmation_instructions:
         action: Confirmer mon courriel
-        greeting: Bienvenue %{recipient} !
+        greeting: Bienvenue sur Backhand !
         instruction: 'Vous pouvez confirmer votre courriel grâce au lien ci-dessous :'
         subject: Instructions de confirmation
       email_changed:
