@@ -1,10 +1,10 @@
 function insertMessage(message) {
-  const messagesContainer = document.querySelector('.messages');
+  var messagesContainer = document.querySelector('.messages');
   messagesContainer.insertAdjacentHTML('beforeend', message);
-  const input = document.querySelector('#message_content');
+  var input = document.querySelector('#message_content');
   input.value = '';
   input.blur();
-  scrollLastMessageIntoView();
+  // scrollLastMessageIntoView();
 }
 
 
