@@ -26,6 +26,8 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :favorite_players, through: :favorites, source: :favorited, source_type: 'User'
 
+  has_many :messages
+
   validates :email, presence: true,
                     uniqueness: true,
                     format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }

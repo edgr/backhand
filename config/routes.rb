@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'chat_rooms/show'
   require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do
     mount Sidekiq::Web => '/sidekiq'
@@ -36,6 +37,10 @@ Rails.application.routes.draw do
     patch '/callouts/:id/status', to: 'callouts#status', as: 'status'
 
     resources :favorite_players, only: [:create, :destroy]
+
+    resources :chat_rooms, only: :show do
+      resources :messages, only: :create
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
