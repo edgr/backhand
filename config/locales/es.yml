@@ -1,328 +1,40 @@
+---
 es:
-  player_count:
-    zero: ""
-    one: "1 jugador/ra"
-    other: "%{count} jugadores/as "
-  courts_count:
-    zero: ""
-    one: "%{count} pista"
-    other: "%{count} pistas"
-  indoors_count:
-    zero: "ninguna pista interior"
-    one: "1 pista interior"
-    other: "%{count} pistas interior"
-  with_lights:
-    zero: "ninguna pista con luz"
-    one: "1 pista con luz"
-    other: "%{count} pistas con luz"
-  singles_only:
-    zero: ""
-    one: "1 pista para individuales (no dobles)"
-    other: "%{count} pistas para individuales (no dobles)"
-  member_at: "socio en"
-  new_event_email_subject: "Partido/Entreno con %{inviter} - Backhandapp.com"
-  new_player_review_email_subject: "Nuevo Comentario de %{sender} - Backhandapp.com"
-  new_match_result_email_subject: "Nuevo Resultado De Partido De %{sender} - Backhandapp.com"
-  new_confirmed_match_result_email_subject: "Resultado Del Partido Confirmado Por %{sender} - Backhandapp.com"
-  new_callout_email_subject: "%{sender} Quiere Jugar Al Tenis - Backhandapp.com"
-  event_date: "%{event_date}"
-  event_time: "%{event_time}"
-  beginner: "principante"
-  beginner_plus: "principante +"
-  intermediate: "intermediario"
-  intermediate_plus: "intermediario +"
-  advanced: "avanzado"
-  advanced_plus: "avanzado +"
-  expert: "expert"
-  expert_plus: "expert +"
-  semi_pro: "semi-pro"
-  semi_pro_plus: "semi-pro +"
-  pro: "pro"
-  grinder: "defensor"
-  baseliner: "fundo"
-  puncher: "contra-atacante"
-  server_volleyer: "saque-volea"
-  attacker: "atacante"
-  seconds_ago: "hace %{seconds}s"
-  minutes_ago: "hace %{minutes}m"
-  hours_ago: "hace %{hours}h"
-  home:
-    home_title_html: "JUEGA MÁS<br>JUEGA MEJOR."
-    join_us: "APÚNTATE"
-    subtitle_1: "Busca jugadores..."
-    browse_players: "busca jugadores a tu alrededor"
-    view_profile: "ve los perfiles de jugadores y contactalos"
-    organize_game: "¡organiza tu juego y juega!"
-    subtitle_2: "...¡Y guarda tus partidos!"
-    save_score: "guarda el score y el ganador"
-    new_ranking: "¡obtén tu nuevo ranking instantamente!"
-    home_logged_in_title_html: "INVITA TUS<br>AMIGOS."
-    invite: "INVITAR"
-    thank_you: "¡Gracias por adelantado!"
-    share_facebook: "Compartir en Facebook"
-    share_twitter: "Compartir en Twitter"
-    share_linkedin: "Compartir en LinkedIn"
-  pages:
-    welcome:
-      title: "¡Bienvenido %{current_user}!"
-      first_p_html: "Gracias por haber creido tu cuenta.<br>¡No olvides de invitar a tus amigos/as!"
-      home_link: "página principal"
-  footer:
-    tagline_1: "Hecho con"
-    tagline_2: "en Barcelona"
-    email: "hello@backhandapp.com"
-    copyright: "© Copyright - 2020"
-  navbar:
-    players: "Jugadores"
-    rankings: "Clasificaciones"
-    matches: "Partidos"
-    clubs: "Clubes"
-    callouts: "Callouts"
-    my_profile: "Mi Perfil"
-    my_matches: "Mis Partidos"
-    my_calendar: "Mi Agenda"
-    my_favorites: "Mis Favoritos"
-    logout: "Cerrar Sesión"
-    login: "Iniciar"
-    see_more: "Ver más"
-    language: Idióma
-  users:
-    show:
-      info: "Info"
-      bio: "Bio"
-      age: "edad: "
-      years_old: "años"
-      birthday: "fecha de nacimiento: "
-      place_of_birth: "lugar de nacimiento: "
-      height: "altura: "
-      weight: "peso: "
-      style_of_play: "estilo: "
-      residence: "domicilio: "
-      world_ranking: "clasificación internacional"
-      with: "con"
-      points: "puntos"
-      skills: "Habilidades"
-      strokes: "STROKES"
-      serve: "servicio"
-      return: "resto"
-      forehand: "drive"
-      backhand: "revés"
-      volley: "volea"
-      fitness: "FITNESS"
-      speed: "velocidad"
-      power: "potencia"
-      endurance: "resistencia"
-      comments: "Comentarios"
-      no_reviews_yet: "no ha recibido comentarios"
-      matches: "partidos"
-      wins: "victorias"
-      losses: "pérdidas"
-      rankings_and_stats: "Clasificaciones & Estadísticas"
-      club: "club: "
-    rankings:
-      title: "¿Cómo funciona la clasificación?"
-      first_p_html: "El sistema de clasificación que utilizamos es el <strong> Elo Ranking </strong>. Está diseñado para reflejar con la mayor precisión posible el nivel de un jugador al largo tiempo."
-      second_p_html: "En pocas palabras, la fórmula agrega / quita puntos para cada jugador en función del resultado del partido (victoria / derrota) y sus puntos iniciales."
-      third_p_html: "¡Lo importante que debe hacer si desea que su clasificación sea más y más precisa es <strong> grabar sus partidos </strong> en Backhand! ;)"
-      got_it: "¡Entendido!"
-    index:
-      player: "jugador"
-      players:
-        zero:  'No hay jugadores que coincidan con tu consulta'
-        one:   'Un jugador coincida con tu consulta'
-        other: '%{count} jugadores que coinciden con su consulta'
-      players_with_location:
-        zero:  'Ningún jugador'
-        one:   'Un jugador'
-        other: '%{count} jugadores'
-      matching_query: "que coinciden con tu búsqueda"
-      type_anything: "Escribe aquí y presiona enter"
-      or_use: "o usar"
-      filters: "Filtros"
-      filter_results: "Filtra sus resultados"
-      club: "Club"
-      search_results_location: "en %{location}"
-      location: "Localización"
-      country: "País"
-      level: "Nivel"
-      style_of_play: "Estilo de juego"
-      handedness: "Diestro/Zurdo"
-      backhand_style: "Estilo de revés"
-      gender: "Género"
-      search: "Buscar"
-      loading_users: "cargando..."
-    users:
-      serve: "servicio"
-      return: "resto"
-      forehand: "drive"
-      backhand: "revés"
-      volley: "volea"
-      no_reviews: "0 com."
-  matches:
-    index:
-      match_date: "%{match_date}"
-    new:
-      when: "¿CUÁNDO JUGASTE?"
-      where: "¿DÓNDE JUGASTE?"
-      whom: "¿CON QUIÉN?"
-      won: "¿QUIÉN GANÓ?"
-      sets: "¿CUANTOS SETS JUGARON?"
-      opponent: "Adversario"
-      set: "set"
-      record: "guardar match"
-    lost_matches:
-      match_date: "%{match_date}"
-      no_lost_matches: "No perdiste ningún partido. WOW!"
-    won_matches:
-      match_date: "%{match_date}"
-      no_won_matches: "No ganaste ningún partido. ¡Arregla esto!"
-    pending_matches:
-      match_date: "%{match_date}"
-      no_pending_matches: "No tienes partidos pendientes"
-  events:
-    player_events:
-      today: "Hoy es el %{date}"
-      event_date: "%{event_date}"
-      event_time: "%{event_time}"
-      are_you_sure: "¿Estás seguro?"
-      no_upcoming_events: "No tienes ningún partido/entrenamiento planeado"
-    new:
-      who: "¿CON QUIÉN VAS A JUGAR?"
-      when: "¿CUANDO VAS A JUGAR?"
-      where: "¿DÓNDE VAS A JUGAR?"
-      remove_player: "quitar jugador"
-      add_player: "añadir jugador"
-      create_event: "creer evento"
-    edit:
-      who: "WHO WILL YOU PLAY WITH?"
-      when: "WHEN WILL YOU PLAY?"
-      where: "WHERE WILL YOU PLAY?"
-      remove_player: "quitar jugador"
-      add_player: "añadir jugador"
-      update_event: "actualizar"
-  clubs:
-    index:
-      no_clubs: "No hay clubes en esta área todavía. ¡Haznos saber!"
-    show:
-      courts: "Pistas"
-  callouts:
-    index:
-      contact: "contactar"
-      remove: "quitar"
-      are_you_sure: "¿Estás seguro/a?"
-      no_callouts_html: "Lo siento, noy hay Callouts por ahora 😢.<br>Crea tu proprio Callout !"
-      already_found: "¡ya he quedado!"
-      sorry_found: "%{name} ya ha quedado!"
-    new:
-      my_club: "jugadores/as en mi club"
-      everyone: "todos/as cerca de mi"
-      my_favorites: "mis jugadores favoritos"
-      send: "enviar"
-  user_reviews:
-    new:
-      recommend: "¿Recomendarías %{partner} a otros jugadores para jugar?"
-      not_really: "No.."
-      of_course: "¡Por supuesto!"
-      how_is_playing: "¿Como es jugar con %{partner}?"
-      review_skills: "Repasa las habilidades de %{partner}"
-      serve: "servicio"
-      return: "resto"
-      forehand: "drive"
-      backhand: "revés"
-      volley: "volea"
-      speed: "velocidad"
-      power: "potencia"
-      endurance: "resistencia"
-      next: "siguiente"
-      back: "atrás"
-      review_now: "revisar ahora"
-      please_write: "¡Escribe algo sobre tu compañero/a!"
-      please_rate: "¡Evalúa tu compañero/a!"
-  user_steps:
-    step1:
-      about_you: "Sobre ti"
-      first_name: "NOMBRE"
-      last_name: "APPELLIDO"
-      address: "DIRECCION"
-      nationality: "NATIONALIDAD"
-      place_birth: "LUGAR DE NACIMIENTO"
-      birthdate: "FECHA DE NACIMIENTO"
-      gender: "GENERO"
-      height: "TAMANO"
-      weight: "PESO"
-      in_cm: "en cm"
-      in_kg: "en kg"
-      next: "siguiente"
-    step2:
-      about_game: "Tu tenis"
-      level: "Nivel"
-      style_of_play: "Estilo de juego"
-      handedness: "Diestro o Zurdo"
-      backhand_style: "Estilo de revés"
-      your_club: "Selectionna tu club"
-      next: "siguiente"
-    step3:
-      smile: "¡Una sonrisa!"
-      upload: "Selectionar"
-      bio: "Bio"
-      explanation: "¡Comparte tu experiencia del tenis aquí!"
-      next: "siguiente"
-      please_photo: "¡Una foto por favor! :)"
-  favorite_players:
-    index:
-      add_favorite_html: "¡Añades un jugador favorito cliqueando en la estralla en su perfil!"
-      title: "Favorite Players"
-      first_p_html: "Esto es tu lista de jugadores favoritos. Está lista es muy útil para <strong>Callouts</strong>. Allí, puedes selectionar \"mis favoritos\" para enviar un callout solo a tus jugadores favoritos."
-  wicked:
-    step1: "step1"
-    step2: "step2"
-    step3: "step3"
-  simple_form:
-    options:
-      user:
-        handedness:
-          righty: "Diestro"
-          lefty: "Zurdo"
-        backhand_style:
-          one_handed_backhand: "Una mano"
-          two_handed_backhand: "Dos manos"
-        gender:
-          male: "Hombre"
-          female: "Mujer"
-          other: "Otro"
-        level:
-          beginner: "Principante"
-          beginner_plus: "Principante +"
-          intermediate: "Intermediario"
-          intermediate_plus: "Intermediario +"
-          advanced: "Avanzado"
-          advanced_plus: "Avanzado +"
-          expert: "Experto"
-          expert_plus: "Experto +"
-          semi_pro: "Semi-Pro"
-          semi_pro_plus: "Semi-Pro +"
-          pro: "Pro"
-        style_of_play:
-          baseliner: "Fundo"
-          attacker: "Atacante"
-          grinder: "Defensor"
-          server_volleyer: "Servidor & volleyeur"
-          puncher: "Contra-Atacante"
-  errors:
-    internal_server_error:
-      first_p: "Parece que nos hemos perdido ese tiro ...."
-      second_p_html: "Detectaremos el error y lo arreglaremos lo antes posible. Pero no dudes en hacérnoslo saber también para ayudarnos a investigar. 🕵️‍♂️ </p><p>A tu servicio,<br>The Backhand Team</p>"
-    not_found:
-      first_p: "No, no puedes saltar sobre la red y jugar un tiro allí... 🤪"
-      second_p: "Más en serio, parece que algo estuvo mal con tu solicitud. Si estás seguro de lo que estabas haciendo, ¡avísenos!"
-      third_p_html: "A tu servicio,<br>The Backhand Team"
   activerecord:
     errors:
       messages:
         record_invalid: 'La validación falló: %{errors}'
         restrict_dependent_destroy:
-          has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
+          has_one: No se puede eliminar el registro porque existe un %{record} dependiente
+  advanced: avanzado
+  advanced_plus: avanzado +
+  attacker: atacante
+  baseliner: fundo
+  beginner: principante
+  beginner_plus: principante +
+  callouts:
+    index:
+      already_found: "¡ya he quedado!"
+      are_you_sure: "¿Estás seguro/a?"
+      contact: contactar
+      no_callouts_html: "Lo siento, noy hay Callouts por ahora \U0001F622.<br>Crea tu proprio Callout !"
+      remove: quitar
+      sorry_found: "%{name} ya ha quedado!"
+    new:
+      everyone: todos/as cerca de mi
+      my_club: jugadores/as en mi club
+      my_favorites: mis jugadores favoritos
+      send: enviar
+  clubs:
+    index:
+      no_clubs: No hay clubes en esta área todavía. ¡Haznos saber!
+    show:
+      courts: Pistas
+  courts_count:
+    one: "%{count} pista"
+    other: "%{count} pistas"
+    zero: ''
   date:
     abbr_day_names:
     - dom
@@ -333,7 +45,7 @@ es:
     - vie
     - sáb
     abbr_month_names:
-    -
+    - 
     - ene
     - feb
     - mar
@@ -357,11 +69,11 @@ es:
     formats:
       default: "%-d/%-m/%Y"
       long: "%-d de %B de %Y"
-      medium_long: "%e %b %Y"
       medium: "%e de %B"
+      medium_long: "%e %b %Y"
       short: "%-d %b"
     month_names:
-    -
+    - 
     - enero
     - febrero
     - marzo
@@ -393,43 +105,43 @@ es:
         one: casi 1 año
         other: casi %{count} años
       half_a_minute: medio minuto
-      less_than_x_seconds:
-        one: menos de 1 segundo
-        other: menos de %{count} segundos
       less_than_x_minutes:
         one: menos de 1 minuto
         other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
       over_x_years:
         one: más de 1 año
         other: más de %{count} años
-      x_seconds:
-        one: 1 segundo
-        other: "%{count} segundos"
-      x_minutes:
-        one: 1 minuto
-        other: "%{count} minutos"
       x_days:
         one: 1 día
         other: "%{count} días"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
       x_months:
         one: 1 mes
         other: "%{count} meses"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
       x_years:
         one: 1 año
         other: "%{count} años"
     prompts:
-      second: Segundo
-      minute: Minuto
-      hour: Hora
       day: Día
+      hour: Hora
+      minute: Minuto
       month: Mes
+      second: Segundo
       year: Año
   errors:
     format: "%{attribute} %{message}"
     messages:
       accepted: debe ser aceptado
       blank: no puede estar en blanco
-      confirmation: no coincide
+      confirmation: no coincide con %{attribute}
       empty: no puede estar vacío
       equal_to: debe ser igual a %{count}
       even: debe ser par
@@ -462,6 +174,42 @@ es:
       header:
         one: No se pudo guardar este/a %{model} porque se encontró 1 error
         other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
+  event_date: "%{event_date}"
+  event_time: "%{event_time}"
+  events:
+    edit:
+      add_player: añadir jugador
+      remove_player: quitar jugador
+      update_event: actualizar
+      when: WHEN WILL YOU PLAY?
+      where: WHERE WILL YOU PLAY?
+      who: WHO WILL YOU PLAY WITH?
+    new:
+      add_player: añadir jugador
+      create_event: creer evento
+      remove_player: quitar jugador
+      when: "¿CUANDO VAS A JUGAR?"
+      where: "¿DÓNDE VAS A JUGAR?"
+      who: "¿CON QUIÉN VAS A JUGAR?"
+    player_events:
+      are_you_sure: "¿Estás seguro?"
+      event_date: "%{event_date}"
+      event_time: "%{event_time}"
+      no_upcoming_events: No tienes ningún partido/entrenamiento planeado
+      today: Hoy es el %{date}
+  expert: expert
+  expert_plus: expert +
+  favorite_players:
+    index:
+      add_favorite_html: "¡Añades un jugador favorito cliqueando en la estralla en su perfil!"
+      first_p_html: Esto es tu lista de jugadores favoritos. Está lista es muy útil para <strong>Callouts</strong>. Allí, puedes selectionar "mis favoritos" para enviar un callout solo a tus jugadores favoritos.
+      title: Favorite Players
+  footer:
+    copyright: "© Copyright - 2020"
+    email: hello@backhandapp.com
+    tagline_1: Hecho con
+    tagline_2: en Barcelona
+  grinder: defensor
   helpers:
     select:
       prompt: Por favor seleccione
@@ -469,6 +217,72 @@ es:
       create: Crear %{model}
       submit: Guardar %{model}
       update: Actualizar %{model}
+  home:
+    browse_players: busca jugadores a tu alrededor
+    home_logged_in_title_html: INVITA TUS<br>AMIGOS.
+    home_title_html: JUEGA MÁS<br>JUEGA MEJOR.
+    invite: INVITAR
+    join_us: APÚNTATE
+    new_ranking: "¡obtén tu nuevo ranking instantamente!"
+    organize_game: "¡organiza tu juego y juega!"
+    save_score: guarda el score y el ganador
+    share_facebook: Compartir en Facebook
+    share_linkedin: Compartir en LinkedIn
+    share_twitter: Compartir en Twitter
+    subtitle_1: Busca jugadores...
+    subtitle_2: "...¡Y guarda tus partidos!"
+    thank_you: "¡Gracias por adelantado!"
+    view_profile: ve los perfiles de jugadores y contactalos
+  hours_ago: hace %{hours}h
+  indoors_count:
+    one: 1 pista interior
+    other: "%{count} pistas interior"
+    zero: ninguna pista interior
+  intermediate: intermediario
+  intermediate_plus: intermediario +
+  lefty: zurdo
+  matches:
+    index:
+      match_date: "%{match_date}"
+    lost_matches:
+      match_date: "%{match_date}"
+      no_lost_matches: No perdiste ningún partido. WOW!
+    new:
+      opponent: Adversario
+      record: guardar match
+      set: set
+      sets: "¿CUANTOS SETS JUGARON?"
+      when: "¿CUÁNDO JUGASTE?"
+      where: "¿DÓNDE JUGASTE?"
+      whom: "¿CON QUIÉN?"
+      won: "¿QUIÉN GANÓ?"
+    pending_matches:
+      match_date: "%{match_date}"
+      no_pending_matches: No tienes partidos pendientes
+    won_matches:
+      match_date: "%{match_date}"
+      no_won_matches: No ganaste ningún partido. ¡Arregla esto!
+  member_at: socio en
+  minutes_ago: hace %{minutes}m
+  navbar:
+    callouts: Callouts
+    clubs: Clubes
+    language: Idióma
+    login: Iniciar
+    logout: Cerrar Sesión
+    matches: Partidos
+    my_calendar: Mi Agenda
+    my_favorites: Mis Favoritos
+    my_matches: Mis Partidos
+    my_profile: Mi Perfil
+    players: Jugadores
+    rankings: Clasificaciones
+    see_more: Ver más
+  new_callout_email_subject: "%{sender} Quiere Jugar Al Tenis - Backhandapp.com"
+  new_confirmed_match_result_email_subject: Resultado Del Partido Confirmado Por %{sender} - Backhandapp.com
+  new_event_email_subject: Partido/Entreno con %{inviter} - Backhandapp.com
+  new_match_result_email_subject: Nuevo Resultado De Partido De %{sender} - Backhandapp.com
+  new_player_review_email_subject: Nuevo Comentario de %{sender} - Backhandapp.com
   number:
     currency:
       format:
@@ -523,6 +337,60 @@ es:
     precision:
       format:
         delimiter: ''
+  one_handed_backhand: revès con 1 mano
+  pages:
+    welcome:
+      first_p_html: Gracias por haber creido tu cuenta.<br>¡No olvides de invitar a tus amigos/as!
+      home_link: página principal
+      title: "¡Bienvenido %{current_user}!"
+  player_count:
+    one: 1 jugador/ra
+    other: "%{count} jugadores/as "
+    zero: ''
+  pro: pro
+  puncher: contra-atacante
+  righty: diestro
+  seconds_ago: hace %{seconds}s
+  semi_pro: semi-pro
+  semi_pro_plus: semi-pro +
+  server_volleyer: saque-volea
+  simple_form:
+    error_notification:
+      default_message: algo está malo
+    options:
+      user:
+        backhand_style:
+          one_handed_backhand: Una mano
+          two_handed_backhand: Dos manos
+        gender:
+          female: Mujer
+          male: Hombre
+          other: Otro
+        handedness:
+          lefty: Zurdo
+          righty: Diestro
+        level:
+          advanced: Avanzado
+          advanced_plus: Avanzado +
+          beginner: Principante
+          beginner_plus: Principante +
+          expert: Experto
+          expert_plus: Experto +
+          intermediate: Intermediario
+          intermediate_plus: Intermediario +
+          pro: Pro
+          semi_pro: Semi-Pro
+          semi_pro_plus: Semi-Pro +
+        style_of_play:
+          attacker: Atacante
+          baseliner: Fundo
+          grinder: Defensor
+          puncher: Contra-Atacante
+          server_volleyer: Servidor & volleyeur
+  singles_only:
+    one: 1 pista para individuales (no dobles)
+    other: "%{count} pistas para individuales (no dobles)"
+    zero: ''
   support:
     array:
       last_word_connector: " y "
@@ -536,4 +404,134 @@ es:
       short: "%-d de %b %H:%M"
       very_short: "%Hh%M"
     pm: pm
-
+  two_handed_backhand: revès con 2 manos
+  user_reviews:
+    new:
+      back: atrás
+      backhand: revés
+      endurance: resistencia
+      forehand: drive
+      how_is_playing: "¿Como es jugar con %{partner}?"
+      next: siguiente
+      not_really: No..
+      of_course: "¡Por supuesto!"
+      please_rate: "¡Evalúa tu compañero/a!"
+      please_write: "¡Escribe algo sobre tu compañero/a!"
+      power: potencia
+      recommend: "¿Recomendarías %{partner} a otros jugadores para jugar?"
+      return: resto
+      review_now: revisar ahora
+      review_skills: Repasa las habilidades de %{partner}
+      serve: servicio
+      speed: velocidad
+      volley: volea
+  user_steps:
+    step1:
+      about_you: Sobre ti
+      address: DIRECCION
+      birthdate: FECHA DE NACIMIENTO
+      first_name: NOMBRE
+      gender: GENERO
+      height: TAMANO
+      in_cm: en cm
+      in_kg: en kg
+      last_name: APPELLIDO
+      nationality: NATIONALIDAD
+      next: siguiente
+      place_birth: LUGAR DE NACIMIENTO
+      weight: PESO
+    step2:
+      about_game: Tu tenis
+      backhand_style: Estilo de revés
+      handedness: Diestro o Zurdo
+      level: Nivel
+      next: siguiente
+      style_of_play: Estilo de juego
+      your_club: Selectionna tu club
+    step3:
+      bio: Bio
+      explanation: "¡Comparte tu experiencia del tenis aquí!"
+      next: siguiente
+      please_photo: "¡Una foto por favor! :)"
+      smile: "¡Una sonrisa!"
+      upload: Selectionar
+  users:
+    index:
+      backhand_style: Estilo de revés
+      club: Club
+      country: País
+      filter_results: Filtra sus resultados
+      filters: Filtros
+      gender: Género
+      handedness: Diestro/Zurdo
+      level: Nivel
+      loading_users: cargando...
+      location: Localización
+      matching_query: que coinciden con tu búsqueda
+      or_use: o usar
+      player: jugador
+      players:
+        one: Un jugador coincida con tu consulta
+        other: "%{count} jugadores que coinciden con su consulta"
+        zero: No hay jugadores que coincidan con tu consulta
+      players_with_location:
+        one: Un jugador
+        other: "%{count} jugadores"
+        zero: Ningún jugador
+      search: Buscar
+      search_results_location: en %{location}
+      style_of_play: Estilo de juego
+      type_anything: Escribe aquí y presiona enter
+    rankings:
+      first_p_html: El sistema de clasificación que utilizamos es el <strong> Elo Ranking </strong>. Está diseñado para reflejar con la mayor precisión posible el nivel de un jugador al largo tiempo.
+      got_it: "¡Entendido!"
+      second_p_html: En pocas palabras, la fórmula agrega / quita puntos para cada jugador en función del resultado del partido (victoria / derrota) y sus puntos iniciales.
+      third_p_html: "¡Lo importante que debe hacer si desea que su clasificación sea más y más precisa es <strong> grabar sus partidos </strong> en Backhand! ;)"
+      title: "¿Cómo funciona la clasificación?"
+    show:
+      age: 'edad: '
+      backhand: revés
+      bio: Bio
+      birthday: 'fecha de nacimiento: '
+      club: 'club: '
+      comments: Comentarios
+      endurance: resistencia
+      fitness: FITNESS
+      forehand: drive
+      height: 'altura: '
+      info: Info
+      losses: pérdidas
+      matches: partidos
+      no_reviews_yet: no ha recibido comentarios
+      place_of_birth: 'lugar de nacimiento: '
+      points: puntos
+      power: potencia
+      rankings_and_stats: Clasificaciones & Estadísticas
+      residence: 'domicilio: '
+      return: resto
+      serve: servicio
+      skills: Habilidades
+      speed: velocidad
+      strokes: STROKES
+      style_of_play: 'estilo: '
+      volley: volea
+      weight: 'peso: '
+      wins: victorias
+      with: con
+      world_ranking: clasificación internacional
+      years_old: años
+    users:
+      backhand: revés
+      forehand: drive
+      no_reviews: 0 com.
+      return: resto
+      serve: servicio
+      volley: volea
+  wicked:
+    step1: step1
+    step2: step2
+    step3: step3
+  with_lights:
+    one: 1 pista con luz
+    other: "%{count} pistas con luz"
+    zero: ninguna pista con luz

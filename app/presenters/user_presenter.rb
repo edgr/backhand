@@ -74,4 +74,12 @@ class UserPresenter < BasePresenter
   def style(player_style)
     I18n.t(player_style)
   end
+
+  def backhand_style(player_backhand_style)
+    I18n.t(player_backhand_style)
+  end
+
+  def handedness(player_handedness)
+    I18n.t(player_handedness)
+  end
 end

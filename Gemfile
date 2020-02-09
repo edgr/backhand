@@ -21,6 +21,7 @@ gem 'select2-rails'
 gem 'gibbon'
 gem 'activerecord-typedstore'
 gem 'devise-i18n'
+gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
 
 # to select country in the sign up
 gem 'country_select'
@@ -54,6 +55,7 @@ gem 'sidekiq-failures', '~> 1.0'
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem "letter_opener"
+  gem 'i18n-tasks', '~> 0.9.30'
 end
 
 group :development, :test do
