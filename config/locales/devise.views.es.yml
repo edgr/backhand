@@ -50,7 +50,7 @@ es:
     mailer:
       confirmation_instructions:
         action: Confirmar mi cuenta
-        greeting: "¡Bienvenido %{recipient}!"
+        greeting: "¡Bienvenido en Backhand!"
         instruction: 'Usted puede confirmar el correo electrónico de su cuenta a través de este enlace:'
         subject: Instrucciones de confirmación
       email_changed:
