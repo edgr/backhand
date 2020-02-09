@@ -34,6 +34,7 @@ import { tellYourFriends } from '../components/tell_your_friends';
 // import { triggerShare } from '../components/share_profile';
 import { infiniteScroll } from '../components/infinite_scroll';
 import { hideLevel } from '../components/callout_recipients';
+import '../plugins/scroll_last_message';
 
 
 const tabs = document.querySelectorAll(".tab-underlined");

@@ -19,10 +19,8 @@
   <script>
     const scrollLastMessageIntoView = () => {
       const messages = document.querySelectorAll('.message');
-      if (messages.length > 1) {
-        const lastMessage = messages[messages.length - 1];
-        lastMessage.scrollIntoView();
-      }
+      const lastMessage = messages[messages.length - 1];
+      lastMessage.scrollIntoView();
     }
     scrollLastMessageIntoView();
     App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create({ channel: 'ChatRoomsChannel', chat_room_id: <%= @chat_room.id %>}, {
