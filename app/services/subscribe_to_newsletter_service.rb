@@ -6,7 +6,7 @@ class SubscribeToNewsletterService
   end
 
   def call
-    @gibbon.lists(@audience_id).members.upsert(
+    @gibbon.lists(@audience_id).members(Digest::MD5.hexdigest(@user.email.downcase)).upsert(
       body: {
         email_address: @user.email,
         status: "subscribed"
