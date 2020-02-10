@@ -8,11 +8,11 @@ const maxLevel = document.getElementById('callout_maximum_level');
 const startSlider = () => {
   if (slider) {
     noUiSlider.create(slider, {
-        start: [400, 2000],
+        start: [600, 1800],
         connect: true,
         behaviour: 'drag',
         padding: [50, 50],
-        margin: 600,
+        margin: 200,
         limit: 1200,
         step: 50,
         tooltips: true,
