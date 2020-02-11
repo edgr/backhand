@@ -33,7 +33,6 @@ class User < ApplicationRecord
   validates :first_name, :last_name, length: { minimum: 2 }, if: :active_or_step1?
   validates :address, presence: true, if: :active_or_step1?
   validates :country, presence: true, length: { maximum: 60 }, if: :active_or_step1?
-  validates :place_of_birth, length: { minimum: 60 }, if: :active_or_step1?, allow_blank: true
   validates :birthday, presence: true, if: :active_or_step1?
   validates :gender, inclusion: { in: %w[male female other] }, if: :active_or_step1?
   validates :height, :weight, length: { in: 2..3 }, numericality: { only_integer: true }, if: :active_or_step1?, allow_blank: true
