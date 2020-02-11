@@ -45,7 +45,7 @@ es:
     - vie
     - sáb
     abbr_month_names:
-    - 
+    -
     - ene
     - feb
     - mar
@@ -73,7 +73,7 @@ es:
       medium_long: "%e %b %Y"
       short: "%-d %b"
     month_names:
-    - 
+    -
     - enero
     - febrero
     - marzo
@@ -283,6 +283,7 @@ es:
   new_event_email_subject: Partido/Entreno con %{inviter} - Backhandapp.com
   new_match_result_email_subject: Nuevo Resultado De Partido De %{sender} - Backhandapp.com
   new_player_review_email_subject: Nuevo Comentario de %{sender} - Backhandapp.com
+  no_reviews_yet: no ha recibido comentarios
   number:
     currency:
       format:
@@ -428,7 +429,7 @@ es:
   user_steps:
     step1:
       about_you: Sobre ti
-      address: DIRECCION
+      address: CIUDAD
       birthdate: FECHA DE NACIMIENTO
       first_name: NOMBRE
       gender: GENERO
@@ -502,7 +503,6 @@ es:
       info: Info
       losses: pérdidas
       matches: partidos
-      no_reviews_yet: no ha recibido comentarios
       place_of_birth: 'lugar de nacimiento: '
       points: puntos
       power: potencia

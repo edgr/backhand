@@ -45,7 +45,7 @@ fr:
     - ven
     - sam
     abbr_month_names:
-    - 
+    -
     - jan.
     - fév.
     - mar.
@@ -73,7 +73,7 @@ fr:
       medium_long: "%e %b %Y"
       short: "%e %b"
     month_names:
-    - 
+    -
     - janvier
     - février
     - mars
@@ -285,6 +285,7 @@ fr:
   new_event_email_subject: Match/Entrainement avec %{inviter} - Backhandapp.com
   new_match_result_email_subject: Nouveau Résultat De Match De %{sender} - Backhandapp.com
   new_player_review_email_subject: Nouveau Commentaire de %{sender} - Backhandapp.com
+  no_reviews_yet: n'a pas encore reçu de commentaires
   number:
     currency:
       format:
@@ -426,7 +427,7 @@ fr:
   user_steps:
     step1:
       about_you: À propos de vous
-      address: ADRESSE
+      address: VILLE
       birthdate: DATE DE NAISSANCE
       first_name: PRÉNOM
       gender: GENRE
@@ -506,7 +507,6 @@ fr:
       info: Info
       losses: défaites
       matches: matchs
-      no_reviews_yet: n'a pas encore reçu de commentaires
       place_of_birth: 'lieu de naissance: '
       points: points
       power: puissance

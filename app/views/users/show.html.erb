@@ -86,25 +86,31 @@
               <%= @user.birthday %>
             </span>
           </p>
-          <p>
-            <%= t('.place_of_birth') %>
-            <span class="details-info address-place">
-              <%= @user.place_of_birth %>
-            </span>
-          </p>
+          <% if @user.place_of_birth.present? %>
+            <p>
+              <%= t('.place_of_birth') %>
+              <span class="details-info address-place">
+                <%= @user.place_of_birth %>
+              </span>
+            </p>
+          <% end %>
           <br>
-          <p>
-            <%= t('.height') %>
-            <span class="details-info">
-              <%= @user.height %> cm
-            </span>
-          </p>
-          <p>
-            <%= t('.weight') %>
-            <span class="details-info">
-              <%= @user.weight %> kg
-            </span>
-          </p>
+          <% if @user.height.present? %>
+            <p>
+              <%= t('.height') %>
+              <span class="details-info">
+                <%= @user.height %> cm
+              </span>
+            </p>
+          <% end %>
+          <% if @user.weight.present? %>
+            <p>
+              <%= t('.weight') %>
+              <span class="details-info">
+                <%= @user.weight %> kg
+              </span>
+            </p>
+          <% end %>
           <br>
           <p>
             <%= t('.style_of_play') %>

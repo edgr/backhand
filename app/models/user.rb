@@ -44,7 +44,8 @@ class User < ApplicationRecord
                       length: { maximum: 60 },
                       if: :active_or_step1?
   validates :place_of_birth, presence: true,
-                             if: :active_or_step1?
+                             if: :active_or_step1?,
+                             unless: -> { place_of_birth.blank? }
   validates :birthday, presence: true,
                        if: :active_or_step1?
   validates :gender, presence: true,
@@ -53,7 +54,8 @@ class User < ApplicationRecord
   validates :height, :weight, presence: true,
                               length: { in: 2..3 },
                               numericality: { only_integer: true },
-                              if: :active_or_step1?
+                              if: :active_or_step1?,
+                              unless: -> { place_of_birth.blank? }
   validates :level, presence: true,
                     inclusion: { in: %w[beginner beginner_plus intermediate intermediate_plus advanced advanced_plus expert expert_plus semi_pro semi_pro_plus pro] },
                     if: :active_or_step2?
