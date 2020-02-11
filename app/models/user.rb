@@ -28,7 +28,7 @@ class User < ApplicationRecord
 
   has_many :messages
 
-  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }
+  validates :email, presence: true, uniqueness: true
   validates :phone_number, length: { minimum: 8, maximum: 15 }
   validates :first_name, :last_name, length: { minimum: 2 }, if: :active_or_step1?
   validates :address, presence: true, if: :active_or_step1?
