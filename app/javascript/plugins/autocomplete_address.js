@@ -1,12 +1,12 @@
 import places from 'places.js';
 
 const initAutocompleteAddress = () => {
-  const addressInput = document.getElementById('user_address');
-  if (addressInput) {
+  const cityInput = document.getElementById('user_address');
+  if (cityInput) {
     places({
-      container: addressInput
+      container: cityInput
     }).configure({
-      language: 'en'
+      type: 'city'
     });
   }
 };

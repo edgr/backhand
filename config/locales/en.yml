@@ -45,7 +45,7 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    - 
+    -
     - Jan
     - Feb
     - Mar
@@ -73,7 +73,7 @@ en:
       medium_long: "%b %d, %Y"
       short: "%b %d"
     month_names:
-    - 
+    -
     - January
     - February
     - March
@@ -283,6 +283,7 @@ en:
   new_event_email_subject: Game/Training with with %{inviter} - Backhandapp.com
   new_match_result_email_subject: New Match Result from %{sender} - Backhandapp.com
   new_player_review_email_subject: New Review from %{sender} - Backhandapp.com
+  no_reviews_yet: hasn't received any reviews yet!
   number:
     currency:
       format:
@@ -424,7 +425,7 @@ en:
   user_steps:
     step1:
       about_you: About you
-      address: ADDRESS
+      address: CITY
       birthdate: BIRTHDATE
       first_name: FIRST NAME
       gender: GENDER
@@ -504,7 +505,6 @@ en:
       info: Info
       losses: losses
       matches: matches
-      no_reviews_yet: hasn't received any reviews yet!
       place_of_birth: 'place of birth: '
       points: points
       power: power

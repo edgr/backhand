@@ -29,25 +29,27 @@
                       collection: @continents,
                       label: t('.nationality') %>
           <div class="d-flex justify-content-between">
-            <%= f.input :place_of_birth,
+            <!-- Commented out to make optional -->
+            <%#= f.input :place_of_birth,
                         label: t('.place_birth'),
                         class: "search_location" %>
             <%= f.input :birthday,
                         input_html: {class: "datepicker-signup"},
                         as: :string,
                         label: t('.birthdate') %>
-          </div>
-          <div class="d-flex justify-content-between">
             <%= f.input :gender,
                         collection: User.genders,
                         label: t('.gender') %>
-            <%= f.input :height,
+          </div>
+          <!-- Commented out to make optional -->
+          <!-- <div class="d-flex justify-content-between">
+            <%#= f.input :height,
                         label: t('.height'),
                         placeholder: t('.in_cm') %>
-            <%= f.input :weight,
+            <%#= f.input :weight,
                         label: t('.weight'),
                         placeholder: t('.in_kg') %>
-          </div>
+          </div> -->
         </div>
         <div class="form-actions">
           <%= f.button :submit, t('.next'), class: "btn btn-primary cta-signup mb-3" %>
