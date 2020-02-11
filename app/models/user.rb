@@ -28,49 +28,22 @@ class User < ApplicationRecord
 
   has_many :messages
 
-  validates :email, presence: true,
-                    uniqueness: true,
-                    format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }
-  validates :phone_number, presence: true,
-                           # uniqueness: true,
-                           # numericality: true,
-                           length: { minimum: 8, maximum: 15 }
-  validates :first_name, :last_name, presence: true,
-                                     length: { minimum: 2 },
-                                     if: :active_or_step1?
-  validates :address, presence: true,
-                      if: :active_or_step1?
-  validates :country, presence: true,
-                      length: { maximum: 60 },
-                      if: :active_or_step1?
-  validates :place_of_birth, presence: true,
-                             if: :active_or_step1?,
-                             unless: -> { place_of_birth.blank? }
-  validates :birthday, presence: true,
-                       if: :active_or_step1?
-  validates :gender, presence: true,
-                     inclusion: { in: %w[male female other] },
-                     if: :active_or_step1?
-  validates :height, :weight, presence: true,
-                              length: { in: 2..3 },
-                              numericality: { only_integer: true },
-                              if: :active_or_step1?,
-                              unless: -> { place_of_birth.blank? }
+  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }
+  validates :phone_number, length: { minimum: 8, maximum: 15 }
+  validates :first_name, :last_name, length: { minimum: 2 }, if: :active_or_step1?
+  validates :address, presence: true, if: :active_or_step1?
+  validates :country, presence: true, length: { maximum: 60 }, if: :active_or_step1?
+  validates :place_of_birth, length: { minimum: 60 }, if: :active_or_step1?, allow_blank: true
+  validates :birthday, presence: true, if: :active_or_step1?
+  validates :gender, inclusion: { in: %w[male female other] }, if: :active_or_step1?
+  validates :height, :weight, length: { in: 2..3 }, numericality: { only_integer: true }, if: :active_or_step1?, allow_blank: true
   validates :level, presence: true,
                     inclusion: { in: %w[beginner beginner_plus intermediate intermediate_plus advanced advanced_plus expert expert_plus semi_pro semi_pro_plus pro] },
                     if: :active_or_step2?
-  validates :style_of_play, presence: true,
-                            inclusion: { in: %w[grinder baseliner attacker puncher server_volleyer] },
-                            if: :active_or_step2?
-  validates :handedness, presence: true,
-                         inclusion: { in: %w[righty lefty] },
-                         if: :active_or_step2?
-  validates :backhand_style, presence: true,
-                             inclusion: { in: %w[one_handed_backhand two_handed_backhand] },
-                             if: :active_or_step2?
-  validates :bio, presence: true,
-                  length: { maximum: 500 },
-                  if: :active_or_step3?
+  validates :style_of_play, presence: true, inclusion: { in: %w[grinder baseliner attacker puncher server_volleyer] }, if: :active_or_step2?
+  validates :handedness, presence: true, inclusion: { in: %w[righty lefty] }, if: :active_or_step2?
+  validates :backhand_style, presence: true, inclusion: { in: %w[one_handed_backhand two_handed_backhand] }, if: :active_or_step2?
+  validates :bio, presence: true, length: { maximum: 500 }, if: :active_or_step3?
   # validates :picture, presence: true, if: :active_or_step3?
 
   scope :active, -> { where("status = 'active'") }
@@ -160,10 +133,10 @@ class User < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_user_fields,
-    against: [:address, :level, :first_name, :last_name, :style_of_play, :gender, :country, :handedness, :backhand_style, :club_id],
-    using: {
-      tsearch: { prefix: true }
-    }
+                  against: %i[address level first_name last_name style_of_play gender country handedness backhand_style club_id],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 
   def all_matches
     Match.where("matches.player_1_id = ? OR matches.player_2_id = ?", self, self)
