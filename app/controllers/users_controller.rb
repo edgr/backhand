@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     seed = cookies[:user_seed].to_i || Time.now.to_i
     seconds_since_seed = Time.now - Time.at(seed)
     expired_seed = seconds_since_seed > 30.minutes.to_i
-    no_seed = cookies[:user_seed]&.empty?
+    no_seed = cookies[:user_seed].nil? || cookies[:user_seed].empty?
     if expired_seed || no_seed
       seed = Time.now.to_i
       cookies[:user_seed] = seed
