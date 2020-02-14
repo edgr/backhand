@@ -10,7 +10,8 @@ class UsersController < ApplicationController
       @users = User.active
       update_ranking
     end
-    @users = @users.order(Arel.sql("RANDOM()")).paginate(page: params[:page], per_page: 12)
+    seed = set_seed
+    @users = @users.select(["setseed(.#{seed})", '*']).order(Arel.sql("RANDOM()")).paginate(page: params[:page], per_page: 12)
     respond_to :html, :js
   end
 
@@ -27,6 +28,18 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_seed
+    seed = cookies[:user_seed].to_i || Time.now.to_i
+    seconds_since_seed = Time.now - Time.at(seed)
+    expired_seed = seconds_since_seed > 30.minutes
+    no_seed = cookies[:user_seed].nil? || cookies[:user_seed].blank?
+    if expired_seed || no_seed
+      seed = Time.now.to_i
+      cookies[:user_seed] = seed
+    end
+    return seed
+  end
 
   def format_query(params)
     return unless params[:query].present?
