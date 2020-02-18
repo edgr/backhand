@@ -42,7 +42,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <%= f.input :club, required: false, collection: Club.all, input_html: {name: "search[query][]", class: "select-club"}, label: t('.club') %>
+          <%= f.input :club, required: false, collection: Club.all, input_html: {name: "search[club]", class: "select-club"}, label: t('.club') %>
           <%= f.input :location, required: false, input_html: {name: "search[location]", value: params[:search].try(:[], :location)}, id: "search_location", as: :string, label: t('.location') %>
           <%= f.input :country, input_html: {name: "search[query][]", class: "select-country"}, label: t('.country') %>
           <%= f.input :level, as: :check_boxes, required: false, input_html: {name: "search[query][]"}, collection: User.levels, wrapper: :vertical_collection_inline, label: t('.level') %>

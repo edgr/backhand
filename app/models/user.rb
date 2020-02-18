@@ -132,7 +132,7 @@ class User < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_user_fields,
-                  against: %i[address level first_name last_name style_of_play gender country handedness backhand_style club_id],
+                  against: %i[address level first_name last_name style_of_play gender country handedness backhand_style],
                   using: {
                     tsearch: { prefix: true }
                   }
