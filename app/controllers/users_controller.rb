@@ -22,8 +22,7 @@ class UsersController < ApplicationController
   end
 
   def rankings
-    @users = User.active.ordered_by_points
-    update_ranking
+    @users = User.active.order(ranking: :asc)
   end
 
   private
