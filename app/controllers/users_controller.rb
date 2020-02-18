@@ -8,7 +8,6 @@ class UsersController < ApplicationController
       @users = SearchUsers.new(params[:search]).call
     else
       @users = User.active
-      update_ranking
     end
     seed = set_seed
     @users = @users.select(["setseed(.#{seed})", '*']).order(Arel.sql("RANDOM()")).paginate(page: params[:page], per_page: 12)
@@ -23,8 +22,7 @@ class UsersController < ApplicationController
   end
 
   def rankings
-    @users = User.active.ordered_by_points
-    update_ranking
+    @users = User.active.order(ranking: :asc)
   end
 
   private
@@ -50,10 +48,6 @@ class UsersController < ApplicationController
   def set_query_indication
     location = params[:search].try(:[], :location)
     @indication = location.present? ? t('.search_results_location', location: location) : t('.matching_query')
-  end
-
-  def update_ranking
-    @users.ordered_by_points.each_with_index { |user, index| user.update(ranking: index + 1) }
   end
 
   def calculate_progressbar(user)

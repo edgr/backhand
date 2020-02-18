@@ -6,6 +6,8 @@ class User < ApplicationRecord
   reverse_geocoded_by :latitude, :longitude
   after_validation :geocode, if: :will_save_change_to_address?
 
+  after_save :update_ranking
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
@@ -132,7 +134,7 @@ class User < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_user_fields,
-                  against: %i[address level first_name last_name style_of_play gender country handedness backhand_style club_id],
+                  against: %i[address level first_name last_name style_of_play gender country handedness backhand_style],
                   using: {
                     tsearch: { prefix: true }
                   }
@@ -169,5 +171,9 @@ class User < ApplicationRecord
 
   def subscribe_to_newsletter
     SubscribeToNewsletterService.new(self).call if Rails.env.production?
+  end
+
+  def update_ranking
+    User.active.ordered_by_points.each_with_index { |user, index| user.update(ranking: index + 1) }
   end
 end
