@@ -9,6 +9,7 @@ class MatchResultsController < ApplicationController
 
   def update_points
     @match_result.update_players_points
+    RankingJob.perform_later
   end
 
   private

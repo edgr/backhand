@@ -15,7 +15,6 @@ class MatchResult < ApplicationRecord
     the_match.player_2.points = points.calculate_player_2_points
     the_match.player_1.save
     the_match.player_2.save
-    User.update_ranking
   end
 
   def update_players_levels
