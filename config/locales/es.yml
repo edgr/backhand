@@ -212,6 +212,7 @@ es:
       add_favorite_html: "¡Añades un jugador favorito cliqueando en la estralla en su perfil!"
       first_p_html: Esto es tu lista de jugadores favoritos. Está lista es muy útil para <strong>Callouts</strong>. Allí, puedes selectionar "mis favoritos" para enviar un callout solo a tus jugadores favoritos.
       title: Favorite Players
+  female: mujer
   footer:
     copyright: "© Copyright - 2020"
     email: hello@backhandapp.com
@@ -249,6 +250,7 @@ es:
   intermediate: intermediario
   intermediate_plus: intermediario +
   lefty: zurdo
+  male: hombre
   matches:
     index:
       match_date: "%{match_date}"
@@ -347,6 +349,7 @@ es:
       format:
         delimiter: ''
   one_handed_backhand: revès con 1 mano
+  other: otro
   pages:
     welcome:
       first_p_html: Gracias por haber creido tu cuenta.<br>¡No olvides de invitar a tus amigos/as!
