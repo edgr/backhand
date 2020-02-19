@@ -10,7 +10,7 @@ class UserPresenter < BasePresenter
   end
 
   def full_name
-    "#{user.first_name.capitalize} #{user.last_name.capitalize}"
+    "#{user.first_name.titleize} #{user.last_name.titleize}"
   end
 
   def points
