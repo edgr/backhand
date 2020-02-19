@@ -126,6 +126,12 @@ es:
         description: Comparte aquí tu experiencia con el tenis, tus disponibilidades, etc.
         languages: Idióma
         notifications: Notificaciones
+        new_callout_email: nuevo callout
+        new_player_review_email: revista de mi perfil
+        new_game_event_email: próximo partido/entreno
+        confirmed_match_result_email: resultado confirmado
+        new_match_result_email: resultado de partido
+        show_my_whatsapp: muestra mi whatsapp
       new:
         sign_up: Registrarse
       signed_up: Bienvenido. Tu cuenta fue creada.

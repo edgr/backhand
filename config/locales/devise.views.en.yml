@@ -125,6 +125,12 @@ en:
         description: This is where you can let other players know a bit more. For example, when/where you prefer to play, how long you've been playing tennis, etc.
         languages: Language
         notifications: Notifications
+        new_callout_email: new callout
+        new_player_review_email: new profile review
+        new_game_event_email: new game/training event
+        confirmed_match_result_email: confirmed match result
+        new_match_result_email: new match result
+        show_my_whatsapp: show my whatsapp
       new:
         sign_up: Sign up
       signed_up: Welcome! You have signed up successfully.
