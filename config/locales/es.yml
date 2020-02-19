@@ -500,6 +500,8 @@ es:
       second_p_html: En pocas palabras, la fórmula agrega / quita puntos para cada jugador en función del resultado del partido (victoria / derrota) y sus puntos iniciales.
       third_p_html: "¡Lo importante que debe hacer si desea que su clasificación sea más y más precisa es <strong> grabar sus partidos </strong> en Backhand! ;)"
       title: "¿Cómo funciona la clasificación?"
+      club_ranking: '%{club}'
+      general_ranking: general
     show:
       age: 'edad: '
       backhand: revés

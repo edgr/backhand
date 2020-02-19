@@ -501,6 +501,8 @@ en:
       second_p_html: In short, the formula adds/remove points to each player based on the outcome of the match (win/lose) and their initial points.
       third_p_html: The important thing to do if you want your ranking to be more and more accurate is to <strong>record your matches</strong> on Backhand! ;)
       title: How does rankings work?
+      club_ranking: '%{club}'
+      general_ranking: general
     show:
       age: 'age: '
       backhand: backhand

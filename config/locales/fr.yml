@@ -504,6 +504,8 @@ fr:
       second_p_html: En bref, la formule ajoute/retire des points à chacun des joueurs en fonction du résultat d'un match (victoire/défaite) et leurs nombres de points initiaux.
       third_p_html: L'important, si vous souhaitez que votre classement s'affine le plus possible est <strong>d'enregistrer vos matchs</strong> sur Backhand! ;)
       title: Comment fonctionne le classement
+      club_ranking: '%{club}'
+      general_ranking: general
     show:
       age: 'age: '
       backhand: revers

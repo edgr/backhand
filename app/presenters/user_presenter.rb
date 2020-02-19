@@ -82,4 +82,8 @@ class UserPresenter < BasePresenter
   def handedness(player_handedness)
     I18n.t(player_handedness)
   end
+
+  def club_ranking(club_users, user)
+    club_users.map(&:id).index(user.id) + 1
+  end
 end
