@@ -83,6 +83,11 @@ class UserPresenter < BasePresenter
     I18n.t(player_handedness)
   end
 
+  def city(address)
+    location = Geocoder.search(address).first
+    "#{location.city}, #{location.country}"
+  end
+
   def club_ranking(club_users, user)
     club_users.map(&:id).index(user.id) + 1
   end
