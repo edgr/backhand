@@ -10,7 +10,7 @@ class UserPresenter < BasePresenter
   end
 
   def full_name
-    "#{user.first_name.capitalize} #{user.last_name.capitalize}"
+    "#{user.first_name.titleize} #{user.last_name.titleize}"
   end
 
   def points
@@ -81,5 +81,9 @@ class UserPresenter < BasePresenter
 
   def handedness(player_handedness)
     I18n.t(player_handedness)
+  end
+
+  def club_ranking(club_users, user)
+    club_users.map(&:id).index(user.id) + 1
   end
 end

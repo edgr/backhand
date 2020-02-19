@@ -211,6 +211,7 @@ en:
       add_favorite_html: add a favorite by clicking on the star of a player's profile!
       first_p_html: This is your list of Favorite Players. This list is especially useful in <strong>Callouts</strong>. There, you can select "my favorites" in order to send a callout only to your favorite players.
       title: Favorite Players
+  female: female
   footer:
     copyright: "© Copyright - 2020"
     email: hello@backhandapp.com
@@ -248,6 +249,7 @@ en:
   intermediate: intermediate
   intermediate_plus: intermediate +
   lefty: lefty
+  male: male
   matches:
     index:
       match_date: "%{match_date}"
@@ -342,6 +344,7 @@ en:
       format:
         delimiter: ''
   one_handed_backhand: one handed backhand
+  other: other
   pages:
     welcome:
       first_p_html: Thank you for creating your account.<br>Make sure to invite your friends!
@@ -498,6 +501,8 @@ en:
       second_p_html: In short, the formula adds/remove points to each player based on the outcome of the match (win/lose) and their initial points.
       third_p_html: The important thing to do if you want your ranking to be more and more accurate is to <strong>record your matches</strong> on Backhand! ;)
       title: How does rankings work?
+      club_ranking: '%{club}'
+      general_ranking: general
     show:
       age: 'age: '
       backhand: backhand

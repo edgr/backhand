@@ -111,7 +111,7 @@ class User < ApplicationRecord
   end
 
   def full_name
-    (first_name && last_name) ? "#{first_name.capitalize} #{last_name.capitalize}" : email
+    (first_name && last_name) ? "#{first_name.titleize} #{last_name.titleize}" : email
   end
 
   def age
