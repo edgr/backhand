@@ -121,7 +121,7 @@
           <p>
             <%= t('.residence') %>
             <span class="details-info address-place">
-              <%= @user.address %>
+              <%= user_presenter.city(@user.address) %>
             </span>
           </p>
           <% if @user.club_id.present? %>

@@ -82,4 +82,9 @@ class UserPresenter < BasePresenter
   def handedness(player_handedness)
     I18n.t(player_handedness)
   end
+
+  def city(address)
+    location = Geocoder.search(address).first
+    "#{location.city}, #{location.country}"
+  end
 end
