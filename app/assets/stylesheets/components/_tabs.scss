@@ -1,22 +1,27 @@
-.tabs-underlined {
+.tabs-underlined, .tabs-ranking {
   display: flex;
   align-items: center;
+  .tab-underlined {
+    color: black;
+    padding: 8px;
+    margin: 8px 16px;
+    opacity: .4;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 4px solid transparent;
+    position: relative;
+    &.active {
+      opacity: 1;
+      border-bottom: 3px solid #555555;
+    }
+  }
 }
 
-.tabs-underlined .tab-underlined {
-  color: black;
-  padding: 8px;
-  margin: 8px 16px;
-  opacity: .4;
-  cursor: pointer;
-  text-decoration: none;
-  border-bottom: 4px solid transparent;
-  position: relative;
-}
-
-.tabs-underlined .tab-underlined.active {
-  opacity: 1;
-  border-bottom: 3px solid #555555;
+.tabs-ranking {
+  justify-content: space-evenly;
+  .tab-underlined {
+    font-size: 16px;
+  }
 }
 
 #fix-top{

@@ -9,23 +9,25 @@
   <% else %>
     <div class="favorite-cards">
       <% @favorites.each do |favorite| %>
-        <% present favorite do |user_presenter| %>
-          <div class="favorite-card">
-            <div class="pic-tags">
-              <%= cl_image_tag favorite.picture, quality: "auto", class: "avatar-large"%>
-              <div class="tags">
-                <div class="blue-box">
-                  <%= user_presenter.points %>
-                </div>
-                <div class="blue-box">
-                  <%= user_presenter.level(favorite.level) %>
+        <%= link_to favorite do %>
+          <% present favorite do |user_presenter| %>
+            <div class="favorite-card">
+              <div class="pic-tags">
+                <%= cl_image_tag favorite.picture, quality: "auto", class: "avatar-large"%>
+                <div class="tags">
+                  <div class="blue-box">
+                    <%= user_presenter.points %>
+                  </div>
+                  <div class="blue-box">
+                    <%= user_presenter.level(favorite.level) %>
+                  </div>
                 </div>
               </div>
+              <div class="name">
+                <%= user_presenter.full_name %>
+              </div>
             </div>
-            <div class="name">
-              <%= user_presenter.full_name %>
-            </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>

@@ -124,6 +124,12 @@ fr:
         description: Partages ici ton expérience du tennis, tes disponibilités, etc.
         languages: Langue
         notifications: Notifications
+        new_callout_email: nouveau callout
+        new_player_review_email: nouveau commentaire
+        new_game_event_email: match/entrainement à venir
+        confirmed_match_result_email: résultat confirmé
+        new_match_result_email: nouveau résultat
+        show_my_whatsapp: montrer mon whatsapp
       new:
         sign_up: Inscription
       signed_up: Bienvenue ! Vous vous êtes bien enregistré(e).

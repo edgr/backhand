@@ -157,12 +157,12 @@
                   <h5>
                     <%= t('.notifications') %>
                   </h5>
-                    <%= f.input :new_callout_email, as: :boolean %>
-                    <%= f.input :new_player_review_email, as: :boolean %>
-                    <%= f.input :new_game_event_email, as: :boolean %>
-                    <%= f.input :confirmed_match_result_email, as: :boolean %>
-                    <%= f.input :show_my_whatsapp, as: :boolean %>
-                    <%= f.input :new_match_result_email, as: :boolean %>
+                    <%= f.input :new_callout_email, as: :boolean, label: t('.new_callout_email') %>
+                    <%= f.input :new_player_review_email, as: :boolean, label: t('.new_player_review_email') %>
+                    <%= f.input :new_game_event_email, as: :boolean, label: t('.new_game_event_email') %>
+                    <%= f.input :new_match_result_email, as: :boolean, label: t('.new_match_result_email') %>
+                    <%= f.input :confirmed_match_result_email, as: :boolean, label: t('.confirmed_match_result_email') %>
+                    <%= f.input :show_my_whatsapp, as: :boolean, label: t('.show_my_whatsapp') %>
                 </div>
               </div>
             </div>
