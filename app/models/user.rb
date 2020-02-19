@@ -161,10 +161,6 @@ class User < ApplicationRecord
     !deleted_at ? super : :deleted_account
   end
 
-  def self.update_ranking
-    User.active.ordered_by_points.each_with_index { |user, index| user.update(ranking: index + 1) }
-  end
-
   private
 
   def set_skills
