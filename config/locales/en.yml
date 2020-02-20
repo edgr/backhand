@@ -503,6 +503,8 @@ en:
       title: How does rankings work?
       club_ranking: '%{club}'
       general_ranking: general
+    rankings_disconnected:
+      add_your_club: Make sure to add your club in your profile to see rankings in your club
     show:
       age: 'age: '
       backhand: backhand

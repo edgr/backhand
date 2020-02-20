@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def rankings
     @users = User.active.order(ranking: :asc)
-    @club_users = User.active.where(club_id: current_user.club_id).order(ranking: :asc)
+    @club_users = User.active.where(club_id: current_user.club_id).order(ranking: :asc) if current_user
   end
 
   private

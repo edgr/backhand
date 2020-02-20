@@ -1,0 +1,8 @@
+<% if current_user %>
+  <p class="text-center">
+    <%= t('.add_your_club') %>
+  </p>
+  <%= render 'general_rankings' %>
+<% else %>
+  <%= render 'general_rankings' %>
+<% end %>

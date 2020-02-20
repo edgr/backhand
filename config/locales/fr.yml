@@ -506,6 +506,8 @@ fr:
       title: Comment fonctionne le classement
       club_ranking: '%{club}'
       general_ranking: general
+    rankings_disconnected:
+      add_your_club: Ajoute ton club à ton profil pour voir le classement de ton club
     show:
       age: 'age: '
       backhand: revers

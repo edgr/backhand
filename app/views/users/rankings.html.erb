@@ -1,74 +1,10 @@
 <div class="container">
-  <div class="ranking-tabs">
-    <ul class="list-inline tabs-ranking">
-      <li>
-        <a href data-target="club_ranking" class="tab-underlined active tab-title-show">
-          <%= t('.club_ranking', club: current_user.club.shortname) %>
-        </a>
-      </li>
-      <li>
-        <a href="#" data-target="general_ranking" class="tab-underlined tab-title-show">
-          <%= t('.general_ranking') %>
-        </a>
-      </li>
-    </ul>
-    <table class="ranking-table" id="club_ranking">
-      <tbody>
-        <% @club_users.each do |user| %>
-            <% present user do |user_presenter| %>
-              <tr>
-                <td class="center-text-table rankings-table">
-                  <%= user_presenter.club_ranking(@club_users, user) %>
-                </td>
-                <td class="center-text-table">
-                  <% if user.country.present? %>
-                    <span class="flag-icon flag-icon-<%= user.country.downcase %>"></span>
-                  <% else %>
-                    <i class="far fa-flag"></i>
-                  <% end %>
-                </td>
-                <td class="text-align-left">
-                  <%= link_to user_path(user) do %>
-                    <%= user_presenter.full_name %>
-                    (<%= user.ranking %>)
-                  <% end %>
-                </td>
-                <td class="center-text-table points-table"><%= user_presenter.points %> </td>
-              </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
-    <table class="ranking-table hidden" id="general_ranking">
-      <tbody>
-        <% @users.each do |user| %>
-            <% present user do |user_presenter| %>
-              <tr>
-                <td class="center-text-table rankings-table"><%= user.ranking %></td>
-                <td class="center-text-table">
-                  <% if user.country.present? %>
-                    <span class="flag-icon flag-icon-<%= user.country.downcase %>"></span>
-                  <% else %>
-                    <i class="far fa-flag"></i>
-                  <% end %>
-                </td>
-                <td class="text-align-left">
-                  <%= link_to user_path(user) do %>
-                    <%= user_presenter.full_name %>
-                  <% end %>
-                </td>
-                <td class="center-text-table">
-                  <% if user.club.present? %>
-                    <%= user.club.shortname %>
-                  <% end %>
-                </td>
-                <td class="center-text-table points-table"><%= user_presenter.points %> </td>
-              </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+
+  <% if current_user && current_user.club.present? %>
+    <%= render 'rankings_connected' %>
+  <% else %>
+    <%= render 'rankings_disconnected' %>
+  <% end %>
 
   <div class="actions-wrapper">
     <button type="button" class="mdc-fab app-fab--absolute" aria-label="question" data-toggle="modal" data-target="#exampleModalCenter">
