@@ -32,6 +32,7 @@ fr:
     show:
       courts: Courts
   complete_profile: Complète ton profil
+  complete_profile: Merci de compléter ton profil avant de continuer
   courts_count:
     one: "%{count} court"
     other: "%{count} courts"

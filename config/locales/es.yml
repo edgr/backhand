@@ -32,6 +32,7 @@ es:
     show:
       courts: Pistas
   complete_profile: Completa tu perfil
+  complete_profile: Por favor, completa su perfil primero
   courts_count:
     one: "%{count} pista"
     other: "%{count} pistas"

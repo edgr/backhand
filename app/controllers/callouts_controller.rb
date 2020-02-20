@@ -1,5 +1,6 @@
 class CalloutsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
+  before_action :user_is_active, only: %i[new]
 
   def new
     @callout = Callout.new
@@ -77,6 +78,13 @@ class CalloutsController < ApplicationController
       else
         callout
       end
+    end
+  end
+
+  def user_is_active
+    if current_user.active? == false
+      redirect_to user_steps_path
+      flash[:notice] = I18n.t('complete_profile_please')
     end
   end
 end
