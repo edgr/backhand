@@ -1,0 +1,46 @@
+<div class="ranking-tabs">
+  <ul class="list-inline tabs-ranking">
+      <li>
+        <a href data-target="club_ranking" class="tab-underlined active tab-title-show">
+          <% if current_user.club %>
+            <%= t('.club_ranking', club: current_user.club.shortname) %>
+          <% else %>
+            <%= t('.your_club') %>
+          <% end %>
+        </a>
+      </li>
+    <li>
+      <a href="#" data-target="general_ranking" class="tab-underlined tab-title-show">
+        <%= t('.general_ranking') %>
+      </a>
+    </li>
+  </ul>
+  <table class="ranking-table" id="club_ranking">
+    <tbody>
+      <% @club_users.each do |user| %>
+          <% present user do |user_presenter| %>
+            <tr>
+              <td class="center-text-table rankings-table">
+                <%= user_presenter.club_ranking(@club_users, user) %>
+              </td>
+              <td class="center-text-table">
+                <% if user.country.present? %>
+                  <span class="flag-icon flag-icon-<%= user.country.downcase %>"></span>
+                <% else %>
+                  <i class="far fa-flag"></i>
+                <% end %>
+              </td>
+              <td class="text-align-left">
+                <%= link_to user_path(user) do %>
+                  <%= user_presenter.full_name %>
+                  (<%= user.ranking %>)
+                <% end %>
+              </td>
+              <td class="center-text-table points-table"><%= user_presenter.points %> </td>
+            </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= render 'general_rankings' %>
+</div>

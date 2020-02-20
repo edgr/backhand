@@ -1,3 +1,10 @@
+const hideGeneralRanking = () => {
+  const clubRanking = document.getElementById("club_ranking")
+  if (clubRanking) {
+    const generalRanking = document.getElementById("general_ranking")
+    generalRanking.classList.add("hidden")
+  }
+}
 const tabsSwitcher = (event) => {
   event.preventDefault();
   const activeTab = document.querySelector(".tab-underlined.active");
@@ -15,3 +22,5 @@ const addListener = (tab) => {
 }
 
 export { addListener };
+export { hideGeneralRanking };
+

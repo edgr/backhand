@@ -34,6 +34,7 @@ import { tellYourFriends } from '../components/tell_your_friends';
 // import { triggerShare } from '../components/share_profile';
 import { infiniteScroll } from '../components/infinite_scroll';
 import { hideLevel } from '../components/callout_recipients';
+import { hideGeneralRanking } from '../components/tabs';
 
 
 const tabs = document.querySelectorAll(".tab-underlined");
@@ -67,3 +68,4 @@ tellYourFriends();
 // triggerShare();
 infiniteScroll();
 hideLevel();
+hideGeneralRanking();

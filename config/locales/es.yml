@@ -502,6 +502,8 @@ es:
       title: "¿Cómo funciona la clasificación?"
       club_ranking: '%{club}'
       general_ranking: general
+    rankings_disconnected:
+      add_your_club: Añada un club en tu perfil para ver clasificaciónes en tu club
     show:
       age: 'edad: '
       backhand: revés
