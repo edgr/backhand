@@ -1,5 +1,6 @@
 class MatchesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
+  before_action :user_is_active, only: %i[new]
 
   def new
     @match = Match.new
@@ -65,5 +66,12 @@ class MatchesController < ApplicationController
       player_2: @match.player_2,
       match: @match
     ).new_match_result.deliver_later unless @match.player_2.settings[:new_match_result_email] == false
+  end
+
+  def user_is_active
+    if current_user.active? == false
+      redirect_to user_steps_path
+      flash[:notice] = I18n.t('complete_profile_please')
+    end
   end
 end

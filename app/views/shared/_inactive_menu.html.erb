@@ -1,0 +1,84 @@
+<div class="language-more d-flex d-lg-none">
+  <% if user_signed_in? == false  %>
+    <div class="nav-item dropdown d-lg-flex">
+      <button class="navbar-toggler language-menu dropdown-toggle d-lg-flex" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <%= t('navbar.language') %>
+      </button>
+      <div class="dropdown-menu">
+        <%= link_to url_for(locale: :fr), class: "nav-link text-white" do %>
+          <span class="flag-icon flag-icon-fr %>"></span>
+          <span>français</span>
+        <% end %>
+        <%= link_to url_for(locale: :es), class: "nav-link text-white" do %>
+          <span class="flag-icon flag-icon-es %>"></span>
+          <span>español</span>
+        <% end %>
+        <%= link_to url_for(locale: :en), class: "nav-link text-white" do %>
+          <span class="flag-icon flag-icon-gb %>"></span>
+          <span>english</span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <button class="navbar-toggler see-more-menu d-flex d-lg-none" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
+    <%= t('navbar.see_more') %>
+  </button>
+</div>
+<div class="collapse navbar-collapse" id="menu-content">
+  <ul class="navbar-nav w-100 mt-2 mt-lg-0">
+    <li class="nav-item">
+      <%= link_to t('navbar.players'), users_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t('navbar.rankings'), rankings_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t('navbar.matches'), matches_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t('navbar.clubs'), clubs_path, class: "nav-link new-feature" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t('navbar.callouts'), callouts_path, class: "nav-link new-feature new-feature-callouts" %>
+    </li>
+    <% if current_user %>
+      <%= link_to t('complete_profile'), user_steps_path, class: "d-flex d-lg-none nav-link text-white"%>
+    <% else %>
+      <li>
+        <%= link_to t('navbar.login'), new_user_session_path, class: "d-flex d-lg-none nav-link text-white" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<% if user_signed_in? == false %>
+  <div class="nav-item dropdown d-none d-lg-flex">
+    <button class="navbar-toggler language-menu dropdown-toggle d-lg-flex" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      <%= t('navbar.language') %>
+    </button>
+    <div class="dropdown-menu">
+      <%= link_to root_path(locale: :fr), class: "nav-link" do %>
+        <span class="flag-icon flag-icon-fr %>"></span>
+        <span>français</span>
+      <% end %>
+      <%= link_to root_path(locale: :es), class: "nav-link" do %>
+        <span class="flag-icon flag-icon-es %>"></span>
+        <span>español</span>
+      <% end %>
+      <%= link_to root_path(locale: :en), class: "nav-link" do %>
+        <span class="flag-icon flag-icon-gb %>"></span>
+        <span>english</span>
+      <% end %>
+      <%#= link_to root_path(locale: :en), class: "nav-link" do %>
+       <!--  <span class="flag-icon flag-icon-es-ct %>"></span>
+        <span>catalan</span>
+      <%# end %> -->
+    </div>
+  </div>
+<% end %>
+<div class="login-up ml-lg-auto d-none d-lg-flex">
+  <% if current_user %>
+    <%= link_to t('complete_profile'), user_steps_path, class: "nav-link text-white"%>
+  <% else %>
+    <%= link_to t('navbar.login'), new_user_session_path, class: "nav-link text-white" %>
+  <% end %>
+</div>
