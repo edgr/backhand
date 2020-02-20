@@ -31,6 +31,7 @@ en:
       no_clubs: No clubs in this area yet. Let us know!
     show:
       courts: Courts
+  complete_profile: Complete your profile
   courts_count:
     one: "%{count} court"
     other: "%{count} courts"

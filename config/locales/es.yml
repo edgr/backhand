@@ -31,6 +31,7 @@ es:
       no_clubs: No hay clubes en esta área todavía. ¡Haznos saber!
     show:
       courts: Pistas
+  complete_profile: Completa tu perfil
   courts_count:
     one: "%{count} pista"
     other: "%{count} pistas"
