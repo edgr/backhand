@@ -3,7 +3,9 @@
     <% @users.each do |user| %>
         <% present user do |user_presenter| %>
           <tr>
-            <td class="center-text-table rankings-table"><%= user.ranking %></td>
+            <td class="center-text-table rankings-table">
+              <%= user.ranking %>
+            </td>
             <td class="center-text-table">
               <% if user.country.present? %>
                 <span class="flag-icon flag-icon-<%= user.country.downcase %>"></span>
