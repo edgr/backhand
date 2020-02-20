@@ -1,7 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
   <% if user_signed_in? %>
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <p class="logo-back">B</p> <p class="logo-hand">H</p>
+    <% if current_user.active? %>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <p class="logo-back">B</p>
+        <p class="logo-hand">H</p>
+      <% end %>
+    <% else %>
+      <div class="navbar-brand">
+        <p class="logo-back">B</p>
+        <p class="logo-hand">H</p>
+      </div>
     <% end %>
   <% else %>
     <%= link_to root_path, class: "navbar-brand" do %>
@@ -9,99 +17,101 @@
     <% end %>
   <% end %>
   <% if user_signed_in? %>
-    <div class="d-flex d-lg-none">
-      <% present current_user do |user_presenter| %>
-        <span class="nav-points-ranking">
-          pts <%= user_presenter.points %><br>
-          #<%= user_presenter.ranking %>
-        </span>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
-          <% if current_user.picture.present? %>
-            <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", quality: "auto", class: "avatar-bordered")%>
-          <% else %>
-            <%= image_tag "profile.png", class: "avatar-bordered"%>
-          <% end %>
-          <% if current_user.notify > 0 %>
-            <div class="avatar-notifications">
-              <%= current_user.notify %>
-            </div>
-          <% end %>
-        </button>
-      <% end %>
-    </div>
-
-    <div class="collapse navbar-collapse" id="menu-content">
-      <ul class="navbar-nav w-100 mt-2 mt-lg-0">
-        <li class="nav-item">
-          <%= link_to t('navbar.players'), users_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to t('navbar.rankings'), rankings_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to t('navbar.matches'), matches_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to t('navbar.clubs'), clubs_path, class: "nav-link new-feature" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to t('navbar.callouts'), callouts_path, class: "nav-link new-feature new-feature-callouts" %>
-        </li>
-        <li class="nav-item ml-lg-auto">
-          <%= link_to t('navbar.my_profile'), user_path(current_user), class: "nav-link ml-lg-auto" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to t('navbar.my_calendar'), my_agenda_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to my_matches_path, class: "nav-link" do %>
-            <span>
-              <%= t('navbar.my_matches') %>
-              <% if current_user.notify > 0 %>
-                <div class="matches-notifications">
-                  <%= current_user.notify %>
-                </div>
-              <% end %>
-            </span>
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to t('navbar.my_favorites'), my_favorites_path, class: "nav-link" %>
-        </li>
-        <div class="d-flex">
-          <li class="nav-item d-lg-none">
-            <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
-
-          <li class="nav-item d-none d-lg-flex">
-            <% present current_user do |user_presenter| %>
-            <li class="nav-item dropdown d-none d-lg-flex">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <% if current_user.picture.present? %>
-                <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", quality: "auto", class: "avatar-bordered")%>
-                <% else %>
-                  <%= image_tag "profile.png", class: "avatar-bordered"%>
-                <% end %>
-              </a>
-              <div class="dropdown-menu">
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    <% if current_user.active? %>
+      <div class="d-flex d-lg-none">
+        <% present current_user do |user_presenter| %>
+          <span class="nav-points-ranking">
+            pts <%= user_presenter.points %><br>
+            #<%= user_presenter.ranking %>
+          </span>
+          <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
+            <% if current_user.picture.present? %>
+              <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", quality: "auto", class: "avatar-bordered")%>
+            <% else %>
+              <%= image_tag "profile.png", class: "avatar-bordered"%>
+            <% end %>
+            <% if current_user.notify > 0 %>
+              <div class="avatar-notifications">
+                <%= current_user.notify %>
               </div>
-            </li>
-              <span class="nav-points-ranking d-none d-lg-flex  ">
-                pts <%= user_presenter.points %><br>
-                #<%= user_presenter.ranking %>
+            <% end %>
+          </button>
+        <% end %>
+      </div>
+
+      <div class="collapse navbar-collapse" id="menu-content">
+        <ul class="navbar-nav w-100 mt-2 mt-lg-0">
+          <li class="nav-item">
+            <%= link_to t('navbar.players'), users_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('navbar.rankings'), rankings_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('navbar.matches'), matches_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('navbar.clubs'), clubs_path, class: "nav-link new-feature" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('navbar.callouts'), callouts_path, class: "nav-link new-feature new-feature-callouts" %>
+          </li>
+          <li class="nav-item ml-lg-auto">
+            <%= link_to t('navbar.my_profile'), user_path(current_user), class: "nav-link ml-lg-auto" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('navbar.my_calendar'), my_agenda_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to my_matches_path, class: "nav-link" do %>
+              <span>
+                <%= t('navbar.my_matches') %>
+                <% if current_user.notify > 0 %>
+                  <div class="matches-notifications">
+                    <%= current_user.notify %>
+                  </div>
+                <% end %>
               </span>
-              <% if current_user.notify > 0 %>
-                <div class="avatar-notifications">
-                  <%= current_user.notify %>
-                </div>
-              <% end %>
             <% end %>
           </li>
-        </div>
-        </li>
-      </ul>
-    </div>
+          <li class="nav-item">
+            <%= link_to t('navbar.my_favorites'), my_favorites_path, class: "nav-link" %>
+          </li>
+          <div class="d-flex">
+            <li class="nav-item d-lg-none">
+              <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
+
+            <li class="nav-item d-none d-lg-flex">
+              <% present current_user do |user_presenter| %>
+              <li class="nav-item dropdown d-none d-lg-flex">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  <% if current_user.picture.present? %>
+                  <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", quality: "auto", class: "avatar-bordered")%>
+                  <% else %>
+                    <%= image_tag "profile.png", class: "avatar-bordered"%>
+                  <% end %>
+                </a>
+                <div class="dropdown-menu">
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                </div>
+              </li>
+                <span class="nav-points-ranking d-none d-lg-flex  ">
+                  pts <%= user_presenter.points %><br>
+                  #<%= user_presenter.ranking %>
+                </span>
+                <% if current_user.notify > 0 %>
+                  <div class="avatar-notifications">
+                    <%= current_user.notify %>
+                  </div>
+                <% end %>
+              <% end %>
+            </li>
+          </div>
+          </li>
+        </ul>
+      </div>
+    <% end %>
 
   <% else %>
     <div class="language-more d-flex d-lg-none">
