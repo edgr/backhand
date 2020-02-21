@@ -1,4 +1,5 @@
 class UserReviewsController < ApplicationController
+  before_action :user_is_active, only: %i[new]
 
   def new
     @user = User.find(params[:user_id])
@@ -39,5 +40,12 @@ class UserReviewsController < ApplicationController
       receiver: @user_review.receiver,
       user_review: @user_review
     ).new_player_review.deliver_later unless @user_review.receiver.settings[:new_player_review_email] == false
+  end
+
+  def user_is_active
+    if current_user.active? == false
+      redirect_to user_steps_path
+      flash[:notice] = I18n.t('complete_profile_please')
+    end
   end
 end
