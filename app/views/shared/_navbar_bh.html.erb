@@ -1,15 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
   <% if user_signed_in? %>
-    <% if current_user.active? %>
-      <%= link_to root_path, class: "navbar-brand" do %>
-        <p class="logo-back">B</p>
-        <p class="logo-hand">H</p>
-      <% end %>
-    <% else %>
-      <div class="navbar-brand">
-        <p class="logo-back">B</p>
-        <p class="logo-hand">H</p>
-      </div>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <p class="logo-back">B</p>
+      <p class="logo-hand">H</p>
     <% end %>
   <% else %>
     <%= link_to root_path, class: "navbar-brand" do %>

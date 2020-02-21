@@ -43,6 +43,7 @@
     </li>
     <% if current_user %>
       <%= link_to t('complete_profile'), user_steps_path, class: "d-flex d-lg-none nav-link text-white"%>
+      <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete, class: "d-flex d-lg-none nav-link text-white" %>
     <% else %>
       <li>
         <%= link_to t('navbar.login'), new_user_session_path, class: "d-flex d-lg-none nav-link text-white" %>
@@ -78,6 +79,7 @@
 <div class="login-up ml-lg-auto d-none d-lg-flex">
   <% if current_user %>
     <%= link_to t('complete_profile'), user_steps_path, class: "nav-link text-white"%>
+    <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete, class: "nav-link text-white" %>
   <% else %>
     <%= link_to t('navbar.login'), new_user_session_path, class: "nav-link text-white" %>
   <% end %>
