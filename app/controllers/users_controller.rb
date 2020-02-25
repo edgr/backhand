@@ -29,15 +29,15 @@ class UsersController < ApplicationController
   private
 
   def set_seed
-    seed = cookies[:user_seed].to_i || Time.now.to_i
-    seconds_since_seed = Time.now - Time.at(seed)
-    expired_seed = seconds_since_seed > 30.minutes
+    the_seed = cookies[:user_seed].to_i || Time.now.to_i.abs / 3600
+    hours_since_seed = ((Time.now.to_i.abs + 10) / 3600) - the_seed
+    expired_seed = hours_since_seed > 1
     no_seed = cookies[:user_seed].nil? || cookies[:user_seed].blank?
     if expired_seed || no_seed
-      seed = Time.now.to_i
-      cookies[:user_seed] = seed
+      the_seed = Time.now.to_i.abs / 3600
+      cookies[:user_seed] = the_seed
     end
-    return seed
+    return the_seed
   end
 
   def format_query(params)
