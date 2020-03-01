@@ -4,6 +4,8 @@ class CalloutsController < ApplicationController
 
   def new
     @callout = Callout.new
+    @users = User.active
+    gon.jbuilder
   end
 
   def index

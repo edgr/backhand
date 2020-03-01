@@ -52,6 +52,9 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
+#to pass data to javascript
+gem 'gon'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem "letter_opener"
