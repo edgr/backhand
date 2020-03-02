@@ -7,6 +7,14 @@ const maxLevel = document.getElementById('callout_maximum_level');
 const sendCalloutButton = document.getElementById('send_callout');
 const text = sendCalloutButton.value
 
+const disableSendButton = (number) => {
+  if (number === 0) {
+    sendCalloutButton.disabled = true
+  } else {
+    sendCalloutButton.disabled = false
+  }
+}
+
 const makeNiceSentence = (number) => {
   const stringNumber = number.toString()
   const newText = text.split(' ')
@@ -24,6 +32,7 @@ const calculateRecipients = (list) => {
     }
   })
   makeNiceSentence(recipients.length)
+  disableSendButton(recipients.length)
 }
 
 const updateRecipients = () => {
@@ -34,6 +43,9 @@ const updateRecipients = () => {
       calculateRecipients(gon.users_around)
     } else if (selected === "1") {
       calculateRecipients(gon.club_users)
+    } else {
+      makeNiceSentence(gon.favorites.length)
+      disableSendButton(gon.favorites.length)
     }
   }
 }
@@ -65,4 +77,28 @@ const startSlider = () => {
   }
 }
 
+const hideLevel = () => {
+  const callout = document.getElementById('new_callout');
+  if (callout) {
+    callout.addEventListener('change', (event) => {
+      const dropDown = document.getElementById('callout_recipients');
+      const selected = dropDown.options[dropDown.selectedIndex].value;
+      const levelSection = document.getElementById('level-slider');
+      const minLevel = document.querySelector('.callout_minimum_level');
+      const maxLevel = document.querySelector('.callout_minimum_level');
+      if (selected === "2") {
+        levelSection.classList.add('hidden');
+        minLevel.classList.add('hidden');
+        maxLevel.classList.add('hidden');
+        updateRecipients();
+      } else {
+        levelSection.classList.remove('hidden');
+        minLevel.classList.remove('hidden');
+        maxLevel.classList.remove('hidden');
+      }
+    })
+  }
+}
+
+export { hideLevel };
 export { startSlider }

@@ -6,6 +6,7 @@ class CalloutsController < ApplicationController
     @callout = Callout.new
     @club_users = User.active.where(club_id: current_user.club_id)
     @users_around = recipients = User.active.near(current_user.address, 25)
+    @favorites = current_user.favorite_players
     gon.jbuilder
   end
 

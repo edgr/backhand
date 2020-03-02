@@ -11,12 +11,10 @@ const hideLevel = () => {
         levelSection.classList.add('hidden');
         minLevel.classList.add('hidden');
         maxLevel.classList.add('hidden');
-        console.log('zero');
       } else {
         levelSection.classList.remove('hidden');
         minLevel.classList.remove('hidden');
         maxLevel.classList.remove('hidden');
-        console.log('not zero');
       }
     })
   }
