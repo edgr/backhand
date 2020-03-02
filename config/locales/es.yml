@@ -25,7 +25,7 @@ es:
       everyone: todos/as cerca de mi
       my_club: jugadores/as en mi club
       my_favorites: mis jugadores favoritos
-      send: enviar
+      send: enviar a jugadores
   clubs:
     index:
       no_clubs: No hay clubes en esta área todavía. ¡Haznos saber!

@@ -4,7 +4,8 @@ class CalloutsController < ApplicationController
 
   def new
     @callout = Callout.new
-    @users = User.active
+    @club_users = User.active.where(club_id: current_user.club_id)
+    @users_around = recipients = User.active.near(current_user.address, 25)
     gon.jbuilder
   end
 

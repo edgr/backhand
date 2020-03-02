@@ -25,7 +25,7 @@ en:
       everyone: everyone in my area
       my_club: players in my club
       my_favorites: my preferred partners
-      send: send
+      send: send to players
   clubs:
     index:
       no_clubs: No clubs in this area yet. Let us know!
