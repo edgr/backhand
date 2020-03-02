@@ -100,5 +100,5 @@ const hideLevel = () => {
   }
 }
 
-export { hideLevel };
+export { hideLevel }
 export { startSlider }
