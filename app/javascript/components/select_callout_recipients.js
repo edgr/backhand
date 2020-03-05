@@ -5,7 +5,9 @@ const slider = document.getElementById('level-slider');
 const minLevel = document.getElementById('callout_minimum_level');
 const maxLevel = document.getElementById('callout_maximum_level');
 const sendCalloutButton = document.getElementById('send_callout');
-const text = sendCalloutButton.value
+if (sendCalloutButton) {
+  const text = sendCalloutButton.value;
+}
 
 const disableSendButton = (number) => {
   if (number === 0) {
