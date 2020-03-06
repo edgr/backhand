@@ -5,7 +5,6 @@ const slider = document.getElementById('level-slider');
 const minLevel = document.getElementById('callout_minimum_level');
 const maxLevel = document.getElementById('callout_maximum_level');
 const sendCalloutButton = document.getElementById('send_callout');
-const text = sendCalloutButton.value
 
 const disableSendButton = (number) => {
   if (number === 0) {
@@ -16,9 +15,10 @@ const disableSendButton = (number) => {
 }
 
 const makeNiceSentence = (number) => {
+  const text = sendCalloutButton.value
   const stringNumber = number.toString()
   const newText = text.split(' ')
-  newText.splice(2, 0, stringNumber)
+  newText.splice(2, 1, stringNumber)
   sendCalloutButton.value = newText.join(' ')
 }
 
@@ -95,10 +95,11 @@ const hideLevel = () => {
         levelSection.classList.remove('hidden');
         minLevel.classList.remove('hidden');
         maxLevel.classList.remove('hidden');
+        updateRecipients();
       }
     })
   }
 }
 
-export { hideLevel }
-export { startSlider }
+export { hideLevel };
+export { startSlider };

@@ -25,7 +25,7 @@ fr:
       everyone: tout le monde autour de moi
       my_club: joueurs/es de mon club
       my_favorites: mes partenaires préférés
-      send: envoyer à joueur(s)
+      send: envoyer à %{count} joueur(s)
   clubs:
     index:
       no_clubs: Nous n'avons pas encore recensé les clubs dans cette zone. Faites-le nous savoir !
