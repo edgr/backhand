@@ -4,6 +4,10 @@ class CalloutsController < ApplicationController
 
   def new
     @callout = Callout.new
+    @club_users = User.active.where(club_id: current_user.club_id)
+    @users_around = recipients = User.active.near(current_user.address, 25)
+    @favorites = current_user.favorite_players
+    gon.jbuilder
   end
 
   def index
@@ -14,7 +18,7 @@ class CalloutsController < ApplicationController
     @callout = Callout.new(callout_params)
     @callout.user = current_user
     @callout.recipients = filter_recipients(params[:callout][:recipients])
-    if @callout.save!
+    if @callout.save
       inform_recipients(@callout.recipients)
       redirect_to callouts_path
     else
@@ -42,17 +46,14 @@ class CalloutsController < ApplicationController
 
   def filter_recipients(user_choice)
     if user_choice == "2"
-      recipients = current_user.favorite_players
+      current_user.favorite_players.map(&:id)
     elsif user_choice == "1"
       recipients = User.active.where(club_id: current_user.club_id)
+      filter_by_range(recipients)
     else
       recipients = User.active.near(current_user.address, 25)
+      filter_by_range(recipients)
     end
-    recipients = recipients.reject { |recipient| recipient.id == current_user.id }
-    range = params[:callout][:minimum_level].to_i..params[:callout][:maximum_level].to_i
-    recipients.map do |recipient|
-      recipient.id if range.include? recipient.points.to_i
-    end.compact
   end
 
   def inform_recipients(list)
@@ -86,5 +87,13 @@ class CalloutsController < ApplicationController
       redirect_to user_steps_path
       flash[:notice] = I18n.t('complete_profile_please')
     end
+  end
+
+  def filter_by_range(recipients)
+    recipients.reject { |recipient| recipient.id == current_user.id }
+    range = params[:callout][:minimum_level].to_i..params[:callout][:maximum_level].to_i
+    recipients.map do |recipient|
+      recipient.id if range.include? recipient.points.to_i
+    end.compact
   end
 end

@@ -5,6 +5,6 @@
     <%= f.input :minimum_level %>
     <%= f.input :maximum_level %>
     <%= f.input :message, label: false %>
-    <%= f.submit t('.send'), class:"btn btn-primary cta-main" %>
+    <%= f.submit t('.send', count: User.active.size), class:"btn btn-primary cta-main", id:"send_callout" %>
   <% end %>
 </div>
