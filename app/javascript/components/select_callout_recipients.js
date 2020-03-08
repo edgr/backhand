@@ -87,15 +87,18 @@ const hideLevel = () => {
       const levelSection = document.getElementById('level-slider');
       const minLevel = document.querySelector('.callout_minimum_level');
       const maxLevel = document.querySelector('.callout_minimum_level');
+      const avatar = document.getElementById('avatar-indicator');
       if (selected === "2") {
         levelSection.classList.add('hidden');
         minLevel.classList.add('hidden');
         maxLevel.classList.add('hidden');
+        avatar.classList.add('hidden');
         updateRecipients();
       } else {
         levelSection.classList.remove('hidden');
         minLevel.classList.remove('hidden');
         maxLevel.classList.remove('hidden');
+        avatar.classList.remove('hidden');
         updateRecipients();
       }
     })
