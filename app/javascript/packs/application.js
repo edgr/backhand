@@ -34,6 +34,7 @@ import { tellYourFriends } from '../components/tell_your_friends';
 // import { triggerShare } from '../components/share_profile';
 import { infiniteScroll } from '../components/infinite_scroll';
 import { hideLevel } from '../components/select_callout_recipients';
+import { placeIndicator } from '../components/select_callout_recipients';
 import { hideGeneralRanking } from '../components/tabs';
 
 
@@ -69,3 +70,4 @@ tellYourFriends();
 infiniteScroll();
 hideLevel();
 hideGeneralRanking();
+placeIndicator();

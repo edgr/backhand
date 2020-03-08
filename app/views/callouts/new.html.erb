@@ -1,9 +1,19 @@
 <div class="container">
   <%= simple_form_for @callout do |f| %>
     <%= f.input :recipients, label: false, collection: [['0', t('.everyone')], ['1', t('.my_club')], ['2', t('.my_favorites')]], label_method: :second, value_method: :first, selected: ["players in my club only"] %>
-    <div id="level-slider"></div>
-    <%= f.input :minimum_level %>
-    <%= f.input :maximum_level %>
+    <div id="slider-wrapper">
+      <div id="level-slider"></div>
+      <% if current_user.picture.present? %>
+        <%= cl_image_tag(current_user.picture, width: 40, height: 40, gravity: "face", crop: "thumb", quality: "auto", angle: 45, class: "avatar-bordered avatar-indicator", id: "avatar-indicator") %>
+      <% else %>
+        <%= image_tag "profile.png", class: "avatar-bordered avatar-indicator", id: "avatar-indicator" %>
+      <% end %>
+      <span id="player-level" class="hidden">
+        <%= current_user.points %>
+      </span>
+      <%= f.input :minimum_level %>
+      <%= f.input :maximum_level %>
+    </div>
     <%= f.input :message, label: false %>
     <%= f.submit t('.send', count: User.active.size), class:"btn btn-primary cta-main", id:"send_callout" %>
   <% end %>
