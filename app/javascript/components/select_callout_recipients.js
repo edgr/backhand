@@ -109,10 +109,10 @@ const placeIndicator = () => {
   if (levelWrapper) {
     const width = levelWrapper.offsetWidth
     const avatar = document.getElementById('avatar-indicator')
-    const level = document.getElementById('player-level').innerText
-    const number = width * parseInt(level) / 2400
+    const level = gon.user.points
+    const number = width * level / 2400
     const percentage = number / width * 100
-    avatar.style.left = `${percentage}%`
+    avatar.style.left = `calc(${percentage}% - 16px)`
   }
 }
 

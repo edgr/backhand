@@ -8,9 +8,6 @@
       <% else %>
         <%= image_tag "profile.png", class: "avatar-bordered avatar-indicator", id: "avatar-indicator" %>
       <% end %>
-      <span id="player-level" class="hidden">
-        <%= current_user.points %>
-      </span>
       <%= f.input :minimum_level %>
       <%= f.input :maximum_level %>
     </div>
