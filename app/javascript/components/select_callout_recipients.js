@@ -112,7 +112,7 @@ const placeIndicator = () => {
     const level = document.getElementById('player-level').innerText
     const number = width * parseInt(level) / 2400
     const percentage = number / width * 100
-    avatar.style.left = `${percentage}%`
+    avatar.style.left = `calc(${percentage}% - 16px)`
   }
 }
 
