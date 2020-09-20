@@ -9,7 +9,7 @@
     "flag-icon-css": "^3.3.0",
     "flatpickr": "^4.6.2",
     "intl-tel-input": "^16.0.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mapbox-gl": "^1.4.1",
     "nouislider": "^14.1.1",
     "places.js": "^1.16.4",
