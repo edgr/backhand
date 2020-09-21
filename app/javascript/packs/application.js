@@ -29,11 +29,12 @@ import { copyLink } from '../components/copy_to_clipboard';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initMapboxClubShow } from '../plugins/init_mapbox_club_show';
 import { verifyPhoto } from '../components/verifyPhoto';
-import { startSlider } from '../components/select_callout_level';
+import { startSlider } from '../components/select_callout_recipients';
 import { tellYourFriends } from '../components/tell_your_friends';
 // import { triggerShare } from '../components/share_profile';
 import { infiniteScroll } from '../components/infinite_scroll';
-import { hideLevel } from '../components/callout_recipients';
+import { hideLevel } from '../components/select_callout_recipients';
+import { placeIndicator } from '../components/select_callout_recipients';
 import { hideGeneralRanking } from '../components/tabs';
 
 
@@ -69,3 +70,4 @@ tellYourFriends();
 infiniteScroll();
 hideLevel();
 hideGeneralRanking();
+placeIndicator();
