@@ -3,36 +3,36 @@ class Club < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   before_create :set_slug
 
-  has_many :users
-  has_many :matches
   has_many :courts
+  has_many :matches
+  has_many :users
 
   def clay_courts
-    self.courts.find_all { |court| court.surface == "Clay" }
+    courts.with_surface(Court::CLAY)
   end
 
   def hard_courts
-    self.courts.find_all { |court| court.surface == "Hard" }
+    courts.with_surface(Court::HARD)
   end
 
   def grass_courts
-    self.courts.find_all { |court| court.surface == "Grass" }
+    courts.with_surface(Court::GRASS)
   end
 
   def carpet_courts
-    self.courts.find_all { |court| court.surface == "Carpet" }
+    courts.with_surface(Court::CARPET)
   end
 
   def courts_indoors
-    self.courts.find_all { |court| court.indoor == true }
+    courts.those_indoor
   end
 
   def courts_with_lights
-    self.courts.find_all { |court| court.lights == true }
+    courts.with_lights
   end
 
   def singles_courts
-    self.courts.find_all { |court| court.single == true }
+    courts.those_single
   end
 
   def to_param
