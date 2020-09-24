@@ -48,7 +48,7 @@ gem 'rails_admin', '~> 2.0'
 # pagination
 gem 'will_paginate', '~> 3.1.0'
 
-#sidekiq for background job (mailers)
+# sidekiq for background job (mailers)
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
@@ -69,7 +69,7 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
-  gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
+  gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
