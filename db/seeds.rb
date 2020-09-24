@@ -164,7 +164,7 @@ players = []
     place_of_birth: "#{Faker::Address.city}, #{Faker::Address.country}",
     user_name: "@#{Faker::Lorem.word}",
     style_of_play: ["baseliner", "attacker", "baseliner", "server-volleyer","puncher"].sample,
-    gender: Faker::Gender.binary_type,
+    gender: Faker::Gender.binary_type.downcase,
     country: Faker::Address.country_code,
     ranking: rand(1..1000),
     height: rand(150..200),
@@ -175,7 +175,7 @@ players = []
     points: rand(500..2000),
     handedness: ["righty","lefty"].sample,
     club_id: Club.all.sample.id,
-    backhand_style: ["one handed backhand","two handed backhand"].sample,
+    backhand_style: ["one_handed_backhand","two_handed_backend"].sample,
     status: "active"
     )
   player.remote_picture_url = pictures[counter]
@@ -198,7 +198,7 @@ end
     place_of_birth: "#{Faker::Address.city}, #{Faker::Address.country}",
     user_name: "@#{Faker::Lorem.word}",
     style_of_play: ["baseliner", "attacker", "baseliner","server-volleyer","puncher"].sample,
-    gender: Faker::Gender.binary_type,
+    gender: Faker::Gender.binary_type.downcase,
     ranking: rand(1..1000),
     height: rand(150..200),
     weight: rand(50..100),
@@ -207,7 +207,7 @@ end
     birthday: Faker::Date.birthday(18, 65),
     handedness: ["righty","lefty"].sample,
     club_id: Club.all.sample.id,
-    backhand_style: ["one handed backhand","two handed backhand"].sample,
+    backhand_style: ["one_handed_backhand","two handed backhand"].sample,
     status: "active"
     )
   edouard.remote_picture_url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559818153/murrayy_hsuo8c.jpg"
@@ -228,7 +228,7 @@ end
     place_of_birth: "#{Faker::Address.city}, #{Faker::Address.country}",
     user_name: "@#{Faker::Lorem.word}",
     style_of_play: ["baseliner", "attacker", "baseliner","server-volleyer","puncher"].sample,
-    gender: Faker::Gender.binary_type,
+    gender: Faker::Gender.binary_type.downcase,
     ranking: rand(1..1000),
     height: rand(150..200),
     weight: rand(50..100),
@@ -237,7 +237,7 @@ end
     birthday: Faker::Date.birthday(18, 65),
     handedness: ["righty","lefty"].sample,
     club_id: Club.all.sample.id,
-    backhand_style: ["one handed backhand","two handed backhand"].sample,
+    backhand_style: ["one_handed_backhand","two handed backhand"].sample,
     status: "active"
     )
   leo.remote_picture_url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/nadal_m7vz84.jpg"
