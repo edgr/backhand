@@ -34,6 +34,8 @@ end
 
 puts "destroy all"
 
+Favorite.destroy_all
+Message.destroy_all
 Callout.destroy_all
 MatchResult.destroy_all
 Match.destroy_all
@@ -175,7 +177,7 @@ players = []
     points: rand(500..2000),
     handedness: ["righty","lefty"].sample,
     club_id: Club.all.sample.id,
-    backhand_style: ["one_handed_backhand","two_handed_backend"].sample,
+    backhand_style: ["one_handed_backhand","two_handed_backhand"].sample,
     status: "active"
     )
   player.remote_picture_url = pictures[counter]
@@ -207,7 +209,7 @@ end
     birthday: Faker::Date.birthday(18, 65),
     handedness: ["righty","lefty"].sample,
     club_id: Club.all.sample.id,
-    backhand_style: ["one_handed_backhand","two handed backhand"].sample,
+    backhand_style: ["one_handed_backhand","two_handed_backhand"].sample,
     status: "active"
     )
   edouard.remote_picture_url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559818153/murrayy_hsuo8c.jpg"
@@ -237,7 +239,7 @@ end
     birthday: Faker::Date.birthday(18, 65),
     handedness: ["righty","lefty"].sample,
     club_id: Club.all.sample.id,
-    backhand_style: ["one_handed_backhand","two handed backhand"].sample,
+    backhand_style: ["one_handed_backhand","two_handed_backhand"].sample,
     status: "active"
     )
   leo.remote_picture_url = "https://res.cloudinary.com/dwvr5h8ps/image/upload/v1559121625/nadal_m7vz84.jpg"
