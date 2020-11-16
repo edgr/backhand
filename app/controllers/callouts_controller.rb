@@ -1,4 +1,5 @@
 class CalloutsController < ApplicationController
+  # this section is commented out in views
   skip_before_action :authenticate_user!, only: %i[index]
   before_action :user_is_active, only: %i[new]
 
